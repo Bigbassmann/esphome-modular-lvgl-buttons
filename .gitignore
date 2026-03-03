@@ -1,0 +1,20 @@
+# ESPHome generated/build output
+.esphome/
+.pioenvs/
+.piolibdeps/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Editor/OS noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Secrets (keep examples tracked)
+secrets.yaml
+secrets.*.yaml
+*.secrets.yaml
+!secrets.example.yaml

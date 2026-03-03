@@ -1,0 +1,8 @@
+substitutions:
+  sense_page_fans_id: "page_fans"
+
+lvgl:
+  pages:
+    - id: ${sense_page_fans_id}
+      styles: sense_page_style
+      layout: 4x2

@@ -4,10 +4,17 @@ substitutions:
   sense_page_wifi_id: "page_wifi_setup"
   sense_page_settings_id: "page_settings"
   sense_page_tstat_id: "main_page"
+<<<<<<< Updated upstream
   sense_page_fans_id: "main_page"
   sense_page_overrides_id: "main_page"
   sense_page_lighting_dimmers_id: "main_page"
   sense_page_lighting_switches_id: "main_page"
+=======
+  sense_page_fans_id: "page_fans"
+  sense_page_overrides_id: "page_overrides"
+  sense_page_lighting_dimmers_id: "page_lighting_dimmers"
+  sense_page_lighting_switches_id: "page_lighting_switches"
+>>>>>>> Stashed changes
 
 globals:
   - id: sense_nav_index
@@ -51,10 +58,37 @@ script:
       - lambda: 'id(sense_nav_index) = 4;'
       - lvgl.page.show: ${sense_page_tstat_id}
 
+<<<<<<< Updated upstream
   - id: nav_to_prev
     then:
       - lambda: |-
           id(sense_nav_index) = (id(sense_nav_index) + 4) % 5;
+=======
+  - id: nav_to_fans
+    then:
+      - lambda: 'id(sense_nav_index) = 5;'
+      - lvgl.page.show: ${sense_page_fans_id}
+
+  - id: nav_to_overrides
+    then:
+      - lambda: 'id(sense_nav_index) = 6;'
+      - lvgl.page.show: ${sense_page_overrides_id}
+
+  - id: nav_to_lighting_dimmers
+    then:
+      - lambda: 'id(sense_nav_index) = 7;'
+      - lvgl.page.show: ${sense_page_lighting_dimmers_id}
+
+  - id: nav_to_lighting_switches
+    then:
+      - lambda: 'id(sense_nav_index) = 8;'
+      - lvgl.page.show: ${sense_page_lighting_switches_id}
+
+  - id: nav_to_prev
+    then:
+      - lambda: |-
+          id(sense_nav_index) = (id(sense_nav_index) + 8) % 9;
+>>>>>>> Stashed changes
       - if:
           condition:
             lambda: 'return id(sense_nav_index) == 0;'
@@ -80,11 +114,38 @@ script:
             lambda: 'return id(sense_nav_index) == 4;'
           then:
             - script.execute: nav_to_tstat
+<<<<<<< Updated upstream
+=======
+      - if:
+          condition:
+            lambda: 'return id(sense_nav_index) == 5;'
+          then:
+            - script.execute: nav_to_fans
+      - if:
+          condition:
+            lambda: 'return id(sense_nav_index) == 6;'
+          then:
+            - script.execute: nav_to_overrides
+      - if:
+          condition:
+            lambda: 'return id(sense_nav_index) == 7;'
+          then:
+            - script.execute: nav_to_lighting_dimmers
+      - if:
+          condition:
+            lambda: 'return id(sense_nav_index) == 8;'
+          then:
+            - script.execute: nav_to_lighting_switches
+>>>>>>> Stashed changes
 
   - id: nav_to_next
     then:
       - lambda: |-
+<<<<<<< Updated upstream
           id(sense_nav_index) = (id(sense_nav_index) + 1) % 5;
+=======
+          id(sense_nav_index) = (id(sense_nav_index) + 1) % 9;
+>>>>>>> Stashed changes
       - if:
           condition:
             lambda: 'return id(sense_nav_index) == 0;'
@@ -110,6 +171,29 @@ script:
             lambda: 'return id(sense_nav_index) == 4;'
           then:
             - script.execute: nav_to_tstat
+<<<<<<< Updated upstream
+=======
+      - if:
+          condition:
+            lambda: 'return id(sense_nav_index) == 5;'
+          then:
+            - script.execute: nav_to_fans
+      - if:
+          condition:
+            lambda: 'return id(sense_nav_index) == 6;'
+          then:
+            - script.execute: nav_to_overrides
+      - if:
+          condition:
+            lambda: 'return id(sense_nav_index) == 7;'
+          then:
+            - script.execute: nav_to_lighting_dimmers
+      - if:
+          condition:
+            lambda: 'return id(sense_nav_index) == 8;'
+          then:
+            - script.execute: nav_to_lighting_switches
+>>>>>>> Stashed changes
 
 interval:
   - interval: 30s

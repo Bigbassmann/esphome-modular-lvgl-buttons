@@ -1,0 +1,8 @@
+substitutions:
+  sense_page_lighting_dimmers_id: "page_lighting_dimmers"
+
+lvgl:
+  pages:
+    - id: ${sense_page_lighting_dimmers_id}
+      styles: sense_page_style
+      layout: 5x2
