@@ -1,0 +1,218 @@
+substitutions:
+  sense_page_home_id: "page_home_v2"
+  sense_page_tstat_id: "page_thermostat_v2"
+  sense_page_fans_id: "page_fans"
+  sense_page_overrides_id: "page_overrides"
+
+lvgl:
+  pages:
+    - id: ${sense_page_home_id}
+      styles: sense_page_style
+      layout:
+        type: grid
+        grid_rows:
+          - FR(1)
+          - FR(1)
+          - FR(1)
+        grid_columns:
+          - FR(1)
+          - FR(1)
+          - FR(1)
+        pad_row: 10
+        pad_column: 10
+      pad_top: ${sense_content_y | default("46")}
+      pad_bottom: 76
+      pad_left: 8
+      pad_right: 8
+      widgets:
+        - button:
+            id: home_v2_btn_dani
+            grid_cell_row_pos: 0
+            grid_cell_column_pos: 0
+            grid_cell_x_align: STRETCH
+            grid_cell_y_align: STRETCH
+            styles: sense_tile_dani_style
+            on_press:
+              - homeassistant.action:
+                  action: homeassistant.toggle
+                  data:
+                    entity_id: ${ent_dani_mode_on}
+            widgets:
+              - label:
+                  text: ${mdi_alarm_light}
+                  align: TOP_LEFT
+                  text_font: mdi_icons_40
+                  text_color: sense_text
+              - label:
+                  text: "Dani"
+                  align: BOTTOM_LEFT
+                  text_font: nunito_20
+                  text_color: sense_text
+
+        - button:
+            id: home_v2_btn_sleepy
+            grid_cell_row_pos: 0
+            grid_cell_column_pos: 1
+            grid_cell_x_align: STRETCH
+            grid_cell_y_align: STRETCH
+            styles: sense_tile_sleepy_style
+            on_press:
+              - homeassistant.action:
+                  action: homeassistant.toggle
+                  data:
+                    entity_id: ${ent_sleepy_toggle}
+            widgets:
+              - label:
+                  text: ${mdi_weather_night}
+                  align: TOP_LEFT
+                  text_font: mdi_icons_40
+                  text_color: sense_text
+              - label:
+                  text: "Sleepy"
+                  align: BOTTOM_LEFT
+                  text_font: nunito_20
+                  text_color: sense_text
+
+        - button:
+            id: home_v2_btn_bedtime
+            grid_cell_row_pos: 0
+            grid_cell_column_pos: 2
+            grid_cell_x_align: STRETCH
+            grid_cell_y_align: STRETCH
+            styles: sense_tile_bedtime_style
+            on_press:
+              - homeassistant.action:
+                  action: homeassistant.toggle
+                  data:
+                    entity_id: ${ent_bedtime_toggle}
+            widgets:
+              - label:
+                  text: ${mdi_bed}
+                  align: TOP_LEFT
+                  text_font: mdi_icons_40
+                  text_color: sense_text
+              - label:
+                  text: "Bedtime"
+                  align: BOTTOM_LEFT
+                  text_font: nunito_20
+                  text_color: sense_text
+
+        - button:
+            id: home_v2_btn_tstat
+            grid_cell_row_pos: 1
+            grid_cell_column_pos: 0
+            grid_cell_x_align: STRETCH
+            grid_cell_y_align: STRETCH
+            styles: sense_tile_tstat_style
+            on_press:
+              - script.execute: nav_to_tstat
+            widgets:
+              - label:
+                  text: ${mdi_thermometer}
+                  align: TOP_LEFT
+                  text_font: mdi_icons_40
+                  text_color: sense_bg
+              - label:
+                  text: "Thermostat"
+                  align: BOTTOM_LEFT
+                  text_font: nunito_20
+                  text_color: sense_bg
+
+        - button:
+            id: home_v2_btn_fans
+            grid_cell_row_pos: 1
+            grid_cell_column_pos: 1
+            grid_cell_x_align: STRETCH
+            grid_cell_y_align: STRETCH
+            styles: sense_tile_fans_style
+            on_press:
+              - script.execute: nav_to_fans
+            widgets:
+              - label:
+                  text: ${mdi_fan}
+                  align: TOP_LEFT
+                  text_font: mdi_icons_40
+                  text_color: sense_text
+              - label:
+                  text: "Fans"
+                  align: BOTTOM_LEFT
+                  text_font: nunito_20
+                  text_color: sense_text
+
+        - button:
+            id: home_v2_btn_overrides
+            grid_cell_row_pos: 1
+            grid_cell_column_pos: 2
+            grid_cell_x_align: STRETCH
+            grid_cell_y_align: STRETCH
+            styles: sense_tile_overrides_style
+            on_press:
+              - script.execute: nav_to_overrides
+            widgets:
+              - label:
+                  text: ${mdi_tune}
+                  align: TOP_LEFT
+                  text_font: mdi_icons_40
+                  text_color: sense_bg
+              - label:
+                  text: "Overrides"
+                  align: BOTTOM_LEFT
+                  text_font: nunito_20
+                  text_color: sense_bg
+
+        - button:
+            id: home_v2_btn_placeholder_1
+            grid_cell_row_pos: 2
+            grid_cell_column_pos: 0
+            grid_cell_x_align: STRETCH
+            grid_cell_y_align: STRETCH
+            styles: sense_tile_placeholder_style
+            widgets:
+              - label:
+                  text: ${mdi_dots_horizontal}
+                  align: TOP_LEFT
+                  text_font: mdi_icons_40
+                  text_color: sense_tile_placeholder_text
+              - label:
+                  text: "Placeholder 1"
+                  align: BOTTOM_LEFT
+                  text_font: nunito_18
+                  text_color: sense_tile_placeholder_text
+
+        - button:
+            id: home_v2_btn_placeholder_2
+            grid_cell_row_pos: 2
+            grid_cell_column_pos: 1
+            grid_cell_x_align: STRETCH
+            grid_cell_y_align: STRETCH
+            styles: sense_tile_placeholder_style
+            widgets:
+              - label:
+                  text: ${mdi_dots_horizontal}
+                  align: TOP_LEFT
+                  text_font: mdi_icons_40
+                  text_color: sense_tile_placeholder_text
+              - label:
+                  text: "Placeholder 2"
+                  align: BOTTOM_LEFT
+                  text_font: nunito_18
+                  text_color: sense_tile_placeholder_text
+
+        - button:
+            id: home_v2_btn_placeholder_3
+            grid_cell_row_pos: 2
+            grid_cell_column_pos: 2
+            grid_cell_x_align: STRETCH
+            grid_cell_y_align: STRETCH
+            styles: sense_tile_placeholder_style
+            widgets:
+              - label:
+                  text: ${mdi_dots_horizontal}
+                  align: TOP_LEFT
+                  text_font: mdi_icons_40
+                  text_color: sense_tile_placeholder_text
+              - label:
+                  text: "Placeholder 3"
+                  align: BOTTOM_LEFT
+                  text_font: nunito_18
+                  text_color: sense_tile_placeholder_text

@@ -1,0 +1,186 @@
+substitutions:
+  sense_page_display_settings_id: "page_display_settings"
+
+script:
+  - id: display_settings_refresh_ui
+    mode: restart
+    then:
+      - lvgl.slider.update:
+          id: display_brightness_slider
+          value: !lambda 'return id(sense_display_brightness_pct);'
+          animated: false
+      - lvgl.label.update:
+          id: display_brightness_value
+          text: !lambda |-
+            char buf[12];
+            snprintf(buf, sizeof(buf), "%d%%", id(sense_display_brightness_pct));
+            return std::string(buf);
+
+      - lvgl.slider.update:
+          id: display_sleep_timeout_slider
+          value: !lambda 'return id(sense_display_sleep_timeout_s);'
+          animated: false
+      - lvgl.label.update:
+          id: display_sleep_timeout_value
+          text: !lambda |-
+            char buf[16];
+            snprintf(buf, sizeof(buf), "%ds", id(sense_display_sleep_timeout_s));
+            return std::string(buf);
+
+      - if:
+          condition:
+            lambda: 'return id(sense_display_sleep_enabled);'
+          then:
+            - lvgl.label.update: {id: display_sleep_state, text: "ON"}
+            - lvgl.widget.update: {id: display_sleep_toggle, bg_color: sense_success}
+          else:
+            - lvgl.label.update: {id: display_sleep_state, text: "OFF"}
+            - lvgl.widget.update: {id: display_sleep_toggle, bg_color: sense_surface_alt}
+
+lvgl:
+  pages:
+    - id: ${sense_page_display_settings_id}
+      styles: sense_page_style
+      on_load:
+        - script.execute: display_settings_refresh_ui
+      widgets:
+        - obj:
+            id: display_settings_card
+            align: TOP_MID
+            y: ${sense_content_y | default("46")}
+            width: 100%
+            height: ${sense_content_h | default("366")}
+            styles: sense_card_style
+            widgets:
+              - label:
+                  text: "Display Settings"
+                  align: TOP_MID
+                  y: 8
+                  text_font: nunito_24
+                  text_color: sense_info
+
+              - button:
+                  id: display_brightness_label
+                  align: TOP_LEFT
+                  x: 16
+                  y: 58
+                  width: 150
+                  height: 42
+                  styles: sense_nav_btn_style
+                  widgets:
+                    - label:
+                        text: "Brightness"
+                        align: CENTER
+                        text_font: nunito_18
+
+              - slider:
+                  id: display_brightness_slider
+                  align: TOP_LEFT
+                  x: 178
+                  y: 70
+                  width: 190
+                  height: 18
+                  min_value: 5
+                  max_value: 100
+                  on_value:
+                    then:
+                      - lambda: |-
+                          id(sense_display_brightness_pct) = x;
+                          id(sense_display_last_interaction_ms) = millis();
+                      - script.execute: sense_display_apply_brightness
+                      - lvgl.label.update:
+                          id: display_brightness_value
+                          text: !lambda |-
+                            char buf[12];
+                            snprintf(buf, sizeof(buf), "%d%%", x);
+                            return std::string(buf);
+
+              - label:
+                  id: display_brightness_value
+                  text: "50%"
+                  align: TOP_RIGHT
+                  x: -16
+                  y: 64
+                  text_font: nunito_20
+                  text_color: sense_text
+
+              - button:
+                  id: display_sleep_toggle
+                  align: TOP_LEFT
+                  x: 16
+                  y: 126
+                  width: 150
+                  height: 42
+                  styles: sense_nav_btn_style
+                  on_press:
+                    then:
+                      - lambda: |-
+                          id(sense_display_sleep_enabled) = !id(sense_display_sleep_enabled);
+                          id(sense_display_last_interaction_ms) = millis();
+                          if (!id(sense_display_sleep_enabled) && id(sense_display_screen_off)) {
+                            id(sense_display_screen_off) = false;
+                          }
+                      - if:
+                          condition:
+                            lambda: 'return !id(sense_display_sleep_enabled);'
+                          then:
+                            - lvgl.resume:
+                            - lvgl.widget.redraw
+                            - script.execute: sense_display_apply_brightness
+                      - script.execute: display_settings_refresh_ui
+                  widgets:
+                    - label:
+                        text: "Sleep"
+                        align: LEFT_MID
+                        x: 14
+                        text_font: nunito_18
+                    - label:
+                        id: display_sleep_state
+                        text: "ON"
+                        align: RIGHT_MID
+                        x: -14
+                        text_font: nunito_18
+
+              - button:
+                  id: display_sleep_timeout_label
+                  align: TOP_LEFT
+                  x: 16
+                  y: 194
+                  width: 150
+                  height: 42
+                  styles: sense_nav_btn_style
+                  widgets:
+                    - label:
+                        text: "Sleep Delay"
+                        align: CENTER
+                        text_font: nunito_18
+
+              - slider:
+                  id: display_sleep_timeout_slider
+                  align: TOP_LEFT
+                  x: 178
+                  y: 206
+                  width: 190
+                  height: 18
+                  min_value: 15
+                  max_value: 300
+                  on_value:
+                    then:
+                      - lambda: |-
+                          id(sense_display_sleep_timeout_s) = x;
+                          id(sense_display_last_interaction_ms) = millis();
+                      - lvgl.label.update:
+                          id: display_sleep_timeout_value
+                          text: !lambda |-
+                            char buf[16];
+                            snprintf(buf, sizeof(buf), "%ds", x);
+                            return std::string(buf);
+
+              - label:
+                  id: display_sleep_timeout_value
+                  text: "60s"
+                  align: TOP_RIGHT
+                  x: -16
+                  y: 200
+                  text_font: nunito_20
+                  text_color: sense_text

@@ -33,6 +33,21 @@ color:
       hex: 'E5B12B'
     - id: sense_tile_blue
       hex: '3B82C4'
+<<<<<<< Updated upstream
+=======
+    - id: sense_tile_red
+      hex: 'D7263D'
+    - id: sense_tile_teal
+      hex: '2A9D8F'
+    - id: sense_tile_indigo
+      hex: '4361EE'
+    - id: sense_tile_sky
+      hex: '3A86FF'
+    - id: sense_tile_cyan
+      hex: '4CC9F0'
+    - id: sense_tile_placeholder_text
+      hex: '93C5FD'
+>>>>>>> Stashed changes
 
     - id: burnt_sienna
       hex: 'CC5E14'

@@ -7,6 +7,10 @@ obj:
   height: ${sense_nav_h | default("68")}
   styles: sense_nav_bar_style
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  border_width: 0
+>>>>>>> Stashed changes
 =======
   border_width: 0
 >>>>>>> Stashed changes

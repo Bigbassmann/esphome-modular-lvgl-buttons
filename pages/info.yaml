@@ -7,7 +7,7 @@ lvgl:
       pad_all: 2
   pages:
     - id: info_screen
-      styles: boot_screen_style
+      styles: sense_page_style
       <<: !include
         file: ../widgets/swipe_navigation.yaml
       widgets:
@@ -156,4 +156,4 @@ lvgl:
                   align: center
                   text: "Exit"
             on_press:
-              - lvgl.page.show: main_page
+              - script.execute: nav_to_home
