@@ -1,6 +1,7 @@
 lvgl:
   pages:
     - id: page_thermostat_v2
+<<<<<<< Updated upstream
       widgets:
         - label:
             text: "Thermostat"
@@ -235,6 +236,271 @@ lvgl:
                     then:
                       - logger.log: "tstat_ui fan -> Circulation"
                       - homeassistant.service: {service: climate.set_fan_mode, data: {entity_id: climate.thermostat, fan_mode: "Circulation"}}
+=======
+      styles: sense_page_style
+      widgets:
+        - obj:
+            id: tstat2_card
+            align: TOP_MID
+            y: ${sense_content_y | default("46")}
+            width: 100%
+            height: ${sense_content_h | default("366")}
+            styles: sense_card_style
+            widgets:
+              - label:
+                  text: "Thermostat"
+                  align: TOP_MID
+                  y: 8
+                  text_font: montserrat_24
+                  text_color: 0x0F766E
+
+              - label:
+                  text: "HVAC Status"
+                  align: TOP_LEFT
+                  x: 20
+                  y: 42
+                  text_font: montserrat_14
+                  text_color: 0x9CA3AF
+
+              - label:
+                  text: "Fan Status"
+                  align: TOP_RIGHT
+                  x: -20
+                  y: 42
+                  text_font: montserrat_14
+                  text_color: 0x9CA3AF
+
+              - label:
+                  id: tstat2_hvac_action_label
+                  text: "--"
+                  align: TOP_LEFT
+                  x: 20
+                  y: 62
+                  text_font: montserrat_16
+                  text_color: 0xE5E7EB
+
+              - label:
+                  id: tstat2_fan_state_label
+                  text: "--"
+                  align: TOP_RIGHT
+                  x: -20
+                  y: 62
+                  text_font: montserrat_16
+                  text_color: 0xE5E7EB
+
+              - label:
+                  id: tstat2_fan_entity_label
+                  text: "--"
+                  align: TOP_RIGHT
+                  x: -20
+                  y: 84
+                  text_font: montserrat_12
+                  text_color: 0x9CA3AF
+
+              - arc:
+                  id: tstat2_target_arc
+                  align: TOP_MID
+                  y: 78
+                  width: 220
+                  height: 190
+                  min_value: 50
+                  max_value: 85
+                  value: 68
+                  adjustable: true
+                  start_angle: 135
+                  end_angle: 45
+                  arc_rounded: true
+                  indicator:
+                    arc_color: 0x6B7280
+                    arc_width: 16
+                  knob:
+                    bg_color: 0xFFFFFF
+                    pad_all: 3
+                  on_value:
+                    then:
+                      - lvgl.label.update:
+                          id: tstat2_target_value
+                          text: !lambda |-
+                            char buf[24];
+                            int v = lv_arc_get_value(id(tstat2_target_arc));
+                            if (v < 50) v = 50;
+                            if (v > 85) v = 85;
+                            snprintf(buf, sizeof(buf), "%.1f F", (float) v);
+                            return std::string(buf);
+                  on_release:
+                    then:
+                      - homeassistant.service:
+                          service: climate.set_temperature
+                          data:
+                            entity_id: ${ent_thermostat}
+                          data_template:
+                            temperature: !lambda |-
+                              char buf[16];
+                              int v = lv_arc_get_value(id(tstat2_target_arc));
+                              if (v < 50) v = 50;
+                              if (v > 85) v = 85;
+                              snprintf(buf, sizeof(buf), "%d", v);
+                              return std::string(buf);
+
+              - label:
+                  text: "Current"
+                  align: TOP_MID
+                  x: -12
+                  y: 112
+                  text_font: montserrat_14
+                  text_color: 0x9CA3AF
+
+              - label:
+                  id: tstat2_current_value
+                  text: "--"
+                  align: TOP_MID
+                  x: -12
+                  y: 130
+                  text_font: montserrat_20
+                  text_color: 0xE5E7EB
+
+              - label:
+                  text: "Target"
+                  align: TOP_MID
+                  x: -12
+                  y: 156
+                  text_font: montserrat_14
+                  text_color: 0x9CA3AF
+
+              - label:
+                  id: tstat2_target_value
+                  text: "--"
+                  align: TOP_MID
+                  x: -12
+                  y: 174
+                  text_font: montserrat_20
+                  text_color: 0xFFFFFF
+
+              - label:
+                  text: "Humidity"
+                  align: TOP_MID
+                  x: -12
+                  y: 202
+                  text_font: montserrat_14
+                  text_color: 0x9CA3AF
+
+              - label:
+                  id: tstat2_humidity_value
+                  text: "--"
+                  align: TOP_MID
+                  x: -12
+                  y: 220
+                  text_font: montserrat_16
+                  text_color: 0x9CA3AF
+
+              - label:
+                  text: "HVAC Mode"
+                  align: TOP_LEFT
+                  x: 28
+                  y: 250
+                  text_font: montserrat_14
+                  text_color: 0xFFFFFF
+
+              - dropdown:
+                  id: tstat2_mode_dropdown
+                  align: TOP_LEFT
+                  x: 28
+                  y: 272
+                  width: 156
+                  height: 38
+                  text_font: montserrat_16
+                  options:
+                    - "Off"
+                    - "Heat"
+                    - "Cool"
+                  selected_index: 0
+                  on_value:
+                    then:
+                      - if:
+                          condition:
+                            lambda: 'return x == 0;'
+                          then:
+                            - logger.log: "tstat_ui hvac -> off"
+                            - homeassistant.service:
+                                service: climate.set_hvac_mode
+                                data:
+                                  entity_id: ${ent_thermostat}
+                                  hvac_mode: "off"
+                      - if:
+                          condition:
+                            lambda: 'return x == 1;'
+                          then:
+                            - logger.log: "tstat_ui hvac -> heat"
+                            - homeassistant.service:
+                                service: climate.set_hvac_mode
+                                data:
+                                  entity_id: ${ent_thermostat}
+                                  hvac_mode: "heat"
+                      - if:
+                          condition:
+                            lambda: 'return x == 2;'
+                          then:
+                            - logger.log: "tstat_ui hvac -> cool"
+                            - homeassistant.service:
+                                service: climate.set_hvac_mode
+                                data:
+                                  entity_id: ${ent_thermostat}
+                                  hvac_mode: "cool"
+
+              - label:
+                  text: "Fan Mode"
+                  align: TOP_RIGHT
+                  x: -28
+                  y: 250
+                  text_font: montserrat_14
+                  text_color: 0xFFFFFF
+
+              - dropdown:
+                  id: tstat2_fan_dropdown
+                  align: TOP_RIGHT
+                  x: -28
+                  y: 272
+                  width: 156
+                  height: 38
+                  text_font: montserrat_16
+                  options:
+                    - "Auto low"
+                    - "Low"
+                    - "Circulation"
+                  selected_index: 0
+                  on_value:
+                    then:
+                      - if:
+                          condition:
+                            lambda: 'return x == 0;'
+                          then:
+                            - logger.log: "tstat_ui fan -> Auto low"
+                            - homeassistant.service:
+                                service: climate.set_fan_mode
+                                data:
+                                  entity_id: ${ent_thermostat}
+                                  fan_mode: "Auto low"
+                      - if:
+                          condition:
+                            lambda: 'return x == 1;'
+                          then:
+                            - logger.log: "tstat_ui fan -> Low"
+                            - homeassistant.service:
+                                service: climate.set_fan_mode
+                                data:
+                                  entity_id: ${ent_thermostat}
+                                  fan_mode: "Low"
+                      - if:
+                          condition:
+                            lambda: 'return x == 2;'
+                          then:
+                            - logger.log: "tstat_ui fan -> Circulation"
+                            - homeassistant.service:
+                                service: climate.set_fan_mode
+                                data:
+                                  entity_id: ${ent_thermostat}
+                                  fan_mode: "Circulation"
+>>>>>>> Stashed changes
 
 script:
   - id: cap_tstat_set_mode_off
@@ -242,7 +508,11 @@ script:
       - homeassistant.service:
           service: climate.set_hvac_mode
           data:
+<<<<<<< Updated upstream
             entity_id: climate.thermostat
+=======
+            entity_id: ${ent_thermostat}
+>>>>>>> Stashed changes
             hvac_mode: "off"
 
   - id: cap_tstat_set_mode_heat
@@ -250,7 +520,11 @@ script:
       - homeassistant.service:
           service: climate.set_hvac_mode
           data:
+<<<<<<< Updated upstream
             entity_id: climate.thermostat
+=======
+            entity_id: ${ent_thermostat}
+>>>>>>> Stashed changes
             hvac_mode: "heat"
 
   - id: cap_tstat_set_mode_cool
@@ -258,12 +532,17 @@ script:
       - homeassistant.service:
           service: climate.set_hvac_mode
           data:
+<<<<<<< Updated upstream
             entity_id: climate.thermostat
+=======
+            entity_id: ${ent_thermostat}
+>>>>>>> Stashed changes
             hvac_mode: "cool"
 
 text_sensor:
   - platform: homeassistant
     id: cap_tstat_mode
+<<<<<<< Updated upstream
     entity_id: climate.thermostat
     attribute: hvac_mode
     internal: true
@@ -281,11 +560,31 @@ text_sensor:
     id: cap_tstat_fan_state
     entity_id: climate.thermostat
     attribute: fan_state
+=======
+    entity_id: ${ent_thermostat}
+    attribute: ${attr_hvac_mode}
+    internal: true
+  - platform: homeassistant
+    id: cap_tstat_hvac_action
+    entity_id: ${ent_thermostat}
+    attribute: ${attr_hvac_action}
+    internal: true
+  - platform: homeassistant
+    id: cap_tstat_fan_mode
+    entity_id: ${ent_thermostat}
+    attribute: ${attr_fan_mode}
+    internal: true
+  - platform: homeassistant
+    id: cap_tstat_fan_state
+    entity_id: ${ent_thermostat}
+    attribute: ${attr_fan_state}
+>>>>>>> Stashed changes
     internal: true
 
 sensor:
   - platform: homeassistant
     id: cap_tstat_current_temp
+<<<<<<< Updated upstream
     entity_id: climate.thermostat
     attribute: current_temperature
     internal: true
@@ -293,6 +592,15 @@ sensor:
     id: cap_tstat_target_temp
     entity_id: climate.thermostat
     attribute: temperature
+=======
+    entity_id: ${ent_thermostat}
+    attribute: ${attr_current_temperature}
+    internal: true
+  - platform: homeassistant
+    id: cap_tstat_target_temp
+    entity_id: ${ent_thermostat}
+    attribute: ${attr_temperature}
+>>>>>>> Stashed changes
     internal: true
 
 # globals:

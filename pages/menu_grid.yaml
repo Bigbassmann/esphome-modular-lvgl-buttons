@@ -78,32 +78,54 @@ lvgl:
                         text_font: nunito_18
                         text_color: sense_text
               - button:
+<<<<<<< Updated upstream
                   id: menu_btn_info
+=======
+                  id: menu_btn_fans
+>>>>>>> Stashed changes
                   grid_cell_row_pos: 1
                   grid_cell_column_pos: 1
                   grid_cell_x_align: STRETCH
                   grid_cell_y_align: STRETCH
                   styles: sense_nav_btn_style
                   on_press:
+<<<<<<< Updated upstream
                     - script.execute: nav_to_settings
                   widgets:
                     - label:
                         text: "Info"
+=======
+                    - script.execute: nav_to_fans
+                  widgets:
+                    - label:
+                        text: "Fans"
+>>>>>>> Stashed changes
                         align: CENTER
                         text_font: nunito_18
                         text_color: sense_text
               - button:
+<<<<<<< Updated upstream
                   id: menu_btn_loading
+=======
+                  id: menu_btn_lights
+>>>>>>> Stashed changes
                   grid_cell_row_pos: 1
                   grid_cell_column_pos: 2
                   grid_cell_x_align: STRETCH
                   grid_cell_y_align: STRETCH
                   styles: sense_nav_btn_style
                   on_press:
+<<<<<<< Updated upstream
                     - script.execute: nav_to_home
                   widgets:
                     - label:
                         text: "Loading"
+=======
+                    - script.execute: nav_to_lighting_switches
+                  widgets:
+                    - label:
+                        text: "Lights"
+>>>>>>> Stashed changes
                         align: CENTER
                         text_font: nunito_18
                         text_color: sense_text
