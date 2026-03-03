@@ -1,7 +1,9 @@
 ---
 ota:
   - platform: web_server
+
   - platform: esphome
+    password: "41def07295f8022fbb33225b9baa335a"
     id: ota_state
     on_begin:
       - logger.log: "OTA Start"

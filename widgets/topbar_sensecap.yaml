@@ -1,0 +1,47 @@
+obj:
+  id: sense_topbar
+  align: TOP_MID
+  x: 0
+  y: 0
+  width: 100%
+  height: ${sense_topbar_h | default("46")}
+  styles: sense_topbar_style
+  widgets:
+    - label:
+        id: sense_topbar_date
+        text: "-- --- ----"
+        align: TOP_LEFT
+        x: 12
+        y: 8
+        text_font: nunito_18
+        text_color: sense_text
+
+    - label:
+        id: sense_topbar_time
+        text: "--:--"
+        align: TOP_RIGHT
+        x: -12
+        y: 8
+        text_font: nunito_18
+        text_color: sense_text
+
+    - button:
+        id: sense_topbar_wifi_btn
+        align: TOP_MID
+        y: 2
+        width: 56
+        height: 36
+        bg_color: sense_bg
+        border_width: 0
+        radius: 0
+        pad_all: 0
+        shadow_width: 0
+        on_press:
+          - script.execute: nav_to_menu
+        widgets:
+          - label:
+              id: sense_topbar_wifi
+              align: CENTER
+              text_font: nunito_14
+              text_color: sense_info
+              text: "WiFi"

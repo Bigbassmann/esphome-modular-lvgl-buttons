@@ -1,0 +1,13 @@
+substitutions:
+  # Shell sizing for 480x480 pages
+  sense_topbar_h: "46"
+  sense_nav_h: "68"
+  sense_content_y: "46"
+  sense_content_h: "366"
+
+  # Backlight defaults for day/night behavior
+  touchscreen_daytime_brightness: "100%"
+  touchscreen_nighttime_brightness: "45%"
+  touchscreen_night_hour: "23"
+  touchscreen_night_minute: "0"
+  touchscreen_idle_timeout: "45s"

@@ -57,6 +57,52 @@ lvgl:
       text_color: $label_on_color
       align: center
 
+    # SenseCAP-inspired shell styles (additive)
+    - id: sense_page_style
+      scrollbar_mode: "OFF"
+      bg_color: sense_bg
+      bg_opa: cover
+      pad_all: 0
+
+    - id: sense_topbar_style
+      bg_color: sense_surface
+      bg_opa: cover
+      border_width: 1
+      border_color: sense_border
+      radius: 0
+      pad_left: 10
+      pad_right: 10
+      pad_top: 4
+      pad_bottom: 4
+
+    - id: sense_nav_bar_style
+      bg_color: sense_surface
+      bg_opa: cover
+      border_width: 1
+      border_color: sense_border
+      radius: 0
+      pad_left: 8
+      pad_right: 8
+      pad_top: 8
+      pad_bottom: 8
+
+    - id: sense_card_style
+      bg_color: sense_surface_alt
+      bg_opa: cover
+      border_width: 1
+      border_color: sense_border
+      radius: 8
+      pad_all: 8
+
+    - id: sense_nav_btn_style
+      bg_color: sense_surface_alt
+      bg_opa: cover
+      text_color: sense_text
+      border_width: 1
+      border_color: sense_border
+      radius: 8
+      pad_all: 6
+
 select:
   - platform: template
     name: "Current Theme"

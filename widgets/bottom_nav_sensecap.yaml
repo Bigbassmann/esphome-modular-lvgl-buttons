@@ -1,0 +1,76 @@
+obj:
+  id: sense_bottom_nav
+  align: BOTTOM_MID
+  x: 0
+  y: 0
+  width: 100%
+  height: ${sense_nav_h | default("68")}
+  styles: sense_nav_bar_style
+  widgets:
+    - button:
+        id: prev_button
+        align: BOTTOM_LEFT
+        x: 4
+        y: -2
+        width: 96
+        height: 50
+        styles: sense_nav_btn_style
+        on_press:
+          - script.execute: nav_to_prev
+        widgets:
+          - label:
+              text: "Prev"
+              align: CENTER
+              text_font: nunito_14
+              text_color: sense_text
+
+    - button:
+        id: home_button
+        align: BOTTOM_MID
+        x: -58
+        y: -2
+        width: 108
+        height: 50
+        styles: sense_nav_btn_style
+        on_press:
+          - script.execute: nav_to_home
+        widgets:
+          - label:
+              text: "Home"
+              align: CENTER
+              text_font: nunito_14
+              text_color: sense_text
+
+    - button:
+        id: menu_button
+        align: BOTTOM_MID
+        x: 58
+        y: -2
+        width: 108
+        height: 50
+        styles: sense_nav_btn_style
+        on_press:
+          - script.execute: nav_to_menu
+        widgets:
+          - label:
+              text: "Menu"
+              align: CENTER
+              text_font: nunito_14
+              text_color: sense_text
+
+    - button:
+        id: next_button
+        align: BOTTOM_RIGHT
+        x: -4
+        y: -2
+        width: 96
+        height: 50
+        styles: sense_nav_btn_style
+        on_press:
+          - script.execute: nav_to_next
+        widgets:
+          - label:
+              text: "Next"
+              align: CENTER
+              text_font: nunito_14
+              text_color: sense_text

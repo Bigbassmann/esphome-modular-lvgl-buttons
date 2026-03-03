@@ -1,0 +1,19 @@
+﻿script:
+  - id: boot_orchestrator
+    mode: queued
+    then:
+      - logger.log: "[NEXT] boot_orchestrator start"
+      - lvgl.page.show:
+          id: page_boot
+      - script.execute: apply_display_brightness
+      - delay: 30s
+      - lambda: |-
+          uint32_t now = millis();
+          id(last_interaction_ms) = now;
+          id(last_auto_scroll_ms) = now;
+          id(scroll_sleep_start_ms) = 0;
+          id(boot_ready) = true;
+      - script.execute: nav_boot_ready
+      - logger.log: "[NEXT] boot_orchestrator done"
+
+

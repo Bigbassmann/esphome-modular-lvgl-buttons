@@ -5,7 +5,9 @@ wifi:
   fast_connect: true
   min_auth_mode: WPA2
   ap:
-    password: "password"
+#    password: "password"
+    ssid: "Fallback AP"
+    password: "1234567890"
 
 captive_portal:
 
