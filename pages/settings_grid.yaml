@@ -1,11 +1,21 @@
 substitutions:
   sense_page_settings_id: "page_settings"
+<<<<<<< Updated upstream
   sense_page_tstat_id: "main_page"
   sense_page_wifi_id: "page_wifi_setup"
   sense_page_fans_id: "main_page"
   sense_page_overrides_id: "main_page"
   sense_page_lighting_dimmers_id: "main_page"
   sense_page_lighting_switches_id: "main_page"
+=======
+  sense_page_tstat_id: "page_thermostat_v2"
+  sense_page_wifi_id: "page_wifi_setup"
+  sense_page_fans_id: "page_fans"
+  sense_page_overrides_id: "page_overrides"
+  sense_page_lighting_dimmers_id: "page_lighting_dimmers"
+  sense_page_lighting_switches_id: "page_lighting_switches"
+  sense_page_sensors_id: "page_sensors"
+>>>>>>> Stashed changes
 
 lvgl:
   pages:
@@ -21,7 +31,11 @@ lvgl:
             styles: sense_card_style
             layout:
               type: GRID
+<<<<<<< Updated upstream
               grid_rows: [FR(1), FR(1), FR(1)]
+=======
+              grid_rows: [FR(1), FR(1), FR(1), FR(1)]
+>>>>>>> Stashed changes
               grid_columns: [FR(1), FR(1)]
               pad_row: 10
               pad_column: 10
@@ -116,3 +130,21 @@ lvgl:
                         align: CENTER
                         text_font: nunito_18
                         text_color: sense_text
+<<<<<<< Updated upstream
+=======
+              - button:
+                  id: settings_btn_sensors
+                  grid_cell_row_pos: 3
+                  grid_cell_column_pos: 0
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - lvgl.page.show: ${sense_page_sensors_id}
+                  widgets:
+                    - label:
+                        text: "Sensors"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+>>>>>>> Stashed changes

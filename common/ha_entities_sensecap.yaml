@@ -23,6 +23,11 @@ substitutions:
   ent_mbr_motion_off: "input_boolean.mbr_motion_off"
   ent_all_lights_toggle: "input_boolean.all_lights_toggle"
   ent_outdoor_lights_toggle: "input_boolean.outdoor_lights_toggle"
+<<<<<<< Updated upstream
+=======
+  ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
+  ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
+>>>>>>> Stashed changes
 
   # Fan / switch / light entities
   ent_attic_fan_switch: "switch.attic_fan"
@@ -41,6 +46,13 @@ substitutions:
   ent_thermostat: "climate.thermostat"
   ent_thermostat_fan: "fan.thermostat"
   ent_thermostat_humidity: "sensor.thermostat_humidity"
+<<<<<<< Updated upstream
+=======
+  ent_osat_temp: "sensor.meander_temperature"
+  ent_kitchen_temp: "sensor.kitchen_motion_window_sw_air_temperature"
+  ent_freezer_temp: "sensor.freezer_temp"
+  ent_fridge_temp: "sensor.fridge_temp"
+>>>>>>> Stashed changes
 
   # Optional placeholders for other modules
   ent_rain_delay_bool: "input_boolean.rain_delay"

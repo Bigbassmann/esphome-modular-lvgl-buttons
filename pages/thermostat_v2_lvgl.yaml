@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 lvgl:
   pages:
     - id: page_thermostat_v2
@@ -238,6 +239,28 @@ lvgl:
                       - homeassistant.service: {service: climate.set_fan_mode, data: {entity_id: climate.thermostat, fan_mode: "Circulation"}}
 =======
       styles: sense_page_style
+=======
+globals:
+  - id: tstat_page_active
+    type: bool
+    restore_value: false
+    initial_value: "false"
+  - id: tstat_runtime_syncing
+    type: bool
+    restore_value: false
+    initial_value: "false"
+
+lvgl:
+  pages:
+    - id: page_thermostat_v2
+      styles: sense_page_style
+      on_load:
+        - lambda: 'id(tstat_page_active) = true;'
+        - component.update: ha_tstat_current_temp
+        - component.update: ha_tstat_target_temp
+      on_unload:
+        - lambda: 'id(tstat_page_active) = false;'
+>>>>>>> Stashed changes
       widgets:
         - obj:
             id: tstat2_card
@@ -500,6 +523,9 @@ lvgl:
                                 data:
                                   entity_id: ${ent_thermostat}
                                   fan_mode: "Circulation"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 script:
@@ -509,7 +535,11 @@ script:
           service: climate.set_hvac_mode
           data:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             entity_id: climate.thermostat
+=======
+            entity_id: ${ent_thermostat}
+>>>>>>> Stashed changes
 =======
             entity_id: ${ent_thermostat}
 >>>>>>> Stashed changes
@@ -521,7 +551,11 @@ script:
           service: climate.set_hvac_mode
           data:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             entity_id: climate.thermostat
+=======
+            entity_id: ${ent_thermostat}
+>>>>>>> Stashed changes
 =======
             entity_id: ${ent_thermostat}
 >>>>>>> Stashed changes
@@ -533,7 +567,11 @@ script:
           service: climate.set_hvac_mode
           data:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             entity_id: climate.thermostat
+=======
+            entity_id: ${ent_thermostat}
+>>>>>>> Stashed changes
 =======
             entity_id: ${ent_thermostat}
 >>>>>>> Stashed changes
@@ -542,6 +580,7 @@ script:
 text_sensor:
   - platform: homeassistant
     id: cap_tstat_mode
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     entity_id: climate.thermostat
     attribute: hvac_mode
@@ -561,6 +600,8 @@ text_sensor:
     entity_id: climate.thermostat
     attribute: fan_state
 =======
+=======
+>>>>>>> Stashed changes
     entity_id: ${ent_thermostat}
     attribute: ${attr_hvac_mode}
     internal: true
@@ -578,12 +619,16 @@ text_sensor:
     id: cap_tstat_fan_state
     entity_id: ${ent_thermostat}
     attribute: ${attr_fan_state}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     internal: true
 
 sensor:
   - platform: homeassistant
     id: cap_tstat_current_temp
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     entity_id: climate.thermostat
     attribute: current_temperature
@@ -593,6 +638,8 @@ sensor:
     entity_id: climate.thermostat
     attribute: temperature
 =======
+=======
+>>>>>>> Stashed changes
     entity_id: ${ent_thermostat}
     attribute: ${attr_current_temperature}
     internal: true
@@ -600,6 +647,9 @@ sensor:
     id: cap_tstat_target_temp
     entity_id: ${ent_thermostat}
     attribute: ${attr_temperature}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     internal: true
 
@@ -614,7 +664,11 @@ interval:
     then:
       - if:
           condition:
+<<<<<<< Updated upstream
             lambda: 'return id(boot_ready) && !id(screen_off) && (id(nav_page_index) == 5 || id(nav_page_index) == 8);'
+=======
+            lambda: 'return id(tstat_page_active);'
+>>>>>>> Stashed changes
           then:
             - component.update: ha_tstat_current_temp
             - component.update: ha_tstat_target_temp

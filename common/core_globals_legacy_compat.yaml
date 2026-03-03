@@ -1,5 +1,5 @@
 globals:
-<<<<<<< Updated upstream
+  # Legacy boot/nav runtime (optional; used by older nav/bootstrap flows).
   - id: boot_ready
     type: bool
     initial_value: "false"
@@ -21,6 +21,8 @@ globals:
   - id: nav_auto_advance_active
     type: bool
     initial_value: "false"
+
+  # Display idle/sleep tuning.
   - id: display_idle_scroll_enabled
     type: bool
     restore_value: true
@@ -56,10 +58,13 @@ globals:
     type: int
     restore_value: true
     initial_value: "50"
+
+  # RP2040 heartbeat.
   - id: rp2040_last_seen_ms
     type: uint32_t
     initial_value: "0"
 
+  # Touch diagnostics counters.
   - id: touch_total_count
     type: uint32_t
     initial_value: "0"
@@ -73,6 +78,7 @@ globals:
     type: uint32_t
     initial_value: "0"
 
+  # Graph/history runtime buffers.
   - id: graph_metric
     type: int
     initial_value: "2"
@@ -117,26 +123,14 @@ globals:
   - id: graph_touch_valid
     type: bool
     initial_value: "false"
-
   - id: graph_page_active
     type: bool
     initial_value: "false"
 
+  # Thermostat/SleepIQ runtime guards.
   - id: tstat_runtime_syncing
     type: bool
     initial_value: "false"
   - id: sleepiq_runtime_syncing
     type: bool
     initial_value: "false"
-=======
-  # Minimal shared globals for the active modular buttons stack.
-  # Keep feature-specific globals inside the feature/page package.
-  #
-  # If you need legacy migrated globals for old packages, include:
-  # `common/core_globals_legacy_compat.yaml` explicitly in that build.
-
-  # Shared RP2040 health heartbeat used by indicator sensors/widgets.
-  - id: rp2040_last_seen_ms
-    type: uint32_t
-    initial_value: "0"
->>>>>>> Stashed changes

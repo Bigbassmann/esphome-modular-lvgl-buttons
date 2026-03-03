@@ -97,6 +97,10 @@ packages:
   thermostat_v2: !include esphome-modular-lvgl-buttons/pages/thermostat_v2_lvgl.yaml
   # core_boot: !include esphome-modular-lvgl-buttons/common/core_boot.yaml
   core_globals: !include esphome-modular-lvgl-buttons/common/core_globals.yaml
+<<<<<<< Updated upstream
+=======
+  # legacy_globals: !include esphome-modular-lvgl-buttons/common/core_globals_legacy_compat.yaml
+>>>>>>> Stashed changes
   ha_entities_sensecap: !include esphome-modular-lvgl-buttons/common/ha_entities_sensecap.yaml
   core_ha_common: !include esphome-modular-lvgl-buttons/common/core_ha_common.yaml
   sensecap: !include esphome-modular-lvgl-buttons/common/sensecap_indicator_sensors.yaml
@@ -168,6 +172,7 @@ packages:
       click_page: page_thermostat_v2     
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   fans_btn_fr: !include
     file: esphome-modular-lvgl-buttons/buttons/switch_button.yaml
     vars:
@@ -221,6 +226,8 @@ packages:
       column: 0
       text: "Time of Day"
 =======
+=======
+>>>>>>> Stashed changes
   overrides_btn_cleaners: !include
     file: esphome-modular-lvgl-buttons/buttons/override_button.yaml
     vars:
@@ -262,11 +269,15 @@ packages:
       row: 2
       column: 1
       text: "ToD On/Off"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       icon: $mdi_information_box
       entity_id: ${ent_tod_control}
 
   overrides_btn_motion: !include
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     file: esphome-modular-lvgl-buttons/buttons/switch_button.yaml
     vars:
@@ -276,6 +287,8 @@ packages:
       column: 1
       text: "Motion Off"
 =======
+=======
+>>>>>>> Stashed changes
     file: esphome-modular-lvgl-buttons/buttons/override_button.yaml
     vars:
       uid: overrides_btn_motion
@@ -283,11 +296,15 @@ packages:
       row: 3
       column: 0
       text: "All Motion OV"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       icon: $mdi_information_box
       entity_id: ${ent_motion_automation_off}
 
   overrides_btn_entry_motion: !include
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     file: esphome-modular-lvgl-buttons/buttons/switch_button.yaml
     vars:
@@ -297,6 +314,8 @@ packages:
       column: 0
       text: "Entry Motion"
 =======
+=======
+>>>>>>> Stashed changes
     file: esphome-modular-lvgl-buttons/buttons/override_button.yaml
     vars:
       uid: overrides_btn_entry_motion
@@ -304,11 +323,15 @@ packages:
       row: 3
       column: 1
       text: "Entry OV"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       icon: $mdi_information_box
       entity_id: ${ent_entry_motion_automation_off}
 
   overrides_btn_garage: !include
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     file: esphome-modular-lvgl-buttons/buttons/switch_button.yaml
     vars:
@@ -321,6 +344,8 @@ packages:
       entity_id: ${ent_garage_light_automation_off}
 
 =======
+=======
+>>>>>>> Stashed changes
     file: esphome-modular-lvgl-buttons/buttons/override_button.yaml
     vars:
       uid: overrides_btn_garage
@@ -342,6 +367,9 @@ packages:
       icon: $mdi_bed
       entity_id: ${ent_mbr_motion_off}
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   dimmer_btn_mbr: !include
     file: esphome-modular-lvgl-buttons/buttons/dimmer_light_button.yaml

@@ -1,13 +1,13 @@
 substitutions:
-  sense_page_lighting_dimmers_id: "page_lighting_dimmers"
+  sense_page_sensors_id: "page_sensors"
 
 lvgl:
   pages:
-    - id: ${sense_page_lighting_dimmers_id}
+    - id: ${sense_page_sensors_id}
       styles: sense_page_style
-<<<<<<< Updated upstream
-      layout: 5x2
-=======
+      on_load:
+        - component.update: internal_temp
+        - component.update: ha_tstat_current_temp
       layout:
         type: grid
         grid_rows:
@@ -26,4 +26,3 @@ lvgl:
       pad_bottom: 76
       pad_left: 8
       pad_right: 8
->>>>>>> Stashed changes

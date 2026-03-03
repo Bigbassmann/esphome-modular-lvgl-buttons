@@ -2,7 +2,10 @@ substitutions:
   sense_page_fans_id: "page_fans"
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 script:
   - id: fr_fan_off
     then:
@@ -195,14 +198,20 @@ interval:
           else:
             - lvgl.widget.update: {id: attic_high_btn, bg_color: $button_off_color}
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 lvgl:
   pages:
     - id: ${sense_page_fans_id}
       styles: sense_page_style
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       layout: 4x2
 =======
+=======
+>>>>>>> Stashed changes
       widgets:
         - obj:
             id: fans_controls_card
@@ -459,4 +468,7 @@ lvgl:
                         x: -14
                         text_font: nunito_20
                         text_color: sense_text
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
