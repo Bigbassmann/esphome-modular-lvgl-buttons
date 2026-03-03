@@ -12,7 +12,11 @@ lvgl:
             styles: sense_card_style
             layout:
               type: GRID
+<<<<<<< Updated upstream
               grid_rows: [FR(1), FR(1)]
+=======
+              grid_rows: [FR(1), FR(1), FR(1)]
+>>>>>>> Stashed changes
               grid_columns: [FR(1), FR(1), FR(1)]
               pad_row: 10
               pad_column: 10
@@ -80,7 +84,11 @@ lvgl:
               - button:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   id: menu_btn_info
+=======
+                  id: menu_btn_fans
+>>>>>>> Stashed changes
 =======
                   id: menu_btn_fans
 >>>>>>> Stashed changes
@@ -95,6 +103,7 @@ lvgl:
                   on_press:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                     - script.execute: nav_to_settings
                   widgets:
                     - label:
@@ -102,11 +111,16 @@ lvgl:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
                     - script.execute: nav_to_fans
                   widgets:
                     - label:
                         text: "Fans"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -116,7 +130,11 @@ lvgl:
               - button:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   id: menu_btn_loading
+=======
+                  id: menu_btn_lights
+>>>>>>> Stashed changes
 =======
                   id: menu_btn_lights
 >>>>>>> Stashed changes
@@ -131,6 +149,7 @@ lvgl:
                   on_press:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                     - script.execute: nav_to_home
                   widgets:
                     - label:
@@ -138,13 +157,33 @@ lvgl:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
                     - script.execute: nav_to_lighting_switches
                   widgets:
                     - label:
                         text: "Lights"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: menu_btn_info
+                  grid_cell_row_pos: 2
+                  grid_cell_column_pos: 0
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - script.execute: nav_to_info
+                  widgets:
+                    - label:
+                        text: "Info"
 >>>>>>> Stashed changes
                         align: CENTER
                         text_font: nunito_18

@@ -4,6 +4,7 @@ substitutions:
   sense_page_wifi_id: "page_wifi_setup"
   sense_page_settings_id: "page_settings"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   sense_page_tstat_id: "main_page"
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -20,10 +21,14 @@ substitutions:
 =======
   sense_page_tstat_id: "page_thermostat_v2"
 >>>>>>> Stashed changes
+=======
+  sense_page_tstat_id: "page_thermostat_v2"
+>>>>>>> Stashed changes
   sense_page_fans_id: "page_fans"
   sense_page_overrides_id: "page_overrides"
   sense_page_lighting_dimmers_id: "page_lighting_dimmers"
   sense_page_lighting_switches_id: "page_lighting_switches"
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -34,6 +39,10 @@ substitutions:
 >>>>>>> Stashed changes
 =======
   sense_page_sensors_id: "page_sensors"
+>>>>>>> Stashed changes
+=======
+  sense_page_sensors_id: "page_sensors"
+  sense_page_info_id: "info_screen"
 >>>>>>> Stashed changes
 
 globals:
@@ -82,11 +91,14 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - id: nav_to_prev
     then:
       - lambda: |-
           id(sense_nav_index) = (id(sense_nav_index) + 4) % 5;
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -114,6 +126,7 @@ script:
       - lvgl.page.show: ${sense_page_lighting_switches_id}
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - id: nav_to_prev
     then:
       - lambda: |-
@@ -126,15 +139,29 @@ script:
 =======
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
   - id: nav_to_sensors
     then:
       - lambda: 'id(sense_nav_index) = 9;'
       - lvgl.page.show: ${sense_page_sensors_id}
 
+<<<<<<< Updated upstream
   - id: nav_to_prev
     then:
       - lambda: |-
           id(sense_nav_index) = (id(sense_nav_index) + 9) % 10;
+>>>>>>> Stashed changes
+=======
+  - id: nav_to_info
+    then:
+      - lambda: 'id(sense_nav_index) = 10;'
+      - lvgl.page.show: ${sense_page_info_id}
+
+  - id: nav_to_prev
+    then:
+      - lambda: |-
+          id(sense_nav_index) = (id(sense_nav_index) + 10) % 11;
 >>>>>>> Stashed changes
       - if:
           condition:
@@ -165,7 +192,10 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -195,22 +225,34 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
       - if:
           condition:
             lambda: 'return id(sense_nav_index) == 9;'
           then:
             - script.execute: nav_to_sensors
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+      - if:
+          condition:
+            lambda: 'return id(sense_nav_index) == 10;'
+          then:
+            - script.execute: nav_to_info
 >>>>>>> Stashed changes
 
   - id: nav_to_next
     then:
       - lambda: |-
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -228,6 +270,9 @@ script:
 =======
           id(sense_nav_index) = (id(sense_nav_index) + 1) % 10;
 >>>>>>> Stashed changes
+=======
+          id(sense_nav_index) = (id(sense_nav_index) + 1) % 11;
+>>>>>>> Stashed changes
       - if:
           condition:
             lambda: 'return id(sense_nav_index) == 0;'
@@ -257,7 +302,10 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -287,17 +335,28 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
       - if:
           condition:
             lambda: 'return id(sense_nav_index) == 9;'
           then:
             - script.execute: nav_to_sensors
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+      - if:
+          condition:
+            lambda: 'return id(sense_nav_index) == 10;'
+          then:
+            - script.execute: nav_to_info
 >>>>>>> Stashed changes
 
 interval:
@@ -318,10 +377,20 @@ interval:
       - lvgl.label.update:
           id: sense_topbar_wifi
           text: !lambda |-
+<<<<<<< Updated upstream
             if (isnan(id(sense_topbar_wifi_db).state)) return std::string("WiFi --");
             char buf[24];
             snprintf(buf, sizeof(buf), "%.0f", id(sense_topbar_wifi_db).state);
             return std::string(buf);
+=======
+            float dbm = id(sense_topbar_wifi_db).state;
+            if (isnan(dbm)) return std::string("${mdi_wifi_strength_off}");
+            if (dbm >= -60.0f) return std::string("${mdi_wifi_strength_4}");
+            if (dbm >= -67.0f) return std::string("${mdi_wifi_strength_3}");
+            if (dbm >= -75.0f) return std::string("${mdi_wifi_strength_2}");
+            if (dbm >= -85.0f) return std::string("${mdi_wifi_strength_1}");
+            return std::string("${mdi_wifi_strength_off}");
+>>>>>>> Stashed changes
 
 lvgl:
   top_layer:

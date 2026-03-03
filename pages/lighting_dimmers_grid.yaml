@@ -6,8 +6,11 @@ lvgl:
     - id: ${sense_page_lighting_dimmers_id}
       styles: sense_page_style
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       layout: 5x2
 =======
+=======
+>>>>>>> Stashed changes
       layout:
         type: grid
         grid_rows:
@@ -26,4 +29,7 @@ lvgl:
       pad_bottom: 76
       pad_left: 8
       pad_right: 8
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

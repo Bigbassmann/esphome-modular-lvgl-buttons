@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 lvgl:
   pages:
     - id: page_thermostat_v2
@@ -240,6 +241,8 @@ lvgl:
 =======
       styles: sense_page_style
 =======
+=======
+>>>>>>> Stashed changes
 globals:
   - id: tstat_page_active
     type: bool
@@ -260,6 +263,9 @@ lvgl:
         - component.update: ha_tstat_target_temp
       on_unload:
         - lambda: 'id(tstat_page_active) = false;'
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       widgets:
         - obj:
@@ -323,9 +329,15 @@ lvgl:
               - arc:
                   id: tstat2_target_arc
                   align: TOP_MID
+<<<<<<< Updated upstream
                   y: 78
                   width: 220
                   height: 190
+=======
+                  y: 152
+                  width: 280
+                  height: 210
+>>>>>>> Stashed changes
                   min_value: 50
                   max_value: 85
                   value: 68
@@ -369,7 +381,11 @@ lvgl:
                   text: "Current"
                   align: TOP_MID
                   x: -12
+<<<<<<< Updated upstream
                   y: 112
+=======
+                  y: 188
+>>>>>>> Stashed changes
                   text_font: montserrat_14
                   text_color: 0x9CA3AF
 
@@ -378,7 +394,11 @@ lvgl:
                   text: "--"
                   align: TOP_MID
                   x: -12
+<<<<<<< Updated upstream
                   y: 130
+=======
+                  y: 206
+>>>>>>> Stashed changes
                   text_font: montserrat_20
                   text_color: 0xE5E7EB
 
@@ -386,7 +406,11 @@ lvgl:
                   text: "Target"
                   align: TOP_MID
                   x: -12
+<<<<<<< Updated upstream
                   y: 156
+=======
+                  y: 234
+>>>>>>> Stashed changes
                   text_font: montserrat_14
                   text_color: 0x9CA3AF
 
@@ -395,7 +419,11 @@ lvgl:
                   text: "--"
                   align: TOP_MID
                   x: -12
+<<<<<<< Updated upstream
                   y: 174
+=======
+                  y: 252
+>>>>>>> Stashed changes
                   text_font: montserrat_20
                   text_color: 0xFFFFFF
 
@@ -403,7 +431,11 @@ lvgl:
                   text: "Humidity"
                   align: TOP_MID
                   x: -12
+<<<<<<< Updated upstream
                   y: 202
+=======
+                  y: 280
+>>>>>>> Stashed changes
                   text_font: montserrat_14
                   text_color: 0x9CA3AF
 
@@ -412,7 +444,11 @@ lvgl:
                   text: "--"
                   align: TOP_MID
                   x: -12
+<<<<<<< Updated upstream
                   y: 220
+=======
+                  y: 298
+>>>>>>> Stashed changes
                   text_font: montserrat_16
                   text_color: 0x9CA3AF
 
@@ -420,7 +456,11 @@ lvgl:
                   text: "HVAC Mode"
                   align: TOP_LEFT
                   x: 28
+<<<<<<< Updated upstream
                   y: 250
+=======
+                  y: 84
+>>>>>>> Stashed changes
                   text_font: montserrat_14
                   text_color: 0xFFFFFF
 
@@ -428,10 +468,17 @@ lvgl:
                   id: tstat2_mode_dropdown
                   align: TOP_LEFT
                   x: 28
+<<<<<<< Updated upstream
                   y: 272
                   width: 156
                   height: 38
                   text_font: montserrat_16
+=======
+                  y: 102
+                  width: 138
+                  height: 32
+                  text_font: montserrat_14
+>>>>>>> Stashed changes
                   options:
                     - "Off"
                     - "Heat"
@@ -474,7 +521,11 @@ lvgl:
                   text: "Fan Mode"
                   align: TOP_RIGHT
                   x: -28
+<<<<<<< Updated upstream
                   y: 250
+=======
+                  y: 84
+>>>>>>> Stashed changes
                   text_font: montserrat_14
                   text_color: 0xFFFFFF
 
@@ -482,10 +533,17 @@ lvgl:
                   id: tstat2_fan_dropdown
                   align: TOP_RIGHT
                   x: -28
+<<<<<<< Updated upstream
                   y: 272
                   width: 156
                   height: 38
                   text_font: montserrat_16
+=======
+                  y: 102
+                  width: 138
+                  height: 32
+                  text_font: montserrat_14
+>>>>>>> Stashed changes
                   options:
                     - "Auto low"
                     - "Low"
@@ -524,6 +582,9 @@ lvgl:
                                   entity_id: ${ent_thermostat}
                                   fan_mode: "Circulation"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -536,7 +597,11 @@ script:
           data:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             entity_id: climate.thermostat
+=======
+            entity_id: ${ent_thermostat}
+>>>>>>> Stashed changes
 =======
             entity_id: ${ent_thermostat}
 >>>>>>> Stashed changes
@@ -552,7 +617,11 @@ script:
           data:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             entity_id: climate.thermostat
+=======
+            entity_id: ${ent_thermostat}
+>>>>>>> Stashed changes
 =======
             entity_id: ${ent_thermostat}
 >>>>>>> Stashed changes
@@ -568,7 +637,11 @@ script:
           data:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             entity_id: climate.thermostat
+=======
+            entity_id: ${ent_thermostat}
+>>>>>>> Stashed changes
 =======
             entity_id: ${ent_thermostat}
 >>>>>>> Stashed changes
@@ -580,6 +653,7 @@ script:
 text_sensor:
   - platform: homeassistant
     id: cap_tstat_mode
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     entity_id: climate.thermostat
@@ -602,6 +676,8 @@ text_sensor:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     entity_id: ${ent_thermostat}
     attribute: ${attr_hvac_mode}
     internal: true
@@ -620,6 +696,9 @@ text_sensor:
     entity_id: ${ent_thermostat}
     attribute: ${attr_fan_state}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -628,6 +707,7 @@ text_sensor:
 sensor:
   - platform: homeassistant
     id: cap_tstat_current_temp
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     entity_id: climate.thermostat
@@ -640,6 +720,8 @@ sensor:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     entity_id: ${ent_thermostat}
     attribute: ${attr_current_temperature}
     internal: true
@@ -648,6 +730,9 @@ sensor:
     entity_id: ${ent_thermostat}
     attribute: ${attr_temperature}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -665,7 +750,11 @@ interval:
       - if:
           condition:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             lambda: 'return id(boot_ready) && !id(screen_off) && (id(nav_page_index) == 5 || id(nav_page_index) == 8);'
+=======
+            lambda: 'return id(tstat_page_active);'
+>>>>>>> Stashed changes
 =======
             lambda: 'return id(tstat_page_active);'
 >>>>>>> Stashed changes

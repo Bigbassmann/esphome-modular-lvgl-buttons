@@ -35,17 +35,24 @@ lvgl:
                         text: ${icon}
 
                     - label:
+                        id: value_${uid}
+                        align: top_left
+                        x: 46
+                        y: 10
+                        text: "--%"
+
+                    - label:
                         id: label_${uid}
                         align: bottom_left
                         text: ${text}
 
                     - slider:
                         id: slider_${uid}
-                        align: top_right
-                        x: -5
+                        align: top_left
+                        x: 110
                         y: 10
-                        width: 30%
-                        height: 75%
+                        width: 60%
+                        height: 28
                         min_value: 0
                         max_value: 255
                         radius: 10
@@ -100,6 +107,9 @@ binary_sensor:
                 id: label_${uid}
                 text_color: $label_on_color
             - lvgl.widget.update:
+                id: value_${uid}
+                text_color: $label_on_color
+            - lvgl.widget.update:
                 id: slider_${uid}
                 knob:
                   bg_color: $label_on_color
@@ -113,6 +123,15 @@ binary_sensor:
             - lvgl.widget.update:
                 id: label_${uid}
                 text_color: $label_off_color
+            - lvgl.widget.update:
+                id: value_${uid}
+                text_color: $label_off_color
+            - lvgl.label.update:
+                id: value_${uid}
+                text: "0%"
+            - lvgl.slider.update:
+                id: slider_${uid}
+                value: 0
             - lvgl.widget.update:
                 id: slider_${uid}
                 knob:
@@ -131,3 +150,12 @@ sensor:
       - lvgl.slider.update:
           id: slider_${uid}
           value: !lambda return x;
+      - lvgl.label.update:
+          id: value_${uid}
+          text: !lambda |-
+            int pct = (int) lroundf((x * 100.0f) / 255.0f);
+            if (pct < 0) pct = 0;
+            if (pct > 100) pct = 100;
+            char buf[8];
+            snprintf(buf, sizeof(buf), "%d%%", pct);
+            return std::string(buf);

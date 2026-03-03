@@ -24,6 +24,11 @@ substitutions:
   ent_all_lights_toggle: "input_boolean.all_lights_toggle"
   ent_outdoor_lights_toggle: "input_boolean.outdoor_lights_toggle"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
+  ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
+>>>>>>> Stashed changes
 =======
   ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
   ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
@@ -47,11 +52,17 @@ substitutions:
   ent_thermostat_fan: "fan.thermostat"
   ent_thermostat_humidity: "sensor.thermostat_humidity"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
   ent_osat_temp: "sensor.meander_temperature"
   ent_kitchen_temp: "sensor.kitchen_motion_window_sw_air_temperature"
   ent_freezer_temp: "sensor.freezer_temp"
   ent_fridge_temp: "sensor.fridge_temp"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
   # Optional placeholders for other modules

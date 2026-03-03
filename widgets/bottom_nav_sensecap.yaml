@@ -6,6 +6,10 @@ obj:
   width: 100%
   height: ${sense_nav_h | default("68")}
   styles: sense_nav_bar_style
+<<<<<<< Updated upstream
+=======
+  border_width: 0
+>>>>>>> Stashed changes
   widgets:
     - button:
         id: prev_button

@@ -1,5 +1,6 @@
 globals:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - id: boot_ready
     type: bool
     initial_value: "false"
@@ -129,6 +130,8 @@ globals:
     type: bool
     initial_value: "false"
 =======
+=======
+>>>>>>> Stashed changes
   # Minimal shared globals for the active modular buttons stack.
   # Keep feature-specific globals inside the feature/page package.
   #
@@ -139,4 +142,7 @@ globals:
   - id: rp2040_last_seen_ms
     type: uint32_t
     initial_value: "0"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

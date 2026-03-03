@@ -14,12 +14,18 @@ lvgl:
           - FR(1)
           - FR(1)
           - FR(1)
+<<<<<<< Updated upstream
           - FR(1)
+=======
+>>>>>>> Stashed changes
         grid_columns:
           - FR(1)
           - FR(1)
           - FR(1)
+<<<<<<< Updated upstream
           - FR(1)
+=======
+>>>>>>> Stashed changes
         pad_row: 8
         pad_column: 8
       pad_top: ${sense_content_y | default("46")}

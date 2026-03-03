@@ -3,7 +3,10 @@ substitutions:
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 script:
@@ -199,6 +202,9 @@ interval:
             - lvgl.widget.update: {id: attic_high_btn, bg_color: $button_off_color}
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -208,8 +214,11 @@ lvgl:
       styles: sense_page_style
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       layout: 4x2
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       widgets:
@@ -469,6 +478,9 @@ lvgl:
                         text_font: nunito_20
                         text_color: sense_text
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

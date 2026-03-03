@@ -98,6 +98,10 @@ packages:
   # core_boot: !include esphome-modular-lvgl-buttons/common/core_boot.yaml
   core_globals: !include esphome-modular-lvgl-buttons/common/core_globals.yaml
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  # legacy_globals: !include esphome-modular-lvgl-buttons/common/core_globals_legacy_compat.yaml
+>>>>>>> Stashed changes
 =======
   # legacy_globals: !include esphome-modular-lvgl-buttons/common/core_globals_legacy_compat.yaml
 >>>>>>> Stashed changes
@@ -173,6 +177,7 @@ packages:
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   fans_btn_fr: !include
     file: esphome-modular-lvgl-buttons/buttons/switch_button.yaml
     vars:
@@ -228,6 +233,8 @@ packages:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
   overrides_btn_cleaners: !include
     file: esphome-modular-lvgl-buttons/buttons/override_button.yaml
     vars:
@@ -236,7 +243,11 @@ packages:
       row: 1
       column: 0
       text: "Cleaners OV"
+<<<<<<< Updated upstream
       icon: $mdi_information_box
+=======
+      icon: $mdi_broom
+>>>>>>> Stashed changes
       entity_id: ${ent_cleaners_toggle}
 
   overrides_btn_dani: !include
@@ -247,7 +258,11 @@ packages:
       row: 1
       column: 1
       text: "Dani Mode"
+<<<<<<< Updated upstream
       icon: $mdi_information_box
+=======
+      icon: $mdi_alarm_light
+>>>>>>> Stashed changes
       entity_id: ${ent_dani_mode_on}
 
   overrides_btn_lock: !include
@@ -258,7 +273,11 @@ packages:
       row: 2
       column: 0
       text: "Lock OV"
+<<<<<<< Updated upstream
       icon: $mdi_home
+=======
+      icon: $mdi_lock_off
+>>>>>>> Stashed changes
       entity_id: ${ent_front_door_auto_lock_off}
 
   overrides_btn_tod: !include
@@ -269,6 +288,7 @@ packages:
       row: 2
       column: 1
       text: "ToD On/Off"
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
@@ -289,6 +309,12 @@ packages:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+      icon: $mdi_home_automation
+      entity_id: ${ent_tod_control}
+
+  overrides_btn_motion: !include
+>>>>>>> Stashed changes
     file: esphome-modular-lvgl-buttons/buttons/override_button.yaml
     vars:
       uid: overrides_btn_motion
@@ -296,6 +322,7 @@ packages:
       row: 3
       column: 0
       text: "All Motion OV"
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
@@ -316,6 +343,12 @@ packages:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+      icon: $mdi_motion_sensor
+      entity_id: ${ent_motion_automation_off}
+
+  overrides_btn_entry_motion: !include
+>>>>>>> Stashed changes
     file: esphome-modular-lvgl-buttons/buttons/override_button.yaml
     vars:
       uid: overrides_btn_entry_motion
@@ -323,6 +356,7 @@ packages:
       row: 3
       column: 1
       text: "Entry OV"
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
@@ -346,6 +380,12 @@ packages:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+      icon: $mdi_motion_sensor
+      entity_id: ${ent_entry_motion_automation_off}
+
+  overrides_btn_garage: !include
+>>>>>>> Stashed changes
     file: esphome-modular-lvgl-buttons/buttons/override_button.yaml
     vars:
       uid: overrides_btn_garage
@@ -353,7 +393,11 @@ packages:
       row: 4
       column: 0
       text: "Garage O/V"
+<<<<<<< Updated upstream
       icon: $mdi_information_box
+=======
+      icon: $mdi_motion_sensor
+>>>>>>> Stashed changes
       entity_id: ${ent_garage_light_automation_off}
 
   overrides_btn_mbr: !include
@@ -364,12 +408,18 @@ packages:
       row: 4
       column: 1
       text: "MBR OV"
+<<<<<<< Updated upstream
       icon: $mdi_bed
       entity_id: ${ent_mbr_motion_off}
 
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+      icon: $mdi_motion_sensor
+      entity_id: ${ent_mbr_motion_off}
+
 >>>>>>> Stashed changes
   dimmer_btn_mbr: !include
     file: esphome-modular-lvgl-buttons/buttons/dimmer_light_button.yaml
@@ -575,10 +625,27 @@ font:
       $mdi_floor_lamp,  # mdi-floor-lamp - floor lamp
       $mdi_grid,  # mdi-grid - grid mode toggle
       $mdi_home,  # mdi-home - home/back navigation
+<<<<<<< Updated upstream
       $mdi_information_box,  # mdi-information-box - info screen
       $mdi_lamp,  # mdi-lamp - table lamp
       $mdi_led_strip,  # mdi-led-strip - LED strip light
       $mdi_lightbulb,  # mdi-lightbulb - generic bulb icon
+=======
+      $mdi_home_automation,  # mdi-home-automation - automation mode
+      $mdi_information_box,  # mdi-information-box - info screen
+      $mdi_broom,  # mdi-broom - cleaners mode
+      $mdi_alarm_light,  # mdi-alarm-light - panic mode
+      $mdi_lock_off,  # mdi-lock-off - auto-lock disabled
+      $mdi_motion_sensor,  # mdi-motion-sensor - motion override
+      $mdi_lamp,  # mdi-lamp - table lamp
+      $mdi_led_strip,  # mdi-led-strip - LED strip light
+      $mdi_lightbulb,  # mdi-lightbulb - generic bulb icon
+      $mdi_wifi_strength_1,  # mdi-wifi-strength-1 - weak signal
+      $mdi_wifi_strength_2,  # mdi-wifi-strength-2 - fair signal
+      $mdi_wifi_strength_3,  # mdi-wifi-strength-3 - good signal
+      $mdi_wifi_strength_4,  # mdi-wifi-strength-4 - strong signal
+      $mdi_wifi_strength_off,  # mdi-wifi-strength-off - disconnected/unknown
+>>>>>>> Stashed changes
       $mdi_string_lights,  # mdi-string-lights - decorative string lights
       $mdi_track_light,  # mdi-track-light - track lighting
       $mdi_white_balance_sunny,  # mdi-white-balance-sunny - color temp/sun icon
