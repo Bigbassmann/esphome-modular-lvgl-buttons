@@ -26,6 +26,11 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
+  ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
+>>>>>>> Stashed changes
 =======
   ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
   ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
@@ -59,7 +64,10 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -70,6 +78,9 @@ substitutions:
   ent_fridge_temp: "sensor.fridge_temp"
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

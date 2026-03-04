@@ -8,6 +8,10 @@ obj:
   styles: sense_topbar_style
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  border_width: 0
+>>>>>>> Stashed changes
 =======
   border_width: 0
 >>>>>>> Stashed changes
@@ -52,9 +56,15 @@ obj:
               align: CENTER
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               text_font: nunito_14
               text_color: sense_info
               text: "WiFi"
+=======
+              text_font: mdi_icons_40
+              text_color: sense_info
+              text: ${mdi_wifi_strength_off}
+>>>>>>> Stashed changes
 =======
               text_font: mdi_icons_40
               text_color: sense_info

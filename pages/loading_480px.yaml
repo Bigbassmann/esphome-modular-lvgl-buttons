@@ -120,7 +120,7 @@ script:
 
   - id: start_sync_animation
     then:
-      - lvgl.page.show: main_page
+      - script.execute: nav_to_home
       - delay: 1s
       - lvgl.bar.update:
           id: boot_synchronization_bar

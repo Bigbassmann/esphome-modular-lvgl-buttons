@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 substitutions:
+=======
+﻿substitutions:
+>>>>>>> Stashed changes
   sense_page_sensors_id: "page_sensors"
 
 lvgl:
@@ -8,6 +12,39 @@ lvgl:
       on_load:
         - component.update: internal_temp
         - component.update: ha_tstat_current_temp
+<<<<<<< Updated upstream
+=======
+        - lvgl.label.update:
+            id: data_internal_temp
+            text: !lambda |- 
+              if (isnan(id(internal_temp).state)) return std::string("--");
+              return str_sprintf("%.1f %s", id(internal_temp).state, id(internal_temp).get_unit_of_measurement_ref().c_str());
+        - lvgl.label.update:
+            id: data_ha_tstat_current_temp
+            text: !lambda |- 
+              if (isnan(id(ha_tstat_current_temp).state)) return std::string("--");
+              return str_sprintf("%.1f %s", id(ha_tstat_current_temp).state, id(ha_tstat_current_temp).get_unit_of_measurement_ref().c_str());
+        - lvgl.label.update:
+            id: data_ha_osat_temp
+            text: !lambda |- 
+              if (isnan(id(ha_osat_temp).state)) return std::string("--");
+              return str_sprintf("%.1f %s", id(ha_osat_temp).state, id(ha_osat_temp).get_unit_of_measurement_ref().c_str());
+        - lvgl.label.update:
+            id: data_ha_kitchen_temp
+            text: !lambda |- 
+              if (isnan(id(ha_kitchen_temp).state)) return std::string("--");
+              return str_sprintf("%.1f %s", id(ha_kitchen_temp).state, id(ha_kitchen_temp).get_unit_of_measurement_ref().c_str());
+        - lvgl.label.update:
+            id: data_ha_freezer_temp
+            text: !lambda |- 
+              if (isnan(id(ha_freezer_temp).state)) return std::string("--");
+              return str_sprintf("%.1f %s", id(ha_freezer_temp).state, id(ha_freezer_temp).get_unit_of_measurement_ref().c_str());
+        - lvgl.label.update:
+            id: data_ha_fridge_temp
+            text: !lambda |- 
+              if (isnan(id(ha_fridge_temp).state)) return std::string("--");
+              return str_sprintf("%.1f %s", id(ha_fridge_temp).state, id(ha_fridge_temp).get_unit_of_measurement_ref().c_str());
+>>>>>>> Stashed changes
       layout:
         type: grid
         grid_rows:
@@ -16,7 +53,10 @@ lvgl:
           - FR(1)
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           - FR(1)
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -27,7 +67,10 @@ lvgl:
           - FR(1)
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           - FR(1)
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======

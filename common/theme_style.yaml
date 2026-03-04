@@ -61,7 +61,11 @@ lvgl:
     - id: sense_page_style
       scrollbar_mode: "OFF"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       bg_color: sense_bg
+=======
+      bg_color: sense_surface
+>>>>>>> Stashed changes
 =======
       bg_color: sense_surface
 >>>>>>> Stashed changes
@@ -92,7 +96,11 @@ lvgl:
 
     - id: sense_card_style
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       bg_color: sense_surface_alt
+=======
+      bg_color: sense_surface
+>>>>>>> Stashed changes
 =======
       bg_color: sense_surface
 >>>>>>> Stashed changes
@@ -104,6 +112,7 @@ lvgl:
 
     - id: sense_nav_btn_style
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       bg_color: sense_surface_alt
       bg_opa: cover
       text_color: sense_text
@@ -113,6 +122,8 @@ lvgl:
       pad_all: 6
 
 =======
+=======
+>>>>>>> Stashed changes
       bg_color: sense_tile_blue
       bg_opa: cover
       text_color: sense_text
@@ -169,6 +180,56 @@ lvgl:
       border_width: 0
       radius: 10
       pad_all: 8
+
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+    - id: sense_display_row_btn_style
+      bg_color: sense_cat_admin
+      bg_opa: cover
+      text_color: sense_text
+      border_width: 0
+      radius: 8
+      pad_all: 6
+
+    - id: sense_card_flat_style
+      bg_color: sense_surface
+      bg_opa: cover
+      border_width: 0
+      radius: 8
+      pad_all: 8
+
+    - id: sense_menu_cat1_style
+      bg_color: sense_cat_admin
+      bg_opa: cover
+      text_color: sense_text
+      border_width: 0
+      radius: 8
+      pad_all: 6
+
+    - id: sense_menu_cat2_style
+      bg_color: sense_cat_climate
+      bg_opa: cover
+      text_color: sense_text
+      border_width: 0
+      radius: 8
+      pad_all: 6
+
+    - id: sense_menu_cat3_style
+      bg_color: sense_cat_lights
+      bg_opa: cover
+      text_color: sense_text
+      border_width: 0
+      radius: 8
+      pad_all: 6
+
+    - id: sense_menu_cat4_style
+      bg_color: sense_cat_overrides
+      bg_opa: cover
+      text_color: sense_text
+      border_width: 0
+      radius: 8
+      pad_all: 6
 
 >>>>>>> Stashed changes
 select:

@@ -34,7 +34,10 @@ color:
     - id: sense_tile_blue
       hex: '3B82C4'
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     - id: sense_tile_red
       hex: 'D7263D'
     - id: sense_tile_teal
@@ -47,6 +50,17 @@ color:
       hex: '4CC9F0'
     - id: sense_tile_placeholder_text
       hex: '93C5FD'
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+    - id: sense_cat_admin
+      hex: '1D4ED8'
+    - id: sense_cat_climate
+      hex: '0F766E'
+    - id: sense_cat_lights
+      hex: 'B45309'
+    - id: sense_cat_overrides
+      hex: '7E22CE'
 >>>>>>> Stashed changes
 
     - id: burnt_sienna

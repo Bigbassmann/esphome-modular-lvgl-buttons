@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 lvgl:
+=======
+﻿lvgl:
+>>>>>>> Stashed changes
   pages:
     - id: page_wifi_setup
       styles: sense_page_style
@@ -14,7 +18,11 @@ lvgl:
               - label:
                   text: "WiFi Setup"
                   align: TOP_MID
+<<<<<<< Updated upstream
                   y: 10
+=======
+                  y: 12
+>>>>>>> Stashed changes
                   text_font: nunito_24
                   text_color: sense_text
 
@@ -22,30 +30,51 @@ lvgl:
                   id: wifi_setup_status
                   text: "Use captive portal for setup."
                   align: TOP_MID
+<<<<<<< Updated upstream
                   y: 50
                   text_font: nunito_14
                   text_color: sense_text_muted
+=======
+                  y: 56
+                  text_font: nunito_18
+                  text_color: sense_text
+>>>>>>> Stashed changes
 
               - label:
                   text: "1. Connect to device AP"
                   align: TOP_LEFT
                   x: 14
+<<<<<<< Updated upstream
                   y: 92
                   text_font: nunito_14
+=======
+                  y: 104
+                  text_font: nunito_18
+>>>>>>> Stashed changes
                   text_color: sense_text
               - label:
                   text: "2. Open http://192.168.4.1"
                   align: TOP_LEFT
                   x: 14
+<<<<<<< Updated upstream
                   y: 118
                   text_font: nunito_14
+=======
+                  y: 136
+                  text_font: nunito_18
+>>>>>>> Stashed changes
                   text_color: sense_text
               - label:
                   text: "3. Save your WiFi credentials"
                   align: TOP_LEFT
                   x: 14
+<<<<<<< Updated upstream
                   y: 144
                   text_font: nunito_14
+=======
+                  y: 168
+                  text_font: nunito_18
+>>>>>>> Stashed changes
                   text_color: sense_text
 
               - button:
@@ -63,3 +92,7 @@ lvgl:
                         align: CENTER
                         text_font: nunito_18
                         text_color: sense_text
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes

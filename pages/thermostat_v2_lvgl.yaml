@@ -1,6 +1,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 lvgl:
   pages:
     - id: page_thermostat_v2
@@ -246,6 +247,8 @@ lvgl:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 globals:
   - id: tstat_page_active
     type: bool
@@ -268,6 +271,9 @@ lvgl:
         - lambda: 'id(tstat_page_active) = false;'
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -337,6 +343,7 @@ lvgl:
                   align: TOP_MID
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 78
                   width: 220
                   height: 190
@@ -344,6 +351,11 @@ lvgl:
                   y: 152
                   width: 280
                   height: 210
+>>>>>>> Stashed changes
+=======
+                  y: 128
+                  width: 300
+                  height: 228
 >>>>>>> Stashed changes
 =======
                   y: 128
@@ -360,7 +372,11 @@ lvgl:
                   indicator:
                     arc_color: 0x6B7280
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                     arc_width: 16
+=======
+                    arc_width: 20
+>>>>>>> Stashed changes
 =======
                     arc_width: 20
 >>>>>>> Stashed changes
@@ -399,9 +415,13 @@ lvgl:
                   x: -12
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 112
 =======
                   y: 188
+>>>>>>> Stashed changes
+=======
+                  y: 176
 >>>>>>> Stashed changes
 =======
                   y: 176
@@ -416,9 +436,13 @@ lvgl:
                   x: -12
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 130
 =======
                   y: 206
+>>>>>>> Stashed changes
+=======
+                  y: 194
 >>>>>>> Stashed changes
 =======
                   y: 194
@@ -432,9 +456,13 @@ lvgl:
                   x: -12
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 156
 =======
                   y: 234
+>>>>>>> Stashed changes
+=======
+                  y: 222
 >>>>>>> Stashed changes
 =======
                   y: 222
@@ -449,9 +477,13 @@ lvgl:
                   x: -12
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 174
 =======
                   y: 252
+>>>>>>> Stashed changes
+=======
+                  y: 240
 >>>>>>> Stashed changes
 =======
                   y: 240
@@ -465,9 +497,13 @@ lvgl:
                   x: -12
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 202
 =======
                   y: 280
+>>>>>>> Stashed changes
+=======
+                  y: 268
 >>>>>>> Stashed changes
 =======
                   y: 268
@@ -482,9 +518,13 @@ lvgl:
                   x: -12
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 220
 =======
                   y: 298
+>>>>>>> Stashed changes
+=======
+                  y: 286
 >>>>>>> Stashed changes
 =======
                   y: 286
@@ -498,9 +538,13 @@ lvgl:
                   x: 28
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 250
 =======
                   y: 84
+>>>>>>> Stashed changes
+=======
+                  y: 72
 >>>>>>> Stashed changes
 =======
                   y: 72
@@ -514,6 +558,7 @@ lvgl:
                   x: 28
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 272
                   width: 156
                   height: 38
@@ -525,10 +570,15 @@ lvgl:
                   text_font: montserrat_14
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
                   y: 90
                   width: 138
                   height: 32
                   text_font: montserrat_14
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                   options:
                     - "Off"
@@ -574,9 +624,13 @@ lvgl:
                   x: -28
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 250
 =======
                   y: 84
+>>>>>>> Stashed changes
+=======
+                  y: 72
 >>>>>>> Stashed changes
 =======
                   y: 72
@@ -590,6 +644,7 @@ lvgl:
                   x: -28
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 272
                   width: 156
                   height: 38
@@ -601,10 +656,15 @@ lvgl:
                   text_font: montserrat_14
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
                   y: 90
                   width: 138
                   height: 32
                   text_font: montserrat_14
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                   options:
                     - "Auto low"
@@ -646,6 +706,9 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -664,7 +727,11 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             entity_id: climate.thermostat
+=======
+            entity_id: ${ent_thermostat}
+>>>>>>> Stashed changes
 =======
             entity_id: ${ent_thermostat}
 >>>>>>> Stashed changes
@@ -688,7 +755,11 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             entity_id: climate.thermostat
+=======
+            entity_id: ${ent_thermostat}
+>>>>>>> Stashed changes
 =======
             entity_id: ${ent_thermostat}
 >>>>>>> Stashed changes
@@ -712,7 +783,11 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             entity_id: climate.thermostat
+=======
+            entity_id: ${ent_thermostat}
+>>>>>>> Stashed changes
 =======
             entity_id: ${ent_thermostat}
 >>>>>>> Stashed changes
@@ -730,6 +805,7 @@ script:
 text_sensor:
   - platform: homeassistant
     id: cap_tstat_mode
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -758,6 +834,8 @@ text_sensor:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     entity_id: ${ent_thermostat}
     attribute: ${attr_hvac_mode}
     internal: true
@@ -778,6 +856,9 @@ text_sensor:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -790,6 +871,7 @@ text_sensor:
 sensor:
   - platform: homeassistant
     id: cap_tstat_current_temp
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -808,6 +890,8 @@ sensor:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     entity_id: ${ent_thermostat}
     attribute: ${attr_current_temperature}
     internal: true
@@ -818,6 +902,9 @@ sensor:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -841,7 +928,11 @@ interval:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             lambda: 'return id(boot_ready) && !id(screen_off) && (id(nav_page_index) == 5 || id(nav_page_index) == 8);'
+=======
+            lambda: 'return id(tstat_page_active);'
+>>>>>>> Stashed changes
 =======
             lambda: 'return id(tstat_page_active);'
 >>>>>>> Stashed changes

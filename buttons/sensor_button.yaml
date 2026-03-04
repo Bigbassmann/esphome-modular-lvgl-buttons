@@ -1,4 +1,4 @@
----
+﻿---
 # Sensor button
 #    uid:
 #    page_id:
@@ -76,6 +76,12 @@ sensor:
       then:
         - lvgl.label.update:
             id: data_${sensor_id}
-            text:
-              format: "%.1f %s"
-              args: ['x', 'id(${sensor_id}).get_unit_of_measurement_ref().c_str()']
+            text: !lambda |-
+              if (isnan(x)) {
+                return std::string("--");
+              }
+              auto unit = id(${sensor_id}).get_unit_of_measurement_ref();
+              if (unit.empty()) {
+                return str_sprintf("%.1f", x);
+              }
+              return str_sprintf("%.1f %s", x, unit.c_str());

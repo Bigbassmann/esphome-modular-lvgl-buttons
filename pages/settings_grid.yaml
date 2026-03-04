@@ -3,6 +3,7 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   sense_page_tstat_id: "main_page"
   sense_page_wifi_id: "page_wifi_setup"
   sense_page_fans_id: "main_page"
@@ -10,6 +11,8 @@ substitutions:
   sense_page_lighting_dimmers_id: "main_page"
   sense_page_lighting_switches_id: "main_page"
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -23,10 +26,14 @@ substitutions:
   sense_page_sensors_id: "page_sensors"
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+  sense_page_display_settings_id: "page_display_settings"
 >>>>>>> Stashed changes
 
 lvgl:
@@ -46,7 +53,11 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               grid_rows: [FR(1), FR(1), FR(1)]
+=======
+              grid_rows: [FR(1), FR(1), FR(1), FR(1)]
+>>>>>>> Stashed changes
 =======
               grid_rows: [FR(1), FR(1), FR(1), FR(1)]
 >>>>>>> Stashed changes
@@ -153,7 +164,10 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -175,8 +189,26 @@ lvgl:
                         text_color: sense_text
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+              - button:
+                  id: settings_btn_display
+                  grid_cell_row_pos: 3
+                  grid_cell_column_pos: 1
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - lvgl.page.show: ${sense_page_display_settings_id}
+                  widgets:
+                    - label:
+                        text: "Display"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
 >>>>>>> Stashed changes
