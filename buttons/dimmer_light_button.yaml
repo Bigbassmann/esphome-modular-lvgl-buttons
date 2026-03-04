@@ -41,6 +41,7 @@ lvgl:
                         x: 46
                         y: 10
                         text: "--%"
+<<<<<<< Updated upstream
                     - label:
                         id: value_${uid}
                         align: top_left
@@ -48,6 +49,8 @@ lvgl:
                         y: 10
                         text: "--%"
 
+=======
+>>>>>>> Stashed changes
                     - label:
                         id: label_${uid}
                         align: bottom_left
@@ -173,6 +176,9 @@ sensor:
             snprintf(buf, sizeof(buf), "%d%%", pct);
             return std::string(buf);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

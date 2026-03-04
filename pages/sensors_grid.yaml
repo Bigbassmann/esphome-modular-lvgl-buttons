@@ -1,6 +1,10 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 substitutions:
+=======
+﻿substitutions:
+>>>>>>> Stashed changes
 =======
 ﻿substitutions:
 >>>>>>> Stashed changes
@@ -18,7 +22,10 @@ lvgl:
         - component.update: ha_tstat_current_temp
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
         - lvgl.label.update:
@@ -52,6 +59,9 @@ lvgl:
               if (isnan(id(ha_fridge_temp).state)) return std::string("--");
               return str_sprintf("%.1f %s", id(ha_fridge_temp).state, id(ha_fridge_temp).get_unit_of_measurement_ref().c_str());
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -65,7 +75,10 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           - FR(1)
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -82,7 +95,10 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           - FR(1)
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======

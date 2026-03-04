@@ -4,6 +4,7 @@ globals:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - id: boot_ready
     type: bool
     initial_value: "false"
@@ -141,6 +142,8 @@ globals:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
   # Minimal shared globals for the active modular buttons stack.
   # Keep feature-specific globals inside the feature/page package.
   #
@@ -155,6 +158,9 @@ globals:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

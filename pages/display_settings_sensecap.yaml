@@ -7,10 +7,14 @@ script:
     then:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       - lvgl.slider.update:
           id: display_brightness_slider
           value: !lambda 'return id(sense_display_brightness_pct);'
           animated: false
+=======
+      - lvgl.slider.update: {id: display_brightness_slider, value: !lambda 'return id(sense_display_brightness_pct);', animated: false}
+>>>>>>> Stashed changes
 =======
       - lvgl.slider.update: {id: display_brightness_slider, value: !lambda 'return id(sense_display_brightness_pct);', animated: false}
 >>>>>>> Stashed changes
@@ -26,6 +30,7 @@ script:
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       - lvgl.slider.update:
           id: display_sleep_timeout_slider
           value: !lambda 'return id(sense_display_sleep_timeout_s);'
@@ -38,6 +43,8 @@ script:
             return std::string(buf);
 
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       - lvgl.slider.update: {id: display_idle_scroll_slider, value: !lambda 'return id(sense_display_idle_scroll_s);', animated: false}
@@ -83,6 +90,9 @@ script:
             - lvgl.widget.update: {id: display_idle_scroll_toggle, bg_color: sense_surface_alt}
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -98,7 +108,10 @@ script:
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       - if:
@@ -112,6 +125,9 @@ script:
             - lvgl.widget.update: {id: display_scroll_sleep_toggle, bg_color: sense_surface_alt}
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -130,7 +146,11 @@ lvgl:
             height: ${sense_content_h | default("366")}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             styles: sense_card_style
+=======
+            styles: sense_card_flat_style
+>>>>>>> Stashed changes
 =======
             styles: sense_card_flat_style
 >>>>>>> Stashed changes
@@ -143,7 +163,11 @@ lvgl:
                   align: TOP_MID
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 8
+=======
+                  y: 6
+>>>>>>> Stashed changes
 =======
                   y: 6
 >>>>>>> Stashed changes
@@ -158,6 +182,7 @@ lvgl:
                   align: TOP_LEFT
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   x: 16
                   y: 58
                   width: 150
@@ -166,12 +191,17 @@ lvgl:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
                   x: 14
                   y: 48
                   width: 142
                   height: 36
                   styles: sense_display_row_btn_style
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -181,7 +211,12 @@ lvgl:
                         align: CENTER
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                         text_font: nunito_18
+=======
+                        text_font: nunito_16
+                        text_color: sense_text
+>>>>>>> Stashed changes
 =======
                         text_font: nunito_16
                         text_color: sense_text
@@ -196,6 +231,7 @@ lvgl:
                   align: TOP_LEFT
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   x: 178
                   y: 70
                   width: 190
@@ -208,6 +244,8 @@ lvgl:
                           id(sense_display_brightness_pct) = x;
                           id(sense_display_last_interaction_ms) = millis();
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
                   x: 166
@@ -229,6 +267,9 @@ lvgl:
                           id(sense_display_last_auto_scroll_ms) = id(sense_display_last_interaction_ms);
                           id(sense_display_scroll_sleep_start_ms) = 0;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -239,7 +280,11 @@ lvgl:
                             char buf[12];
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                             snprintf(buf, sizeof(buf), "%d%%", x);
+=======
+                            snprintf(buf, sizeof(buf), "%d%%", (int) x);
+>>>>>>> Stashed changes
 =======
                             snprintf(buf, sizeof(buf), "%d%%", (int) x);
 >>>>>>> Stashed changes
@@ -254,10 +299,13 @@ lvgl:
                   align: TOP_RIGHT
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   x: -16
                   y: 64
                   text_font: nunito_20
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
                   x: -12
@@ -370,6 +418,9 @@ lvgl:
                   y: 140
                   text_font: nunito_18
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -380,6 +431,7 @@ lvgl:
                   align: TOP_LEFT
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   x: 16
                   y: 126
                   width: 150
@@ -388,12 +440,17 @@ lvgl:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
                   x: 14
                   y: 180
                   width: 142
                   height: 36
                   styles: sense_display_row_btn_style
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -403,8 +460,11 @@ lvgl:
                           id(sense_display_sleep_enabled) = !id(sense_display_sleep_enabled);
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                           id(sense_display_last_interaction_ms) = millis();
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
                           if (id(sense_display_sleep_enabled)) id(sense_display_idle_scroll_enabled) = false;
@@ -412,6 +472,9 @@ lvgl:
                           id(sense_display_last_auto_scroll_ms) = id(sense_display_last_interaction_ms);
                           id(sense_display_scroll_sleep_start_ms) = 0;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -427,6 +490,7 @@ lvgl:
                             - script.execute: sense_display_apply_brightness
                       - script.execute: display_settings_refresh_ui
                   widgets:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
                     - label:
@@ -462,10 +526,15 @@ lvgl:
                     - label: {text: "Sleep", align: LEFT_MID, x: 10, text_font: nunito_16, text_color: sense_text}
                     - label: {id: display_sleep_state, text: "ON", align: RIGHT_MID, x: -10, text_font: nunito_16, text_color: sense_text}
 >>>>>>> Stashed changes
+=======
+                    - label: {text: "Sleep", align: LEFT_MID, x: 10, text_font: nunito_16, text_color: sense_text}
+                    - label: {id: display_sleep_state, text: "ON", align: RIGHT_MID, x: -10, text_font: nunito_16, text_color: sense_text}
+>>>>>>> Stashed changes
 
               - slider:
                   id: display_sleep_timeout_slider
                   align: TOP_LEFT
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
                   x: 178
@@ -479,6 +548,8 @@ lvgl:
                       - lambda: |-
                           id(sense_display_sleep_timeout_s) = x;
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
                   x: 166
@@ -497,6 +568,9 @@ lvgl:
                       - lambda: |-
                           id(sense_display_sleep_timeout_s) = (int) x;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -506,8 +580,13 @@ lvgl:
                           text: !lambda |-
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                             char buf[16];
                             snprintf(buf, sizeof(buf), "%ds", x);
+=======
+                            char buf[12];
+                            snprintf(buf, sizeof(buf), "%ds", (int) x);
+>>>>>>> Stashed changes
 =======
                             char buf[12];
                             snprintf(buf, sizeof(buf), "%ds", (int) x);
@@ -524,10 +603,13 @@ lvgl:
                   align: TOP_RIGHT
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   x: -16
                   y: 200
                   text_font: nunito_20
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
                   x: -12
@@ -589,6 +671,9 @@ lvgl:
                   y: 228
                   text_font: nunito_18
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

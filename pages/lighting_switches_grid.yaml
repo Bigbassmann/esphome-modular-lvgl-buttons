@@ -5,4 +5,22 @@ lvgl:
   pages:
     - id: ${sense_page_lighting_switches_id}
       styles: sense_page_style
+<<<<<<< Updated upstream
       layout: 5x2
+=======
+      layout:
+        type: grid
+        grid_rows:
+          - FR(1)
+          - FR(1)
+          - FR(1)
+        grid_columns:
+          - FR(1)
+          - FR(1)
+        pad_row: 8
+        pad_column: 8
+      pad_top: ${sense_content_y | default("46")}
+      pad_bottom: 76
+      pad_left: 8
+      pad_right: 8
+>>>>>>> Stashed changes
