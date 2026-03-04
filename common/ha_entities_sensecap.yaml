@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 # Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common.yaml.
+=======
+﻿# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common.yaml.
+>>>>>>> Stashed changes
 # This file is a compatibility layer for the "buttons" setup.
 substitutions:
   # Common attribute names
@@ -27,6 +31,11 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
+  ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
+>>>>>>> Stashed changes
 =======
   ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
   ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
@@ -53,6 +62,19 @@ substitutions:
   ent_fr_lights: "light.in_wall_paddle_dimmer_500s"
   ent_library_lights: "light.library_lights"
   ent_living_room_lights: "light.living_room_lights"
+<<<<<<< Updated upstream
+=======
+  ent_laundry_room_lights: "light.laundry_room_lights"
+  ent_garage_lights: "light.garage_light_sw"
+  ent_mbr_closet_light: "light.mbr_closet_light"
+  ent_fence_lights: "switch.plug_fence_lights"
+  ent_outdoor_entry_lights: "light.outdoor_lights_entry"
+  ent_outdoor_garage_lights: "light.outdoor_lights_garage"
+  ent_kitchen_lights_4: "light.kitchen_lights_4"
+  ent_kitchen_lights_5: "light.kitchen_lights_5"
+  ent_entry_lights: "light.entry_lights"
+  ent_hall_lights: "light.in_wall_paddle_dimmer_500s_2"
+>>>>>>> Stashed changes
 
   # Lock
   ent_front_door_lock: "lock.front_door_lock"
@@ -65,7 +87,10 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -79,6 +104,9 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

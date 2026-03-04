@@ -8,12 +8,18 @@ substitutions:
   sense_display_sleep_enabled: "true"
   sense_display_sleep_timeout_s: "60"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
   sense_display_idle_scroll_enabled: "false"
   sense_display_idle_scroll_s: "30"
   sense_display_idle_scroll_rate_s: "5"
   sense_display_scroll_sleep_enabled: "false"
   sense_display_scroll_sleep_min: "30"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 time:
@@ -34,7 +40,10 @@ globals:
     restore_value: true
     initial_value: "${sense_display_sleep_timeout_s}"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
   - id: sense_display_idle_scroll_enabled
     type: bool
     restore_value: true
@@ -55,13 +64,19 @@ globals:
     type: int
     restore_value: true
     initial_value: "${sense_display_scroll_sleep_min}"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   - id: sense_display_last_interaction_ms
     type: uint32_t
     restore_value: false
     initial_value: "0"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
   - id: sense_display_last_auto_scroll_ms
     type: uint32_t
     restore_value: false
@@ -70,6 +85,9 @@ globals:
     type: uint32_t
     restore_value: false
     initial_value: "0"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   - id: sense_display_screen_off
     type: bool
@@ -95,6 +113,11 @@ esphome:
         - lambda: |-
             id(sense_display_last_interaction_ms) = millis();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+            id(sense_display_last_auto_scroll_ms) = id(sense_display_last_interaction_ms);
+            id(sense_display_scroll_sleep_start_ms) = 0;
+>>>>>>> Stashed changes
 =======
             id(sense_display_last_auto_scroll_ms) = id(sense_display_last_interaction_ms);
             id(sense_display_scroll_sleep_start_ms) = 0;
@@ -109,6 +132,11 @@ touchscreen:
         - lambda: |-
             id(sense_display_last_interaction_ms) = millis();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+            id(sense_display_last_auto_scroll_ms) = id(sense_display_last_interaction_ms);
+            id(sense_display_scroll_sleep_start_ms) = 0;
+>>>>>>> Stashed changes
 =======
             id(sense_display_last_auto_scroll_ms) = id(sense_display_last_interaction_ms);
             id(sense_display_scroll_sleep_start_ms) = 0;
@@ -119,6 +147,10 @@ touchscreen:
             then:
               - lvgl.resume:
               - lvgl.widget.redraw
+<<<<<<< Updated upstream
+=======
+              - script.execute: nav_to_home
+>>>>>>> Stashed changes
               - script.execute: sense_display_apply_brightness
               - lambda: "id(sense_display_screen_off) = false;"
 
@@ -129,8 +161,11 @@ interval:
           condition:
             lambda: |-
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               if (!id(sense_display_sleep_enabled)) return false;
 =======
+=======
+>>>>>>> Stashed changes
               if (id(sense_display_screen_off)) return false;
               if (!id(sense_display_idle_scroll_enabled)) return false;
               uint32_t now = millis();
@@ -165,6 +200,9 @@ interval:
             lambda: |-
               if (!id(sense_display_sleep_enabled)) return false;
               if (id(sense_display_idle_scroll_enabled)) return false;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
               if (id(sense_display_screen_off)) return false;
               uint32_t elapsed = millis() - id(sense_display_last_interaction_ms);
@@ -173,3 +211,9 @@ interval:
             - lvgl.pause:
             - light.turn_off: display_backlight
             - lambda: "id(sense_display_screen_off) = true;"
+<<<<<<< Updated upstream
+=======
+
+
+
+>>>>>>> Stashed changes

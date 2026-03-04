@@ -35,7 +35,10 @@ color:
       hex: '3B82C4'
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     - id: sense_tile_red
@@ -51,8 +54,11 @@ color:
     - id: sense_tile_placeholder_text
       hex: '93C5FD'
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
     - id: sense_cat_admin
       hex: '1D4ED8'
     - id: sense_cat_climate
@@ -61,6 +67,9 @@ color:
       hex: 'B45309'
     - id: sense_cat_overrides
       hex: '7E22CE'
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
     - id: burnt_sienna

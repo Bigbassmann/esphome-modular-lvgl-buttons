@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 lvgl:
+=======
+﻿lvgl:
+>>>>>>> Stashed changes
 =======
 ﻿lvgl:
 >>>>>>> Stashed changes
@@ -19,7 +23,11 @@ lvgl:
                   text: "WiFi Setup"
                   align: TOP_MID
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 10
+=======
+                  y: 12
+>>>>>>> Stashed changes
 =======
                   y: 12
 >>>>>>> Stashed changes
@@ -31,9 +39,15 @@ lvgl:
                   text: "Use captive portal for setup."
                   align: TOP_MID
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 50
                   text_font: nunito_14
                   text_color: sense_text_muted
+=======
+                  y: 56
+                  text_font: nunito_18
+                  text_color: sense_text
+>>>>>>> Stashed changes
 =======
                   y: 56
                   text_font: nunito_18
@@ -45,8 +59,13 @@ lvgl:
                   align: TOP_LEFT
                   x: 14
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 92
                   text_font: nunito_14
+=======
+                  y: 104
+                  text_font: nunito_18
+>>>>>>> Stashed changes
 =======
                   y: 104
                   text_font: nunito_18
@@ -57,8 +76,13 @@ lvgl:
                   align: TOP_LEFT
                   x: 14
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 118
                   text_font: nunito_14
+=======
+                  y: 136
+                  text_font: nunito_18
+>>>>>>> Stashed changes
 =======
                   y: 136
                   text_font: nunito_18
@@ -69,8 +93,13 @@ lvgl:
                   align: TOP_LEFT
                   x: 14
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 144
                   text_font: nunito_14
+=======
+                  y: 168
+                  text_font: nunito_18
+>>>>>>> Stashed changes
 =======
                   y: 168
                   text_font: nunito_18
@@ -93,6 +122,10 @@ lvgl:
                         text_font: nunito_18
                         text_color: sense_text
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes

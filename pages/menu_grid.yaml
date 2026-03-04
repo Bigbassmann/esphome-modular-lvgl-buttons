@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 lvgl:
+=======
+﻿lvgl:
+>>>>>>> Stashed changes
   pages:
     - id: page_menu
       styles: sense_page_style
@@ -9,6 +13,7 @@ lvgl:
             y: ${sense_content_y | default("46")}
             width: 100%
             height: ${sense_content_h | default("366")}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             styles: sense_card_style
             layout:
@@ -23,10 +28,15 @@ lvgl:
               grid_rows: [FR(1), FR(1), FR(1)]
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
             styles: sense_card_flat_style
             layout:
               type: GRID
               grid_rows: [FR(1), FR(1), FR(1), FR(1)]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
               grid_columns: [FR(1), FR(1), FR(1)]
               pad_row: 10
@@ -39,7 +49,11 @@ lvgl:
                   grid_cell_x_align: STRETCH
                   grid_cell_y_align: STRETCH
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   styles: sense_nav_btn_style
+=======
+                  styles: sense_menu_cat2_style
+>>>>>>> Stashed changes
 =======
                   styles: sense_menu_cat2_style
 >>>>>>> Stashed changes
@@ -58,7 +72,11 @@ lvgl:
                   grid_cell_x_align: STRETCH
                   grid_cell_y_align: STRETCH
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   styles: sense_nav_btn_style
+=======
+                  styles: sense_menu_cat2_style
+>>>>>>> Stashed changes
 =======
                   styles: sense_menu_cat2_style
 >>>>>>> Stashed changes
@@ -72,7 +90,11 @@ lvgl:
                         text_color: sense_text
               - button:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   id: menu_btn_wifi
+=======
+                  id: menu_btn_fans
+>>>>>>> Stashed changes
 =======
                   id: menu_btn_fans
 >>>>>>> Stashed changes
@@ -81,6 +103,7 @@ lvgl:
                   grid_cell_x_align: STRETCH
                   grid_cell_y_align: STRETCH
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   styles: sense_nav_btn_style
                   on_press:
                     - script.execute: nav_to_wifi
@@ -88,6 +111,8 @@ lvgl:
                     - label:
                         text: "WiFi Setup"
 =======
+=======
+>>>>>>> Stashed changes
                   styles: sense_menu_cat2_style
                   on_press:
                     - script.execute: nav_to_fans
@@ -154,6 +179,7 @@ lvgl:
                   widgets:
                     - label:
                         text: "Overrides"
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
                         align: CENTER
                         text_font: nunito_18
@@ -308,6 +334,8 @@ lvgl:
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
                         align: CENTER
                         text_font: nunito_18
                         text_color: sense_text
@@ -317,6 +345,7 @@ lvgl:
                   grid_cell_column_pos: 1
                   grid_cell_x_align: STRETCH
                   grid_cell_y_align: STRETCH
+<<<<<<< Updated upstream
                   styles: sense_nav_btn_style
 =======
                   id: menu_btn_display
@@ -326,14 +355,20 @@ lvgl:
                   grid_cell_y_align: STRETCH
                   styles: sense_menu_cat1_style
 >>>>>>> Stashed changes
+=======
+                  styles: sense_menu_cat1_style
+>>>>>>> Stashed changes
                   on_press:
                     - script.execute: nav_to_display_settings
                   widgets:
                     - label:
                         text: "Display"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
                         align: CENTER
                         text_font: nunito_18
                         text_color: sense_text
@@ -364,7 +399,14 @@ lvgl:
                   widgets:
                     - label:
                         text: "Info"
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
                         align: CENTER
                         text_font: nunito_18
                         text_color: sense_text
+=======
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+
+>>>>>>> Stashed changes

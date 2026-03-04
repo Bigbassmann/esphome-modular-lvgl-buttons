@@ -62,7 +62,11 @@ lvgl:
       scrollbar_mode: "OFF"
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       bg_color: sense_bg
+=======
+      bg_color: sense_surface
+>>>>>>> Stashed changes
 =======
       bg_color: sense_surface
 >>>>>>> Stashed changes
@@ -97,7 +101,11 @@ lvgl:
     - id: sense_card_style
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       bg_color: sense_surface_alt
+=======
+      bg_color: sense_surface
+>>>>>>> Stashed changes
 =======
       bg_color: sense_surface
 >>>>>>> Stashed changes
@@ -113,6 +121,7 @@ lvgl:
     - id: sense_nav_btn_style
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       bg_color: sense_surface_alt
       bg_opa: cover
       text_color: sense_text
@@ -122,6 +131,8 @@ lvgl:
       pad_all: 6
 
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       bg_color: sense_tile_blue
@@ -182,8 +193,11 @@ lvgl:
       pad_all: 8
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
     - id: sense_display_row_btn_style
       bg_color: sense_cat_admin
       bg_opa: cover
@@ -231,6 +245,9 @@ lvgl:
       radius: 8
       pad_all: 6
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 select:
   - platform: template
