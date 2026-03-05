@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 ---
+=======
+﻿---
+>>>>>>> Stashed changes
 color:
     # SenseCAP-inspired palette (additive, non-breaking)
     - id: sense_bg
@@ -61,6 +65,13 @@ color:
       hex: '4CC9F0'
     - id: sense_tile_cyan_off
       hex: '2D6273'
+<<<<<<< Updated upstream
+=======
+    - id: sense_tile_motion
+      hex: '4CC9F0'
+    - id: sense_tile_motion_off
+      hex: '2D6273'
+>>>>>>> Stashed changes
     - id: sense_tile_placeholder_text
       hex: '93C5FD'
     - id: sense_cat_admin
@@ -444,3 +455,8 @@ color:
 # - id: yellowgreen
 #   hex: '9ACD32'
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes

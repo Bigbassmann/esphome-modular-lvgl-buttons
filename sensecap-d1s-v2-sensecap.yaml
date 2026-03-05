@@ -250,8 +250,13 @@ packages:
       entity_id: ${ent_motion_automation_off}
       on_icon: $mdi_motion_sensor_off
       off_icon: $mdi_motion_sensor
+<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
+=======
+      on_bg_color: sense_tile_motion
+      off_bg_color: sense_tile_motion_off
+>>>>>>> Stashed changes
 
   overrides_btn_entry_motion: !include
     file: esphome-modular-lvgl-buttons/buttons/override_button-sensecap.yaml
@@ -265,8 +270,13 @@ packages:
       entity_id: ${ent_entry_motion_automation_off}
       on_icon: $mdi_motion_sensor_off
       off_icon: $mdi_motion_sensor
+<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
+=======
+      on_bg_color: sense_tile_motion
+      off_bg_color: sense_tile_motion_off
+>>>>>>> Stashed changes
 
   overrides_btn_garage: !include
     file: esphome-modular-lvgl-buttons/buttons/override_button-sensecap.yaml
@@ -280,8 +290,13 @@ packages:
       entity_id: ${ent_garage_light_automation_off}
       on_icon: $mdi_motion_sensor_off
       off_icon: $mdi_motion_sensor
+<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
+=======
+      on_bg_color: sense_tile_motion
+      off_bg_color: sense_tile_motion_off
+>>>>>>> Stashed changes
 
   overrides_btn_mbr: !include
     file: esphome-modular-lvgl-buttons/buttons/override_button-sensecap.yaml
@@ -295,8 +310,13 @@ packages:
       entity_id: ${ent_mbr_motion_off}
       on_icon: $mdi_motion_sensor_off
       off_icon: $mdi_motion_sensor
+<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
+=======
+      on_bg_color: sense_tile_motion
+      off_bg_color: sense_tile_motion_off
+>>>>>>> Stashed changes
   dimmer_btn_mbr: !include
     file: esphome-modular-lvgl-buttons/buttons/dimmer_light_button-sensecap.yaml
     vars:
@@ -768,3 +788,8 @@ font:
 
 
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
