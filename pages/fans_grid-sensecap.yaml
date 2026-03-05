@@ -1,0 +1,457 @@
+substitutions:
+  sense_page_fans_id: "page_fans"
+
+script:
+  - id: fr_fan_off
+    then:
+      - homeassistant.action:
+          action: fan.turn_off
+          data:
+            entity_id: ${ent_fr_fan}
+
+  - id: fr_fan_low
+    then:
+      - homeassistant.action:
+          action: fan.set_percentage
+          data:
+            entity_id: ${ent_fr_fan}
+            percentage: "33"
+
+  - id: fr_fan_med
+    then:
+      - homeassistant.action:
+          action: fan.set_percentage
+          data:
+            entity_id: ${ent_fr_fan}
+            percentage: "66"
+
+  - id: fr_fan_high
+    then:
+      - homeassistant.action:
+          action: fan.set_percentage
+          data:
+            entity_id: ${ent_fr_fan}
+            percentage: "100"
+
+  - id: mbr_fan_off
+    then:
+      - homeassistant.action:
+          action: fan.turn_off
+          data:
+            entity_id: ${ent_mbr_fan}
+
+  - id: mbr_fan_low
+    then:
+      - homeassistant.action:
+          action: fan.set_percentage
+          data:
+            entity_id: ${ent_mbr_fan}
+            percentage: "33"
+
+  - id: mbr_fan_med
+    then:
+      - homeassistant.action:
+          action: fan.set_percentage
+          data:
+            entity_id: ${ent_mbr_fan}
+            percentage: "66"
+
+  - id: mbr_fan_high
+    then:
+      - homeassistant.action:
+          action: fan.set_percentage
+          data:
+            entity_id: ${ent_mbr_fan}
+            percentage: "100"
+
+  - id: mbr_fan_toggle_dir
+    then:
+      - homeassistant.action:
+          action: fan.set_direction
+          data:
+            entity_id: ${ent_mbr_fan}
+          data_template:
+            direction: !lambda |-
+              std::string d = id(ha_mbr_fan_dir).state;
+              for (auto &ch : d) ch = tolower(ch);
+              if (d == "reverse") return std::string("forward");
+              return std::string("reverse");
+
+interval:
+  - interval: 2s
+    then:
+      - lvgl.label.update:
+          id: fans_fr_state_label
+          text: !lambda |-
+            if (!id(ha_fr_fan_on).state) return std::string("OFF");
+            float p = id(ha_fr_fan_pct).state;
+            if (isnan(p) || p < 1.0f) return std::string("OFF");
+            if (p <= 40.0f) return std::string("LOW");
+            if (p <= 80.0f) return std::string("MED");
+            return std::string("HIGH");
+
+      - lvgl.label.update:
+          id: fans_mbr_state_label
+          text: !lambda |-
+            if (!id(ha_mbr_fan_on).state) return std::string("OFF");
+            float p = id(ha_mbr_fan_pct).state;
+            if (isnan(p) || p < 1.0f) return std::string("OFF");
+            if (p <= 40.0f) return std::string("LOW");
+            if (p <= 80.0f) return std::string("MED");
+            return std::string("HIGH");
+
+      - lvgl.label.update:
+          id: fans_mbr_dir_label
+          text: !lambda |-
+            std::string d = id(ha_mbr_fan_dir).state;
+            if (d.empty()) return std::string("Dir: --");
+            for (auto &ch : d) ch = tolower(ch);
+            if (d == "reverse") return std::string("Dir: reverse");
+            return std::string("Dir: forward");
+
+      - lvgl.label.update:
+          id: fans_attic_low_state
+          text: !lambda |-
+            return id(ha_attic_fan_on).state ? std::string("ON") : std::string("OFF");
+
+      - lvgl.label.update:
+          id: fans_attic_high_state
+          text: !lambda |-
+            return id(ha_attic_fan2_on).state ? std::string("ON") : std::string("OFF");
+
+      # FR mode buttons
+      - lvgl.widget.update: {id: fr_mode_off_btn, bg_color: sense_tile_green_off}
+      - lvgl.widget.update: {id: fr_mode_low_btn, bg_color: sense_tile_green_off}
+      - lvgl.widget.update: {id: fr_mode_med_btn, bg_color: sense_tile_green_off}
+      - lvgl.widget.update: {id: fr_mode_high_btn, bg_color: sense_tile_green_off}
+      - if:
+          condition:
+            lambda: !lambda |-
+              if (!id(ha_fr_fan_on).state) return true;
+              float p = id(ha_fr_fan_pct).state;
+              return isnan(p) || p < 1.0f;
+          then:
+            - lvgl.widget.update: {id: fr_mode_off_btn, bg_color: sense_tile_green}
+      - if:
+          condition:
+            lambda: 'return id(ha_fr_fan_on).state && !isnan(id(ha_fr_fan_pct).state) && id(ha_fr_fan_pct).state > 0 && id(ha_fr_fan_pct).state <= 40;'
+          then:
+            - lvgl.widget.update: {id: fr_mode_low_btn, bg_color: sense_tile_green}
+      - if:
+          condition:
+            lambda: 'return id(ha_fr_fan_on).state && !isnan(id(ha_fr_fan_pct).state) && id(ha_fr_fan_pct).state > 40 && id(ha_fr_fan_pct).state <= 80;'
+          then:
+            - lvgl.widget.update: {id: fr_mode_med_btn, bg_color: sense_tile_green}
+      - if:
+          condition:
+            lambda: 'return id(ha_fr_fan_on).state && !isnan(id(ha_fr_fan_pct).state) && id(ha_fr_fan_pct).state > 80;'
+          then:
+            - lvgl.widget.update: {id: fr_mode_high_btn, bg_color: sense_tile_green}
+
+      # MBR mode buttons
+      - lvgl.widget.update: {id: mbr_mode_off_btn, bg_color: sense_tile_green_off}
+      - lvgl.widget.update: {id: mbr_mode_low_btn, bg_color: sense_tile_green_off}
+      - lvgl.widget.update: {id: mbr_mode_med_btn, bg_color: sense_tile_green_off}
+      - lvgl.widget.update: {id: mbr_mode_high_btn, bg_color: sense_tile_green_off}
+      - if:
+          condition:
+            lambda: !lambda |-
+              if (!id(ha_mbr_fan_on).state) return true;
+              float p = id(ha_mbr_fan_pct).state;
+              return isnan(p) || p < 1.0f;
+          then:
+            - lvgl.widget.update: {id: mbr_mode_off_btn, bg_color: sense_tile_green}
+      - if:
+          condition:
+            lambda: 'return id(ha_mbr_fan_on).state && !isnan(id(ha_mbr_fan_pct).state) && id(ha_mbr_fan_pct).state > 0 && id(ha_mbr_fan_pct).state <= 40;'
+          then:
+            - lvgl.widget.update: {id: mbr_mode_low_btn, bg_color: sense_tile_green}
+      - if:
+          condition:
+            lambda: 'return id(ha_mbr_fan_on).state && !isnan(id(ha_mbr_fan_pct).state) && id(ha_mbr_fan_pct).state > 40 && id(ha_mbr_fan_pct).state <= 80;'
+          then:
+            - lvgl.widget.update: {id: mbr_mode_med_btn, bg_color: sense_tile_green}
+      - if:
+          condition:
+            lambda: 'return id(ha_mbr_fan_on).state && !isnan(id(ha_mbr_fan_pct).state) && id(ha_mbr_fan_pct).state > 80;'
+          then:
+            - lvgl.widget.update: {id: mbr_mode_high_btn, bg_color: sense_tile_green}
+
+      # Attic toggle buttons
+      - if:
+          condition:
+            binary_sensor.is_on: ha_attic_fan_on
+          then:
+            - lvgl.widget.update: {id: attic_low_btn, bg_color: sense_tile_green}
+          else:
+            - lvgl.widget.update: {id: attic_low_btn, bg_color: sense_tile_green_off}
+      - if:
+          condition:
+            binary_sensor.is_on: ha_attic_fan2_on
+          then:
+            - lvgl.widget.update: {id: attic_high_btn, bg_color: sense_tile_green}
+          else:
+            - lvgl.widget.update: {id: attic_high_btn, bg_color: sense_tile_green_off}
+
+lvgl:
+  pages:
+    - id: ${sense_page_fans_id}
+      styles: sense_page_style
+      widgets:
+        - obj:
+            id: fans_controls_card
+            align: TOP_MID
+            y: ${sense_content_y | default("46")}
+            width: 96%
+            height: ${sense_content_h | default("366")}
+            styles: sense_card_flat_style
+            widgets:
+              - label:
+                  text: "Fan Controls"
+                  align: TOP_MID
+                  y: 8
+                  text_font: nunito_24
+                  text_color: sense_info
+
+              - label:
+                  text: "FR Fan"
+                  align: TOP_LEFT
+                  x: 12
+                  y: 48
+                  text_font: nunito_20
+                  text_color: sense_text
+              - label:
+                  id: fans_fr_state_label
+                  text: "OFF"
+                  align: TOP_LEFT
+                  x: 122
+                  y: 50
+                  text_font: nunito_20
+                  text_color: sense_text
+
+              - button:
+                  id: fr_mode_off_btn
+                  align: TOP_LEFT
+                  x: 12
+                  y: 84
+                  width: 95
+                  height: 42
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - script.execute: fr_fan_off
+                  widgets:
+                    - label:
+                        text: "OFF"
+                        align: CENTER
+                        text_font: nunito_14
+              - button:
+                  id: fr_mode_low_btn
+                  align: TOP_LEFT
+                  x: 112
+                  y: 84
+                  width: 95
+                  height: 42
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - script.execute: fr_fan_low
+                  widgets:
+                    - label:
+                        text: "LOW"
+                        align: CENTER
+                        text_font: nunito_14
+              - button:
+                  id: fr_mode_med_btn
+                  align: TOP_LEFT
+                  x: 212
+                  y: 84
+                  width: 95
+                  height: 42
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - script.execute: fr_fan_med
+                  widgets:
+                    - label:
+                        text: "MED"
+                        align: CENTER
+                        text_font: nunito_14
+              - button:
+                  id: fr_mode_high_btn
+                  align: TOP_LEFT
+                  x: 312
+                  y: 84
+                  width: 95
+                  height: 42
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - script.execute: fr_fan_high
+                  widgets:
+                    - label:
+                        text: "HIGH"
+                        align: CENTER
+                        text_font: nunito_14
+
+              - label:
+                  text: "MBR Fan"
+                  align: TOP_LEFT
+                  x: 12
+                  y: 136
+                  text_font: nunito_20
+                  text_color: sense_text
+              - label:
+                  id: fans_mbr_state_label
+                  text: "OFF"
+                  align: TOP_LEFT
+                  x: 122
+                  y: 138
+                  text_font: nunito_20
+                  text_color: sense_text
+              - label:
+                  id: fans_mbr_dir_label
+                  text: "Dir: --"
+                  align: TOP_RIGHT
+                  x: -12
+                  y: 140
+                  text_font: nunito_18
+                  text_color: sense_text
+
+              - button:
+                  id: mbr_mode_off_btn
+                  align: TOP_LEFT
+                  x: 12
+                  y: 172
+                  width: 86
+                  height: 42
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - script.execute: mbr_fan_off
+                  widgets:
+                    - label:
+                        text: "OFF"
+                        align: CENTER
+                        text_font: nunito_14
+              - button:
+                  id: mbr_mode_low_btn
+                  align: TOP_LEFT
+                  x: 104
+                  y: 172
+                  width: 86
+                  height: 42
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - script.execute: mbr_fan_low
+                  widgets:
+                    - label:
+                        text: "LOW"
+                        align: CENTER
+                        text_font: nunito_14
+              - button:
+                  id: mbr_mode_med_btn
+                  align: TOP_LEFT
+                  x: 196
+                  y: 172
+                  width: 86
+                  height: 42
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - script.execute: mbr_fan_med
+                  widgets:
+                    - label:
+                        text: "MED"
+                        align: CENTER
+                        text_font: nunito_14
+              - button:
+                  id: mbr_mode_high_btn
+                  align: TOP_LEFT
+                  x: 288
+                  y: 172
+                  width: 86
+                  height: 42
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - script.execute: mbr_fan_high
+                  widgets:
+                    - label:
+                        text: "HIGH"
+                        align: CENTER
+                        text_font: nunito_14
+              - button:
+                  id: mbr_mode_dir_btn
+                  align: TOP_LEFT
+                  x: 380
+                  y: 172
+                  width: 36
+                  height: 42
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - script.execute: mbr_fan_toggle_dir
+                  widgets:
+                    - label:
+                        text: "DIR"
+                        align: CENTER
+                        text_font: nunito_14
+
+              - label:
+                  text: "Attic Fans"
+                  align: TOP_LEFT
+                  x: 12
+                  y: 226
+                  text_font: nunito_20
+                  text_color: sense_text
+
+              - button:
+                  id: attic_low_btn
+                  align: TOP_LEFT
+                  x: 12
+                  y: 262
+                  width: 198
+                  height: 50
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - homeassistant.action:
+                        action: homeassistant.toggle
+                        data:
+                          entity_id: ${ent_attic_fan_switch}
+                  widgets:
+                    - label:
+                        text: "Attic Low"
+                        align: LEFT_MID
+                        x: 14
+                        text_font: nunito_20
+                        text_color: sense_text
+                    - label:
+                        id: fans_attic_low_state
+                        text: "OFF"
+                        align: RIGHT_MID
+                        x: -14
+                        text_font: nunito_20
+                        text_color: sense_text
+
+              - button:
+                  id: attic_high_btn
+                  align: TOP_LEFT
+                  x: 218
+                  y: 262
+                  width: 198
+                  height: 50
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - homeassistant.action:
+                        action: homeassistant.toggle
+                        data:
+                          entity_id: ${ent_attic_fan2_switch}
+                  widgets:
+                    - label:
+                        text: "Attic High"
+                        align: LEFT_MID
+                        x: 14
+                        text_font: nunito_20
+                        text_color: sense_text
+                    - label:
+                        id: fans_attic_high_state
+                        text: "OFF"
+                        align: RIGHT_MID
+                        x: -14
+                        text_font: nunito_20
+                        text_color: sense_text
+
+

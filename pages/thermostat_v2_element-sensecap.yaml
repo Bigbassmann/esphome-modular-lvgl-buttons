@@ -1,0 +1,446 @@
+# SenseCAP simple element module:
+# - LVGL page
+# - HA entity/attribute sensors
+# - scripts/actions
+# - runtime interval sync
+#
+# Requires:
+# - common/ha_entities-sensecap.yaml (or equivalent substitutions)
+
+globals:
+  - id: tstat_runtime_syncing
+    type: bool
+    restore_value: false
+    initial_value: "false"
+
+text_sensor:
+  - platform: homeassistant
+    id: cap_tstat_mode
+    entity_id: ${ent_thermostat}
+    attribute: hvac_mode
+    internal: true
+    update_interval: never
+  - platform: homeassistant
+    id: cap_tstat_hvac_action
+    entity_id: ${ent_thermostat}
+    attribute: hvac_action
+    internal: true
+    update_interval: never
+  - platform: homeassistant
+    id: cap_tstat_fan_mode
+    entity_id: ${ent_thermostat}
+    attribute: fan_mode
+    internal: true
+    update_interval: never
+  - platform: homeassistant
+    id: cap_tstat_fan_state
+    entity_id: ${ent_thermostat}
+    attribute: fan_state
+    internal: true
+    update_interval: never
+  - platform: homeassistant
+    id: cap_tstat_fan_entity
+    entity_id: ${ent_thermostat_fan}
+    internal: true
+    update_interval: never
+
+sensor:
+  - platform: homeassistant
+    id: cap_tstat_current_temp
+    entity_id: ${ent_thermostat}
+    attribute: current_temperature
+    internal: true
+    update_interval: never
+  - platform: homeassistant
+    id: cap_tstat_target_temp
+    entity_id: ${ent_thermostat}
+    attribute: temperature
+    internal: true
+    update_interval: never
+  - platform: homeassistant
+    id: cap_tstat_humidity
+    entity_id: ${ent_thermostat_humidity}
+    internal: true
+    update_interval: never
+
+script:
+  - id: cap_tstat_set_mode_off
+    then:
+      - homeassistant.service:
+          service: climate.set_hvac_mode
+          data:
+            entity_id: ${ent_thermostat}
+            hvac_mode: "off"
+
+  - id: cap_tstat_set_mode_heat
+    then:
+      - homeassistant.service:
+          service: climate.set_hvac_mode
+          data:
+            entity_id: ${ent_thermostat}
+            hvac_mode: "heat"
+
+  - id: cap_tstat_set_mode_cool
+    then:
+      - homeassistant.service:
+          service: climate.set_hvac_mode
+          data:
+            entity_id: ${ent_thermostat}
+            hvac_mode: "cool"
+
+  - id: cap_tstat_set_fan_auto_low
+    then:
+      - homeassistant.service:
+          service: climate.set_fan_mode
+          data:
+            entity_id: ${ent_thermostat}
+            fan_mode: "Auto low"
+
+  - id: cap_tstat_set_fan_low
+    then:
+      - homeassistant.service:
+          service: climate.set_fan_mode
+          data:
+            entity_id: ${ent_thermostat}
+            fan_mode: "Low"
+
+  - id: cap_tstat_set_fan_circulation
+    then:
+      - homeassistant.service:
+          service: climate.set_fan_mode
+          data:
+            entity_id: ${ent_thermostat}
+            fan_mode: "Circulation"
+
+  - id: cap_tstat_set_target
+    parameters:
+      temp_f: int
+    then:
+      - homeassistant.service:
+          service: climate.set_temperature
+          data:
+            entity_id: ${ent_thermostat}
+          data_template:
+            temperature: !lambda |-
+              char buf[16];
+              int v = temp_f;
+              if (v < 50) v = 50;
+              if (v > 85) v = 85;
+              snprintf(buf, sizeof(buf), "%d", v);
+              return std::string(buf);
+
+interval:
+  - interval: 5s
+    then:
+      - component.update: cap_tstat_mode
+      - component.update: cap_tstat_hvac_action
+      - component.update: cap_tstat_fan_mode
+      - component.update: cap_tstat_fan_state
+      - component.update: cap_tstat_fan_entity
+      - component.update: cap_tstat_current_temp
+      - component.update: cap_tstat_target_temp
+      - component.update: cap_tstat_humidity
+      - lambda: 'id(tstat_runtime_syncing) = true;'
+
+      - lvgl.label.update:
+          id: tstat2_hvac_action_label
+          text: !lambda |-
+            std::string s = id(cap_tstat_hvac_action).state.empty() ? id(cap_tstat_mode).state : id(cap_tstat_hvac_action).state;
+            if (s.empty()) return std::string("--");
+            for (auto &ch : s) ch = tolower(ch);
+            if (s == "off") return std::string("Off");
+            if (s == "idle") return std::string("Idle");
+            if (s == "heating") return std::string("Heating");
+            if (s == "cooling") return std::string("Cooling");
+            if (s == "heat") return std::string("Heat");
+            if (s == "cool") return std::string("Cool");
+            if (s == "auto" || s == "heat_cool") return std::string("Auto");
+            if (!s.empty()) s[0] = toupper(s[0]);
+            return s;
+
+      - lvgl.label.update:
+          id: tstat2_fan_state_label
+          text: !lambda |-
+            if (id(cap_tstat_fan_state).state.empty()) return std::string("--");
+            return id(cap_tstat_fan_state).state;
+
+      - lvgl.label.update:
+          id: tstat2_fan_entity_label
+          text: !lambda |-
+            if (id(cap_tstat_fan_entity).state.empty()) return std::string("--");
+            return id(cap_tstat_fan_entity).state;
+
+      - lvgl.label.update:
+          id: tstat2_current_value
+          text: !lambda |-
+            if (isnan(id(cap_tstat_current_temp).state)) return std::string("--");
+            char buf[24];
+            snprintf(buf, sizeof(buf), "%.1f F", id(cap_tstat_current_temp).state);
+            return std::string(buf);
+
+      - lvgl.label.update:
+          id: tstat2_target_value
+          text: !lambda |-
+            if (isnan(id(cap_tstat_target_temp).state)) return std::string("--");
+            char buf[24];
+            snprintf(buf, sizeof(buf), "%.1f F", id(cap_tstat_target_temp).state);
+            return std::string(buf);
+
+      - lvgl.label.update:
+          id: tstat2_humidity_value
+          text: !lambda |-
+            if (isnan(id(cap_tstat_humidity).state)) return std::string("--");
+            char buf[24];
+            snprintf(buf, sizeof(buf), "%.0f%%", id(cap_tstat_humidity).state);
+            return std::string(buf);
+
+      - lvgl.arc.update:
+          id: tstat2_target_arc
+          value: !lambda |-
+            if (isnan(id(cap_tstat_target_temp).state)) return 68;
+            int t = (int) roundf(id(cap_tstat_target_temp).state);
+            if (t < 50) t = 50;
+            if (t > 85) t = 85;
+            return t;
+
+      - lvgl.dropdown.update:
+          id: tstat2_mode_dropdown
+          selected_index: !lambda |-
+            if (id(cap_tstat_mode).state == "heat") return 1;
+            if (id(cap_tstat_mode).state == "cool") return 2;
+            return 0;
+
+      - lvgl.dropdown.update:
+          id: tstat2_fan_dropdown
+          selected_index: !lambda |-
+            std::string fm = id(cap_tstat_fan_mode).state;
+            for (auto &ch : fm) ch = tolower(ch);
+            if (fm == "auto low" || fm == "auto_low") return 0;
+            if (fm == "low") return 1;
+            if (fm == "circulation" || fm == "circulate") return 2;
+            return 0;
+
+      - lambda: 'id(tstat_runtime_syncing) = false;'
+
+lvgl:
+  pages:
+    - id: page_thermostat_v2
+      widgets:
+        - label:
+            text: "Thermostat"
+            align: TOP_MID
+            y: 36
+            text_font: montserrat_32
+            text_color: 0x0F766E
+        - label:
+            text: "HVAC Status"
+            align: TOP_LEFT
+            x: 48
+            y: 78
+            text_font: montserrat_18
+            text_color: 0x9CA3AF
+        - label:
+            text: "Fan Status"
+            align: TOP_RIGHT
+            x: -48
+            y: 78
+            text_font: montserrat_18
+            text_color: 0x9CA3AF
+        - label:
+            id: tstat2_hvac_action_label
+            text: "--"
+            align: TOP_LEFT
+            x: 48
+            y: 102
+            text_font: montserrat_18
+            text_color: 0xE5E7EB
+        - label:
+            id: tstat2_fan_state_label
+            text: "--"
+            align: TOP_RIGHT
+            x: -48
+            y: 102
+            text_font: montserrat_18
+            text_color: 0xE5E7EB
+        - label:
+            id: tstat2_fan_entity_label
+            text: "--"
+            align: TOP_RIGHT
+            x: -48
+            y: 126
+            text_font: montserrat_16
+            text_color: 0x9CA3AF
+        - arc:
+            id: tstat2_target_arc
+            align: TOP_MID
+            y: 118
+            width: 252
+            height: 220
+            min_value: 50
+            max_value: 85
+            value: 68
+            adjustable: true
+            start_angle: 135
+            end_angle: 45
+            arc_rounded: true
+            indicator:
+              arc_color: 0x6B7280
+              arc_width: 20
+            knob:
+              bg_color: 0xFFFFFF
+              pad_all: 3
+            on_value:
+              then:
+                - if:
+                    condition:
+                      lambda: 'return id(tstat_runtime_syncing);'
+                    then:
+                      - lambda: 'return;'
+                - lvgl.label.update:
+                    id: tstat2_target_value
+                    text: !lambda |-
+                      char buf[24];
+                      int v = lv_arc_get_value(id(tstat2_target_arc));
+                      if (v < 50) v = 50;
+                      if (v > 85) v = 85;
+                      snprintf(buf, sizeof(buf), "%.1f F", (float) v);
+                      return std::string(buf);
+            on_release:
+              then:
+                - script.execute:
+                    id: cap_tstat_set_target
+                    temp_f: !lambda |-
+                      int v = lv_arc_get_value(id(tstat2_target_arc));
+                      if (v < 50) v = 50;
+                      if (v > 85) v = 85;
+                      return v;
+        - label:
+            text: "Current"
+            align: TOP_MID
+            x: -15
+            y: 166
+            text_font: montserrat_18
+            text_color: 0x9CA3AF
+        - label:
+            id: tstat2_current_value
+            text: "--"
+            align: TOP_MID
+            x: -15
+            y: 190
+            text_font: montserrat_24
+            text_color: 0xE5E7EB
+        - label:
+            text: "Target"
+            align: TOP_MID
+            x: -15
+            y: 222
+            text_font: montserrat_18
+            text_color: 0x9CA3AF
+        - label:
+            id: tstat2_target_value
+            text: "--"
+            align: TOP_MID
+            x: -15
+            y: 246
+            text_font: montserrat_24
+            text_color: 0xFFFFFF
+        - label:
+            text: "Humidity"
+            align: TOP_MID
+            x: -15
+            y: 280
+            text_font: montserrat_18
+            text_color: 0x9CA3AF
+        - label:
+            id: tstat2_humidity_value
+            text: "--"
+            align: TOP_MID
+            x: -15
+            y: 304
+            text_font: montserrat_20
+            text_color: 0x9CA3AF
+        - label:
+            text: "HVAC Mode"
+            align: TOP_LEFT
+            x: 56
+            y: 336
+            text_font: montserrat_18
+            text_color: 0xFFFFFF
+        - dropdown:
+            id: tstat2_mode_dropdown
+            align: TOP_LEFT
+            x: 56
+            y: 362
+            width: 156
+            height: 40
+            text_font: montserrat_18
+            options:
+              - "Off"
+              - "Heat"
+              - "Cool"
+            selected_index: 0
+            on_value:
+              then:
+                - if:
+                    condition:
+                      lambda: 'return id(tstat_runtime_syncing);'
+                    then:
+                      - lambda: 'return;'
+                - if:
+                    condition:
+                      lambda: 'return x == 0;'
+                    then:
+                      - script.execute: cap_tstat_set_mode_off
+                - if:
+                    condition:
+                      lambda: 'return x == 1;'
+                    then:
+                      - script.execute: cap_tstat_set_mode_heat
+                - if:
+                    condition:
+                      lambda: 'return x == 2;'
+                    then:
+                      - script.execute: cap_tstat_set_mode_cool
+        - label:
+            text: "Fan Mode"
+            align: TOP_RIGHT
+            x: -56
+            y: 336
+            text_font: montserrat_18
+            text_color: 0xFFFFFF
+        - dropdown:
+            id: tstat2_fan_dropdown
+            align: TOP_RIGHT
+            x: -56
+            y: 362
+            width: 156
+            height: 40
+            text_font: montserrat_18
+            options:
+              - "Auto low"
+              - "Low"
+              - "Circulation"
+            selected_index: 0
+            on_value:
+              then:
+                - if:
+                    condition:
+                      lambda: 'return id(tstat_runtime_syncing);'
+                    then:
+                      - lambda: 'return;'
+                - if:
+                    condition:
+                      lambda: 'return x == 0;'
+                    then:
+                      - script.execute: cap_tstat_set_fan_auto_low
+                - if:
+                    condition:
+                      lambda: 'return x == 1;'
+                    then:
+                      - script.execute: cap_tstat_set_fan_low
+                - if:
+                    condition:
+                      lambda: 'return x == 2;'
+                    then:
+                      - script.execute: cap_tstat_set_fan_circulation
+

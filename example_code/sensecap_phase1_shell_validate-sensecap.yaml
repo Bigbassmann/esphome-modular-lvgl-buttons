@@ -1,0 +1,46 @@
+substitutions:
+  icon_font: mdi_icons_40
+  text_font: nunito_20
+  text_color: white
+  bg_color: black
+  button_on_color: "ep_orange"
+  button_off_color: "very_dark_gray"
+  icon_on_color: "yellow"
+  icon_off_color: "gray"
+  label_on_color: "white"
+  label_off_color: "gray"
+  button_text_color: "white"
+
+packages:
+  hardware: !include ../hardware/sensecap-d1s-sensecap.yaml
+  wifi: !include ../common/wifi-sensecap.yaml
+  colors: !include ../common/color-sensecap.yaml
+  fonts: !include ../common/fonts-sensecap.yaml
+  theme_style: !include ../common/theme_style-sensecap.yaml
+  ui_tokens: !include ../common/ui_tokens-sensecap.yaml
+  time_source: !include ../common/time_homeassistant.yaml
+  page_shell: !include ../pages/page_shell_480-sensecap.yaml
+  page_menu: !include ../pages/menu_grid-sensecap.yaml
+  page_wifi: !include ../pages/wifi_setup-sensecap.yaml
+
+api:
+
+lvgl:
+  pages:
+    - id: main_page
+      styles: sense_page_style
+      widgets:
+        - obj:
+            align: TOP_MID
+            y: ${sense_content_y}
+            width: 100%
+            height: ${sense_content_h}
+            styles: sense_card_style
+            widgets:
+              - label:
+                  text: "Home"
+                  align: CENTER
+                  text_font: nunito_24
+                  text_color: sense_text
+
+

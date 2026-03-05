@@ -1,0 +1,64 @@
+# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common-sensecap.yaml.
+# This file is a compatibility layer for the "buttons" setup.
+substitutions:
+  # Common attribute names
+  attr_hvac_mode: "hvac_mode"
+  attr_hvac_action: "hvac_action"
+  attr_current_temperature: "current_temperature"
+  attr_temperature: "temperature"
+  attr_fan_mode: "fan_mode"
+  attr_fan_state: "fan_state"
+  attr_direction: "direction"
+  attr_brightness: "brightness"
+  attr_percentage: "percentage"
+
+  # Input booleans / toggles
+  ent_cleaners_toggle: "input_boolean.cleaners_toggle"
+  ent_dani_mode_on: "input_boolean.dani_mode_on"
+  ent_front_door_auto_lock_off: "input_boolean.front_door_auto_lock_off"
+  ent_tod_control: "input_boolean.automation_time_of_day_trigger"
+  ent_motion_automation_off: "input_boolean.motion_automation_off"
+  ent_entry_motion_automation_off: "input_boolean.entry_motion_automation_off"
+  ent_garage_light_automation_off: "input_boolean.garage_light_automation_off"
+  ent_mbr_motion_off: "input_boolean.mbr_motion_off"
+  ent_all_lights_toggle: "input_boolean.all_lights_toggle"
+  ent_outdoor_lights_toggle: "input_boolean.outdoor_lights_toggle"
+  ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
+  ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
+
+  # Fan / switch / light entities
+  ent_attic_fan_switch: "switch.attic_fan"
+  ent_attic_fan2_switch: "switch.attic_fan_2"
+  ent_fr_fan: "fan.in_wall_fan_speed_control_500s"
+  ent_mbr_fan: "fan.mbr_fan_light"
+  ent_mbr_lights: "light.mbr_lights"
+  ent_fr_lights: "light.in_wall_paddle_dimmer_500s"
+  ent_library_lights: "light.library_lights"
+  ent_living_room_lights: "light.living_room_lights"
+  ent_laundry_room_lights: "light.laundry_room_lights"
+  ent_garage_lights: "light.garage_light_sw"
+  ent_mbr_closet_light: "light.mbr_closet_light"
+  ent_fence_lights: "switch.plug_fence_lights"
+  ent_outdoor_entry_lights: "light.outdoor_lights_entry"
+  ent_outdoor_garage_lights: "light.outdoor_lights_garage"
+  ent_kitchen_lights_4: "light.kitchen_lights_4"
+  ent_kitchen_lights_5: "light.kitchen_lights_5"
+  ent_entry_lights: "light.entry_lights"
+  ent_hall_lights: "light.in_wall_paddle_dimmer_500s_2"
+
+  # Lock
+  ent_front_door_lock: "lock.front_door_lock"
+
+  # Thermostat
+  ent_thermostat: "climate.thermostat"
+  ent_thermostat_fan: "fan.thermostat"
+  ent_thermostat_humidity: "sensor.thermostat_humidity"
+  ent_osat_temp: "sensor.meander_temperature"
+  ent_kitchen_temp: "sensor.kitchen_motion_window_sw_air_temperature"
+  ent_freezer_temp: "sensor.freezer_temp"
+  ent_fridge_temp: "sensor.fridge_temp"
+
+  # Optional placeholders for other modules
+  ent_rain_delay_bool: "input_boolean.rain_delay"
+  ent_rain_delay_state: "input_boolean.rain_delay"
+

@@ -1,0 +1,136 @@
+globals:
+  # Legacy boot/nav runtime (optional; used by older nav/bootstrap flows).
+  - id: boot_ready
+    type: bool
+    initial_value: "false"
+  - id: screen_off
+    type: bool
+    initial_value: "false"
+  - id: last_interaction_ms
+    type: uint32_t
+    initial_value: "0"
+  - id: last_auto_scroll_ms
+    type: uint32_t
+    initial_value: "0"
+  - id: nav_page_index
+    type: int
+    initial_value: "0"
+  - id: ui_menu_active
+    type: bool
+    initial_value: "false"
+  - id: nav_auto_advance_active
+    type: bool
+    initial_value: "false"
+
+  # Display idle/sleep tuning.
+  - id: display_idle_scroll_enabled
+    type: bool
+    restore_value: true
+    initial_value: "false"
+  - id: display_idle_scroll_s
+    type: int
+    restore_value: true
+    initial_value: "30"
+  - id: display_idle_scroll_rate_s
+    type: int
+    restore_value: true
+    initial_value: "5"
+  - id: display_scroll_sleep_enabled
+    type: bool
+    restore_value: true
+    initial_value: "false"
+  - id: display_scroll_sleep_min
+    type: int
+    restore_value: true
+    initial_value: "30"
+  - id: scroll_sleep_start_ms
+    type: uint32_t
+    initial_value: "0"
+  - id: display_sleep_enabled
+    type: bool
+    restore_value: true
+    initial_value: "true"
+  - id: display_sleep_timeout_s
+    type: int
+    restore_value: true
+    initial_value: "60"
+  - id: display_brightness_pct
+    type: int
+    restore_value: true
+    initial_value: "50"
+
+  # RP2040 heartbeat.
+  - id: rp2040_last_seen_ms
+    type: uint32_t
+    initial_value: "0"
+
+  # Touch diagnostics counters.
+  - id: touch_total_count
+    type: uint32_t
+    initial_value: "0"
+  - id: touch_idle_noise_count
+    type: uint32_t
+    initial_value: "0"
+  - id: touch_last_touch_ms
+    type: uint32_t
+    initial_value: "0"
+  - id: touch_last_warn_ms
+    type: uint32_t
+    initial_value: "0"
+
+  # Graph/history runtime buffers.
+  - id: graph_metric
+    type: int
+    initial_value: "2"
+  - id: graph_period_min
+    type: int
+    restore_value: true
+    initial_value: "360"
+  - id: graph_step_min
+    type: int
+    restore_value: true
+    initial_value: "5"
+  - id: hist_index
+    type: int
+    initial_value: "0"
+  - id: temp_hist
+    type: std::vector<float>
+    initial_value: "std::vector<float>(1440, NAN)"
+  - id: humid_hist
+    type: std::vector<float>
+    initial_value: "std::vector<float>(1440, NAN)"
+  - id: co2_hist
+    type: std::vector<float>
+    initial_value: "std::vector<float>(1440, NAN)"
+  - id: voc_hist
+    type: std::vector<float>
+    initial_value: "std::vector<float>(1440, NAN)"
+  - id: graph_points
+    type: std::vector<int>
+    initial_value: "std::vector<int>(60, 100)"
+  - id: graph_cur
+    type: float
+    initial_value: "NAN"
+  - id: graph_min
+    type: float
+    initial_value: "NAN"
+  - id: graph_max
+    type: float
+    initial_value: "NAN"
+  - id: graph_touch_value
+    type: float
+    initial_value: "NAN"
+  - id: graph_touch_valid
+    type: bool
+    initial_value: "false"
+  - id: graph_page_active
+    type: bool
+    initial_value: "false"
+
+  # Thermostat/SleepIQ runtime guards.
+  - id: tstat_runtime_syncing
+    type: bool
+    initial_value: "false"
+  - id: sleepiq_runtime_syncing
+    type: bool
+    initial_value: "false"

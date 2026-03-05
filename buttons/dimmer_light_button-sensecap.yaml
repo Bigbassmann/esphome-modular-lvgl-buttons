@@ -1,0 +1,175 @@
+﻿---
+# Dimmer light button
+# vars:
+#    uid:
+#    page_id:
+#    row:
+#    column:
+#    row_span:
+#    column_span:
+#    text:
+#    icon:
+#    entity_id:
+#    secondary_entity_id: (optional)
+#    on_bg_color: (optional)
+#    off_bg_color: (optional)
+
+lvgl:
+  pages:
+    - id: !extend ${page_id | default("main_page")}
+      widgets:
+        - container:
+            id: ${uid}
+            grid_cell_row_pos: ${row}
+            grid_cell_column_pos: ${column}
+            grid_cell_row_span: ${row_span | default(1)}
+            grid_cell_column_span: ${column_span | default(1)}
+            grid_cell_x_align: stretch
+            grid_cell_y_align: stretch
+            widgets:
+              - button:
+                  id: button_${uid}
+                  widgets:
+                    - label:
+                        id: icon_${uid}
+                        text_font: $icon_font
+                        align: top_left
+                        x: 10
+                        y: 10
+                        text: ${icon}
+                    - label:
+                        id: value_${uid}
+                        align: top_left
+                        x: 66
+                        y: 8
+                        text_font: nunito_18
+                        text: "--%"
+                    - label:
+                        id: label_${uid}
+                        align: top_left
+                        x: 66
+                        y: 34
+                        text: ${text}
+                        text_font: nunito_16
+                    - slider:
+                        id: slider_${uid}
+                        align: top_right
+                        x: -10
+                        y: 17
+                        width: 44%
+                        height: 24
+                        min_value: 0
+                        max_value: 255
+                        radius: 10
+                        knob:
+                          pad_top: -5
+                          pad_bottom: -5
+                          bg_color: $label_on_color
+                        indicator:
+                          radius: 0
+                          bg_color: $label_off_color
+                        on_release:
+                          - homeassistant.action:
+                              action: light.turn_on
+                              data:
+                                entity_id: ${entity_id}
+                                brightness: !lambda return int(x);
+                          - if:
+                              condition:
+                                lambda: 'return std::string("${secondary_entity_id | default("")}").size() > 0;'
+                              then:
+                                - homeassistant.action:
+                                    action: light.turn_on
+                                    data:
+                                      entity_id: ${secondary_entity_id | default("")}
+                                      brightness: !lambda return int(x);
+                  on_short_click:
+                    then:
+                      - homeassistant.action:
+                          action: homeassistant.toggle
+                          data:
+                            entity_id: ${entity_id}
+                      - if:
+                          condition:
+                            lambda: 'return std::string("${secondary_entity_id | default("")}").size() > 0;'
+                          then:
+                            - homeassistant.action:
+                                action: homeassistant.toggle
+                                data:
+                                  entity_id: ${secondary_entity_id | default("")}
+                  on_long_press:
+                    then:
+                      - lvgl.page.show: ${uid}_light_page
+
+binary_sensor:
+  - id: widget_sensor_${uid}
+    platform: homeassistant
+    entity_id: ${entity_id}
+    trigger_on_initial_state: true
+    on_state:
+      - if:
+          condition:
+            binary_sensor.is_on: widget_sensor_${uid}
+          then:
+            - lvgl.widget.update:
+                id: button_${uid}
+                bg_color: ${on_bg_color | default("$button_on_color")}
+            - lvgl.widget.update:
+                id: icon_${uid}
+                text_color: $icon_on_color
+            - lvgl.widget.update:
+                id: label_${uid}
+                text_color: $label_on_color
+            - lvgl.widget.update:
+                id: value_${uid}
+                text_color: $label_on_color
+            - lvgl.widget.update:
+                id: slider_${uid}
+                knob:
+                  bg_color: $label_on_color
+          else:
+            - lvgl.widget.update:
+                id: button_${uid}
+                bg_color: ${off_bg_color | default("$button_off_color")}
+            - lvgl.widget.update:
+                id: icon_${uid}
+                text_color: $icon_off_color
+            - lvgl.widget.update:
+                id: label_${uid}
+                text_color: $label_off_color
+            - lvgl.widget.update:
+                id: value_${uid}
+                text_color: $label_off_color
+            - lvgl.label.update:
+                id: value_${uid}
+                text: "0%"
+            - lvgl.slider.update:
+                id: slider_${uid}
+                value: 0
+            - lvgl.widget.update:
+                id: slider_${uid}
+                knob:
+                  bg_color: $label_off_color
+
+sensor:
+  - id: brightness_${uid}
+    platform: homeassistant
+    entity_id: ${entity_id}
+    attribute: brightness
+    filters:
+      - filter_out: nan
+    on_value:
+      - lvgl.slider.update:
+          id: slider_${uid}
+          value: !lambda return x;
+      - lvgl.label.update:
+          id: value_${uid}
+          text: !lambda |-
+            int pct = (int) lroundf((x * 100.0f) / 255.0f);
+            if (pct < 0) pct = 0;
+            if (pct > 100) pct = 100;
+            char buf[8];
+            snprintf(buf, sizeof(buf), "%d%%", pct);
+            return std::string(buf);
+
+

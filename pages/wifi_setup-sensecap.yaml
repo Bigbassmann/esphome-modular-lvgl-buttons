@@ -1,0 +1,66 @@
+﻿lvgl:
+  pages:
+    - id: page_wifi_setup
+      styles: sense_page_style
+      widgets:
+        - obj:
+            id: wifi_setup_card
+            align: TOP_MID
+            y: ${sense_content_y | default("46")}
+            width: 100%
+            height: ${sense_content_h | default("366")}
+            styles: sense_card_style
+            widgets:
+              - label:
+                  text: "WiFi Setup"
+                  align: TOP_MID
+                  y: 12
+                  text_font: nunito_24
+                  text_color: sense_text
+
+              - label:
+                  id: wifi_setup_status
+                  text: "Use captive portal for setup."
+                  align: TOP_MID
+                  y: 56
+                  text_font: nunito_18
+                  text_color: sense_text
+
+              - label:
+                  text: "1. Connect to device AP"
+                  align: TOP_LEFT
+                  x: 14
+                  y: 104
+                  text_font: nunito_18
+                  text_color: sense_text
+              - label:
+                  text: "2. Open http://192.168.4.1"
+                  align: TOP_LEFT
+                  x: 14
+                  y: 136
+                  text_font: nunito_18
+                  text_color: sense_text
+              - label:
+                  text: "3. Save your WiFi credentials"
+                  align: TOP_LEFT
+                  x: 14
+                  y: 168
+                  text_font: nunito_18
+                  text_color: sense_text
+
+              - button:
+                  id: wifi_setup_back_btn
+                  align: BOTTOM_MID
+                  y: -18
+                  width: 180
+                  height: 52
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - script.execute: nav_to_menu
+                  widgets:
+                    - label:
+                        text: "Back to Menu"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+

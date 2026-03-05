@@ -1,0 +1,12 @@
+globals:
+  # Minimal shared globals for the active modular buttons stack.
+  # Keep feature-specific globals inside the feature/page package.
+  #
+  # If you need legacy migrated globals for old packages, include:
+  # `common/core_globals_legacy_compat-sensecap.yaml` explicitly in that build.
+
+  # Shared RP2040 health heartbeat used by indicator sensors/widgets.
+  - id: rp2040_last_seen_ms
+    type: uint32_t
+    initial_value: "0"
+

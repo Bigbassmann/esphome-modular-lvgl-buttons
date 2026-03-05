@@ -1,0 +1,20 @@
+sensor:
+  - platform: homeassistant
+    id: ha_osat_temp
+    entity_id: ${ent_osat_temp}
+    internal: true
+
+  - platform: homeassistant
+    id: ha_kitchen_temp
+    entity_id: ${ent_kitchen_temp}
+    internal: true
+
+  - platform: homeassistant
+    id: ha_freezer_temp
+    entity_id: ${ent_freezer_temp}
+    internal: true
+
+  - platform: homeassistant
+    id: ha_fridge_temp
+    entity_id: ${ent_fridge_temp}
+    internal: true

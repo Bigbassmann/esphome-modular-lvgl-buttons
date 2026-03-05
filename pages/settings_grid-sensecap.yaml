@@ -1,0 +1,150 @@
+substitutions:
+  sense_page_settings_id: "page_settings"
+  sense_page_tstat_id: "page_thermostat_v2"
+  sense_page_wifi_id: "page_wifi_setup"
+  sense_page_fans_id: "page_fans"
+  sense_page_overrides_id: "page_overrides"
+  sense_page_lighting_dimmers_id: "page_lighting_dimmers"
+  sense_page_lighting_switches_id: "page_lighting_switches"
+  sense_page_sensors_id: "page_sensors"
+  sense_page_display_settings_id: "page_display_settings"
+
+lvgl:
+  pages:
+    - id: ${sense_page_settings_id}
+      styles: sense_page_style
+      widgets:
+        - obj:
+            id: settings_grid_card
+            align: TOP_MID
+            y: ${sense_content_y | default("46")}
+            width: 100%
+            height: ${sense_content_h | default("366")}
+            styles: sense_card_style
+            layout:
+              type: GRID
+              grid_rows: [FR(1), FR(1), FR(1), FR(1)]
+              grid_columns: [FR(1), FR(1)]
+              pad_row: 10
+              pad_column: 10
+            widgets:
+              - button:
+                  id: settings_btn_wifi
+                  grid_cell_row_pos: 0
+                  grid_cell_column_pos: 0
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - lvgl.page.show: ${sense_page_wifi_id}
+                  widgets:
+                    - label:
+                        text: "WiFi Setup"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: settings_btn_tstat
+                  grid_cell_row_pos: 0
+                  grid_cell_column_pos: 1
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - lvgl.page.show: ${sense_page_tstat_id}
+                  widgets:
+                    - label:
+                        text: "Thermostat"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: settings_btn_fans
+                  grid_cell_row_pos: 1
+                  grid_cell_column_pos: 0
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - lvgl.page.show: ${sense_page_fans_id}
+                  widgets:
+                    - label:
+                        text: "Fan Controls"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: settings_btn_overrides
+                  grid_cell_row_pos: 1
+                  grid_cell_column_pos: 1
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - lvgl.page.show: ${sense_page_overrides_id}
+                  widgets:
+                    - label:
+                        text: "Overrides"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: settings_btn_dimmers
+                  grid_cell_row_pos: 2
+                  grid_cell_column_pos: 0
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - lvgl.page.show: ${sense_page_lighting_dimmers_id}
+                  widgets:
+                    - label:
+                        text: "Dimmers"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: settings_btn_switches
+                  grid_cell_row_pos: 2
+                  grid_cell_column_pos: 1
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - lvgl.page.show: ${sense_page_lighting_switches_id}
+                  widgets:
+                    - label:
+                        text: "On/Off Lights"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: settings_btn_sensors
+                  grid_cell_row_pos: 3
+                  grid_cell_column_pos: 0
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - lvgl.page.show: ${sense_page_sensors_id}
+                  widgets:
+                    - label:
+                        text: "Sensors"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: settings_btn_display
+                  grid_cell_row_pos: 3
+                  grid_cell_column_pos: 1
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_nav_btn_style
+                  on_press:
+                    - lvgl.page.show: ${sense_page_display_settings_id}
+                  widgets:
+                    - label:
+                        text: "Display"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text

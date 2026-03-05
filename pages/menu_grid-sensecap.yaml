@@ -1,0 +1,184 @@
+lvgl:
+  pages:
+    - id: page_menu
+      styles: sense_page_style
+      widgets:
+        - obj:
+            id: menu_grid_card
+            align: TOP_MID
+            y: ${sense_content_y | default("46")}
+            width: 100%
+            height: ${sense_content_h | default("366")}
+            styles: sense_card_flat_style
+            layout:
+              type: GRID
+              grid_rows: [FR(1), FR(1), FR(1), FR(1)]
+              grid_columns: [FR(1), FR(1), FR(1)]
+              pad_row: 10
+              pad_column: 10
+            widgets:
+              - button:
+                  id: menu_btn_home
+                  grid_cell_row_pos: 0
+                  grid_cell_column_pos: 0
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_menu_cat2_style
+                  on_press:
+                    - script.execute: nav_to_home
+                  widgets:
+                    - label:
+                        text: "Home"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: menu_btn_tstat
+                  grid_cell_row_pos: 0
+                  grid_cell_column_pos: 1
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_menu_cat2_style
+                  on_press:
+                    - script.execute: nav_to_tstat
+                  widgets:
+                    - label:
+                        text: "Thermostat"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: menu_btn_fans
+                  grid_cell_row_pos: 0
+                  grid_cell_column_pos: 2
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_menu_cat2_style
+                  on_press:
+                    - script.execute: nav_to_fans
+                  widgets:
+                    - label:
+                        text: "Fans"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: menu_btn_sensors
+                  grid_cell_row_pos: 1
+                  grid_cell_column_pos: 0
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_menu_cat2_style
+                  on_press:
+                    - script.execute: nav_to_sensors
+                  widgets:
+                    - label:
+                        text: "Sensors"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: menu_btn_lights
+                  grid_cell_row_pos: 1
+                  grid_cell_column_pos: 1
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_menu_cat3_style
+                  on_press:
+                    - script.execute: nav_to_lighting_switches
+                  widgets:
+                    - label:
+                        text: "Lights"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: menu_btn_dimmers
+                  grid_cell_row_pos: 1
+                  grid_cell_column_pos: 2
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_menu_cat3_style
+                  on_press:
+                    - script.execute: nav_to_lighting_dimmers
+                  widgets:
+                    - label:
+                        text: "Dimmers"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: menu_btn_overrides
+                  grid_cell_row_pos: 2
+                  grid_cell_column_pos: 0
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_menu_cat4_style
+                  on_press:
+                    - script.execute: nav_to_overrides
+                  widgets:
+                    - label:
+                        text: "Overrides"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: menu_btn_display
+                  grid_cell_row_pos: 2
+                  grid_cell_column_pos: 1
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_menu_cat1_style
+                  on_press:
+                    - script.execute: nav_to_display_settings
+                  widgets:
+                    - label:
+                        text: "Display"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: menu_btn_dimmers_2
+                  grid_cell_row_pos: 2
+                  grid_cell_column_pos: 2
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_menu_cat3_style
+                  on_press:
+                    - script.execute: nav_to_lighting_dimmers_2
+                  widgets:
+                    - label:
+                        text: "Dimmers 2"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: menu_btn_wifi
+                  grid_cell_row_pos: 3
+                  grid_cell_column_pos: 0
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_menu_cat1_style
+                  on_press:
+                    - script.execute: nav_to_wifi
+                  widgets:
+                    - label:
+                        text: "WiFi Setup"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text
+              - button:
+                  id: menu_btn_info
+                  grid_cell_row_pos: 3
+                  grid_cell_column_pos: 1
+                  grid_cell_x_align: STRETCH
+                  grid_cell_y_align: STRETCH
+                  styles: sense_menu_cat1_style
+                  on_press:
+                    - script.execute: nav_to_info
+                  widgets:
+                    - label:
+                        text: "Info"
+                        align: CENTER
+                        text_font: nunito_18
+                        text_color: sense_text

@@ -1,0 +1,56 @@
+﻿substitutions:
+  sense_page_sensors_id: "page_sensors"
+
+lvgl:
+  pages:
+    - id: ${sense_page_sensors_id}
+      styles: sense_page_style
+      on_load:
+        - component.update: internal_temp
+        - component.update: ha_tstat_current_temp
+        - lvgl.label.update:
+            id: data_internal_temp
+            text: !lambda |- 
+              if (isnan(id(internal_temp).state)) return std::string("--");
+              return str_sprintf("%.1f %s", id(internal_temp).state, id(internal_temp).get_unit_of_measurement_ref().c_str());
+        - lvgl.label.update:
+            id: data_ha_tstat_current_temp
+            text: !lambda |- 
+              if (isnan(id(ha_tstat_current_temp).state)) return std::string("--");
+              return str_sprintf("%.1f %s", id(ha_tstat_current_temp).state, id(ha_tstat_current_temp).get_unit_of_measurement_ref().c_str());
+        - lvgl.label.update:
+            id: data_ha_osat_temp
+            text: !lambda |- 
+              if (isnan(id(ha_osat_temp).state)) return std::string("--");
+              return str_sprintf("%.1f %s", id(ha_osat_temp).state, id(ha_osat_temp).get_unit_of_measurement_ref().c_str());
+        - lvgl.label.update:
+            id: data_ha_kitchen_temp
+            text: !lambda |- 
+              if (isnan(id(ha_kitchen_temp).state)) return std::string("--");
+              return str_sprintf("%.1f %s", id(ha_kitchen_temp).state, id(ha_kitchen_temp).get_unit_of_measurement_ref().c_str());
+        - lvgl.label.update:
+            id: data_ha_freezer_temp
+            text: !lambda |- 
+              if (isnan(id(ha_freezer_temp).state)) return std::string("--");
+              return str_sprintf("%.1f %s", id(ha_freezer_temp).state, id(ha_freezer_temp).get_unit_of_measurement_ref().c_str());
+        - lvgl.label.update:
+            id: data_ha_fridge_temp
+            text: !lambda |- 
+              if (isnan(id(ha_fridge_temp).state)) return std::string("--");
+              return str_sprintf("%.1f %s", id(ha_fridge_temp).state, id(ha_fridge_temp).get_unit_of_measurement_ref().c_str());
+      layout:
+        type: grid
+        grid_rows:
+          - FR(1)
+          - FR(1)
+          - FR(1)
+        grid_columns:
+          - FR(1)
+          - FR(1)
+          - FR(1)
+        pad_row: 8
+        pad_column: 8
+      pad_top: ${sense_content_y | default("46")}
+      pad_bottom: 76
+      pad_left: 8
+      pad_right: 8

@@ -1,0 +1,52 @@
+substitutions:
+  dimmers_page_id: "page_lighting_dimmers"
+  dimmers_card_bg_id: "dimmers_page_card_bg"
+  dimmers_title_id: "dimmers_page_title"
+  dimmers_title_text: "Dimmers"
+
+lvgl:
+  pages:
+    - id: ${dimmers_page_id}
+      styles: sense_page_style
+      layout:
+        type: grid
+        grid_rows:
+          - 40
+          - FR(1)
+          - FR(1)
+          - FR(1)
+          - FR(1)
+        grid_columns:
+          - FR(1)
+          - FR(1)
+          - FR(1)
+          - FR(1)
+        pad_row: 8
+        pad_column: 8
+        multiple_widgets_per_cell: true
+      pad_top: ${sense_content_y | default("46")}
+      pad_bottom: 76
+      pad_left: 8
+      pad_right: 8
+      widgets:
+        - obj:
+            id: ${dimmers_card_bg_id}
+            grid_cell_row_pos: 0
+            grid_cell_column_pos: 0
+            grid_cell_row_span: 5
+            grid_cell_column_span: 4
+            grid_cell_x_align: stretch
+            grid_cell_y_align: stretch
+            styles: sense_card_flat_style
+            clickable: false
+        - label:
+            id: ${dimmers_title_id}
+            text: ${dimmers_title_text}
+            grid_cell_row_pos: 0
+            grid_cell_column_pos: 0
+            grid_cell_column_span: 4
+            grid_cell_x_align: center
+            grid_cell_y_align: center
+            y: -2
+            text_font: nunito_36
+            text_color: sense_info

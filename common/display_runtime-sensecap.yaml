@@ -1,0 +1,160 @@
+---
+# SenseCAP-style display runtime controls (dark-only workflow).
+# Optional module: include in root when you want simple brightness/sleep behavior
+# without Day/Evening/Night mode entities.
+
+substitutions:
+  sense_display_brightness_pct: "50"
+  sense_display_sleep_enabled: "true"
+  sense_display_sleep_timeout_s: "60"
+  sense_display_idle_scroll_enabled: "false"
+  sense_display_idle_scroll_s: "30"
+  sense_display_idle_scroll_rate_s: "5"
+  sense_display_scroll_sleep_enabled: "false"
+  sense_display_scroll_sleep_min: "30"
+
+time:
+  - platform: homeassistant
+    id: system_time
+
+globals:
+  - id: sense_display_brightness_pct
+    type: int
+    restore_value: true
+    initial_value: "${sense_display_brightness_pct}"
+  - id: sense_display_sleep_enabled
+    type: bool
+    restore_value: true
+    initial_value: "${sense_display_sleep_enabled}"
+  - id: sense_display_sleep_timeout_s
+    type: int
+    restore_value: true
+    initial_value: "${sense_display_sleep_timeout_s}"
+  - id: sense_display_idle_scroll_enabled
+    type: bool
+    restore_value: true
+    initial_value: "${sense_display_idle_scroll_enabled}"
+  - id: sense_display_idle_scroll_s
+    type: int
+    restore_value: true
+    initial_value: "${sense_display_idle_scroll_s}"
+  - id: sense_display_idle_scroll_rate_s
+    type: int
+    restore_value: true
+    initial_value: "${sense_display_idle_scroll_rate_s}"
+  - id: sense_display_scroll_sleep_enabled
+    type: bool
+    restore_value: true
+    initial_value: "${sense_display_scroll_sleep_enabled}"
+  - id: sense_display_scroll_sleep_min
+    type: int
+    restore_value: true
+    initial_value: "${sense_display_scroll_sleep_min}"
+  - id: sense_display_last_interaction_ms
+    type: uint32_t
+    restore_value: false
+    initial_value: "0"
+  - id: sense_display_last_auto_scroll_ms
+    type: uint32_t
+    restore_value: false
+    initial_value: "0"
+  - id: sense_display_scroll_sleep_start_ms
+    type: uint32_t
+    restore_value: false
+    initial_value: "0"
+  - id: sense_display_screen_off
+    type: bool
+    restore_value: false
+    initial_value: "false"
+
+script:
+  - id: sense_display_apply_brightness
+    mode: restart
+    then:
+      - light.turn_on:
+          id: display_backlight
+          brightness: !lambda |-
+            int pct = id(sense_display_brightness_pct);
+            if (pct < 1) pct = 1;
+            if (pct > 100) pct = 100;
+            return (float) pct / 100.0f;
+
+esphome:
+  on_boot:
+    - priority: -10
+      then:
+        - lambda: |-
+            id(sense_display_last_interaction_ms) = millis();
+            id(sense_display_last_auto_scroll_ms) = id(sense_display_last_interaction_ms);
+            id(sense_display_scroll_sleep_start_ms) = 0;
+            id(sense_display_screen_off) = false;
+        - script.execute: sense_display_apply_brightness
+
+touchscreen:
+  - id: !extend my_touchscreen
+    on_touch:
+      then:
+        - lambda: |-
+            id(sense_display_last_interaction_ms) = millis();
+            id(sense_display_last_auto_scroll_ms) = id(sense_display_last_interaction_ms);
+            id(sense_display_scroll_sleep_start_ms) = 0;
+        - if:
+            condition:
+              lambda: "return id(sense_display_screen_off);"
+            then:
+              - lvgl.resume:
+              - lvgl.widget.redraw
+              - script.execute: nav_to_home
+              - script.execute: sense_display_apply_brightness
+              - lambda: "id(sense_display_screen_off) = false;"
+
+interval:
+  - interval: 1s
+    then:
+      - if:
+          condition:
+            lambda: |-
+              if (id(sense_display_screen_off)) return false;
+              if (!id(sense_display_idle_scroll_enabled)) return false;
+              uint32_t now = millis();
+              uint32_t idle_elapsed = now - id(sense_display_last_interaction_ms);
+              uint32_t auto_elapsed = now - id(sense_display_last_auto_scroll_ms);
+              return idle_elapsed >= (uint32_t) (id(sense_display_idle_scroll_s) * 1000) &&
+                     auto_elapsed >= (uint32_t) (id(sense_display_idle_scroll_rate_s) * 1000);
+          then:
+            - lambda: |-
+                if (id(sense_display_scroll_sleep_start_ms) == 0) id(sense_display_scroll_sleep_start_ms) = millis();
+                id(sense_display_last_auto_scroll_ms) = millis();
+            - script.execute: nav_to_next
+
+      - if:
+          condition:
+            lambda: |-
+              if (id(sense_display_screen_off)) return false;
+              if (!id(sense_display_idle_scroll_enabled)) return false;
+              if (!id(sense_display_scroll_sleep_enabled)) return false;
+              if (id(sense_display_scroll_sleep_start_ms) == 0) return false;
+              uint32_t elapsed = millis() - id(sense_display_scroll_sleep_start_ms);
+              return elapsed >= (uint32_t) (id(sense_display_scroll_sleep_min) * 60000);
+          then:
+            - lvgl.pause:
+            - light.turn_off: display_backlight
+            - lambda: |-
+                id(sense_display_screen_off) = true;
+                id(sense_display_scroll_sleep_start_ms) = 0;
+
+      - if:
+          condition:
+            lambda: |-
+              if (!id(sense_display_sleep_enabled)) return false;
+              if (id(sense_display_idle_scroll_enabled)) return false;
+              if (id(sense_display_screen_off)) return false;
+              uint32_t elapsed = millis() - id(sense_display_last_interaction_ms);
+              return elapsed >= (uint32_t) (id(sense_display_sleep_timeout_s) * 1000);
+          then:
+            - lvgl.pause:
+            - light.turn_off: display_backlight
+            - lambda: "id(sense_display_screen_off) = true;"
+
+
+
