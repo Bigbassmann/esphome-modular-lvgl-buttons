@@ -9,6 +9,7 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   sense_page_tstat_id: "main_page"
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -69,6 +70,8 @@ substitutions:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
   sense_page_tstat_id: "page_thermostat_v2"
   sense_page_fans_id: "page_fans"
   sense_page_overrides_id: "page_overrides"
@@ -79,6 +82,9 @@ substitutions:
   sense_page_info_id: "info_screen"
   sense_page_display_settings_id: "page_display_settings"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -111,7 +117,10 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       - lambda: 'id(sense_nav_index) = 1;'
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -128,7 +137,10 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       - lambda: 'id(sense_nav_index) = 2;'
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -141,6 +153,7 @@ script:
 
   - id: nav_to_settings
     then:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -181,6 +194,8 @@ script:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
       - lvgl.page.show: ${sense_page_settings_id}
 
   - id: nav_to_display_settings
@@ -198,6 +213,9 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -209,6 +227,7 @@ script:
 
   - id: nav_to_overrides
     then:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -226,10 +245,14 @@ script:
 =======
       - lambda: 'id(sense_nav_index) = 3;'
 >>>>>>> Stashed changes
+=======
+      - lambda: 'id(sense_nav_index) = 3;'
+>>>>>>> Stashed changes
       - lvgl.page.show: ${sense_page_overrides_id}
 
   - id: nav_to_lighting_dimmers
     then:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -293,6 +316,8 @@ script:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
       - lambda: 'id(sense_nav_index) = 4;'
       - lvgl.page.show: ${sense_page_lighting_dimmers_id}
 
@@ -310,6 +335,9 @@ script:
     then:
       - lambda: 'id(sense_nav_index) = 7;'
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -320,6 +348,9 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -336,6 +367,7 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           id(sense_nav_index) = (id(sense_nav_index) + 10) % 11;
 >>>>>>> Stashed changes
 =======
@@ -343,6 +375,9 @@ script:
 >>>>>>> Stashed changes
 =======
           id(sense_nav_index) = (id(sense_nav_index) + 6) % 7;
+>>>>>>> Stashed changes
+=======
+          id(sense_nav_index) = (id(sense_nav_index) + 7) % 8;
 >>>>>>> Stashed changes
 =======
           id(sense_nav_index) = (id(sense_nav_index) + 7) % 8;
@@ -363,7 +398,11 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             - script.execute: nav_to_menu
+=======
+            - script.execute: nav_to_tstat
+>>>>>>> Stashed changes
 =======
             - script.execute: nav_to_tstat
 >>>>>>> Stashed changes
@@ -384,7 +423,11 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             - script.execute: nav_to_wifi
+=======
+            - script.execute: nav_to_fans
+>>>>>>> Stashed changes
 =======
             - script.execute: nav_to_fans
 >>>>>>> Stashed changes
@@ -405,7 +448,11 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             - script.execute: nav_to_settings
+=======
+            - script.execute: nav_to_overrides
+>>>>>>> Stashed changes
 =======
             - script.execute: nav_to_overrides
 >>>>>>> Stashed changes
@@ -426,6 +473,7 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             - script.execute: nav_to_tstat
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -440,6 +488,9 @@ script:
 =======
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+            - script.execute: nav_to_lighting_dimmers
 >>>>>>> Stashed changes
 =======
             - script.execute: nav_to_lighting_dimmers
@@ -461,12 +512,16 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             - script.execute: nav_to_fans
 =======
             - script.execute: nav_to_lighting_switches
 >>>>>>> Stashed changes
 =======
             - script.execute: nav_to_lighting_switches
+>>>>>>> Stashed changes
+=======
+            - script.execute: nav_to_lighting_dimmers_2
 >>>>>>> Stashed changes
 =======
             - script.execute: nav_to_lighting_dimmers_2
@@ -482,7 +537,11 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             - script.execute: nav_to_overrides
+=======
+            - script.execute: nav_to_lighting_switches
+>>>>>>> Stashed changes
 =======
             - script.execute: nav_to_lighting_switches
 >>>>>>> Stashed changes
@@ -493,6 +552,7 @@ script:
           condition:
             lambda: 'return id(sense_nav_index) == 7;'
           then:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
             - script.execute: nav_to_lighting_dimmers
@@ -539,10 +599,14 @@ script:
 =======
             - script.execute: nav_to_sensors
 >>>>>>> Stashed changes
+=======
+            - script.execute: nav_to_sensors
+>>>>>>> Stashed changes
 
   - id: nav_to_next
     then:
       - lambda: |-
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -580,6 +644,9 @@ script:
 =======
           id(sense_nav_index) = (id(sense_nav_index) + 1) % 8;
 >>>>>>> Stashed changes
+=======
+          id(sense_nav_index) = (id(sense_nav_index) + 1) % 8;
+>>>>>>> Stashed changes
       - if:
           condition:
             lambda: 'return id(sense_nav_index) == 0;'
@@ -593,7 +660,11 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             - script.execute: nav_to_menu
+=======
+            - script.execute: nav_to_tstat
+>>>>>>> Stashed changes
 =======
             - script.execute: nav_to_tstat
 >>>>>>> Stashed changes
@@ -614,7 +685,11 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             - script.execute: nav_to_wifi
+=======
+            - script.execute: nav_to_fans
+>>>>>>> Stashed changes
 =======
             - script.execute: nav_to_fans
 >>>>>>> Stashed changes
@@ -635,7 +710,11 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             - script.execute: nav_to_settings
+=======
+            - script.execute: nav_to_overrides
+>>>>>>> Stashed changes
 =======
             - script.execute: nav_to_overrides
 >>>>>>> Stashed changes
@@ -656,6 +735,7 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             - script.execute: nav_to_tstat
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -670,6 +750,9 @@ script:
 =======
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+            - script.execute: nav_to_lighting_dimmers
 >>>>>>> Stashed changes
 =======
             - script.execute: nav_to_lighting_dimmers
@@ -691,12 +774,16 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             - script.execute: nav_to_fans
 =======
             - script.execute: nav_to_lighting_switches
 >>>>>>> Stashed changes
 =======
             - script.execute: nav_to_lighting_switches
+>>>>>>> Stashed changes
+=======
+            - script.execute: nav_to_lighting_dimmers_2
 >>>>>>> Stashed changes
 =======
             - script.execute: nav_to_lighting_dimmers_2
@@ -712,7 +799,11 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             - script.execute: nav_to_overrides
+=======
+            - script.execute: nav_to_lighting_switches
+>>>>>>> Stashed changes
 =======
             - script.execute: nav_to_lighting_switches
 >>>>>>> Stashed changes
@@ -723,6 +814,7 @@ script:
           condition:
             lambda: 'return id(sense_nav_index) == 7;'
           then:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
             - script.execute: nav_to_lighting_dimmers
@@ -769,6 +861,9 @@ script:
 =======
             - script.execute: nav_to_sensors
 >>>>>>> Stashed changes
+=======
+            - script.execute: nav_to_sensors
+>>>>>>> Stashed changes
 
 interval:
   - interval: 30s
@@ -793,11 +888,14 @@ interval:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             if (isnan(id(sense_topbar_wifi_db).state)) return std::string("WiFi --");
             char buf[24];
             snprintf(buf, sizeof(buf), "%.0f", id(sense_topbar_wifi_db).state);
             return std::string(buf);
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -817,6 +915,9 @@ interval:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

@@ -8,6 +8,10 @@ lvgl:
       layout:
         type: grid
         grid_rows:
+<<<<<<< Updated upstream
+=======
+          - 40
+>>>>>>> Stashed changes
           - FR(1)
           - FR(1)
           - FR(1)
@@ -19,7 +23,36 @@ lvgl:
           - FR(1)
         pad_row: 8
         pad_column: 8
+<<<<<<< Updated upstream
+=======
+        multiple_widgets_per_cell: true
+>>>>>>> Stashed changes
       pad_top: ${sense_content_y | default("46")}
       pad_bottom: 76
       pad_left: 8
       pad_right: 8
+<<<<<<< Updated upstream
+=======
+      widgets:
+        - obj:
+            id: dimmers_page_2_card_bg
+            grid_cell_row_pos: 0
+            grid_cell_column_pos: 0
+            grid_cell_row_span: 5
+            grid_cell_column_span: 4
+            grid_cell_x_align: stretch
+            grid_cell_y_align: stretch
+            styles: sense_card_style
+            clickable: false
+        - label:
+            id: dimmers_page_2_title
+            text: "Dimmers"
+            grid_cell_row_pos: 0
+            grid_cell_column_pos: 0
+            grid_cell_column_span: 4
+            grid_cell_x_align: center
+            grid_cell_y_align: center
+            y: -2
+            text_font: nunito_36
+            text_color: sense_info
+>>>>>>> Stashed changes

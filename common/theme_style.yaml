@@ -64,7 +64,11 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       bg_color: sense_bg
+=======
+      bg_color: sense_surface
+>>>>>>> Stashed changes
 =======
       bg_color: sense_surface
 >>>>>>> Stashed changes
@@ -107,7 +111,11 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       bg_color: sense_surface_alt
+=======
+      bg_color: sense_surface
+>>>>>>> Stashed changes
 =======
       bg_color: sense_surface
 >>>>>>> Stashed changes
@@ -131,6 +139,7 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       bg_color: sense_surface_alt
       bg_opa: cover
       text_color: sense_text
@@ -140,6 +149,8 @@ lvgl:
       pad_all: 6
 
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -206,8 +217,11 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -261,6 +275,9 @@ lvgl:
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

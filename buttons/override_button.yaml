@@ -14,7 +14,10 @@
 #   value_off:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 #   on_bg_color: (optional)
@@ -22,6 +25,9 @@
 #   on_icon: (optional)
 #   off_icon: (optional)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -97,11 +103,14 @@ binary_sensor:
                 id: button_${uid}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 bg_color: $button_on_color
             - lvgl.widget.update:
                 id: icon_${uid}
                 text_color: $icon_on_color
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
                 bg_color: ${on_bg_color | default("$button_on_color")}
@@ -116,6 +125,9 @@ binary_sensor:
                       id: icon_${uid}
                       text: ${on_icon | default("")}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -133,11 +145,14 @@ binary_sensor:
                 id: button_${uid}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 bg_color: $button_off_color
             - lvgl.widget.update:
                 id: icon_${uid}
                 text_color: $icon_off_color
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
                 bg_color: ${off_bg_color | default("$button_off_color")}
@@ -152,6 +167,9 @@ binary_sensor:
                       id: icon_${uid}
                       text: ${off_icon | default("")}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -166,6 +184,10 @@ binary_sensor:
                 text_color: $label_off_color
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
