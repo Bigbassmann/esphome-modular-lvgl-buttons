@@ -54,16 +54,28 @@ lvgl:
                         grid_cell_y_align: center
                     - label:
                         id: label_${uid}
+<<<<<<< Updated upstream
                         text_font: nunito_16
                         text: ${text}
+=======
+                        text_font: nunito_18
+                        text: ${text}
+                        text_color: sense_text
+>>>>>>> Stashed changes
                         grid_cell_row_pos: 0
                         grid_cell_column_pos: 1
                         grid_cell_x_align: start
                         grid_cell_y_align: center
                     - label:
                         id: value_${uid}
+<<<<<<< Updated upstream
                         text_font: nunito_18
                         text: ${value_off | default("OFF")}
+=======
+                        text_font: nunito_20
+                        text: ${value_off | default("OFF")}
+                        text_color: sense_text
+>>>>>>> Stashed changes
                         grid_cell_row_pos: 0
                         grid_cell_column_pos: 2
                         grid_cell_x_align: end
@@ -97,6 +109,7 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_${uid}
                       text: ${on_icon | default("")}
+<<<<<<< Updated upstream
             - lvgl.widget.update:
                 id: label_${uid}
                 text_color: $label_on_color
@@ -106,6 +119,11 @@ binary_sensor:
             - lvgl.widget.update:
                 id: value_${uid}
                 text_color: $label_on_color
+=======
+            - lvgl.label.update:
+                id: value_${uid}
+                text: ${value_on | default("ON")}
+>>>>>>> Stashed changes
           else:
             - lvgl.widget.update:
                 id: button_${uid}
@@ -120,6 +138,7 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_${uid}
                       text: ${off_icon | default("")}
+<<<<<<< Updated upstream
             - lvgl.widget.update:
                 id: label_${uid}
                 text_color: sense_text
@@ -129,3 +148,8 @@ binary_sensor:
             - lvgl.widget.update:
                 id: value_${uid}
                 text_color: sense_text
+=======
+            - lvgl.label.update:
+                id: value_${uid}
+                text: ${value_off | default("OFF")}
+>>>>>>> Stashed changes
