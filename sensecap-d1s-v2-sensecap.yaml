@@ -251,8 +251,13 @@ packages:
       on_icon: $mdi_motion_sensor_off
       off_icon: $mdi_motion_sensor
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
+=======
+      on_bg_color: sense_tile_motion
+      off_bg_color: sense_tile_motion_off
+>>>>>>> Stashed changes
 =======
       on_bg_color: sense_tile_motion
       off_bg_color: sense_tile_motion_off
@@ -271,8 +276,13 @@ packages:
       on_icon: $mdi_motion_sensor_off
       off_icon: $mdi_motion_sensor
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
+=======
+      on_bg_color: sense_tile_motion
+      off_bg_color: sense_tile_motion_off
+>>>>>>> Stashed changes
 =======
       on_bg_color: sense_tile_motion
       off_bg_color: sense_tile_motion_off
@@ -291,8 +301,13 @@ packages:
       on_icon: $mdi_motion_sensor_off
       off_icon: $mdi_motion_sensor
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
+=======
+      on_bg_color: sense_tile_motion
+      off_bg_color: sense_tile_motion_off
+>>>>>>> Stashed changes
 =======
       on_bg_color: sense_tile_motion
       off_bg_color: sense_tile_motion_off
@@ -311,8 +326,13 @@ packages:
       on_icon: $mdi_motion_sensor_off
       off_icon: $mdi_motion_sensor
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
+=======
+      on_bg_color: sense_tile_motion
+      off_bg_color: sense_tile_motion_off
+>>>>>>> Stashed changes
 =======
       on_bg_color: sense_tile_motion
       off_bg_color: sense_tile_motion_off
@@ -789,6 +809,11 @@ font:
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 =======
 
 

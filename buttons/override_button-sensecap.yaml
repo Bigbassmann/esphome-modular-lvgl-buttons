@@ -56,12 +56,18 @@ lvgl:
                         id: label_${uid}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                         text_font: nunito_16
                         text: ${text}
 =======
                         text_font: nunito_18
                         text: ${text}
                         text_color: sense_text
+>>>>>>> Stashed changes
+=======
+                        text_font: nunito_18
+                        text: ${text}
+                        text_color: white
 >>>>>>> Stashed changes
 =======
                         text_font: nunito_18
@@ -76,12 +82,18 @@ lvgl:
                         id: value_${uid}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                         text_font: nunito_18
                         text: ${value_off | default("OFF")}
 =======
                         text_font: nunito_20
                         text: ${value_off | default("OFF")}
                         text_color: sense_text
+>>>>>>> Stashed changes
+=======
+                        text_font: nunito_20
+                        text: ${value_off | default("OFF")}
+                        text_color: white
 >>>>>>> Stashed changes
 =======
                         text_font: nunito_20
@@ -123,6 +135,7 @@ binary_sensor:
                       text: ${on_icon | default("")}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             - lvgl.widget.update:
                 id: label_${uid}
                 text_color: $label_on_color
@@ -132,6 +145,11 @@ binary_sensor:
             - lvgl.widget.update:
                 id: value_${uid}
                 text_color: $label_on_color
+=======
+            - lvgl.label.update:
+                id: value_${uid}
+                text: ${value_on | default("ON")}
+>>>>>>> Stashed changes
 =======
             - lvgl.label.update:
                 id: value_${uid}
@@ -158,6 +176,7 @@ binary_sensor:
                       text: ${off_icon | default("")}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             - lvgl.widget.update:
                 id: label_${uid}
                 text_color: sense_text
@@ -173,9 +192,14 @@ binary_sensor:
                 text: ${value_off | default("OFF")}
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
             - lvgl.label.update:
                 id: value_${uid}
                 text: ${value_off | default("OFF")}
 
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
