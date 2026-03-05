@@ -9,10 +9,14 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       - lvgl.slider.update:
           id: display_brightness_slider
           value: !lambda 'return id(sense_display_brightness_pct);'
           animated: false
+=======
+      - lvgl.slider.update: {id: display_brightness_slider, value: !lambda 'return id(sense_display_brightness_pct);', animated: false}
+>>>>>>> Stashed changes
 =======
       - lvgl.slider.update: {id: display_brightness_slider, value: !lambda 'return id(sense_display_brightness_pct);', animated: false}
 >>>>>>> Stashed changes
@@ -36,6 +40,7 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       - lvgl.slider.update:
           id: display_sleep_timeout_slider
           value: !lambda 'return id(sense_display_sleep_timeout_s);'
@@ -48,6 +53,8 @@ script:
             return std::string(buf);
 
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -99,6 +106,9 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -120,7 +130,10 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -140,6 +153,9 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -164,7 +180,11 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             styles: sense_card_style
+=======
+            styles: sense_card_flat_style
+>>>>>>> Stashed changes
 =======
             styles: sense_card_flat_style
 >>>>>>> Stashed changes
@@ -185,7 +205,11 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   y: 8
+=======
+                  y: 6
+>>>>>>> Stashed changes
 =======
                   y: 6
 >>>>>>> Stashed changes
@@ -208,12 +232,15 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   x: 16
                   y: 58
                   width: 150
                   height: 42
                   styles: sense_nav_btn_style
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -228,6 +255,9 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -243,7 +273,12 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                         text_font: nunito_18
+=======
+                        text_font: nunito_16
+                        text_color: sense_text
+>>>>>>> Stashed changes
 =======
                         text_font: nunito_16
                         text_color: sense_text
@@ -268,6 +303,7 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   x: 178
                   y: 70
                   width: 190
@@ -280,6 +316,8 @@ lvgl:
                           id(sense_display_brightness_pct) = x;
                           id(sense_display_last_interaction_ms) = millis();
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -307,6 +345,9 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -323,7 +364,11 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                             snprintf(buf, sizeof(buf), "%d%%", x);
+=======
+                            snprintf(buf, sizeof(buf), "%d%%", (int) x);
+>>>>>>> Stashed changes
 =======
                             snprintf(buf, sizeof(buf), "%d%%", (int) x);
 >>>>>>> Stashed changes
@@ -346,10 +391,13 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   x: -16
                   y: 64
                   text_font: nunito_20
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -468,6 +516,9 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -484,12 +535,15 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   x: 16
                   y: 126
                   width: 150
                   height: 42
                   styles: sense_nav_btn_style
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -504,6 +558,9 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -519,8 +576,11 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                           id(sense_display_last_interaction_ms) = millis();
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -534,6 +594,9 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -553,6 +616,7 @@ lvgl:
                             - script.execute: sense_display_apply_brightness
                       - script.execute: display_settings_refresh_ui
                   widgets:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -598,10 +662,15 @@ lvgl:
                     - label: {text: "Sleep", align: LEFT_MID, x: 10, text_font: nunito_16, text_color: sense_text}
                     - label: {id: display_sleep_state, text: "ON", align: RIGHT_MID, x: -10, text_font: nunito_16, text_color: sense_text}
 >>>>>>> Stashed changes
+=======
+                    - label: {text: "Sleep", align: LEFT_MID, x: 10, text_font: nunito_16, text_color: sense_text}
+                    - label: {id: display_sleep_state, text: "ON", align: RIGHT_MID, x: -10, text_font: nunito_16, text_color: sense_text}
+>>>>>>> Stashed changes
 
               - slider:
                   id: display_sleep_timeout_slider
                   align: TOP_LEFT
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -617,6 +686,8 @@ lvgl:
                       - lambda: |-
                           id(sense_display_sleep_timeout_s) = x;
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -641,6 +712,9 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -656,8 +730,13 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                             char buf[16];
                             snprintf(buf, sizeof(buf), "%ds", x);
+=======
+                            char buf[12];
+                            snprintf(buf, sizeof(buf), "%ds", (int) x);
+>>>>>>> Stashed changes
 =======
                             char buf[12];
                             snprintf(buf, sizeof(buf), "%ds", (int) x);
@@ -684,10 +763,13 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                   x: -16
                   y: 200
                   text_font: nunito_20
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -755,6 +837,9 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

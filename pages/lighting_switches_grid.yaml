@@ -7,16 +7,22 @@ lvgl:
       styles: sense_page_style
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       layout: 5x2
 =======
       layout:
         type: grid
         grid_rows:
 =======
+=======
+>>>>>>> Stashed changes
       layout:
         type: grid
         grid_rows:
           - 40
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
           - FR(1)
           - FR(1)
@@ -27,6 +33,10 @@ lvgl:
         pad_row: 8
         pad_column: 8
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+        multiple_widgets_per_cell: true
+>>>>>>> Stashed changes
 =======
         multiple_widgets_per_cell: true
 >>>>>>> Stashed changes
@@ -35,8 +45,11 @@ lvgl:
       pad_left: 8
       pad_right: 8
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
       widgets:
         - obj:
             id: light_switches_card_bg
@@ -46,7 +59,11 @@ lvgl:
             grid_cell_column_span: 2
             grid_cell_x_align: stretch
             grid_cell_y_align: stretch
+<<<<<<< Updated upstream
             styles: sense_card_style
+=======
+            styles: sense_card_flat_style
+>>>>>>> Stashed changes
             clickable: false
         - label:
             id: light_switches_title
@@ -59,4 +76,8 @@ lvgl:
             y: -2
             text_font: nunito_36
             text_color: sense_info
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+
 >>>>>>> Stashed changes

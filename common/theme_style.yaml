@@ -65,7 +65,11 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       bg_color: sense_bg
+=======
+      bg_color: sense_surface
+>>>>>>> Stashed changes
 =======
       bg_color: sense_surface
 >>>>>>> Stashed changes
@@ -112,7 +116,11 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       bg_color: sense_surface_alt
+=======
+      bg_color: sense_surface
+>>>>>>> Stashed changes
 =======
       bg_color: sense_surface
 >>>>>>> Stashed changes
@@ -140,6 +148,7 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       bg_color: sense_surface_alt
       bg_opa: cover
       text_color: sense_text
@@ -161,6 +170,12 @@ lvgl:
       bg_opa: cover
       text_color: sense_text
       border_width: 1
+=======
+      bg_color: sense_tile_blue
+      bg_opa: cover
+      text_color: sense_text
+      border_width: 0
+>>>>>>> Stashed changes
       border_color: sense_info
       radius: 8
       pad_all: 6
@@ -218,8 +233,11 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -276,6 +294,9 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -304,3 +325,7 @@ select:
                   bg_color: black
                   text_color: white
               - lvgl.widget.redraw
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes

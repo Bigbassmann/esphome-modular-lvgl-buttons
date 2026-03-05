@@ -7,6 +7,7 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   sense_page_tstat_id: "main_page"
   sense_page_wifi_id: "page_wifi_setup"
   sense_page_fans_id: "main_page"
@@ -14,6 +15,8 @@ substitutions:
   sense_page_lighting_dimmers_id: "main_page"
   sense_page_lighting_switches_id: "main_page"
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -39,10 +42,14 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+  sense_page_display_settings_id: "page_display_settings"
 >>>>>>> Stashed changes
 =======
   sense_page_display_settings_id: "page_display_settings"
@@ -78,7 +85,11 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               grid_rows: [FR(1), FR(1), FR(1)]
+=======
+              grid_rows: [FR(1), FR(1), FR(1), FR(1)]
+>>>>>>> Stashed changes
 =======
               grid_rows: [FR(1), FR(1), FR(1), FR(1)]
 >>>>>>> Stashed changes
@@ -201,7 +212,10 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -235,12 +249,15 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -265,6 +282,9 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

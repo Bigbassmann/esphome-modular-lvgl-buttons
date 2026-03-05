@@ -2,9 +2,13 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ---
 =======
 ﻿---
+>>>>>>> Stashed changes
+=======
+---
 >>>>>>> Stashed changes
 =======
 ---
@@ -34,6 +38,7 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   # LCD back light modes - Code in backlight_time.yaml
   # Set Day mode - starts at Sunrise - screen at 100%
   touchscreen_daytime_brightness: "100%"
@@ -56,6 +61,8 @@ substitutions:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
   # SenseCAP display runtime defaults (dark-only, no Day/Evening/Night mode select)
   sense_display_brightness_pct: "50"
   sense_display_sleep_enabled: "true"
@@ -67,6 +74,9 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -86,6 +96,7 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   sense_page_lighting_switches_id: "page_lighting_switches"
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -98,6 +109,8 @@ substitutions:
   sense_page_display_settings_id: "page_display_settings"
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -108,6 +121,9 @@ substitutions:
   sense_page_display_settings_id: "page_display_settings"
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -158,10 +174,13 @@ packages:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   page_menu_sensecap: !include esphome-modular-lvgl-buttons/pages/menu_grid.yaml
   page_wifi_setup_sensecap: !include esphome-modular-lvgl-buttons/pages/wifi_setup.yaml
   page_settings_sensecap: !include esphome-modular-lvgl-buttons/pages/settings_grid.yaml
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -175,6 +194,7 @@ packages:
   page_wifi_setup_sensecap: !include esphome-modular-lvgl-buttons/pages/wifi_setup.yaml
   page_settings_sensecap: !include esphome-modular-lvgl-buttons/pages/settings_grid.yaml
   page_display_settings_sensecap: !include esphome-modular-lvgl-buttons/pages/display_settings_sensecap.yaml
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -212,6 +232,25 @@ packages:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+  page_fans_sensecap: !include esphome-modular-lvgl-buttons/pages/fans_grid.yaml
+  page_overrides_sensecap: !include esphome-modular-lvgl-buttons/pages/overrides_grid.yaml
+  page_lighting_dimmers_sensecap: !include
+    file: esphome-modular-lvgl-buttons/pages/lighting_dimmers_grid_template.yaml
+    vars:
+      dimmers_page_id: ${sense_page_lighting_dimmers_id}
+      dimmers_card_bg_id: "dimmers_page_1_card_bg"
+      dimmers_title_id: "dimmers_page_1_title"
+      dimmers_title_text: "Dimmers"
+  page_lighting_dimmers_2_sensecap: !include
+    file: esphome-modular-lvgl-buttons/pages/lighting_dimmers_grid_template.yaml
+    vars:
+      dimmers_page_id: ${sense_page_lighting_dimmers_2_id}
+      dimmers_card_bg_id: "dimmers_page_2_card_bg"
+      dimmers_title_id: "dimmers_page_2_title"
+      dimmers_title_text: "Dimmers"
+  page_lighting_switches_sensecap: !include esphome-modular-lvgl-buttons/pages/lighting_switches_grid.yaml
+>>>>>>> Stashed changes
   page_sensors_sensecap: !include esphome-modular-lvgl-buttons/pages/sensors_grid.yaml
   # Use this theme for debugging
   # theme_style: !include esphome-modular-lvgl-buttons/common/theme_style_debug.yaml
@@ -223,6 +262,9 @@ packages:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -251,6 +293,7 @@ packages:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
   # legacy_globals: !include esphome-modular-lvgl-buttons/common/core_globals_legacy_compat.yaml
 >>>>>>> Stashed changes
@@ -260,6 +303,8 @@ packages:
   ha_entities_sensecap: !include esphome-modular-lvgl-buttons/common/ha_entities_sensecap.yaml
   core_ha_common: !include esphome-modular-lvgl-buttons/common/core_ha_common.yaml
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -276,6 +321,9 @@ packages:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -361,6 +409,7 @@ packages:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   fans_btn_fr: !include
     file: esphome-modular-lvgl-buttons/buttons/switch_button.yaml
     vars:
@@ -428,6 +477,8 @@ packages:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
   overrides_btn_cleaners: !include
     file: esphome-modular-lvgl-buttons/buttons/override_button.yaml
     vars:
@@ -436,6 +487,7 @@ packages:
       row: 1
       column: 0
       text: "Cleaners OV"
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -470,6 +522,12 @@ packages:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+      icon: $mdi_broom
+      entity_id: ${ent_cleaners_toggle}
+      on_bg_color: sense_tile_orange
+      off_bg_color: sense_tile_orange_off
+>>>>>>> Stashed changes
 
   overrides_btn_dani: !include
     file: esphome-modular-lvgl-buttons/buttons/override_button.yaml
@@ -479,6 +537,7 @@ packages:
       row: 1
       column: 1
       text: "Dani Mode"
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -513,6 +572,12 @@ packages:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+      icon: $mdi_alarm_light
+      entity_id: ${ent_dani_mode_on}
+      on_bg_color: sense_tile_red
+      off_bg_color: sense_tile_red_off
+>>>>>>> Stashed changes
 
   overrides_btn_lock: !include
     file: esphome-modular-lvgl-buttons/buttons/override_button.yaml
@@ -522,6 +587,7 @@ packages:
       row: 2
       column: 0
       text: "Lock OV"
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -556,6 +622,12 @@ packages:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+      icon: $mdi_lock_off
+      entity_id: ${ent_front_door_auto_lock_off}
+      on_bg_color: sense_tile_indigo
+      off_bg_color: sense_tile_indigo_off
+>>>>>>> Stashed changes
 
   overrides_btn_tod: !include
     file: esphome-modular-lvgl-buttons/buttons/override_button.yaml
@@ -565,6 +637,7 @@ packages:
       row: 2
       column: 1
       text: "ToD On/Off"
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -625,6 +698,14 @@ packages:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+      icon: $mdi_home_automation
+      entity_id: ${ent_tod_control}
+      on_bg_color: sense_tile_orange
+      off_bg_color: sense_tile_orange_off
+
+  overrides_btn_motion: !include
+>>>>>>> Stashed changes
     file: esphome-modular-lvgl-buttons/buttons/override_button.yaml
     vars:
       uid: overrides_btn_motion
@@ -632,6 +713,7 @@ packages:
       row: 3
       column: 0
       text: "All Motion OV"
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -679,11 +761,14 @@ packages:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
       icon: $mdi_motion_sensor
       entity_id: ${ent_motion_automation_off}
       on_icon: $mdi_motion_sensor_off
       off_icon: $mdi_motion_sensor
       on_bg_color: sense_tile_sky
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       off_bg_color: sense_tile_sky
@@ -700,6 +785,11 @@ packages:
 
   overrides_btn_entry_motion: !include
 >>>>>>> Stashed changes
+=======
+      off_bg_color: sense_tile_sky_off
+
+  overrides_btn_entry_motion: !include
+>>>>>>> Stashed changes
     file: esphome-modular-lvgl-buttons/buttons/override_button.yaml
     vars:
       uid: overrides_btn_entry_motion
@@ -707,6 +797,7 @@ packages:
       row: 3
       column: 1
       text: "Entry OV"
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -757,11 +848,14 @@ packages:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
       icon: $mdi_motion_sensor
       entity_id: ${ent_entry_motion_automation_off}
       on_icon: $mdi_motion_sensor_off
       off_icon: $mdi_motion_sensor
       on_bg_color: sense_tile_sky
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       off_bg_color: sense_tile_sky
@@ -778,6 +872,11 @@ packages:
 
   overrides_btn_garage: !include
 >>>>>>> Stashed changes
+=======
+      off_bg_color: sense_tile_sky_off
+
+  overrides_btn_garage: !include
+>>>>>>> Stashed changes
     file: esphome-modular-lvgl-buttons/buttons/override_button.yaml
     vars:
       uid: overrides_btn_garage
@@ -785,6 +884,7 @@ packages:
       row: 4
       column: 0
       text: "Garage O/V"
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -807,11 +907,14 @@ packages:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
       icon: $mdi_motion_sensor
       entity_id: ${ent_garage_light_automation_off}
       on_icon: $mdi_motion_sensor_off
       off_icon: $mdi_motion_sensor
       on_bg_color: sense_tile_sky
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       off_bg_color: sense_tile_sky
@@ -822,6 +925,9 @@ packages:
 =======
       off_bg_color: sense_surface
 >>>>>>> Stashed changes
+=======
+      off_bg_color: sense_tile_sky_off
+>>>>>>> Stashed changes
 
   overrides_btn_mbr: !include
     file: esphome-modular-lvgl-buttons/buttons/override_button.yaml
@@ -831,6 +937,7 @@ packages:
       row: 4
       column: 1
       text: "MBR OV"
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -864,11 +971,14 @@ packages:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
       icon: $mdi_motion_sensor
       entity_id: ${ent_mbr_motion_off}
       on_icon: $mdi_motion_sensor_off
       off_icon: $mdi_motion_sensor
       on_bg_color: sense_tile_sky
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       off_bg_color: sense_tile_sky
@@ -880,11 +990,15 @@ packages:
 =======
       off_bg_color: sense_surface
 >>>>>>> Stashed changes
+=======
+      off_bg_color: sense_tile_sky_off
+>>>>>>> Stashed changes
   dimmer_btn_mbr: !include
     file: esphome-modular-lvgl-buttons/buttons/dimmer_light_button.yaml
     vars:
       uid: dimmer_btn_mbr
       page_id: ${sense_page_lighting_dimmers_id}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -919,10 +1033,16 @@ packages:
       column: 1
       column_span: 3
 >>>>>>> Stashed changes
+=======
+      row: 1
+      column: 1
+      column_span: 3
+>>>>>>> Stashed changes
       text: "MBR Lights"
       icon: $mdi_lightbulb
       entity_id: ${ent_mbr_lights}
       on_bg_color: sense_tile_yellow
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       off_bg_color: sense_tile_yellow
@@ -933,12 +1053,16 @@ packages:
 =======
       off_bg_color: sense_surface
 >>>>>>> Stashed changes
+=======
+      off_bg_color: sense_tile_yellow_off
+>>>>>>> Stashed changes
 
   dimmer_btn_fr: !include
     file: esphome-modular-lvgl-buttons/buttons/dimmer_light_button.yaml
     vars:
       uid: dimmer_btn_fr
       page_id: ${sense_page_lighting_dimmers_id}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
       row: 1
 <<<<<<< Updated upstream
@@ -989,16 +1113,23 @@ packages:
 =======
       row: 2
 >>>>>>> Stashed changes
+=======
+      row: 2
+>>>>>>> Stashed changes
       column: 1
       column_span: 3
       text: "Family Lights"
       icon: $mdi_lightbulb
       entity_id: ${ent_fr_lights}
       on_bg_color: sense_tile_orange
+<<<<<<< Updated upstream
       off_bg_color: sense_surface
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+      off_bg_color: sense_tile_orange_off
 >>>>>>> Stashed changes
 
   dimmer_btn_living: !include
@@ -1006,6 +1137,7 @@ packages:
     vars:
       uid: dimmer_btn_living
       page_id: ${sense_page_lighting_dimmers_id}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -1040,10 +1172,16 @@ packages:
       column: 1
       column_span: 3
 >>>>>>> Stashed changes
+=======
+      row: 3
+      column: 1
+      column_span: 3
+>>>>>>> Stashed changes
       text: "Living Room"
       icon: $mdi_lightbulb_group
       entity_id: ${ent_living_room_lights}
       secondary_entity_id: ${ent_library_lights}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       on_bg_color: sense_tile_yellow
@@ -1056,12 +1194,17 @@ packages:
       on_bg_color: sense_tile_teal
       off_bg_color: sense_surface
 >>>>>>> Stashed changes
+=======
+      on_bg_color: sense_tile_teal
+      off_bg_color: sense_tile_teal_off
+>>>>>>> Stashed changes
 
   dimmer_btn_kitchen: !include
     file: esphome-modular-lvgl-buttons/buttons/dimmer_light_button.yaml
     vars:
       uid: dimmer_btn_kitchen
       page_id: ${sense_page_lighting_dimmers_id}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
       row: 3
 <<<<<<< Updated upstream
@@ -1076,10 +1219,16 @@ packages:
       column: 1
       column_span: 3
 >>>>>>> Stashed changes
+=======
+      row: 4
+      column: 1
+      column_span: 3
+>>>>>>> Stashed changes
       text: "Kitchen"
       icon: $mdi_ceiling_light
       entity_id: ${ent_kitchen_lights_4}
       secondary_entity_id: ${ent_kitchen_lights_5}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       on_bg_color: sense_tile_yellow
@@ -1092,6 +1241,10 @@ packages:
       on_bg_color: sense_tile_indigo
       off_bg_color: sense_surface
 >>>>>>> Stashed changes
+=======
+      on_bg_color: sense_tile_indigo
+      off_bg_color: sense_tile_indigo_off
+>>>>>>> Stashed changes
 
   dimmer_btn_entry: !include
     file: esphome-modular-lvgl-buttons/buttons/dimmer_light_button.yaml
@@ -1099,11 +1252,17 @@ packages:
       uid: dimmer_btn_entry
       page_id: ${sense_page_lighting_dimmers_2_id}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       row: 0
 <<<<<<< Updated upstream
       column: 0
       column_span: 4
 =======
+      column: 1
+      column_span: 3
+>>>>>>> Stashed changes
+=======
+      row: 1
       column: 1
       column_span: 3
 >>>>>>> Stashed changes
@@ -1119,12 +1278,16 @@ packages:
       on_bg_color: sense_tile_blue
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       off_bg_color: sense_tile_blue
 =======
       off_bg_color: sense_surface
 >>>>>>> Stashed changes
 =======
       off_bg_color: sense_surface
+>>>>>>> Stashed changes
+=======
+      off_bg_color: sense_tile_blue_off
 >>>>>>> Stashed changes
 
   dimmer_btn_entry_page: !include
@@ -1134,6 +1297,9 @@ packages:
       widget_name: "dimmer_btn_entry"
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1155,6 +1321,7 @@ packages:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   dimmer_btn_library_page: !include
     file: esphome-modular-lvgl-buttons/pages/light_color.yaml
     vars:
@@ -1167,12 +1334,15 @@ packages:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
   dimmer_btn_living_page: !include
     file: esphome-modular-lvgl-buttons/pages/light_color.yaml
     vars:
       light_entity: ${ent_living_room_lights}
       widget_name: "dimmer_btn_living"
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -1194,6 +1364,8 @@ packages:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
   dimmer_btn_kitchen_page: !include
     file: esphome-modular-lvgl-buttons/pages/light_color.yaml
     vars:
@@ -1201,6 +1373,9 @@ packages:
       widget_name: "dimmer_btn_kitchen"
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1209,6 +1384,7 @@ packages:
     vars:
       uid: homev2_sleepy_btn
       page_id: ${sense_page_lighting_dimmers_id}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
       row: 0
       column: 0
@@ -1230,12 +1406,22 @@ packages:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+      row: 1
+      column: 0
+      text: "Sleepy"
+      icon: $mdi_weather_night
+      entity_id: ${ent_sleepy_toggle}
+      on_bg_color: sense_tile_teal
+      off_bg_color: sense_tile_teal_off
+>>>>>>> Stashed changes
 
   homev2_bedtime_btn: !include
     file: esphome-modular-lvgl-buttons/buttons/switch_button.yaml
     vars:
       uid: homev2_bedtime_btn
       page_id: ${sense_page_lighting_dimmers_id}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
       row: 1
       column: 0
@@ -1261,12 +1447,22 @@ packages:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+      row: 2
+      column: 0
+      text: "Bedtime"
+      icon: $mdi_bed
+      entity_id: ${ent_bedtime_toggle}
+      on_bg_color: sense_tile_indigo
+      off_bg_color: sense_tile_indigo_off
+>>>>>>> Stashed changes
 
   dimmer_btn_outdoor: !include
     file: esphome-modular-lvgl-buttons/buttons/switch_button.yaml
     vars:
       uid: dimmer_btn_outdoor
       page_id: ${sense_page_lighting_dimmers_id}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -1286,10 +1482,14 @@ packages:
 =======
       row: 3
 >>>>>>> Stashed changes
+=======
+      row: 3
+>>>>>>> Stashed changes
       column: 0
       text: "All Outdoor"
       icon: $mdi_string_lights
       entity_id: ${ent_outdoor_lights_toggle}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 =======
@@ -1299,6 +1499,10 @@ packages:
 =======
       on_bg_color: sense_tile_blue
       off_bg_color: sense_tile_blue
+>>>>>>> Stashed changes
+=======
+      on_bg_color: sense_tile_blue
+      off_bg_color: sense_tile_blue_off
 >>>>>>> Stashed changes
 
   homev2_nav_ov_btn: !include
@@ -1306,6 +1510,7 @@ packages:
     vars:
       uid: homev2_nav_ov_btn
       page_id: ${sense_page_lighting_dimmers_id}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
       row: 3
       column: 0
@@ -1362,6 +1567,8 @@ packages:
 >>>>>>> Stashed changes
 
 =======
+=======
+>>>>>>> Stashed changes
       row: 4
       column: 0
       text: "Overrides"
@@ -1441,6 +1648,9 @@ packages:
       column_span: 3
       text: "Placeholder"
       icon: $mdi_dots_horizontal
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   sensor_local_temp: !include
     file: esphome-modular-lvgl-buttons/buttons/sensor_button.yaml
@@ -1454,7 +1664,13 @@ packages:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       icon: $mdi_information_box
+=======
+      icon: $mdi_home_thermometer
+      icon_color: sense_text
+      bg_color: sense_tile_yellow
+>>>>>>> Stashed changes
 =======
       icon: $mdi_home_thermometer
       icon_color: sense_text
@@ -1484,7 +1700,13 @@ packages:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       icon: $mdi_information_box
+=======
+      icon: $mdi_thermometer
+      icon_color: sense_text
+      bg_color: sense_tile_yellow
+>>>>>>> Stashed changes
 =======
       icon: $mdi_thermometer
       icon_color: sense_text
@@ -1514,7 +1736,13 @@ packages:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       icon: $mdi_information_box
+=======
+      icon: $mdi_thermometer
+      icon_color: sense_text
+      bg_color: sense_tile_blue
+>>>>>>> Stashed changes
 =======
       icon: $mdi_thermometer
       icon_color: sense_text
@@ -1544,7 +1772,13 @@ packages:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       icon: $mdi_information_box
+=======
+      icon: $mdi_thermometer
+      icon_color: sense_text
+      bg_color: sense_tile_orange
+>>>>>>> Stashed changes
 =======
       icon: $mdi_thermometer
       icon_color: sense_text
@@ -1574,7 +1808,13 @@ packages:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       icon: $mdi_information_box
+=======
+      icon: $mdi_snowflake
+      icon_color: sense_text
+      bg_color: sense_tile_sky
+>>>>>>> Stashed changes
 =======
       icon: $mdi_snowflake
       icon_color: sense_text
@@ -1601,6 +1841,7 @@ packages:
       column: 2
       column_span: 1
       text: "Fridge"
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -1670,6 +1911,8 @@ packages:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
       icon: $mdi_fridge
       icon_color: sense_text
       bg_color: sense_tile_sky
@@ -1681,7 +1924,11 @@ packages:
       uid: lightsw_btn_laundry
       page_id: ${sense_page_lighting_switches_id}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       row: 0
+=======
+      row: 1
+>>>>>>> Stashed changes
 =======
       row: 1
 >>>>>>> Stashed changes
@@ -1689,6 +1936,7 @@ packages:
       text: "Laundry"
       icon: $mdi_washing_machine
       entity_id: ${ent_laundry_room_lights}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       on_bg_color: sense_tile_yellow
@@ -1701,6 +1949,10 @@ packages:
       on_bg_color: sense_tile_orange
       off_bg_color: sense_surface
 >>>>>>> Stashed changes
+=======
+      on_bg_color: sense_tile_orange
+      off_bg_color: sense_tile_orange_off
+>>>>>>> Stashed changes
 
   lightsw_btn_garage: !include
     file: esphome-modular-lvgl-buttons/buttons/switch_button.yaml
@@ -1708,7 +1960,11 @@ packages:
       uid: lightsw_btn_garage
       page_id: ${sense_page_lighting_switches_id}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       row: 0
+=======
+      row: 1
+>>>>>>> Stashed changes
 =======
       row: 1
 >>>>>>> Stashed changes
@@ -1719,12 +1975,16 @@ packages:
       on_bg_color: sense_tile_yellow
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       off_bg_color: sense_tile_yellow
 =======
       off_bg_color: sense_surface
 >>>>>>> Stashed changes
 =======
       off_bg_color: sense_surface
+>>>>>>> Stashed changes
+=======
+      off_bg_color: sense_tile_yellow_off
 >>>>>>> Stashed changes
 
   lightsw_btn_mbr_closet: !include
@@ -1733,7 +1993,11 @@ packages:
       uid: lightsw_btn_mbr_closet
       page_id: ${sense_page_lighting_switches_id}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       row: 1
+=======
+      row: 2
+>>>>>>> Stashed changes
 =======
       row: 2
 >>>>>>> Stashed changes
@@ -1741,6 +2005,7 @@ packages:
       text: "MBR Closet"
       icon: $mdi_wardrobe
       entity_id: ${ent_mbr_closet_light}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       on_bg_color: sense_tile_yellow
@@ -1753,6 +2018,10 @@ packages:
       on_bg_color: sense_tile_indigo
       off_bg_color: sense_surface
 >>>>>>> Stashed changes
+=======
+      on_bg_color: sense_tile_indigo
+      off_bg_color: sense_tile_indigo_off
+>>>>>>> Stashed changes
 
   lightsw_btn_fence: !include
     file: esphome-modular-lvgl-buttons/buttons/switch_button.yaml
@@ -1760,7 +2029,11 @@ packages:
       uid: lightsw_btn_fence
       page_id: ${sense_page_lighting_switches_id}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       row: 1
+=======
+      row: 2
+>>>>>>> Stashed changes
 =======
       row: 2
 >>>>>>> Stashed changes
@@ -1768,6 +2041,7 @@ packages:
       text: "Fence"
       icon: $mdi_string_lights
       entity_id: ${ent_fence_lights}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       on_bg_color: sense_tile_blue
@@ -1781,12 +2055,17 @@ packages:
       on_bg_color: sense_tile_sky
       off_bg_color: sense_surface
 >>>>>>> Stashed changes
+=======
+      on_bg_color: sense_tile_sky
+      off_bg_color: sense_tile_sky_off
+>>>>>>> Stashed changes
 
   lightsw_btn_outdoor: !include
     file: esphome-modular-lvgl-buttons/buttons/switch_button.yaml
     vars:
       uid: lightsw_btn_outdoor
       page_id: ${sense_page_lighting_switches_id}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -1803,12 +2082,16 @@ packages:
 =======
       row: 3
 >>>>>>> Stashed changes
+=======
+      row: 3
+>>>>>>> Stashed changes
       column: 0
       text: "Outdoor"
       icon: $mdi_coach_lamp
       entity_id: ${ent_outdoor_entry_lights}
       secondary_entity_id: ${ent_outdoor_garage_lights}
       on_bg_color: sense_tile_blue
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       off_bg_color: sense_tile_blue
@@ -1820,6 +2103,9 @@ packages:
 =======
       off_bg_color: sense_surface
 >>>>>>> Stashed changes
+=======
+      off_bg_color: sense_tile_blue_off
+>>>>>>> Stashed changes
 # This is the main LVGL section. We start with a simple 4x4 grid.
 lvgl:
   pages:
@@ -1829,6 +2115,7 @@ lvgl:
       <<: !include esphome-modular-lvgl-buttons/widgets/swipe_navigation.yaml
       widgets:
         # You can use the package section above to add prebuilt button types or build your own custom button from scratch here.
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -1849,6 +2136,9 @@ lvgl:
                   align: center
                   text_color: white
                   text: "Cell 3,3"
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
@@ -1889,11 +2179,14 @@ font:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       $mdi_information_box,  # mdi-information-box - info screen
       $mdi_lamp,  # mdi-lamp - table lamp
       $mdi_led_strip,  # mdi-led-strip - LED strip light
       $mdi_lightbulb,  # mdi-lightbulb - generic bulb icon
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -1915,8 +2208,12 @@ font:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 =======
+>>>>>>> Stashed changes
+=======
+      $mdi_motion_sensor_off,  # mdi-motion-sensor-off - motion disabled icon
 >>>>>>> Stashed changes
 =======
       $mdi_motion_sensor_off,  # mdi-motion-sensor-off - motion disabled icon
@@ -1936,6 +2233,7 @@ font:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1943,6 +2241,8 @@ font:
       $mdi_led_strip,  # mdi-led-strip - LED strip light
       $mdi_lightbulb,  # mdi-lightbulb - generic bulb icon
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -1953,6 +2253,9 @@ font:
       $mdi_lightbulb_group,  # mdi-lightbulb-group - grouped lights
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1963,6 +2266,7 @@ font:
       $mdi_wifi_strength_3,  # mdi-wifi-strength-3 - good signal
       $mdi_wifi_strength_4,  # mdi-wifi-strength-4 - strong signal
       $mdi_wifi_strength_off,  # mdi-wifi-strength-off - disconnected/unknown
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -1982,6 +2286,8 @@ font:
 
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -2008,8 +2314,11 @@ font:
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -2023,10 +2332,19 @@ font:
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
 
 
+
+
+
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 
 
 

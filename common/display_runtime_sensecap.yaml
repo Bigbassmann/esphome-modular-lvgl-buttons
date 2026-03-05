@@ -11,7 +11,10 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -26,6 +29,9 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -55,7 +61,10 @@ globals:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -85,6 +94,9 @@ globals:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -100,7 +112,10 @@ globals:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -118,6 +133,9 @@ globals:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -152,6 +170,11 @@ esphome:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+            id(sense_display_last_auto_scroll_ms) = id(sense_display_last_interaction_ms);
+            id(sense_display_scroll_sleep_start_ms) = 0;
+>>>>>>> Stashed changes
 =======
             id(sense_display_last_auto_scroll_ms) = id(sense_display_last_interaction_ms);
             id(sense_display_scroll_sleep_start_ms) = 0;
@@ -181,6 +204,11 @@ touchscreen:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+            id(sense_display_last_auto_scroll_ms) = id(sense_display_last_interaction_ms);
+            id(sense_display_scroll_sleep_start_ms) = 0;
+>>>>>>> Stashed changes
 =======
             id(sense_display_last_auto_scroll_ms) = id(sense_display_last_interaction_ms);
             id(sense_display_scroll_sleep_start_ms) = 0;
@@ -206,6 +234,10 @@ touchscreen:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+              - script.execute: nav_to_home
+>>>>>>> Stashed changes
 =======
               - script.execute: nav_to_home
 >>>>>>> Stashed changes
@@ -228,8 +260,11 @@ interval:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               if (!id(sense_display_sleep_enabled)) return false;
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -273,6 +308,9 @@ interval:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -290,6 +328,12 @@ interval:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+
+
+>>>>>>> Stashed changes
 =======
 
 

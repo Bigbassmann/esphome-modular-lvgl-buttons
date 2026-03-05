@@ -9,7 +9,10 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -143,10 +146,17 @@ interval:
             return id(ha_attic_fan2_on).state ? std::string("ON") : std::string("OFF");
 
       # FR mode buttons
+<<<<<<< Updated upstream
       - lvgl.widget.update: {id: fr_mode_off_btn, bg_color: $button_off_color}
       - lvgl.widget.update: {id: fr_mode_low_btn, bg_color: $button_off_color}
       - lvgl.widget.update: {id: fr_mode_med_btn, bg_color: $button_off_color}
       - lvgl.widget.update: {id: fr_mode_high_btn, bg_color: $button_off_color}
+=======
+      - lvgl.widget.update: {id: fr_mode_off_btn, bg_color: sense_tile_green_off}
+      - lvgl.widget.update: {id: fr_mode_low_btn, bg_color: sense_tile_green_off}
+      - lvgl.widget.update: {id: fr_mode_med_btn, bg_color: sense_tile_green_off}
+      - lvgl.widget.update: {id: fr_mode_high_btn, bg_color: sense_tile_green_off}
+>>>>>>> Stashed changes
       - if:
           condition:
             lambda: !lambda |-
@@ -172,10 +182,17 @@ interval:
             - lvgl.widget.update: {id: fr_mode_high_btn, bg_color: sense_tile_green}
 
       # MBR mode buttons
+<<<<<<< Updated upstream
       - lvgl.widget.update: {id: mbr_mode_off_btn, bg_color: $button_off_color}
       - lvgl.widget.update: {id: mbr_mode_low_btn, bg_color: $button_off_color}
       - lvgl.widget.update: {id: mbr_mode_med_btn, bg_color: $button_off_color}
       - lvgl.widget.update: {id: mbr_mode_high_btn, bg_color: $button_off_color}
+=======
+      - lvgl.widget.update: {id: mbr_mode_off_btn, bg_color: sense_tile_green_off}
+      - lvgl.widget.update: {id: mbr_mode_low_btn, bg_color: sense_tile_green_off}
+      - lvgl.widget.update: {id: mbr_mode_med_btn, bg_color: sense_tile_green_off}
+      - lvgl.widget.update: {id: mbr_mode_high_btn, bg_color: sense_tile_green_off}
+>>>>>>> Stashed changes
       - if:
           condition:
             lambda: !lambda |-
@@ -207,13 +224,18 @@ interval:
           then:
             - lvgl.widget.update: {id: attic_low_btn, bg_color: sense_tile_green}
           else:
+<<<<<<< Updated upstream
             - lvgl.widget.update: {id: attic_low_btn, bg_color: $button_off_color}
+=======
+            - lvgl.widget.update: {id: attic_low_btn, bg_color: sense_tile_green_off}
+>>>>>>> Stashed changes
       - if:
           condition:
             binary_sensor.is_on: ha_attic_fan2_on
           then:
             - lvgl.widget.update: {id: attic_high_btn, bg_color: sense_tile_green}
           else:
+<<<<<<< Updated upstream
             - lvgl.widget.update: {id: attic_high_btn, bg_color: $button_off_color}
 
 <<<<<<< Updated upstream
@@ -238,10 +260,15 @@ interval:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+            - lvgl.widget.update: {id: attic_high_btn, bg_color: sense_tile_green_off}
+
+>>>>>>> Stashed changes
 lvgl:
   pages:
     - id: ${sense_page_fans_id}
       styles: sense_page_style
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -266,6 +293,8 @@ lvgl:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
       widgets:
         - obj:
             id: fans_controls_card
@@ -273,7 +302,11 @@ lvgl:
             y: ${sense_content_y | default("46")}
             width: 96%
             height: ${sense_content_h | default("366")}
+<<<<<<< Updated upstream
             styles: sense_card_style
+=======
+            styles: sense_card_flat_style
+>>>>>>> Stashed changes
             widgets:
               - label:
                   text: "Fan Controls"
@@ -529,6 +562,7 @@ lvgl:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -543,4 +577,8 @@ lvgl:
 =======
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+
+
 >>>>>>> Stashed changes

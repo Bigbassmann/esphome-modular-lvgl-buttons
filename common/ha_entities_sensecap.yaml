@@ -1,7 +1,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 # Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common.yaml.
+=======
+﻿# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common.yaml.
+>>>>>>> Stashed changes
 =======
 ﻿# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common.yaml.
 >>>>>>> Stashed changes
@@ -42,6 +46,11 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
+  ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
+>>>>>>> Stashed changes
 =======
   ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
   ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
@@ -83,7 +92,10 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -100,6 +112,9 @@ substitutions:
   ent_hall_lights: "light.in_wall_paddle_dimmer_500s_2"
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -120,7 +135,10 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -143,6 +161,9 @@ substitutions:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
