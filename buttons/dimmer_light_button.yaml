@@ -40,12 +40,9 @@ lvgl:
                     - label:
                         id: value_${uid}
                         align: top_left
-<<<<<<< Updated upstream
                         x: 46
                         y: 10
                         text: "--%"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
                     - label:
                         id: value_${uid}
                         align: top_left
@@ -53,16 +50,6 @@ lvgl:
                         y: 10
                         text: "--%"
 
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
-                        x: 56
-                        y: 8
-                        text_font: nunito_20
-                        text: "--%"
->>>>>>> Stashed changes
                     - label:
                         id: label_${uid}
                         align: top_left
@@ -71,19 +58,11 @@ lvgl:
                         text: ${text}
                     - slider:
                         id: slider_${uid}
-<<<<<<< Updated upstream
                         align: top_left
                         x: 110
                         y: 10
                         width: 60%
                         height: 28
-=======
-                        align: top_right
-                        x: -8
-                        y: 18
-                        width: 46%
-                        height: 24
->>>>>>> Stashed changes
                         min_value: 0
                         max_value: 255
                         radius: 10
@@ -197,16 +176,3 @@ sensor:
             char buf[8];
             snprintf(buf, sizeof(buf), "%d%%", pct);
             return std::string(buf);
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes

@@ -12,31 +12,10 @@
 #   entity_id:
 #   value_on:
 #   value_off:
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 #   on_bg_color: (optional)
 #   off_bg_color: (optional)
 #   on_icon: (optional)
 #   off_icon: (optional)
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
 lvgl:
   pages:
@@ -107,21 +86,10 @@ binary_sensor:
           then:
             - lvgl.widget.update:
                 id: button_${uid}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
                 bg_color: $button_on_color
             - lvgl.widget.update:
                 id: icon_${uid}
                 text_color: $icon_on_color
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
                 bg_color: ${on_bg_color | default("$button_on_color")}
             - lvgl.widget.update:
                 id: icon_${uid}
@@ -133,16 +101,6 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_${uid}
                       text: ${on_icon | default("")}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             - lvgl.widget.update:
                 id: label_${uid}
                 text_color: $label_on_color
@@ -155,21 +113,10 @@ binary_sensor:
           else:
             - lvgl.widget.update:
                 id: button_${uid}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
                 bg_color: $button_off_color
             - lvgl.widget.update:
                 id: icon_${uid}
                 text_color: $icon_off_color
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
                 bg_color: ${off_bg_color | default("$button_off_color")}
             - lvgl.widget.update:
                 id: icon_${uid}
@@ -181,16 +128,6 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_${uid}
                       text: ${off_icon | default("")}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             - lvgl.widget.update:
                 id: label_${uid}
                 text_color: $label_off_color
@@ -200,19 +137,3 @@ binary_sensor:
             - lvgl.widget.update:
                 id: value_${uid}
                 text_color: $label_off_color
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
-=======
-
->>>>>>> Stashed changes
-=======
-
->>>>>>> Stashed changes
-=======
-
->>>>>>> Stashed changes

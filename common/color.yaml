@@ -27,27 +27,12 @@ color:
       hex: '0F766E'
     - id: sense_tile_green
       hex: '4CAF50'
-<<<<<<< Updated upstream
     - id: sense_tile_orange
       hex: 'D96C2C'
     - id: sense_tile_yellow
       hex: 'E5B12B'
     - id: sense_tile_blue
       hex: '3B82C4'
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     - id: sense_tile_red
       hex: 'D7263D'
     - id: sense_tile_teal
@@ -60,56 +45,6 @@ color:
       hex: '4CC9F0'
     - id: sense_tile_placeholder_text
       hex: '93C5FD'
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
-    - id: sense_tile_green_off
-      hex: '2F5F39'
-    - id: sense_tile_orange
-      hex: 'D96C2C'
-    - id: sense_tile_orange_off
-      hex: '805034'
-    - id: sense_tile_yellow
-      hex: 'E5B12B'
-    - id: sense_tile_yellow_off
-      hex: '73612C'
-    - id: sense_tile_blue
-      hex: '3B82C4'
-    - id: sense_tile_blue_off
-      hex: '2A4E77'
-    - id: sense_tile_red
-      hex: 'D7263D'
-    - id: sense_tile_red_off
-      hex: '742B36'
-    - id: sense_tile_teal
-      hex: '2A9D8F'
-    - id: sense_tile_teal_off
-      hex: '275C56'
-    - id: sense_tile_indigo
-      hex: '4361EE'
-    - id: sense_tile_indigo_off
-      hex: '324189'
-    - id: sense_tile_sky
-      hex: '3A86FF'
-    - id: sense_tile_sky_off
-      hex: '2B4F82'
-    - id: sense_tile_cyan
-      hex: '4CC9F0'
-    - id: sense_tile_cyan_off
-      hex: '2D6273'
-    - id: sense_tile_placeholder_text
-      hex: '93C5FD'
->>>>>>> Stashed changes
     - id: sense_cat_admin
       hex: '1D4ED8'
     - id: sense_cat_climate
@@ -118,19 +53,6 @@ color:
       hex: 'B45309'
     - id: sense_cat_overrides
       hex: '7E22CE'
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
     - id: burnt_sienna
       hex: 'CC5E14'

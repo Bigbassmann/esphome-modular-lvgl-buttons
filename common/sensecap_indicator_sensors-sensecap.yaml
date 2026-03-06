@@ -1,4 +1,4 @@
-# SenseCAP Indicator sensors + wifi info text
+﻿# SenseCAP Indicator sensors + wifi info text
 text_sensor:
   - platform: wifi_info
     ip_address:
@@ -69,31 +69,27 @@ sensor:
   - platform: packet_transport
     provider: d1-rp2040
     id: temp
-    name: "Temperature"
+    name: "Disp Int Temp Â°C"
     internal: false
     accuracy_decimals: 1
     icon: "mdi:thermometer"
-    unit_of_measurement: "C"
+    unit_of_measurement: "Â°C"
     device_class: temperature
     on_value:
       then:
         - lambda: 'id(rp2040_last_seen_ms) = millis();'
-<<<<<<< Updated upstream
 
-=======
+
   - platform: template
+    name: "Disp Int Temp Â°F" 
     id: temp_f
-    name: "Temperature F"
-    internal: false
+    unit_of_measurement: "Â°F"
     accuracy_decimals: 1
-    icon: "mdi:thermometer"
-    unit_of_measurement: "F"
-    device_class: temperature
-    update_interval: 10s
+    update_interval: 60s
     lambda: |-
-      if (isnan(id(temp).state)) return NAN;
-      return (id(temp).state * 9.0f / 5.0f) + 32.0f;
->>>>>>> Stashed changes
+      auto c = id(temp).state;
+      if (isnan(c)) return NAN;
+      return (c * 9.0f / 5.0f) + 32.0f;
   - platform: packet_transport
     provider: d1-rp2040
     id: humid
@@ -108,11 +104,11 @@ sensor:
         - lambda: 'id(rp2040_last_seen_ms) = millis();'
 
   # --- INTERNAL TEMPERATURE + UPTIME ---
-  - platform: internal_temperature
-    id: internal_temp
-    name: "ESP Internal Temp"
-    update_interval: 30s
-    entity_category: diagnostic
+#  - platform: internal_temperature
+#    id: internal_temp    # defined in sensor_base.yaml as cpu_temperature
+#    name: "ESP Internal Temp"
+#    update_interval: 30s
+#    entity_category: diagnostic
 
   - platform: uptime
     id: uptime_sensor
@@ -183,3 +179,6 @@ sensor:
 #    id: ha_outdoor_temp
 #    entity_id: sensor.outdoor_temperature  # Replace with actual
 #    name: "Outdoor Temperature"
+
+
+

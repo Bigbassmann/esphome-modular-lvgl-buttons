@@ -24,19 +24,19 @@ packages:
 api:
 
 font:
-  - file: "assets/fonts/Nunito-SemiBold.ttf"
+  - file: "esphome-modular-lvgl-buttons/assets/fonts/Nunito-SemiBold.ttf"
     id: nunito_24
     size: 24
     bpp: 8
-  - file: "assets/fonts/Nunito-SemiBold.ttf"
+  - file: "esphome-modular-lvgl-buttons/assets/fonts/Nunito-SemiBold.ttf"
     id: nunito_20
     size: 20
     bpp: 8
-  - file: "assets/fonts/Nunito-SemiBold.ttf"
+  - file: "esphome-modular-lvgl-buttons/assets/fonts/Nunito-SemiBold.ttf"
     id: nunito_18
     size: 18
     bpp: 8
-  - file: "assets/fonts/Nunito-SemiBold.ttf"
+  - file: "esphome-modular-lvgl-buttons/assets/fonts/Nunito-SemiBold.ttf"
     id: nunito_14
     size: 14
     bpp: 8
@@ -58,4 +58,5 @@ lvgl:
                   align: CENTER
                   text_font: nunito_24
                   text_color: sense_text
+
 

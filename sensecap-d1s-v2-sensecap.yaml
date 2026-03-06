@@ -1,12 +1,4 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-﻿---
-=======
 ---
->>>>>>> Stashed changes
-=======
----
->>>>>>> Stashed changes
 # Substitution variables used through the codebase
 substitutions:
   icon_font: mdi_icons_40
@@ -22,18 +14,9 @@ substitutions:
 
   ap_ssid: !secret ap_ssid
   ap_password: !secret ap_password
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  ota_password: !secret ota_password
-=======
-  <<: !include esphome-modular-lvgl-buttons/common/ha_entities_substitutions-sensecap.yaml
->>>>>>> Stashed changes
-=======
-  ota_password: !secret ota_password
   wifi_ssid: !secret wifi_ssid
   wifi_password: !secret wifi_password
-  
->>>>>>> Stashed changes
+  ota_password: !secret ota_password
   # SenseCAP display runtime defaults (dark-only, no Day/Evening/Night mode select)
   sense_display_brightness_pct: "50"
   sense_display_sleep_enabled: "true"
@@ -75,83 +58,69 @@ script:
           text: !lambda 'return id(system_time).now().strftime("%l:%M %P");'
 
 packages:
-<<<<<<< Updated upstream
-=======
-  # secrets: !include secrets.yaml
->>>>>>> Stashed changes
   # Generic configuration for ESP32 screens
   # SDL has no Wi-Fi
-  wifi: !include esphome-modular-lvgl-buttons/common/wifi-sensecap.yaml
+  wifi: !include common/wifi-sensecap.yaml
   # Enable OTA updates with a status screen
-  ota_screen: !include esphome-modular-lvgl-buttons/common/ota-sensecap.yaml
+  ota_screen: !include common/ota-sensecap.yaml
   # All the colors
-  colors: !include esphome-modular-lvgl-buttons/common/color-sensecap.yaml
+  colors: !include common/color-sensecap.yaml
   # Some nice basic fonts
-  fonts: !include esphome-modular-lvgl-buttons/common/fonts-sensecap.yaml
+  fonts: !include common/fonts-sensecap.yaml
   # 1000s of glyphs
-  glyphs: !include esphome-modular-lvgl-buttons/common/mdi_glyph_substitutions.yaml
+  glyphs: !include common/mdi_glyph_substitutions.yaml
   # Some basic sensors
-  sensors: !include esphome-modular-lvgl-buttons/sensors/sensors_base.yaml
+  sensors: !include sensors/sensors_base.yaml
   # Styles + Themes
-  theme_style: !include esphome-modular-lvgl-buttons/common/theme_style-sensecap.yaml
-  ui_tokens_sensecap: !include esphome-modular-lvgl-buttons/common/ui_tokens-sensecap.yaml
-  page_shell_sensecap: !include esphome-modular-lvgl-buttons/pages/page_shell_480-sensecap.yaml
-  page_home_sensecap: !include esphome-modular-lvgl-buttons/pages/home_grid-sensecap.yaml
-  page_menu_sensecap: !include esphome-modular-lvgl-buttons/pages/menu_grid-sensecap.yaml
-  page_wifi_setup_sensecap: !include esphome-modular-lvgl-buttons/pages/wifi_setup-sensecap.yaml
-  page_settings_sensecap: !include esphome-modular-lvgl-buttons/pages/settings_grid-sensecap.yaml
-  page_display_settings_sensecap: !include esphome-modular-lvgl-buttons/pages/display_settings-sensecap.yaml
-  page_fans_sensecap: !include esphome-modular-lvgl-buttons/pages/fans_grid-sensecap.yaml
-  page_overrides_sensecap: !include esphome-modular-lvgl-buttons/pages/overrides_grid-sensecap.yaml
+  theme_style: !include common/theme_style-sensecap.yaml
+  ui_tokens_sensecap: !include common/ui_tokens-sensecap.yaml
+  page_shell_sensecap: !include pages/page_shell_480-sensecap.yaml
+  page_home_sensecap: !include pages/home_grid-sensecap.yaml
+  page_menu_sensecap: !include pages/menu_grid-sensecap.yaml
+  page_wifi_setup_sensecap: !include pages/wifi_setup-sensecap.yaml
+  page_settings_sensecap: !include pages/settings_grid-sensecap.yaml
+  page_display_settings_sensecap: !include pages/display_settings-sensecap.yaml
+  page_fans_sensecap: !include pages/fans_grid-sensecap.yaml
+  page_overrides_sensecap: !include pages/overrides_grid-sensecap.yaml
   page_lighting_dimmers_sensecap: !include
-    file: esphome-modular-lvgl-buttons/pages/lighting_dimmers_grid_template-sensecap.yaml
+    file: pages/lighting_dimmers_grid_template-sensecap.yaml
     vars:
       dimmers_page_id: ${sense_page_lighting_dimmers_id}
       dimmers_card_bg_id: "dimmers_page_1_card_bg"
       dimmers_title_id: "dimmers_page_1_title"
       dimmers_title_text: "Dimmers"
   page_lighting_dimmers_2_sensecap: !include
-    file: esphome-modular-lvgl-buttons/pages/lighting_dimmers_grid_template-sensecap.yaml
+    file: pages/lighting_dimmers_grid_template-sensecap.yaml
     vars:
       dimmers_page_id: ${sense_page_lighting_dimmers_2_id}
       dimmers_card_bg_id: "dimmers_page_2_card_bg"
       dimmers_title_id: "dimmers_page_2_title"
       dimmers_title_text: "Dimmers"
-  page_lighting_switches_sensecap: !include esphome-modular-lvgl-buttons/pages/lighting_switches_grid-sensecap.yaml
-  page_sensors_sensecap: !include esphome-modular-lvgl-buttons/pages/sensors_grid-sensecap.yaml
+  page_lighting_switches_sensecap: !include pages/lighting_switches_grid-sensecap.yaml
+  page_sensors_sensecap: !include pages/sensors_grid-sensecap.yaml
   # Use this theme for debugging
-  # theme_style: !include esphome-modular-lvgl-buttons/common/theme_style_debug.yaml
+  # theme_style: !include common/theme_style_debug.yaml
   # SenseCAP-style display runtime (brightness/sleep in globals; wake on touch)
-  display_runtime: !include esphome-modular-lvgl-buttons/common/display_runtime-sensecap.yaml
+  display_runtime: !include common/display_runtime-sensecap.yaml
   # Optional legacy day/evening/night module:
-  # backlight: !include esphome-modular-lvgl-buttons/common/backlight_time.yaml
+  # backlight: !include common/backlight_time.yaml
 
   # Harware description file
-  hardware: !include esphome-modular-lvgl-buttons/hardware/seeed-studios-sensecap-indicator-d1s-001.yaml
+  hardware: !include hardware/seeed-studios-sensecap-indicator-d1s-001.yaml
 
   # Basic boot screen with ESPHome logo and device diagnostic info
-  loading_screen: !include esphome-modular-lvgl-buttons/pages/loading_480px-sensecap.yaml
+  loading_screen: !include pages/loading_480px-sensecap.yaml
   # info screen - WiFi login, IP address, MAC address etc
-  info_screen: !include esphome-modular-lvgl-buttons/pages/info-sensecap.yaml
+  info_screen: !include pages/info-sensecap.yaml
 
-  thermostat_v2: !include esphome-modular-lvgl-buttons/pages/thermostat_v2_lvgl-sensecap.yaml
-  # core_boot: !include esphome-modular-lvgl-buttons/common/core_boot-sensecap.yaml
-  core_globals: !include esphome-modular-lvgl-buttons/common/core_globals-sensecap.yaml
-  # legacy_globals: !include esphome-modular-lvgl-buttons/common/core_globals_legacy_compat-sensecap.yaml
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  ha_entities_sensecap: !include esphome-modular-lvgl-buttons/common/ha_entities-sensecap.yaml
-  core_ha_common: !include esphome-modular-lvgl-buttons/common/core_ha_common-sensecap.yaml
-  home_temp_ha: !include esphome-modular-lvgl-buttons/common/home_temp_ha-sensecap.yaml
-=======
-  ha_runtime_sensecap: !include esphome-modular-lvgl-buttons/common/ha_runtime-sensecap.yaml
->>>>>>> Stashed changes
-=======
-  ha_entities_sensecap: !include esphome-modular-lvgl-buttons/common/ha_entities-sensecap.yaml
-  core_ha_common: !include esphome-modular-lvgl-buttons/common/core_ha_common-sensecap.yaml
-  home_temp_ha: !include esphome-modular-lvgl-buttons/common/home_temp_ha-sensecap.yaml
->>>>>>> Stashed changes
-  sensecap: !include esphome-modular-lvgl-buttons/common/sensecap_indicator_sensors-sensecap.yaml
+  thermostat_v2: !include pages/thermostat_v2_lvgl-sensecap.yaml
+  # core_boot: !include common/core_boot-sensecap.yaml
+  core_globals: !include common/core_globals-sensecap.yaml
+  # legacy_globals: !include common/core_globals_legacy_compat-sensecap.yaml
+  ha_entities_sensecap: !include common/ha_entities-sensecap.yaml
+  core_ha_common: !include common/core_ha_common-sensecap.yaml
+  home_temp_ha: !include common/home_temp_ha-sensecap.yaml
+  sensecap: !include common/sensecap_indicator_sensors-sensecap.yaml
   
 
 
@@ -161,7 +130,7 @@ packages:
 
   # Add a button the controls a light in HA
   button_1: !include
-    file: esphome-modular-lvgl-buttons/buttons/switch_button-sensecap.yaml
+    file: buttons/switch_button-sensecap.yaml
     vars:
       uid: button_1
       row: 0
@@ -172,7 +141,7 @@ packages:
 
   # Add a button that displays the time
   button_2: !include
-    file: esphome-modular-lvgl-buttons/buttons/time_button.yaml
+    file: buttons/time_button.yaml
     vars:
       uid: button_2
       row: 0
@@ -182,7 +151,7 @@ packages:
 
   # Add a button that goes to a different page
   button_3: !include
-    file: esphome-modular-lvgl-buttons/buttons/page_button.yaml
+    file: buttons/page_button.yaml
     vars:
       uid: button_3
       row: 1
@@ -193,7 +162,7 @@ packages:
 
   # Add a dimmer light
   button_4: !include
-    file: esphome-modular-lvgl-buttons/buttons/dimmer_light_button-sensecap.yaml
+    file: buttons/dimmer_light_button-sensecap.yaml
     vars:
       uid: button_4
       row: 2
@@ -204,13 +173,13 @@ packages:
       entity_id: light.athom_rgb_light_d93662_rgb_light_strip
 
   button_4_page: !include
-    file: esphome-modular-lvgl-buttons/pages/light_color.yaml
+    file: pages/light_color.yaml
     vars:
       light_entity: "light.athom_rgb_light_d93662_rgb_light_strip"
       widget_name: "button_4"
 
   button_5: !include
-    file: esphome-modular-lvgl-buttons/buttons/page_button.yaml
+    file: buttons/page_button.yaml
     vars:
       uid: button_5
       row: 0
@@ -220,7 +189,7 @@ packages:
       click_page: page_thermostat_v2     
 
   overrides_btn_cleaners: !include
-    file: esphome-modular-lvgl-buttons/buttons/override_button-sensecap.yaml
+    file: buttons/override_button-sensecap.yaml
     vars:
       uid: overrides_btn_cleaners
       page_id: ${sense_page_overrides_id}
@@ -233,7 +202,7 @@ packages:
       off_bg_color: sense_tile_orange_off
 
   overrides_btn_dani: !include
-    file: esphome-modular-lvgl-buttons/buttons/override_button-sensecap.yaml
+    file: buttons/override_button-sensecap.yaml
     vars:
       uid: overrides_btn_dani
       page_id: ${sense_page_overrides_id}
@@ -246,7 +215,7 @@ packages:
       off_bg_color: sense_tile_red_off
 
   overrides_btn_lock: !include
-    file: esphome-modular-lvgl-buttons/buttons/override_button-sensecap.yaml
+    file: buttons/override_button-sensecap.yaml
     vars:
       uid: overrides_btn_lock
       page_id: ${sense_page_overrides_id}
@@ -259,7 +228,7 @@ packages:
       off_bg_color: sense_tile_indigo_off
 
   overrides_btn_tod: !include
-    file: esphome-modular-lvgl-buttons/buttons/override_button-sensecap.yaml
+    file: buttons/override_button-sensecap.yaml
     vars:
       uid: overrides_btn_tod
       page_id: ${sense_page_overrides_id}
@@ -272,7 +241,7 @@ packages:
       off_bg_color: sense_tile_orange_off
 
   overrides_btn_motion: !include
-    file: esphome-modular-lvgl-buttons/buttons/override_button-sensecap.yaml
+    file: buttons/override_button-sensecap.yaml
     vars:
       uid: overrides_btn_motion
       page_id: ${sense_page_overrides_id}
@@ -283,31 +252,11 @@ packages:
       entity_id: ${ent_motion_automation_off}
       on_icon: $mdi_motion_sensor_off
       off_icon: $mdi_motion_sensor
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
-=======
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
->>>>>>> Stashed changes
-=======
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
->>>>>>> Stashed changes
-=======
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
->>>>>>> Stashed changes
-=======
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
->>>>>>> Stashed changes
 
   overrides_btn_entry_motion: !include
-    file: esphome-modular-lvgl-buttons/buttons/override_button-sensecap.yaml
+    file: buttons/override_button-sensecap.yaml
     vars:
       uid: overrides_btn_entry_motion
       page_id: ${sense_page_overrides_id}
@@ -318,74 +267,26 @@ packages:
       entity_id: ${ent_entry_motion_automation_off}
       on_icon: $mdi_motion_sensor_off
       off_icon: $mdi_motion_sensor
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
-=======
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
->>>>>>> Stashed changes
-=======
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
->>>>>>> Stashed changes
-=======
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
->>>>>>> Stashed changes
-=======
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
->>>>>>> Stashed changes
 
   overrides_btn_garage: !include
-    file: esphome-modular-lvgl-buttons/buttons/override_button-sensecap.yaml
+    file: buttons/override_button-sensecap.yaml
     vars:
       uid: overrides_btn_garage
       page_id: ${sense_page_overrides_id}
       row: 4
       column: 0
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
       text: "Garage O/V"
-=======
-      text: "Garage OV"
->>>>>>> Stashed changes
-=======
-      text: "Garage O/V"
->>>>>>> Stashed changes
       icon: $mdi_motion_sensor
       entity_id: ${ent_garage_light_automation_off}
       on_icon: $mdi_motion_sensor_off
       off_icon: $mdi_motion_sensor
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
-=======
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
->>>>>>> Stashed changes
-=======
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
->>>>>>> Stashed changes
-=======
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
->>>>>>> Stashed changes
-=======
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
->>>>>>> Stashed changes
 
   overrides_btn_mbr: !include
-    file: esphome-modular-lvgl-buttons/buttons/override_button-sensecap.yaml
+    file: buttons/override_button-sensecap.yaml
     vars:
       uid: overrides_btn_mbr
       page_id: ${sense_page_overrides_id}
@@ -396,30 +297,10 @@ packages:
       entity_id: ${ent_mbr_motion_off}
       on_icon: $mdi_motion_sensor_off
       off_icon: $mdi_motion_sensor
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
-=======
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
->>>>>>> Stashed changes
-=======
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
->>>>>>> Stashed changes
-=======
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
->>>>>>> Stashed changes
-=======
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
->>>>>>> Stashed changes
   dimmer_btn_mbr: !include
-    file: esphome-modular-lvgl-buttons/buttons/dimmer_light_button-sensecap.yaml
+    file: buttons/dimmer_light_button-sensecap.yaml
     vars:
       uid: dimmer_btn_mbr
       page_id: ${sense_page_lighting_dimmers_id}
@@ -433,7 +314,7 @@ packages:
       off_bg_color: sense_tile_yellow_off
 
   dimmer_btn_fr: !include
-    file: esphome-modular-lvgl-buttons/buttons/dimmer_light_button-sensecap.yaml
+    file: buttons/dimmer_light_button-sensecap.yaml
     vars:
       uid: dimmer_btn_fr
       page_id: ${sense_page_lighting_dimmers_id}
@@ -447,7 +328,7 @@ packages:
       off_bg_color: sense_tile_orange_off
 
   dimmer_btn_living: !include
-    file: esphome-modular-lvgl-buttons/buttons/dimmer_light_button-sensecap.yaml
+    file: buttons/dimmer_light_button-sensecap.yaml
     vars:
       uid: dimmer_btn_living
       page_id: ${sense_page_lighting_dimmers_id}
@@ -462,7 +343,7 @@ packages:
       off_bg_color: sense_tile_teal_off
 
   dimmer_btn_kitchen: !include
-    file: esphome-modular-lvgl-buttons/buttons/dimmer_light_button-sensecap.yaml
+    file: buttons/dimmer_light_button-sensecap.yaml
     vars:
       uid: dimmer_btn_kitchen
       page_id: ${sense_page_lighting_dimmers_id}
@@ -477,7 +358,7 @@ packages:
       off_bg_color: sense_tile_indigo_off
 
   dimmer_btn_entry: !include
-    file: esphome-modular-lvgl-buttons/buttons/dimmer_light_button-sensecap.yaml
+    file: buttons/dimmer_light_button-sensecap.yaml
     vars:
       uid: dimmer_btn_entry
       page_id: ${sense_page_lighting_dimmers_2_id}
@@ -492,37 +373,37 @@ packages:
       off_bg_color: sense_tile_blue_off
 
   dimmer_btn_entry_page: !include
-    file: esphome-modular-lvgl-buttons/pages/light_color.yaml
+    file: pages/light_color.yaml
     vars:
       light_entity: ${ent_entry_lights}
       widget_name: "dimmer_btn_entry"
 
   dimmer_btn_mbr_page: !include
-    file: esphome-modular-lvgl-buttons/pages/light_color.yaml
+    file: pages/light_color.yaml
     vars:
       light_entity: ${ent_mbr_lights}
       widget_name: "dimmer_btn_mbr"
 
   dimmer_btn_fr_page: !include
-    file: esphome-modular-lvgl-buttons/pages/light_color.yaml
+    file: pages/light_color.yaml
     vars:
       light_entity: ${ent_fr_lights}
       widget_name: "dimmer_btn_fr"
 
   dimmer_btn_living_page: !include
-    file: esphome-modular-lvgl-buttons/pages/light_color.yaml
+    file: pages/light_color.yaml
     vars:
       light_entity: ${ent_living_room_lights}
       widget_name: "dimmer_btn_living"
 
   dimmer_btn_kitchen_page: !include
-    file: esphome-modular-lvgl-buttons/pages/light_color.yaml
+    file: pages/light_color.yaml
     vars:
       light_entity: ${ent_kitchen_lights_4}
       widget_name: "dimmer_btn_kitchen"
 
   homev2_sleepy_btn: !include
-    file: esphome-modular-lvgl-buttons/buttons/switch_button-sensecap.yaml
+    file: buttons/switch_button-sensecap.yaml
     vars:
       uid: homev2_sleepy_btn
       page_id: ${sense_page_lighting_dimmers_id}
@@ -535,7 +416,7 @@ packages:
       off_bg_color: sense_tile_teal_off
 
   homev2_bedtime_btn: !include
-    file: esphome-modular-lvgl-buttons/buttons/switch_button-sensecap.yaml
+    file: buttons/switch_button-sensecap.yaml
     vars:
       uid: homev2_bedtime_btn
       page_id: ${sense_page_lighting_dimmers_id}
@@ -548,7 +429,7 @@ packages:
       off_bg_color: sense_tile_indigo_off
 
   dimmer_btn_outdoor: !include
-    file: esphome-modular-lvgl-buttons/buttons/switch_button-sensecap.yaml
+    file: buttons/switch_button-sensecap.yaml
     vars:
       uid: dimmer_btn_outdoor
       page_id: ${sense_page_lighting_dimmers_id}
@@ -561,7 +442,7 @@ packages:
       off_bg_color: sense_tile_blue_off
 
   homev2_nav_ov_btn: !include
-    file: esphome-modular-lvgl-buttons/buttons/page_button.yaml
+    file: buttons/page_button.yaml
     vars:
       uid: homev2_nav_ov_btn
       page_id: ${sense_page_lighting_dimmers_id}
@@ -572,7 +453,7 @@ packages:
       click_page: ${sense_page_overrides_id}
 
   dimmer2_action_entry: !include
-    file: esphome-modular-lvgl-buttons/buttons/page_button.yaml
+    file: buttons/page_button.yaml
     vars:
       uid: dimmer2_action_entry
       page_id: ${sense_page_lighting_dimmers_2_id}
@@ -583,7 +464,7 @@ packages:
       click_page: ${sense_page_lighting_dimmers_2_id}
 
   dimmer2_action_p1: !include
-    file: esphome-modular-lvgl-buttons/buttons/placeholder_button-sensecap.yaml
+    file: buttons/placeholder_button-sensecap.yaml
     vars:
       uid: dimmer2_action_p1
       page_id: ${sense_page_lighting_dimmers_2_id}
@@ -593,7 +474,7 @@ packages:
       icon: $mdi_dots_horizontal
 
   dimmer2_action_p2: !include
-    file: esphome-modular-lvgl-buttons/buttons/placeholder_button-sensecap.yaml
+    file: buttons/placeholder_button-sensecap.yaml
     vars:
       uid: dimmer2_action_p2
       page_id: ${sense_page_lighting_dimmers_2_id}
@@ -603,7 +484,7 @@ packages:
       icon: $mdi_dots_horizontal
 
   dimmer2_action_p3: !include
-    file: esphome-modular-lvgl-buttons/buttons/placeholder_button-sensecap.yaml
+    file: buttons/placeholder_button-sensecap.yaml
     vars:
       uid: dimmer2_action_p3
       page_id: ${sense_page_lighting_dimmers_2_id}
@@ -613,7 +494,7 @@ packages:
       icon: $mdi_dots_horizontal
 
   dimmer2_slider_p1: !include
-    file: esphome-modular-lvgl-buttons/buttons/placeholder_button-sensecap.yaml
+    file: buttons/placeholder_button-sensecap.yaml
     vars:
       uid: dimmer2_slider_p1
       page_id: ${sense_page_lighting_dimmers_2_id}
@@ -624,7 +505,7 @@ packages:
       icon: $mdi_dots_horizontal
 
   dimmer2_slider_p2: !include
-    file: esphome-modular-lvgl-buttons/buttons/placeholder_button-sensecap.yaml
+    file: buttons/placeholder_button-sensecap.yaml
     vars:
       uid: dimmer2_slider_p2
       page_id: ${sense_page_lighting_dimmers_2_id}
@@ -635,7 +516,7 @@ packages:
       icon: $mdi_dots_horizontal
 
   dimmer2_slider_p3: !include
-    file: esphome-modular-lvgl-buttons/buttons/placeholder_button-sensecap.yaml
+    file: buttons/placeholder_button-sensecap.yaml
     vars:
       uid: dimmer2_slider_p3
       page_id: ${sense_page_lighting_dimmers_2_id}
@@ -645,7 +526,7 @@ packages:
       text: "--"
       icon: $mdi_dots_horizontal
   sensor_local_temp: !include
-    file: esphome-modular-lvgl-buttons/buttons/sensor_button-sensecap.yaml
+    file: buttons/sensor_button-sensecap.yaml
     vars:
       uid: sensor_local_temp
       page_id: ${sense_page_sensors_id}
@@ -656,14 +537,10 @@ packages:
       icon: $mdi_home_thermometer
       icon_color: sense_text
       bg_color: sense_tile_yellow
-<<<<<<< Updated upstream
-      sensor_id: internal_temp
-=======
       sensor_id: temp_f
->>>>>>> Stashed changes
 
   sensor_fr_temp: !include
-    file: esphome-modular-lvgl-buttons/buttons/sensor_button-sensecap.yaml
+    file: buttons/sensor_button-sensecap.yaml
     vars:
       uid: sensor_fr_temp
       page_id: ${sense_page_sensors_id}
@@ -677,7 +554,7 @@ packages:
       sensor_id: ha_tstat_current_temp
 
   sensor_osat_temp: !include
-    file: esphome-modular-lvgl-buttons/buttons/sensor_button-sensecap.yaml
+    file: buttons/sensor_button-sensecap.yaml
     vars:
       uid: sensor_osat_temp
       page_id: ${sense_page_sensors_id}
@@ -691,7 +568,7 @@ packages:
       sensor_id: ha_osat_temp
 
   sensor_kitchen_temp: !include
-    file: esphome-modular-lvgl-buttons/buttons/sensor_button-sensecap.yaml
+    file: buttons/sensor_button-sensecap.yaml
     vars:
       uid: sensor_kitchen_temp
       page_id: ${sense_page_sensors_id}
@@ -705,7 +582,7 @@ packages:
       sensor_id: ha_kitchen_temp
 
   sensor_freezer_temp: !include
-    file: esphome-modular-lvgl-buttons/buttons/sensor_button-sensecap.yaml
+    file: buttons/sensor_button-sensecap.yaml
     vars:
       uid: sensor_freezer_temp
       page_id: ${sense_page_sensors_id}
@@ -719,7 +596,7 @@ packages:
       sensor_id: ha_freezer_temp
 
   sensor_fridge_temp: !include
-    file: esphome-modular-lvgl-buttons/buttons/sensor_button-sensecap.yaml
+    file: buttons/sensor_button-sensecap.yaml
     vars:
       uid: sensor_fridge_temp
       page_id: ${sense_page_sensors_id}
@@ -732,53 +609,8 @@ packages:
       bg_color: sense_tile_sky
       sensor_id: ha_fridge_temp
 
-<<<<<<< Updated upstream
-=======
-  sensor_voc: !include
-    file: esphome-modular-lvgl-buttons/buttons/sensor_button-sensecap.yaml
-    vars:
-      uid: sensor_voc
-      page_id: ${sense_page_sensors_id}
-      row: 2
-      column: 0
-      column_span: 1
-      text: "VOC"
-      icon: $mdi_weather_dust
-      icon_color: sense_text
-      bg_color: sense_tile_teal
-      sensor_id: voc
-
-  sensor_co2: !include
-    file: esphome-modular-lvgl-buttons/buttons/sensor_button-sensecap.yaml
-    vars:
-      uid: sensor_co2
-      page_id: ${sense_page_sensors_id}
-      row: 2
-      column: 1
-      column_span: 1
-      text: "CO2"
-      icon: $mdi_molecule_co2
-      icon_color: sense_text
-      bg_color: sense_tile_orange
-      sensor_id: co2
-
-  sensor_humid: !include
-    file: esphome-modular-lvgl-buttons/buttons/sensor_button-sensecap.yaml
-    vars:
-      uid: sensor_humid
-      page_id: ${sense_page_sensors_id}
-      row: 2
-      column: 2
-      column_span: 1
-      text: "Humid"
-      icon: $mdi_water_percent
-      icon_color: sense_text
-      bg_color: sense_tile_blue
-      sensor_id: humid
-
->>>>>>> Stashed changes
   lightsw_btn_laundry: !include
-    file: esphome-modular-lvgl-buttons/buttons/switch_button-sensecap.yaml
+    file: buttons/switch_button-sensecap.yaml
     vars:
       uid: lightsw_btn_laundry
       page_id: ${sense_page_lighting_switches_id}
@@ -791,7 +623,7 @@ packages:
       off_bg_color: sense_tile_orange_off
 
   lightsw_btn_garage: !include
-    file: esphome-modular-lvgl-buttons/buttons/switch_button-sensecap.yaml
+    file: buttons/switch_button-sensecap.yaml
     vars:
       uid: lightsw_btn_garage
       page_id: ${sense_page_lighting_switches_id}
@@ -804,7 +636,7 @@ packages:
       off_bg_color: sense_tile_yellow_off
 
   lightsw_btn_mbr_closet: !include
-    file: esphome-modular-lvgl-buttons/buttons/switch_button-sensecap.yaml
+    file: buttons/switch_button-sensecap.yaml
     vars:
       uid: lightsw_btn_mbr_closet
       page_id: ${sense_page_lighting_switches_id}
@@ -817,7 +649,7 @@ packages:
       off_bg_color: sense_tile_indigo_off
 
   lightsw_btn_fence: !include
-    file: esphome-modular-lvgl-buttons/buttons/switch_button-sensecap.yaml
+    file: buttons/switch_button-sensecap.yaml
     vars:
       uid: lightsw_btn_fence
       page_id: ${sense_page_lighting_switches_id}
@@ -830,7 +662,7 @@ packages:
       off_bg_color: sense_tile_sky_off
 
   lightsw_btn_outdoor: !include
-    file: esphome-modular-lvgl-buttons/buttons/switch_button-sensecap.yaml
+    file: buttons/switch_button-sensecap.yaml
     vars:
       uid: lightsw_btn_outdoor
       page_id: ${sense_page_lighting_switches_id}
@@ -848,7 +680,7 @@ lvgl:
     - id: main_page
       layout: 4x4
       styles: page_style
-      <<: !include esphome-modular-lvgl-buttons/widgets/swipe_navigation.yaml
+      <<: !include widgets/swipe_navigation.yaml
       widgets:
         # You can use the package section above to add prebuilt button types or build your own custom button from scratch here.
 
@@ -938,24 +770,6 @@ font:
 
 
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
-=======
-
-
->>>>>>> Stashed changes
-=======
 
 
 
->>>>>>> Stashed changes
-=======
-
-
->>>>>>> Stashed changes

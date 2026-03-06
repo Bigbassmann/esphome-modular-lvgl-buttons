@@ -1,34 +1,11 @@
 substitutions:
   sense_page_settings_id: "page_settings"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   sense_page_tstat_id: "main_page"
   sense_page_wifi_id: "page_wifi_setup"
   sense_page_fans_id: "main_page"
   sense_page_overrides_id: "main_page"
   sense_page_lighting_dimmers_id: "main_page"
   sense_page_lighting_switches_id: "main_page"
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   sense_page_tstat_id: "page_thermostat_v2"
   sense_page_wifi_id: "page_wifi_setup"
   sense_page_fans_id: "page_fans"
@@ -36,33 +13,6 @@ substitutions:
   sense_page_lighting_dimmers_id: "page_lighting_dimmers"
   sense_page_lighting_switches_id: "page_lighting_switches"
   sense_page_sensors_id: "page_sensors"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
-  sense_page_display_settings_id: "page_display_settings"
->>>>>>> Stashed changes
-=======
-  sense_page_display_settings_id: "page_display_settings"
->>>>>>> Stashed changes
-=======
-  sense_page_display_settings_id: "page_display_settings"
->>>>>>> Stashed changes
-=======
-  sense_page_display_settings_id: "page_display_settings"
->>>>>>> Stashed changes
-=======
-  sense_page_display_settings_id: "page_display_settings"
->>>>>>> Stashed changes
 
 lvgl:
   pages:
@@ -78,39 +28,7 @@ lvgl:
             styles: sense_card_style
             layout:
               type: GRID
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
               grid_rows: [FR(1), FR(1), FR(1)]
-=======
-              grid_rows: [FR(1), FR(1), FR(1), FR(1)]
->>>>>>> Stashed changes
-=======
-              grid_rows: [FR(1), FR(1), FR(1), FR(1)]
->>>>>>> Stashed changes
-=======
-              grid_rows: [FR(1), FR(1), FR(1), FR(1)]
->>>>>>> Stashed changes
-=======
-              grid_rows: [FR(1), FR(1), FR(1), FR(1)]
->>>>>>> Stashed changes
-=======
-              grid_rows: [FR(1), FR(1), FR(1), FR(1)]
->>>>>>> Stashed changes
-=======
-              grid_rows: [FR(1), FR(1), FR(1), FR(1)]
->>>>>>> Stashed changes
-=======
-              grid_rows: [FR(1), FR(1), FR(1), FR(1)]
->>>>>>> Stashed changes
-=======
-              grid_rows: [FR(1), FR(1), FR(1), FR(1)]
->>>>>>> Stashed changes
               grid_columns: [FR(1), FR(1)]
               pad_row: 10
               pad_column: 10
@@ -205,29 +123,6 @@ lvgl:
                         align: CENTER
                         text_font: nunito_18
                         text_color: sense_text
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
               - button:
                   id: settings_btn_sensors
                   grid_cell_row_pos: 3
@@ -243,27 +138,6 @@ lvgl:
                         align: CENTER
                         text_font: nunito_18
                         text_color: sense_text
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
               - button:
                   id: settings_btn_display
                   grid_cell_row_pos: 3
@@ -279,16 +153,3 @@ lvgl:
                         align: CENTER
                         text_font: nunito_18
                         text_color: sense_text
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes

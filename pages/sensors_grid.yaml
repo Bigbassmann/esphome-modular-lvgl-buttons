@@ -1,24 +1,4 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 substitutions:
-=======
-﻿substitutions:
->>>>>>> Stashed changes
-=======
-﻿substitutions:
->>>>>>> Stashed changes
-=======
-﻿substitutions:
->>>>>>> Stashed changes
-=======
-﻿substitutions:
->>>>>>> Stashed changes
-=======
-﻿substitutions:
->>>>>>> Stashed changes
   sense_page_sensors_id: "page_sensors"
 
 lvgl:
@@ -28,20 +8,6 @@ lvgl:
       on_load:
         - component.update: internal_temp
         - component.update: ha_tstat_current_temp
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
         - lvgl.label.update:
             id: data_internal_temp
             text: !lambda |- 
@@ -72,73 +38,18 @@ lvgl:
             text: !lambda |- 
               if (isnan(id(ha_fridge_temp).state)) return std::string("--");
               return str_sprintf("%.1f %s", id(ha_fridge_temp).state, id(ha_fridge_temp).get_unit_of_measurement_ref().c_str());
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
       layout:
         type: grid
         grid_rows:
           - FR(1)
           - FR(1)
           - FR(1)
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
           - FR(1)
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
         grid_columns:
           - FR(1)
           - FR(1)
           - FR(1)
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
           - FR(1)
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
         pad_row: 8
         pad_column: 8
       pad_top: ${sense_content_y | default("46")}

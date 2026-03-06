@@ -60,31 +60,7 @@ lvgl:
     # SenseCAP-inspired shell styles (additive)
     - id: sense_page_style
       scrollbar_mode: "OFF"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
       bg_color: sense_bg
-=======
-      bg_color: sense_surface
->>>>>>> Stashed changes
-=======
-      bg_color: sense_surface
->>>>>>> Stashed changes
-=======
-      bg_color: sense_surface
->>>>>>> Stashed changes
-=======
-      bg_color: sense_surface
->>>>>>> Stashed changes
-=======
-      bg_color: sense_surface
->>>>>>> Stashed changes
-=======
-      bg_color: sense_surface
->>>>>>> Stashed changes
       bg_opa: cover
       pad_all: 0
 
@@ -111,31 +87,7 @@ lvgl:
       pad_bottom: 8
 
     - id: sense_card_style
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
       bg_color: sense_surface_alt
-=======
-      bg_color: sense_surface
->>>>>>> Stashed changes
-=======
-      bg_color: sense_surface
->>>>>>> Stashed changes
-=======
-      bg_color: sense_surface
->>>>>>> Stashed changes
-=======
-      bg_color: sense_surface
->>>>>>> Stashed changes
-=======
-      bg_color: sense_surface
->>>>>>> Stashed changes
-=======
-      bg_color: sense_surface
->>>>>>> Stashed changes
       bg_opa: cover
       border_width: 1
       border_color: sense_border
@@ -143,12 +95,6 @@ lvgl:
       pad_all: 8
 
     - id: sense_nav_btn_style
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
       bg_color: sense_surface_alt
       bg_opa: cover
       text_color: sense_text
@@ -157,25 +103,10 @@ lvgl:
       radius: 8
       pad_all: 6
 
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
       bg_color: sense_tile_blue
       bg_opa: cover
       text_color: sense_text
       border_width: 1
-=======
-      bg_color: sense_tile_blue
-      bg_opa: cover
-      text_color: sense_text
-      border_width: 0
->>>>>>> Stashed changes
       border_color: sense_info
       radius: 8
       pad_all: 6
@@ -229,21 +160,6 @@ lvgl:
       radius: 10
       pad_all: 8
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     - id: sense_display_row_btn_style
       bg_color: sense_cat_admin
       bg_opa: cover
@@ -291,19 +207,6 @@ lvgl:
       radius: 8
       pad_all: 6
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 select:
   - platform: template
     name: "Current Theme"
@@ -325,7 +228,3 @@ select:
                   bg_color: black
                   text_color: white
               - lvgl.widget.redraw
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes

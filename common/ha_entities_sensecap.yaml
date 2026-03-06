@@ -1,20 +1,4 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 # Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common.yaml.
-=======
-﻿# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common.yaml.
->>>>>>> Stashed changes
-=======
-﻿# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common.yaml.
->>>>>>> Stashed changes
-=======
-﻿# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common.yaml.
->>>>>>> Stashed changes
-=======
-﻿# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common.yaml.
->>>>>>> Stashed changes
 # This file is a compatibility layer for the "buttons" setup.
 substitutions:
   # Common attribute names
@@ -39,46 +23,6 @@ substitutions:
   ent_mbr_motion_off: "input_boolean.mbr_motion_off"
   ent_all_lights_toggle: "input_boolean.all_lights_toggle"
   ent_outdoor_lights_toggle: "input_boolean.outdoor_lights_toggle"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-  ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
-  ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
->>>>>>> Stashed changes
-=======
-  ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
-  ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
->>>>>>> Stashed changes
-=======
-  ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
-  ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
->>>>>>> Stashed changes
-=======
-  ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
-  ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
->>>>>>> Stashed changes
-=======
-  ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
-  ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
->>>>>>> Stashed changes
-=======
-  ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
-  ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
->>>>>>> Stashed changes
-=======
-  ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
-  ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
->>>>>>> Stashed changes
-=======
-  ent_sleepy_toggle: "input_boolean.adapt_sleep_on_off_ov"
-  ent_bedtime_toggle: "input_boolean.bedtime_lights_off_trigger"
->>>>>>> Stashed changes
 
   # Fan / switch / light entities
   ent_attic_fan_switch: "switch.attic_fan"
@@ -89,17 +33,6 @@ substitutions:
   ent_fr_lights: "light.in_wall_paddle_dimmer_500s"
   ent_library_lights: "light.library_lights"
   ent_living_room_lights: "light.living_room_lights"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   ent_laundry_room_lights: "light.laundry_room_lights"
   ent_garage_lights: "light.garage_light_sw"
   ent_mbr_closet_light: "light.mbr_closet_light"
@@ -110,16 +43,6 @@ substitutions:
   ent_kitchen_lights_5: "light.kitchen_lights_5"
   ent_entry_lights: "light.entry_lights"
   ent_hall_lights: "light.in_wall_paddle_dimmer_500s_2"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
   # Lock
   ent_front_door_lock: "lock.front_door_lock"
@@ -128,55 +51,10 @@ substitutions:
   ent_thermostat: "climate.thermostat"
   ent_thermostat_fan: "fan.thermostat"
   ent_thermostat_humidity: "sensor.thermostat_humidity"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   ent_osat_temp: "sensor.meander_temperature"
   ent_kitchen_temp: "sensor.kitchen_motion_window_sw_air_temperature"
   ent_freezer_temp: "sensor.freezer_temp"
   ent_fridge_temp: "sensor.fridge_temp"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
   # Optional placeholders for other modules
   ent_rain_delay_bool: "input_boolean.rain_delay"

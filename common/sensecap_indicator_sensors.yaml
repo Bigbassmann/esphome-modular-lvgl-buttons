@@ -1,4 +1,4 @@
-# SenseCAP Indicator sensors + wifi info text
+﻿# SenseCAP Indicator sensors + wifi info text
 text_sensor:
   - platform: wifi_info
     ip_address:
@@ -93,11 +93,11 @@ sensor:
         - lambda: 'id(rp2040_last_seen_ms) = millis();'
 
   # --- INTERNAL TEMPERATURE + UPTIME ---
-  - platform: internal_temperature
-    id: internal_temp
-    name: "ESP Internal Temp"
-    update_interval: 30s
-    entity_category: diagnostic
+#  - platform: internal_temperature
+#    id: internal_temp                 # defined in sensor_base yaml as cpu_temperature
+#    name: "ESP Internal Temp"
+#    update_interval: 30s
+#    entity_category: diagnostic
 
   - platform: uptime
     id: uptime_sensor
@@ -168,3 +168,4 @@ sensor:
 #    id: ha_outdoor_temp
 #    entity_id: sensor.outdoor_temperature  # Replace with actual
 #    name: "Outdoor Temperature"
+

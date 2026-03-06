@@ -165,3 +165,5 @@ api:
           - globals.set:
               id: ha_connected
               value: 'false'
+
+

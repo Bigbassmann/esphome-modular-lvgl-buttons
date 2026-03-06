@@ -18,5 +18,5 @@ web_server:
 
 improv_serial:
 
-esp32_improv:
-  authorizer: none
+# esp32_improv:
+#   authorizer: none
