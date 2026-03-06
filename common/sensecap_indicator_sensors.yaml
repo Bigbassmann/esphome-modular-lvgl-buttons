@@ -1,4 +1,4 @@
-﻿# SenseCAP Indicator sensors + wifi info text
+# SenseCAP Indicator sensors + wifi info text
 text_sensor:
   - platform: wifi_info
     ip_address:
@@ -160,7 +160,7 @@ sensor:
     entity_category: diagnostic
     update_interval: 5s
     lambda: |-
-      if (id(rp2040_last_seen_ms) == 0) return NAN;
+      if (id(rp2040_last_seen_ms) == 0) return 0.0f;
       return (float) ((millis() - id(rp2040_last_seen_ms)) / 1000);
 
   # Example HA Sensors (imported from Home Assistant)
@@ -168,4 +168,3 @@ sensor:
 #    id: ha_outdoor_temp
 #    entity_id: sensor.outdoor_temperature  # Replace with actual
 #    name: "Outdoor Temperature"
-

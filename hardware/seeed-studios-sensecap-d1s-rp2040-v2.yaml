@@ -197,12 +197,13 @@ switch:
     name: "RP Grove I2C Power"
     optimistic: true
     entity_category: config
+#    enable_on_boot: true
     turn_on_action:
       - lambda: |-
-          id(grove_i2c_power).turn_on();
+          id(grove_i2c_power).request_high_power();
     turn_off_action:
       - lambda: |-
-          id(grove_i2c_power).turn_off();
+          id(grove_i2c_power).unrequest_high_power();
   - platform: output
     id: rp_usb_a2_gpio8_switch
     name: "RP USB A2 GPIO8"

@@ -1,4 +1,4 @@
-
+﻿
 globals:
   - id: tstat_page_active
     type: bool
@@ -369,7 +369,12 @@ interval:
                 if ((isnan(prev_current) != isnan(current)) || (!isnan(current) && fabsf(prev_current - current) > 0.01f)) changed = true;
                 if (mode != prev_mode || action != prev_action || fan_mode != prev_fan_mode || fan_state != prev_fan_state) changed = true;
                 if (changed) {
-                  ESP_LOGI("tstat_sync", "HA sync mode=%s action=%s fan_mode=%s fan_state=%s current=%.1f target=%.1f", mode.c_str(), action.c_str(), fan_mode.c_str(), fan_state.c_str(), current, target);
+                  if (!isnan(current) && !isnan(target)) {
+                    ESP_LOGI("tstat_sync", "HA sync mode=%s action=%s fan_mode=%s fan_state=%s current=%.1f target=%.1f", mode.c_str(), action.c_str(), fan_mode.c_str(), fan_state.c_str(), current, target);
+                  } else {
+                    ESP_LOGI("tstat_sync", "HA sync mode=%s action=%s fan_mode=%s fan_state=%s (temp unavailable)",
+                             mode.c_str(), action.c_str(), fan_mode.c_str(), fan_state.c_str());
+                  }
                   prev_target = target;
                   prev_current = current;
                   prev_mode = mode;
@@ -482,3 +487,4 @@ interval:
                   return 0;
 
             - lambda: 'id(tstat_runtime_syncing) = false;'
+

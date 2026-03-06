@@ -1,4 +1,4 @@
----
+﻿---
 # Dimmer light button
 # vars:
 #    uid:
@@ -151,11 +151,27 @@ binary_sensor:
                 knob:
                   bg_color: $label_off_color
 
-sensor:
-  - id: brightness_${uid}
+
+text_sensor:
+  - id: brightness_${uid}_txt
     platform: homeassistant
     entity_id: ${entity_id}
     attribute: brightness
+    internal: true
+    on_value:
+      - component.update: brightness_${uid}
+
+sensor:
+  - id: brightness_${uid}
+    platform: template
+    internal: true
+    lambda: |-
+      std::string s = id(brightness_${uid}_txt).state;
+      if (s.empty() || s == "None" || s == "none" || s == "unknown" || s == "unavailable") return NAN;
+      char* end = nullptr;
+      float v = strtof(s.c_str(), &end);
+      if (end == s.c_str() || !std::isfinite(v)) return NAN;
+      return v;
     filters:
       - filter_out: nan
     on_value:
@@ -171,9 +187,4 @@ sensor:
             char buf[8];
             snprintf(buf, sizeof(buf), "%d%%", pct);
             return std::string(buf);
-
-
-
-
-
 

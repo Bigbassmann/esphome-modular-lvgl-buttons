@@ -731,8 +731,8 @@ lvgl:
 
 # If you want to use other icons add them to the list here
 font:
-  # http://materialdesignicons.com/cdn/7.4.47/
-  - file: 'https://github.com/Templarian/MaterialDesign-Webfont/raw/v7.4.47/fonts/materialdesignicons-webfont.ttf'
+  # Material Design Icons (latest)
+  - file: 'https://raw.githubusercontent.com/Templarian/MaterialDesign-Webfont/master/fonts/materialdesignicons-webfont.ttf'
     id: mdi_icons_40
     size: 40
     bpp: 8
@@ -781,8 +781,10 @@ font:
       $mdi_wardrobe,  # mdi-wardrobe - closet lights
       $mdi_track_light,  # mdi-track-light - track lighting
       $mdi_white_balance_sunny,  # mdi-white-balance-sunny - color temp/sun icon
+      $mdi_weather_dust,  # mdi-weather-dust - VOC/air quality tile icon
+      $mdi_molecule_co2,  # mdi-molecule-co2 - CO2 tile icon
+      $mdi_water_percent,  # mdi-water-percent - humidity tile icon
     ]
-
 
 
 

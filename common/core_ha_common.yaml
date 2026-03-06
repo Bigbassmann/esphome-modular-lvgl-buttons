@@ -98,9 +98,18 @@ sensor:
     internal: true
     update_interval: never
     lambda: |-
+      static float last_valid = 66.0f;
       std::string s = id(ha_tstat_current_temp_txt).state;
-      if (s.empty() || s == "None" || s == "none" || s == "unknown" || s == "unavailable") return NAN;
-      return atof(s.c_str());
+      if (s.empty() || s == "None" || s == "none" || s == "unknown" || s == "unavailable") return last_valid;
+      char* end = nullptr;
+      float v = strtof(s.c_str(), &end);
+      if (end == s.c_str() || isnan(v) || isinf(v)) return last_valid;
+      if (v < 40.0f || v > 90.0f) {
+        ESP_LOGW("tstat_sync", "Ignoring out-of-range current temp %.1f from HA text state '%s'", v, s.c_str());
+        return last_valid;
+      }
+      last_valid = v;
+      return v;
 
   - platform: template
     id: ha_tstat_target_temp
@@ -184,5 +193,7 @@ text_sensor:
     id: ha_tstat_fan_entity
     entity_id: fan.thermostat
     internal: true
+
+
 
 

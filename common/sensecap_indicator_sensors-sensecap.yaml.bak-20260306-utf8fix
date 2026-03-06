@@ -69,11 +69,11 @@ sensor:
   - platform: packet_transport
     provider: d1-rp2040
     id: temp
-    name: "Disp Int Temp 째C"
+    name: "Disp Int Temp 캜"
     internal: false
     accuracy_decimals: 1
     icon: "mdi:thermometer"
-    unit_of_measurement: "째C"
+    unit_of_measurement: "캜"
     device_class: temperature
     on_value:
       then:
@@ -81,9 +81,9 @@ sensor:
 
 
   - platform: template
-    name: "Disp Int Temp 째F"
+    name: "Disp Int Temp 캟"
     id: temp_f
-    unit_of_measurement: "째F"
+    unit_of_measurement: "캟"
     accuracy_decimals: 1
     icon: "mdi:thermometer"
     device_class: temperature

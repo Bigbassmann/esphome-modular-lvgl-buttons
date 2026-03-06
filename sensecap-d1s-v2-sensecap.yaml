@@ -687,8 +687,8 @@ lvgl:
 
 # If you want to use other icons add them to the list here
 font:
-  # http://materialdesignicons.com/cdn/7.4.47/
-  - file: 'https://github.com/Templarian/MaterialDesign-Webfont/raw/v7.4.47/fonts/materialdesignicons-webfont.ttf'
+  # Material Design Icons (latest)
+  - file: 'https://raw.githubusercontent.com/Templarian/MaterialDesign-Webfont/master/fonts/materialdesignicons-webfont.ttf'
     id: mdi_icons_40
     size: 40
     bpp: 8

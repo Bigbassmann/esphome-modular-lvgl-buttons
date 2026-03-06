@@ -1,20 +1,73 @@
-sensor:
+text_sensor:
   - platform: homeassistant
-    id: ha_osat_temp
+    id: ha_osat_temp_txt
     entity_id: ${ent_osat_temp}
     internal: true
-
+  
   - platform: homeassistant
-    id: ha_kitchen_temp
+    id: ha_kitchen_temp_txt
     entity_id: ${ent_kitchen_temp}
     internal: true
-
+  
   - platform: homeassistant
-    id: ha_freezer_temp
+    id: ha_freezer_temp_txt
     entity_id: ${ent_freezer_temp}
     internal: true
-
+  
   - platform: homeassistant
-    id: ha_fridge_temp
+    id: ha_fridge_temp_txt
     entity_id: ${ent_fridge_temp}
     internal: true
+
+sensor:
+  - platform: template
+    id: ha_osat_temp
+    internal: true
+    lambda: |-
+      std::string s = id(ha_osat_temp_txt).state;
+      if (s.empty() || s == "None" || s == "none" || s == "unknown" || s == "unavailable") return NAN;
+      char* end = nullptr;
+      float v = strtof(s.c_str(), &end);
+      if (end == s.c_str() || isnan(v) || isinf(v)) return NAN;
+      return v;
+    filters:
+      - filter_out: nan
+
+  - platform: template
+    id: ha_kitchen_temp
+    internal: true
+    lambda: |-
+      std::string s = id(ha_kitchen_temp_txt).state;
+      if (s.empty() || s == "None" || s == "none" || s == "unknown" || s == "unavailable") return NAN;
+      char* end = nullptr;
+      float v = strtof(s.c_str(), &end);
+      if (end == s.c_str() || isnan(v) || isinf(v)) return NAN;
+      return v;
+    filters:
+      - filter_out: nan
+
+  - platform: template
+    id: ha_freezer_temp
+    internal: true
+    lambda: |-
+      std::string s = id(ha_freezer_temp_txt).state;
+      if (s.empty() || s == "None" || s == "none" || s == "unknown" || s == "unavailable") return NAN;
+      char* end = nullptr;
+      float v = strtof(s.c_str(), &end);
+      if (end == s.c_str() || isnan(v) || isinf(v)) return NAN;
+      return v;
+    filters:
+      - filter_out: nan
+
+  - platform: template
+    id: ha_fridge_temp
+    internal: true
+    lambda: |-
+      std::string s = id(ha_fridge_temp_txt).state;
+      if (s.empty() || s == "None" || s == "none" || s == "unknown" || s == "unavailable") return NAN;
+      char* end = nullptr;
+      float v = strtof(s.c_str(), &end);
+      if (end == s.c_str() || isnan(v) || isinf(v)) return NAN;
+      return v;
+    filters:
+      - filter_out: nan
