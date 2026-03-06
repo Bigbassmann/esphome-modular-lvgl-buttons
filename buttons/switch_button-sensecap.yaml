@@ -34,7 +34,11 @@ lvgl:
                         text_font: $icon_font
                         align: top_left
                         x: 8
+<<<<<<< Updated upstream
                         y: 8
+=======
+                        y: 6  # 8
+>>>>>>> Stashed changes
                         id: icon_${uid}
                         text: ${icon}
                     - label:

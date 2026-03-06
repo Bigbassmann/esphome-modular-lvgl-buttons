@@ -1,0 +1,5 @@
+﻿# Consolidated HA runtime include for SenseCAP fork.
+# Keeps behavior identical by composing existing HA logic modules.
+packages:
+  core_ha_common: !include core_ha_common-sensecap.yaml
+  home_temp_ha: !include home_temp_ha-sensecap.yaml
