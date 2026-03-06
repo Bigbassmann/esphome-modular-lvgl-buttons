@@ -34,19 +34,31 @@ lvgl:
                         id: icon_${uid}
                         text_font: $icon_font
                         align: top_left
+<<<<<<< Updated upstream
                         x: 10
                         y: 10
+=======
+                        x: 10  # 10
+                        y: 6  # 10
+>>>>>>> Stashed changes
                         text: ${icon}
                     - label:
                         id: value_${uid}
                         align: top_left
+<<<<<<< Updated upstream
                         x: 66
                         y: 8
                         text_font: nunito_18
+=======
+                        x: 56  # 66
+                        y: 6  # 8
+                        text_font: nunito_24  # 18
+>>>>>>> Stashed changes
                         text: "--%"
                     - label:
                         id: label_${uid}
                         align: top_left
+<<<<<<< Updated upstream
                         x: 66
                         y: 34
                         text: ${text}
@@ -58,6 +70,19 @@ lvgl:
                         y: 17
                         width: 44%
                         height: 24
+=======
+                        x: 56  # 66
+                        y: 30  # 34
+                        text: ${text}
+                        text_font: nunito_20  # 18  #16
+                    - slider:
+                        id: slider_${uid}
+                        align: top_right
+                        x: -10  # -10
+                        y: 0  # 17
+                        width: 50%   # 44%
+                        height: 28  # 24
+>>>>>>> Stashed changes
                         min_value: 0
                         max_value: 255
                         radius: 10

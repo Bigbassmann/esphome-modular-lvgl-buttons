@@ -26,6 +26,14 @@ font:
     bpp: 8
 
   - file: "esphome-modular-lvgl-buttons/assets/fonts/Nunito-SemiBold.ttf"
+<<<<<<< Updated upstream
+=======
+    id: nunito_22
+    size: 22
+    bpp: 8
+
+  - file: "esphome-modular-lvgl-buttons/assets/fonts/Nunito-SemiBold.ttf"
+>>>>>>> Stashed changes
     id: nunito_20
     size: 20
     bpp: 8

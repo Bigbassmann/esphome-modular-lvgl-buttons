@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 ﻿---
+=======
+---
+>>>>>>> Stashed changes
 # Substitution variables used through the codebase
 substitutions:
   icon_font: mdi_icons_40
@@ -14,7 +18,11 @@ substitutions:
 
   ap_ssid: !secret ap_ssid
   ap_password: !secret ap_password
+<<<<<<< Updated upstream
   ota_password: !secret ota_password
+=======
+  <<: !include esphome-modular-lvgl-buttons/common/ha_entities_substitutions-sensecap.yaml
+>>>>>>> Stashed changes
   # SenseCAP display runtime defaults (dark-only, no Day/Evening/Night mode select)
   sense_display_brightness_pct: "50"
   sense_display_sleep_enabled: "true"
@@ -115,9 +123,13 @@ packages:
   # core_boot: !include esphome-modular-lvgl-buttons/common/core_boot-sensecap.yaml
   core_globals: !include esphome-modular-lvgl-buttons/common/core_globals-sensecap.yaml
   # legacy_globals: !include esphome-modular-lvgl-buttons/common/core_globals_legacy_compat-sensecap.yaml
+<<<<<<< Updated upstream
   ha_entities_sensecap: !include esphome-modular-lvgl-buttons/common/ha_entities-sensecap.yaml
   core_ha_common: !include esphome-modular-lvgl-buttons/common/core_ha_common-sensecap.yaml
   home_temp_ha: !include esphome-modular-lvgl-buttons/common/home_temp_ha-sensecap.yaml
+=======
+  ha_runtime_sensecap: !include esphome-modular-lvgl-buttons/common/ha_runtime-sensecap.yaml
+>>>>>>> Stashed changes
   sensecap: !include esphome-modular-lvgl-buttons/common/sensecap_indicator_sensors-sensecap.yaml
   
 
@@ -252,8 +264,13 @@ packages:
       off_icon: $mdi_motion_sensor
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
+=======
+      on_bg_color: sense_tile_motion
+      off_bg_color: sense_tile_motion_off
+>>>>>>> Stashed changes
 =======
       on_bg_color: sense_tile_motion
       off_bg_color: sense_tile_motion_off
@@ -277,8 +294,13 @@ packages:
       off_icon: $mdi_motion_sensor
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
+=======
+      on_bg_color: sense_tile_motion
+      off_bg_color: sense_tile_motion_off
+>>>>>>> Stashed changes
 =======
       on_bg_color: sense_tile_motion
       off_bg_color: sense_tile_motion_off
@@ -295,15 +317,24 @@ packages:
       page_id: ${sense_page_overrides_id}
       row: 4
       column: 0
+<<<<<<< Updated upstream
       text: "Garage O/V"
+=======
+      text: "Garage OV"
+>>>>>>> Stashed changes
       icon: $mdi_motion_sensor
       entity_id: ${ent_garage_light_automation_off}
       on_icon: $mdi_motion_sensor_off
       off_icon: $mdi_motion_sensor
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
+=======
+      on_bg_color: sense_tile_motion
+      off_bg_color: sense_tile_motion_off
+>>>>>>> Stashed changes
 =======
       on_bg_color: sense_tile_motion
       off_bg_color: sense_tile_motion_off
@@ -327,8 +358,13 @@ packages:
       off_icon: $mdi_motion_sensor
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
+=======
+      on_bg_color: sense_tile_motion
+      off_bg_color: sense_tile_motion_off
+>>>>>>> Stashed changes
 =======
       on_bg_color: sense_tile_motion
       off_bg_color: sense_tile_motion_off
@@ -810,11 +846,17 @@ font:
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 
 
 >>>>>>> Stashed changes
 =======
+
+
+>>>>>>> Stashed changes
+=======
+
 
 
 >>>>>>> Stashed changes

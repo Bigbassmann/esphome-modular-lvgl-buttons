@@ -1,6 +1,10 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ---
+=======
+﻿---
+>>>>>>> Stashed changes
 =======
 ﻿---
 >>>>>>> Stashed changes
@@ -71,7 +75,10 @@ color:
       hex: '2D6273'
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     - id: sense_tile_motion
@@ -79,6 +86,9 @@ color:
     - id: sense_tile_motion_off
       hex: '2D6273'
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -467,6 +477,11 @@ color:
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 =======
 
 
