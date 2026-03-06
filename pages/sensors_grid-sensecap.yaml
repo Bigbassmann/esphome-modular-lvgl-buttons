@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
 ﻿substitutions:
-=======
-substitutions:
->>>>>>> Stashed changes
   sense_page_sensors_id: "page_sensors"
 
 lvgl:
@@ -10,7 +6,6 @@ lvgl:
     - id: ${sense_page_sensors_id}
       styles: sense_page_style
       on_load:
-<<<<<<< Updated upstream
         - component.update: internal_temp
         - component.update: ha_tstat_current_temp
         - lvgl.label.update:
@@ -21,79 +16,28 @@ lvgl:
         - lvgl.label.update:
             id: data_ha_tstat_current_temp
             text: !lambda |- 
-=======
-        - component.update: temp_f
-        - component.update: ha_tstat_current_temp
-        - lvgl.label.update:
-            id: data_temp_f
-            text: !lambda |-
-              if (isnan(id(temp_f).state)) return std::string("--");
-              return str_sprintf("%.1f %s", id(temp_f).state, id(temp_f).get_unit_of_measurement_ref().c_str());
-        - lvgl.label.update:
-            id: data_ha_tstat_current_temp
-            text: !lambda |-
->>>>>>> Stashed changes
               if (isnan(id(ha_tstat_current_temp).state)) return std::string("--");
               return str_sprintf("%.1f %s", id(ha_tstat_current_temp).state, id(ha_tstat_current_temp).get_unit_of_measurement_ref().c_str());
         - lvgl.label.update:
             id: data_ha_osat_temp
-<<<<<<< Updated upstream
             text: !lambda |- 
-=======
-            text: !lambda |-
->>>>>>> Stashed changes
               if (isnan(id(ha_osat_temp).state)) return std::string("--");
               return str_sprintf("%.1f %s", id(ha_osat_temp).state, id(ha_osat_temp).get_unit_of_measurement_ref().c_str());
         - lvgl.label.update:
             id: data_ha_kitchen_temp
-<<<<<<< Updated upstream
             text: !lambda |- 
-=======
-            text: !lambda |-
->>>>>>> Stashed changes
               if (isnan(id(ha_kitchen_temp).state)) return std::string("--");
               return str_sprintf("%.1f %s", id(ha_kitchen_temp).state, id(ha_kitchen_temp).get_unit_of_measurement_ref().c_str());
         - lvgl.label.update:
             id: data_ha_freezer_temp
-<<<<<<< Updated upstream
             text: !lambda |- 
-=======
-            text: !lambda |-
->>>>>>> Stashed changes
               if (isnan(id(ha_freezer_temp).state)) return std::string("--");
               return str_sprintf("%.1f %s", id(ha_freezer_temp).state, id(ha_freezer_temp).get_unit_of_measurement_ref().c_str());
         - lvgl.label.update:
             id: data_ha_fridge_temp
-<<<<<<< Updated upstream
             text: !lambda |- 
               if (isnan(id(ha_fridge_temp).state)) return std::string("--");
               return str_sprintf("%.1f %s", id(ha_fridge_temp).state, id(ha_fridge_temp).get_unit_of_measurement_ref().c_str());
-=======
-            text: !lambda |-
-              if (isnan(id(ha_fridge_temp).state)) return std::string("--");
-              return str_sprintf("%.1f %s", id(ha_fridge_temp).state, id(ha_fridge_temp).get_unit_of_measurement_ref().c_str());
-        - lvgl.label.update:
-            id: data_voc
-            text: !lambda |-
-              if (isnan(id(voc).state)) return std::string("--");
-              auto unit = id(voc).get_unit_of_measurement_ref();
-              if (unit.empty()) return str_sprintf("%.0f", id(voc).state);
-              return str_sprintf("%.0f %s", id(voc).state, unit.c_str());
-        - lvgl.label.update:
-            id: data_co2
-            text: !lambda |-
-              if (isnan(id(co2).state)) return std::string("--");
-              auto unit = id(co2).get_unit_of_measurement_ref();
-              if (unit.empty()) return str_sprintf("%.0f", id(co2).state);
-              return str_sprintf("%.0f %s", id(co2).state, unit.c_str());
-        - lvgl.label.update:
-            id: data_humid
-            text: !lambda |-
-              if (isnan(id(humid).state)) return std::string("--");
-              auto unit = id(humid).get_unit_of_measurement_ref();
-              if (unit.empty()) return str_sprintf("%.1f", id(humid).state);
-              return str_sprintf("%.1f %s", id(humid).state, unit.c_str());
->>>>>>> Stashed changes
       layout:
         type: grid
         grid_rows:
@@ -109,8 +53,4 @@ lvgl:
       pad_top: ${sense_content_y | default("46")}
       pad_bottom: 76
       pad_left: 8
-<<<<<<< Updated upstream
       pad_right: 8
-=======
-      pad_right: 8
->>>>>>> Stashed changes

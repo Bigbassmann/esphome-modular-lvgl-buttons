@@ -1,6 +1,5 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-﻿globals:
+
+globals:
   - id: tstat_page_active
     type: bool
     restore_value: false
@@ -27,7 +26,8 @@ lvgl:
             y: ${sense_content_y | default("46")}
             width: 100%
             height: ${sense_content_h | default("366")}
-            styles: sense_card_flat_style
+            styles: sense_card_flat_style
+
             scrollable: false
             scrollbar_mode: "OFF"
             widgets:
@@ -484,20 +484,7 @@ interval:
             - lambda: 'id(tstat_runtime_syncing) = false;'
 
 
-
-
-
-
-
-
-
-
-
-
-=======
-=======
->>>>>>> Stashed changes
-﻿globals:
+globals:
   - id: tstat_page_active
     type: bool
     restore_value: false
@@ -981,19 +968,3 @@ interval:
                   return 0;
 
             - lambda: 'id(tstat_runtime_syncing) = false;'
-
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes

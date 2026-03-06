@@ -1,4 +1,4 @@
-﻿# Modular Easy Button Screen for ESPHome + LVGL on Cheap Touchscreen Devices
+# Modular Easy Button Screen for ESPHome + LVGL on Cheap Touchscreen Devices
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![ESPHome](https://img.shields.io/badge/ESPHome-2025.x-blue)](https://esphome.io)
@@ -6,7 +6,7 @@
 
 A modular library for building beautiful, touch-enabled control panels using ESPHome and LVGL on ESP32 based touchscreen devices. Perfect for smart home dashboards, room controllers, lighting control, and information displays.
 
-## âœ¨ Features
+## ✨ Features
 
 - **Modular Design** - Mix and match components to build your perfect interface
 - **Home Assistant Integration** - Seamless control of your smart home devices
@@ -19,60 +19,60 @@ A modular library for building beautiful, touch-enabled control panels using ESP
 - **Swipe Navigation** - Navigate between pages with touch gestures
 - **Light Controls** - Dimming, color temperature, and RGB color picker support
 
-## ðŸ“± Supported Screens
+## 📱 Supported Screens
 
 ### Guition Displays
 
 | Model | Size | Resolution | Flash | Touch | Features | Link |
 |-------|------|------------|-------|-------|----------|------|
-| `ESP32-4848S040` | 4.0" | 480Ã—480 | 16MB | Capacitive | 120V/220V relays, built-in 120V/220V power supply | [AliExpress](https://www.aliexpress.com/item/3256806436431838.html) |
-| `ESP32-JC8048W550` | 5.0" | 480Ã—800 | 16MB | Capacitive | Qwiic (I2C) port, speaker | [AliExpress](https://www.aliexpress.com/item/3256806546911788.html) |
-| `ESP32-JC8048W535` | 3.5" | 480Ã—320 | 16MB | Capacitive | USB-C | [AliExpress](https://www.aliexpress.com/item/3256806546911788.html) |
-| `ESP32-jc4827w543C` | 4.3" | 272Ã—480 | 4MB | Capacitive | speaker, 4MB flash keep you code small| [AliExpress](https://www.aliexpress.com/item/3256806543342794.html) |
-| `ESP32-P4-JC4880P443` | 4.3" | 480Ã—800 | 16MB | Capacitive | ESP32-P4 based, speaker, mic, USB-C | [AliExpress](https://www.aliexpress.com/item/3256809431944589.html) |
-| `ESP32-P4-JC1060P470` | 4.7" | 1060Ã—600 | 16MB | Capacitive | ESP32-P4 based, USB-C | [AliExpress](https://www.aliexpress.com/item/3256808075855498.html) |
-| `ESP32-P4-JC8012P4A1` | 8.0" | 800Ã—1280 | 16MB | Capacitive | ESP32-P4 based, USB-C | [AliExpress](https://www.aliexpress.com/item/3256808075855498.html) |
+| `ESP32-4848S040` | 4.0" | 480x480 | 16MB | Capacitive | 120V/220V relays, built-in 120V/220V power supply | [AliExpress](https://www.aliexpress.com/item/3256806436431838.html) |
+| `ESP32-JC8048W550` | 5.0" | 480x800 | 16MB | Capacitive | Qwiic (I2C) port, speaker | [AliExpress](https://www.aliexpress.com/item/3256806546911788.html) |
+| `ESP32-JC8048W535` | 3.5" | 480x320 | 16MB | Capacitive | USB-C | [AliExpress](https://www.aliexpress.com/item/3256806546911788.html) |
+| `ESP32-jc4827w543C` | 4.3" | 272x480 | 4MB | Capacitive | speaker, 4MB flash keep you code small| [AliExpress](https://www.aliexpress.com/item/3256806543342794.html) |
+| `ESP32-P4-JC4880P443` | 4.3" | 480x800 | 16MB | Capacitive | ESP32-P4 based, speaker, mic, USB-C | [AliExpress](https://www.aliexpress.com/item/3256809431944589.html) |
+| `ESP32-P4-JC1060P470` | 4.7" | 1060x600 | 16MB | Capacitive | ESP32-P4 based, USB-C | [AliExpress](https://www.aliexpress.com/item/3256808075855498.html) |
+| `ESP32-P4-JC8012P4A1` | 8.0" | 800x1280 | 16MB | Capacitive | ESP32-P4 based, USB-C | [AliExpress](https://www.aliexpress.com/item/3256808075855498.html) |
 
 ### Sunton Displays
 
 | Model | Size | Resolution | Flash | Touch | Features | Link |
 |-------|------|------------|-------|-------|----------|------|
-| `ESP32-8048S043` | 4.3" | 480Ã—272 | 16MB | Capacitive | USB-C | [AliExpress](https://www.aliexpress.com/item/3256807713569037.html) |
-| `ESP32-8048S050` | 5.0" | 480Ã—800 | 16MB | Capacitive | USB-C | [AliExpress](https://www.aliexpress.com/item/1005004952694042.html) |
-| `ESP32-8048S070` | 7.0" | 480Ã—800 | 16MB | Capacitive | Large display, great for info displays, USB-C | [AliExpress](https://www.aliexpress.com/item/3256807882909237.html) |
-| `ESP32-2432S028` | 2.8" | 320Ã—240 | 4MB | Capacitive | Micro USB, popular "Cheap Yellow Display" | [AliExpress](https://www.aliexpress.com/item/3256805607954786.html) |
-| `ESP32-2432S028R` | 2.8" | 320Ã—240 | 4MB | Resistive | Micro USB, resistive touch variant | [AliExpress](https://www.aliexpress.com/item/3256805607954786.html) |
-| `ESP32-4827S032R` | 3.2" | 480Ã—320 | 16MB | Resistive | USB-C | [AliExpress](https://www.aliexpress.com/item/3256806197292489.html) |
+| `ESP32-8048S043` | 4.3" | 480x272 | 16MB | Capacitive | USB-C | [AliExpress](https://www.aliexpress.com/item/3256807713569037.html) |
+| `ESP32-8048S050` | 5.0" | 480x800 | 16MB | Capacitive | USB-C | [AliExpress](https://www.aliexpress.com/item/1005004952694042.html) |
+| `ESP32-8048S070` | 7.0" | 480x800 | 16MB | Capacitive | Large display, great for info displays, USB-C | [AliExpress](https://www.aliexpress.com/item/3256807882909237.html) |
+| `ESP32-2432S028` | 2.8" | 320x240 | 4MB | Capacitive | Micro USB, popular "Cheap Yellow Display" | [AliExpress](https://www.aliexpress.com/item/3256805607954786.html) |
+| `ESP32-2432S028R` | 2.8" | 320x240 | 4MB | Resistive | Micro USB, resistive touch variant | [AliExpress](https://www.aliexpress.com/item/3256805607954786.html) |
+| `ESP32-4827S032R` | 3.2" | 480x320 | 16MB | Resistive | USB-C | [AliExpress](https://www.aliexpress.com/item/3256806197292489.html) |
 
 ### Waveshare Displays
 
 | Model | Size | Resolution | Flash | Touch | Features | Link |
 |-------|------|------------|-------|-------|----------|------|
-| `ESP32-S3-Touch-LCD-7` | 7.0" | 800Ã—480 | 16MB | Capacitive | USB-C | [Waveshare](https://www.waveshare.com/esp32-s3-touch-lcd-7.htm) |
-| `ESP32-S3-Touch-LCD-7B` | 7.0" | 800Ã—480 | 16MB | Capacitive | Variant B with different touch IC, USB-C | [Waveshare](https://www.waveshare.com/esp32-s3-touch-lcd-7b.htm) |
-| `ESP32-S3-Touch-LCD-4.3` | 4.3" | 800Ã—480 | 16MB | Capacitive | USB-C | [Waveshare](https://www.waveshare.com/esp32-s3-touch-lcd-4.3.htm) |
-| `ESP32-S3-Touch-LCD-2.8C` | 2.8" | 320Ã—240 | 16MB | Capacitive | USB-C, compact form factor | [Waveshare](https://www.waveshare.com/esp32-s3-touch-lcd-2.8.htm) |
-| `ESP32-S3-Touch-LCD-3.5B` | 3.5" | 320Ã—480 | 8MB | Capacitive | USB-C | [Waveshare](https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-3.5B) |
-| `ESP32-P4-WiFi6-Touch-LCD-7B` | 7.0" | 1024Ã—600 | 32MB | Capacitive | speaker, mic, USB-C | [Waveshare](https://www.waveshare.com/esp32-p4-touch-lcd-7b.htm) |
-| `ESP32-P4-WiFi6-Touch-LCD-10.1` | 10.1" | 800Ã—1280 | 32MB | Capacitive |  speaker, mic, USB-C | [Waveshare](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-10.1.htm) |
-| `ESP32-P4-86-Panel` | 4.0" | 480Ã—480 | 32MB | Capacitive | speaker, mic, 86mm panel form factor | [Waveshare](https://www.waveshare.com/esp32-p4-nano.htm) |
+| `ESP32-S3-Touch-LCD-7` | 7.0" | 800x480 | 16MB | Capacitive | USB-C | [Waveshare](https://www.waveshare.com/esp32-s3-touch-lcd-7.htm) |
+| `ESP32-S3-Touch-LCD-7B` | 7.0" | 800x480 | 16MB | Capacitive | Variant B with different touch IC, USB-C | [Waveshare](https://www.waveshare.com/esp32-s3-touch-lcd-7b.htm) |
+| `ESP32-S3-Touch-LCD-4.3` | 4.3" | 800x480 | 16MB | Capacitive | USB-C | [Waveshare](https://www.waveshare.com/esp32-s3-touch-lcd-4.3.htm) |
+| `ESP32-S3-Touch-LCD-2.8C` | 2.8" | 320x240 | 16MB | Capacitive | USB-C, compact form factor | [Waveshare](https://www.waveshare.com/esp32-s3-touch-lcd-2.8.htm) |
+| `ESP32-S3-Touch-LCD-3.5B` | 3.5" | 320x480 | 8MB | Capacitive | USB-C | [Waveshare](https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-3.5B) |
+| `ESP32-P4-WiFi6-Touch-LCD-7B` | 7.0" | 1024x600 | 32MB | Capacitive | speaker, mic, USB-C | [Waveshare](https://www.waveshare.com/esp32-p4-touch-lcd-7b.htm) |
+| `ESP32-P4-WiFi6-Touch-LCD-10.1` | 10.1" | 800x1280 | 32MB | Capacitive |  speaker, mic, USB-C | [Waveshare](https://www.waveshare.com/esp32-p4-wifi6-touch-lcd-10.1.htm) |
+| `ESP32-P4-86-Panel` | 4.0" | 480x480 | 32MB | Capacitive | speaker, mic, 86mm panel form factor | [Waveshare](https://www.waveshare.com/esp32-p4-nano.htm) |
 
 ### Elecrow Displays
 
 | Model | Size | Resolution | Flash | Touch | Features | Link |
 |-------|------|------------|-------|-------|----------|------|
-| `CrowPanel DIS05035H` (v2.2) | 3.5" | 480Ã—320 | 4MB | Resistive | USB-C | [Elecrow](https://www.elecrow.com/esp32-display-3-5-inch-hmi-display-spi-tft-lcd-touch-screen.html) |
-| `Elecrow ESP32 7inch` | 7.0" | 800Ã—480 | 16MB | Capacitive | USB-C, wide viewing angle | [Elecrow](https://www.elecrow.com/esp32-display-7-inch-hmi-display-rgb-tft-lcd-touch-screen-support-lvgl.html) |
+| `CrowPanel DIS05035H` (v2.2) | 3.5" | 480x320 | 4MB | Resistive | USB-C | [Elecrow](https://www.elecrow.com/esp32-display-3-5-inch-hmi-display-spi-tft-lcd-touch-screen.html) |
+| `Elecrow ESP32 7inch` | 7.0" | 800x480 | 16MB | Capacitive | USB-C, wide viewing angle | [Elecrow](https://www.elecrow.com/esp32-display-7-inch-hmi-display-rgb-tft-lcd-touch-screen-support-lvgl.html) |
 
 ### Other Devices
 
 | Model | Size | Resolution | Flash | Touch | Features | Link |
 |-------|------|------------|-------|-------|----------|------|
-| `ESP32-S3-Box-3` | 2.4" | 320Ã—240 | 16MB | Capacitive | Espressif official dev kit with case | [Espressif](https://www.espressif.com/en/products/devkits/esp-box/overview) |
-| `LilyGo T-Display-S3` | 1.9" | 170Ã—320 | 16MB | Capacitive | Compact form factor | [LilyGo](https://www.lilygo.cc/products/t-display-s3) |
+| `ESP32-S3-Box-3` | 2.4" | 320x240 | 16MB | Capacitive | Espressif official dev kit with case | [Espressif](https://www.espressif.com/en/products/devkits/esp-box/overview) |
+| `LilyGo T-Display-S3` | 1.9" | 170x320 | 16MB | Capacitive | Compact form factor | [LilyGo](https://www.lilygo.cc/products/t-display-s3) |
 | `SDL Display` | Variable | Variable | N/A | Mouse | Desktop testing on Linux/MacOS | N/A |
 
-## ðŸ§© Available Components
+## 🧩 Available Components
 
 ### Buttons (`buttons/`)
 
@@ -138,7 +138,7 @@ A modular library for building beautiful, touch-enabled control panels using ESP
 | `assets/` | Images, icons, and fonts |
 | `custom_components/` | Custom ESPHome components (NOAA tides) |
 
-## ðŸš€ Quick Start
+## 🚀 Quick Start
 
 ### Prerequisites
 
@@ -183,7 +183,7 @@ wifi_password: "Your WiFi Password"
 esphome run my-display.yaml
 ```
 
-## ðŸ  Home Assistant Integration
+## 🏠 Home Assistant Integration
 
 This project integrates seamlessly with Home Assistant. Once your device is running, it will automatically appear in Home Assistant's ESPHome integration.
 
@@ -203,7 +203,7 @@ The [ESPHome Dashboard Add-on](https://esphome.io/guides/getting_started_hassio/
 
 The [File Editor Add-on](https://github.com/home-assistant/addons/tree/master/configurator) allows you to edit ESPHome configurations directly in Home Assistant.
 
-## ðŸ–¥ï¸ Desktop Development with SDL
+## 🖥️ Desktop Development with SDL
 
 The SDL display platform allows you to develop and test your UI on a desktop system running Linux or macOS. This is much faster than flashing to hardware for every change.
 
@@ -229,38 +229,38 @@ packages:
 3. Run the configuration:
 
 ```bash
-esphome run SDL-lvgl-display_modular_480px.yaml
+esphome run example_code/SDL-lvgl-display_modular_480px.yaml
 ```
 
 A window will open on your desktop simulating the touchscreen display.
 
-## ðŸ“ Project Structure
+## 📁 Project Structure
 
 ```
 esphome-modular-lvgl-buttons/
-â”œâ”€â”€ README.md                 # This file
-â”œâ”€â”€ LICENSE                   # MIT License
-â”œâ”€â”€ secrets.yaml              # Template for WiFi/API secrets
-â”œâ”€â”€ assets/                   # Images, icons, and fonts
-â”‚   â”œâ”€â”€ fonts/                # Custom font files
-â”‚   â””â”€â”€ images/               # PNG/SVG images for UI
-â”œâ”€â”€ buttons/                  # Reusable button components
-â”œâ”€â”€ common/                   # Shared configuration (themes, colors, fonts)
-â”œâ”€â”€ custom_components/        # Custom ESPHome components
-â”‚   â””â”€â”€ noaa_tides/           # NOAA tide data integration
-â”œâ”€â”€ example_code/             # Basic example configurations
-â”œâ”€â”€ example_code_advanced/    # Advanced examples (weather, tides)
-â”œâ”€â”€ hardware/                 # Hardware-specific configurations
-â”œâ”€â”€ homeassistant_config/     # Home Assistant configuration examples
-â”œâ”€â”€ pages/                    # Full-screen page layouts
-â”œâ”€â”€ sensors/                  # Sensor configurations
-â”œâ”€â”€ solar/                    # Solar monitoring components
-â”œâ”€â”€ tides/                    # NOAA tide display components
-â”œâ”€â”€ weather_homeassistant/    # Weather display components
-â””â”€â”€ widgets/                  # Reusable UI widgets (canvas, navigation)
+├── README.md                 # This file
+├── LICENSE                   # MIT License
+├── secrets.yaml              # Template for WiFi/API secrets
+├── assets/                   # Images, icons, and fonts
+│   ├── fonts/                # Custom font files
+│   └── images/               # PNG/SVG images for UI
+├── buttons/                  # Reusable button components
+├── common/                   # Shared configuration (themes, colors, fonts)
+├── custom_components/        # Custom ESPHome components
+│   └── noaa_tides/           # NOAA tide data integration
+├── example_code/             # Basic example configurations
+├── example_code_advanced/    # Advanced examples (weather, tides)
+├── hardware/                 # Hardware-specific configurations
+├── homeassistant_config/     # Home Assistant configuration examples
+├── pages/                    # Full-screen page layouts
+├── sensors/                  # Sensor configurations
+├── solar/                    # Solar monitoring components
+├── tides/                    # NOAA tide display components
+├── weather_homeassistant/    # Weather display components
+└── widgets/                  # Reusable UI widgets (canvas, navigation)
 ```
 
-## ðŸ“ Device-Specific Notes
+## 📝 Device-Specific Notes
 
 ### Guition ESP32-4848S040 (4.0" Square)
 
@@ -292,7 +292,7 @@ High-quality 7" display from Waveshare with excellent documentation and support.
 
 **Best for:** Professional installations, commercial projects
 
-## ðŸ”§ Troubleshooting
+## 🔧 Troubleshooting
 
 ### Common Issues
 
@@ -329,14 +329,15 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## ðŸ“„ License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## ðŸ™ Acknowledgments
+## 🙏 Acknowledgments
 
 - [ESPHome](https://esphome.io/) - The amazing platform that makes this possible
 - [LVGL](https://lvgl.io/) - Light and Versatile Graphics Library
 - [Home Assistant](https://www.home-assistant.io/) - The heart of the smart home
 - [Material Design Icons](https://materialdesignicons.com/) - Beautiful icon set
+
 

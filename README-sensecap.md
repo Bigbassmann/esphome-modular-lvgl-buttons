@@ -1,4 +1,4 @@
-﻿# SenseCAP D1S (Fork) README
+# SenseCAP D1S (Fork) README
 
 This document is the SenseCAP-specific guide for this fork of `agillis/esphome-modular-lvgl-buttons`.
 
@@ -200,8 +200,6 @@ esphome config esphome-modular-lvgl-buttons/sensecap-d1s-v2-sensecap.yaml
 # Validate a new device file
 esphome config esphome-modular-lvgl-buttons/sensecap-d1s-v2-002-sensecap.yaml
 ```
-<<<<<<< Updated upstream
-=======
 
 ## SenseCAP UI Editing Cookbook (Exact Fields)
 
@@ -452,4 +450,5 @@ This section is the exact edit map for page UI tuning.
 - File: `buttons/dimmer_light_button-sensecap.yaml`
 - Update `slider_${uid}` `min_value:` / `max_value:`.
 - Typical HA brightness is `0..255`.
->>>>>>> Stashed changes
+
+
