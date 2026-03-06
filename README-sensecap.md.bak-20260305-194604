@@ -200,8 +200,6 @@ esphome config esphome-modular-lvgl-buttons/sensecap-d1s-v2-sensecap.yaml
 # Validate a new device file
 esphome config esphome-modular-lvgl-buttons/sensecap-d1s-v2-002-sensecap.yaml
 ```
-<<<<<<< Updated upstream
-=======
 
 ## SenseCAP UI Editing Cookbook (Exact Fields)
 
@@ -424,32 +422,3 @@ This section is the exact edit map for page UI tuning.
 2. Run `esphome config sensecap-d1s-v2.yaml`.
 3. Flash and verify on hardware.
 4. If changing reusable template files (`buttons/*-sensecap.yaml`, `pages/*template*-sensecap.yaml`), test all pages using that template.
-
-## Quick Recipes (Top 5)
-
-1. Rename a tile
-- File: `sensecap-d1s-v2.yaml`
-- Find the tile block (`dimmer_btn_*`, `lightsw_btn_*`, `sensor_*`, `overrides_btn_*`).
-- Change `text:` and optionally `icon:`.
-- Validate: `esphome config sensecap-d1s-v2.yaml`.
-
-2. Move a tile
-- File: `sensecap-d1s-v2.yaml`
-- In the tile block, change `row:` and `column:`.
-- If needed also adjust `row_span:` / `column_span:`.
-
-3. Recolor a tile
-- Preferred: use tokens in `common/color-sensecap.yaml`.
-- In tile block set `on_bg_color:` / `off_bg_color:` to token IDs.
-- If style-driven, adjust style in `common/theme_style-sensecap.yaml`.
-
-4. Change entity a tile controls/displays
-- File: `sensecap-d1s-v2.yaml`
-- Change `entity_id:` (and `secondary_entity_id:` when present).
-- Keep entity IDs centralized in `common/ha_entities_substitutions-sensecap.yaml` when possible.
-
-5. Adjust dimmer slider range
-- File: `buttons/dimmer_light_button-sensecap.yaml`
-- Update `slider_${uid}` `min_value:` / `max_value:`.
-- Typical HA brightness is `0..255`.
->>>>>>> Stashed changes

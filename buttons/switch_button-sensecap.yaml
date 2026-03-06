@@ -35,7 +35,11 @@ lvgl:
                         align: top_left
                         x: 8
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                         y: 8
+=======
+                        y: 6  # 8
+>>>>>>> Stashed changes
 =======
                         y: 6  # 8
 >>>>>>> Stashed changes

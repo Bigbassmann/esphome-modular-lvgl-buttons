@@ -1,0 +1,115 @@
+# Seeed Studios SenseCap Indicator D1S
+#
+# Hardware configuration file
+---
+
+substitutions:
+  # Screen Size
+  screen_height: 480
+  screen_width: 480
+
+# esphome:
+
+esphome:
+  name: sensecap-d1s
+  friendly_name: SenseCAP Indicator
+  min_version: 2024.6.0    
+
+
+# SenseCAP Indicator hardware (ESP32-S3)
+esp32:
+  board: esp32-s3-devkitc-1
+  variant: ESP32S3
+  flash_size: 8MB
+  framework:
+    type: esp-idf
+    sdkconfig_options:
+      CONFIG_ESPTOOLPY_FLASHSIZE_8MB: y
+      CONFIG_ESP32S3_DEFAULT_CPU_FREQ_240: y
+      CONFIG_ESP32S3_DATA_CACHE_64KB: y
+      CONFIG_SPIRAM_FETCH_INSTRUCTIONS: y
+      CONFIG_SPIRAM_RODATA: y
+
+psram:
+  mode: octal
+  speed: 80MHz
+
+logger:
+  hardware_uart: UART0
+  level: DEBUG   # Reduced to improve runtime stability
+
+safe_mode:
+  disabled: false    
+
+# --- I2C BUS --- PCA9554 Expander I2C Address: 0x20, 16bit -and Touchscreen
+i2c:
+  - id: bus_a
+    sda: GPIO39
+    scl: GPIO40
+    scan: true  #false in docs
+
+# --- SPI BUS ---
+spi:
+  - id: lcd_spi
+    clk_pin: GPIO41
+    mosi_pin: GPIO48
+    miso_pin: GPIO47
+
+# --- PCA9554 IO EXPANDER --- GPIO39/40
+pca9554:
+  - id: pca9554a_device
+    address: 0x20
+    pin_count: 16
+
+# --- RP2040 UART FOR SENSOR PACKET TRANSPORT --- 2nd CPU
+uart:
+  - id: rp2040_serial
+    tx_pin: GPIO20  # TX from ESP32S3 to RP2040 RX RP_16
+    rx_pin: GPIO19  # RX to ESP32S3 from RP2040 TX RP_17
+    baud_rate: 115200
+
+packet_transport:
+  - platform: uart
+    uart_id: rp2040_serial
+    providers:
+      - name: d1-rp2040
+# SenseCAP Indicator display + touch + backlight
+output:
+  - platform: ledc
+    pin:
+      number: GPIO45
+      ignore_strapping_warning: true
+    id: ledc_gpio45
+    frequency: 25000Hz  # 100Hz default
+
+light:
+  - platform: monochromatic
+    id: display_backlight
+    output: ledc_gpio45
+    restore_mode: ALWAYS_ON
+    default_transition_length: 0s
+    on_turn_on:
+      - light.control:
+          id: display_backlight
+          brightness: 50%  # Default to 50% brightness on power on
+
+# --- DISPLAY (MIPI RGB) ---
+display:
+  - platform: mipi_rgb
+    model: SEEED-INDICATOR-D1
+    id: my_display
+    invert_colors: true  # Toggle to false
+    update_interval: 0s
+#    color_order: GRB
+    draw_rounding: 2
+    auto_clear_enabled: false
+    use_axis_flips: true
+
+# --- TOUCHSCREEN (FT5x06) --- I2C 39/40
+touchscreen:
+  - platform: ft5x06
+    id: my_touchscreen
+    transform:
+      mirror_x: true
+      mirror_y: true
+

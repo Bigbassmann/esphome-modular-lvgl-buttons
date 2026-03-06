@@ -1,0 +1,283 @@
+esphome:
+  name: d1-rp2040-v2
+  friendly_name: d1-rp2040-v2
+rp2040:
+  board: rpipico
+  framework:
+    version: 3.9.4
+
+logger:
+
+# ESP32 <-> RP2040 bridge
+uart:
+  - id: esp32s3_serial
+    tx_pin: GPIO17
+    rx_pin: GPIO16
+    baud_rate: 115200
+
+# Grove I2C bus
+i2c:
+  - id: grove_i2c
+    sda: GPIO20
+    scl: GPIO21
+    scan: true
+
+# Grove I2C power switch (active high)
+power_supply:
+  - id: grove_i2c_power
+    pin: GPIO18
+    enable_on_boot: true
+
+# Current onboard sensors
+sensor:
+  - platform: sgp4x
+    voc:
+      id: voc
+      name: "VOC Index"
+
+  - platform: scd4x
+    co2:
+      id: co2
+      name: "CO2"
+    temperature:
+      id: temp
+      name: "Temperature"
+    humidity:
+      id: humid
+      name: "Humidity"
+
+  # External Grove temp/hum example (AHT20 compatible)
+  - platform: aht10
+    i2c_id: grove_i2c
+    temperature:
+      id: exp_i2c_slot1_temp
+      name: "Expansion I2C Slot1 Temp"
+    humidity:
+      id: exp_i2c_slot1_hum
+      name: "Expansion I2C Slot1 Hum"
+    update_interval: 10s
+
+  # Grove ADC expansion
+  - platform: adc
+    pin: GPIO26
+    id: exp_adc_slot1
+    name: "Expansion ADC Slot1"
+    update_interval: 5s
+
+  - platform: adc
+    pin: GPIO27
+    id: exp_adc_slot2
+    name: "Expansion ADC Slot2"
+    update_interval: 5s
+
+  # Reserved placeholder sensors (keep IDs stable)
+  - platform: template
+    id: exp_i2c_slot2_temp
+    name: "Expansion I2C Slot2 Temp"
+    update_interval: 60s
+    lambda: 'return NAN;'
+
+  - platform: template
+    id: exp_i2c_slot2_hum
+    name: "Expansion I2C Slot2 Hum"
+    update_interval: 60s
+    lambda: 'return NAN;'
+
+  - platform: template
+    id: exp_i2c_slot3_co2
+    name: "Expansion I2C Slot3 CO2"
+    update_interval: 60s
+    lambda: 'return NAN;'
+
+  - platform: template
+    id: exp_i2c_slot3_voc
+    name: "Expansion I2C Slot3 VOC"
+    update_interval: 60s
+    lambda: 'return NAN;'
+
+  - platform: template
+    id: exp_adc_slot3
+    name: "Expansion ADC Slot3"
+    update_interval: 60s
+    lambda: 'return NAN;'
+
+  - platform: template
+    id: exp_adc_slot4
+    name: "Expansion ADC Slot4"
+    update_interval: 60s
+    lambda: 'return NAN;'
+
+  # SD placeholders - replace with real SD stack values later
+  - platform: template
+    id: exp_sd_mounted
+    name: "Expansion SD Mounted"
+    update_interval: 30s
+    lambda: 'return 0.0f;'
+
+  - platform: template
+    id: exp_sd_free_mb
+    name: "Expansion SD Free MB"
+    unit_of_measurement: "MB"
+    update_interval: 30s
+    lambda: 'return NAN;'
+
+  - platform: template
+    id: exp_sd_used_mb
+    name: "Expansion SD Used MB"
+    unit_of_measurement: "MB"
+    update_interval: 30s
+    lambda: 'return NAN;'
+
+  - platform: template
+    id: exp_sd_error_code
+    name: "Expansion SD Error Code"
+    update_interval: 30s
+    lambda: 'return 0.0f;'
+
+  - platform: template
+    id: exp_bus_i2c_ok
+    name: "Expansion I2C Bus OK"
+    update_interval: 30s
+    lambda: 'return 1.0f;'
+
+  - platform: template
+    id: exp_bus_uart_ok
+    name: "Expansion UART Bus OK"
+    update_interval: 30s
+    lambda: 'return 1.0f;'
+
+  - platform: uptime
+    id: exp_heartbeat
+    name: "Expansion Heartbeat"
+
+# Local outputs owned by RP2040
+output:
+  # Buzzer (GPIO19)
+  - platform: gpio
+    pin: GPIO19
+    id: rp_buzzer_out
+
+  # USB-C exposed GPIO candidates (relay/LED/general digital expansion)
+  - platform: gpio
+    pin: GPIO8
+    id: rp_usb_a2_gpio8_out
+  - platform: gpio
+    pin: GPIO9
+    id: rp_usb_a3_gpio9_out
+  - platform: gpio
+    pin: GPIO0
+    id: rp_usb_a10_gpio0_out
+  - platform: gpio
+    pin: GPIO1
+    id: rp_usb_a11_gpio1_out
+  - platform: gpio
+    pin: GPIO2
+    id: rp_usb_b2_gpio2_out
+  - platform: gpio
+    pin: GPIO3
+    id: rp_usb_b3_gpio3_out
+  - platform: gpio
+    pin: GPIO15
+    id: rp_usb_b10_gpio15_out
+  - platform: gpio
+    pin: GPIO14
+    id: rp_usb_b11_gpio14_out
+
+# Optional local test/control switches (RP2040-side)
+switch:
+  - platform: output
+    id: rp_buzzer_test
+    name: "RP Buzzer Test"
+    output: rp_buzzer_out
+    entity_category: diagnostic
+
+
+  - platform: template
+    id: rp_grove_i2c_power_sw
+    name: "RP Grove I2C Power"
+    optimistic: true
+    entity_category: config
+    turn_on_action:
+      - lambda: |-
+          id(grove_i2c_power).turn_on();
+    turn_off_action:
+      - lambda: |-
+          id(grove_i2c_power).turn_off();
+  - platform: output
+    id: rp_usb_a2_gpio8_switch
+    name: "RP USB A2 GPIO8"
+    output: rp_usb_a2_gpio8_out
+    restore_mode: ALWAYS_OFF
+    entity_category: config
+  - platform: output
+    id: rp_usb_a3_gpio9_switch
+    name: "RP USB A3 GPIO9"
+    output: rp_usb_a3_gpio9_out
+    restore_mode: ALWAYS_OFF
+    entity_category: config
+  - platform: output
+    id: rp_usb_a10_gpio0_switch
+    name: "RP USB A10 GPIO0"
+    output: rp_usb_a10_gpio0_out
+    restore_mode: ALWAYS_OFF
+    entity_category: config
+  - platform: output
+    id: rp_usb_a11_gpio1_switch
+    name: "RP USB A11 GPIO1"
+    output: rp_usb_a11_gpio1_out
+    restore_mode: ALWAYS_OFF
+    entity_category: config
+  - platform: output
+    id: rp_usb_b2_gpio2_switch
+    name: "RP USB B2 GPIO2"
+    output: rp_usb_b2_gpio2_out
+    restore_mode: ALWAYS_OFF
+    entity_category: config
+  - platform: output
+    id: rp_usb_b3_gpio3_switch
+    name: "RP USB B3 GPIO3"
+    output: rp_usb_b3_gpio3_out
+    restore_mode: ALWAYS_OFF
+    entity_category: config
+  - platform: output
+    id: rp_usb_b10_gpio15_switch
+    name: "RP USB B10 GPIO15"
+    output: rp_usb_b10_gpio15_out
+    restore_mode: ALWAYS_OFF
+    entity_category: config
+  - platform: output
+    id: rp_usb_b11_gpio14_switch
+    name: "RP USB B11 GPIO14"
+    output: rp_usb_b11_gpio14_out
+    restore_mode: ALWAYS_OFF
+    entity_category: config
+
+packet_transport:
+  - platform: uart
+    uart_id: esp32s3_serial
+    sensors:
+      - id: voc
+      - id: co2
+      - id: temp
+      - id: humid
+      - id: exp_i2c_slot1_temp
+      - id: exp_i2c_slot1_hum
+      - id: exp_i2c_slot2_temp
+      - id: exp_i2c_slot2_hum
+      - id: exp_i2c_slot3_co2
+      - id: exp_i2c_slot3_voc
+      - id: exp_adc_slot1
+      - id: exp_adc_slot2
+      - id: exp_adc_slot3
+      - id: exp_adc_slot4
+      - id: exp_sd_mounted
+      - id: exp_sd_free_mb
+      - id: exp_sd_used_mb
+      - id: exp_sd_error_code
+      - id: exp_bus_i2c_ok
+      - id: exp_bus_uart_ok
+      - id: exp_heartbeat
+
+
+
+

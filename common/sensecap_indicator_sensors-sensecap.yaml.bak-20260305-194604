@@ -78,22 +78,7 @@ sensor:
     on_value:
       then:
         - lambda: 'id(rp2040_last_seen_ms) = millis();'
-<<<<<<< Updated upstream
 
-=======
-  - platform: template
-    id: temp_f
-    name: "Temperature F"
-    internal: false
-    accuracy_decimals: 1
-    icon: "mdi:thermometer"
-    unit_of_measurement: "F"
-    device_class: temperature
-    update_interval: 10s
-    lambda: |-
-      if (isnan(id(temp).state)) return NAN;
-      return (id(temp).state * 9.0f / 5.0f) + 32.0f;
->>>>>>> Stashed changes
   - platform: packet_transport
     provider: d1-rp2040
     id: humid

@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ﻿globals:
   - id: tstat_page_active
     type: bool
@@ -494,6 +495,8 @@ interval:
 
 
 =======
+=======
+>>>>>>> Stashed changes
 ﻿globals:
   - id: tstat_page_active
     type: bool
@@ -990,4 +993,7 @@ interval:
 
 
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

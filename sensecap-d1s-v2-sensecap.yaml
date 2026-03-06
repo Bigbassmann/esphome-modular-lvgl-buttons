@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ﻿---
+=======
+---
+>>>>>>> Stashed changes
 =======
 ---
 >>>>>>> Stashed changes
@@ -19,9 +23,16 @@ substitutions:
   ap_ssid: !secret ap_ssid
   ap_password: !secret ap_password
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   ota_password: !secret ota_password
 =======
   <<: !include esphome-modular-lvgl-buttons/common/ha_entities_substitutions-sensecap.yaml
+>>>>>>> Stashed changes
+=======
+  ota_password: !secret ota_password
+  wifi_ssid: !secret wifi_ssid
+  wifi_password: !secret wifi_password
+  
 >>>>>>> Stashed changes
   # SenseCAP display runtime defaults (dark-only, no Day/Evening/Night mode select)
   sense_display_brightness_pct: "50"
@@ -64,6 +75,10 @@ script:
           text: !lambda 'return id(system_time).now().strftime("%l:%M %P");'
 
 packages:
+<<<<<<< Updated upstream
+=======
+  # secrets: !include secrets.yaml
+>>>>>>> Stashed changes
   # Generic configuration for ESP32 screens
   # SDL has no Wi-Fi
   wifi: !include esphome-modular-lvgl-buttons/common/wifi-sensecap.yaml
@@ -124,11 +139,17 @@ packages:
   core_globals: !include esphome-modular-lvgl-buttons/common/core_globals-sensecap.yaml
   # legacy_globals: !include esphome-modular-lvgl-buttons/common/core_globals_legacy_compat-sensecap.yaml
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   ha_entities_sensecap: !include esphome-modular-lvgl-buttons/common/ha_entities-sensecap.yaml
   core_ha_common: !include esphome-modular-lvgl-buttons/common/core_ha_common-sensecap.yaml
   home_temp_ha: !include esphome-modular-lvgl-buttons/common/home_temp_ha-sensecap.yaml
 =======
   ha_runtime_sensecap: !include esphome-modular-lvgl-buttons/common/ha_runtime-sensecap.yaml
+>>>>>>> Stashed changes
+=======
+  ha_entities_sensecap: !include esphome-modular-lvgl-buttons/common/ha_entities-sensecap.yaml
+  core_ha_common: !include esphome-modular-lvgl-buttons/common/core_ha_common-sensecap.yaml
+  home_temp_ha: !include esphome-modular-lvgl-buttons/common/home_temp_ha-sensecap.yaml
 >>>>>>> Stashed changes
   sensecap: !include esphome-modular-lvgl-buttons/common/sensecap_indicator_sensors-sensecap.yaml
   
@@ -265,8 +286,13 @@ packages:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
+=======
+      on_bg_color: sense_tile_motion
+      off_bg_color: sense_tile_motion_off
+>>>>>>> Stashed changes
 =======
       on_bg_color: sense_tile_motion
       off_bg_color: sense_tile_motion_off
@@ -295,8 +321,13 @@ packages:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
+=======
+      on_bg_color: sense_tile_motion
+      off_bg_color: sense_tile_motion_off
+>>>>>>> Stashed changes
 =======
       on_bg_color: sense_tile_motion
       off_bg_color: sense_tile_motion_off
@@ -318,9 +349,13 @@ packages:
       row: 4
       column: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       text: "Garage O/V"
 =======
       text: "Garage OV"
+>>>>>>> Stashed changes
+=======
+      text: "Garage O/V"
 >>>>>>> Stashed changes
       icon: $mdi_motion_sensor
       entity_id: ${ent_garage_light_automation_off}
@@ -329,8 +364,13 @@ packages:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
+=======
+      on_bg_color: sense_tile_motion
+      off_bg_color: sense_tile_motion_off
+>>>>>>> Stashed changes
 =======
       on_bg_color: sense_tile_motion
       off_bg_color: sense_tile_motion_off
@@ -359,8 +399,13 @@ packages:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       on_bg_color: sense_tile_sky
       off_bg_color: sense_tile_sky_off
+=======
+      on_bg_color: sense_tile_motion
+      off_bg_color: sense_tile_motion_off
+>>>>>>> Stashed changes
 =======
       on_bg_color: sense_tile_motion
       off_bg_color: sense_tile_motion_off
@@ -611,7 +656,11 @@ packages:
       icon: $mdi_home_thermometer
       icon_color: sense_text
       bg_color: sense_tile_yellow
+<<<<<<< Updated upstream
       sensor_id: internal_temp
+=======
+      sensor_id: temp_f
+>>>>>>> Stashed changes
 
   sensor_fr_temp: !include
     file: esphome-modular-lvgl-buttons/buttons/sensor_button-sensecap.yaml
@@ -683,6 +732,51 @@ packages:
       bg_color: sense_tile_sky
       sensor_id: ha_fridge_temp
 
+<<<<<<< Updated upstream
+=======
+  sensor_voc: !include
+    file: esphome-modular-lvgl-buttons/buttons/sensor_button-sensecap.yaml
+    vars:
+      uid: sensor_voc
+      page_id: ${sense_page_sensors_id}
+      row: 2
+      column: 0
+      column_span: 1
+      text: "VOC"
+      icon: $mdi_weather_dust
+      icon_color: sense_text
+      bg_color: sense_tile_teal
+      sensor_id: voc
+
+  sensor_co2: !include
+    file: esphome-modular-lvgl-buttons/buttons/sensor_button-sensecap.yaml
+    vars:
+      uid: sensor_co2
+      page_id: ${sense_page_sensors_id}
+      row: 2
+      column: 1
+      column_span: 1
+      text: "CO2"
+      icon: $mdi_molecule_co2
+      icon_color: sense_text
+      bg_color: sense_tile_orange
+      sensor_id: co2
+
+  sensor_humid: !include
+    file: esphome-modular-lvgl-buttons/buttons/sensor_button-sensecap.yaml
+    vars:
+      uid: sensor_humid
+      page_id: ${sense_page_sensors_id}
+      row: 2
+      column: 2
+      column_span: 1
+      text: "Humid"
+      icon: $mdi_water_percent
+      icon_color: sense_text
+      bg_color: sense_tile_blue
+      sensor_id: humid
+
+>>>>>>> Stashed changes
   lightsw_btn_laundry: !include
     file: esphome-modular-lvgl-buttons/buttons/switch_button-sensecap.yaml
     vars:
@@ -847,6 +941,7 @@ font:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 
 
@@ -857,6 +952,10 @@ font:
 >>>>>>> Stashed changes
 =======
 
+
+
+>>>>>>> Stashed changes
+=======
 
 
 >>>>>>> Stashed changes
