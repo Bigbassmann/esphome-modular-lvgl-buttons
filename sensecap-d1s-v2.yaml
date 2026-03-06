@@ -36,6 +36,9 @@ substitutions:
   sense_page_lighting_switches_id: "page_lighting_switches"
   sense_page_sensors_id: "page_sensors"
   sense_page_display_settings_id: "page_display_settings"
+  # Template-safe demo entities for shared/main config
+  demo_switch_entity: "switch.example_switch"
+  demo_rgb_light_entity: "light.example_rgb_light"
 
 esphome:
   name: "sensecap-d1s"
@@ -139,7 +142,7 @@ packages:
       column: 0
       text: Light
       icon: $mdi_lightbulb
-      entity_id: "switch.athom_smart_plug_v3_50ebc0_switch"
+      entity_id: ${demo_switch_entity}
 
   # Add a button that displays the time
   button_2: !include
@@ -172,12 +175,12 @@ packages:
       row_span: 2  # optional make a button bigger then one cell
       text: RGB light
       icon: $mdi_string_lights
-      entity_id: light.athom_rgb_light_d93662_rgb_light_strip
+      entity_id: ${demo_rgb_light_entity}
 
   button_4_page: !include
     file: pages/light_color.yaml
     vars:
-      light_entity: "light.athom_rgb_light_d93662_rgb_light_strip"
+      light_entity: ${demo_rgb_light_entity}
       widget_name: "button_4"
 
   button_5: !include

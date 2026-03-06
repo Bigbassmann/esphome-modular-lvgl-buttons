@@ -18,3 +18,10 @@ secrets.yaml
 secrets.*.yaml
 *.secrets.yaml
 !secrets.example.yaml
+
+
+# Local instance files (keep out of upstream PRs)
+sensecap-d1s-v2-001.yaml
+sensecap-d1s-v2-home2-*.yaml
+hardware/seeed-studios-sensecap-indicator-d1s-001.yaml
+*.bak-*
