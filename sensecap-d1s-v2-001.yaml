@@ -123,6 +123,7 @@ packages:
   core_globals: !include common/core_globals-sensecap.yaml
   # legacy_globals: !include common/core_globals_legacy_compat-sensecap.yaml
   ha_entities_sensecap: !include common/ha_entities-sensecap.yaml
+  page_mapping_sensecap: !include common/page_mapping-sensecap.yaml
   core_ha_common: !include common/core_ha_common-sensecap.yaml
   home_temp_ha: !include common/home_temp_ha-sensecap.yaml
   sensecap: !include common/sensecap_indicator_sensors-sensecap.yaml
@@ -134,17 +135,6 @@ packages:
   # Each package has all the code required for the button or page (LVGL, sensors, etc)
 
   # Add a button the controls a light in HA
-  # button_1: !include
-    # file: buttons/switch_button-sensecap.yaml
-    # vars:
-      # uid: button_1
-      # row: 0
-      # column: 0
-      # text: Light
-      # icon: $mdi_lightbulb
-      # entity_id: ${demo_switch_entity}
-# 
-  # Add a button that displays the time
   button_2: !include
     file: buttons/time_button.yaml
     vars:
@@ -155,44 +145,6 @@ packages:
       click_page: info_screen
 
   # Add a button that goes to a different page
-  button_3: !include
-    file: buttons/page_button.yaml
-    vars:
-      uid: button_3
-      row: 1
-      column: 0
-      text: Info screen
-      icon: $mdi_information_box
-      click_page: info_screen
-
-  # Add a dimmer light
-  # button_4: !include
-    # file: buttons/dimmer_light_button-sensecap.yaml
-    # vars:
-      # uid: button_4
-      # row: 2
-      # column: 0
-      # row_span: 2  # optional make a button bigger then one cell
-      # text: RGB light
-      # icon: $mdi_string_lights
-      # entity_id: ${demo_rgb_light_entity}
-# 
-  # button_4_page: !include
-    # file: pages/light_color.yaml
-    # vars:
-      # light_entity: ${demo_rgb_light_entity}
-      # widget_name: "button_4"
-# 
-  button_5: !include
-    file: buttons/page_button.yaml
-    vars:
-      uid: button_5
-      row: 0
-      column: 2
-      text: Thermostat
-      icon: $mdi_white_balance_sunny
-      click_page: page_thermostat_v2     
-
   overrides_btn_cleaners: !include
     file: buttons/override_button-sensecap.yaml
     vars:
@@ -206,19 +158,6 @@ packages:
       on_bg_color: sense_tile_orange
       off_bg_color: sense_tile_orange_off
 
-  # overrides_btn_dani: !include
-    # file: buttons/override_button-sensecap.yaml
-    # vars:
-      # uid: overrides_btn_dani
-      # page_id: ${sense_page_overrides_id}
-      # row: 1
-      # column: 1
-      # text: "Dani Mode"
-      # icon: $mdi_alarm_light
-      # entity_id: ${ent_dani_mode_on}
-      # on_bg_color: sense_tile_red
-      # off_bg_color: sense_tile_red_off
-# 
   overrides_btn_lock: !include
     file: buttons/override_button-sensecap.yaml
     vars:
@@ -788,6 +727,8 @@ font:
       $mdi_molecule_co2,  # mdi-molecule-co2 - CO2 tile icon
       $mdi_water_percent,  # mdi-water-percent - humidity tile icon
     ]
+
+
 
 
 
