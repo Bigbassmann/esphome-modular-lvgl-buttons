@@ -35,14 +35,14 @@ lvgl:
                         text_font: $icon_font
                         align: top_left
                         x: 10
-                        y: 10
+                        y: 6  # 10
                         text: ${icon}
                     - label:
                         id: value_${uid}
                         align: top_left
                         x: 66
-                        y: 8
-                        text_font: nunito_18
+                        y: 4    # 8
+                        text_font: nunito_22   # 18
                         text: "--%"
                     - label:
                         id: label_${uid}
@@ -50,14 +50,14 @@ lvgl:
                         x: 66
                         y: 34
                         text: ${text}
-                        text_font: nunito_16
+                        text_font: nunito_22  # 16
                     - slider:
                         id: slider_${uid}
                         align: top_right
                         x: -10  # -10
-                        y: 0  # 17
-                        width: 50%   # 44%
-                        height: 28  # 24
+                        y: 4  # 17
+                        width: 60%   # 44%
+                        height: 26  # 24
                         min_value: 0
                         max_value: 255
                         radius: 10

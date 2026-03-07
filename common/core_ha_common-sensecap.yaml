@@ -1,96 +1,96 @@
-﻿time:
+time:
   - platform: homeassistant
     id: ha_time
 
 binary_sensor:
   - platform: homeassistant
     id: ha_cleaners_toggle
-    entity_id: input_boolean.cleaners_toggle
+    entity_id: ${ent_cleaners_toggle}
     internal: true
   - platform: homeassistant
     id: ha_dani_mode_on
-    entity_id: input_boolean.dani_mode_on
+    entity_id: ${ent_dani_mode_on}
     internal: true
   - platform: homeassistant
     id: ha_front_door_auto_lock_off
-    entity_id: input_boolean.front_door_auto_lock_off
+    entity_id: ${ent_front_door_auto_lock_off}
     internal: true
   - platform: homeassistant
     id: ha_tod_control
-    entity_id: input_boolean.automation_time_of_day_trigger
+    entity_id: ${ent_tod_control}
     internal: true
   - platform: homeassistant
     id: ha_motion_automation_off
-    entity_id: input_boolean.motion_automation_off
+    entity_id: ${ent_motion_automation_off}
     internal: true
   - platform: homeassistant
     id: ha_entry_motion_automation_off
-    entity_id: input_boolean.entry_motion_automation_off
+    entity_id: ${ent_entry_motion_automation_off}
     internal: true
   - platform: homeassistant
     id: ha_garage_light_automation_off
-    entity_id: input_boolean.garage_light_automation_off
+    entity_id: ${ent_garage_light_automation_off}
     internal: true
   - platform: homeassistant
     id: ha_mbr_motion_off
-    entity_id: input_boolean.mbr_motion_off
+    entity_id: ${ent_mbr_motion_off}
     internal: true
   - platform: homeassistant
     id: ha_attic_fan_on
-    entity_id: switch.attic_fan
+    entity_id: ${ent_attic_fan_switch}
     internal: true
   - platform: homeassistant
     id: ha_attic_fan2_on
-    entity_id: switch.attic_fan_2
+    entity_id: ${ent_attic_fan_switch}_2
     internal: true
   - platform: homeassistant
     id: ha_fr_fan_on
-    entity_id: fan.in_wall_fan_speed_control_500s
+    entity_id: ${ent_fr_fan}
     internal: true
   - platform: homeassistant
     id: ha_mbr_fan_on
-    entity_id: fan.mbr_fan_light
+    entity_id: ${ent_mbr_fan}
     internal: true
   - platform: homeassistant
     id: ha_all_lights_toggle
-    entity_id: input_boolean.all_lights_toggle
+    entity_id: ${ent_all_lights_toggle}
     internal: true
   - platform: homeassistant
     id: ha_outdoor_lights_toggle
-    entity_id: input_boolean.outdoor_lights_toggle
+    entity_id: ${ent_outdoor_lights_toggle}
     internal: true
   - platform: homeassistant
     id: ha_mbr_lights_on
-    entity_id: light.mbr_lights
+    entity_id: ${ent_mbr_lights}
     internal: true
   - platform: homeassistant
     id: ha_fr_lights_on
-    entity_id: light.in_wall_paddle_dimmer_500s
+    entity_id: ${ent_fr_lights}
     internal: true
   - platform: homeassistant
     id: ha_library_lights_on
-    entity_id: light.library_lights
+    entity_id: ${ent_library_lights}
     internal: true
   - platform: homeassistant
     id: ha_living_room_lights_on
-    entity_id: light.living_room_lights
+    entity_id: ${ent_living_room_lights}
     internal: true
 
 sensor:
   - platform: homeassistant
     id: ha_fr_fan_pct
-    entity_id: fan.in_wall_fan_speed_control_500s
-    attribute: percentage
+    entity_id: ${ent_fr_fan}
+    attribute: ${attr_percentage}
     internal: true
   - platform: homeassistant
     id: ha_mbr_fan_pct
-    entity_id: fan.mbr_fan_light
-    attribute: percentage
+    entity_id: ${ent_mbr_fan}
+    attribute: ${attr_percentage}
     internal: true
   - platform: homeassistant
     id: ha_fr_lights_brightness
-    entity_id: light.in_wall_paddle_dimmer_500s
-    attribute: brightness
+    entity_id: ${ent_fr_lights}
+    attribute: ${attr_brightness}
     internal: true
 
   - platform: template
@@ -136,62 +136,62 @@ sensor:
 text_sensor:
   - platform: homeassistant
     id: ha_mbr_fan_dir
-    entity_id: fan.mbr_fan_light
-    attribute: direction
+    entity_id: ${ent_mbr_fan}
+    attribute: ${attr_direction}
     internal: true
   - platform: homeassistant
     id: ha_mbr_lights_brightness_txt
-    entity_id: light.mbr_lights
-    attribute: brightness
+    entity_id: ${ent_mbr_lights}
+    attribute: ${attr_brightness}
     internal: true
   - platform: homeassistant
     id: ha_library_lights_brightness_txt
-    entity_id: light.library_lights
-    attribute: brightness
+    entity_id: ${ent_library_lights}
+    attribute: ${attr_brightness}
     internal: true
   - platform: homeassistant
     id: ha_living_room_lights_brightness_txt
-    entity_id: light.living_room_lights
-    attribute: brightness
+    entity_id: ${ent_living_room_lights}
+    attribute: ${attr_brightness}
     internal: true
   - platform: homeassistant
     id: ha_front_door_lock_state
-    entity_id: lock.front_door_lock
+    entity_id: ${ent_front_door_lock}
     internal: true
 
   - platform: homeassistant
     id: ha_tstat_mode
-    entity_id: climate.thermostat
+    entity_id: ${ent_thermostat}
     internal: true
   - platform: homeassistant
     id: ha_tstat_hvac_action
-    entity_id: climate.thermostat
-    attribute: hvac_action
+    entity_id: ${ent_thermostat}
+    attribute: ${attr_hvac_action}
     internal: true
   - platform: homeassistant
     id: ha_tstat_current_temp_txt
-    entity_id: climate.thermostat
-    attribute: current_temperature
+    entity_id: ${ent_thermostat}
+    attribute: ${attr_current_temperature}
     internal: true
   - platform: homeassistant
     id: ha_tstat_target_temp_txt
-    entity_id: climate.thermostat
-    attribute: temperature
+    entity_id: ${ent_thermostat}
+    attribute: ${attr_temperature}
     internal: true
   
   - platform: homeassistant
     id: ha_tstat_fan_mode
-    entity_id: climate.thermostat
-    attribute: fan_mode
+    entity_id: ${ent_thermostat}
+    attribute: ${attr_fan_mode}
     internal: true
   - platform: homeassistant
     id: ha_tstat_fan_state
-    entity_id: climate.thermostat
-    attribute: fan_state
+    entity_id: ${ent_thermostat}
+    attribute: ${attr_fan_state}
     internal: true
   - platform: homeassistant
     id: ha_tstat_fan_entity
-    entity_id: fan.thermostat
+    entity_id: ${ent_thermostat_fan}
     internal: true
 
 

@@ -33,7 +33,7 @@ We treat upstream as the base library and keep SenseCAP work as a profile layere
 - Active root entrypoint used by ESPHome dashboard:
   - `../sensecap-d1s-v2.yaml`
 
-These are intentionally mirrored. Keep both in sync unless you intentionally split behavior.
+Root is intentionally a thin wrapper that includes the repo `001` entrypoint. Edit device behavior in repo files.
 
 ## SenseCAP Modular Architecture
 
@@ -65,6 +65,11 @@ These are intentionally mirrored. Keep both in sync unless you intentionally spl
 
 ## Standards and Guardrails
 
+## ESPHome Deprecation Note
+
+- Use `external_components` in repo examples and docs.
+- If a global `/config/esphome/custom_components/` folder exists outside this repo, ESPHome may still warn during root-level validation.
+
 - Prefer substitutions and modular includes over hardcoding.
 - Put colors in `common/color-sensecap.yaml` and reference tokens.
 - Keep entity IDs centralized in HA entity map file(s), not scattered across pages.
@@ -95,7 +100,7 @@ In `esphome:` section, set at minimum:
 
 Copy current SenseCAP entrypoint to a new file, for example:
 
-- `sensecap-d1s-v2-002-sensecap.yaml`
+- `sensecap-d1s-v2-002.yaml`
 
 In this new file:
 
@@ -110,7 +115,7 @@ In this new file:
 Run:
 
 ```powershell
-esphome config sensecap-d1s-v2-002-sensecap.yaml
+esphome config sensecap-d1s-v2-002.yaml
 ```
 
 ### Step 5: First flash / adopt
@@ -139,7 +144,7 @@ Then update all `ent_*` substitutions to Home2 entities.
 
 Copy your Home1 002 entrypoint and create, for example:
 
-- `sensecap-d1s-v2-home2-001-sensecap.yaml`
+- `sensecap-d1s-v2-home2-001.yaml`
 
 In this file:
 
@@ -150,7 +155,7 @@ In this file:
 ### Step 3: Validate
 
 ```powershell
-esphome config sensecap-d1s-v2-home2-001-sensecap.yaml
+esphome config sensecap-d1s-v2-home2-001.yaml
 ```
 
 ### Step 4: Flash and verify page behavior
@@ -167,9 +172,9 @@ Verify key controls first:
 - Hardware:
   - `hardware/seeed-studios-sensecap-indicator-d1s-<device-id>.yaml`
 - Home1 entrypoint:
-  - `sensecap-d1s-v2-<device-id>-sensecap.yaml`
+  - `sensecap-d1s-v2-<device-id>.yaml`
 - Home2 entrypoint:
-  - `sensecap-d1s-v2-home2-<device-id>-sensecap.yaml`
+  - `sensecap-d1s-v2-home2-<device-id>.yaml`
 - Home-specific HA maps:
   - `common/ha_entities-home1-sensecap.yaml` (optional rename from current)
   - `common/ha_entities-home2-sensecap.yaml`
@@ -185,7 +190,7 @@ Verify key controls first:
 
 - No hardcoded HA IDs outside entity map file.
 - No new hardcoded colors unless explicitly required.
-- Both entrypoints (root + fork-local) updated if intended.
+- Root wrapper points to the intended device entrypoint (for example `sensecap-d1s-v2-001.yaml`).
 - `esphome config` passes.
 
 ## Useful Commands
@@ -195,10 +200,10 @@ Verify key controls first:
 esphome config sensecap-d1s-v2.yaml
 
 # Validate fork-local config
-esphome config esphome-modular-lvgl-buttons/sensecap-d1s-v2-sensecap.yaml
+esphome config esphome-modular-lvgl-buttons/sensecap-d1s-v2-001.yaml
 
 # Validate a new device file
-esphome config esphome-modular-lvgl-buttons/sensecap-d1s-v2-002-sensecap.yaml
+esphome config esphome-modular-lvgl-buttons/sensecap-d1s-v2-002.yaml
 ```
 
 ## SenseCAP UI Editing Cookbook (Exact Fields)
@@ -452,3 +457,23 @@ This section is the exact edit map for page UI tuning.
 - Typical HA brightness is `0..255`.
 
 
+
+## Fork Rules (Required)
+
+1. Work on fork cleanup only inside `esphome-modular-lvgl-buttons/`.
+2. Keep upstream template files template-safe.
+3. Keep local instance files local-only (`*-001.yaml`, home-specific maps, backups).
+4. Keep HA entity bindings centralized in `common/ha_entities-sensecap.yaml` and substitution-driven in `common/core_ha_common-sensecap.yaml`.
+5. Prefer repo-local `external_components/` and avoid adding new active `custom_components` references.
+
+## Validation Matrix
+
+1. Active device (authoritative):
+   `esphome config /config/esphome/sensecap-d1s-v2.yaml`
+   Expected: `Configuration is valid!`
+2. Fork hygiene:
+   `powershell -ExecutionPolicy Bypass -File /config/esphome/esphome-modular-lvgl-buttons/scripts/fork_check.ps1`
+   Expected: `PASS`
+3. Deprecation scan (repo-only):
+   `rg -n "custom_components" /config/esphome/esphome-modular-lvgl-buttons --glob "!*.bak-*"`
+   Expected: docs-only mentions, no active YAML references.

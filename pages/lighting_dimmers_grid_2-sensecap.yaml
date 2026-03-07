@@ -38,7 +38,7 @@ lvgl:
             clickable: false
         - label:
             id: dimmers_page_2_title
-            text: "Dimmers"
+            text: "Lighting Dimmers & Controls"
             grid_cell_row_pos: 0
             grid_cell_column_pos: 0
             grid_cell_column_span: 4

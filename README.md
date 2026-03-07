@@ -136,7 +136,7 @@ A modular library for building beautiful, touch-enabled control panels using ESP
 | `tides/` | NOAA tides and currents display |
 | `solar/` | Solar panel monitoring widgets |
 | `assets/` | Images, icons, and fonts |
-| `custom_components/` | Custom ESPHome components (NOAA tides) |
+| `external_components/` | External ESPHome components (recommended over deprecated custom_components) |
 
 ## 🚀 Quick Start
 
@@ -246,7 +246,7 @@ esphome-modular-lvgl-buttons/
 │   └── images/               # PNG/SVG images for UI
 ├── buttons/                  # Reusable button components
 ├── common/                   # Shared configuration (themes, colors, fonts)
-├── custom_components/        # Custom ESPHome components
+├── external_components/      # External ESPHome components (preferred)
 │   └── noaa_tides/           # NOAA tide data integration
 ├── example_code/             # Basic example configurations
 ├── example_code_advanced/    # Advanced examples (weather, tides)
