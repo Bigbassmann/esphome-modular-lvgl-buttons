@@ -12,6 +12,7 @@
 #   entity_id:
 #   value_on:
 #   value_off:
+#   show_value: (optional, default true)
 #   on_bg_color: (optional)
 #   off_bg_color: (optional)
 #   on_icon: (optional)
@@ -54,7 +55,7 @@ lvgl:
                         grid_cell_y_align: center
                     - label:
                         id: label_${uid}
-                        text_font: nunito_16
+                        text_font: nunito_20  # 16
                         text: ${text}
                         grid_cell_row_pos: 0
                         grid_cell_column_pos: 1
@@ -99,13 +100,24 @@ binary_sensor:
                       text: ${on_icon | default("")}
             - lvgl.widget.update:
                 id: label_${uid}
-                text_color: $label_on_color
-            - lvgl.label.update:
-                id: value_${uid}
-                text: ${value_on | default("ON")}
-            - lvgl.widget.update:
-                id: value_${uid}
-                text_color: $label_on_color
+                text_color: white
+            - if:
+                condition:
+                  lambda: 'return std::string("${show_value | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: value_${uid}
+                      hidden: false
+                  - lvgl.label.update:
+                      id: value_${uid}
+                      text: ${value_on | default("ON")}
+                  - lvgl.widget.update:
+                      id: value_${uid}
+                      text_color: white
+                else:
+                  - lvgl.widget.update:
+                      id: value_${uid}
+                      hidden: true
           else:
             - lvgl.widget.update:
                 id: button_${uid}
@@ -122,15 +134,21 @@ binary_sensor:
                       text: ${off_icon | default("")}
             - lvgl.widget.update:
                 id: label_${uid}
-                text_color: sense_text
-            - lvgl.label.update:
-                id: value_${uid}
-                text: ${value_off | default("OFF")}
-            - lvgl.widget.update:
-                id: value_${uid}
-                text_color: sense_text
-            - lvgl.label.update:
-                id: value_${uid}
-                text: ${value_off | default("OFF")}
-
-
+                text_color: white
+            - if:
+                condition:
+                  lambda: 'return std::string("${show_value | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: value_${uid}
+                      hidden: false
+                  - lvgl.label.update:
+                      id: value_${uid}
+                      text: ${value_off | default("OFF")}
+                  - lvgl.widget.update:
+                      id: value_${uid}
+                      text_color: white
+                else:
+                  - lvgl.widget.update:
+                      id: value_${uid}
+                      hidden: true

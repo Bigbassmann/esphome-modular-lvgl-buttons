@@ -1,4 +1,4 @@
-# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common-sensecap.yaml.
+﻿# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common-sensecap.yaml.
 # This file is a compatibility layer for the "buttons" setup.
 substitutions:
   # Common attribute names
@@ -7,7 +7,7 @@ substitutions:
   attr_current_temperature: "current_temperature"
   attr_temperature: "temperature"
   attr_fan_mode: "fan_mode"
-  attr_fan_state: "fan_state"
+  attr_fan_state: "fan_state" 
   attr_direction: "direction"
   attr_brightness: "brightness"
   attr_percentage: "percentage"
@@ -15,6 +15,51 @@ substitutions:
   # Input booleans / toggles
   ent_cleaners_toggle: "input_boolean.cleaners_toggle"
   ent_dani_mode_on: "input_boolean.dani_mode_on"
+
+  # UI defaults (per-feature)
+  ui_dani_text: "Dani"
+  # Dani icon default stays in entity vars (mdi_alarm_light = U+F078F).
+  # Page templates should consume ui_dani_* vars, not hardcoded icon tokens.
+  ui_dani_icon: "\U000F078F"
+  ui_dani_on_bg: "sense_tile_red"
+  ui_dani_off_bg: "sense_tile_red_off"
+  ui_dani_on_icon: "\U000F078F"
+  ui_dani_off_icon: "\U000F078F"
+  ui_dani_value_on: "ON"
+  ui_dani_value_off: "OFF"
+  # Sleepy icon default stays in entity vars (mdi_weather_night = U+F0594).
+  ui_sleepy_text: "Sleepy"
+  ui_sleepy_icon: "\U000F0594"
+  ui_sleepy_on_bg: "sense_tile_teal"
+  ui_sleepy_off_bg: "sense_tile_teal_off"
+  ui_sleepy_on_icon: "\U000F0594"
+  ui_sleepy_off_icon: "\U000F0594"
+  ui_sleepy_value_on: "ON"
+  ui_sleepy_value_off: "OFF"
+  # Bedtime icon default stays in entity vars (mdi_bed = U+F02E3).
+  ui_bedtime_text: "Bedtime"
+  ui_bedtime_icon: "\U000F02E3"
+  ui_bedtime_on_bg: "sense_tile_indigo"
+  ui_bedtime_off_bg: "sense_tile_indigo_off"
+  ui_bedtime_on_icon: "\U000F02E3"
+  ui_bedtime_off_icon: "\U000F02E3"
+  ui_bedtime_value_on: "ON"
+  ui_bedtime_value_off: "OFF"
+  ui_profile_home_tile_radius: "8"
+  ui_profile_home_tile_pad_left: "8"
+  ui_profile_home_tile_pad_right: "8"
+  ui_profile_home_tile_pad_top: "4"
+  ui_profile_home_tile_pad_bottom: "4"
+  ui_profile_home_tile_icon_font: "mdi_icons_40"
+  ui_profile_home_tile_label_font: "nunito_20"
+
+  ui_profile_compact_tile_radius: "8"
+  ui_profile_compact_tile_pad_left: "6"
+  ui_profile_compact_tile_pad_right: "6"
+  ui_profile_compact_tile_pad_top: "3"
+  ui_profile_compact_tile_pad_bottom: "3"
+  ui_profile_compact_tile_icon_font: "$icon_font"
+  ui_profile_compact_tile_label_font: "nunito_18"
   ent_front_door_auto_lock_off: "input_boolean.front_door_auto_lock_off"
   ent_tod_control: "input_boolean.automation_time_of_day_trigger"
   ent_motion_automation_off: "input_boolean.motion_automation_off"
@@ -61,4 +106,12 @@ substitutions:
   # Optional placeholders for other modules
   ent_rain_delay_bool: "input_boolean.rain_delay"
   ent_rain_delay_state: "input_boolean.rain_delay"
+
+
+
+
+
+
+
+
 

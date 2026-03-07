@@ -50,7 +50,7 @@ lvgl:
                         text: ${icon}
                     - label:
                         id: label_${sensor_id}
-                        text_font: $text_font
+                        text_font: nunito_22         # $text_font
                         text_color: ${label_color | default("$label_on_color")}
                         width: 100%
                         long_mode: wrap
@@ -62,7 +62,7 @@ lvgl:
                         text: ${text}
                     - label:
                         id: data_${sensor_id}
-                        text_font: ${sensor_font | default("$text_font")}
+                        text_font: ${sensor_font | default("nunito_22")}
                         text_color: ${value_color | default("$label_on_color")}
                         grid_cell_row_pos: 1
                         grid_cell_column_pos: 1

@@ -1,4 +1,4 @@
----
+﻿---
 # Substitution variables used through the codebase
 substitutions:
   icon_font: mdi_icons_40
@@ -36,6 +36,9 @@ substitutions:
   sense_page_lighting_switches_id: "page_lighting_switches"
   sense_page_sensors_id: "page_sensors"
   sense_page_display_settings_id: "page_display_settings"
+  # Template-safe demo entities for shared/main config
+  demo_switch_entity: "switch.example_switch"
+  demo_rgb_light_entity: "light.example_rgb_light"
 
 esphome:
   name: "sensecap-d1s"
@@ -131,16 +134,16 @@ packages:
   # Each package has all the code required for the button or page (LVGL, sensors, etc)
 
   # Add a button the controls a light in HA
-  button_1: !include
-    file: buttons/switch_button-sensecap.yaml
-    vars:
-      uid: button_1
-      row: 0
-      column: 0
-      text: Light
-      icon: $mdi_lightbulb
-      entity_id: "switch.athom_smart_plug_v3_50ebc0_switch"
-
+  # button_1: !include
+    # file: buttons/switch_button-sensecap.yaml
+    # vars:
+      # uid: button_1
+      # row: 0
+      # column: 0
+      # text: Light
+      # icon: $mdi_lightbulb
+      # entity_id: ${demo_switch_entity}
+# 
   # Add a button that displays the time
   button_2: !include
     file: buttons/time_button.yaml
@@ -163,23 +166,23 @@ packages:
       click_page: info_screen
 
   # Add a dimmer light
-  button_4: !include
-    file: buttons/dimmer_light_button-sensecap.yaml
-    vars:
-      uid: button_4
-      row: 2
-      column: 0
-      row_span: 2  # optional make a button bigger then one cell
-      text: RGB light
-      icon: $mdi_string_lights
-      entity_id: light.athom_rgb_light_d93662_rgb_light_strip
-
-  button_4_page: !include
-    file: pages/light_color.yaml
-    vars:
-      light_entity: "light.athom_rgb_light_d93662_rgb_light_strip"
-      widget_name: "button_4"
-
+  # button_4: !include
+    # file: buttons/dimmer_light_button-sensecap.yaml
+    # vars:
+      # uid: button_4
+      # row: 2
+      # column: 0
+      # row_span: 2  # optional make a button bigger then one cell
+      # text: RGB light
+      # icon: $mdi_string_lights
+      # entity_id: ${demo_rgb_light_entity}
+# 
+  # button_4_page: !include
+    # file: pages/light_color.yaml
+    # vars:
+      # light_entity: ${demo_rgb_light_entity}
+      # widget_name: "button_4"
+# 
   button_5: !include
     file: buttons/page_button.yaml
     vars:
@@ -203,19 +206,19 @@ packages:
       on_bg_color: sense_tile_orange
       off_bg_color: sense_tile_orange_off
 
-  overrides_btn_dani: !include
-    file: buttons/override_button-sensecap.yaml
-    vars:
-      uid: overrides_btn_dani
-      page_id: ${sense_page_overrides_id}
-      row: 1
-      column: 1
-      text: "Dani Mode"
-      icon: $mdi_alarm_light
-      entity_id: ${ent_dani_mode_on}
-      on_bg_color: sense_tile_red
-      off_bg_color: sense_tile_red_off
-
+  # overrides_btn_dani: !include
+    # file: buttons/override_button-sensecap.yaml
+    # vars:
+      # uid: overrides_btn_dani
+      # page_id: ${sense_page_overrides_id}
+      # row: 1
+      # column: 1
+      # text: "Dani Mode"
+      # icon: $mdi_alarm_light
+      # entity_id: ${ent_dani_mode_on}
+      # on_bg_color: sense_tile_red
+      # off_bg_color: sense_tile_red_off
+# 
   overrides_btn_lock: !include
     file: buttons/override_button-sensecap.yaml
     vars:

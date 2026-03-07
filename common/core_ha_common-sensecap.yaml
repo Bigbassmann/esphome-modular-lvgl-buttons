@@ -1,4 +1,4 @@
-time:
+﻿time:
   - platform: homeassistant
     id: ha_time
 
@@ -9,7 +9,7 @@ binary_sensor:
     internal: true
   - platform: homeassistant
     id: ha_dani_mode_on
-    entity_id: ${ent_dani_mode_on}
+    entity_id: ${ent_dani_mode_on}  
     internal: true
   - platform: homeassistant
     id: ha_front_door_auto_lock_off
@@ -87,12 +87,17 @@ sensor:
     entity_id: ${ent_mbr_fan}
     attribute: ${attr_percentage}
     internal: true
-  - platform: homeassistant
+  - platform: template
     id: ha_fr_lights_brightness
-    entity_id: ${ent_fr_lights}
-    attribute: ${attr_brightness}
     internal: true
-
+    update_interval: never
+    lambda: |-
+      std::string s = id(ha_fr_lights_brightness_txt).state;
+      if (s.empty() || s == "None" || s == "none" || s == "unknown" || s == "unavailable") return NAN;
+      char* end = nullptr;
+      float v = strtof(s.c_str(), &end);
+      if (end == s.c_str() || !std::isfinite(v)) return NAN;
+      return v;
   - platform: template
     id: ha_tstat_current_temp
     internal: true
@@ -138,6 +143,11 @@ text_sensor:
     id: ha_mbr_fan_dir
     entity_id: ${ent_mbr_fan}
     attribute: ${attr_direction}
+    internal: true
+  - platform: homeassistant
+    id: ha_fr_lights_brightness_txt
+    entity_id: ${ent_fr_lights}
+    attribute: ${attr_brightness}
     internal: true
   - platform: homeassistant
     id: ha_mbr_lights_brightness_txt
@@ -193,6 +203,10 @@ text_sensor:
     id: ha_tstat_fan_entity
     entity_id: ${ent_thermostat_fan}
     internal: true
+
+
+
+
 
 
 

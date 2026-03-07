@@ -1,4 +1,4 @@
----
+﻿---
 globals:
   - id: ha_connected
     type: bool
@@ -165,5 +165,6 @@ api:
           - globals.set:
               id: ha_connected
               value: 'false'
+
 
 

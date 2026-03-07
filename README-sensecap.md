@@ -1,479 +1,100 @@
-# SenseCAP D1S (Fork) README
+﻿# SenseCAP D1S Fork README
 
-This document is the SenseCAP-specific guide for this fork of `agillis/esphome-modular-lvgl-buttons`.
+This file documents the current working pattern for this fork and the immediate cleanup/refactor plan.
 
-## Goals
+## Current State (March 7, 2026)
 
-- Keep upstream-level modularity and package structure.
-- Keep SenseCAP customizations isolated and predictable.
-- Minimize merge conflicts with upstream.
-- Make new device rollout repeatable across homes.
+- Active device entrypoint in repo: `sensecap-d1s-v2-001.yaml`
+- SenseCAP modules are in `common/`, `pages/`, `buttons/`, `widgets/`, `hardware/`
+- Demo package calls in `sensecap-d1s-v2-001.yaml` (`button_1`, `button_4`, `button_4_page`) are disabled
+- Font include paths in `common/fonts-sensecap.yaml` now use `assets/fonts/Nunito-SemiBold.ttf`
+- Unused experimental files were moved under `archive/`
 
-## Relationship To Upstream
+## Repo Rules (SenseCAP Fork)
 
-This repo is a fork of upstream `esphome-modular-lvgl-buttons`.
+1. Edit only inside this repo path: `/config/esphome/esphome-modular-lvgl-buttons`
+2. Keep upstream template-safe patterns where possible
+3. Prefer `-sensecap` fork-owned files for active custom behavior
+4. Keep HA entity bindings centralized in `common/ha_entities-sensecap.yaml`
+5. Keep page layout concerns in `pages/*-sensecap.yaml`
+6. Keep reusable behavior in `buttons/*-sensecap.yaml` only when it clearly reduces duplication
 
-We treat upstream as the base library and keep SenseCAP work as a profile layered on top.
+## Current Structure (Recommended)
 
-### Fork conventions
+- `common/ha_entities-sensecap.yaml`
+  - Entity IDs + default UI values (text/icon/on-off colors/value strings)
+  - No page-specific coordinates
 
-- SenseCAP-owned files use `-sensecap` suffix where practical.
-- Reusable modules remain in upstream-like folders:
-  - `buttons/`
-  - `pages/`
-  - `common/`
-  - `hardware/`
-  - `widgets/`
-- Composition happens in SenseCAP entrypoint YAML files via `packages: !include`.
+- `pages/*-sensecap.yaml`
+  - Grid/layout/font/alignment/page-level defaults
+  - Slot placement and page-specific show/hide behavior
 
-## Current SenseCAP Entry Points
+- `common/core_ha_common-sensecap.yaml`
+  - Shared HA sensors/binary sensors and update logic
 
-- Fork-local entrypoint:
-  - `esphome-modular-lvgl-buttons/sensecap-d1s-v2-sensecap.yaml`
-- Active root entrypoint used by ESPHome dashboard:
-  - `../sensecap-d1s-v2.yaml`
+- `sensecap-d1s-v2-001.yaml`
+  - Device composition only (`packages:` includes, hardware include, device wiring)
 
-Root is intentionally a thin wrapper that includes the repo `001` entrypoint. Edit device behavior in repo files.
+## What Was Archived
 
-## SenseCAP Modular Architecture
+Moved to `archive/` because they were not referenced by active YAML:
 
-### 1) Shared UI/Foundation modules
+- `buttons/override_button_tile-sensecap.yaml`
+- `common/ha_entities_substitutions-sensecap.yaml`
+- `common/ha_entity_mapping-sensecap.yaml`
+- `common/ha_runtime-sensecap.yaml`
+- `example_code/sensecap_phase1_shell_validate-sensecap.yaml`
+- `pages/lighting_dimmers_grid_2-sensecap.yaml`
+- `pages/thermostat_v2_element-sensecap.yaml`
 
-- Theme/tokens/colors/fonts/runtime:
-  - `common/theme_style-sensecap.yaml`
-  - `common/ui_tokens-sensecap.yaml`
-  - `common/color-sensecap.yaml`
-  - `common/fonts-sensecap.yaml`
-  - `common/display_runtime-sensecap.yaml`
+## Immediate Next Steps
 
-### 2) Feature/page modules
+1. Stabilize compile baseline
+- Keep validation clean on `sensecap-d1s-v2-001.yaml`
+- Remove/resolve any stale references introduced by earlier experiments
 
-- Shell/home/menu/fans/overrides/thermostat/sensors/lights/dimmers are separate page modules in `pages/`.
-- Reusable button primitives are in `buttons/`.
+2. Dani + Sleepy pilot refactor
+- Keep entity defaults in `common/ha_entities-sensecap.yaml`
+- Keep home slot layout in `pages/home_grid-sensecap.yaml`
+- Avoid nested/dotted substitution maps
 
-### 3) Home Assistant entity mapping layer
+3. One-to-many mapping phase
+- Add a clean page mapping file with flat keys only
+- Map `page + slot -> entity key`
+- Keep layout ownership in page files
 
-- Canonical Home1 map:
-  - `common/ha_entities-sensecap.yaml`
-- This is the main substitution map for entity IDs and attributes.
+4. Expand pattern entity-by-entity
+- Move additional overrides/dimmer entities into the same model after Dani/Sleepy is stable
 
-### 4) Device hardware layer
-
-- Device-specific hardware files in `hardware/`.
-- Current active file:
-  - `hardware/seeed-studios-sensecap-indicator-d1s-001.yaml`
-
-## Standards and Guardrails
-
-## ESPHome Deprecation Note
-
-- Use `external_components` in repo examples and docs.
-- If a global `/config/esphome/custom_components/` folder exists outside this repo, ESPHome may still warn during root-level validation.
-
-- Prefer substitutions and modular includes over hardcoding.
-- Put colors in `common/color-sensecap.yaml` and reference tokens.
-- Keep entity IDs centralized in HA entity map file(s), not scattered across pages.
-- Keep page layout reusable through templates (example: dimmers template page).
-- Validate after any change:
-  - `esphome config sensecap-d1s-v2.yaml`
-
-## Device Provisioning: Home1 New Device (002)
-
-This is the clean process to clone from current 001 setup.
-
-### Step 1: Duplicate hardware file
-
-Create:
-
-- `hardware/seeed-studios-sensecap-indicator-d1s-002.yaml`
-
-Start by copying `hardware/seeed-studios-sensecap-indicator-d1s-001.yaml`.
-
-### Step 2: Set unique device identity in 002 hardware file
-
-In `esphome:` section, set at minimum:
-
-- `name:` unique (example: `sensecap-d1s-002`)
-- `friendly_name:` unique (example: `SenseCAP Indicator 002`)
-
-### Step 3: Create a 002 entrypoint YAML
-
-Copy current SenseCAP entrypoint to a new file, for example:
-
-- `sensecap-d1s-v2-002.yaml`
-
-In this new file:
-
-- Keep package list identical initially.
-- Change hardware include to:
-  - `hardware: !include esphome-modular-lvgl-buttons/hardware/seeed-studios-sensecap-indicator-d1s-002.yaml`
-- Keep Home1 HA map include for now:
-  - `ha_entities_sensecap: !include esphome-modular-lvgl-buttons/common/ha_entities-sensecap.yaml`
-
-### Step 4: Compile check
-
-Run:
+## Validation Commands
 
 ```powershell
-esphome config sensecap-d1s-v2-002.yaml
+# Validate repo entrypoint
+esphome config /config/esphome/esphome-modular-lvgl-buttons/sensecap-d1s-v2-001.yaml
+
+# Optional: scan for deprecated custom_components references in repo
+rg -n "custom_components" /config/esphome/esphome-modular-lvgl-buttons --glob "!archive/**"
 ```
 
-### Step 5: First flash / adopt
+## Working With AI/GPT/Codex
 
-Flash and adopt device in Home Assistant as normal.
+Use this block at the top of prompts:
 
-### Step 6: Optional per-device tweaks
-
-If device 002 needs different pages/colors/behavior, add a small per-device override module and include it near the bottom of `packages:`.
-
-## Device Provisioning: New Device In Home2
-
-Home2 should use a separate HA entity map file.
-
-### Step 1: Create Home2 entity map file
-
-Create:
-
-- `common/ha_entities-home2-sensecap.yaml`
-
-Start by copying `common/ha_entities-sensecap.yaml`.
-
-Then update all `ent_*` substitutions to Home2 entities.
-
-### Step 2: Create Home2 device entrypoint
-
-Copy your Home1 002 entrypoint and create, for example:
-
-- `sensecap-d1s-v2-home2-001.yaml`
-
-In this file:
-
-- Include Home2 entity map instead of Home1:
-  - `ha_entities_sensecap: !include esphome-modular-lvgl-buttons/common/ha_entities-home2-sensecap.yaml`
-- Include hardware file for that physical device (new hardware file if needed).
-
-### Step 3: Validate
-
-```powershell
-esphome config sensecap-d1s-v2-home2-001.yaml
+```text
+Hard constraints (must follow):
+1 Scope: ONLY edit/read under /config/esphome/esphome-modular-lvgl-buttons. Exception is that you can read any files given to you in their given location.
+2 Do NOT touch /config/esphome root files unless you explicitly say so.
+3 Preserve upstream template files; only change -sensecap/fork-owned files unless you explicitly approve.
+4 Before any non-trivial change: state exact files to be touched.
+5 If a command needs access outside repo scope or elevated permissions, ask first.
+6 After changes: report exactly what changed and run only the validations you requested.
+7 If any rule conflicts, stop and ask.
+8 Prefer apply_patch for YAML edits (no string-escape side effects).
+9 If using PowerShell, avoid writing escaped newline text; use here-strings and literal text blocks.
+10 Add a quick check after edits: search for literal `r`n in edited YAML files.
+11 Validate immediately after each edit batch (small batches, not big scripted rewrites).
 ```
 
-### Step 4: Flash and verify page behavior
+## Image Assets
 
-Verify key controls first:
-
-- Overrides
-- Lights on/off
-- Dimmers
-- Thermostat/fans
-
-## Suggested File Naming Pattern
-
-- Hardware:
-  - `hardware/seeed-studios-sensecap-indicator-d1s-<device-id>.yaml`
-- Home1 entrypoint:
-  - `sensecap-d1s-v2-<device-id>.yaml`
-- Home2 entrypoint:
-  - `sensecap-d1s-v2-home2-<device-id>.yaml`
-- Home-specific HA maps:
-  - `common/ha_entities-home1-sensecap.yaml` (optional rename from current)
-  - `common/ha_entities-home2-sensecap.yaml`
-
-## Upstream Sync Workflow (Recommended)
-
-1. Pull upstream changes into a staging branch.
-2. Keep SenseCAP-specific files isolated (`-sensecap` modules).
-3. Re-run config validation on each active entrypoint.
-4. Smoke test UI pages on hardware 001 before promoting to other devices.
-
-## Quick Checklist Before Commit
-
-- No hardcoded HA IDs outside entity map file.
-- No new hardcoded colors unless explicitly required.
-- Root wrapper points to the intended device entrypoint (for example `sensecap-d1s-v2-001.yaml`).
-- `esphome config` passes.
-
-## Useful Commands
-
-```powershell
-# Validate active root config
-esphome config sensecap-d1s-v2.yaml
-
-# Validate fork-local config
-esphome config esphome-modular-lvgl-buttons/sensecap-d1s-v2-001.yaml
-
-# Validate a new device file
-esphome config esphome-modular-lvgl-buttons/sensecap-d1s-v2-002.yaml
-```
-
-## SenseCAP UI Editing Cookbook (Exact Fields)
-
-This section is the exact edit map for page UI tuning.
-
-### Core Rule (colors/fonts)
-
-- Use color tokens from `common/color-sensecap.yaml`.
-- Use styles from `common/theme_style-sensecap.yaml`.
-- Use font IDs from `common/fonts-sensecap.yaml`.
-- Use page geometry tokens from `common/ui_tokens-sensecap.yaml`.
-- Avoid hardcoded colors except approved special cases (thermostat currently uses some hardcoded colors by design).
-
-### Common LVGL Fields You Will Edit
-
-- `text`: static label text.
-- `text: !lambda`: dynamic value text.
-- `text_font`: font ID like `nunito_18`, `nunito_24`, `mdi_icons_40`.
-- `text_color`: color token.
-- `bg_color`: color token.
-- `x`, `y`: pixel offsets relative to `align`.
-- `grid_cell_row_pos`, `grid_cell_column_pos`, `grid_cell_row_span`, `grid_cell_column_span`: grid placement.
-- `min_value`, `max_value`, `value`: slider/arc ranges and defaults.
-- `styles`: style ID from `theme_style-sensecap.yaml`.
-
-### Global Layout and Navigation (applies to every page)
-
-1. Page shell and nav routing:
-   `pages/page_shell_480-sensecap.yaml`
-   - Change page routing scripts: `nav_to_*`.
-   - Change swipe/nav order: `sense_nav_index` logic in `nav_to_prev`/`nav_to_next`.
-
-2. Top bar layout:
-   `widgets/topbar-sensecap.yaml`
-   - Date/time/WiFi icon position: `x`, `y`, `align`.
-   - Fonts/colors: `text_font`, `text_color`.
-   - WiFi button color/shape: `bg_color`, `radius`, `width`, `height`.
-
-3. Bottom nav layout:
-   `widgets/bottom_nav-sensecap.yaml`
-   - Button labels: each nav button `label.text`.
-   - Button size/position: `width`, `height`, `x`, `y`.
-   - Colors/styles: `styles: sense_nav_btn_style` or override `bg_color`, `text_color`.
-
-4. Shared geometry tokens:
-   `common/ui_tokens-sensecap.yaml`
-   - `sense_topbar_h`
-   - `sense_nav_h`
-   - `sense_content_y`
-   - `sense_content_h`
-
-### Page-by-Page Exact Edit Map
-
-#### Home Page
-
-- File: `pages/home_grid-sensecap.yaml`
-- Edit tile text/icon:
-  - Each tile has two labels (`icon` + title) under `widgets`.
-  - Change `label.text`, `label.text_font`, `label.text_color`.
-- Edit tile colors:
-  - Change tile `styles` on each button (`sense_tile_*_style`).
-  - Or update style token in `common/theme_style-sensecap.yaml`.
-- Edit tile layout:
-  - `grid_cell_row_pos`, `grid_cell_column_pos`, `pad_row`, `pad_column`, `pad_top`, `pad_bottom`, `pad_left`, `pad_right`.
-- Edit tile behavior:
-  - `on_press` action/script per tile.
-
-#### Menu Page
-
-- File: `pages/menu_grid-sensecap.yaml`
-- Edit button titles:
-  - Each menu button label `text`.
-- Edit menu category colors:
-  - Each button uses `sense_menu_cat*_style`; adjust style or switch style ID.
-- Edit layout:
-  - `grid_rows`, `grid_columns`, `pad_row`, `pad_column`.
-  - Per-button grid placement via `grid_cell_*`.
-- Edit navigation target:
-  - `on_press -> script.execute: nav_to_*`.
-
-#### Display Settings Page
-
-- File: `pages/display_settings-sensecap.yaml`
-- Edit title:
-  - `display_settings_title` (`text`, `text_font`, `text_color`, `y`).
-- Edit row labels and states:
-  - Row labels/toggle state labels (`text`, `text_font`, `x`, `y`).
-- Edit slider geometry/colors:
-  - Slider `x`, `y`, `width`, `height`, `min_value`, `max_value`.
-  - Slider colors in `bg_color`, `indicator.bg_color`, `knob.bg_color`.
-- Edit displayed values:
-  - Right-side labels (`display_*_value`) and lambda formatting text.
-- Edit runtime behavior:
-  - Scripts `display_settings_refresh_ui` and `display_settings_refresh_toggles`.
-
-#### Fans Page
-
-- File: `pages/fans_grid-sensecap.yaml`
-- Edit page title:
-  - `text: "Fan Controls"`, `text_font`, `text_color`, `y`.
-- Edit control text and positions:
-  - All labels/buttons use explicit `x`/`y`.
-- Edit button colors:
-  - Active/inactive colors are set in scripts (`lvgl.widget.update ... bg_color`).
-  - Adjust `sense_tile_green` and `sense_tile_green_off` tokens for global fan button color behavior.
-- Edit entities/modes:
-  - `homeassistant.action` blocks and `entity_id` references.
-
-#### Overrides Page
-
-- Page shell file: `pages/overrides_grid-sensecap.yaml`
-  - Edit page title and title style.
-  - Edit page grid spacing (`pad_row`, `pad_column`) and card padding.
-- Tile wiring file (actual buttons/entities): `sensecap-d1s-v2.yaml`
-  - Blocks `overrides_btn_*` define:
-    - `row`, `column`
-    - `text`, `icon`
-    - `entity_id`
-    - `on_bg_color`, `off_bg_color`
-    - optional `on_icon`, `off_icon`
-- Override button template (text/value/icon behavior):
-  - `buttons/override_button-sensecap.yaml`
-  - Edit label/value font and color defaults there.
-
-#### Lights On/Off Page
-
-- Page shell file: `pages/lighting_switches_grid-sensecap.yaml`
-  - Edit title text/font/color and grid/card spacing.
-- Tile wiring file: `sensecap-d1s-v2.yaml`
-  - Blocks `lightsw_btn_*` define tile order/content/entities/colors.
-- Switch tile template (position/font internals):
-  - `buttons/switch_button-sensecap.yaml`
-  - Edit icon/label `x`, `y`, `text_font`, `text_color`.
-
-#### Dimmers Page 1 and Page 2
-
-- Shared page template file (layout/title):
-  - `pages/lighting_dimmers_grid_template-sensecap.yaml`
-  - Edit title (`dimmers_title_text`, title font/color), page grid rows/columns, spacing.
-- Page 1 and Page 2 instance wiring:
-  - In `sensecap-d1s-v2.yaml` package vars:
-    - `page_lighting_dimmers_sensecap`
-    - `page_lighting_dimmers_2_sensecap`
-- Dimmers row/button wiring:
-  - In `sensecap-d1s-v2.yaml` blocks `dimmer_btn_*`, plus left-column nav/placeholder buttons.
-  - Edit `row`, `column`, `text`, `icon`, `entity_id`, `secondary_entity_id`, `on_bg_color`, `off_bg_color`.
-- Dimmers control template internals (x/y/fonts/slider range):
-  - `buttons/dimmer_light_button-sensecap.yaml`
-  - Edit:
-    - `icon_${uid}` `x`, `y`, `text_font`
-    - `value_${uid}` `x`, `y`, `text_font`
-    - `label_${uid}` `x`, `y`, `text_font`
-    - `slider_${uid}` `x`, `y`, `width`, `height`, `min_value`, `max_value`
-
-#### Sensors Page
-
-- Page shell/on-load formatting: `pages/sensors_grid-sensecap.yaml`
-  - Edit page grid (`grid_rows`, `grid_columns`, pad).
-  - Edit value text formatting in each `lvgl.label.update` lambda (`%.1f`, units, fallback text).
-- Sensor tile wiring: `sensecap-d1s-v2.yaml`
-  - Blocks `sensor_btn_*` control per-tile text/icon/location/colors/sensor source.
-- Sensor tile template internals:
-  - `buttons/sensor_button-sensecap.yaml`
-  - Edit icon/title/value fonts/colors and internal grid placement.
-
-#### Thermostat Page
-
-- File: `pages/thermostat_v2_lvgl-sensecap.yaml`
-- Edit title, labels, dropdowns:
-  - `text`, `text_font`, `text_color`, `x`, `y`.
-- Edit arc geometry/range:
-  - `tstat2_target_arc` fields: `x`, `y`, `width`, `height`, `min_value`, `max_value`, `rotation`, `adjustable`.
-- Edit arc colors:
-  - `indicator.arc_color` in static block and in sync script updates.
-- Edit dropdown options:
-  - `tstat2_mode_dropdown.options`
-  - `tstat2_fan_dropdown.options`
-- Edit displayed values:
-  - Label update lambdas (`Current`, `Target`, `Humidity`, state labels).
-
-#### WiFi Setup Page
-
-- File: `pages/wifi_setup-sensecap.yaml`
-- Edit title/instruction lines:
-  - `text`, `text_font`, `text_color`, `x`, `y`.
-- Edit status text:
-  - `wifi_setup_status` label.
-- Edit button text/style:
-  - `wifi_setup_back_btn` and nested label.
-
-#### Info Page
-
-- File: `pages/info-sensecap.yaml`
-- Edit static labels:
-  - section labels (`Build Date`, `MAC Address`, `IP Address`, etc.).
-- Edit runtime labels:
-  - `*_label` IDs and default `text`.
-- Edit QR/login text:
-  - `cp_login`, `cp_ip_address` text and placement.
-- Edit typography/colors:
-  - each label `text_font`, `text_color`, `x`, `y`.
-
-#### Legacy Settings Page (if used)
-
-- File: `pages/settings_grid-sensecap.yaml`
-- Edit grid menu button labels/styles/nav actions the same way as `menu_grid-sensecap.yaml`.
-
-### Where To Edit Entities vs Presentation
-
-- Entities and per-tile page wiring: `sensecap-d1s-v2.yaml`
-- Visual style tokens: `common/color-sensecap.yaml`, `common/theme_style-sensecap.yaml`
-- Font IDs/sizes: `common/fonts-sensecap.yaml`
-- Page geometry tokens: `common/ui_tokens-sensecap.yaml`
-- Per-page layout/content: files in `pages/`
-- Reusable tile internals: files in `buttons/`
-
-### Safe Edit Workflow
-
-1. Edit one page/template at a time.
-2. Run `esphome config sensecap-d1s-v2.yaml`.
-3. Flash and verify on hardware.
-4. If changing reusable template files (`buttons/*-sensecap.yaml`, `pages/*template*-sensecap.yaml`), test all pages using that template.
-
-## Quick Recipes (Top 5)
-
-1. Rename a tile
-- File: `sensecap-d1s-v2.yaml`
-- Find the tile block (`dimmer_btn_*`, `lightsw_btn_*`, `sensor_*`, `overrides_btn_*`).
-- Change `text:` and optionally `icon:`.
-- Validate: `esphome config sensecap-d1s-v2.yaml`.
-
-2. Move a tile
-- File: `sensecap-d1s-v2.yaml`
-- In the tile block, change `row:` and `column:`.
-- If needed also adjust `row_span:` / `column_span:`.
-
-3. Recolor a tile
-- Preferred: use tokens in `common/color-sensecap.yaml`.
-- In tile block set `on_bg_color:` / `off_bg_color:` to token IDs.
-- If style-driven, adjust style in `common/theme_style-sensecap.yaml`.
-
-4. Change entity a tile controls/displays
-- File: `sensecap-d1s-v2.yaml`
-- Change `entity_id:` (and `secondary_entity_id:` when present).
-- Keep entity IDs centralized in `common/ha_entities_substitutions-sensecap.yaml` when possible.
-
-5. Adjust dimmer slider range
-- File: `buttons/dimmer_light_button-sensecap.yaml`
-- Update `slider_${uid}` `min_value:` / `max_value:`.
-- Typical HA brightness is `0..255`.
-
-
-
-## Fork Rules (Required)
-
-1. Work on fork cleanup only inside `esphome-modular-lvgl-buttons/`.
-2. Keep upstream template files template-safe.
-3. Keep local instance files local-only (`*-001.yaml`, home-specific maps, backups).
-4. Keep HA entity bindings centralized in `common/ha_entities-sensecap.yaml` and substitution-driven in `common/core_ha_common-sensecap.yaml`.
-5. Prefer repo-local `external_components/` and avoid adding new active `custom_components` references.
-
-## Validation Matrix
-
-1. Active device (authoritative):
-   `esphome config /config/esphome/sensecap-d1s-v2.yaml`
-   Expected: `Configuration is valid!`
-2. Fork hygiene:
-   `powershell -ExecutionPolicy Bypass -File /config/esphome/esphome-modular-lvgl-buttons/scripts/fork_check.ps1`
-   Expected: `PASS`
-3. Deprecation scan (repo-only):
-   `rg -n "custom_components" /config/esphome/esphome-modular-lvgl-buttons --glob "!*.bak-*"`
-   Expected: docs-only mentions, no active YAML references.
+- SenseCAP image assets folder: `images/sensecap/`

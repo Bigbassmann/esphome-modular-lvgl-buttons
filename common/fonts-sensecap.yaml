@@ -1,4 +1,4 @@
----
+﻿---
 font:
   - file: "esphome-modular-lvgl-buttons/assets/fonts/Nunito-SemiBold.ttf"
     id: nunito_72
@@ -31,7 +31,6 @@ font:
     bpp: 8
 
   - file: "esphome-modular-lvgl-buttons/assets/fonts/Nunito-SemiBold.ttf"
-
     id: nunito_20
     size: 20
     bpp: 8
@@ -55,6 +54,3 @@ font:
     id: nunito_12
     size: 12
     bpp: 8
-
-
-

@@ -325,16 +325,18 @@ text_sensor:
     internal: true
 
 sensor:
-  - platform: homeassistant
+  - platform: template
     id: cap_tstat_current_temp
-    entity_id: ${ent_thermostat}
-    attribute: ${attr_current_temperature}
     internal: true
-  - platform: homeassistant
+    update_interval: never
+    lambda: |-
+      return id(ha_tstat_current_temp).state;
+  - platform: template
     id: cap_tstat_target_temp
-    entity_id: ${ent_thermostat}
-    attribute: ${attr_temperature}
     internal: true
+    update_interval: never
+    lambda: |-
+      return id(ha_tstat_target_temp).state;
 
 # globals:
 #  - id: last_interaction_ms
@@ -487,4 +489,5 @@ interval:
                   return 0;
 
             - lambda: 'id(tstat_runtime_syncing) = false;'
+
 

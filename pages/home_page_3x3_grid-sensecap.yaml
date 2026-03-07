@@ -1,27 +1,53 @@
 ﻿substitutions:
-  sense_page_home_id: "page_home_v2"
+  sense_page_home_id: "page_home_v2"  # should be page_home_3x3_grid, but keeping old ID for now to avoid breaking existing overrides
   sense_page_tstat_id: "page_thermostat_v2"
   sense_page_fans_id: "page_fans"
   sense_page_overrides_id: "page_overrides"
 
-  ui_home_dani_entity_id: "${ent_dani_mode_on}"
-  ui_home_dani_text: "${ui_dani_text}"
-  ui_home_dani_icon: "${ui_dani_icon}"
-  ui_home_dani_on_bg: "${ui_dani_on_bg}"
-  ui_home_dani_off_bg: "${ui_dani_off_bg}"
-  ui_home_dani_on_icon: "${ui_dani_on_icon}"
-  ui_home_dani_off_icon: "${ui_dani_off_icon}"
-  ui_home_dani_value_on: "${ui_dani_value_on}"
-  ui_home_dani_value_off: "${ui_dani_value_off}"
-  ui_home_dani_icon_on_color: "$icon_on_color"
-  ui_home_dani_icon_off_color: "sense_text_muted"
-  ui_home_dani_text_on_color: "white"
-  ui_home_dani_text_off_color: "white"
-  ui_home_dani_value_on_color: "white"
-  ui_home_dani_value_off_color: "white"
-  ui_home_dani_show_icon: "true"
-  ui_home_dani_show_text: "true"
-  ui_home_dani_show_value: "true"
+  widgets:
+    btn1:
+      id: "${ui_dani_mode_ov.id}"    # "${home_page_3x3_layout_row_0_col_0_btn}" # "home_v2_btn_dani"  # Keeping old var for now to avoid breaking existing overrides
+      grid_cell_row_pos: "${ui_dani_mode_ov.pl1_btn1_row_pos}"
+      grid_cell_column_pos: "${ui_dani_mode_ov.pl1_btn1_col_pos}"
+      bg_color: "${ui_dani_mode_ov.btn1_bg_color}"       # "${hp_3x3_r0_c0_off_bg}"
+      on_press_action_data: "${ui_dani_mode_ov.on_press_action_data}"      # "${hp_3x3_r0_c0_ha_entity_id}"
+      widget_label_1_id: "${ui_dani_mode_ov.label_1_id}"
+      widget_label_1_text: "${ui_dani_mode_ov.widgets.btn1.widget_label_1_text}"
+      widget_label_1_color: "${ui_dani_mode_ov.widgets.btn1.widget_label_1_color}"
+      widget_label_1_hidden: "${ui_dani_mode_ov.widgets.btn1.widget_label_1_hidden}"
+      widget_label_2_id: "${ui_dani_mode_ov.widgets.btn1.widget_label_2_id}"
+      widget_label_2_text: "${ui_dani_mode_ov.widgets.btn1.widget_label_2_text}"
+      widget_label_2_color: "${ui_dani_mode_ov.widgets.btn1.widget_label_2_color}"
+      widget_label_2_hidden: "${ui_dani_mode_ov.widgets.btn1.widget_label_2_hidden}"
+      widget_label_3_id: "${ui_dani_mode_ov.widgets.btn1.widget_label_3_id}"
+      widget_label_3_text: "${ui_dani_mode_ov.widgets.btn1.widget_label_3_text}"
+      widget_label_3_color: "${ui_dani_mode_ov.widgets.btn1.widget_label_3_color}"
+      widget_label_3_hidden: "${ui_dani_mode_ov.widgets.btn1.widget_label_3_hidden}"
+
+
+#  hp_3x3_r0_c0_entity_id: "${ent_dani_mode_on}"   # ui_home_dani_entity_id: "${ent_dani_mode_on}" # Should be hp_3x3_r0_c0__entity_id:, but keeping old var for now to avoid breaking existing overrides
+#  hp_3x3_r0_c0_text: "${text_dani_mode}"          # "${ui_dani_text}"          # Should be home_page_3x3_layout_row_0_col_0_btn_text, but keeping old var for now to avoid breaking existing overrides
+#  hp_3x3_r0_c0_icon: "${icon_dani_mode}"          # "${ui_dani_icon}"
+#  hp_3x3_r0_c0_on_bg: "${on_bg_dani_mode}"        # "${ui_dani_on_bg}"
+#  hp_3x3_r0_c0_off_bg: "${off_bg_dani_mode}"      # "${ui_dani_off_bg}"
+#  hp_3x3_r0_c0_on_icon: "${on_icon_dani_mode}"    # "${ui_dani_on_icon}"
+#  hp_3x3_r0_c0_off_icon: "${off_icon_dani_mode}"  # "${ui_dani_off_icon}"
+#  hp_3x3_r0_c0_value_on: "${value_on_dani_mode}"  # "${ui_dani_value_on}"
+#  hp_3x3_r0_c0_value_off: "${value_off_dani_mode}"  # "${ui_dani_value_off}"
+#  hp_3x3_r0_c0_icon_on_color: "$icon_on_color"
+#  hp_3x3_r0_c0_icon_off_color: "sense_text_muted"
+#  hp_3x3_r0_c0_text_on_color: "white"
+#  hp_3x3_r0_c0_text_off_color: "white"
+#  hp_3x3_r0_c0_value_on_color: "white"    
+#  hp_3x3_r0_c0_value_off_color: "white"
+#  hp_3x3_r0_c0_show_icon: "true"
+#  hp_3x3_r0_c0_show_text: "true"
+#  hp_3x3_r0_c0_show_value: "true"
+
+#  hp_3x3_r0_c0_widget_button_grid_cell_row_pos: "${row_dani_mode_btn}"
+#  hp_3x3_r0_c0_widget_button_grid_cell_column_pos: "${column_dani_mode_btn}"
+#  hp_3x3_r0_c0_widget_button_bg_color: "${hp_3x3_r0_c0_off_bg}"
+  
 
   ui_home_sleepy_entity_id: "${ent_sleepy_toggle}"
   ui_home_sleepy_text: "${ui_sleepy_text}"
@@ -83,12 +109,12 @@ lvgl:
       pad_right: 8
       widgets:
         - button:
-            id: home_v2_btn_dani  # Should be home_page_3x3_layout_row_0_col_0_btn, but keeping old ID for now to avoid breaking existing overrides
-            grid_cell_row_pos: 0
-            grid_cell_column_pos: 0
+            id: ${widgets.btn1.id}  
+            grid_cell_row_pos: ${widgets.btn1_grid_cell_row_pos}  
+            grid_cell_column_pos: ${widgets.btn1_grid_cell_column_pos}  
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
-            bg_color: ${ui_home_dani_off_bg}
+            bg_color: ${widgets.btn1_bg_color}  
             radius: 8
             pad_left: 8
             pad_right: 8
@@ -98,27 +124,29 @@ lvgl:
               - homeassistant.action:
                   action: homeassistant.toggle
                   data:
-                    entity_id: ${ui_home_dani_entity_id}
+                    entity_id: ${widgets.btn1_on_press_action_data}  # 
             widgets:
               - label:
-                  id: home_v2_icon_dani
-                  text: ${ui_home_dani_icon}
+                  id: ${widgets.btn1.widget_label_1_id}       # ${ui_dani_mode_ov.widgets.btn1.widget_label_1_id}
+                  text: ${widgets.btn1.widget_label_1_text}   # ${ui_dani_mode_ov.widgets.btn1.widget_label_1_text}  # "mdi:alarm-light"
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  text_color: ${ui_home_dani_icon_off_color}
+                  text_color: ${widgets.btn1.widget_label_1_color}  # ${ui_dani_mode_ov.widgets.btn1.widget_label_1_color}
+                  hidden: ${widgets.btn1.widget_label_1_hidden}     # ${ui_dani_mode_ov.widgets.btn1.widget_label_1_hidden}
               - label:
-                  id: home_v2_label_dani
-                  text: ${ui_home_dani_text}
+                  id: ${widgets.btn1.widget_label_2_id}       # ${ui_dani_mode_ov.widgets.btn1.widget_label_2_id}
+                  text: ${widgets.btn1.widget_label_2_text}   # ${ui_dani_mode_ov.widgets.btn1.widget_label_2_text}  
                   align: BOTTOM_LEFT
                   text_font: nunito_20
-                  text_color: ${ui_home_dani_text_off_color}
+                  text_color: ${widgets.btn1.widget_label_2_color}  # ${ui_dani_mode_ov.widgets.btn1.widget_label_2_color}
+                  hidden: ${widgets.btn1.widget_label_2_hidden}     # ${ui_dani_mode_ov.widgets.btn1.widget_label_2_hidden}
               - label:
-                  id: home_v2_value_dani
-                  text: ${ui_home_dani_value_off}
+                  id: ${widgets.btn1.widget_label_3_id}      # ${ui_dani_mode_ov.widgets.btn1.widget_label_3_id}
+                  text: ${widgets.btn1.widget_label_3_text}  # ${ui_dani_mode_ov.widgets.btn1.widget_label_3_text}
                   align: BOTTOM_RIGHT
                   text_font: nunito_18
-                  text_color: white
-                  hidden: false
+                  text_color: ${widgets.btn1.widget_label_3_color}  # ${ui_dani_mode_ov.widgets.btn1.widget_label_3_color}
+                  hidden: ${widgets.btn1.widget_label_3_hidden}     # ${ui_dani_mode_ov.widgets.btn1.widget_label_3_hidden}
         - button:
             id: home_v2_btn_sleepy
             grid_cell_row_pos: 0

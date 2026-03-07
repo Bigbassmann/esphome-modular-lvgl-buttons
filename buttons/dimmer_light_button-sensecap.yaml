@@ -13,6 +13,8 @@
 #    secondary_entity_id: (optional)
 #    on_bg_color: (optional)
 #    off_bg_color: (optional)
+#    slider_on_color: (optional, default sense_info)
+#    slider_off_color: (optional, default sense_border)`r`n#    slider_bg_color: (optional, default sense_surface_alt)
 
 lvgl:
   pages:
@@ -61,13 +63,14 @@ lvgl:
                         min_value: 0
                         max_value: 255
                         radius: 10
+                        bg_color: ${slider_bg_color | default("sense_surface_alt")}
                         knob:
                           pad_top: -5
                           pad_bottom: -5
                           bg_color: $label_on_color
                         indicator:
                           radius: 0
-                          bg_color: $label_off_color
+                          bg_color: ${slider_off_color | default("sense_border")}
                         on_release:
                           - homeassistant.action:
                               action: light.turn_on
@@ -119,14 +122,16 @@ binary_sensor:
                 text_color: $icon_on_color
             - lvgl.widget.update:
                 id: label_${uid}
-                text_color: $label_on_color
+                text_color: white
             - lvgl.widget.update:
                 id: value_${uid}
-                text_color: $label_on_color
+                text_color: white
             - lvgl.widget.update:
                 id: slider_${uid}
                 knob:
                   bg_color: $label_on_color
+                indicator:
+                  bg_color: ${slider_on_color | default("sense_info")}
           else:
             - lvgl.widget.update:
                 id: button_${uid}
@@ -136,10 +141,10 @@ binary_sensor:
                 text_color: $icon_off_color
             - lvgl.widget.update:
                 id: label_${uid}
-                text_color: $label_off_color
+                text_color: white
             - lvgl.widget.update:
                 id: value_${uid}
-                text_color: $label_off_color
+                text_color: white
             - lvgl.label.update:
                 id: value_${uid}
                 text: "0%"
@@ -150,6 +155,8 @@ binary_sensor:
                 id: slider_${uid}
                 knob:
                   bg_color: $label_off_color
+                indicator:
+                  bg_color: ${slider_off_color | default("sense_border")}
 
 
 text_sensor:
@@ -187,4 +194,5 @@ sensor:
             char buf[8];
             snprintf(buf, sizeof(buf), "%d%%", pct);
             return std::string(buf);
+
 

@@ -1,4 +1,4 @@
-substitutions:
+﻿substitutions:
   sense_page_sensors_id: "page_sensors"
 
 lvgl:
@@ -53,5 +53,7 @@ lvgl:
       pad_top: ${sense_content_y | default("46")}
       pad_bottom: 76
       pad_left: 8
-      pad_right: 8
+
+      widgets: []
+
 

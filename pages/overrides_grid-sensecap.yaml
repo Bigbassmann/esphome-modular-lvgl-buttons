@@ -1,5 +1,24 @@
-substitutions:
+﻿substitutions:
   sense_page_overrides_id: "page_overrides"
+
+  ui_overrides_dani_entity_id: "${ent_dani_mode_on}"
+  ui_overrides_dani_text: "${ui_dani_text}"
+  ui_overrides_dani_icon: "${ui_dani_icon}"
+  ui_overrides_dani_on_bg: "${ui_dani_on_bg}"
+  ui_overrides_dani_off_bg: "${ui_dani_off_bg}"
+  ui_overrides_dani_on_icon: "${ui_dani_on_icon}"
+  ui_overrides_dani_off_icon: "${ui_dani_off_icon}"
+  ui_overrides_dani_value_on: "${ui_dani_value_on}"
+  ui_overrides_dani_value_off: "${ui_dani_value_off}"
+  ui_overrides_dani_icon_on_color: "$icon_on_color"
+  ui_overrides_dani_icon_off_color: "sense_text_muted"
+  ui_overrides_dani_text_on_color: "white"
+  ui_overrides_dani_text_off_color: "white"
+  ui_overrides_dani_value_on_color: "white"
+  ui_overrides_dani_value_off_color: "white"
+  ui_overrides_dani_show_icon: "true"
+  ui_overrides_dani_show_text: "true"
+  ui_overrides_dani_show_value: "true"
 
 lvgl:
   pages:
@@ -45,4 +64,177 @@ lvgl:
             y: -2
             text_font: nunito_36
             text_color: sense_info
+        - container:
+            id: overrides_btn_dani
+            grid_cell_row_pos: 1
+            grid_cell_column_pos: 1
+            grid_cell_row_span: 1
+            grid_cell_column_span: 1
+            grid_cell_x_align: stretch
+            grid_cell_y_align: stretch
+            widgets:
+              - button:
+                  id: button_overrides_btn_dani
+                  width: 100%
+                  height: 100%
+                  radius: 8
+                  pad_left: 8
+                  pad_right: 8
+                  pad_top: 4
+                  pad_bottom: 4
+                  layout:
+                    type: grid
+                    grid_rows: [fr(1)]
+                    grid_columns: [content, fr(1), content]
+                  widgets:
+                    - label:
+                        id: icon_overrides_btn_dani
+                        text_font: $icon_font
+                        text: ${ui_overrides_dani_icon}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 0
+                        grid_cell_x_align: start
+                        grid_cell_y_align: center
+                    - label:
+                        id: label_overrides_btn_dani
+                        text_font: nunito_20
+                        text: ${ui_overrides_dani_text}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 1
+                        grid_cell_x_align: start
+                        grid_cell_y_align: center
+                    - label:
+                        id: value_overrides_btn_dani
+                        text_font: nunito_18
+                        text: ${ui_overrides_dani_value_off}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 2
+                        grid_cell_x_align: end
+                        grid_cell_y_align: center
+                  on_short_click:
+                    - homeassistant.action:
+                        action: homeassistant.toggle
+                        data:
+                          entity_id: ${ui_overrides_dani_entity_id}
+binary_sensor:
+  - id: widget_sensor_overrides_btn_dani
+    platform: homeassistant
+    entity_id: ${ui_overrides_dani_entity_id}
+    trigger_on_initial_state: true
+    on_state:
+      - if:
+          condition:
+            - binary_sensor.is_on: widget_sensor_overrides_btn_dani
+          then:
+            - lvgl.widget.update:
+                id: button_overrides_btn_dani
+                bg_color: ${ui_overrides_dani_on_bg}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_dani_on_icon | default("")}").size() > 0;'
+                then:
+                  - lvgl.label.update:
+                      id: icon_overrides_btn_dani
+                      text: ${ui_overrides_dani_on_icon}
+            - lvgl.widget.update:
+                id: icon_overrides_btn_dani
+                text_color: ${ui_overrides_dani_icon_on_color}
+            - lvgl.widget.update:
+                id: label_overrides_btn_dani
+                text_color: ${ui_overrides_dani_text_on_color}
+            - lvgl.label.update:
+                id: value_overrides_btn_dani
+                text: ${ui_overrides_dani_value_on}
+            - lvgl.widget.update:
+                id: value_overrides_btn_dani
+                text_color: ${ui_overrides_dani_value_on_color}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_dani_show_icon | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_dani
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_dani
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_dani_show_text | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_dani
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_dani
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_dani_show_value | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_dani
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_dani
+                      hidden: true
+          else:
+            - lvgl.widget.update:
+                id: button_overrides_btn_dani
+                bg_color: ${ui_overrides_dani_off_bg}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_dani_off_icon | default("")}").size() > 0;'
+                then:
+                  - lvgl.label.update:
+                      id: icon_overrides_btn_dani
+                      text: ${ui_overrides_dani_off_icon}
+            - lvgl.widget.update:
+                id: icon_overrides_btn_dani
+                text_color: ${ui_overrides_dani_icon_off_color}
+            - lvgl.widget.update:
+                id: label_overrides_btn_dani
+                text_color: ${ui_overrides_dani_text_off_color}
+            - lvgl.label.update:
+                id: value_overrides_btn_dani
+                text: ${ui_overrides_dani_value_off}
+            - lvgl.widget.update:
+                id: value_overrides_btn_dani
+                text_color: ${ui_overrides_dani_value_off_color}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_dani_show_icon | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_dani
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_dani
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_dani_show_text | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_dani
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_dani
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_dani_show_value | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_dani
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_dani
+                      hidden: true
 

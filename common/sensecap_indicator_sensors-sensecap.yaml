@@ -1,4 +1,4 @@
-# SenseCAP Indicator sensors + wifi info text
+﻿# SenseCAP Indicator sensors + wifi info text
 text_sensor:
   - platform: wifi_info
     ip_address:
@@ -69,11 +69,11 @@ sensor:
   - platform: packet_transport
     provider: d1-rp2040
     id: temp
-    name: "Disp Int Temp °C"
+    name: "Disp Int Temp C"
     internal: false
     accuracy_decimals: 1
     icon: "mdi:thermometer"
-    unit_of_measurement: "°C"
+    unit_of_measurement: "C"
     device_class: temperature
     on_value:
       then:
@@ -81,9 +81,9 @@ sensor:
 
 
   - platform: template
-    name: "Disp Int Temp °F"
+    name: "Disp Int Temp F"
     id: temp_f
-    unit_of_measurement: "°F"
+    unit_of_measurement: "F"
     accuracy_decimals: 1
     icon: "mdi:thermometer"
     device_class: temperature
@@ -183,3 +183,4 @@ sensor:
 #    id: ha_outdoor_temp
 #    entity_id: sensor.outdoor_temperature  # Replace with actual
 #    name: "Outdoor Temperature"
+
