@@ -1,4 +1,4 @@
-﻿---
+---
 # Substitution variables used through the codebase
 substitutions:
   icon_font: mdi_icons_40
@@ -353,11 +353,11 @@ packages:
       page_id: ${sense_page_lighting_dimmers_id}
       row: 1
       column: 0
-      text: "Sleepy"
-      icon: $mdi_weather_night
+      text: ${ui_sleepy_text}
+      icon: ${ui_sleepy_icon}
       entity_id: ${ent_sleepy_toggle}
-      on_bg_color: sense_tile_teal
-      off_bg_color: sense_tile_teal_off
+      on_bg_color: ${ui_sleepy_on_bg}
+      off_bg_color: ${ui_sleepy_off_bg}
 
   homev2_bedtime_btn: !include
     file: buttons/switch_button-sensecap.yaml
@@ -366,11 +366,11 @@ packages:
       page_id: ${sense_page_lighting_dimmers_id}
       row: 2
       column: 0
-      text: "Bedtime"
-      icon: $mdi_bed
+      text: ${ui_bedtime_text}
+      icon: ${ui_bedtime_icon}
       entity_id: ${ent_bedtime_toggle}
-      on_bg_color: sense_tile_indigo
-      off_bg_color: sense_tile_indigo_off
+      on_bg_color: ${ui_bedtime_on_bg}
+      off_bg_color: ${ui_bedtime_off_bg}
 
   dimmer_btn_outdoor: !include
     file: buttons/switch_button-sensecap.yaml
