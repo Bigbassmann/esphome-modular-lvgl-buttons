@@ -168,7 +168,11 @@ git clone https://github.com/agillis/esphome-modular-lvgl-buttons.git
 cp esphome-modular-lvgl-buttons/example_code/guition-esp32-s3-4848s040-display_modular.yaml my-display.yaml
 ```
 
-3. Create a `secrets.yaml` file with your WiFi credentials:
+3. Copy the secrets template and fill in your WiFi credentials:
+
+```bash
+cp esphome-modular-lvgl-buttons/example_code/secrets.example.yaml secrets.yaml
+```
 
 ```yaml
 wifi_ssid: "Your WiFi SSID"
@@ -240,7 +244,7 @@ A window will open on your desktop simulating the touchscreen display.
 esphome-modular-lvgl-buttons/
 ├── README.md                 # This file
 ├── LICENSE                   # MIT License
-├── secrets.yaml              # Template for WiFi/API secrets
+├── example_code/secrets.example.yaml  # Template for WiFi/API secrets (copy to secrets.yaml)
 ├── assets/                   # Images, icons, and fonts
 │   ├── fonts/                # Custom font files
 │   └── images/               # PNG/SVG images for UI
@@ -305,7 +309,7 @@ High-quality 7" display from Waveshare with excellent documentation and support.
 - Check the hardware YAML for correct I2C address and touch driver
 
 **WiFi connection issues:**
-- Ensure `secrets.yaml` has correct credentials
+- Ensure `secrets.yaml` has correct credentials (copy from `example_code/secrets.example.yaml` if needed)
 - Check WiFi signal strength at display location
 
 **Compilation errors about missing files:**
