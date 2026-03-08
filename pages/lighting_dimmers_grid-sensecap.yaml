@@ -48,3 +48,123 @@ lvgl:
             text_font: nunito_36
             text_color: sense_info
 
+        - container:
+            id: homev2_sleepy_btn
+            grid_cell_row_pos: 1
+            grid_cell_column_pos: 0
+            grid_cell_row_span: 1
+            grid_cell_column_span: 1
+            grid_cell_x_align: stretch
+            grid_cell_y_align: stretch
+            widgets:
+              - button:
+                  id: button_homev2_sleepy_btn
+                  widgets:
+                    - label:
+                        text_font: $icon_font
+                        align: top_left
+                        x: 8
+                        y: 8
+                        id: icon_homev2_sleepy_btn
+                        text: ${ui_sleepy_icon}
+                    - label:
+                        align: bottom_left
+                        x: 8
+                        y: -6
+                        text_font: nunito_16
+                        id: label_homev2_sleepy_btn
+                        text: ${ui_sleepy_text}
+                  on_short_click:
+                    - homeassistant.action:
+                        action: homeassistant.toggle
+                        data:
+                          entity_id: ${ent_sleepy_toggle}
+        - container:
+            id: homev2_bedtime_btn
+            grid_cell_row_pos: 2
+            grid_cell_column_pos: 0
+            grid_cell_row_span: 1
+            grid_cell_column_span: 1
+            grid_cell_x_align: stretch
+            grid_cell_y_align: stretch
+            widgets:
+              - button:
+                  id: button_homev2_bedtime_btn
+                  widgets:
+                    - label:
+                        text_font: $icon_font
+                        align: top_left
+                        x: 8
+                        y: 8
+                        id: icon_homev2_bedtime_btn
+                        text: ${ui_bedtime_icon}
+                    - label:
+                        align: bottom_left
+                        x: 8
+                        y: -6
+                        text_font: nunito_16
+                        id: label_homev2_bedtime_btn
+                        text: ${ui_bedtime_text}
+                  on_short_click:
+                    - homeassistant.action:
+                        action: homeassistant.toggle
+                        data:
+                          entity_id: ${ent_bedtime_toggle}
+binary_sensor:
+  - id: widget_sensor_homev2_sleepy_btn
+    platform: homeassistant
+    entity_id: ${ent_sleepy_toggle}
+    trigger_on_initial_state: true
+    on_state:
+      - if:
+          condition:
+            - binary_sensor.is_on: widget_sensor_homev2_sleepy_btn
+          then:
+            - lvgl.widget.update:
+                id: button_homev2_sleepy_btn
+                bg_color: ${ui_sleepy_on_bg}
+            - lvgl.widget.update:
+                id: icon_homev2_sleepy_btn
+                text_color: $icon_on_color
+            - lvgl.widget.update:
+                id: label_homev2_sleepy_btn
+                text_color: $label_on_color
+          else:
+            - lvgl.widget.update:
+                id: button_homev2_sleepy_btn
+                bg_color: ${ui_sleepy_off_bg}
+            - lvgl.widget.update:
+                id: icon_homev2_sleepy_btn
+                text_color: $icon_off_color
+            - lvgl.widget.update:
+                id: label_homev2_sleepy_btn
+                text_color: $label_off_color
+
+  - id: widget_sensor_homev2_bedtime_btn
+    platform: homeassistant
+    entity_id: ${ent_bedtime_toggle}
+    trigger_on_initial_state: true
+    on_state:
+      - if:
+          condition:
+            - binary_sensor.is_on: widget_sensor_homev2_bedtime_btn
+          then:
+            - lvgl.widget.update:
+                id: button_homev2_bedtime_btn
+                bg_color: ${ui_bedtime_on_bg}
+            - lvgl.widget.update:
+                id: icon_homev2_bedtime_btn
+                text_color: $icon_on_color
+            - lvgl.widget.update:
+                id: label_homev2_bedtime_btn
+                text_color: $label_on_color
+          else:
+            - lvgl.widget.update:
+                id: button_homev2_bedtime_btn
+                bg_color: ${ui_bedtime_off_bg}
+            - lvgl.widget.update:
+                id: icon_homev2_bedtime_btn
+                text_color: $icon_off_color
+            - lvgl.widget.update:
+                id: label_homev2_bedtime_btn
+                text_color: $label_off_color

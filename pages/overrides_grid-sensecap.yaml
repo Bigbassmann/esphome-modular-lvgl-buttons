@@ -376,6 +376,110 @@ lvgl:
                         action: homeassistant.toggle
                         data:
                           entity_id: ${ui_overrides_entry_motion_entity_id}
+        - container:
+            id: overrides_btn_garage
+            grid_cell_row_pos: 4
+            grid_cell_column_pos: 0
+            grid_cell_row_span: 1
+            grid_cell_column_span: 1
+            grid_cell_x_align: stretch
+            grid_cell_y_align: stretch
+            widgets:
+              - button:
+                  id: button_overrides_btn_garage
+                  width: 100%
+                  height: 100%
+                  radius: 8
+                  pad_left: 8
+                  pad_right: 8
+                  pad_top: 4
+                  pad_bottom: 4
+                  layout:
+                    type: grid
+                    grid_rows: [fr(1)]
+                    grid_columns: [content, fr(1), content]
+                  widgets:
+                    - label:
+                        id: icon_overrides_btn_garage
+                        text_font: $icon_font
+                        text: ${ui_overrides_garage_icon}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 0
+                        grid_cell_x_align: start
+                        grid_cell_y_align: center
+                    - label:
+                        id: label_overrides_btn_garage
+                        text_font: nunito_20
+                        text: ${ui_overrides_garage_text}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 1
+                        grid_cell_x_align: start
+                        grid_cell_y_align: center
+                    - label:
+                        id: value_overrides_btn_garage
+                        text_font: nunito_18
+                        text: ${ui_overrides_garage_value_off}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 2
+                        grid_cell_x_align: end
+                        grid_cell_y_align: center
+                  on_short_click:
+                    - homeassistant.action:
+                        action: homeassistant.toggle
+                        data:
+                          entity_id: ${ui_overrides_garage_entity_id}
+        - container:
+            id: overrides_btn_mbr
+            grid_cell_row_pos: 4
+            grid_cell_column_pos: 1
+            grid_cell_row_span: 1
+            grid_cell_column_span: 1
+            grid_cell_x_align: stretch
+            grid_cell_y_align: stretch
+            widgets:
+              - button:
+                  id: button_overrides_btn_mbr
+                  width: 100%
+                  height: 100%
+                  radius: 8
+                  pad_left: 8
+                  pad_right: 8
+                  pad_top: 4
+                  pad_bottom: 4
+                  layout:
+                    type: grid
+                    grid_rows: [fr(1)]
+                    grid_columns: [content, fr(1), content]
+                  widgets:
+                    - label:
+                        id: icon_overrides_btn_mbr
+                        text_font: $icon_font
+                        text: ${ui_overrides_mbr_icon}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 0
+                        grid_cell_x_align: start
+                        grid_cell_y_align: center
+                    - label:
+                        id: label_overrides_btn_mbr
+                        text_font: nunito_20
+                        text: ${ui_overrides_mbr_text}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 1
+                        grid_cell_x_align: start
+                        grid_cell_y_align: center
+                    - label:
+                        id: value_overrides_btn_mbr
+                        text_font: nunito_18
+                        text: ${ui_overrides_mbr_value_off}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 2
+                        grid_cell_x_align: end
+                        grid_cell_y_align: center
+                  on_short_click:
+                    - homeassistant.action:
+                        action: homeassistant.toggle
+                        data:
+                          entity_id: ${ui_overrides_mbr_entity_id}
 binary_sensor:
   - id: widget_sensor_overrides_btn_cleaners
     platform: homeassistant
@@ -976,6 +1080,246 @@ binary_sensor:
                 else:
                   - lvgl.widget.update:
                       id: value_overrides_btn_entry_motion
+                      hidden: true
+  - id: widget_sensor_overrides_btn_garage
+    platform: homeassistant
+    entity_id: ${ui_overrides_garage_entity_id}
+    trigger_on_initial_state: true
+    on_state:
+      - if:
+          condition:
+            - binary_sensor.is_on: widget_sensor_overrides_btn_garage
+          then:
+            - lvgl.widget.update:
+                id: button_overrides_btn_garage
+                bg_color: ${ui_overrides_garage_on_bg}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_garage_on_icon | default("")}").size() > 0;'
+                then:
+                  - lvgl.label.update:
+                      id: icon_overrides_btn_garage
+                      text: ${ui_overrides_garage_on_icon}
+            - lvgl.widget.update:
+                id: icon_overrides_btn_garage
+                text_color: ${ui_overrides_garage_icon_on_color}
+            - lvgl.widget.update:
+                id: label_overrides_btn_garage
+                text_color: ${ui_overrides_garage_text_on_color}
+            - lvgl.label.update:
+                id: value_overrides_btn_garage
+                text: ${ui_overrides_garage_value_on}
+            - lvgl.widget.update:
+                id: value_overrides_btn_garage
+                text_color: ${ui_overrides_garage_value_on_color}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_garage_show_icon | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_garage
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_garage
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_garage_show_text | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_garage
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_garage
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_garage_show_value | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_garage
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_garage
+                      hidden: true
+          else:
+            - lvgl.widget.update:
+                id: button_overrides_btn_garage
+                bg_color: ${ui_overrides_garage_off_bg}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_garage_off_icon | default("")}").size() > 0;'
+                then:
+                  - lvgl.label.update:
+                      id: icon_overrides_btn_garage
+                      text: ${ui_overrides_garage_off_icon}
+            - lvgl.widget.update:
+                id: icon_overrides_btn_garage
+                text_color: ${ui_overrides_garage_icon_off_color}
+            - lvgl.widget.update:
+                id: label_overrides_btn_garage
+                text_color: ${ui_overrides_garage_text_off_color}
+            - lvgl.label.update:
+                id: value_overrides_btn_garage
+                text: ${ui_overrides_garage_value_off}
+            - lvgl.widget.update:
+                id: value_overrides_btn_garage
+                text_color: ${ui_overrides_garage_value_off_color}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_garage_show_icon | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_garage
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_garage
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_garage_show_text | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_garage
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_garage
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_garage_show_value | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_garage
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_garage
+                      hidden: true
+  - id: widget_sensor_overrides_btn_mbr
+    platform: homeassistant
+    entity_id: ${ui_overrides_mbr_entity_id}
+    trigger_on_initial_state: true
+    on_state:
+      - if:
+          condition:
+            - binary_sensor.is_on: widget_sensor_overrides_btn_mbr
+          then:
+            - lvgl.widget.update:
+                id: button_overrides_btn_mbr
+                bg_color: ${ui_overrides_mbr_on_bg}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_mbr_on_icon | default("")}").size() > 0;'
+                then:
+                  - lvgl.label.update:
+                      id: icon_overrides_btn_mbr
+                      text: ${ui_overrides_mbr_on_icon}
+            - lvgl.widget.update:
+                id: icon_overrides_btn_mbr
+                text_color: ${ui_overrides_mbr_icon_on_color}
+            - lvgl.widget.update:
+                id: label_overrides_btn_mbr
+                text_color: ${ui_overrides_mbr_text_on_color}
+            - lvgl.label.update:
+                id: value_overrides_btn_mbr
+                text: ${ui_overrides_mbr_value_on}
+            - lvgl.widget.update:
+                id: value_overrides_btn_mbr
+                text_color: ${ui_overrides_mbr_value_on_color}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_mbr_show_icon | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_mbr
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_mbr
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_mbr_show_text | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_mbr
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_mbr
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_mbr_show_value | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_mbr
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_mbr
+                      hidden: true
+          else:
+            - lvgl.widget.update:
+                id: button_overrides_btn_mbr
+                bg_color: ${ui_overrides_mbr_off_bg}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_mbr_off_icon | default("")}").size() > 0;'
+                then:
+                  - lvgl.label.update:
+                      id: icon_overrides_btn_mbr
+                      text: ${ui_overrides_mbr_off_icon}
+            - lvgl.widget.update:
+                id: icon_overrides_btn_mbr
+                text_color: ${ui_overrides_mbr_icon_off_color}
+            - lvgl.widget.update:
+                id: label_overrides_btn_mbr
+                text_color: ${ui_overrides_mbr_text_off_color}
+            - lvgl.label.update:
+                id: value_overrides_btn_mbr
+                text: ${ui_overrides_mbr_value_off}
+            - lvgl.widget.update:
+                id: value_overrides_btn_mbr
+                text_color: ${ui_overrides_mbr_value_off_color}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_mbr_show_icon | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_mbr
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_mbr
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_mbr_show_text | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_mbr
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_mbr
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_mbr_show_value | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_mbr
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_mbr
                       hidden: true
   - id: widget_sensor_overrides_btn_dani
     platform: homeassistant

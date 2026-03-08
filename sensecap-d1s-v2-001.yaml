@@ -145,35 +145,6 @@ packages:
       click_page: info_screen
 
   # Add a button that goes to a different page
-  overrides_btn_garage: !include
-    file: buttons/override_button-sensecap.yaml
-    vars:
-      uid: overrides_btn_garage
-      page_id: ${sense_page_overrides_id}
-      row: 4
-      column: 0
-      text: "Garage O/V"
-      icon: $mdi_motion_sensor
-      entity_id: ${ent_garage_light_automation_off}
-      on_icon: $mdi_motion_sensor_off
-      off_icon: $mdi_motion_sensor
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
-
-  overrides_btn_mbr: !include
-    file: buttons/override_button-sensecap.yaml
-    vars:
-      uid: overrides_btn_mbr
-      page_id: ${sense_page_overrides_id}
-      row: 4
-      column: 1
-      text: "MBR OV"
-      icon: $mdi_motion_sensor
-      entity_id: ${ent_mbr_motion_off}
-      on_icon: $mdi_motion_sensor_off
-      off_icon: $mdi_motion_sensor
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
   dimmer_btn_mbr: !include
     file: buttons/dimmer_light_button-sensecap.yaml
     vars:
