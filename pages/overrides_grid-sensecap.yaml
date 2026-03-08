@@ -168,6 +168,214 @@ lvgl:
                         action: homeassistant.toggle
                         data:
                           entity_id: ${ui_overrides_dani_entity_id}
+        - container:
+            id: overrides_btn_lock
+            grid_cell_row_pos: 2
+            grid_cell_column_pos: 0
+            grid_cell_row_span: 1
+            grid_cell_column_span: 1
+            grid_cell_x_align: stretch
+            grid_cell_y_align: stretch
+            widgets:
+              - button:
+                  id: button_overrides_btn_lock
+                  width: 100%
+                  height: 100%
+                  radius: 8
+                  pad_left: 8
+                  pad_right: 8
+                  pad_top: 4
+                  pad_bottom: 4
+                  layout:
+                    type: grid
+                    grid_rows: [fr(1)]
+                    grid_columns: [content, fr(1), content]
+                  widgets:
+                    - label:
+                        id: icon_overrides_btn_lock
+                        text_font: $icon_font
+                        text: ${ui_overrides_lock_icon}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 0
+                        grid_cell_x_align: start
+                        grid_cell_y_align: center
+                    - label:
+                        id: label_overrides_btn_lock
+                        text_font: nunito_20
+                        text: ${ui_overrides_lock_text}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 1
+                        grid_cell_x_align: start
+                        grid_cell_y_align: center
+                    - label:
+                        id: value_overrides_btn_lock
+                        text_font: nunito_18
+                        text: ${ui_overrides_lock_value_off}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 2
+                        grid_cell_x_align: end
+                        grid_cell_y_align: center
+                  on_short_click:
+                    - homeassistant.action:
+                        action: homeassistant.toggle
+                        data:
+                          entity_id: ${ui_overrides_lock_entity_id}
+        - container:
+            id: overrides_btn_tod
+            grid_cell_row_pos: 2
+            grid_cell_column_pos: 1
+            grid_cell_row_span: 1
+            grid_cell_column_span: 1
+            grid_cell_x_align: stretch
+            grid_cell_y_align: stretch
+            widgets:
+              - button:
+                  id: button_overrides_btn_tod
+                  width: 100%
+                  height: 100%
+                  radius: 8
+                  pad_left: 8
+                  pad_right: 8
+                  pad_top: 4
+                  pad_bottom: 4
+                  layout:
+                    type: grid
+                    grid_rows: [fr(1)]
+                    grid_columns: [content, fr(1), content]
+                  widgets:
+                    - label:
+                        id: icon_overrides_btn_tod
+                        text_font: $icon_font
+                        text: ${ui_overrides_tod_icon}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 0
+                        grid_cell_x_align: start
+                        grid_cell_y_align: center
+                    - label:
+                        id: label_overrides_btn_tod
+                        text_font: nunito_20
+                        text: ${ui_overrides_tod_text}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 1
+                        grid_cell_x_align: start
+                        grid_cell_y_align: center
+                    - label:
+                        id: value_overrides_btn_tod
+                        text_font: nunito_18
+                        text: ${ui_overrides_tod_value_off}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 2
+                        grid_cell_x_align: end
+                        grid_cell_y_align: center
+                  on_short_click:
+                    - homeassistant.action:
+                        action: homeassistant.toggle
+                        data:
+                          entity_id: ${ui_overrides_tod_entity_id}
+        - container:
+            id: overrides_btn_motion
+            grid_cell_row_pos: 3
+            grid_cell_column_pos: 0
+            grid_cell_row_span: 1
+            grid_cell_column_span: 1
+            grid_cell_x_align: stretch
+            grid_cell_y_align: stretch
+            widgets:
+              - button:
+                  id: button_overrides_btn_motion
+                  width: 100%
+                  height: 100%
+                  radius: 8
+                  pad_left: 8
+                  pad_right: 8
+                  pad_top: 4
+                  pad_bottom: 4
+                  layout:
+                    type: grid
+                    grid_rows: [fr(1)]
+                    grid_columns: [content, fr(1), content]
+                  widgets:
+                    - label:
+                        id: icon_overrides_btn_motion
+                        text_font: $icon_font
+                        text: ${ui_overrides_motion_icon}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 0
+                        grid_cell_x_align: start
+                        grid_cell_y_align: center
+                    - label:
+                        id: label_overrides_btn_motion
+                        text_font: nunito_20
+                        text: ${ui_overrides_motion_text}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 1
+                        grid_cell_x_align: start
+                        grid_cell_y_align: center
+                    - label:
+                        id: value_overrides_btn_motion
+                        text_font: nunito_18
+                        text: ${ui_overrides_motion_value_off}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 2
+                        grid_cell_x_align: end
+                        grid_cell_y_align: center
+                  on_short_click:
+                    - homeassistant.action:
+                        action: homeassistant.toggle
+                        data:
+                          entity_id: ${ui_overrides_motion_entity_id}
+        - container:
+            id: overrides_btn_entry_motion
+            grid_cell_row_pos: 3
+            grid_cell_column_pos: 1
+            grid_cell_row_span: 1
+            grid_cell_column_span: 1
+            grid_cell_x_align: stretch
+            grid_cell_y_align: stretch
+            widgets:
+              - button:
+                  id: button_overrides_btn_entry_motion
+                  width: 100%
+                  height: 100%
+                  radius: 8
+                  pad_left: 8
+                  pad_right: 8
+                  pad_top: 4
+                  pad_bottom: 4
+                  layout:
+                    type: grid
+                    grid_rows: [fr(1)]
+                    grid_columns: [content, fr(1), content]
+                  widgets:
+                    - label:
+                        id: icon_overrides_btn_entry_motion
+                        text_font: $icon_font
+                        text: ${ui_overrides_entry_motion_icon}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 0
+                        grid_cell_x_align: start
+                        grid_cell_y_align: center
+                    - label:
+                        id: label_overrides_btn_entry_motion
+                        text_font: nunito_20
+                        text: ${ui_overrides_entry_motion_text}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 1
+                        grid_cell_x_align: start
+                        grid_cell_y_align: center
+                    - label:
+                        id: value_overrides_btn_entry_motion
+                        text_font: nunito_18
+                        text: ${ui_overrides_entry_motion_value_off}
+                        grid_cell_row_pos: 0
+                        grid_cell_column_pos: 2
+                        grid_cell_x_align: end
+                        grid_cell_y_align: center
+                  on_short_click:
+                    - homeassistant.action:
+                        action: homeassistant.toggle
+                        data:
+                          entity_id: ${ui_overrides_entry_motion_entity_id}
 binary_sensor:
   - id: widget_sensor_overrides_btn_cleaners
     platform: homeassistant
@@ -288,6 +496,486 @@ binary_sensor:
                 else:
                   - lvgl.widget.update:
                       id: value_overrides_btn_cleaners
+                      hidden: true
+  - id: widget_sensor_overrides_btn_lock
+    platform: homeassistant
+    entity_id: ${ui_overrides_lock_entity_id}
+    trigger_on_initial_state: true
+    on_state:
+      - if:
+          condition:
+            - binary_sensor.is_on: widget_sensor_overrides_btn_lock
+          then:
+            - lvgl.widget.update:
+                id: button_overrides_btn_lock
+                bg_color: ${ui_overrides_lock_on_bg}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_lock_on_icon | default("")}").size() > 0;'
+                then:
+                  - lvgl.label.update:
+                      id: icon_overrides_btn_lock
+                      text: ${ui_overrides_lock_on_icon}
+            - lvgl.widget.update:
+                id: icon_overrides_btn_lock
+                text_color: ${ui_overrides_lock_icon_on_color}
+            - lvgl.widget.update:
+                id: label_overrides_btn_lock
+                text_color: ${ui_overrides_lock_text_on_color}
+            - lvgl.label.update:
+                id: value_overrides_btn_lock
+                text: ${ui_overrides_lock_value_on}
+            - lvgl.widget.update:
+                id: value_overrides_btn_lock
+                text_color: ${ui_overrides_lock_value_on_color}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_lock_show_icon | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_lock
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_lock
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_lock_show_text | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_lock
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_lock
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_lock_show_value | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_lock
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_lock
+                      hidden: true
+          else:
+            - lvgl.widget.update:
+                id: button_overrides_btn_lock
+                bg_color: ${ui_overrides_lock_off_bg}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_lock_off_icon | default("")}").size() > 0;'
+                then:
+                  - lvgl.label.update:
+                      id: icon_overrides_btn_lock
+                      text: ${ui_overrides_lock_off_icon}
+            - lvgl.widget.update:
+                id: icon_overrides_btn_lock
+                text_color: ${ui_overrides_lock_icon_off_color}
+            - lvgl.widget.update:
+                id: label_overrides_btn_lock
+                text_color: ${ui_overrides_lock_text_off_color}
+            - lvgl.label.update:
+                id: value_overrides_btn_lock
+                text: ${ui_overrides_lock_value_off}
+            - lvgl.widget.update:
+                id: value_overrides_btn_lock
+                text_color: ${ui_overrides_lock_value_off_color}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_lock_show_icon | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_lock
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_lock
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_lock_show_text | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_lock
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_lock
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_lock_show_value | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_lock
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_lock
+                      hidden: true
+  - id: widget_sensor_overrides_btn_tod
+    platform: homeassistant
+    entity_id: ${ui_overrides_tod_entity_id}
+    trigger_on_initial_state: true
+    on_state:
+      - if:
+          condition:
+            - binary_sensor.is_on: widget_sensor_overrides_btn_tod
+          then:
+            - lvgl.widget.update:
+                id: button_overrides_btn_tod
+                bg_color: ${ui_overrides_tod_on_bg}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_tod_on_icon | default("")}").size() > 0;'
+                then:
+                  - lvgl.label.update:
+                      id: icon_overrides_btn_tod
+                      text: ${ui_overrides_tod_on_icon}
+            - lvgl.widget.update:
+                id: icon_overrides_btn_tod
+                text_color: ${ui_overrides_tod_icon_on_color}
+            - lvgl.widget.update:
+                id: label_overrides_btn_tod
+                text_color: ${ui_overrides_tod_text_on_color}
+            - lvgl.label.update:
+                id: value_overrides_btn_tod
+                text: ${ui_overrides_tod_value_on}
+            - lvgl.widget.update:
+                id: value_overrides_btn_tod
+                text_color: ${ui_overrides_tod_value_on_color}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_tod_show_icon | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_tod
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_tod
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_tod_show_text | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_tod
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_tod
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_tod_show_value | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_tod
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_tod
+                      hidden: true
+          else:
+            - lvgl.widget.update:
+                id: button_overrides_btn_tod
+                bg_color: ${ui_overrides_tod_off_bg}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_tod_off_icon | default("")}").size() > 0;'
+                then:
+                  - lvgl.label.update:
+                      id: icon_overrides_btn_tod
+                      text: ${ui_overrides_tod_off_icon}
+            - lvgl.widget.update:
+                id: icon_overrides_btn_tod
+                text_color: ${ui_overrides_tod_icon_off_color}
+            - lvgl.widget.update:
+                id: label_overrides_btn_tod
+                text_color: ${ui_overrides_tod_text_off_color}
+            - lvgl.label.update:
+                id: value_overrides_btn_tod
+                text: ${ui_overrides_tod_value_off}
+            - lvgl.widget.update:
+                id: value_overrides_btn_tod
+                text_color: ${ui_overrides_tod_value_off_color}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_tod_show_icon | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_tod
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_tod
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_tod_show_text | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_tod
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_tod
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_tod_show_value | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_tod
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_tod
+                      hidden: true
+  - id: widget_sensor_overrides_btn_motion
+    platform: homeassistant
+    entity_id: ${ui_overrides_motion_entity_id}
+    trigger_on_initial_state: true
+    on_state:
+      - if:
+          condition:
+            - binary_sensor.is_on: widget_sensor_overrides_btn_motion
+          then:
+            - lvgl.widget.update:
+                id: button_overrides_btn_motion
+                bg_color: ${ui_overrides_motion_on_bg}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_motion_on_icon | default("")}").size() > 0;'
+                then:
+                  - lvgl.label.update:
+                      id: icon_overrides_btn_motion
+                      text: ${ui_overrides_motion_on_icon}
+            - lvgl.widget.update:
+                id: icon_overrides_btn_motion
+                text_color: ${ui_overrides_motion_icon_on_color}
+            - lvgl.widget.update:
+                id: label_overrides_btn_motion
+                text_color: ${ui_overrides_motion_text_on_color}
+            - lvgl.label.update:
+                id: value_overrides_btn_motion
+                text: ${ui_overrides_motion_value_on}
+            - lvgl.widget.update:
+                id: value_overrides_btn_motion
+                text_color: ${ui_overrides_motion_value_on_color}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_motion_show_icon | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_motion
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_motion
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_motion_show_text | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_motion
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_motion
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_motion_show_value | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_motion
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_motion
+                      hidden: true
+          else:
+            - lvgl.widget.update:
+                id: button_overrides_btn_motion
+                bg_color: ${ui_overrides_motion_off_bg}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_motion_off_icon | default("")}").size() > 0;'
+                then:
+                  - lvgl.label.update:
+                      id: icon_overrides_btn_motion
+                      text: ${ui_overrides_motion_off_icon}
+            - lvgl.widget.update:
+                id: icon_overrides_btn_motion
+                text_color: ${ui_overrides_motion_icon_off_color}
+            - lvgl.widget.update:
+                id: label_overrides_btn_motion
+                text_color: ${ui_overrides_motion_text_off_color}
+            - lvgl.label.update:
+                id: value_overrides_btn_motion
+                text: ${ui_overrides_motion_value_off}
+            - lvgl.widget.update:
+                id: value_overrides_btn_motion
+                text_color: ${ui_overrides_motion_value_off_color}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_motion_show_icon | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_motion
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_motion
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_motion_show_text | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_motion
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_motion
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_motion_show_value | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_motion
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_motion
+                      hidden: true
+  - id: widget_sensor_overrides_btn_entry_motion
+    platform: homeassistant
+    entity_id: ${ui_overrides_entry_motion_entity_id}
+    trigger_on_initial_state: true
+    on_state:
+      - if:
+          condition:
+            - binary_sensor.is_on: widget_sensor_overrides_btn_entry_motion
+          then:
+            - lvgl.widget.update:
+                id: button_overrides_btn_entry_motion
+                bg_color: ${ui_overrides_entry_motion_on_bg}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_entry_motion_on_icon | default("")}").size() > 0;'
+                then:
+                  - lvgl.label.update:
+                      id: icon_overrides_btn_entry_motion
+                      text: ${ui_overrides_entry_motion_on_icon}
+            - lvgl.widget.update:
+                id: icon_overrides_btn_entry_motion
+                text_color: ${ui_overrides_entry_motion_icon_on_color}
+            - lvgl.widget.update:
+                id: label_overrides_btn_entry_motion
+                text_color: ${ui_overrides_entry_motion_text_on_color}
+            - lvgl.label.update:
+                id: value_overrides_btn_entry_motion
+                text: ${ui_overrides_entry_motion_value_on}
+            - lvgl.widget.update:
+                id: value_overrides_btn_entry_motion
+                text_color: ${ui_overrides_entry_motion_value_on_color}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_entry_motion_show_icon | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_entry_motion
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_entry_motion
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_entry_motion_show_text | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_entry_motion
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_entry_motion
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_entry_motion_show_value | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_entry_motion
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_entry_motion
+                      hidden: true
+          else:
+            - lvgl.widget.update:
+                id: button_overrides_btn_entry_motion
+                bg_color: ${ui_overrides_entry_motion_off_bg}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_entry_motion_off_icon | default("")}").size() > 0;'
+                then:
+                  - lvgl.label.update:
+                      id: icon_overrides_btn_entry_motion
+                      text: ${ui_overrides_entry_motion_off_icon}
+            - lvgl.widget.update:
+                id: icon_overrides_btn_entry_motion
+                text_color: ${ui_overrides_entry_motion_icon_off_color}
+            - lvgl.widget.update:
+                id: label_overrides_btn_entry_motion
+                text_color: ${ui_overrides_entry_motion_text_off_color}
+            - lvgl.label.update:
+                id: value_overrides_btn_entry_motion
+                text: ${ui_overrides_entry_motion_value_off}
+            - lvgl.widget.update:
+                id: value_overrides_btn_entry_motion
+                text_color: ${ui_overrides_entry_motion_value_off_color}
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_entry_motion_show_icon | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_entry_motion
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: icon_overrides_btn_entry_motion
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_entry_motion_show_text | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_entry_motion
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: label_overrides_btn_entry_motion
+                      hidden: true
+            - if:
+                condition:
+                  lambda: 'return std::string("${ui_overrides_entry_motion_show_value | default("true")}") == "true";'
+                then:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_entry_motion
+                      hidden: false
+                else:
+                  - lvgl.widget.update:
+                      id: value_overrides_btn_entry_motion
                       hidden: true
   - id: widget_sensor_overrides_btn_dani
     platform: homeassistant

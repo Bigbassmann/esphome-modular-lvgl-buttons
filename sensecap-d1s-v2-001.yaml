@@ -145,62 +145,6 @@ packages:
       click_page: info_screen
 
   # Add a button that goes to a different page
-  overrides_btn_lock: !include
-    file: buttons/override_button-sensecap.yaml
-    vars:
-      uid: overrides_btn_lock
-      page_id: ${sense_page_overrides_id}
-      row: 2
-      column: 0
-      text: "Lock OV"
-      icon: $mdi_lock_off
-      entity_id: ${ent_front_door_auto_lock_off}
-      on_bg_color: sense_tile_indigo
-      off_bg_color: sense_tile_indigo_off
-
-  overrides_btn_tod: !include
-    file: buttons/override_button-sensecap.yaml
-    vars:
-      uid: overrides_btn_tod
-      page_id: ${sense_page_overrides_id}
-      row: 2
-      column: 1
-      text: "ToD On/Off"
-      icon: $mdi_home_automation
-      entity_id: ${ent_tod_control}
-      on_bg_color: sense_tile_orange
-      off_bg_color: sense_tile_orange_off
-
-  overrides_btn_motion: !include
-    file: buttons/override_button-sensecap.yaml
-    vars:
-      uid: overrides_btn_motion
-      page_id: ${sense_page_overrides_id}
-      row: 3
-      column: 0
-      text: "All Motion OV"
-      icon: $mdi_motion_sensor
-      entity_id: ${ent_motion_automation_off}
-      on_icon: $mdi_motion_sensor_off
-      off_icon: $mdi_motion_sensor
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
-
-  overrides_btn_entry_motion: !include
-    file: buttons/override_button-sensecap.yaml
-    vars:
-      uid: overrides_btn_entry_motion
-      page_id: ${sense_page_overrides_id}
-      row: 3
-      column: 1
-      text: "Entry OV"
-      icon: $mdi_motion_sensor
-      entity_id: ${ent_entry_motion_automation_off}
-      on_icon: $mdi_motion_sensor_off
-      off_icon: $mdi_motion_sensor
-      on_bg_color: sense_tile_motion
-      off_bg_color: sense_tile_motion_off
-
   overrides_btn_garage: !include
     file: buttons/override_button-sensecap.yaml
     vars:
