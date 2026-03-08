@@ -145,19 +145,6 @@ packages:
       click_page: info_screen
 
   # Add a button that goes to a different page
-  overrides_btn_cleaners: !include
-    file: buttons/override_button-sensecap.yaml
-    vars:
-      uid: overrides_btn_cleaners
-      page_id: ${sense_page_overrides_id}
-      row: 1
-      column: 0
-      text: "Cleaners OV"
-      icon: $mdi_broom
-      entity_id: ${ent_cleaners_toggle}
-      on_bg_color: sense_tile_orange
-      off_bg_color: sense_tile_orange_off
-
   overrides_btn_lock: !include
     file: buttons/override_button-sensecap.yaml
     vars:
