@@ -1,4 +1,4 @@
-﻿substitutions:
+substitutions:
   sense_page_home_id: "page_home_v2"
   sense_page_tstat_id: "page_thermostat_v2"
   sense_page_fans_id: "page_fans"
@@ -144,19 +144,24 @@ lvgl:
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
             styles: sense_tile_tstat_style
+            hidden: ${ui_home_tstat_hidden}
             on_press:
-              - script.execute: nav_to_tstat
+              - if:
+                  condition:
+                    lambda: 'return std::string("${ui_home_tstat_show | default("true")}") == "true";'
+                  then:
+                    - script.execute: ${ui_home_tstat_nav_script}
             widgets:
               - label:
-                  text: ${mdi_thermometer}
+                  text: ${ui_home_tstat_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  text_color: sense_bg
+                  text_color: ${ui_home_tstat_icon_color}
               - label:
-                  text: "Thermostat"
+                  text: ${ui_home_tstat_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_20
-                  text_color: sense_bg
+                  text_color: ${ui_home_tstat_text_color}
 
         - button:
             id: home_v2_btn_fans
@@ -165,19 +170,24 @@ lvgl:
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
             styles: sense_tile_fans_style
+            hidden: ${ui_home_fans_hidden}
             on_press:
-              - script.execute: nav_to_fans
+              - if:
+                  condition:
+                    lambda: 'return std::string("${ui_home_fans_show | default("true")}") == "true";'
+                  then:
+                    - script.execute: ${ui_home_fans_nav_script}
             widgets:
               - label:
-                  text: ${mdi_fan}
+                  text: ${ui_home_fans_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  text_color: ${ui_home_dani_text_off_color}
+                  text_color: ${ui_home_fans_icon_color}
               - label:
-                  text: "Fans"
+                  text: ${ui_home_fans_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_20
-                  text_color: ${ui_home_dani_text_off_color}
+                  text_color: ${ui_home_fans_text_color}
 
         - button:
             id: home_v2_btn_overrides
@@ -186,19 +196,24 @@ lvgl:
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
             styles: sense_tile_overrides_style
+            hidden: ${ui_home_overrides_hidden}
             on_press:
-              - script.execute: nav_to_overrides
+              - if:
+                  condition:
+                    lambda: 'return std::string("${ui_home_overrides_show | default("true")}") == "true";'
+                  then:
+                    - script.execute: ${ui_home_overrides_nav_script}
             widgets:
               - label:
-                  text: ${mdi_tune}
+                  text: ${ui_home_overrides_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  text_color: sense_bg
+                  text_color: ${ui_home_overrides_icon_color}
               - label:
-                  text: "Overrides"
+                  text: ${ui_home_overrides_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_20
-                  text_color: sense_bg
+                  text_color: ${ui_home_overrides_text_color}
 
         - button:
             id: home_v2_btn_placeholder_1
@@ -209,15 +224,15 @@ lvgl:
             styles: sense_tile_placeholder_style
             widgets:
               - label:
-                  text: ${mdi_dots_horizontal}
+                  text: ${ui_home_placeholder_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  text_color: sense_tile_placeholder_text
+                  text_color: ${ui_home_placeholder_icon_color}
               - label:
-                  text: "Placeholder 1"
+                  text: ${ui_home_placeholder_1_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_18
-                  text_color: sense_tile_placeholder_text
+                  text_color: ${ui_home_placeholder_text_color}
 
         - button:
             id: home_v2_btn_placeholder_2
@@ -228,15 +243,15 @@ lvgl:
             styles: sense_tile_placeholder_style
             widgets:
               - label:
-                  text: ${mdi_dots_horizontal}
+                  text: ${ui_home_placeholder_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  text_color: sense_tile_placeholder_text
+                  text_color: ${ui_home_placeholder_icon_color}
               - label:
-                  text: "Placeholder 2"
+                  text: ${ui_home_placeholder_2_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_18
-                  text_color: sense_tile_placeholder_text
+                  text_color: ${ui_home_placeholder_text_color}
 
         - button:
             id: home_v2_btn_placeholder_3
@@ -247,15 +262,15 @@ lvgl:
             styles: sense_tile_placeholder_style
             widgets:
               - label:
-                  text: ${mdi_dots_horizontal}
+                  text: ${ui_home_placeholder_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  text_color: sense_tile_placeholder_text
+                  text_color: ${ui_home_placeholder_icon_color}
               - label:
-                  text: "Placeholder 3"
+                  text: ${ui_home_placeholder_3_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_18
-                  text_color: sense_tile_placeholder_text
+                  text_color: ${ui_home_placeholder_text_color}
 
 
 binary_sensor:

@@ -56,3 +56,40 @@
   ui_home_bedtime_show_icon: "true"
   ui_home_bedtime_show_text: "true"
   ui_home_bedtime_show_value: "false"
+
+  # Home page nav tile mapping (row 1)
+  ui_home_tstat_icon: "$mdi_thermometer"
+  ui_home_tstat_text: "Thermostat"
+  ui_home_tstat_icon_color: "sense_bg"
+  ui_home_tstat_text_color: "sense_bg"
+
+  ui_home_fans_icon: "$mdi_fan"
+  ui_home_fans_text: "Fans"
+  ui_home_fans_icon_color: "white"
+  ui_home_fans_text_color: "white"
+
+  ui_home_overrides_icon: "$mdi_tune"
+  ui_home_overrides_text: "Overrides"
+  ui_home_overrides_icon_color: "sense_bg"
+  ui_home_overrides_text_color: "sense_bg"
+
+  # Home page placeholder mapping (row 2)
+  ui_home_placeholder_icon: "$mdi_dots_horizontal"
+  ui_home_placeholder_icon_color: "sense_tile_placeholder_text"
+  ui_home_placeholder_text_color: "sense_tile_placeholder_text"
+  ui_home_placeholder_1_text: "Placeholder 1"
+  ui_home_placeholder_2_text: "Placeholder 2"
+  ui_home_placeholder_3_text: "Placeholder 3"
+
+  # Home page nav behavior mapping (row 1)
+  ui_home_tstat_nav_script: "nav_to_tstat"
+  ui_home_tstat_show: "true"
+  ui_home_tstat_hidden: "false"
+
+  ui_home_fans_nav_script: "nav_to_fans"
+  ui_home_fans_show: "true"
+  ui_home_fans_hidden: "false"
+
+  ui_home_overrides_nav_script: "nav_to_overrides"
+  ui_home_overrides_show: "true"
+  ui_home_overrides_hidden: "false"

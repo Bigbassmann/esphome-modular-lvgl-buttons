@@ -346,31 +346,6 @@ packages:
       light_entity: ${ent_kitchen_lights_4}
       widget_name: "dimmer_btn_kitchen"
 
-  homev2_sleepy_btn: !include
-    file: buttons/switch_button-sensecap.yaml
-    vars:
-      uid: homev2_sleepy_btn
-      page_id: ${sense_page_lighting_dimmers_id}
-      row: 1
-      column: 0
-      text: ${ui_sleepy_text}
-      icon: ${ui_sleepy_icon}
-      entity_id: ${ent_sleepy_toggle}
-      on_bg_color: ${ui_sleepy_on_bg}
-      off_bg_color: ${ui_sleepy_off_bg}
-
-  homev2_bedtime_btn: !include
-    file: buttons/switch_button-sensecap.yaml
-    vars:
-      uid: homev2_bedtime_btn
-      page_id: ${sense_page_lighting_dimmers_id}
-      row: 2
-      column: 0
-      text: ${ui_bedtime_text}
-      icon: ${ui_bedtime_icon}
-      entity_id: ${ent_bedtime_toggle}
-      on_bg_color: ${ui_bedtime_on_bg}
-      off_bg_color: ${ui_bedtime_off_bg}
 
   dimmer_btn_outdoor: !include
     file: buttons/switch_button-sensecap.yaml

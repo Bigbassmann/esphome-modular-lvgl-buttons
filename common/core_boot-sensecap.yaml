@@ -5,6 +5,7 @@
       - logger.log: "[NEXT] boot_orchestrator start"
       - lvgl.page.show:
           id: page_boot
+      - delay: 15s    
       - script.execute: apply_display_brightness
       - delay: 30s
       - lambda: |-
