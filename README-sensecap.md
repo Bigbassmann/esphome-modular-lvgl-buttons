@@ -165,6 +165,10 @@ Hard constraints (must follow):
 41 [Always approved after failed validation] If failure is caused by the same batch, apply focused in-scope corrective patches (duplicate keys/syntax/indentation) until compile is green.
 42 [Always approved] Read adjacent line ranges in touched files for diagnosis without extra confirmation.
 43 [Always approved] For risky YAML rewrites, switch to deterministic line-targeted edits without extra confirmation.
+44 [Maintenance] After meaningful structure, token, constraints, or workflow changes, update README-sensecap.md and CHAT_RECOVERY_PROMPT-sensecap.md in the same edit batch.
+45 [Maintenance trigger] Treat docs refresh as required when 3+ config files change in a task, or when any architecture/rules decision changes.
+46 [Rule hygiene] Keep constraint numbering contiguous and unique; when adding/removing rules, renumber the block in the same edit batch.
+47 [Color pass DoD] Before flash, require token update + wiring update + root validate + drift scan for hardcoded color literals in touched scope.
 ```
 
 ## Image Assets

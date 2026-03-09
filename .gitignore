@@ -28,3 +28,6 @@ hardware/seeed-studios-sensecap-indicator-d1s-001.yaml
 
 # Local archive
 archive/
+
+# Local recovery prompt
+CHAT_RECOVERY_PROMPT-sensecap.md

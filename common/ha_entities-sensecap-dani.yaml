@@ -1,4 +1,4 @@
-# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common-sensecap.yaml.
+﻿# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common-sensecap.yaml.
 # This file is a compatibility layer for the "buttons" setup.
 substitutions:
   # Common attribute names
@@ -170,35 +170,35 @@ substitutions:
   ui_dimmer_mbr_slider_on: "dani_family_yellow_slider_on"
   ui_dimmer_mbr_slider_off: "dani_family_yellow_slider_off"
   ui_dimmer_mbr_slider_knob_on: "dani_family_yellow_knob_on"
-  ui_dimmer_mbr_slider_knob_off: "dani_family_yellow_knob_off"
+  ui_dimmer_mbr_slider_knob_off: "dani_family_yellow_knob_on"
 
   ui_dimmer_fr_on_bg: "dani_family_orange_bg_on"
   ui_dimmer_fr_off_bg: "dani_family_orange_bg_off"
   ui_dimmer_fr_slider_on: "dani_family_orange_slider_on"
   ui_dimmer_fr_slider_off: "dani_family_orange_slider_off"
   ui_dimmer_fr_slider_knob_on: "dani_family_orange_knob_on"
-  ui_dimmer_fr_slider_knob_off: "dani_family_orange_knob_off"
+  ui_dimmer_fr_slider_knob_off: "dani_family_orange_knob_on"
 
   ui_dimmer_living_on_bg: "dani_family_teal_bg_on"
   ui_dimmer_living_off_bg: "dani_family_teal_bg_off"
   ui_dimmer_living_slider_on: "dani_family_teal_slider_on"
   ui_dimmer_living_slider_off: "dani_family_teal_slider_off"
   ui_dimmer_living_slider_knob_on: "dani_family_teal_knob_on"
-  ui_dimmer_living_slider_knob_off: "dani_family_teal_knob_off"
+  ui_dimmer_living_slider_knob_off: "dani_family_teal_knob_on"
 
   ui_dimmer_kitchen_on_bg: "dani_family_indigo_bg_on"
   ui_dimmer_kitchen_off_bg: "dani_family_indigo_bg_off"
   ui_dimmer_kitchen_slider_on: "dani_family_indigo_slider_on"
   ui_dimmer_kitchen_slider_off: "dani_family_indigo_slider_off"
   ui_dimmer_kitchen_slider_knob_on: "dani_family_indigo_knob_on"
-  ui_dimmer_kitchen_slider_knob_off: "dani_family_indigo_knob_off"
+  ui_dimmer_kitchen_slider_knob_off: "dani_family_indigo_knob_on"
 
   ui_dimmer_entry_on_bg: "dani_family_blue_bg_on"
   ui_dimmer_entry_off_bg: "dani_family_blue_bg_off"
   ui_dimmer_entry_slider_on: "dani_family_blue_slider_on"
   ui_dimmer_entry_slider_off: "dani_family_blue_slider_off"
   ui_dimmer_entry_slider_knob_on: "dani_family_blue_knob_on"
-  ui_dimmer_entry_slider_knob_off: "dani_family_blue_knob_off"
+  ui_dimmer_entry_slider_knob_off: "dani_family_blue_knob_on"
   # Switch tile defaults (token-driven)
   ui_switch_laundry_on_bg: "dani_family_orange_bg_on"
   ui_switch_laundry_off_bg: "dani_family_orange_bg_off"
