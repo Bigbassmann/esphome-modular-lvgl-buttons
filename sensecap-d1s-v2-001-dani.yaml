@@ -1,4 +1,4 @@
-﻿---
+---
 # Substitution variables used through the codebase
 substitutions:
   icon_font: mdi_icons_40
@@ -426,7 +426,7 @@ packages:
       text: "Local Temp"
       icon: $mdi_home_thermometer
       icon_color: sense_text
-      bg_color: sense_tile_yellow
+      bg_color: ${ui_sensor_local_temp_bg}
       sensor_id: temp_f
 
   sensor_fr_temp: !include
@@ -440,7 +440,7 @@ packages:
       text: "FR Temp"
       icon: $mdi_thermometer
       icon_color: sense_text
-      bg_color: sense_tile_yellow
+      bg_color: ${ui_sensor_fr_temp_bg}
       sensor_id: ha_tstat_current_temp
 
   sensor_osat_temp: !include
@@ -454,7 +454,7 @@ packages:
       text: "OSAT"
       icon: $mdi_thermometer
       icon_color: sense_text
-      bg_color: sense_tile_blue
+      bg_color: ${ui_sensor_osat_temp_bg}
       sensor_id: ha_osat_temp
 
   sensor_kitchen_temp: !include
@@ -468,7 +468,7 @@ packages:
       text: "Kitchen"
       icon: $mdi_thermometer
       icon_color: sense_text
-      bg_color: sense_tile_orange
+      bg_color: ${ui_sensor_kitchen_temp_bg}
       sensor_id: ha_kitchen_temp
 
   sensor_freezer_temp: !include
@@ -482,7 +482,7 @@ packages:
       text: "Freezer"
       icon: $mdi_snowflake
       icon_color: sense_text
-      bg_color: sense_tile_sky
+      bg_color: ${ui_sensor_freezer_temp_bg}
       sensor_id: ha_freezer_temp
 
   sensor_fridge_temp: !include
@@ -496,7 +496,7 @@ packages:
       text: "Fridge"
       icon: $mdi_fridge
       icon_color: sense_text
-      bg_color: sense_tile_sky
+      bg_color: ${ui_sensor_fridge_temp_bg}
       sensor_id: ha_fridge_temp
 
   sensor_voc: !include
@@ -510,7 +510,7 @@ packages:
       text: "VOC"
       icon: $mdi_weather_dust
       icon_color: sense_text
-      bg_color: sense_tile_teal
+      bg_color: ${ui_sensor_voc_bg}
       sensor_id: voc
 
   sensor_co2: !include
@@ -524,7 +524,7 @@ packages:
       text: "CO2"
       icon: $mdi_molecule_co2
       icon_color: sense_text
-      bg_color: sense_tile_orange
+      bg_color: ${ui_sensor_co2_bg}
       sensor_id: co2
 
   sensor_humid: !include
@@ -538,7 +538,7 @@ packages:
       text: "Humid"
       icon: $mdi_water_percent
       icon_color: sense_text
-      bg_color: sense_tile_blue
+      bg_color: ${ui_sensor_humid_bg}
       sensor_id: humid
 
   lightsw_btn_laundry: !include

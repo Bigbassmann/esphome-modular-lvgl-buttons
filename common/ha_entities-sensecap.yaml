@@ -1,4 +1,4 @@
-﻿# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common-sensecap.yaml.
+# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common-sensecap.yaml.
 # This file is a compatibility layer for the "buttons" setup.
 substitutions:
   # Common attribute names
@@ -163,6 +163,16 @@ substitutions:
   ui_switch_fence_off_bg: "sense_tile_sky_off"
   ui_switch_outdoor_on_bg: "sense_tile_blue"
   ui_switch_outdoor_off_bg: "sense_tile_blue_off"
+  # Sensor tile defaults (token-driven)
+  ui_sensor_local_temp_bg: "sense_tile_yellow"
+  ui_sensor_fr_temp_bg: "sense_tile_yellow"
+  ui_sensor_osat_temp_bg: "sense_tile_blue"
+  ui_sensor_kitchen_temp_bg: "sense_tile_orange"
+  ui_sensor_freezer_temp_bg: "sense_tile_sky"
+  ui_sensor_fridge_temp_bg: "sense_tile_sky"
+  ui_sensor_voc_bg: "sense_tile_teal"
+  ui_sensor_co2_bg: "sense_tile_orange"
+  ui_sensor_humid_bg: "sense_tile_blue"
   ui_profile_home_tile_radius: "8"
   ui_profile_home_tile_pad_left: "8"
   ui_profile_home_tile_pad_right: "8"
