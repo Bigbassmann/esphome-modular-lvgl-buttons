@@ -9,7 +9,7 @@ substitutions:
   fan_dir_forward_color: "dani_fan_dir_forward"
   fan_button_text_color: "sense_info"
   fan_value_on_color: "sense_info"
-  fan_value_off_color: "gray300"
+  fan_value_off_color: "sense_text_muted"
   fan_fr_value_hidden: "false"
   fan_mbr_value_hidden: "false"
   fan_attic_value_hidden: "false"

@@ -1,4 +1,4 @@
-# SenseCAP D1S Fork README
+﻿# SenseCAP D1S Fork README
 
 This file documents the current working pattern for this fork and the immediate cleanup/refactor plan.
 
@@ -160,6 +160,11 @@ Hard constraints (must follow):
 36 [Always approved] After an in-scope edit batch, run self-checks on edited files (spot-checks, grep/select-string, line checks) without extra confirmation.
 37 [Always approved] If a self-check finds a small in-scope issue from the same batch, apply a corrective patch and re-check without extra confirmation.
 38 [Always approved] Keep duplicated rule blocks (README list and prompt block) synchronized without extra confirmation.
+39 [Always approved] After declaring touched in-scope files, execute full edit -> self-check -> root-validate loops without re-asking.
+40 [Always approved] If a touched in-scope file is accidentally damaged in the same batch, restore from its in-scope baseline counterpart, then reapply only declared changes.
+41 [Always approved after failed validation] If failure is caused by the same batch, apply focused in-scope corrective patches (duplicate keys/syntax/indentation) until compile is green.
+42 [Always approved] Read adjacent line ranges in touched files for diagnosis without extra confirmation.
+43 [Always approved] For risky YAML rewrites, switch to deterministic line-targeted edits without extra confirmation.
 ```
 
 ## Image Assets
@@ -290,3 +295,4 @@ This fork uses a token-first color model so page files do not hardcode one-off h
 8. Validation rule
 - After each color batch, run root validation:
 `esphome config /config/esphome/sensecap-d1s-v2.yaml`
+

@@ -1,4 +1,4 @@
----
+﻿---
 # Substitution variables used through the codebase
 substitutions:
   icon_font: mdi_icons_40
@@ -205,12 +205,12 @@ packages:
       text: "MBR Lights"
       icon: $mdi_lightbulb
       entity_id: ${ent_mbr_lights}
-      on_bg_color: sense_tile_yellow
-      off_bg_color: sense_tile_yellow_off
-      slider_on_color: dani_slider_on
-      slider_off_color: dani_slider_off
-      slider_knob_on_color: dani_slider_knob
-      slider_knob_off_color: dani_slider_knob_off
+      on_bg_color: ${ui_dimmer_mbr_on_bg}
+      off_bg_color: ${ui_dimmer_mbr_off_bg}
+      slider_on_color: ${ui_dimmer_mbr_slider_on}
+      slider_off_color: ${ui_dimmer_mbr_slider_off}
+      slider_knob_on_color: ${ui_dimmer_mbr_slider_knob_on}
+      slider_knob_off_color: ${ui_dimmer_mbr_slider_knob_off}
 
   dimmer_btn_fr: !include
     file: buttons/dimmer_light_button-sensecap.yaml
@@ -223,12 +223,12 @@ packages:
       text: "Family Lights"
       icon: $mdi_lightbulb
       entity_id: ${ent_fr_lights}
-      on_bg_color: sense_tile_orange
-      off_bg_color: sense_tile_orange_off
-      slider_on_color: dani_slider_on
-      slider_off_color: dani_slider_off
-      slider_knob_on_color: dani_slider_knob
-      slider_knob_off_color: dani_slider_knob_off
+      on_bg_color: ${ui_dimmer_fr_on_bg}
+      off_bg_color: ${ui_dimmer_fr_off_bg}
+      slider_on_color: ${ui_dimmer_fr_slider_on}
+      slider_off_color: ${ui_dimmer_fr_slider_off}
+      slider_knob_on_color: ${ui_dimmer_fr_slider_knob_on}
+      slider_knob_off_color: ${ui_dimmer_fr_slider_knob_off}
 
   dimmer_btn_living: !include
     file: buttons/dimmer_light_button-sensecap.yaml
@@ -242,12 +242,12 @@ packages:
       icon: $mdi_lightbulb_group
       entity_id: ${ent_living_room_lights}
       secondary_entity_id: ${ent_library_lights}
-      on_bg_color: sense_tile_teal
-      off_bg_color: sense_tile_teal_off
-      slider_on_color: dani_slider_on
-      slider_off_color: dani_slider_off
-      slider_knob_on_color: dani_slider_knob
-      slider_knob_off_color: dani_slider_knob_off
+      on_bg_color: ${ui_dimmer_living_on_bg}
+      off_bg_color: ${ui_dimmer_living_off_bg}
+      slider_on_color: ${ui_dimmer_living_slider_on}
+      slider_off_color: ${ui_dimmer_living_slider_off}
+      slider_knob_on_color: ${ui_dimmer_living_slider_knob_on}
+      slider_knob_off_color: ${ui_dimmer_living_slider_knob_off}
 
   dimmer_btn_kitchen: !include
     file: buttons/dimmer_light_button-sensecap.yaml
@@ -261,12 +261,12 @@ packages:
       icon: $mdi_ceiling_light
       entity_id: ${ent_kitchen_lights_4}
       secondary_entity_id: ${ent_kitchen_lights_5}
-      on_bg_color: sense_tile_indigo
-      off_bg_color: sense_tile_indigo_off
-      slider_on_color: dani_slider_on
-      slider_off_color: dani_slider_off
-      slider_knob_on_color: dani_slider_knob
-      slider_knob_off_color: dani_slider_knob_off
+      on_bg_color: ${ui_dimmer_kitchen_on_bg}
+      off_bg_color: ${ui_dimmer_kitchen_off_bg}
+      slider_on_color: ${ui_dimmer_kitchen_slider_on}
+      slider_off_color: ${ui_dimmer_kitchen_slider_off}
+      slider_knob_on_color: ${ui_dimmer_kitchen_slider_knob_on}
+      slider_knob_off_color: ${ui_dimmer_kitchen_slider_knob_off}
 
   dimmer_btn_entry: !include
     file: buttons/dimmer_light_button-sensecap.yaml
@@ -280,12 +280,12 @@ packages:
       icon: $mdi_door
       entity_id: ${ent_entry_lights}
       secondary_entity_id: ${ent_hall_lights}
-      on_bg_color: sense_tile_blue
-      off_bg_color: sense_tile_blue_off
-      slider_on_color: dani_slider_on
-      slider_off_color: dani_slider_off
-      slider_knob_on_color: dani_slider_knob
-      slider_knob_off_color: dani_slider_knob_off
+      on_bg_color: ${ui_dimmer_entry_on_bg}
+      off_bg_color: ${ui_dimmer_entry_off_bg}
+      slider_on_color: ${ui_dimmer_entry_slider_on}
+      slider_off_color: ${ui_dimmer_entry_slider_off}
+      slider_knob_on_color: ${ui_dimmer_entry_slider_knob_on}
+      slider_knob_off_color: ${ui_dimmer_entry_slider_knob_off}
 
   dimmer_btn_entry_page: !include
     file: pages/light_color.yaml
