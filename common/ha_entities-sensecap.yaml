@@ -45,6 +45,124 @@ substitutions:
   ui_bedtime_off_icon: "\U000F02E3"
   ui_bedtime_value_on: "ON"
   ui_bedtime_value_off: "OFF"
+  ui_dani_text_on_color: "sense_text"
+  ui_dani_text_off_color: "sense_text"
+  ui_dani_value_on_color: "sense_text"
+  ui_dani_value_off_color: "sense_text"
+
+  ui_sleepy_text_on_color: "sense_text"
+  ui_sleepy_text_off_color: "sense_text"
+  ui_sleepy_value_on_color: "sense_text"
+  ui_sleepy_value_off_color: "sense_text"
+
+  ui_bedtime_text_on_color: "sense_text"
+  ui_bedtime_text_off_color: "sense_text"
+  ui_bedtime_value_on_color: "sense_text"
+  ui_bedtime_value_off_color: "sense_text"
+
+  # Override rows default text/value colors (token-driven)
+  ui_cleaners_text_on_color: "sense_text"
+  ui_cleaners_text_off_color: "sense_text"
+  ui_cleaners_value_on_color: "sense_text"
+  ui_cleaners_value_off_color: "sense_text"
+
+  ui_lock_text_on_color: "sense_text"
+  ui_lock_text_off_color: "sense_text"
+  ui_lock_value_on_color: "sense_text"
+  ui_lock_value_off_color: "sense_text"
+
+  ui_tod_text_on_color: "sense_text"
+  ui_tod_text_off_color: "sense_text"
+  ui_tod_value_on_color: "sense_text"
+  ui_tod_value_off_color: "sense_text"
+
+  ui_motion_text_on_color: "sense_text"
+  ui_motion_text_off_color: "sense_text"
+  ui_motion_value_on_color: "sense_text"
+  ui_motion_value_off_color: "sense_text"
+
+  ui_entry_motion_text_on_color: "sense_text"
+  ui_entry_motion_text_off_color: "sense_text"
+  ui_entry_motion_value_on_color: "sense_text"
+  ui_entry_motion_value_off_color: "sense_text"
+
+  ui_garage_text_on_color: "sense_text"
+  ui_garage_text_off_color: "sense_text"
+  ui_garage_value_on_color: "sense_text"
+  ui_garage_value_off_color: "sense_text"
+
+  ui_mbr_text_on_color: "sense_text"
+  ui_mbr_text_off_color: "sense_text"
+  ui_mbr_value_on_color: "sense_text"
+  ui_mbr_value_off_color: "sense_text"
+
+  # Override rows default icon/background behavior (token-driven)
+  ui_cleaners_icon: "$mdi_broom"
+  ui_cleaners_on_icon: "$mdi_broom"
+  ui_cleaners_off_icon: "$mdi_broom"
+  ui_cleaners_on_bg: "sense_tile_orange"
+  ui_cleaners_off_bg: "sense_tile_orange_off"
+  ui_cleaners_icon_on_color: "$icon_on_color"
+  ui_cleaners_icon_off_color: "sense_text_muted"
+
+  ui_lock_icon: "$mdi_lock_off"
+  ui_lock_on_icon: "$mdi_lock_off"
+  ui_lock_off_icon: "$mdi_lock_off"
+  ui_lock_on_bg: "sense_tile_indigo"
+  ui_lock_off_bg: "sense_tile_indigo_off"
+  ui_lock_icon_on_color: "$icon_on_color"
+  ui_lock_icon_off_color: "sense_text_muted"
+
+  ui_tod_icon: "$mdi_home_automation"
+  ui_tod_on_icon: "$mdi_home_automation"
+  ui_tod_off_icon: "$mdi_home_automation"
+  ui_tod_on_bg: "sense_tile_orange"
+  ui_tod_off_bg: "sense_tile_orange_off"
+  ui_tod_icon_on_color: "$icon_on_color"
+  ui_tod_icon_off_color: "sense_text_muted"
+
+  ui_motion_icon: "$mdi_motion_sensor"
+  ui_motion_on_icon: "$mdi_motion_sensor_off"
+  ui_motion_off_icon: "$mdi_motion_sensor"
+  ui_motion_on_bg: "sense_tile_motion"
+  ui_motion_off_bg: "sense_tile_motion_off"
+  ui_motion_icon_on_color: "$icon_on_color"
+  ui_motion_icon_off_color: "sense_text_muted"
+
+  ui_entry_motion_icon: "$mdi_motion_sensor"
+  ui_entry_motion_on_icon: "$mdi_motion_sensor_off"
+  ui_entry_motion_off_icon: "$mdi_motion_sensor"
+  ui_entry_motion_on_bg: "sense_tile_motion"
+  ui_entry_motion_off_bg: "sense_tile_motion_off"
+  ui_entry_motion_icon_on_color: "$icon_on_color"
+  ui_entry_motion_icon_off_color: "sense_text_muted"
+
+  ui_garage_icon: "$mdi_motion_sensor"
+  ui_garage_on_icon: "$mdi_motion_sensor_off"
+  ui_garage_off_icon: "$mdi_motion_sensor"
+  ui_garage_on_bg: "sense_tile_motion"
+  ui_garage_off_bg: "sense_tile_motion_off"
+  ui_garage_icon_on_color: "$icon_on_color"
+  ui_garage_icon_off_color: "sense_text_muted"
+
+  ui_mbr_icon: "$mdi_motion_sensor"
+  ui_mbr_on_icon: "$mdi_motion_sensor_off"
+  ui_mbr_off_icon: "$mdi_motion_sensor"
+  ui_mbr_on_bg: "sense_tile_motion"
+  ui_mbr_off_bg: "sense_tile_motion_off"
+  ui_mbr_icon_on_color: "$icon_on_color"
+  ui_mbr_icon_off_color: "sense_text_muted"
+  # Switch tile defaults (token-driven)
+  ui_switch_laundry_on_bg: "sense_tile_orange"
+  ui_switch_laundry_off_bg: "sense_tile_orange_off"
+  ui_switch_garage_on_bg: "sense_tile_yellow"
+  ui_switch_garage_off_bg: "sense_tile_yellow_off"
+  ui_switch_mbr_closet_on_bg: "sense_tile_indigo"
+  ui_switch_mbr_closet_off_bg: "sense_tile_indigo_off"
+  ui_switch_fence_on_bg: "sense_tile_sky"
+  ui_switch_fence_off_bg: "sense_tile_sky_off"
+  ui_switch_outdoor_on_bg: "sense_tile_blue"
+  ui_switch_outdoor_off_bg: "sense_tile_blue_off"
   ui_profile_home_tile_radius: "8"
   ui_profile_home_tile_pad_left: "8"
   ui_profile_home_tile_pad_right: "8"
@@ -106,6 +224,8 @@ substitutions:
   # Optional placeholders for other modules
   ent_rain_delay_bool: "input_boolean.rain_delay"
   ent_rain_delay_state: "input_boolean.rain_delay"
+
+
 
 
 

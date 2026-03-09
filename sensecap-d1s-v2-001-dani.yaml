@@ -551,8 +551,8 @@ packages:
       text: "Laundry"
       icon: $mdi_washing_machine
       entity_id: ${ent_laundry_room_lights}
-      on_bg_color: sense_tile_orange
-      off_bg_color: sense_tile_orange_off
+      on_bg_color: ${ui_switch_laundry_on_bg}
+      off_bg_color: ${ui_switch_laundry_off_bg}
 
   lightsw_btn_garage: !include
     file: buttons/switch_button-sensecap.yaml
@@ -564,8 +564,8 @@ packages:
       text: "Garage"
       icon: $mdi_garage
       entity_id: ${ent_garage_lights}
-      on_bg_color: sense_tile_yellow
-      off_bg_color: sense_tile_yellow_off
+      on_bg_color: ${ui_switch_garage_on_bg}
+      off_bg_color: ${ui_switch_garage_off_bg}
 
   lightsw_btn_mbr_closet: !include
     file: buttons/switch_button-sensecap.yaml
@@ -577,8 +577,8 @@ packages:
       text: "MBR Closet"
       icon: $mdi_wardrobe
       entity_id: ${ent_mbr_closet_light}
-      on_bg_color: sense_tile_indigo
-      off_bg_color: sense_tile_indigo_off
+      on_bg_color: ${ui_switch_mbr_closet_on_bg}
+      off_bg_color: ${ui_switch_mbr_closet_off_bg}
 
   lightsw_btn_fence: !include
     file: buttons/switch_button-sensecap.yaml
@@ -590,8 +590,8 @@ packages:
       text: "Fence"
       icon: $mdi_string_lights
       entity_id: ${ent_fence_lights}
-      on_bg_color: sense_tile_sky
-      off_bg_color: sense_tile_sky_off
+      on_bg_color: ${ui_switch_fence_on_bg}
+      off_bg_color: ${ui_switch_fence_off_bg}
 
   lightsw_btn_outdoor: !include
     file: buttons/switch_button-sensecap.yaml
@@ -604,8 +604,8 @@ packages:
       icon: $mdi_coach_lamp
       entity_id: ${ent_outdoor_entry_lights}
       secondary_entity_id: ${ent_outdoor_garage_lights}
-      on_bg_color: sense_tile_blue
-      off_bg_color: sense_tile_blue_off
+      on_bg_color: ${ui_switch_outdoor_on_bg}
+      off_bg_color: ${ui_switch_outdoor_off_bg}
 # This is the main LVGL section. We start with a simple 4x4 grid.
 lvgl:
   pages:
