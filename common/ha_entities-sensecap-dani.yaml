@@ -15,6 +15,15 @@ substitutions:
   # Input booleans / toggles
   ent_cleaners_toggle: "input_boolean.cleaners_toggle"
   ent_dani_mode_on: "input_boolean.dani_mode_on"
+  # Base UI color defaults (token-driven)
+  ui_base_text_color: "white"
+  ui_base_bg_color: "black"
+  ui_base_button_on_color: "ep_orange"
+  ui_base_button_off_color: "very_dark_gray"
+  ui_base_icon_on_color: "yellow"
+  ui_base_icon_off_color: "gray"
+  ui_base_label_on_color: "white"
+  ui_base_label_off_color: "gray"
 
   # UI defaults (per-feature)
   ui_dani_text: "Dani"
@@ -163,6 +172,7 @@ substitutions:
   ui_tstat_mode_off_active_color: "dani_tstat_mode_off_active"
   ui_tstat_mode_heat_active_color: "dani_tstat_mode_heat_active"
   ui_tstat_mode_cool_active_color: "dani_tstat_mode_cool_active"
+  ui_tstat_title_color: "sense_info"
 
   # Dimmer family defaults (token-driven per entity)
   ui_dimmer_mbr_on_bg: "dani_family_yellow_bg_on"
@@ -211,6 +221,7 @@ substitutions:
   ui_switch_outdoor_on_bg: "dani_family_blue_bg_on"
   ui_switch_outdoor_off_bg: "dani_family_blue_bg_off"
   # Sensor tile defaults (token-driven)
+  ui_sensor_icon_color: "sense_text"
   ui_sensor_local_temp_bg: "sense_tile_yellow"
   ui_sensor_fr_temp_bg: "sense_tile_yellow"
   ui_sensor_osat_temp_bg: "sense_tile_blue"

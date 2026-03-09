@@ -1,4 +1,4 @@
----
+﻿---
 # Substitution variables used through the codebase
 substitutions:
   icon_font: mdi_icons_40
@@ -163,7 +163,7 @@ packages:
     file: pages/thermostat_v2_lvgl-sensecap.yaml
     vars:
       tstat_title_font: nunito_36
-      tstat_title_color: sense_info
+      tstat_title_color: ${ui_tstat_title_color}
       tstat_mode_inactive_color: ${ui_tstat_mode_inactive_color}
       tstat_mode_off_active_color: ${ui_tstat_mode_off_active_color}
       tstat_mode_heat_active_color: ${ui_tstat_mode_heat_active_color}
@@ -425,7 +425,7 @@ packages:
       column_span: 1
       text: "Local Temp"
       icon: $mdi_home_thermometer
-      icon_color: sense_text
+      icon_color: ${ui_sensor_icon_color}
       bg_color: ${ui_sensor_local_temp_bg}
       sensor_id: temp_f
 
@@ -439,7 +439,7 @@ packages:
       column_span: 1
       text: "FR Temp"
       icon: $mdi_thermometer
-      icon_color: sense_text
+      icon_color: ${ui_sensor_icon_color}
       bg_color: ${ui_sensor_fr_temp_bg}
       sensor_id: ha_tstat_current_temp
 
@@ -453,7 +453,7 @@ packages:
       column_span: 1
       text: "OSAT"
       icon: $mdi_thermometer
-      icon_color: sense_text
+      icon_color: ${ui_sensor_icon_color}
       bg_color: ${ui_sensor_osat_temp_bg}
       sensor_id: ha_osat_temp
 
@@ -467,7 +467,7 @@ packages:
       column_span: 1
       text: "Kitchen"
       icon: $mdi_thermometer
-      icon_color: sense_text
+      icon_color: ${ui_sensor_icon_color}
       bg_color: ${ui_sensor_kitchen_temp_bg}
       sensor_id: ha_kitchen_temp
 
@@ -481,7 +481,7 @@ packages:
       column_span: 1
       text: "Freezer"
       icon: $mdi_snowflake
-      icon_color: sense_text
+      icon_color: ${ui_sensor_icon_color}
       bg_color: ${ui_sensor_freezer_temp_bg}
       sensor_id: ha_freezer_temp
 
@@ -495,7 +495,7 @@ packages:
       column_span: 1
       text: "Fridge"
       icon: $mdi_fridge
-      icon_color: sense_text
+      icon_color: ${ui_sensor_icon_color}
       bg_color: ${ui_sensor_fridge_temp_bg}
       sensor_id: ha_fridge_temp
 
@@ -509,7 +509,7 @@ packages:
       column_span: 1
       text: "VOC"
       icon: $mdi_weather_dust
-      icon_color: sense_text
+      icon_color: ${ui_sensor_icon_color}
       bg_color: ${ui_sensor_voc_bg}
       sensor_id: voc
 
@@ -523,7 +523,7 @@ packages:
       column_span: 1
       text: "CO2"
       icon: $mdi_molecule_co2
-      icon_color: sense_text
+      icon_color: ${ui_sensor_icon_color}
       bg_color: ${ui_sensor_co2_bg}
       sensor_id: co2
 
@@ -537,7 +537,7 @@ packages:
       column_span: 1
       text: "Humid"
       icon: $mdi_water_percent
-      icon_color: sense_text
+      icon_color: ${ui_sensor_icon_color}
       bg_color: ${ui_sensor_humid_bg}
       sensor_id: humid
 

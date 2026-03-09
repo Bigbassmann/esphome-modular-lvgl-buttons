@@ -1,4 +1,4 @@
-# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common-sensecap.yaml.
+﻿# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common-sensecap.yaml.
 # This file is a compatibility layer for the "buttons" setup.
 substitutions:
   # Common attribute names
@@ -15,6 +15,15 @@ substitutions:
   # Input booleans / toggles
   ent_cleaners_toggle: "input_boolean.cleaners_toggle"
   ent_dani_mode_on: "input_boolean.dani_mode_on"
+  # Base UI color defaults (token-driven)
+  ui_base_text_color: "white"
+  ui_base_bg_color: "black"
+  ui_base_button_on_color: "ep_orange"
+  ui_base_button_off_color: "very_dark_gray"
+  ui_base_icon_on_color: "yellow"
+  ui_base_icon_off_color: "gray"
+  ui_base_label_on_color: "white"
+  ui_base_label_off_color: "gray"
 
   # UI defaults (per-feature)
   ui_dani_text: "Dani"
@@ -59,7 +68,9 @@ substitutions:
   ui_bedtime_text_off_color: "sense_text"
   ui_bedtime_value_on_color: "sense_text"
   ui_bedtime_value_off_color: "sense_text"
+  ui_tstat_title_color: "sense_info"
 
+  ui_sensor_icon_color: "sense_text"
   # Override rows default text/value colors (token-driven)
   ui_cleaners_text_on_color: "sense_text"
   ui_cleaners_text_off_color: "sense_text"
