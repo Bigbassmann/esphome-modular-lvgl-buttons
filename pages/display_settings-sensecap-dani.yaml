@@ -1,0 +1,378 @@
+substitutions:
+  sense_page_display_settings_id: "page_display_settings"
+
+script:
+  - id: display_settings_refresh_ui
+    mode: restart
+    then:
+      - lvgl.slider.update: {id: display_brightness_slider, value: !lambda 'return id(sense_display_brightness_pct);', animated: false}
+      - lvgl.label.update:
+          id: display_brightness_value
+          text: !lambda |-
+            char buf[12];
+            snprintf(buf, sizeof(buf), "%d%%", id(sense_display_brightness_pct));
+            return std::string(buf);
+
+      - lvgl.slider.update: {id: display_idle_scroll_slider, value: !lambda 'return id(sense_display_idle_scroll_s);', animated: false}
+      - lvgl.label.update:
+          id: display_idle_scroll_value
+          text: !lambda |-
+            char buf[12];
+            snprintf(buf, sizeof(buf), "%ds", id(sense_display_idle_scroll_s));
+            return std::string(buf);
+
+      - lvgl.slider.update: {id: display_scroll_rate_slider, value: !lambda 'return id(sense_display_idle_scroll_rate_s);', animated: false}
+      - lvgl.label.update:
+          id: display_scroll_rate_value
+          text: !lambda |-
+            char buf[12];
+            snprintf(buf, sizeof(buf), "%ds", id(sense_display_idle_scroll_rate_s));
+            return std::string(buf);
+
+      - lvgl.slider.update: {id: display_sleep_timeout_slider, value: !lambda 'return id(sense_display_sleep_timeout_s);', animated: false}
+      - lvgl.label.update:
+          id: display_sleep_timeout_value
+          text: !lambda |-
+            char buf[12];
+            snprintf(buf, sizeof(buf), "%ds", id(sense_display_sleep_timeout_s));
+            return std::string(buf);
+
+      - lvgl.slider.update: {id: display_scroll_sleep_slider, value: !lambda 'return id(sense_display_scroll_sleep_min);', animated: false}
+      - lvgl.label.update:
+          id: display_scroll_sleep_value
+          text: !lambda |-
+            char buf[12];
+            snprintf(buf, sizeof(buf), "%dm", id(sense_display_scroll_sleep_min));
+            return std::string(buf);
+
+      - if:
+          condition:
+            lambda: 'return id(sense_display_idle_scroll_enabled);'
+          then:
+            - lvgl.label.update: {id: display_idle_scroll_state, text: "ON"}
+            - lvgl.widget.update: {id: display_idle_scroll_toggle, bg_color: sense_teal}
+          else:
+            - lvgl.label.update: {id: display_idle_scroll_state, text: "OFF"}
+            - lvgl.widget.update: {id: display_idle_scroll_toggle, bg_color: sense_surface_alt}
+
+      - if:
+          condition:
+            lambda: 'return id(sense_display_sleep_enabled);'
+          then:
+            - lvgl.label.update: {id: display_sleep_state, text: "ON"}
+            - lvgl.widget.update: {id: display_sleep_toggle, bg_color: sense_success}
+          else:
+            - lvgl.label.update: {id: display_sleep_state, text: "OFF"}
+            - lvgl.widget.update: {id: display_sleep_toggle, bg_color: sense_surface_alt}
+
+      - if:
+          condition:
+            lambda: 'return id(sense_display_scroll_sleep_enabled);'
+          then:
+            - lvgl.label.update: {id: display_scroll_sleep_state, text: "ON"}
+            - lvgl.widget.update: {id: display_scroll_sleep_toggle, bg_color: sense_tile_indigo}
+          else:
+            - lvgl.label.update: {id: display_scroll_sleep_state, text: "OFF"}
+            - lvgl.widget.update: {id: display_scroll_sleep_toggle, bg_color: sense_surface_alt}
+
+lvgl:
+  pages:
+    - id: ${sense_page_display_settings_id}
+      styles: sense_page_style
+      on_load:
+        - script.execute: display_settings_refresh_ui
+      widgets:
+        - obj:
+            id: display_settings_card
+            align: TOP_MID
+            y: ${sense_content_y | default("46")}
+            width: 100%
+            height: ${sense_content_h | default("366")}
+            styles: sense_card_flat_style
+            widgets:
+              - label:
+                  text: "Display Settings"
+                  align: TOP_MID
+                  y: 6
+                  text_font: nunito_36
+                  text_color: sense_info
+
+              - button:
+                  id: display_brightness_label
+                  align: TOP_LEFT
+                  x: 14
+                  y: 48
+                  width: 142
+                  height: 36
+                  styles: sense_display_row_btn_style
+                  widgets:
+                    - label:
+                        text: "Brightness"
+                        align: CENTER
+                        text_font: nunito_16
+                        text_color: sense_text
+
+              - slider:
+                  id: display_brightness_slider
+                  align: TOP_LEFT
+                  x: 166
+                  y: 58
+                  width: 178
+                  height: 14
+                  min_value: 5
+                  max_value: 100
+                  bg_color: sense_surface_alt
+                  indicator:
+                    bg_color: sense_info
+                  knob:
+                    bg_color: sense_text
+                  on_value:
+                    then:
+                      - lambda: |-
+                          id(sense_display_brightness_pct) = (int) x;
+                          id(sense_display_last_interaction_ms) = millis();
+                          id(sense_display_last_auto_scroll_ms) = id(sense_display_last_interaction_ms);
+                          id(sense_display_scroll_sleep_start_ms) = 0;
+                      - script.execute: sense_display_apply_brightness
+                      - lvgl.label.update:
+                          id: display_brightness_value
+                          text: !lambda |-
+                            char buf[12];
+                            snprintf(buf, sizeof(buf), "%d%%", (int) x);
+                            return std::string(buf);
+
+              - label:
+                  id: display_brightness_value
+                  text: "50%"
+                  align: TOP_RIGHT
+                  x: -12
+                  y: 52
+                  text_font: nunito_18
+                  text_color: sense_text
+
+              - button:
+                  id: display_idle_scroll_toggle
+                  align: TOP_LEFT
+                  x: 14
+                  y: 92
+                  width: 142
+                  height: 36
+                  styles: sense_display_row_btn_style
+                  on_press:
+                    then:
+                      - lambda: |-
+                          id(sense_display_idle_scroll_enabled) = !id(sense_display_idle_scroll_enabled);
+                          if (id(sense_display_idle_scroll_enabled)) id(sense_display_sleep_enabled) = false;
+                          id(sense_display_last_interaction_ms) = millis();
+                          id(sense_display_last_auto_scroll_ms) = id(sense_display_last_interaction_ms);
+                          id(sense_display_scroll_sleep_start_ms) = 0;
+                      - script.execute: display_settings_refresh_ui
+                  widgets:
+                    - label: {text: "Scroll", align: LEFT_MID, x: 10, text_font: nunito_16, text_color: sense_text}
+                    - label: {id: display_idle_scroll_state, text: "OFF", align: RIGHT_MID, x: -10, text_font: nunito_16, text_color: sense_text}
+
+              - slider:
+                  id: display_idle_scroll_slider
+                  align: TOP_LEFT
+                  x: 166
+                  y: 102
+                  width: 178
+                  height: 14
+                  min_value: 15
+                  max_value: 300
+                  bg_color: sense_surface_alt
+                  indicator:
+                    bg_color: sense_teal
+                  knob:
+                    bg_color: sense_text
+                  on_value:
+                    then:
+                      - lambda: |-
+                          id(sense_display_idle_scroll_s) = (int) x;
+                          id(sense_display_last_interaction_ms) = millis();
+                      - lvgl.label.update:
+                          id: display_idle_scroll_value
+                          text: !lambda |-
+                            char buf[12];
+                            snprintf(buf, sizeof(buf), "%ds", (int) x);
+                            return std::string(buf);
+
+              - label:
+                  id: display_idle_scroll_value
+                  text: "30s"
+                  align: TOP_RIGHT
+                  x: -12
+                  y: 96
+                  text_font: nunito_18
+                  text_color: sense_text
+
+              - button:
+                  id: display_scroll_rate_label
+                  align: TOP_LEFT
+                  x: 14
+                  y: 136
+                  width: 142
+                  height: 36
+                  styles: sense_display_row_btn_style
+                  widgets:
+                    - label:
+                        text: "Rate"
+                        align: CENTER
+                        text_font: nunito_16
+                        text_color: sense_text
+
+              - slider:
+                  id: display_scroll_rate_slider
+                  align: TOP_LEFT
+                  x: 166
+                  y: 146
+                  width: 178
+                  height: 14
+                  min_value: 1
+                  max_value: 30
+                  bg_color: sense_surface_alt
+                  indicator:
+                    bg_color: sense_primary
+                  knob:
+                    bg_color: sense_text
+                  on_value:
+                    then:
+                      - lambda: |-
+                          id(sense_display_idle_scroll_rate_s) = (int) x;
+                          id(sense_display_last_interaction_ms) = millis();
+                      - lvgl.label.update:
+                          id: display_scroll_rate_value
+                          text: !lambda |-
+                            char buf[12];
+                            snprintf(buf, sizeof(buf), "%ds", (int) x);
+                            return std::string(buf);
+
+              - label:
+                  id: display_scroll_rate_value
+                  text: "5s"
+                  align: TOP_RIGHT
+                  x: -12
+                  y: 140
+                  text_font: nunito_18
+                  text_color: sense_text
+
+              - button:
+                  id: display_sleep_toggle
+                  align: TOP_LEFT
+                  x: 14
+                  y: 180
+                  width: 142
+                  height: 36
+                  styles: sense_display_row_btn_style
+                  on_press:
+                    then:
+                      - lambda: |-
+                          id(sense_display_sleep_enabled) = !id(sense_display_sleep_enabled);
+                          if (id(sense_display_sleep_enabled)) id(sense_display_idle_scroll_enabled) = false;
+                          id(sense_display_last_interaction_ms) = millis();
+                          id(sense_display_last_auto_scroll_ms) = id(sense_display_last_interaction_ms);
+                          id(sense_display_scroll_sleep_start_ms) = 0;
+                          if (!id(sense_display_sleep_enabled) && id(sense_display_screen_off)) {
+                            id(sense_display_screen_off) = false;
+                          }
+                      - if:
+                          condition:
+                            lambda: 'return !id(sense_display_sleep_enabled);'
+                          then:
+                            - lvgl.resume:
+                            - lvgl.widget.redraw
+                            - script.execute: sense_display_apply_brightness
+                      - script.execute: display_settings_refresh_ui
+                  widgets:
+                    - label: {text: "Sleep", align: LEFT_MID, x: 10, text_font: nunito_16, text_color: sense_text}
+                    - label: {id: display_sleep_state, text: "ON", align: RIGHT_MID, x: -10, text_font: nunito_16, text_color: sense_text}
+
+              - slider:
+                  id: display_sleep_timeout_slider
+                  align: TOP_LEFT
+                  x: 166
+                  y: 190
+                  width: 178
+                  height: 14
+                  min_value: 15
+                  max_value: 300
+                  bg_color: sense_surface_alt
+                  indicator:
+                    bg_color: sense_warn
+                  knob:
+                    bg_color: sense_text
+                  on_value:
+                    then:
+                      - lambda: |-
+                          id(sense_display_sleep_timeout_s) = (int) x;
+                          id(sense_display_last_interaction_ms) = millis();
+                      - lvgl.label.update:
+                          id: display_sleep_timeout_value
+                          text: !lambda |-
+                            char buf[12];
+                            snprintf(buf, sizeof(buf), "%ds", (int) x);
+                            return std::string(buf);
+
+              - label:
+                  id: display_sleep_timeout_value
+                  text: "60s"
+                  align: TOP_RIGHT
+                  x: -12
+                  y: 184
+                  text_font: nunito_18
+                  text_color: sense_text
+
+              - button:
+                  id: display_scroll_sleep_toggle
+                  align: TOP_LEFT
+                  x: 14
+                  y: 224
+                  width: 142
+                  height: 36
+                  styles: sense_display_row_btn_style
+                  on_press:
+                    then:
+                      - lambda: |-
+                          id(sense_display_scroll_sleep_enabled) = !id(sense_display_scroll_sleep_enabled);
+                          id(sense_display_last_interaction_ms) = millis();
+                          id(sense_display_last_auto_scroll_ms) = id(sense_display_last_interaction_ms);
+                          id(sense_display_scroll_sleep_start_ms) = 0;
+                      - script.execute: display_settings_refresh_ui
+                  widgets:
+                    - label: {text: "Scroll Sleep", align: LEFT_MID, x: 10, text_font: nunito_16, text_color: sense_text}
+                    - label: {id: display_scroll_sleep_state, text: "OFF", align: RIGHT_MID, x: -10, text_font: nunito_16, text_color: sense_text}
+
+              - slider:
+                  id: display_scroll_sleep_slider
+                  align: TOP_LEFT
+                  x: 166
+                  y: 234
+                  width: 178
+                  height: 14
+                  min_value: 15
+                  max_value: 120
+                  bg_color: sense_surface_alt
+                  indicator:
+                    bg_color: sense_cat_overrides
+                  knob:
+                    bg_color: sense_text
+                  on_value:
+                    then:
+                      - lambda: |-
+                          id(sense_display_scroll_sleep_min) = (int) x;
+                          id(sense_display_last_interaction_ms) = millis();
+                      - lvgl.label.update:
+                          id: display_scroll_sleep_value
+                          text: !lambda |-
+                            char buf[12];
+                            snprintf(buf, sizeof(buf), "%dm", (int) x);
+                            return std::string(buf);
+
+              - label:
+                  id: display_scroll_sleep_value
+                  text: "30m"
+                  align: TOP_RIGHT
+                  x: -12
+                  y: 228
+                  text_font: nunito_18
+                  text_color: sense_text

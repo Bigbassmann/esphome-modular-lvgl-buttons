@@ -1,4 +1,4 @@
-﻿substitutions:
+substitutions:
   # Home page slot mapping (entity + display behavior)
   ui_home_dani_entity_id: "${ent_dani_mode_on}"
   ui_home_dani_text: "${ui_dani_text}"
@@ -230,3 +230,33 @@
   ui_overrides_mbr_show_icon: "true"
   ui_overrides_mbr_show_text: "true"
   ui_overrides_mbr_show_value: "true"
+
+  # Dimmers template include mapping
+  ui_dimmers_p1_left_row1_uid: "homev2_sleepy_btn"
+  ui_dimmers_p1_left_row1_hidden: "false"
+  ui_dimmers_p1_left_row2_uid: "homev2_bedtime_btn"
+  ui_dimmers_p1_left_row2_hidden: "false"
+  ui_dimmers_p1_left_row3_uid: "dimmers1_template_row3"
+  ui_dimmers_p1_left_row3_hidden: "true"
+  ui_dimmers_p1_left_row4_uid: "dimmers1_template_row4"
+  ui_dimmers_p1_left_row4_hidden: "true"
+
+  ui_dimmers_p2_left_row1_uid: "dimmers2_left_row1"
+  ui_dimmers_p2_left_row1_hidden: "true"
+  ui_dimmers_p2_left_row2_uid: "dimmers2_left_row2"
+  ui_dimmers_p2_left_row2_hidden: "true"
+  ui_dimmers_p2_left_row3_uid: "dimmers2_left_row3"
+  ui_dimmers_p2_left_row3_hidden: "true"
+  ui_dimmers_p2_left_row4_uid: "dimmers2_left_row4"
+  ui_dimmers_p2_left_row4_hidden: "true"
+
+  ui_dimmers_left_row3_entity_id: "${ent_outdoor_entry_lights}"
+  ui_dimmers_left_row3_secondary_entity_id: "${ent_outdoor_garage_lights}"
+  ui_dimmers_left_row3_text: "Outdoor"
+  ui_dimmers_left_row3_icon: "$mdi_string_lights"
+  ui_dimmers_left_row3_on_bg: "sense_tile_blue"
+  ui_dimmers_left_row3_off_bg: "sense_tile_blue_off"
+
+  ui_dimmers_left_row4_text: "Overrides"
+  ui_dimmers_left_row4_icon: "$mdi_tune"
+  ui_dimmers_left_row4_click_page: "${sense_page_overrides_id}"

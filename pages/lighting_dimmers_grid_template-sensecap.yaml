@@ -4,6 +4,40 @@ substitutions:
   dimmers_title_id: "dimmers_page_title"
   dimmers_title_text: "Dimmers"
 
+  # Optional left-column slot 1 (row 1)
+  dimmers_left_row1_uid: "dimmers_left_row1"
+  dimmers_left_row1_hidden: "true"
+  dimmers_left_row1_entity_id: "${ent_sleepy_toggle}"
+  dimmers_left_row1_text: "${ui_sleepy_text}"
+  dimmers_left_row1_icon: "${ui_sleepy_icon}"
+  dimmers_left_row1_on_bg: "${ui_sleepy_on_bg}"
+  dimmers_left_row1_off_bg: "${ui_sleepy_off_bg}"
+
+  # Optional left-column slot 2 (row 2)
+  dimmers_left_row2_uid: "dimmers_left_row2"
+  dimmers_left_row2_hidden: "true"
+  dimmers_left_row2_entity_id: "${ent_bedtime_toggle}"
+  dimmers_left_row2_text: "${ui_bedtime_text}"
+  dimmers_left_row2_icon: "${ui_bedtime_icon}"
+  dimmers_left_row2_on_bg: "${ui_bedtime_on_bg}"
+  dimmers_left_row2_off_bg: "${ui_bedtime_off_bg}"
+
+  # Optional left-column slot 3 (row 3)
+  dimmers_left_row3_uid: "dimmers_left_row3"
+  dimmers_left_row3_hidden: "true"
+  dimmers_left_row3_entity_id: "${ent_outdoor_lights_toggle}"
+  dimmers_left_row3_text: "Outdoor"
+  dimmers_left_row3_icon: "$mdi_string_lights"
+  dimmers_left_row3_on_bg: "sense_tile_blue"
+  dimmers_left_row3_off_bg: "sense_tile_blue_off"
+
+  # Optional left-column slot 4 (row 4)
+  dimmers_left_row4_uid: "dimmers_left_row4"
+  dimmers_left_row4_hidden: "true"
+  dimmers_left_row4_text: "Overrides"
+  dimmers_left_row4_icon: "$mdi_tune"
+  dimmers_left_row4_click_page: "${sense_page_overrides_id}"
+
 lvgl:
   pages:
     - id: ${dimmers_page_id}
@@ -50,3 +84,216 @@ lvgl:
             y: -2
             text_font: nunito_36
             text_color: sense_info
+        - container:
+            id: ${dimmers_left_row1_uid}
+            hidden: ${dimmers_left_row1_hidden}
+            grid_cell_row_pos: 1
+            grid_cell_column_pos: 0
+            grid_cell_row_span: 1
+            grid_cell_column_span: 1
+            grid_cell_x_align: stretch
+            grid_cell_y_align: stretch
+            widgets:
+              - button:
+                  id: button_${dimmers_left_row1_uid}
+                  widgets:
+                    - label:
+                        text_font: $icon_font
+                        align: top_left
+                        x: 8
+                        y: 8
+                        id: icon_${dimmers_left_row1_uid}
+                        text: ${dimmers_left_row1_icon}
+                    - label:
+                        align: bottom_left
+                        x: 8
+                        y: -6
+                        text_font: nunito_16
+                        id: label_${dimmers_left_row1_uid}
+                        text: ${dimmers_left_row1_text}
+                  on_short_click:
+                    - homeassistant.action:
+                        action: homeassistant.toggle
+                        data:
+                          entity_id: ${dimmers_left_row1_entity_id}
+        - container:
+            id: ${dimmers_left_row2_uid}
+            hidden: ${dimmers_left_row2_hidden}
+            grid_cell_row_pos: 2
+            grid_cell_column_pos: 0
+            grid_cell_row_span: 1
+            grid_cell_column_span: 1
+            grid_cell_x_align: stretch
+            grid_cell_y_align: stretch
+            widgets:
+              - button:
+                  id: button_${dimmers_left_row2_uid}
+                  widgets:
+                    - label:
+                        text_font: $icon_font
+                        align: top_left
+                        x: 8
+                        y: 8
+                        id: icon_${dimmers_left_row2_uid}
+                        text: ${dimmers_left_row2_icon}
+                    - label:
+                        align: bottom_left
+                        x: 8
+                        y: -6
+                        text_font: nunito_16
+                        id: label_${dimmers_left_row2_uid}
+                        text: ${dimmers_left_row2_text}
+                  on_short_click:
+                    - homeassistant.action:
+                        action: homeassistant.toggle
+                        data:
+                          entity_id: ${dimmers_left_row2_entity_id}
+        - container:
+            id: ${dimmers_left_row3_uid}
+            hidden: ${dimmers_left_row3_hidden}
+            grid_cell_row_pos: 3
+            grid_cell_column_pos: 0
+            grid_cell_row_span: 1
+            grid_cell_column_span: 1
+            grid_cell_x_align: stretch
+            grid_cell_y_align: stretch
+            widgets:
+              - button:
+                  id: button_${dimmers_left_row3_uid}
+                  widgets:
+                    - label:
+                        text_font: $icon_font
+                        align: top_left
+                        x: 8
+                        y: 8
+                        id: icon_${dimmers_left_row3_uid}
+                        text: ${dimmers_left_row3_icon}
+                    - label:
+                        align: bottom_left
+                        x: 8
+                        y: -6
+                        text_font: nunito_16
+                        id: label_${dimmers_left_row3_uid}
+                        text: ${dimmers_left_row3_text}
+                  on_short_click:
+                    - homeassistant.action:
+                        action: homeassistant.toggle
+                        data:
+                          entity_id: ${dimmers_left_row3_entity_id}
+        - container:
+            id: ${dimmers_left_row4_uid}
+            hidden: ${dimmers_left_row4_hidden}
+            grid_cell_row_pos: 4
+            grid_cell_column_pos: 0
+            grid_cell_row_span: 1
+            grid_cell_column_span: 1
+            grid_cell_x_align: stretch
+            grid_cell_y_align: stretch
+            widgets:
+              - button:
+                  id: button_${dimmers_left_row4_uid}
+                  widgets:
+                    - label:
+                        text_font: $icon_font
+                        align: top_left
+                        x: 8
+                        y: 8
+                        id: icon_${dimmers_left_row4_uid}
+                        text: ${dimmers_left_row4_icon}
+                    - label:
+                        align: bottom_left
+                        x: 8
+                        y: -6
+                        text_font: nunito_16
+                        id: label_${dimmers_left_row4_uid}
+                        text: ${dimmers_left_row4_text}
+                  on_short_click:
+                    - lvgl.page.show: ${dimmers_left_row4_click_page}
+
+binary_sensor:
+  - id: widget_sensor_${dimmers_left_row1_uid}
+    platform: homeassistant
+    entity_id: ${dimmers_left_row1_entity_id}
+    trigger_on_initial_state: true
+    on_state:
+      - if:
+          condition:
+            - binary_sensor.is_on: widget_sensor_${dimmers_left_row1_uid}
+          then:
+            - lvgl.widget.update:
+                id: button_${dimmers_left_row1_uid}
+                bg_color: ${dimmers_left_row1_on_bg}
+            - lvgl.widget.update:
+                id: icon_${dimmers_left_row1_uid}
+                text_color: $icon_on_color
+            - lvgl.widget.update:
+                id: label_${dimmers_left_row1_uid}
+                text_color: $label_on_color
+          else:
+            - lvgl.widget.update:
+                id: button_${dimmers_left_row1_uid}
+                bg_color: ${dimmers_left_row1_off_bg}
+            - lvgl.widget.update:
+                id: icon_${dimmers_left_row1_uid}
+                text_color: $icon_off_color
+            - lvgl.widget.update:
+                id: label_${dimmers_left_row1_uid}
+                text_color: $label_off_color
+
+  - id: widget_sensor_${dimmers_left_row2_uid}
+    platform: homeassistant
+    entity_id: ${dimmers_left_row2_entity_id}
+    trigger_on_initial_state: true
+    on_state:
+      - if:
+          condition:
+            - binary_sensor.is_on: widget_sensor_${dimmers_left_row2_uid}
+          then:
+            - lvgl.widget.update:
+                id: button_${dimmers_left_row2_uid}
+                bg_color: ${dimmers_left_row2_on_bg}
+            - lvgl.widget.update:
+                id: icon_${dimmers_left_row2_uid}
+                text_color: $icon_on_color
+            - lvgl.widget.update:
+                id: label_${dimmers_left_row2_uid}
+                text_color: $label_on_color
+          else:
+            - lvgl.widget.update:
+                id: button_${dimmers_left_row2_uid}
+                bg_color: ${dimmers_left_row2_off_bg}
+            - lvgl.widget.update:
+                id: icon_${dimmers_left_row2_uid}
+                text_color: $icon_off_color
+            - lvgl.widget.update:
+                id: label_${dimmers_left_row2_uid}
+                text_color: $label_off_color
+
+  - id: widget_sensor_${dimmers_left_row3_uid}
+    platform: homeassistant
+    entity_id: ${dimmers_left_row3_entity_id}
+    trigger_on_initial_state: true
+    on_state:
+      - if:
+          condition:
+            - binary_sensor.is_on: widget_sensor_${dimmers_left_row3_uid}
+          then:
+            - lvgl.widget.update:
+                id: button_${dimmers_left_row3_uid}
+                bg_color: ${dimmers_left_row3_on_bg}
+            - lvgl.widget.update:
+                id: icon_${dimmers_left_row3_uid}
+                text_color: $icon_on_color
+            - lvgl.widget.update:
+                id: label_${dimmers_left_row3_uid}
+                text_color: $label_on_color
+          else:
+            - lvgl.widget.update:
+                id: button_${dimmers_left_row3_uid}
+                bg_color: ${dimmers_left_row3_off_bg}
+            - lvgl.widget.update:
+                id: icon_${dimmers_left_row3_uid}
+                text_color: $icon_off_color
+            - lvgl.widget.update:
+                id: label_${dimmers_left_row3_uid}
+                text_color: $label_off_color

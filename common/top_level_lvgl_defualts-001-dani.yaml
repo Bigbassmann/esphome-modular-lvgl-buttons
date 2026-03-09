@@ -1,0 +1,44 @@
+---
+# Top-level LVGL defaults for future Dani theme wiring.
+# Not active yet: this file is intentionally not included anywhere.
+
+substitutions:
+  # Theme identity
+  lvgl_theme_profile: "dani_001"
+
+  # Global typography defaults
+  lvgl_font_icon_default: "mdi_icons_40"
+  lvgl_font_body_default: "nunito_20"
+  lvgl_font_body_small_default: "nunito_16"
+  lvgl_font_title_default: "nunito_36"
+  lvgl_font_value_default: "nunito_18"
+
+  # Global text defaults
+  lvgl_text_primary_default: "white"
+  lvgl_text_secondary_default: "sense_text_muted"
+  lvgl_text_value_default: "white"
+
+  # Global surface/background defaults
+  lvgl_surface_page_default: "sense_surface"
+  lvgl_surface_card_default: "sense_surface"
+  lvgl_surface_alt_default: "sense_surface_alt"
+  lvgl_border_default: "sense_border"
+
+  # Generic on/off state defaults
+  lvgl_state_on_icon_default: "yellow"
+  lvgl_state_off_icon_default: "gray"
+  lvgl_state_on_label_default: "white"
+  lvgl_state_off_label_default: "gray"
+  lvgl_state_on_bg_default: "sense_tile_blue"
+  lvgl_state_off_bg_default: "sense_tile_blue_off"
+
+  # Generic nav defaults
+  lvgl_nav_bg_default: "sense_tile_blue"
+  lvgl_nav_text_default: "sense_text"
+
+  # Generic slider defaults
+  lvgl_slider_bg_default: "sense_surface_alt"
+  lvgl_slider_on_default: "sense_info"
+  lvgl_slider_off_default: "sense_border"
+  lvgl_slider_knob_on_default: "white"
+  lvgl_slider_knob_off_default: "gray"

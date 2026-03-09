@@ -69,7 +69,7 @@ packages:
   # Enable OTA updates with a status screen
   ota_screen: !include common/ota-sensecap.yaml
   # All the colors
-  colors: !include common/color-sensecap.yaml
+  colors: !include common/color-sensecap-dani.yaml
   # Some nice basic fonts
   fonts: !include common/fonts-sensecap.yaml
   # 1000s of glyphs
@@ -77,15 +77,24 @@ packages:
   # Some basic sensors
   sensors: !include sensors/sensors_base.yaml
   # Styles + Themes
-  theme_style: !include common/theme_style-sensecap.yaml
+  theme_style: !include common/theme_style-sensecap-dani.yaml
   ui_tokens_sensecap: !include common/ui_tokens-sensecap.yaml
   page_shell_sensecap: !include pages/page_shell_480-sensecap.yaml
   page_home_sensecap: !include pages/home_grid-sensecap.yaml
   page_menu_sensecap: !include pages/menu_grid-sensecap.yaml
   page_wifi_setup_sensecap: !include pages/wifi_setup-sensecap.yaml
   page_settings_sensecap: !include pages/settings_grid-sensecap.yaml
-  page_display_settings_sensecap: !include pages/display_settings-sensecap.yaml
-  page_fans_sensecap: !include pages/fans_grid-sensecap.yaml
+  page_display_settings_sensecap: !include pages/display_settings-sensecap-dani.yaml
+  page_fans_sensecap: !include
+    file: pages/fans_grid-sensecap.yaml
+    vars:
+      fan_inactive_color: gray
+      fan_off_active_color: 0x3C428F
+      fan_low_active_color: 0x3C8F89
+      fan_med_active_color: 0x8F893C
+      fan_high_active_color: 0x8F3C42
+      fan_dir_reverse_color: 0x6870CC
+      fan_dir_forward_color: 0x68A2CC
   page_overrides_sensecap: !include pages/overrides_grid-sensecap.yaml
   page_lighting_dimmers_sensecap: !include
     file: pages/lighting_dimmers_grid_template-sensecap.yaml
@@ -150,11 +159,19 @@ packages:
   # info screen - WiFi login, IP address, MAC address etc
   info_screen: !include pages/info-sensecap.yaml
 
-  thermostat_v2: !include pages/thermostat_v2_lvgl-sensecap.yaml
+  thermostat_v2: !include
+    file: pages/thermostat_v2_lvgl-sensecap.yaml
+    vars:
+      tstat_title_font: nunito_36
+      tstat_title_color: sense_info
+      tstat_mode_inactive_color: gray
+      tstat_mode_off_active_color: 0x3C428F
+      tstat_mode_heat_active_color: 0x8F3C42
+      tstat_mode_cool_active_color: 0x3C6B8F
   # core_boot: !include common/core_boot-sensecap.yaml
   core_globals: !include common/core_globals-sensecap.yaml
   # legacy_globals: !include common/core_globals_legacy_compat-sensecap.yaml
-  ha_entities_sensecap: !include common/ha_entities-sensecap.yaml
+  ha_entities_sensecap: !include common/ha_entities-sensecap-dani.yaml
   page_mapping_sensecap: !include common/page_mapping-sensecap.yaml
   core_ha_common: !include common/core_ha_common-sensecap.yaml
   home_temp_ha: !include common/home_temp_ha-sensecap.yaml
@@ -190,6 +207,10 @@ packages:
       entity_id: ${ent_mbr_lights}
       on_bg_color: sense_tile_yellow
       off_bg_color: sense_tile_yellow_off
+      slider_on_color: dani_slider_on
+      slider_off_color: dani_slider_off
+      slider_knob_on_color: dani_slider_knob
+      slider_knob_off_color: dani_slider_knob_off
 
   dimmer_btn_fr: !include
     file: buttons/dimmer_light_button-sensecap.yaml
@@ -204,6 +225,10 @@ packages:
       entity_id: ${ent_fr_lights}
       on_bg_color: sense_tile_orange
       off_bg_color: sense_tile_orange_off
+      slider_on_color: dani_slider_on
+      slider_off_color: dani_slider_off
+      slider_knob_on_color: dani_slider_knob
+      slider_knob_off_color: dani_slider_knob_off
 
   dimmer_btn_living: !include
     file: buttons/dimmer_light_button-sensecap.yaml
@@ -219,6 +244,10 @@ packages:
       secondary_entity_id: ${ent_library_lights}
       on_bg_color: sense_tile_teal
       off_bg_color: sense_tile_teal_off
+      slider_on_color: dani_slider_on
+      slider_off_color: dani_slider_off
+      slider_knob_on_color: dani_slider_knob
+      slider_knob_off_color: dani_slider_knob_off
 
   dimmer_btn_kitchen: !include
     file: buttons/dimmer_light_button-sensecap.yaml
@@ -234,6 +263,10 @@ packages:
       secondary_entity_id: ${ent_kitchen_lights_5}
       on_bg_color: sense_tile_indigo
       off_bg_color: sense_tile_indigo_off
+      slider_on_color: dani_slider_on
+      slider_off_color: dani_slider_off
+      slider_knob_on_color: dani_slider_knob
+      slider_knob_off_color: dani_slider_knob_off
 
   dimmer_btn_entry: !include
     file: buttons/dimmer_light_button-sensecap.yaml
@@ -249,6 +282,10 @@ packages:
       secondary_entity_id: ${ent_hall_lights}
       on_bg_color: sense_tile_blue
       off_bg_color: sense_tile_blue_off
+      slider_on_color: dani_slider_on
+      slider_off_color: dani_slider_off
+      slider_knob_on_color: dani_slider_knob
+      slider_knob_off_color: dani_slider_knob_off
 
   dimmer_btn_entry_page: !include
     file: pages/light_color.yaml

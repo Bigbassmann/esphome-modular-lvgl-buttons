@@ -1,12 +1,5 @@
 substitutions:
   sense_page_fans_id: "page_fans"
-  fan_inactive_color: "gray"
-  fan_off_active_color: "0x3C428F"
-  fan_low_active_color: "0x3C8F89"
-  fan_med_active_color: "0x8F893C"
-  fan_high_active_color: "0x8F3C42"
-  fan_dir_reverse_color: "0x6870CC"
-  fan_dir_forward_color: "0x68A2CC"
 
 script:
   - id: fr_fan_off
@@ -127,10 +120,10 @@ interval:
             return id(ha_attic_fan2_on).state ? std::string("ON") : std::string("OFF");
 
       # FR mode buttons
-      - lvgl.widget.update: {id: fr_mode_off_btn, bg_color: "${fan_inactive_color}"}
-      - lvgl.widget.update: {id: fr_mode_low_btn, bg_color: "${fan_inactive_color}"}
-      - lvgl.widget.update: {id: fr_mode_med_btn, bg_color: "${fan_inactive_color}"}
-      - lvgl.widget.update: {id: fr_mode_high_btn, bg_color: "${fan_inactive_color}"}
+      - lvgl.widget.update: {id: fr_mode_off_btn, bg_color: gray}
+      - lvgl.widget.update: {id: fr_mode_low_btn, bg_color: gray}
+      - lvgl.widget.update: {id: fr_mode_med_btn, bg_color: gray}
+      - lvgl.widget.update: {id: fr_mode_high_btn, bg_color: gray}
       - if:
           condition:
             lambda: !lambda |-
@@ -138,28 +131,28 @@ interval:
               float p = id(ha_fr_fan_pct).state;
               return isnan(p) || p < 1.0f;
           then:
-            - lvgl.widget.update: {id: fr_mode_off_btn, bg_color: "${fan_off_active_color}"}
+            - lvgl.widget.update: {id: fr_mode_off_btn, bg_color: 0x3C428F}
       - if:
           condition:
             lambda: 'return id(ha_fr_fan_on).state && !isnan(id(ha_fr_fan_pct).state) && id(ha_fr_fan_pct).state > 0 && id(ha_fr_fan_pct).state <= 40;'
           then:
-            - lvgl.widget.update: {id: fr_mode_low_btn, bg_color: "${fan_low_active_color}"}
+            - lvgl.widget.update: {id: fr_mode_low_btn, bg_color: 0x3C8F89}
       - if:
           condition:
             lambda: 'return id(ha_fr_fan_on).state && !isnan(id(ha_fr_fan_pct).state) && id(ha_fr_fan_pct).state > 40 && id(ha_fr_fan_pct).state <= 80;'
           then:
-            - lvgl.widget.update: {id: fr_mode_med_btn, bg_color: "${fan_med_active_color}"}
+            - lvgl.widget.update: {id: fr_mode_med_btn, bg_color: 0x8F893C}
       - if:
           condition:
             lambda: 'return id(ha_fr_fan_on).state && !isnan(id(ha_fr_fan_pct).state) && id(ha_fr_fan_pct).state > 80;'
           then:
-            - lvgl.widget.update: {id: fr_mode_high_btn, bg_color: "${fan_high_active_color}"}
+            - lvgl.widget.update: {id: fr_mode_high_btn, bg_color: 0x8F3C42}
 
       # MBR mode buttons
-      - lvgl.widget.update: {id: mbr_mode_off_btn, bg_color: "${fan_inactive_color}"}
-      - lvgl.widget.update: {id: mbr_mode_low_btn, bg_color: "${fan_inactive_color}"}
-      - lvgl.widget.update: {id: mbr_mode_med_btn, bg_color: "${fan_inactive_color}"}
-      - lvgl.widget.update: {id: mbr_mode_high_btn, bg_color: "${fan_inactive_color}"}
+      - lvgl.widget.update: {id: mbr_mode_off_btn, bg_color: gray}
+      - lvgl.widget.update: {id: mbr_mode_low_btn, bg_color: gray}
+      - lvgl.widget.update: {id: mbr_mode_med_btn, bg_color: gray}
+      - lvgl.widget.update: {id: mbr_mode_high_btn, bg_color: gray}
       - if:
           condition:
             lambda: !lambda |-
@@ -167,51 +160,51 @@ interval:
               float p = id(ha_mbr_fan_pct).state;
               return isnan(p) || p < 1.0f;
           then:
-            - lvgl.widget.update: {id: mbr_mode_off_btn, bg_color: "${fan_off_active_color}"}
+            - lvgl.widget.update: {id: mbr_mode_off_btn, bg_color: 0x3C428F}
       - if:
           condition:
             lambda: 'return id(ha_mbr_fan_on).state && !isnan(id(ha_mbr_fan_pct).state) && id(ha_mbr_fan_pct).state > 0 && id(ha_mbr_fan_pct).state <= 40;'
           then:
-            - lvgl.widget.update: {id: mbr_mode_low_btn, bg_color: "${fan_low_active_color}"}
+            - lvgl.widget.update: {id: mbr_mode_low_btn, bg_color: 0x3C8F89}
       - if:
           condition:
             lambda: 'return id(ha_mbr_fan_on).state && !isnan(id(ha_mbr_fan_pct).state) && id(ha_mbr_fan_pct).state > 40 && id(ha_mbr_fan_pct).state <= 80;'
           then:
-            - lvgl.widget.update: {id: mbr_mode_med_btn, bg_color: "${fan_med_active_color}"}
+            - lvgl.widget.update: {id: mbr_mode_med_btn, bg_color: 0x8F893C}
       - if:
           condition:
             lambda: 'return id(ha_mbr_fan_on).state && !isnan(id(ha_mbr_fan_pct).state) && id(ha_mbr_fan_pct).state > 80;'
           then:
-            - lvgl.widget.update: {id: mbr_mode_high_btn, bg_color: "${fan_high_active_color}"}
+            - lvgl.widget.update: {id: mbr_mode_high_btn, bg_color: 0x8F3C42}
 
 
       # Direction button color
-      - lvgl.widget.update: {id: mbr_mode_dir_btn, bg_color: "${fan_inactive_color}"}
+      - lvgl.widget.update: {id: mbr_mode_dir_btn, bg_color: gray}
       - if:
           condition:
             lambda: 'std::string d = id(ha_mbr_fan_dir).state; for (auto &ch : d) ch = tolower(ch); return d == "reverse";'
           then:
-            - lvgl.widget.update: {id: mbr_mode_dir_btn, bg_color: "${fan_dir_reverse_color}"}
+            - lvgl.widget.update: {id: mbr_mode_dir_btn, bg_color: 0x6870CC}
       - if:
           condition:
             lambda: 'std::string d = id(ha_mbr_fan_dir).state; for (auto &ch : d) ch = tolower(ch); return d == "forward";'
           then:
-            - lvgl.widget.update: {id: mbr_mode_dir_btn, bg_color: "${fan_dir_forward_color}"}
+            - lvgl.widget.update: {id: mbr_mode_dir_btn, bg_color: 0x68A2CC}
       # Attic toggle buttons
       - if:
           condition:
             binary_sensor.is_on: ha_attic_fan_on
           then:
-            - lvgl.widget.update: {id: attic_low_btn, bg_color: "${fan_low_active_color}"}
+            - lvgl.widget.update: {id: attic_low_btn, bg_color: 0x3C8F89}
           else:
-            - lvgl.widget.update: {id: attic_low_btn, bg_color: "${fan_inactive_color}"}
+            - lvgl.widget.update: {id: attic_low_btn, bg_color: gray}
       - if:
           condition:
             binary_sensor.is_on: ha_attic_fan2_on
           then:
-            - lvgl.widget.update: {id: attic_high_btn, bg_color: "${fan_high_active_color}"}
+            - lvgl.widget.update: {id: attic_high_btn, bg_color: 0x8F3C42}
           else:
-            - lvgl.widget.update: {id: attic_high_btn, bg_color: "${fan_inactive_color}"}
+            - lvgl.widget.update: {id: attic_high_btn, bg_color: gray}
 
 lvgl:
   pages:
@@ -230,7 +223,7 @@ lvgl:
                   text: "Fan Controls"
                   align: TOP_MID
                   y: 8
-                  text_font: nunito_24
+                  text_font: nunito_36
                   text_color: sense_info
 
               - label:
