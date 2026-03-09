@@ -221,3 +221,28 @@ This fork uses a token-first color model so page files do not hardcode one-off h
 8. Validation rule
 - After each color batch, run root validation:
 `esphome config /config/esphome/sensecap-d1s-v2.yaml`
+
+## Pre-Flash Drift Guard (Recommended Prompt Add-On)
+
+Add this block below your hard constraints when you are doing refactors/color passes:
+
+```text
+12 Keep canonical UI defaults in ha_entities-sensecap.yaml (including icon glyph defaults).
+13 Page files should only reference ui_* vars and page-level show/hide/layout choices.
+14 Avoid nested icon token substitution patterns in page blocks; use resolved defaults from entity vars.
+15 Per-page overrides stay allowed, but default source remains entity vars.
+16 No bulk regex rewrites on YAML; use line-targeted edits.
+17 If any scripted replacement is used, re-open each touched block before validation.
+18 Scan edited YAML for literal artifacts before validation (for example `r`n and escaped newline leftovers).
+19 Hidden flags are only allowed on explicit value/state widgets unless explicitly approved.
+20 Section title labels should not receive value-state hidden/color rules unless explicitly approved.
+21 For color passes, prefer control/token files first; only touch page/widget files when wiring is required.
+22 Root validation must pass before flash: esphome config /config/esphome/sensecap-d1s-v2.yaml
+```
+
+### Why these additions
+
+- `12-15` lock down one-to-many ownership and prevent entity/page mapping drift.
+- `16-18` prevent text-corruption and accidental YAML structure damage.
+- `19-20` prevent UI regressions where labels/values disappear or inherit wrong state styles.
+- `21-22` enforce consistent color workflow and compile safety before flashing.
