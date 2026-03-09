@@ -1,4 +1,4 @@
-﻿# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common-sensecap.yaml.
+# Canonical Home1 HA map derived from packages/sensecap_next/core_ha_common-sensecap.yaml.
 # This file is a compatibility layer for the "buttons" setup.
 substitutions:
   # Common attribute names
@@ -21,21 +21,29 @@ substitutions:
   # Dani icon default stays in entity vars (mdi_alarm_light = U+F078F).
   # Page templates should consume ui_dani_* vars, not hardcoded icon tokens.
   ui_dani_icon: "\U000F078F"
-  ui_dani_on_bg: "sense_tile_red"
-  ui_dani_off_bg: "sense_tile_red_off"    # hex: '742B36'  Using same icon for on/off since color is the main state indicator.
+  ui_dani_on_bg: "dani_family_indigo_bg_on"
+  ui_dani_off_bg: "dani_family_indigo_bg_off"
   ui_dani_on_icon: "\U000F078F"
   ui_dani_off_icon: "\U000F078F"
   ui_dani_value_on: "ON"
   ui_dani_value_off: "OFF"
+  ui_dani_text_on_color: "dani_family_indigo_text_on"
+  ui_dani_text_off_color: "dani_family_indigo_text_off"
+  ui_dani_value_on_color: "dani_family_indigo_value_on"
+  ui_dani_value_off_color: "dani_family_indigo_value_off"
   # Sleepy icon default stays in entity vars (mdi_weather_night = U+F0594).
   ui_sleepy_text: "Sleepy"
   ui_sleepy_icon: "\U000F0594"
-  ui_sleepy_on_bg: "sense_tile_teal"
-  ui_sleepy_off_bg: "sense_tile_teal_off"    # hex: '008080'  Using same icon for on/off since color is the main state indicator.
+  ui_sleepy_on_bg: "dani_family_teal_bg_on"
+  ui_sleepy_off_bg: "dani_family_teal_bg_off"
   ui_sleepy_on_icon: "\U000F0594"
   ui_sleepy_off_icon: "\U000F0594"
   ui_sleepy_value_on: "ON"
   ui_sleepy_value_off: "OFF"
+  ui_sleepy_text_on_color: "dani_family_teal_text_on"
+  ui_sleepy_text_off_color: "dani_family_teal_text_off"
+  ui_sleepy_value_on_color: "dani_family_teal_value_on"
+  ui_sleepy_value_off_color: "dani_family_teal_value_off"
   # Bedtime icon default stays in entity vars (mdi_bed = U+F02E3).
   ui_bedtime_text: "Bedtime"
   ui_bedtime_icon: "\U000F02E3"
@@ -45,6 +53,116 @@ substitutions:
   ui_bedtime_off_icon: "\U000F02E3"
   ui_bedtime_value_on: "ON"
   ui_bedtime_value_off: "OFF"
+  ui_bedtime_text_on_color: "dani_family_red_text_on"
+  ui_bedtime_text_off_color: "dani_family_red_text_off"
+  ui_bedtime_value_on_color: "dani_family_red_value_on"
+  ui_bedtime_value_off_color: "dani_family_red_value_off"
+  # Override rows default text/value colors (token-driven)
+  ui_cleaners_text_on_color: "dani_family_orange_text_on"
+  ui_cleaners_text_off_color: "dani_family_orange_text_off"
+  ui_cleaners_value_on_color: "dani_family_orange_value_on"
+  ui_cleaners_value_off_color: "dani_family_orange_value_off"
+
+  ui_lock_text_on_color: "dani_family_indigo_text_on"
+  ui_lock_text_off_color: "dani_family_indigo_text_off"
+  ui_lock_value_on_color: "dani_family_indigo_value_on"
+  ui_lock_value_off_color: "dani_family_indigo_value_off"
+
+  ui_tod_text_on_color: "dani_family_orange_text_on"
+  ui_tod_text_off_color: "dani_family_orange_text_off"
+  ui_tod_value_on_color: "dani_family_orange_value_on"
+  ui_tod_value_off_color: "dani_family_orange_value_off"
+
+  ui_motion_text_on_color: "dani_family_teal_text_on"
+  ui_motion_text_off_color: "dani_family_teal_text_off"
+  ui_motion_value_on_color: "dani_family_teal_value_on"
+  ui_motion_value_off_color: "dani_family_teal_value_off"
+
+  ui_entry_motion_text_on_color: "dani_family_teal_text_on"
+  ui_entry_motion_text_off_color: "dani_family_teal_text_off"
+  ui_entry_motion_value_on_color: "dani_family_teal_value_on"
+  ui_entry_motion_value_off_color: "dani_family_teal_value_off"
+
+  ui_garage_text_on_color: "dani_family_teal_text_on"
+  ui_garage_text_off_color: "dani_family_teal_text_off"
+  ui_garage_value_on_color: "dani_family_teal_value_on"
+  ui_garage_value_off_color: "dani_family_teal_value_off"
+
+  ui_mbr_text_on_color: "dani_family_teal_text_on"
+  ui_mbr_text_off_color: "dani_family_teal_text_off"
+  ui_mbr_value_on_color: "dani_family_teal_value_on"
+  ui_mbr_value_off_color: "dani_family_teal_value_off"
+
+  # Override rows default icon/background behavior (token-driven)
+  ui_cleaners_icon: "$mdi_broom"
+  ui_cleaners_on_icon: "$mdi_broom"
+  ui_cleaners_off_icon: "$mdi_broom"
+  ui_cleaners_on_bg: "sense_tile_orange"
+  ui_cleaners_off_bg: "sense_tile_orange_off"
+  ui_cleaners_icon_on_color: "$icon_on_color"
+  ui_cleaners_icon_off_color: "sense_text_muted"
+
+  ui_lock_icon: "$mdi_lock_off"
+  ui_lock_on_icon: "$mdi_lock_off"
+  ui_lock_off_icon: "$mdi_lock_off"
+  ui_lock_on_bg: "sense_tile_indigo"
+  ui_lock_off_bg: "sense_tile_indigo_off"
+  ui_lock_icon_on_color: "$icon_on_color"
+  ui_lock_icon_off_color: "sense_text_muted"
+
+  ui_tod_icon: "$mdi_home_automation"
+  ui_tod_on_icon: "$mdi_home_automation"
+  ui_tod_off_icon: "$mdi_home_automation"
+  ui_tod_on_bg: "sense_tile_orange"
+  ui_tod_off_bg: "sense_tile_orange_off"
+  ui_tod_icon_on_color: "$icon_on_color"
+  ui_tod_icon_off_color: "sense_text_muted"
+
+  ui_motion_icon: "$mdi_motion_sensor"
+  ui_motion_on_icon: "$mdi_motion_sensor_off"
+  ui_motion_off_icon: "$mdi_motion_sensor"
+  ui_motion_on_bg: "sense_tile_motion"
+  ui_motion_off_bg: "sense_tile_motion_off"
+  ui_motion_icon_on_color: "$icon_on_color"
+  ui_motion_icon_off_color: "sense_text_muted"
+
+  ui_entry_motion_icon: "$mdi_motion_sensor"
+  ui_entry_motion_on_icon: "$mdi_motion_sensor_off"
+  ui_entry_motion_off_icon: "$mdi_motion_sensor"
+  ui_entry_motion_on_bg: "sense_tile_motion"
+  ui_entry_motion_off_bg: "sense_tile_motion_off"
+  ui_entry_motion_icon_on_color: "$icon_on_color"
+  ui_entry_motion_icon_off_color: "sense_text_muted"
+
+  ui_garage_icon: "$mdi_motion_sensor"
+  ui_garage_on_icon: "$mdi_motion_sensor_off"
+  ui_garage_off_icon: "$mdi_motion_sensor"
+  ui_garage_on_bg: "sense_tile_motion"
+  ui_garage_off_bg: "sense_tile_motion_off"
+  ui_garage_icon_on_color: "$icon_on_color"
+  ui_garage_icon_off_color: "sense_text_muted"
+
+  ui_mbr_icon: "$mdi_motion_sensor"
+  ui_mbr_on_icon: "$mdi_motion_sensor_off"
+  ui_mbr_off_icon: "$mdi_motion_sensor"
+  ui_mbr_on_bg: "sense_tile_motion"
+  ui_mbr_off_bg: "sense_tile_motion_off"
+  ui_mbr_icon_on_color: "$icon_on_color"
+  ui_mbr_icon_off_color: "sense_text_muted"
+
+  # Fan/Thermostat state color defaults (token-driven)
+  ui_fan_inactive_color: "dani_state_inactive"
+  ui_fan_off_active_color: "dani_fan_off_active"
+  ui_fan_low_active_color: "dani_fan_low_active"
+  ui_fan_med_active_color: "dani_fan_med_active"
+  ui_fan_high_active_color: "dani_fan_high_active"
+  ui_fan_dir_reverse_color: "dani_fan_dir_reverse"
+  ui_fan_dir_forward_color: "dani_fan_dir_forward"
+
+  ui_tstat_mode_inactive_color: "dani_tstat_mode_inactive"
+  ui_tstat_mode_off_active_color: "dani_tstat_mode_off_active"
+  ui_tstat_mode_heat_active_color: "dani_tstat_mode_heat_active"
+  ui_tstat_mode_cool_active_color: "dani_tstat_mode_cool_active"
   ui_profile_home_tile_radius: "8"
   ui_profile_home_tile_pad_left: "8"
   ui_profile_home_tile_pad_right: "8"

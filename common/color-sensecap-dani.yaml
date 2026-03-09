@@ -58,6 +58,158 @@ color:
       hex: '3C428F'
     - id: sense_tile_indigo_off
       hex: '192457'
+
+    # Dani 6-family button palette matrix
+    - id: dani_family_teal_bg_on
+      hex: '3C8F89'
+    - id: dani_family_teal_bg_off
+      hex: '19574C'
+    - id: dani_family_teal_text_on
+      hex: 'FFFFFF'
+    - id: dani_family_teal_text_off
+      hex: 'E0E0E0'
+    - id: dani_family_teal_value_on
+      hex: 'FFFFFF'
+    - id: dani_family_teal_value_off
+      hex: 'E0E0E0'
+    - id: dani_family_teal_slider_on
+      hex: '3C8F89'
+    - id: dani_family_teal_slider_off
+      hex: '19574C'
+    - id: dani_family_teal_knob_on
+      hex: '68CCC4'
+    - id: dani_family_teal_knob_off
+      hex: '19574C'
+
+    - id: dani_family_blue_bg_on
+      hex: '3C6B8F'
+    - id: dani_family_blue_bg_off
+      hex: '194357'
+    - id: dani_family_blue_text_on
+      hex: 'FFFFFF'
+    - id: dani_family_blue_text_off
+      hex: 'E0E0E0'
+    - id: dani_family_blue_value_on
+      hex: 'FFFFFF'
+    - id: dani_family_blue_value_off
+      hex: 'E0E0E0'
+    - id: dani_family_blue_slider_on
+      hex: '3C6B8F'
+    - id: dani_family_blue_slider_off
+      hex: '194357'
+    - id: dani_family_blue_knob_on
+      hex: '68A2CC'
+    - id: dani_family_blue_knob_off
+      hex: '194357'
+
+    - id: dani_family_indigo_bg_on
+      hex: '3C428F'
+    - id: dani_family_indigo_bg_off
+      hex: '192457'
+    - id: dani_family_indigo_text_on
+      hex: 'FFFFFF'
+    - id: dani_family_indigo_text_off
+      hex: 'E0E0E0'
+    - id: dani_family_indigo_value_on
+      hex: 'FFFFFF'
+    - id: dani_family_indigo_value_off
+      hex: 'E0E0E0'
+    - id: dani_family_indigo_slider_on
+      hex: '3C428F'
+    - id: dani_family_indigo_slider_off
+      hex: '192457'
+    - id: dani_family_indigo_knob_on
+      hex: '6870CC'
+    - id: dani_family_indigo_knob_off
+      hex: '192457'
+
+    - id: dani_family_red_bg_on
+      hex: '8F3C42'
+    - id: dani_family_red_bg_off
+      hex: '571924'
+    - id: dani_family_red_text_on
+      hex: 'FFFFFF'
+    - id: dani_family_red_text_off
+      hex: 'E0E0E0'
+    - id: dani_family_red_value_on
+      hex: 'FFFFFF'
+    - id: dani_family_red_value_off
+      hex: 'E0E0E0'
+    - id: dani_family_red_slider_on
+      hex: '8F3C42'
+    - id: dani_family_red_slider_off
+      hex: '571924'
+    - id: dani_family_red_knob_on
+      hex: 'CC6870'
+    - id: dani_family_red_knob_off
+      hex: '571924'
+
+    - id: dani_family_yellow_bg_on
+      hex: '8F893C'
+    - id: dani_family_yellow_bg_off
+      hex: '574C19'
+    - id: dani_family_yellow_text_on
+      hex: '0D0D0D'
+    - id: dani_family_yellow_text_off
+      hex: 'E0E0E0'
+    - id: dani_family_yellow_value_on
+      hex: '0D0D0D'
+    - id: dani_family_yellow_value_off
+      hex: 'E0E0E0'
+    - id: dani_family_yellow_slider_on
+      hex: '8F893C'
+    - id: dani_family_yellow_slider_off
+      hex: '574C19'
+    - id: dani_family_yellow_knob_on
+      hex: 'CCC468'
+    - id: dani_family_yellow_knob_off
+      hex: '574C19'
+
+    - id: dani_family_orange_bg_on
+      hex: 'A8840F'
+    - id: dani_family_orange_bg_off
+      hex: '574C19'
+    - id: dani_family_orange_text_on
+      hex: '0D0D0D'
+    - id: dani_family_orange_text_off
+      hex: 'E0E0E0'
+    - id: dani_family_orange_value_on
+      hex: '0D0D0D'
+    - id: dani_family_orange_value_off
+      hex: 'E0E0E0'
+    - id: dani_family_orange_slider_on
+      hex: 'A8840F'
+    - id: dani_family_orange_slider_off
+      hex: '574C19'
+    - id: dani_family_orange_knob_on
+      hex: 'DED1AB'
+    - id: dani_family_orange_knob_off
+      hex: '574C19'
+
+    # Semantic state tokens for fans and thermostat
+    - id: dani_state_inactive
+      hex: '666666'
+    - id: dani_fan_off_active
+      hex: '3C428F'
+    - id: dani_fan_low_active
+      hex: '3C8F89'
+    - id: dani_fan_med_active
+      hex: '8F893C'
+    - id: dani_fan_high_active
+      hex: '8F3C42'
+    - id: dani_fan_dir_reverse
+      hex: '6870CC'
+    - id: dani_fan_dir_forward
+      hex: '68A2CC'
+    - id: dani_tstat_mode_inactive
+      hex: '666666'
+    - id: dani_tstat_mode_off_active
+      hex: '3C428F'
+    - id: dani_tstat_mode_heat_active
+      hex: '8F3C42'
+    - id: dani_tstat_mode_cool_active
+      hex: '3C6B8F'
+
     - id: sense_tile_sky
       hex: '3A86FF'
     - id: sense_tile_sky_off
@@ -86,13 +238,13 @@ color:
     
     # Dani dimmer slider defaults (from complementary palettes)
     - id: dani_slider_on
-      hex: '0F80A8'
+      hex: '3C428F'
     - id: dani_slider_off
-      hex: '194357'
+      hex: '192457'
     - id: dani_slider_knob
-      hex: 'ABD1DE'
+      hex: '6870CC'
     - id: dani_slider_knob_off
-      hex: '68A2CC'
+      hex: '192457'
     - id: burnt_sienna
       hex: 'CC5E14'
     - id: very_dark_gray

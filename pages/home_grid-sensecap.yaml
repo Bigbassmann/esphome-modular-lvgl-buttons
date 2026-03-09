@@ -61,7 +61,7 @@ lvgl:
                   text: ${ui_home_dani_value_off}
                   align: BOTTOM_RIGHT
                   text_font: nunito_18
-                  text_color: white
+                  text_color: ${ui_home_dani_value_off_color}
                   hidden: false
         - button:
             id: home_v2_btn_sleepy

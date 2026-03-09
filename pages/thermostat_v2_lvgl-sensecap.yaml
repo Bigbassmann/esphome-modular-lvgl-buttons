@@ -1,10 +1,10 @@
 substitutions:
   tstat_title_font: "montserrat_24"
   tstat_title_color: "0x0F766E"
-  tstat_mode_inactive_color: "gray"
-  tstat_mode_off_active_color: "0x3C428F"
-  tstat_mode_heat_active_color: "0x8F3C42"
-  tstat_mode_cool_active_color: "0x3C6B8F"
+  tstat_mode_inactive_color: "dani_tstat_mode_inactive"
+  tstat_mode_off_active_color: "dani_tstat_mode_off_active"
+  tstat_mode_heat_active_color: "dani_tstat_mode_heat_active"
+  tstat_mode_cool_active_color: "dani_tstat_mode_cool_active"
 
 globals:
   - id: tstat_page_active

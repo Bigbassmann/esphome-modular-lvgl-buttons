@@ -88,13 +88,13 @@ packages:
   page_fans_sensecap: !include
     file: pages/fans_grid-sensecap.yaml
     vars:
-      fan_inactive_color: gray
-      fan_off_active_color: 0x3C428F
-      fan_low_active_color: 0x3C8F89
-      fan_med_active_color: 0x8F893C
-      fan_high_active_color: 0x8F3C42
-      fan_dir_reverse_color: 0x6870CC
-      fan_dir_forward_color: 0x68A2CC
+      fan_inactive_color: ${ui_fan_inactive_color}
+      fan_off_active_color: ${ui_fan_off_active_color}
+      fan_low_active_color: ${ui_fan_low_active_color}
+      fan_med_active_color: ${ui_fan_med_active_color}
+      fan_high_active_color: ${ui_fan_high_active_color}
+      fan_dir_reverse_color: ${ui_fan_dir_reverse_color}
+      fan_dir_forward_color: ${ui_fan_dir_forward_color}
   page_overrides_sensecap: !include pages/overrides_grid-sensecap.yaml
   page_lighting_dimmers_sensecap: !include
     file: pages/lighting_dimmers_grid_template-sensecap.yaml
@@ -164,10 +164,10 @@ packages:
     vars:
       tstat_title_font: nunito_36
       tstat_title_color: sense_info
-      tstat_mode_inactive_color: gray
-      tstat_mode_off_active_color: 0x3C428F
-      tstat_mode_heat_active_color: 0x8F3C42
-      tstat_mode_cool_active_color: 0x3C6B8F
+      tstat_mode_inactive_color: ${ui_tstat_mode_inactive_color}
+      tstat_mode_off_active_color: ${ui_tstat_mode_off_active_color}
+      tstat_mode_heat_active_color: ${ui_tstat_mode_heat_active_color}
+      tstat_mode_cool_active_color: ${ui_tstat_mode_cool_active_color}
   # core_boot: !include common/core_boot-sensecap.yaml
   core_globals: !include common/core_globals-sensecap.yaml
   # legacy_globals: !include common/core_globals_legacy_compat-sensecap.yaml

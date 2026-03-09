@@ -76,28 +76,97 @@ esphome config /config/esphome/esphome-modular-lvgl-buttons/sensecap-d1s-v2-001.
 rg -n "custom_components" /config/esphome/esphome-modular-lvgl-buttons --glob "!archive/**"
 ```
 
-## Working With AI/GPT/Codex
+## Working With AI/GPT/Codex/Grok xAI/Co-Pilot
 
-Use this block at the top of prompts:
+Use this single consolidated rules list in prompts.
+
+1. [Apply: Always] Scope is only `/config/esphome/esphome-modular-lvgl-buttons` (exception: read-only access to explicitly provided external files).
+2. [Apply: Always] Do not touch `/config/esphome` root files unless explicitly approved.
+3. [Apply: Always] Preserve upstream templates; only change fork-owned `-sensecap` files unless explicitly approved.
+4. [Apply: Before non-trivial changes] State exact files to be touched.
+5. [Apply: Any out-of-scope/elevated command] Ask first unless covered by always-approved rules below.
+6. [Apply: After changes] Report exactly what changed.
+7. [Apply: If rule conflict occurs] Stop and ask.
+8. [Apply: YAML edits] Prefer `apply_patch` to avoid string-escape side effects.
+9. [Apply: PowerShell writes] Use here-strings/literal blocks; avoid escaped newline text writes.
+10. [Apply: After scripted/file-write edits] Scan edited YAML for literal artifacts (for example `` `r`n ``, `\\r\\n`, `\\n`).
+11. [Apply: After each small edit batch] Validate immediately; avoid large unvalidated rewrite batches.
+12. [Apply: Always, architecture] Keep canonical UI defaults in `common/ha_entities-sensecap.yaml` (including icon glyph defaults).
+13. [Apply: Page-file edits] Page files should reference `ui_*` vars plus page-level show/hide/layout choices only.
+14. [Apply: Page-file edits] Avoid nested icon token substitution patterns in page blocks; use resolved defaults from entity vars.
+15. [Apply: Always, architecture] Per-page overrides are allowed, but default source remains entity vars.
+16. [Apply: Scripted rewrite attempts] No bulk regex rewrites on YAML; use line-targeted edits.
+17. [Apply: If scripted replacement is used] Re-open each touched block before validation.
+18. [Apply: UI/page edits] Hidden flags are allowed only on explicit value/state widgets unless explicitly approved.
+19. [Apply: UI/page edits] Section title labels should not receive value-state hidden/color rules unless explicitly approved.
+20. [Apply: Color pass] Edit control/token files first; touch page/widget files only when wiring requires it.
+21. [Apply: Color pass] Keep `sensecap-d1s-v2-001-dani.yaml` differences focused on package/includes and vars, not behavior logic forks.
+22. [Apply: Pre-flash] Root validation must pass: `esphome config /config/esphome/sensecap-d1s-v2.yaml`.
+23. [Apply: Optional hygiene] Scan repo for deprecated `custom_components` references before major cleanup passes.
+24. [Apply: Optional hygiene] Include a short drift-check summary (files touched, scans run, validate result, intentional exceptions).
+25. [Apply: Always approved] Within scope, non-destructive read/search/list operations are pre-approved (for example `Get-Content`, `rg`, `Select-String`, directory listing).
+26. [Apply: Always approved] Post-edit artifact scans and root validation are pre-approved.
+27. [Apply: Always approved after failed validation] Error extraction and line-range inspection in touched files are pre-approved until compile is green.
+28. [Apply: Always] Out-of-scope access, destructive operations, and non-scoped elevated actions still require explicit approval.
+29. [Apply: Always approved] After declaring touched in-scope files, proceed through required edit + scan + validate cycles without additional confirmation prompts.
+30. [Apply: Always approved] In-scope elevated commands on the network share are allowed for read/search/list/check operations.
+31. [Apply: Always approved] In-scope elevated edits are allowed after declaring exact files to be touched.
+32. [Apply: Always approved] Post-edit scans (artifact and drift checks) are allowed without additional confirmation.
+33. [Apply: Always approved] Root validation and re-validation loops are allowed until compile is green.
+
+
+36. [Apply: Always approved] After an in-scope edit batch, run self-checks on edited files (spot-checks, grep/select-string, line checks) without extra confirmation.
+37. [Apply: Always approved] If a self-check finds a small in-scope issue from the same batch, apply a corrective patch and re-check without extra confirmation.
+38. [Apply: Always approved] Keep duplicated rule blocks (README list and prompt block) synchronized without extra confirmation.
+Prompt block (copy/paste):
 
 ```text
 Hard constraints (must follow):
-1 Scope: ONLY edit/read under /config/esphome/esphome-modular-lvgl-buttons. Exception is that you can read any files given to you in their given location.
-2 Do NOT touch /config/esphome root files unless you explicitly say so.
-3 Preserve upstream template files; only change -sensecap/fork-owned files unless you explicitly approve.
-4 Before any non-trivial change: state exact files to be touched.
-5 If a command needs access outside repo scope or elevated permissions, ask first.
-6 After changes: report exactly what changed and run only the validations you requested.
-7 If any rule conflicts, stop and ask.
-8 Prefer apply_patch for YAML edits (no string-escape side effects).
-9 If using PowerShell, avoid writing escaped newline text; use here-strings and literal text blocks.
-10 Add a quick check after edits: search for literal `r`n in edited YAML files.
-11 Validate immediately after each edit batch (small batches, not big scripted rewrites).
+1 [Always] Scope only /config/esphome/esphome-modular-lvgl-buttons (except explicit read-only external files).
+2 [Always] Do not touch /config/esphome root files unless explicitly approved.
+3 [Always] Preserve upstream templates; change only -sensecap files unless explicitly approved.
+4 [Before non-trivial change] State exact files to be touched.
+5 [Out-of-scope/elevated command] Ask first unless covered by always-approved rules below.
+6 [After changes] Report exact changes.
+7 [Conflict] Stop and ask.
+8 [YAML edits] Prefer apply_patch.
+9 [PowerShell writes] Use here-strings/literal blocks.
+10 [Post-edit scan] Search for literal `r`n and escaped newline artifacts in edited YAML.
+11 [After each small batch] Validate.
+12 [Always] Keep canonical UI defaults in ha_entities-sensecap.yaml.
+13 [Page edits] Pages reference ui_* vars + page-level show/hide/layout only.
+14 [Page edits] Avoid nested icon token substitutions in pages.
+15 [Always] Per-page overrides allowed; defaults come from entity vars.
+16 [Scripted rewrites] No bulk regex YAML rewrites.
+17 [If scripted replacement used] Re-open touched blocks before validate.
+18 [UI/page edits] Hidden only on explicit value/state widgets unless approved.
+19 [UI/page edits] No value-state color/hidden rules on section title labels unless approved.
+20 [Color pass] Token/control files first, page wiring second.
+21 [Color pass] Keep 001 vs 001-dani differences to includes/vars where possible.
+22 [Pre-flash] Root validate: esphome config /config/esphome/sensecap-d1s-v2.yaml.
+23 [Optional hygiene] Scan for deprecated custom_components references before major cleanup passes.
+24 [Optional hygiene] Include a short drift-check summary after significant edits.
+25 [Always approved] In-scope non-destructive read/search/list commands do not need extra confirmation.
+26 [Always approved] Post-edit artifact scans and root validation do not need extra confirmation.
+27 [Always approved after failed validation] Capture error output and inspect touched file line ranges until green.
+28 [Always] Out-of-scope/destructive/non-scoped elevated actions still require explicit approval.
+29 [Always approved] After declaring touched in-scope files, proceed through edit + scan + validate cycles without extra confirmation.
+30 [Always approved] In-scope elevated network-share read/search/list/check commands are pre-approved.
+31 [Always approved] In-scope elevated edits are pre-approved after declaring exact files to be touched.
+32 [Always approved] Post-edit artifact and drift scans are pre-approved.
+33 [Always approved] Root validation and re-validation loops are pre-approved until compile is green.
+
+
+36 [Always approved] After an in-scope edit batch, run self-checks on edited files (spot-checks, grep/select-string, line checks) without extra confirmation.
+37 [Always approved] If a self-check finds a small in-scope issue from the same batch, apply a corrective patch and re-check without extra confirmation.
+38 [Always approved] Keep duplicated rule blocks (README list and prompt block) synchronized without extra confirmation.
 ```
 
 ## Image Assets
 
-- SenseCAP image assets folder: `images/sensecap/`
+- SenseCAP image assets root: [images/Seed-Studio-SenseCap-D1S/](images/Seed-Studio-SenseCap-D1S/)
+- Screenshots: [images/Seed-Studio-SenseCap-D1S/screen-shots/](images/Seed-Studio-SenseCap-D1S/screen-shots/)
+- Color palettes: [images/Seed-Studio-SenseCap-D1S/color-palettes/](images/Seed-Studio-SenseCap-D1S/color-palettes/)
 
 ## Upstream vs SenseCAP Fork Surface
 
@@ -221,28 +290,3 @@ This fork uses a token-first color model so page files do not hardcode one-off h
 8. Validation rule
 - After each color batch, run root validation:
 `esphome config /config/esphome/sensecap-d1s-v2.yaml`
-
-## Pre-Flash Drift Guard (Recommended Prompt Add-On)
-
-Add this block below your hard constraints when you are doing refactors/color passes:
-
-```text
-12 Keep canonical UI defaults in ha_entities-sensecap.yaml (including icon glyph defaults).
-13 Page files should only reference ui_* vars and page-level show/hide/layout choices.
-14 Avoid nested icon token substitution patterns in page blocks; use resolved defaults from entity vars.
-15 Per-page overrides stay allowed, but default source remains entity vars.
-16 No bulk regex rewrites on YAML; use line-targeted edits.
-17 If any scripted replacement is used, re-open each touched block before validation.
-18 Scan edited YAML for literal artifacts before validation (for example `r`n and escaped newline leftovers).
-19 Hidden flags are only allowed on explicit value/state widgets unless explicitly approved.
-20 Section title labels should not receive value-state hidden/color rules unless explicitly approved.
-21 For color passes, prefer control/token files first; only touch page/widget files when wiring is required.
-22 Root validation must pass before flash: esphome config /config/esphome/sensecap-d1s-v2.yaml
-```
-
-### Why these additions
-
-- `12-15` lock down one-to-many ownership and prevent entity/page mapping drift.
-- `16-18` prevent text-corruption and accidental YAML structure damage.
-- `19-20` prevent UI regressions where labels/values disappear or inherit wrong state styles.
-- `21-22` enforce consistent color workflow and compile safety before flashing.
