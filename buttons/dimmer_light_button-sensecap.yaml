@@ -1,3 +1,13 @@
+# FILE EDIT GUIDE (SenseCAP)
+# Role: Reusable button template (structure + behavior hooks).
+# Update here for:
+# - Size/shape defaults: width/height/radius/padding/alignment.
+# - Show/hide behavior flags for icon/text/value/state widgets.
+# - Runtime logic: on_press, on_value, lambda/then blocks, intervals.
+# Keep entity wiring out of this file:
+# - Entity/attribute mapping belongs in common/ha_entities-*.yaml.
+# - Page placement/layout belongs in pages/*-sensecap*.yaml.
+# - Color defaults should resolve via ui_* vars and family color tokens.
 ---
 # Dimmer light button
 # vars:

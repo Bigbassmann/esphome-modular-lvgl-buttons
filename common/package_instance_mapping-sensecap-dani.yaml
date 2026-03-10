@@ -1,4 +1,13 @@
-﻿packages:
+# FILE EDIT GUIDE (SenseCAP)
+# Role: Shared defaults/tokens/mappings/include wiring.
+# Update here for:
+# - Color tokens and family palettes (common/color-*.yaml).
+# - UI defaults and entity attributes (common/ha_entities-*.yaml).
+# - Global runtime/state controls (intervals, globals, boot/runtime hooks).
+# - Page-to-entity mapping controls when used by this file.
+# Page files should consume these defaults via ui_* vars and page-level overrides.
+# Avoid hardcoded page layout geometry in common files.
+packages:
   page_lighting_dimmers_sensecap: !include
     file: ../pages/lighting_dimmers_grid_template-sensecap.yaml
     vars:
@@ -64,8 +73,7 @@
 
   thermostat_v2: !include ../pages/thermostat_v2_lvgl-sensecap-dani.yaml
   # core_boot: !include ../common/core_boot-sensecap.yaml
-  core_globals: !include ../common/core_globals-sensecap.yaml
-  # legacy_globals: !include ../common/core_globals_legacy_compat-sensecap.yaml
+  # rp2040_last_seen_ms global is now declared in ../common/sensecap_indicator_sensors-sensecap.yaml
   ha_entities_sensecap: !include ../common/ha_entities-sensecap-dani.yaml
   page_mapping_sensecap: !include ../common/page_mapping-sensecap.yaml
   core_ha_common: !include ../common/core_ha_common-sensecap.yaml

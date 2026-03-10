@@ -1,3 +1,10 @@
+# FILE EDIT GUIDE (SenseCAP)
+# Role: Hardware profile/pin/platform defaults for SenseCAP builds.
+# Update here for:
+# - Board/platform settings and hardware pin assignments.
+# - Device-level hardware options and capabilities.
+# - Low-level defaults required by multiple page/components.
+# Do not place page UI layout or per-entity visual mappings here.
 # Seeed Studios SenseCap Indicator D1S
 #
 # Hardware configuration file

@@ -17,13 +17,13 @@ This file documents the current working pattern for this fork and the immediate 
 1. Edit only inside this repo path: `/config/esphome/esphome-modular-lvgl-buttons`
 2. Keep upstream template-safe patterns where possible
 3. Prefer `-sensecap` fork-owned files for active custom behavior
-4. Keep HA entity bindings centralized in `common/ha_entities-sensecap.yaml`
+4. Keep HA entity bindings centralized in `common/ha_entities-sensecap-dani.yaml`
 5. Keep page layout concerns in `pages/*-sensecap.yaml`
 6. Keep reusable behavior in `buttons/*-sensecap.yaml` only when it clearly reduces duplication
 
 ## Current Structure (Recommended)
 
-- `common/ha_entities-sensecap.yaml`
+- `common/ha_entities-sensecap-dani.yaml`
   - Entity IDs + default UI values (text/icon/on-off colors/value strings)
   - No page-specific coordinates
 
@@ -56,7 +56,7 @@ Moved to `archive/` because they were not referenced by active YAML:
 - Remove/resolve any stale references introduced by earlier experiments
 
 2. Dani + Sleepy pilot refactor
-- Keep entity defaults in `common/ha_entities-sensecap.yaml`
+- Keep entity defaults in `common/ha_entities-sensecap-dani.yaml`
 - Keep home slot layout in `pages/home_grid-sensecap.yaml`
 - Avoid nested/dotted substitution maps
 
@@ -93,7 +93,7 @@ Use this single consolidated rules list in prompts.
 9. [Apply: PowerShell writes] Use here-strings/literal blocks; avoid escaped newline text writes.
 10. [Apply: After scripted/file-write edits] Scan edited YAML for literal artifacts (for example `` `r`n ``, `\\r\\n`, `\\n`).
 11. [Apply: After each small edit batch] Validate immediately; avoid large unvalidated rewrite batches.
-12. [Apply: Always, architecture] Keep canonical UI defaults in `common/ha_entities-sensecap.yaml` (including icon glyph defaults).
+12. [Apply: Always, architecture] Keep canonical UI defaults in `common/ha_entities-sensecap-dani.yaml` (including icon glyph defaults).
 13. [Apply: Page-file edits] Page files should reference `ui_*` vars plus page-level show/hide/layout choices only.
 14. [Apply: Page-file edits] Avoid nested icon token substitution patterns in page blocks; use resolved defaults from entity vars.
 15. [Apply: Always, architecture] Per-page overrides are allowed, but default source remains entity vars.
@@ -135,7 +135,7 @@ Hard constraints (must follow):
 9 [PowerShell writes] Use here-strings/literal blocks.
 10 [Post-edit scan] Search for literal `r`n and escaped newline artifacts in edited YAML.
 11 [After each small batch] Validate.
-12 [Always] Keep canonical UI defaults in ha_entities-sensecap.yaml.
+12 [Always] Keep canonical UI defaults in ha_entities-sensecap-dani.yaml.
 13 [Page edits] Pages reference ui_* vars + page-level show/hide/layout only.
 14 [Page edits] Avoid nested icon token substitutions in pages.
 15 [Always] Per-page overrides allowed; defaults come from entity vars.
@@ -195,15 +195,15 @@ Hard constraints (must follow):
 
 - `widgets/topbar-sensecap.yaml` (SenseCAP top status/navigation strip)
 - `widgets/bottom_nav-sensecap.yaml` (SenseCAP bottom nav bar)
-- `pages/display_settings-sensecap.yaml` (display control page; SenseCAP variation of backlight-time behavior)
-- `pages/thermostat_v2_lvgl-sensecap.yaml` (SenseCAP thermostat UI/control flow)
+- `pages/display_settings-sensecap-dani.yaml` (display control page; SenseCAP variation of backlight-time behavior)
+- `pages/thermostat_v2_lvgl-sensecap-dani.yaml` (SenseCAP thermostat UI/control flow)
 - New SenseCAP page templates/layouts in `pages/*-sensecap.yaml` (home/menu/overrides/sensors/lighting/fans shells)
 
 ### HA/UI mapping setup (current model)
 
 The fork uses a two-layer mapping model to reduce cross-file editing:
 
-- `common/ha_entities-sensecap.yaml`
+- `common/ha_entities-sensecap-dani.yaml`
   - Canonical HA entity bindings (`ent_*`)
   - Default UI values per entity (`ui_*` for text/icon/on-off colors/value text)
 
@@ -241,7 +241,7 @@ This means layout/schema may continue to evolve while keeping root validation gr
   - Dimmers page layout template: title row + `4` content rows (`5` total rows)
   - Columns: `4`
 
-- `pages/lighting_switches_grid-sensecap.yaml`
+- `pages/lighting_switches_grid-sensecap-dani.yaml`
   - Lighting switches layout: title row + `3` content rows (`4` total rows)
   - Columns: `2`
 
@@ -249,10 +249,10 @@ This means layout/schema may continue to evolve while keeping root validation gr
   - Sensors page base layout: `3 x 3` grid
   - Widgets are populated by sensor button includes
 
-- `pages/display_settings-sensecap.yaml`
+- `pages/display_settings-sensecap-dani.yaml`
   - Display settings page uses free-positioned controls inside a page container (non-uniform grid UI)
 
-- `pages/fans_grid-sensecap.yaml`
+- `pages/fans_grid-sensecap-dani.yaml`
   - Fans page uses free-positioned controls/cards (non-uniform grid UI)
 
 - `pages/wifi_setup-sensecap.yaml`
@@ -261,7 +261,7 @@ This means layout/schema may continue to evolve while keeping root validation gr
 - `pages/info-sensecap.yaml`
   - Info page content uses a `10-row x 2-column` grid inside the main card
 
-- `pages/thermostat_v2_lvgl-sensecap.yaml`
+- `pages/thermostat_v2_lvgl-sensecap-dani.yaml`
   - Thermostat page uses custom positioned controls (arc + labels + dropdowns), not a fixed tile grid
 
 ## Color Palette Approach and Rule-Set
@@ -269,7 +269,7 @@ This means layout/schema may continue to evolve while keeping root validation gr
 This fork uses a token-first color model so page files do not hardcode one-off hex values unless there is a specific exception.
 
 1. Palette ownership
-- Keep canonical palette tokens in `common/color-sensecap.yaml` (or variant file such as `common/color-sensecap-dani.yaml`).
+- Keep canonical palette tokens in `common/color-sensecap-dani.yaml` (or variant file such as `common/color-sensecap-dani.yaml`).
 - Keep page files consuming semantic color vars/tokens instead of literal hex values.
 
 2. Variant strategy (`001` vs `001-dani`)
@@ -304,3 +304,18 @@ This fork uses a token-first color model so page files do not hardcode one-off h
 
 
 
+
+## Page File Header Guide
+- All \\pages/*-sensecap*.yaml\\ files now start with a \\PAGE EDIT GUIDE (SenseCAP)\\ comment block.
+- Keep this header when creating new page files and update paths if architecture changes.
+
+
+## Baseline Retirement (2026-03-10)
+- Active baseline is `sensecap-d1s-v2-001-dani.yaml` and its `*-sensecap-dani.yaml` include set.
+- Non-dani legacy variants retired in this pass were moved to:
+  - `archive/retired_baseline_2026-03-10/`
+- Rule going forward:
+  - New color/theme/entity/page baseline updates go to `*-sensecap-dani.yaml` files.
+  - Do not reintroduce retired non-dani duplicates unless explicitly required.
+
+- 2026-03-10 cleanup: retired `common/core_globals-sensecap.yaml`; `rp2040_last_seen_ms` now lives in `common/sensecap_indicator_sensors-sensecap.yaml`.

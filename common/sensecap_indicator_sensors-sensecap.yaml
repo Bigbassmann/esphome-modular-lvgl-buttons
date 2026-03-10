@@ -1,4 +1,20 @@
-﻿# SenseCAP Indicator sensors + wifi info text
+# FILE EDIT GUIDE (SenseCAP)
+# Role: Shared defaults/tokens/mappings/include wiring.
+# Update here for:
+# - Color tokens and family palettes (common/color-*.yaml).
+# - UI defaults and entity attributes (common/ha_entities-*.yaml).
+# - Global runtime/state controls (intervals, globals, boot/runtime hooks).
+# - Page-to-entity mapping controls when used by this file.
+# Page files should consume these defaults via ui_* vars and page-level overrides.
+# Avoid hardcoded page layout geometry in common files.
+# SenseCAP Indicator sensors + wifi info text
+
+globals:
+  # Shared RP2040 heartbeat used by indicator sensors/widgets.
+  - id: rp2040_last_seen_ms
+    type: uint32_t
+    initial_value: "0"
+
 text_sensor:
   - platform: wifi_info
     ip_address:

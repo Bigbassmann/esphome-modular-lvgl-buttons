@@ -5,7 +5,7 @@ Goal: keep the project modular, but avoid splitting one feature into many tiny f
 ## Rules
 
 1. Keep all Home Assistant entity IDs in one file:
-   - `common/ha_entities-sensecap.yaml`
+   - `common/ha_entities-sensecap-dani.yaml`
 2. Keep one file per feature/page element:
    - LVGL widgets
    - HA sensors/text_sensors
@@ -23,7 +23,7 @@ This is the reference implementation of the pattern.
 
 ```yaml
 packages:
-  ha_entities: !include esphome-modular-lvgl-buttons/common/ha_entities-sensecap.yaml
+  ha_entities: !include esphome-modular-lvgl-buttons/common/ha_entities-sensecap-dani.yaml
   tstat_element: !include esphome-modular-lvgl-buttons/pages/thermostat_v2_element-sensecap.yaml
 ```
 

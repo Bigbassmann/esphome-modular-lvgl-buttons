@@ -1,4 +1,11 @@
-﻿obj:
+# FILE EDIT GUIDE (SenseCAP)
+# Role: Shared top/bottom navigation widgets.
+# Update here for:
+# - Shared nav button styling (bg/text/font/radius) via tokens.
+# - Shared actions/scripts tied to nav buttons.
+# - Show/hide behavior that should apply across pages.
+# Keep per-page geometry/layout overrides in individual page files.
+obj:
   id: sense_bottom_nav
   align: BOTTOM_MID
   x: 0

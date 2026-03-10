@@ -18,7 +18,7 @@ $yamlFiles = $allYaml | Where-Object {
 }
 
 $allowedEntityFiles = @(
-  (Resolve-Path (Join-Path $RepoRoot "common\ha_entities-sensecap.yaml")).Path,
+  (Resolve-Path (Join-Path $RepoRoot "common\ha_entities-sensecap-dani.yaml")).Path,
   (Resolve-Path (Join-Path $RepoRoot "common\core_ha_common-sensecap.yaml")).Path,
   (Resolve-Path (Join-Path $RepoRoot "sensecap-d1s-v2-001.yaml")).Path
 )
@@ -45,7 +45,7 @@ foreach ($h in $customHits) {
 $required = @(
   "sensecap-d1s-v2.yaml",
   "sensecap-d1s-v2-001.yaml",
-  "common\ha_entities-sensecap.yaml",
+  "common\ha_entities-sensecap-dani.yaml",
   "common\core_ha_common-sensecap.yaml",
   "external_components\noaa_tides\__init__.py"
 )

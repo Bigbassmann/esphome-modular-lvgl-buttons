@@ -1,4 +1,17 @@
-﻿substitutions:
+# =============================================================================
+# PAGE EDIT GUIDE (SenseCAP)
+# - Color tokens: common/color-sensecap-dani.yaml.
+# - Entity/UI defaults (text/icon/value/on-off): common/ha_entities-sensecap-dani.yaml.
+# - Page instance mapping (entity -> page row/column): common/package_instance_mapping-sensecap-dani.yaml.
+# - Title defaults: ui_page_title_* tokens (top_level_lvgl_defualts-001-dani.yaml / ha_entities).
+# - Size/shape/layout: edit this page's layout/grid_rows/grid_columns/pad_*/width/height/radius.
+# - Show/hide: static with hidden:, runtime via on_load/on_state automations.
+# - Text/value content: label text defaults here; live values usually update from button/template automations.
+# - Runtime/interval hooks: page on_load here; shared timers/nav/time in pages/page_shell_480-sensecap.yaml.
+# - Entity/attribute wiring: common/core_ha_common-sensecap.yaml and common/*ha*-sensecap*.yaml.
+# - Keep page files focused on ui_* + layout; use per-page overrides only when needed.
+# =============================================================================
+substitutions:
   sense_page_sensors_id: "page_sensors"
   sensors_title_font: "${ui_page_title_font | default(\"nunito_36\")}"
   sensors_title_color: "${ui_page_title_color | default(\"sense_info\")}"
@@ -71,3 +84,4 @@ lvgl:
             y: ${sensors_title_y}
             text_font: ${sensors_title_font}
             text_color: ${sensors_title_color}
+

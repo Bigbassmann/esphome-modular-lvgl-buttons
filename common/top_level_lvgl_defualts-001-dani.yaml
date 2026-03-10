@@ -14,7 +14,7 @@ substitutions:
 
   # Global page title defaults (Overrides-style)
   ui_page_title_font: "nunito_36"
-  ui_page_title_color: "sense_info"
+  ui_page_title_color: "sense_info"    # TODO: Consider "white" or "sense_text" for better contrast with dark bg
   ui_page_title_y_offset: "-2"
 
   # Global text defaults

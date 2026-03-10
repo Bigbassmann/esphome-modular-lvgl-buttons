@@ -1,7 +1,19 @@
+# FILE EDIT GUIDE (SenseCAP)
+# Role: Shared defaults/tokens/mappings/include wiring.
+# Update here for:
+# - Color tokens and family palettes (common/color-*.yaml).
+# - UI defaults and entity attributes (common/ha_entities-*.yaml).
+# - Global runtime/state controls (intervals, globals, boot/runtime hooks).
+# - Page-to-entity mapping controls when used by this file.
+# Page files should consume these defaults via ui_* vars and page-level overrides.
+# Avoid hardcoded page layout geometry in common files.
 ---
 # SenseCAP-style display runtime controls (dark-only workflow).
 # Optional module: include in root when you want simple brightness/sleep behavior
 # without Day/Evening/Night mode entities.
+# Requires existing IDs in active build:
+# - touchscreen id: my_touchscreen
+# - backlight light id: display_backlight
 
 substitutions:
   sense_display_brightness_pct: "50"
@@ -125,7 +137,7 @@ interval:
             - lambda: |-
                 if (id(sense_display_scroll_sleep_start_ms) == 0) id(sense_display_scroll_sleep_start_ms) = millis();
                 id(sense_display_last_auto_scroll_ms) = millis();
-            - script.execute: nav_to_next
+            - lvgl.page.next:
 
       - if:
           condition:
