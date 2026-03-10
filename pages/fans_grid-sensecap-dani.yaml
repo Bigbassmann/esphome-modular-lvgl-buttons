@@ -327,6 +327,169 @@ interval:
             - lvgl.widget.update:
                 id: attic_high_btn
                 bg_color: ${ui_fan_inactive_color}
+      # Theme override (Dark)
+      - if:
+          condition:
+            lambda: 'return id(sense_theme_slot) == 0;'
+          then:
+            - lvgl.widget.update: {id: fr_mode_off_btn, bg_color: sense_surface_alt}
+            - lvgl.widget.update: {id: fr_mode_low_btn, bg_color: sense_surface_alt}
+            - lvgl.widget.update: {id: fr_mode_med_btn, bg_color: sense_surface_alt}
+            - lvgl.widget.update: {id: fr_mode_high_btn, bg_color: sense_surface_alt}
+            - if:
+                condition:
+                  lambda: 'if (!id(ha_fr_fan_on).state) return true; float p = id(ha_fr_fan_pct).state; return isnan(p) || p < 1.0f;'
+                then:
+                  - lvgl.widget.update: {id: fr_mode_off_btn, bg_color: sense_tile_indigo}
+            - if:
+                condition:
+                  lambda: 'return id(ha_fr_fan_on).state && !isnan(id(ha_fr_fan_pct).state) && id(ha_fr_fan_pct).state > 0 && id(ha_fr_fan_pct).state <= 40;'
+                then:
+                  - lvgl.widget.update: {id: fr_mode_low_btn, bg_color: sense_tile_teal}
+            - if:
+                condition:
+                  lambda: 'return id(ha_fr_fan_on).state && !isnan(id(ha_fr_fan_pct).state) && id(ha_fr_fan_pct).state > 40 && id(ha_fr_fan_pct).state <= 80;'
+                then:
+                  - lvgl.widget.update: {id: fr_mode_med_btn, bg_color: sense_tile_yellow}
+            - if:
+                condition:
+                  lambda: 'return id(ha_fr_fan_on).state && !isnan(id(ha_fr_fan_pct).state) && id(ha_fr_fan_pct).state > 80;'
+                then:
+                  - lvgl.widget.update: {id: fr_mode_high_btn, bg_color: sense_tile_red}
+
+            - lvgl.widget.update: {id: mbr_mode_off_btn, bg_color: sense_surface_alt}
+            - lvgl.widget.update: {id: mbr_mode_low_btn, bg_color: sense_surface_alt}
+            - lvgl.widget.update: {id: mbr_mode_med_btn, bg_color: sense_surface_alt}
+            - lvgl.widget.update: {id: mbr_mode_high_btn, bg_color: sense_surface_alt}
+            - if:
+                condition:
+                  lambda: 'if (!id(ha_mbr_fan_on).state) return true; float p = id(ha_mbr_fan_pct).state; return isnan(p) || p < 1.0f;'
+                then:
+                  - lvgl.widget.update: {id: mbr_mode_off_btn, bg_color: sense_tile_indigo}
+            - if:
+                condition:
+                  lambda: 'return id(ha_mbr_fan_on).state && !isnan(id(ha_mbr_fan_pct).state) && id(ha_mbr_fan_pct).state > 0 && id(ha_mbr_fan_pct).state <= 40;'
+                then:
+                  - lvgl.widget.update: {id: mbr_mode_low_btn, bg_color: sense_tile_teal}
+            - if:
+                condition:
+                  lambda: 'return id(ha_mbr_fan_on).state && !isnan(id(ha_mbr_fan_pct).state) && id(ha_mbr_fan_pct).state > 40 && id(ha_mbr_fan_pct).state <= 80;'
+                then:
+                  - lvgl.widget.update: {id: mbr_mode_med_btn, bg_color: sense_tile_yellow}
+            - if:
+                condition:
+                  lambda: 'return id(ha_mbr_fan_on).state && !isnan(id(ha_mbr_fan_pct).state) && id(ha_mbr_fan_pct).state > 80;'
+                then:
+                  - lvgl.widget.update: {id: mbr_mode_high_btn, bg_color: sense_tile_red}
+
+            - lvgl.widget.update: {id: mbr_mode_dir_btn, bg_color: sense_surface_alt}
+            - if:
+                condition:
+                  lambda: 'std::string d = id(ha_mbr_fan_dir).state; for (auto &ch : d) ch = tolower(ch); return d == "reverse";'
+                then:
+                  - lvgl.widget.update: {id: mbr_mode_dir_btn, bg_color: sense_tile_indigo}
+            - if:
+                condition:
+                  lambda: 'std::string d = id(ha_mbr_fan_dir).state; for (auto &ch : d) ch = tolower(ch); return d == "forward";'
+                then:
+                  - lvgl.widget.update: {id: mbr_mode_dir_btn, bg_color: sense_tile_blue}
+
+            - if:
+                condition:
+                  binary_sensor.is_on: ha_attic_fan_on
+                then:
+                  - lvgl.widget.update: {id: attic_low_btn, bg_color: sense_tile_teal}
+                else:
+                  - lvgl.widget.update: {id: attic_low_btn, bg_color: sense_surface_alt}
+            - if:
+                condition:
+                  binary_sensor.is_on: ha_attic_fan2_on
+                then:
+                  - lvgl.widget.update: {id: attic_high_btn, bg_color: sense_tile_red}
+                else:
+                  - lvgl.widget.update: {id: attic_high_btn, bg_color: sense_surface_alt}
+
+      # Theme override (Split)
+      - if:
+          condition:
+            lambda: 'return id(sense_theme_slot) == 2;'
+          then:
+            - lvgl.widget.update: {id: fr_mode_off_btn, bg_color: split_family_blue_bg_off}
+            - lvgl.widget.update: {id: fr_mode_low_btn, bg_color: split_family_blue_bg_off}
+            - lvgl.widget.update: {id: fr_mode_med_btn, bg_color: split_family_blue_bg_off}
+            - lvgl.widget.update: {id: fr_mode_high_btn, bg_color: split_family_blue_bg_off}
+            - if:
+                condition:
+                  lambda: 'if (!id(ha_fr_fan_on).state) return true; float p = id(ha_fr_fan_pct).state; return isnan(p) || p < 1.0f;'
+                then:
+                  - lvgl.widget.update: {id: fr_mode_off_btn, bg_color: split_family_blue_bg_on}
+            - if:
+                condition:
+                  lambda: 'return id(ha_fr_fan_on).state && !isnan(id(ha_fr_fan_pct).state) && id(ha_fr_fan_pct).state > 0 && id(ha_fr_fan_pct).state <= 40;'
+                then:
+                  - lvgl.widget.update: {id: fr_mode_low_btn, bg_color: split_family_cyan_bg_on}
+            - if:
+                condition:
+                  lambda: 'return id(ha_fr_fan_on).state && !isnan(id(ha_fr_fan_pct).state) && id(ha_fr_fan_pct).state > 40 && id(ha_fr_fan_pct).state <= 80;'
+                then:
+                  - lvgl.widget.update: {id: fr_mode_med_btn, bg_color: split_family_lime_bg_on}
+            - if:
+                condition:
+                  lambda: 'return id(ha_fr_fan_on).state && !isnan(id(ha_fr_fan_pct).state) && id(ha_fr_fan_pct).state > 80;'
+                then:
+                  - lvgl.widget.update: {id: fr_mode_high_btn, bg_color: split_family_orange_bg_on}
+
+            - lvgl.widget.update: {id: mbr_mode_off_btn, bg_color: split_family_blue_bg_off}
+            - lvgl.widget.update: {id: mbr_mode_low_btn, bg_color: split_family_blue_bg_off}
+            - lvgl.widget.update: {id: mbr_mode_med_btn, bg_color: split_family_blue_bg_off}
+            - lvgl.widget.update: {id: mbr_mode_high_btn, bg_color: split_family_blue_bg_off}
+            - if:
+                condition:
+                  lambda: 'if (!id(ha_mbr_fan_on).state) return true; float p = id(ha_mbr_fan_pct).state; return isnan(p) || p < 1.0f;'
+                then:
+                  - lvgl.widget.update: {id: mbr_mode_off_btn, bg_color: split_family_blue_bg_on}
+            - if:
+                condition:
+                  lambda: 'return id(ha_mbr_fan_on).state && !isnan(id(ha_mbr_fan_pct).state) && id(ha_mbr_fan_pct).state > 0 && id(ha_mbr_fan_pct).state <= 40;'
+                then:
+                  - lvgl.widget.update: {id: mbr_mode_low_btn, bg_color: split_family_cyan_bg_on}
+            - if:
+                condition:
+                  lambda: 'return id(ha_mbr_fan_on).state && !isnan(id(ha_mbr_fan_pct).state) && id(ha_mbr_fan_pct).state > 40 && id(ha_mbr_fan_pct).state <= 80;'
+                then:
+                  - lvgl.widget.update: {id: mbr_mode_med_btn, bg_color: split_family_lime_bg_on}
+            - if:
+                condition:
+                  lambda: 'return id(ha_mbr_fan_on).state && !isnan(id(ha_mbr_fan_pct).state) && id(ha_mbr_fan_pct).state > 80;'
+                then:
+                  - lvgl.widget.update: {id: mbr_mode_high_btn, bg_color: split_family_orange_bg_on}
+
+            - lvgl.widget.update: {id: mbr_mode_dir_btn, bg_color: split_family_blue_bg_off}
+            - if:
+                condition:
+                  lambda: 'std::string d = id(ha_mbr_fan_dir).state; for (auto &ch : d) ch = tolower(ch); return d == "reverse";'
+                then:
+                  - lvgl.widget.update: {id: mbr_mode_dir_btn, bg_color: split_family_violet_bg_on}
+            - if:
+                condition:
+                  lambda: 'std::string d = id(ha_mbr_fan_dir).state; for (auto &ch : d) ch = tolower(ch); return d == "forward";'
+                then:
+                  - lvgl.widget.update: {id: mbr_mode_dir_btn, bg_color: split_family_blue_bg_on}
+
+            - if:
+                condition:
+                  binary_sensor.is_on: ha_attic_fan_on
+                then:
+                  - lvgl.widget.update: {id: attic_low_btn, bg_color: split_family_cyan_bg_on}
+                else:
+                  - lvgl.widget.update: {id: attic_low_btn, bg_color: split_family_blue_bg_off}
+            - if:
+                condition:
+                  binary_sensor.is_on: ha_attic_fan2_on
+                then:
+                  - lvgl.widget.update: {id: attic_high_btn, bg_color: split_family_orange_bg_on}
+                else:
+                  - lvgl.widget.update: {id: attic_high_btn, bg_color: split_family_blue_bg_off}
 
 lvgl:
   pages:
@@ -342,7 +505,7 @@ lvgl:
         - obj:
             id: fans_controls_card
             align: TOP_MID
-            y: ${sense_content_y | default("46")}
+            y: ${sense_content_y | default("60")}
             width: 96%
             height: ${sense_content_h | default("366")}
             styles: sense_card_flat_style
@@ -591,6 +754,8 @@ lvgl:
                         x: -14
                         text_font: nunito_20
                         text_color: ${fan_button_text_color}
+
+
 
 
 

@@ -40,6 +40,17 @@ substitutions:
   ui_page_title_y_offset: "-2"
   ui_page_text_color: "dani_page_text"
   ui_page_text_muted_color: "dani_page_text_muted"
+  # Theme labels (tokenized; slots 0-9)
+  ui_theme_label_0: "Dark"
+  ui_theme_label_1: "Dani"
+  ui_theme_label_2: "Split"
+  ui_theme_label_3: "Theme 4"
+  ui_theme_label_4: "Theme 5"
+  ui_theme_label_5: "Theme 6"
+  ui_theme_label_6: "Theme 7"
+  ui_theme_label_7: "Theme 8"
+  ui_theme_label_8: "Theme 9"
+  ui_theme_label_9: "Theme 10"
 
   # UI defaults (per-feature)
   ui_dani_text: "Dani"
@@ -237,7 +248,11 @@ substitutions:
   ui_switch_outdoor_on_bg: "dani_family_blue_bg_on"
   ui_switch_outdoor_off_bg: "dani_family_blue_bg_off"
   # Sensor tile defaults (token-driven)
-  ui_sensor_icon_color: "sense_text"
+  ui_sensor_tile_bg_default: "dani_family_blue_bg_on"
+  ui_sensor_tile_text_default: "dani_family_blue_text_on"
+  ui_sensor_icon_color: "${ui_sensor_tile_text_default}"
+  ui_sensor_label_color: "${ui_sensor_tile_text_default}"
+  ui_sensor_value_color: "${ui_sensor_tile_text_default}"
   # Display settings toggle colors (token-driven)
   ui_display_idle_scroll_on_bg: "sense_teal"
   ui_display_idle_scroll_off_bg: "sense_surface_alt"
@@ -252,15 +267,15 @@ substitutions:
   ui_display_scroll_rate_indicator_bg: "sense_primary"
   ui_display_sleep_timeout_indicator_bg: "sense_warn"
   ui_display_scroll_sleep_indicator_bg: "sense_cat_overrides"
-  ui_sensor_local_temp_bg: "sense_tile_yellow"
-  ui_sensor_fr_temp_bg: "sense_tile_yellow"
-  ui_sensor_osat_temp_bg: "sense_tile_blue"
-  ui_sensor_kitchen_temp_bg: "sense_tile_orange"
-  ui_sensor_freezer_temp_bg: "sense_tile_sky"
-  ui_sensor_fridge_temp_bg: "sense_tile_sky"
-  ui_sensor_voc_bg: "sense_tile_teal"
-  ui_sensor_co2_bg: "sense_tile_orange"
-  ui_sensor_humid_bg: "sense_tile_blue"
+  ui_sensor_local_temp_bg: "${ui_sensor_tile_bg_default}"
+  ui_sensor_fr_temp_bg: "${ui_sensor_tile_bg_default}"
+  ui_sensor_osat_temp_bg: "${ui_sensor_tile_bg_default}"
+  ui_sensor_kitchen_temp_bg: "${ui_sensor_tile_bg_default}"
+  ui_sensor_freezer_temp_bg: "${ui_sensor_tile_bg_default}"
+  ui_sensor_fridge_temp_bg: "${ui_sensor_tile_bg_default}"
+  ui_sensor_voc_bg: "${ui_sensor_tile_bg_default}"
+  ui_sensor_co2_bg: "${ui_sensor_tile_bg_default}"
+  ui_sensor_humid_bg: "${ui_sensor_tile_bg_default}"
   ui_profile_home_tile_radius: "8"
   ui_profile_home_tile_pad_left: "8"
   ui_profile_home_tile_pad_right: "8"
@@ -322,6 +337,8 @@ substitutions:
   # Optional placeholders for other modules
   ent_rain_delay_bool: "input_boolean.rain_delay"
   ent_rain_delay_state: "input_boolean.rain_delay"
+
+
 
 
 

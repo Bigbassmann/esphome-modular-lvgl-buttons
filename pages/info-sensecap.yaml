@@ -16,7 +16,7 @@ lvgl:
   style_definitions:
     - id: boot_screen_style
       text_font: nunito_20
-      text_color: black  # not working at the moment
+      text_color: sense_text  # theme-driven
       pad_all: 2
   pages:
     - id: info_screen
@@ -166,7 +166,7 @@ lvgl:
             height: 50
             widgets:
               - label:
-                  text_color: white
+                  text_color: sense_text
                   align: center
                   text: "Exit"
             on_press:

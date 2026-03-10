@@ -329,6 +329,8 @@ packages:
       text: "Local Temp"
       icon: $mdi_home_thermometer
       icon_color: ${ui_sensor_icon_color}
+      label_color: ${ui_sensor_label_color}
+      value_color: ${ui_sensor_value_color}
       bg_color: ${ui_sensor_local_temp_bg}
       sensor_id: temp_f
 
@@ -343,6 +345,8 @@ packages:
       text: "FR Temp"
       icon: $mdi_thermometer
       icon_color: ${ui_sensor_icon_color}
+      label_color: ${ui_sensor_label_color}
+      value_color: ${ui_sensor_value_color}
       bg_color: ${ui_sensor_fr_temp_bg}
       sensor_id: ha_tstat_current_temp
 
@@ -357,6 +361,8 @@ packages:
       text: "OSAT"
       icon: $mdi_thermometer
       icon_color: ${ui_sensor_icon_color}
+      label_color: ${ui_sensor_label_color}
+      value_color: ${ui_sensor_value_color}
       bg_color: ${ui_sensor_osat_temp_bg}
       sensor_id: ha_osat_temp
 
@@ -371,6 +377,8 @@ packages:
       text: "Kitchen"
       icon: $mdi_thermometer
       icon_color: ${ui_sensor_icon_color}
+      label_color: ${ui_sensor_label_color}
+      value_color: ${ui_sensor_value_color}
       bg_color: ${ui_sensor_kitchen_temp_bg}
       sensor_id: ha_kitchen_temp
 
@@ -385,6 +393,8 @@ packages:
       text: "Freezer"
       icon: $mdi_snowflake
       icon_color: ${ui_sensor_icon_color}
+      label_color: ${ui_sensor_label_color}
+      value_color: ${ui_sensor_value_color}
       bg_color: ${ui_sensor_freezer_temp_bg}
       sensor_id: ha_freezer_temp
 
@@ -399,6 +409,8 @@ packages:
       text: "Fridge"
       icon: $mdi_fridge
       icon_color: ${ui_sensor_icon_color}
+      label_color: ${ui_sensor_label_color}
+      value_color: ${ui_sensor_value_color}
       bg_color: ${ui_sensor_fridge_temp_bg}
       sensor_id: ha_fridge_temp
 
@@ -413,6 +425,8 @@ packages:
       text: "VOC"
       icon: $mdi_weather_dust
       icon_color: ${ui_sensor_icon_color}
+      label_color: ${ui_sensor_label_color}
+      value_color: ${ui_sensor_value_color}
       bg_color: ${ui_sensor_voc_bg}
       sensor_id: voc
 
@@ -427,6 +441,8 @@ packages:
       text: "CO2"
       icon: $mdi_molecule_co2
       icon_color: ${ui_sensor_icon_color}
+      label_color: ${ui_sensor_label_color}
+      value_color: ${ui_sensor_value_color}
       bg_color: ${ui_sensor_co2_bg}
       sensor_id: co2
 
@@ -441,6 +457,8 @@ packages:
       text: "Humid"
       icon: $mdi_water_percent
       icon_color: ${ui_sensor_icon_color}
+      label_color: ${ui_sensor_label_color}
+      value_color: ${ui_sensor_value_color}
       bg_color: ${ui_sensor_humid_bg}
       sensor_id: humid
 
@@ -509,6 +527,7 @@ packages:
       secondary_entity_id: ${ent_outdoor_garage_lights}
       on_bg_color: ${ui_switch_outdoor_on_bg}
       off_bg_color: ${ui_switch_outdoor_off_bg}
+
 
 
 

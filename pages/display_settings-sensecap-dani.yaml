@@ -63,9 +63,8 @@ script:
       - lvgl.dropdown.update:
           id: display_theme_dropdown
           selected_index: !lambda |-
-            if (id(current_theme).current_option() == "Dani") return 1;
-            if (id(current_theme).current_option() == "Split") return 2;
-            return 0;
+            auto idx = id(current_theme).active_index();
+            return idx.has_value() ? (int) idx.value() : 0;
       - lvgl.label.update:
           id: display_theme_status
           text: !lambda |-
@@ -462,6 +461,11 @@ lvgl:
                   y: 252
                   text_font: nunito_14
                   text_color: "${ui_page_text_color}"
+
+
+
+
+
 
 
 

@@ -74,8 +74,8 @@ substitutions:
 
   ui_home_fans_icon: "$mdi_fan"
   ui_home_fans_text: "Fans"
-  ui_home_fans_icon_color: "white"
-  ui_home_fans_text_color: "white"
+  ui_home_fans_icon_color: "sense_text"
+  ui_home_fans_text_color: "sense_text"
 
   ui_home_overrides_icon: "$mdi_tune"
   ui_home_overrides_text: "Overrides"

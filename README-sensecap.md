@@ -322,3 +322,13 @@ This fork uses a token-first color model so page files do not hardcode one-off h
 
 - Theme selector now supports `Dark` + `Dani` + `Split` in `common/theme_style-sensecap-dani.yaml`, exposed as dropdown `display_theme_dropdown` on `pages/display_settings-sensecap-dani.yaml`.
 
+
+## Maintenance Notes
+- 2026-03-10: Theme runtime logic now uses numeric slot `sense_theme_slot` (index-based) instead of `current_option()=="name"` comparisons in page/style conditionals. Keep new theme additions index-first and avoid name-based branching.
+
+
+- 2026-03-10: Theme selector labels are tokenized as ui_theme_label_0..ui_theme_label_9. Page/runtime logic must use numeric slots (sense_theme_slot), while labels are UI-only.
+
+
+- 2026-03-10: Theme slots 3..9 now have distinct style mappings in theme_style-sensecap-dani.yaml; display dropdown uses ui_theme_label_0..ui_theme_label_9 and slot-based selection.
+

@@ -133,10 +133,10 @@ binary_sensor:
                 text_color: $icon_on_color
             - lvgl.widget.update:
                 id: label_${uid}
-                text_color: white
+                text_color: sense_text
             - lvgl.widget.update:
                 id: value_${uid}
-                text_color: white
+                text_color: sense_text
             - lvgl.widget.update:
                 id: slider_${uid}
                 knob:
@@ -152,10 +152,10 @@ binary_sensor:
                 text_color: $icon_off_color
             - lvgl.widget.update:
                 id: label_${uid}
-                text_color: white
+                text_color: sense_text
             - lvgl.widget.update:
                 id: value_${uid}
-                text_color: white
+                text_color: sense_text
             - lvgl.label.update:
                 id: value_${uid}
                 text: "0%"
