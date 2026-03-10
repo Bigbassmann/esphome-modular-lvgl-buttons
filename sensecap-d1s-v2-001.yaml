@@ -1,5 +1,198 @@
-# FILE EDIT GUIDE (SenseCAP)
-# Role: Legacy wrapper retained for compatibility.
-# Active baseline is sensecap-d1s-v2-001-dani.yaml.
+---
+# Substitution variables used through the codebase
+substitutions:
+  icon_font: mdi_icons_40
+  text_font: nunito_20
+  text_color: white
+  bg_color: black
+  button_on_color: "ep_orange"
+  button_off_color: "very_dark_gray"
+  icon_on_color: "yellow"
+  icon_off_color: "gray"
+  label_on_color: "white"
+  label_off_color: "gray"
+
+  ap_ssid: !secret ap_ssid
+  ap_password: !secret ap_password
+  ota_password: !secret ota_password
+  wifi_ssid: !secret wifi_ssid
+  wifi_password: !secret wifi_password
+  
+  # SenseCAP display runtime defaults (dark-only, no Day/Evening/Night mode select)
+  sense_display_brightness_pct: "50"
+  sense_display_sleep_enabled: "true"
+  sense_display_sleep_timeout_s: "60"
+
+  # SenseCAP Phase 1 page routing
+  sense_page_home_id: "page_home_v2"
+  sense_page_menu_id: "page_menu"
+  sense_page_wifi_id: "page_wifi_setup"
+  sense_page_settings_id: "page_settings"
+  sense_page_tstat_id: "page_thermostat_v2"
+  sense_page_fans_id: "page_fans"
+  sense_page_overrides_id: "page_overrides"
+  sense_page_lighting_dimmers_id: "page_lighting_dimmers"
+  sense_page_lighting_dimmers_2_id: "page_lighting_dimmers_2"
+  sense_page_lighting_switches_id: "page_lighting_switches"
+  sense_page_sensors_id: "page_sensors"
+  sense_page_display_settings_id: "page_display_settings"
+  # Template-safe demo entities for shared/main config
+  demo_switch_entity: "switch.example_switch"
+  demo_rgb_light_entity: "light.example_rgb_light"
+
+esphome:
+  name: "sensecap-d1s"
+  friendly_name: "SenseCap D1S Git Test"
+  comment: "SenseCap D1S Git Test"
+  on_boot:
+    - priority: 400
+      then:
+        - script.execute: update_loading_page
+
+logger:
+  level: debug
+
+# Time update script - This is run once per second. Use it to update any time related labels.
+script:
+  - id: time_update
+    then:
+      # The format %I:%M %p will display the time in a 12-hour format with "am" or "pm" included
+      - lvgl.label.update:
+          id: time_label
+          text: !lambda 'return id(system_time).now().strftime("%l:%M %P");'
+
 packages:
-  sensecap_dani_baseline: !include sensecap-d1s-v2-001-dani.yaml
+  # secrets: !include secrets.yaml
+  # Generic configuration for ESP32 screens
+  # SDL has no Wi-Fi
+  wifi: !include common/wifi-sensecap.yaml
+  # Enable OTA updates with a status screen
+  ota_screen: !include common/ota-sensecap.yaml
+  # All the colors
+  colors: !include common/color-sensecap-dani.yaml
+  # Some nice basic fonts
+  fonts: !include common/fonts-sensecap.yaml
+  # 1000s of glyphs
+  glyphs: !include common/mdi_glyph_substitutions.yaml
+  # Some basic sensors
+  sensors: !include sensors/sensors_base.yaml
+  # Styles + Themes
+  theme_style: !include common/theme_style-sensecap-dani.yaml
+  top_level_lvgl_defaults_dani: !include common/top_level_lvgl_defualts-001-dani.yaml
+  ui_tokens_sensecap: !include common/ui_tokens-sensecap.yaml
+  page_shell_sensecap: !include pages/page_shell_480-sensecap.yaml
+  page_home_sensecap: !include pages/home_grid-sensecap.yaml
+  page_menu_sensecap: !include pages/menu_grid-sensecap.yaml
+  page_wifi_setup_sensecap: !include pages/wifi_setup-sensecap.yaml
+  page_settings_sensecap: !include pages/settings_grid-sensecap.yaml
+  page_display_settings_sensecap: !include pages/display_settings-sensecap-dani.yaml
+  page_fans_sensecap: !include pages/fans_grid-sensecap-dani.yaml
+  page_overrides_sensecap: !include pages/overrides_grid-sensecap.yaml
+  sensecap_instance_mapping: !include common/package_instance_mapping-sensecap-dani.yaml
+# This is the main LVGL section. We start with a simple 4x4 grid.
+lvgl:
+  pages:
+    - id: main_page
+      layout: 4x4
+      styles: page_style
+      <<: !include widgets/swipe_navigation.yaml
+      widgets:
+        # You can use the package section above to add prebuilt button types or build your own custom button from scratch here.
+
+
+# If you want to use other icons add them to the list here
+font:
+  # Material Design Icons (latest)
+  - file: 'https://raw.githubusercontent.com/Templarian/MaterialDesign-Webfont/master/fonts/materialdesignicons-webfont.ttf'
+    id: mdi_icons_40
+    size: 40
+    bpp: 8
+    glyphs: [
+      $mdi_bed,  # mdi-bed - bedroom icon
+      $mdi_brightness_6,  # mdi-brightness-6 - brightness slider icon
+      $mdi_bulkhead_light,  # mdi-bulkhead-light - bulkhead fixture
+      $mdi_ceiling_fan_light,  # mdi-ceiling-fan-light - ceiling fan with light
+      $mdi_ceiling_light,  # mdi-ceiling-light - ceiling fixture
+      $mdi_chevron_down,  # mdi-chevron-down - close/collapse button
+      $mdi_chevron_up,  # mdi-chevron-up - back/expand button
+      $mdi_circle_opacity,  # mdi-circle-opacity - saturation slider icon
+      $mdi_coach_lamp,  # mdi-coach-lamp - outdoor coach light
+      $mdi_eyedropper,  # mdi-eyedropper - spectrum mode toggle
+      $mdi_floor_lamp,  # mdi-floor-lamp - floor lamp
+      $mdi_grid,  # mdi-grid - grid mode toggle
+      $mdi_home,  # mdi-home - home/back navigation
+      $mdi_home_automation,  # mdi-home-automation - automation mode
+      $mdi_information_box,  # mdi-information-box - info screen
+      $mdi_broom,  # mdi-broom - cleaners mode
+      $mdi_alarm_light,  # mdi-alarm-light - panic mode
+      $mdi_lock_off,  # mdi-lock-off - auto-lock disabled
+      $mdi_motion_sensor,  # mdi-motion-sensor - motion override
+      $mdi_motion_sensor_off,  # mdi-motion-sensor-off - motion disabled icon
+      $mdi_dots_horizontal,  # mdi-dots-horizontal - placeholder tile
+      $mdi_weather_night,  # mdi-weather-night - sleepy mode
+      $mdi_thermometer,  # mdi-thermometer - thermostat nav
+      $mdi_fan,  # mdi-fan - fans nav
+      $mdi_tune,  # mdi-tune - overrides nav
+      $mdi_lamp,  # mdi-lamp - table lamp
+      $mdi_led_strip,  # mdi-led-strip - LED strip light
+      $mdi_lightbulb,  # mdi-lightbulb - generic bulb icon
+      $mdi_lightbulb_group,  # mdi-lightbulb-group - grouped lights
+      $mdi_wifi_strength_1,  # mdi-wifi-strength-1 - weak signal
+      $mdi_wifi_strength_2,  # mdi-wifi-strength-2 - fair signal
+      $mdi_wifi_strength_3,  # mdi-wifi-strength-3 - good signal
+      $mdi_wifi_strength_4,  # mdi-wifi-strength-4 - strong signal
+      $mdi_wifi_strength_off,  # mdi-wifi-strength-off - disconnected/unknown
+      $mdi_string_lights,  # mdi-string-lights - decorative string lights
+      $mdi_door,  # mdi-door - entry slider
+      $mdi_home_thermometer,  # mdi-home-thermometer - local temp
+      $mdi_snowflake,  # mdi-snowflake - freezer temp
+      $mdi_fridge,  # mdi-fridge - fridge temp
+      $mdi_washing_machine,  # mdi-washing-machine - laundry lights
+      $mdi_garage,  # mdi-garage - garage lights
+      $mdi_wardrobe,  # mdi-wardrobe - closet lights
+      $mdi_track_light,  # mdi-track-light - track lighting
+      $mdi_white_balance_sunny,  # mdi-white-balance-sunny - color temp/sun icon
+      $mdi_weather_dust,  # mdi-weather-dust - VOC/air quality tile icon
+      $mdi_molecule_co2,  # mdi-molecule-co2 - CO2 tile icon
+      $mdi_water_percent,  # mdi-water-percent - humidity tile icon
+    ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,10 +1,10 @@
-# SenseCAP D1S Fork README
+﻿# SenseCAP D1S Fork README
 
 This file documents the current working pattern for this fork and the immediate cleanup/refactor plan.
 
 ## Current State (March 7, 2026)
 
-- Active device entrypoint in repo: `sensecap-d1s-v2-001.yaml` (root currently composes via `sensecap-d1s-v2-001-dani.yaml`)
+- Active device entrypoint in repo: `sensecap-d1s-v2-001.yaml` 
 - SenseCAP modules are in `common/`, `pages/`, `buttons/`, `widgets/`, `hardware/`
 - Demo package calls in `sensecap-d1s-v2-001.yaml` (`button_1`, `button_4`, `button_4_page`) are disabled
 - Font include paths in `common/fonts-sensecap.yaml` now use `assets/fonts/Nunito-SemiBold.ttf`
@@ -102,7 +102,7 @@ Use this single consolidated rules list in prompts.
 18. [Apply: UI/page edits] Hidden flags are allowed only on explicit value/state widgets unless explicitly approved.
 19. [Apply: UI/page edits] Section title labels should not receive value-state hidden/color rules unless explicitly approved.
 20. [Apply: Color pass] Edit control/token files first; touch page/widget files only when wiring requires it.
-21. [Apply: Color pass] Keep `sensecap-d1s-v2-001-dani.yaml` differences focused on package/includes and vars, not behavior logic forks.
+21. [Apply: Color pass] Keep a single `sensecap-d1s-v2-001.yaml` baseline and avoid parallel variant forks.
 22. [Apply: Pre-flash] Root validation must pass: `esphome config /config/esphome/sensecap-d1s-v2.yaml`.
 23. [Apply: Optional hygiene] Scan repo for deprecated `custom_components` references before major cleanup passes.
 24. [Apply: Optional hygiene] Include a short drift-check summary (files touched, scans run, validate result, intentional exceptions).
@@ -144,7 +144,7 @@ Hard constraints (must follow):
 18 [UI/page edits] Hidden only on explicit value/state widgets unless approved.
 19 [UI/page edits] No value-state color/hidden rules on section title labels unless approved.
 20 [Color pass] Token/control files first, page wiring second.
-21 [Color pass] Keep 001 vs 001-dani differences to includes/vars where possible.
+21 [Color pass] Keep a single 001 baseline; avoid split 001 variants.
 22 [Pre-flash] Root validate: esphome config /config/esphome/sensecap-d1s-v2.yaml.
 23 [Optional hygiene] Scan for deprecated custom_components references before major cleanup passes.
 24 [Optional hygiene] Include a short drift-check summary after significant edits.
@@ -159,18 +159,18 @@ Hard constraints (must follow):
 33 [Always approved] Root validation and re-validation loops are pre-approved until compile is green.
 
 
-36 [Always approved] After an in-scope edit batch, run self-checks on edited files (spot-checks, grep/select-string, line checks) without extra confirmation.
-37 [Always approved] If a self-check finds a small in-scope issue from the same batch, apply a corrective patch and re-check without extra confirmation.
-38 [Always approved] Keep duplicated rule blocks (README list and prompt block) synchronized without extra confirmation.
-39 [Always approved] After declaring touched in-scope files, execute full edit -> self-check -> root-validate loops without re-asking.
-40 [Always approved] If a touched in-scope file is accidentally damaged in the same batch, restore from its in-scope baseline counterpart, then reapply only declared changes.
-41 [Always approved after failed validation] If failure is caused by the same batch, apply focused in-scope corrective patches (duplicate keys/syntax/indentation) until compile is green.
-42 [Always approved] Read adjacent line ranges in touched files for diagnosis without extra confirmation.
-43 [Always approved] For risky YAML rewrites, switch to deterministic line-targeted edits without extra confirmation.
-44 [Maintenance] After meaningful structure, token, constraints, or workflow changes, update README-sensecap.md and CHAT_RECOVERY_PROMPT-sensecap.md in the same edit batch.
-45 [Maintenance trigger] Treat docs refresh as required when 3+ config files change in a task, or when any architecture/rules decision changes.
-46 [Rule hygiene] Keep constraint numbering contiguous and unique; when adding/removing rules, renumber the block in the same edit batch.
-47 [Color pass DoD] Before flash, require token update + wiring update + root validate + drift scan for hardcoded color literals in touched scope.
+34 [Always approved] After an in-scope edit batch, run self-checks on edited files (spot-checks, grep/select-string, line checks) without extra confirmation.
+35 [Always approved] If a self-check finds a small in-scope issue from the same batch, apply a corrective patch and re-check without extra confirmation.
+36 [Always approved] Keep duplicated rule blocks (README list and prompt block) synchronized without extra confirmation.
+37 [Always approved] After declaring touched in-scope files, execute full edit -> self-check -> root-validate loops without re-asking.
+38 [Always approved] If a touched in-scope file is accidentally damaged in the same batch, restore from its in-scope baseline counterpart, then reapply only declared changes.
+39 [Always approved after failed validation] If failure is caused by the same batch, apply focused in-scope corrective patches (duplicate keys/syntax/indentation) until compile is green.
+40 [Always approved] Read adjacent line ranges in touched files for diagnosis without extra confirmation.
+41 [Always approved] For risky YAML rewrites, switch to deterministic line-targeted edits without extra confirmation.
+42 [Maintenance] After meaningful structure, token, constraints, or workflow changes, update README-sensecap.md and CHAT_RECOVERY_PROMPT-sensecap.md in the same edit batch.
+43 [Maintenance trigger] Treat docs refresh as required when 3+ config files change in a task, or when any architecture/rules decision changes.
+44 [Rule hygiene] Keep constraint numbering contiguous and unique; when adding/removing rules, renumber the block in the same edit batch.
+45 [Color pass DoD] Before flash, require token update + wiring update + root validate + drift scan for hardcoded color literals in touched scope.
 ```
 
 ## Image Assets
@@ -272,8 +272,8 @@ This fork uses a token-first color model so page files do not hardcode one-off h
 - Keep canonical palette tokens in `common/color-sensecap-dani.yaml` (or variant file such as `common/color-sensecap-dani.yaml`).
 - Keep page files consuming semantic color vars/tokens instead of literal hex values.
 
-2. Variant strategy (`001` vs `001-dani`)
-- Goal state: `sensecap-d1s-v2-001-dani.yaml` differs from `sensecap-d1s-v2-001.yaml` by package includes only.
+2. Variant strategy (single `001` baseline)
+- Goal state: use a single `sensecap-d1s-v2-001.yaml` baseline and avoid parallel variant root files.
 - Theme/palette swaps should happen in control files, not by forking page logic unless strictly required.
 
 3. Top-level defaults
@@ -311,7 +311,7 @@ This fork uses a token-first color model so page files do not hardcode one-off h
 
 
 ## Baseline Retirement (2026-03-10)
-- Active baseline is `sensecap-d1s-v2-001-dani.yaml` and its `*-sensecap-dani.yaml` include set.
+- Active baseline is `sensecap-d1s-v2-001.yaml`, using the `*-sensecap-dani.yaml` include set.
 - Non-dani legacy variants retired in this pass were moved to:
   - `archive/retired_baseline_2026-03-10/`
 - Rule going forward:
@@ -319,3 +319,6 @@ This fork uses a token-first color model so page files do not hardcode one-off h
   - Do not reintroduce retired non-dani duplicates unless explicitly required.
 
 - 2026-03-10 cleanup: retired `common/core_globals-sensecap.yaml`; `rp2040_last_seen_ms` now lives in `common/sensecap_indicator_sensors-sensecap.yaml`.
+
+- Theme selector now supports `Dark` + `Dani` + `Split` in `common/theme_style-sensecap-dani.yaml`, exposed as dropdown `display_theme_dropdown` on `pages/display_settings-sensecap-dani.yaml`.
+

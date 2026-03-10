@@ -1,4 +1,4 @@
-# FILE EDIT GUIDE (SenseCAP)
+﻿# FILE EDIT GUIDE (SenseCAP)
 # Role: Shared defaults/tokens/mappings/include wiring.
 # Update here for:
 # - Color tokens and family palettes (common/color-*.yaml).
@@ -50,7 +50,7 @@ binary_sensor:
     internal: true
   - platform: homeassistant
     id: ha_attic_fan2_on
-    entity_id: ${ent_attic_fan_switch}_2
+    entity_id: ${ent_attic_fan2_switch}
     internal: true
   - platform: homeassistant
     id: ha_fr_fan_on
@@ -212,6 +212,7 @@ text_sensor:
     id: ha_tstat_fan_entity
     entity_id: ${ent_thermostat_fan}
     internal: true
+
 
 
 

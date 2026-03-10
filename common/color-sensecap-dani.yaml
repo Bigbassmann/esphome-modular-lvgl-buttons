@@ -1,4 +1,4 @@
-# FILE EDIT GUIDE (SenseCAP)
+﻿# FILE EDIT GUIDE (SenseCAP)
 # Role: Shared defaults/tokens/mappings/include wiring.
 # Update here for:
 # - Color tokens and family palettes (common/color-*.yaml).
@@ -204,6 +204,119 @@ color:
       hex: 'DED1AB'
     - id: dani_family_orange_knob_off
       hex: '574C19'
+
+    # Split (Double Split Complementary) theme family
+    - id: split_page_title
+      hex: 'FFFFFF'
+    - id: split_page_text
+      hex: 'FFFFFF'
+    - id: split_page_text_muted
+      hex: 'C9D4FF'
+
+    - id: split_family_cyan_bg_on
+      hex: '1EA0F7'
+    - id: split_family_cyan_bg_off
+      hex: '2D6C91'
+    - id: split_family_cyan_text_on
+      hex: 'FFFFFF'
+    - id: split_family_cyan_text_off
+      hex: 'E0E0E0'
+    - id: split_family_cyan_value_on
+      hex: 'FFFFFF'
+    - id: split_family_cyan_value_off
+      hex: 'E0E0E0'
+    - id: split_family_cyan_slider_on
+      hex: '49B4F5'
+    - id: split_family_cyan_slider_off
+      hex: '2D6C91'
+    - id: split_family_cyan_knob_on
+      hex: '86B3D1'
+    - id: split_family_cyan_knob_off
+      hex: '2D6C91'
+
+    - id: split_family_blue_bg_on
+      hex: '1E34F7'
+    - id: split_family_blue_bg_off
+      hex: '2D3B91'
+    - id: split_family_blue_text_on
+      hex: 'FFFFFF'
+    - id: split_family_blue_text_off
+      hex: 'E0E0E0'
+    - id: split_family_blue_value_on
+      hex: 'FFFFFF'
+    - id: split_family_blue_value_off
+      hex: 'E0E0E0'
+    - id: split_family_blue_slider_on
+      hex: '4A5CF7'
+    - id: split_family_blue_slider_off
+      hex: '2D3B91'
+    - id: split_family_blue_knob_on
+      hex: '868ED1'
+    - id: split_family_blue_knob_off
+      hex: '2D3B91'
+
+    - id: split_family_violet_bg_on
+      hex: '751EF7'
+    - id: split_family_violet_bg_off
+      hex: '522D91'
+    - id: split_family_violet_text_on
+      hex: 'FFFFFF'
+    - id: split_family_violet_text_off
+      hex: 'E0E0E0'
+    - id: split_family_violet_value_on
+      hex: 'FFFFFF'
+    - id: split_family_violet_value_off
+      hex: 'E0E0E0'
+    - id: split_family_violet_slider_on
+      hex: '8D4AF7'
+    - id: split_family_violet_slider_off
+      hex: '522D91'
+    - id: split_family_violet_knob_on
+      hex: 'A486D1'
+    - id: split_family_violet_knob_off
+      hex: '522D91'
+
+    - id: split_family_orange_bg_on
+      hex: 'F7751E'
+    - id: split_family_orange_bg_off
+      hex: '91522D'
+    - id: split_family_orange_text_on
+      hex: '0D0D0D'
+    - id: split_family_orange_text_off
+      hex: 'E0E0E0'
+    - id: split_family_orange_value_on
+      hex: '0D0D0D'
+    - id: split_family_orange_value_off
+      hex: 'E0E0E0'
+    - id: split_family_orange_slider_on
+      hex: 'F58F49'
+    - id: split_family_orange_slider_off
+      hex: '91522D'
+    - id: split_family_orange_knob_on
+      hex: 'D1A486'
+    - id: split_family_orange_knob_off
+      hex: '91522D'
+
+    - id: split_family_lime_bg_on
+      hex: 'A0F71E'
+    - id: split_family_lime_bg_off
+      hex: '6C912D'
+    - id: split_family_lime_text_on
+      hex: '0D0D0D'
+    - id: split_family_lime_text_off
+      hex: 'E0E0E0'
+    - id: split_family_lime_value_on
+      hex: '0D0D0D'
+    - id: split_family_lime_value_off
+      hex: 'E0E0E0'
+    - id: split_family_lime_slider_on
+      hex: 'B7F549'
+    - id: split_family_lime_slider_off
+      hex: '6C912D'
+    - id: split_family_lime_knob_on
+      hex: 'B3D186'
+    - id: split_family_lime_knob_off
+      hex: '6C912D'
 
     # Semantic state tokens for fans and thermostat
     - id: dani_state_inactive

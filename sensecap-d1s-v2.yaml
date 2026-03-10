@@ -1,5 +1,5 @@
 # FILE EDIT GUIDE (SenseCAP)
 # Role: Legacy wrapper retained for compatibility.
-# Active baseline is sensecap-d1s-v2-001-dani.yaml.
+# Active baseline is sensecap-d1s-v2-001.yaml.
 packages:
-  sensecap_dani_baseline: !include sensecap-d1s-v2-001-dani.yaml
+  sensecap_baseline: !include sensecap-d1s-v2-001.yaml

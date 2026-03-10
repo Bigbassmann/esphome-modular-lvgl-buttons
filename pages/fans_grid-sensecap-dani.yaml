@@ -1,4 +1,4 @@
-# =============================================================================
+﻿# =============================================================================
 # PAGE EDIT GUIDE (SenseCAP)
 # - Color tokens: common/color-sensecap-dani.yaml.
 # - Entity/UI defaults (text/icon/value/on-off): common/ha_entities-sensecap-dani.yaml.
@@ -17,6 +17,7 @@ substitutions:
   fan_title_color: "${ui_page_title_color}"
   fan_title_y: "${ui_page_title_y_offset}"
   fan_text_color: "${ui_page_text_color}"
+  fan_button_text_color: "${ui_base_label_on_color}"
 
 script:
   - id: fr_fan_off
@@ -52,47 +53,105 @@ script:
 
   - id: mbr_fan_off
     then:
-      - homeassistant.action:
-          action: fan.turn_off
+      - homeassistant.service:
+          service: fan.turn_off
           data:
             entity_id: ${ent_mbr_fan}
 
   - id: mbr_fan_low
     then:
-      - homeassistant.action:
-          action: fan.set_percentage
+      - homeassistant.service:
+          service: fan.set_percentage
           data:
             entity_id: ${ent_mbr_fan}
-            percentage: '33'
+            percentage: "33"
 
   - id: mbr_fan_med
     then:
-      - homeassistant.action:
-          action: fan.set_percentage
+      - homeassistant.service:
+          service: fan.set_percentage
           data:
             entity_id: ${ent_mbr_fan}
-            percentage: '66'
+            percentage: "66"
 
   - id: mbr_fan_high
     then:
-      - homeassistant.action:
-          action: fan.set_percentage
+      - homeassistant.service:
+          service: fan.set_percentage
           data:
             entity_id: ${ent_mbr_fan}
-            percentage: '100'
+            percentage: "100"
 
   - id: mbr_fan_toggle_dir
     then:
-      - homeassistant.action:
-          action: fan.set_direction
-          data:
-            entity_id: ${ent_mbr_fan}
-          data_template:
-            direction: !lambda |-
+      - if:
+          condition:
+            lambda: |-
               std::string d = id(ha_mbr_fan_dir).state;
               for (auto &ch : d) ch = tolower(ch);
-              if (d == "reverse") return std::string("forward");
-              return std::string("reverse");
+              return d == "forward";
+          then:
+            - homeassistant.service:
+                service: fan.set_direction
+                data:
+                  entity_id: ${ent_mbr_fan}
+                  direction: reverse
+          else:
+            - homeassistant.service:
+                service: fan.set_direction
+                data:
+                  entity_id: ${ent_mbr_fan}
+                  direction: forward
+
+  - id: attic_fan_low_toggle
+    then:
+      - if:
+          condition:
+            binary_sensor.is_on: ha_attic_fan_on
+          then:
+            - homeassistant.service:
+                service: switch.turn_off
+                data:
+                  entity_id: ${ent_attic_fan_switch}
+          else:
+            - if:
+                condition:
+                  binary_sensor.is_on: ha_attic_fan2_on
+                then:
+                  - homeassistant.service:
+                      service: switch.turn_off
+                      data:
+                        entity_id: ${ent_attic_fan2_switch}
+            - delay: 3s
+            - homeassistant.service:
+                service: switch.turn_on
+                data:
+                  entity_id: ${ent_attic_fan_switch}
+
+  - id: attic_fan_high_toggle
+    then:
+      - if:
+          condition:
+            binary_sensor.is_on: ha_attic_fan2_on
+          then:
+            - homeassistant.service:
+                service: switch.turn_off
+                data:
+                  entity_id: ${ent_attic_fan2_switch}
+          else:
+            - if:
+                condition:
+                  binary_sensor.is_on: ha_attic_fan_on
+                then:
+                  - homeassistant.service:
+                      service: switch.turn_off
+                      data:
+                        entity_id: ${ent_attic_fan_switch}
+            - delay: 3s
+            - homeassistant.service:
+                service: switch.turn_on
+                data:
+                  entity_id: ${ent_attic_fan2_switch}
 
 interval:
   - interval: 2s
@@ -320,6 +379,7 @@ lvgl:
                         text: "OFF"
                         align: CENTER
                         text_font: nunito_14
+                        text_color: ${fan_button_text_color}
               - button:
                   id: fr_mode_low_btn
                   align: TOP_LEFT
@@ -335,6 +395,7 @@ lvgl:
                         text: "LOW"
                         align: CENTER
                         text_font: nunito_14
+                        text_color: ${fan_button_text_color}
               - button:
                   id: fr_mode_med_btn
                   align: TOP_LEFT
@@ -350,6 +411,7 @@ lvgl:
                         text: "MED"
                         align: CENTER
                         text_font: nunito_14
+                        text_color: ${fan_button_text_color}
               - button:
                   id: fr_mode_high_btn
                   align: TOP_LEFT
@@ -365,6 +427,7 @@ lvgl:
                         text: "HIGH"
                         align: CENTER
                         text_font: nunito_14
+                        text_color: ${fan_button_text_color}
 
               - label:
                   text: "MBR Fan"
@@ -405,6 +468,7 @@ lvgl:
                         text: "OFF"
                         align: CENTER
                         text_font: nunito_14
+                        text_color: ${fan_button_text_color}
               - button:
                   id: mbr_mode_low_btn
                   align: TOP_LEFT
@@ -420,6 +484,7 @@ lvgl:
                         text: "LOW"
                         align: CENTER
                         text_font: nunito_14
+                        text_color: ${fan_button_text_color}
               - button:
                   id: mbr_mode_med_btn
                   align: TOP_LEFT
@@ -435,6 +500,7 @@ lvgl:
                         text: "MED"
                         align: CENTER
                         text_font: nunito_14
+                        text_color: ${fan_button_text_color}
               - button:
                   id: mbr_mode_high_btn
                   align: TOP_LEFT
@@ -450,6 +516,7 @@ lvgl:
                         text: "HIGH"
                         align: CENTER
                         text_font: nunito_14
+                        text_color: ${fan_button_text_color}
               - button:
                   id: mbr_mode_dir_btn
                   align: TOP_LEFT
@@ -465,6 +532,7 @@ lvgl:
                         text: "DIR"
                         align: CENTER
                         text_font: nunito_14
+                        text_color: ${fan_button_text_color}
 
               - label:
                   text: "Attic Fans"
@@ -483,24 +551,21 @@ lvgl:
                   height: 50
                   styles: sense_nav_btn_style
                   on_press:
-                    - homeassistant.action:
-                        action: homeassistant.toggle
-                        data:
-                          entity_id: ${ent_attic_fan_switch}
+                    - script.execute: attic_fan_low_toggle
                   widgets:
                     - label:
                         text: "Attic Low"
                         align: LEFT_MID
                         x: 14
                         text_font: nunito_20
-                        text_color: ${fan_text_color}
+                        text_color: ${fan_button_text_color}
                     - label:
                         id: fans_attic_low_state
                         text: "OFF"
                         align: RIGHT_MID
                         x: -14
                         text_font: nunito_20
-                        text_color: ${fan_text_color}
+                        text_color: ${fan_button_text_color}
 
               - button:
                   id: attic_high_btn
@@ -511,24 +576,23 @@ lvgl:
                   height: 50
                   styles: sense_nav_btn_style
                   on_press:
-                    - homeassistant.action:
-                        action: homeassistant.toggle
-                        data:
-                          entity_id: ${ent_attic_fan2_switch}
+                    - script.execute: attic_fan_high_toggle
                   widgets:
                     - label:
                         text: "Attic High"
                         align: LEFT_MID
                         x: 14
                         text_font: nunito_20
-                        text_color: ${fan_text_color}
+                        text_color: ${fan_button_text_color}
                     - label:
                         id: fans_attic_high_state
                         text: "OFF"
                         align: RIGHT_MID
                         x: -14
                         text_font: nunito_20
-                        text_color: ${fan_text_color}
+                        text_color: ${fan_button_text_color}
+
+
 
 
 

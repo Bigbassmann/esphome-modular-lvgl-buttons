@@ -1,4 +1,4 @@
-# =============================================================================
+﻿# =============================================================================
 # PAGE EDIT GUIDE (SenseCAP)
 # - Color tokens: common/color-sensecap-dani.yaml.
 # - Entity/UI defaults (text/icon/value/on-off): common/ha_entities-sensecap-dani.yaml.
@@ -60,6 +60,16 @@ script:
             char buf[12];
             snprintf(buf, sizeof(buf), "%dm", id(sense_display_scroll_sleep_min));
             return std::string(buf);
+      - lvgl.dropdown.update:
+          id: display_theme_dropdown
+          selected_index: !lambda |-
+            if (id(current_theme).current_option() == "Dani") return 1;
+            if (id(current_theme).current_option() == "Split") return 2;
+            return 0;
+      - lvgl.label.update:
+          id: display_theme_status
+          text: !lambda |-
+            return std::string("Applied: ") + id(current_theme).current_option();
 
       - if:
           condition:
@@ -404,7 +414,54 @@ lvgl:
                   y: 186
                   text_font: nunito_18
                   text_color: "${ui_page_text_color}"
-              # Row 6 (bottom) intentionally reserved for future controls.
+
+              - button:
+                  id: display_theme_label
+                  align: TOP_LEFT
+                  x: 14
+                  y: 218
+                  width: 104
+                  height: 28
+                  styles: sense_display_row_btn_style
+                  widgets:
+                    - label:
+                        text: "Theme"
+                        align: CENTER
+                        text_font: nunito_16
+                        text_color: "${ui_page_text_color}"
+
+              - dropdown:
+                  id: display_theme_dropdown
+                  align: TOP_LEFT
+                  x: 126
+                  y: 216
+                  width: 224
+                  height: 32
+                  text_font: nunito_16
+                  options:
+                    - "Dark"
+                    - "Dani"
+                    - "Split"
+                  selected_index: 1
+                  on_value:
+                    then:
+                      - select.set:
+                          id: current_theme
+                          option: !lambda |-
+                            if (x == 1) return std::string("Dani");
+                            if (x == 2) return std::string("Split");
+                            return std::string("Dark");
+                      - script.execute: display_settings_refresh_ui
+
+              - label:
+                  id: display_theme_status
+                  text: "Applied: Dani"
+                  align: TOP_LEFT
+                  x: 126
+                  y: 252
+                  text_font: nunito_14
+                  text_color: "${ui_page_text_color}"
+
 
 
 
