@@ -1,4 +1,4 @@
-packages:
+﻿packages:
   page_lighting_dimmers_sensecap: !include
     file: ../pages/lighting_dimmers_grid_template-sensecap.yaml
     vars:
@@ -315,7 +315,7 @@ packages:
     vars:
       uid: sensor_local_temp
       page_id: ${sense_page_sensors_id}
-      row: 0
+      row: 1
       column: 0
       column_span: 1
       text: "Local Temp"
@@ -329,7 +329,7 @@ packages:
     vars:
       uid: sensor_fr_temp
       page_id: ${sense_page_sensors_id}
-      row: 0
+      row: 1
       column: 1
       column_span: 1
       text: "FR Temp"
@@ -343,7 +343,7 @@ packages:
     vars:
       uid: sensor_osat_temp
       page_id: ${sense_page_sensors_id}
-      row: 0
+      row: 1
       column: 2
       column_span: 1
       text: "OSAT"
@@ -357,7 +357,7 @@ packages:
     vars:
       uid: sensor_kitchen_temp
       page_id: ${sense_page_sensors_id}
-      row: 1
+      row: 2
       column: 0
       column_span: 1
       text: "Kitchen"
@@ -371,7 +371,7 @@ packages:
     vars:
       uid: sensor_freezer_temp
       page_id: ${sense_page_sensors_id}
-      row: 1
+      row: 2
       column: 1
       column_span: 1
       text: "Freezer"
@@ -385,7 +385,7 @@ packages:
     vars:
       uid: sensor_fridge_temp
       page_id: ${sense_page_sensors_id}
-      row: 1
+      row: 2
       column: 2
       column_span: 1
       text: "Fridge"
@@ -399,7 +399,7 @@ packages:
     vars:
       uid: sensor_voc
       page_id: ${sense_page_sensors_id}
-      row: 2
+      row: 3
       column: 0
       column_span: 1
       text: "VOC"
@@ -413,7 +413,7 @@ packages:
     vars:
       uid: sensor_co2
       page_id: ${sense_page_sensors_id}
-      row: 2
+      row: 3
       column: 1
       column_span: 1
       text: "CO2"
@@ -427,7 +427,7 @@ packages:
     vars:
       uid: sensor_humid
       page_id: ${sense_page_sensors_id}
-      row: 2
+      row: 3
       column: 2
       column_span: 1
       text: "Humid"
@@ -501,6 +501,11 @@ packages:
       secondary_entity_id: ${ent_outdoor_garage_lights}
       on_bg_color: ${ui_switch_outdoor_on_bg}
       off_bg_color: ${ui_switch_outdoor_off_bg}
+
+
+
+
+
 
 
 

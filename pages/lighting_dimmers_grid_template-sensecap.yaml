@@ -1,9 +1,11 @@
-﻿substitutions:
+substitutions:
   dimmers_page_id: "page_lighting_dimmers"
   dimmers_card_bg_id: "dimmers_page_card_bg"
   dimmers_title_id: "dimmers_page_title"
   dimmers_title_text: "Dimmers & Overrides"
-  dimmers_title_color: "sense_info"
+  dimmers_title_font: "${ui_page_title_font}"
+  dimmers_title_y: "${ui_page_title_y_offset}"
+  dimmers_title_color: "${ui_page_title_color}"
 
   # Optional left-column slot 1 (row 1)
   dimmers_left_row1_uid: "dimmers_left_row1"
@@ -82,8 +84,8 @@ lvgl:
             grid_cell_column_span: 4
             grid_cell_x_align: center
             grid_cell_y_align: center
-            y: -2
-            text_font: nunito_36
+            y: ${dimmers_title_y}
+            text_font: ${dimmers_title_font}
             text_color: ${dimmers_title_color}
         - container:
             id: ${dimmers_left_row1_uid}
@@ -298,3 +300,6 @@ binary_sensor:
             - lvgl.widget.update:
                 id: label_${dimmers_left_row3_uid}
                 text_color: $label_off_color
+
+
+

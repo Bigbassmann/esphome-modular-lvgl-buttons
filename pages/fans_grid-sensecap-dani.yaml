@@ -1,5 +1,9 @@
 substitutions:
   sense_page_fans_id: "page_fans"
+  fan_title_font: "${ui_page_title_font}"
+  fan_title_color: "${ui_page_title_color}"
+  fan_title_y: "${ui_page_title_y_offset}"
+  fan_text_color: "${ui_page_text_color}"
 
 script:
   - id: fr_fan_off
@@ -268,9 +272,9 @@ lvgl:
               - label:
                   text: "Fan Controls"
                   align: TOP_MID
-                  y: 8
-                  text_font: nunito_36
-                  text_color: ${fan_title_color | default("sense_info")}
+                  y: ${fan_title_y}
+                  text_font: ${fan_title_font}
+                  text_color: ${fan_title_color}
 
               - label:
                   text: "FR Fan"
@@ -278,7 +282,7 @@ lvgl:
                   x: 12
                   y: 48
                   text_font: nunito_20
-                  text_color: ${fan_text_color | default("sense_text")}
+                  text_color: ${fan_text_color}
               - label:
                   id: fans_fr_state_label
                   text: "OFF"
@@ -286,7 +290,7 @@ lvgl:
                   x: 122
                   y: 50
                   text_font: nunito_20
-                  text_color: ${fan_text_color | default("sense_text")}
+                  text_color: ${fan_text_color}
 
               - button:
                   id: fr_mode_off_btn
@@ -355,7 +359,7 @@ lvgl:
                   x: 12
                   y: 136
                   text_font: nunito_20
-                  text_color: ${fan_text_color | default("sense_text")}
+                  text_color: ${fan_text_color}
               - label:
                   id: fans_mbr_state_label
                   text: "OFF"
@@ -363,7 +367,7 @@ lvgl:
                   x: 122
                   y: 138
                   text_font: nunito_20
-                  text_color: ${fan_text_color | default("sense_text")}
+                  text_color: ${fan_text_color}
               - label:
                   id: fans_mbr_dir_label
                   text: "Dir: --"
@@ -371,7 +375,7 @@ lvgl:
                   x: -12
                   y: 140
                   text_font: nunito_18
-                  text_color: ${fan_text_color | default("sense_text")}
+                  text_color: ${fan_text_color}
 
               - button:
                   id: mbr_mode_off_btn
@@ -455,7 +459,7 @@ lvgl:
                   x: 12
                   y: 226
                   text_font: nunito_20
-                  text_color: ${fan_text_color | default("sense_text")}
+                  text_color: ${fan_text_color}
 
               - button:
                   id: attic_low_btn
@@ -476,14 +480,14 @@ lvgl:
                         align: LEFT_MID
                         x: 14
                         text_font: nunito_20
-                        text_color: ${fan_text_color | default("sense_text")}
+                        text_color: ${fan_text_color}
                     - label:
                         id: fans_attic_low_state
                         text: "OFF"
                         align: RIGHT_MID
                         x: -14
                         text_font: nunito_20
-                        text_color: ${fan_text_color | default("sense_text")}
+                        text_color: ${fan_text_color}
 
               - button:
                   id: attic_high_btn
@@ -504,14 +508,19 @@ lvgl:
                         align: LEFT_MID
                         x: 14
                         text_font: nunito_20
-                        text_color: ${fan_text_color | default("sense_text")}
+                        text_color: ${fan_text_color}
                     - label:
                         id: fans_attic_high_state
                         text: "OFF"
                         align: RIGHT_MID
                         x: -14
                         text_font: nunito_20
-                        text_color: ${fan_text_color | default("sense_text")}
+                        text_color: ${fan_text_color}
+
+
+
+
+
 
 
 

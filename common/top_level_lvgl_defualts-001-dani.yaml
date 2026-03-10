@@ -1,6 +1,5 @@
----
-# Top-level LVGL defaults for future Dani theme wiring.
-# Not active yet: this file is intentionally not included anywhere.
+﻿---
+# Dani top-level LVGL defaults (active when included by 001-dani).
 
 substitutions:
   # Theme identity
@@ -12,6 +11,11 @@ substitutions:
   lvgl_font_body_small_default: "nunito_16"
   lvgl_font_title_default: "nunito_36"
   lvgl_font_value_default: "nunito_18"
+
+  # Global page title defaults (Overrides-style)
+  ui_page_title_font: "nunito_36"
+  ui_page_title_color: "sense_info"
+  ui_page_title_y_offset: "-2"
 
   # Global text defaults
   lvgl_text_primary_default: "white"
@@ -32,9 +36,22 @@ substitutions:
   lvgl_state_on_bg_default: "sense_tile_blue"
   lvgl_state_off_bg_default: "sense_tile_blue_off"
 
-  # Generic nav defaults
-  lvgl_nav_bg_default: "sense_tile_blue"
+  # Topbar defaults
+  lvgl_topbar_bg_default: "sense_bg"
+  lvgl_topbar_text_default: "sense_text"
+  lvgl_topbar_date_bg_default: "sense_bg"
+  lvgl_topbar_time_bg_default: "sense_bg"
+  lvgl_topbar_wifi_bg_default: "sense_bg"
+  lvgl_topbar_wifi_icon_default: "sense_info"
+
+  # Bottom nav defaults (same text/font; per-button bg by family)
+  lvgl_nav_bar_bg_default: "sense_surface"
+  lvgl_nav_btn_font_default: "nunito_14"
   lvgl_nav_text_default: "sense_text"
+  lvgl_nav_prev_bg_default: "dani_family_indigo_bg_on"
+  lvgl_nav_home_bg_default: "dani_family_teal_bg_on"
+  lvgl_nav_menu_bg_default: "dani_family_blue_bg_on"
+  lvgl_nav_next_bg_default: "dani_family_red_bg_on"
 
   # Generic slider defaults
   lvgl_slider_bg_default: "sense_surface_alt"

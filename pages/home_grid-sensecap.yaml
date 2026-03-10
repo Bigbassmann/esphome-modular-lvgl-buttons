@@ -4,8 +4,9 @@ substitutions:
   sense_page_fans_id: "page_fans"
   sense_page_overrides_id: "page_overrides"
   home_title_text: "Home Menu"
-  home_title_font: "nunito_20"
-  home_title_color: "sense_text"
+  home_title_font: "${ui_page_title_font}"
+  home_title_color: "${ui_page_title_color}"
+  home_title_y: "${ui_page_title_y_offset}"
 
 
 lvgl:
@@ -38,7 +39,7 @@ lvgl:
             grid_cell_column_span: 3
             grid_cell_x_align: center
             grid_cell_y_align: center
-            y: -2
+            y: ${home_title_y}
             text_font: ${home_title_font}
             text_color: ${home_title_color}
         - button:
@@ -649,4 +650,7 @@ binary_sensor:
                   - lvgl.widget.update:
                       id: home_v2_value_bedtime
                       hidden: true
+
+
+
 

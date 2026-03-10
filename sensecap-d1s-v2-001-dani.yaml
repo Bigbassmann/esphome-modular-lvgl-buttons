@@ -78,6 +78,7 @@ packages:
   sensors: !include sensors/sensors_base.yaml
   # Styles + Themes
   theme_style: !include common/theme_style-sensecap-dani.yaml
+  top_level_lvgl_defaults_dani: !include common/top_level_lvgl_defualts-001-dani.yaml
   ui_tokens_sensecap: !include common/ui_tokens-sensecap.yaml
   page_shell_sensecap: !include pages/page_shell_480-sensecap.yaml
   page_home_sensecap: !include pages/home_grid-sensecap.yaml
@@ -155,6 +156,7 @@ font:
       $mdi_molecule_co2,  # mdi-molecule-co2 - CO2 tile icon
       $mdi_water_percent,  # mdi-water-percent - humidity tile icon
     ]
+
 
 
 

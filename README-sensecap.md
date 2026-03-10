@@ -1,14 +1,16 @@
-﻿# SenseCAP D1S Fork README
+# SenseCAP D1S Fork README
 
 This file documents the current working pattern for this fork and the immediate cleanup/refactor plan.
 
 ## Current State (March 7, 2026)
 
-- Active device entrypoint in repo: `sensecap-d1s-v2-001.yaml`
+- Active device entrypoint in repo: `sensecap-d1s-v2-001.yaml` (root currently composes via `sensecap-d1s-v2-001-dani.yaml`)
 - SenseCAP modules are in `common/`, `pages/`, `buttons/`, `widgets/`, `hardware/`
 - Demo package calls in `sensecap-d1s-v2-001.yaml` (`button_1`, `button_4`, `button_4_page`) are disabled
 - Font include paths in `common/fonts-sensecap.yaml` now use `assets/fonts/Nunito-SemiBold.ttf`
 - Unused experimental files were moved under `archive/`
+- Instance mapping is centralized in `common/package_instance_mapping-sensecap-dani.yaml`
+- Page title/text defaults are centralized as `ui_page_*` vars and mapped to Dani family tokens
 
 ## Repo Rules (SenseCAP Fork)
 
@@ -299,4 +301,6 @@ This fork uses a token-first color model so page files do not hardcode one-off h
 8. Validation rule
 - After each color batch, run root validation:
 `esphome config /config/esphome/sensecap-d1s-v2.yaml`
+
+
 

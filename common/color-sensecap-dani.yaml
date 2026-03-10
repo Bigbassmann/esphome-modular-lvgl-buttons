@@ -18,6 +18,12 @@ color:
       hex: 'E5E7EB'
     - id: sense_text_muted
       hex: '9CA3AF'
+    - id: dani_page_title
+      hex: 'FFFFFF'
+    - id: dani_page_text
+      hex: 'FFFFFF'
+    - id: dani_page_text_muted
+      hex: 'BDBDBD'
     - id: sense_primary
       hex: '1D4ED8'
     - id: sense_info
@@ -620,4 +626,7 @@ color:
 #   hex: 'FFFF00'
 # - id: yellowgreen
 #   hex: '9ACD32'
+
+
+
 

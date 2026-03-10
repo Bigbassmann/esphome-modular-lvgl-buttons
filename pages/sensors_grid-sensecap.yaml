@@ -1,5 +1,8 @@
 ﻿substitutions:
   sense_page_sensors_id: "page_sensors"
+  sensors_title_font: "${ui_page_title_font | default(\"nunito_36\")}"
+  sensors_title_color: "${ui_page_title_color | default(\"sense_info\")}"
+  sensors_title_y: "${ui_page_title_y_offset | default(\"-2\")}"
 
 lvgl:
   pages:
@@ -41,6 +44,7 @@ lvgl:
       layout:
         type: grid
         grid_rows:
+          - 34
           - FR(1)
           - FR(1)
           - FR(1)
@@ -48,12 +52,22 @@ lvgl:
           - FR(1)
           - FR(1)
           - FR(1)
-        pad_row: 8
-        pad_column: 8
+        pad_row: 10
+        pad_column: 10
       pad_top: ${sense_content_y | default("46")}
       pad_bottom: 76
       pad_left: 8
+      pad_right: 8
 
-      widgets: []
-
-
+      widgets:
+        - label:
+            id: sensors_page_title
+            text: "Sensors"
+            grid_cell_row_pos: 0
+            grid_cell_column_pos: 0
+            grid_cell_column_span: 3
+            grid_cell_x_align: center
+            grid_cell_y_align: center
+            y: ${sensors_title_y}
+            text_font: ${sensors_title_font}
+            text_color: ${sensors_title_color}

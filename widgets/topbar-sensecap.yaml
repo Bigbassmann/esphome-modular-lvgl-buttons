@@ -1,4 +1,4 @@
-obj:
+﻿obj:
   id: sense_topbar
   align: TOP_MID
   x: 0
@@ -6,6 +6,7 @@ obj:
   width: 100%
   height: ${sense_topbar_h | default("46")}
   styles: sense_topbar_style
+  bg_color: sense_bg
   border_width: 0
   widgets:
     - label:
@@ -16,6 +17,8 @@ obj:
         y: 8
         text_font: nunito_18
         text_color: sense_text
+        bg_color: sense_bg
+        bg_opa: cover
 
     - label:
         id: sense_topbar_time
@@ -25,6 +28,8 @@ obj:
         y: 8
         text_font: nunito_18
         text_color: sense_text
+        bg_color: sense_bg
+        bg_opa: cover
 
     - button:
         id: sense_topbar_wifi_btn

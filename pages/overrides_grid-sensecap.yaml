@@ -1,5 +1,8 @@
 substitutions:
   sense_page_overrides_id: "page_overrides"
+  overrides_title_font: "${ui_page_title_font}"
+  overrides_title_color: "${ui_page_title_color}"
+  overrides_title_y: "${ui_page_title_y_offset}"
 
   ui_overrides_dani_entity_id: "${ent_dani_mode_on}"
   ui_overrides_dani_text: "${ui_dani_text}"
@@ -11,7 +14,7 @@ substitutions:
   ui_overrides_dani_value_on: "${ui_dani_value_on}"
   ui_overrides_dani_value_off: "${ui_dani_value_off}"
   ui_overrides_dani_icon_on_color: "$icon_on_color"
-  ui_overrides_dani_icon_off_color: "sense_text_muted"
+  ui_overrides_dani_icon_off_color: "${ui_page_text_muted_color}"
   ui_overrides_dani_text_on_color: "${ui_dani_text_on_color}"
   ui_overrides_dani_text_off_color: "${ui_dani_text_off_color}"
   ui_overrides_dani_value_on_color: "${ui_dani_value_on_color}"
@@ -61,9 +64,9 @@ lvgl:
             grid_cell_column_span: 2
             grid_cell_x_align: center
             grid_cell_y_align: center
-            y: -2
-            text_font: nunito_36
-            text_color: sense_info
+            y: ${overrides_title_y}
+            text_font: ${overrides_title_font}
+            text_color: ${overrides_title_color}
         - container:
             id: overrides_btn_cleaners
             grid_cell_row_pos: 1
@@ -1441,4 +1444,9 @@ binary_sensor:
                   - lvgl.widget.update:
                       id: value_overrides_btn_dani
                       hidden: true
+
+
+
+
+
 

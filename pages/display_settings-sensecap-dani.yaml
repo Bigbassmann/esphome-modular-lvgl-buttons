@@ -1,5 +1,8 @@
-﻿substitutions:
+substitutions:
   sense_page_display_settings_id: "page_display_settings"
+  display_title_font: "${ui_page_title_font}"
+  display_title_color: "${ui_page_title_color}"
+  display_title_y: "${ui_page_title_y_offset}"
 
 script:
   - id: display_settings_refresh_ui
@@ -105,9 +108,9 @@ lvgl:
               - label:
                   text: "Display Settings"
                   align: TOP_MID
-                  y: 6
-                  text_font: nunito_36
-                  text_color: sense_info
+                  y: ${display_title_y}
+                  text_font: ${display_title_font}
+                  text_color: ${display_title_color}
 
               - button:
                   id: display_brightness_label
@@ -122,7 +125,7 @@ lvgl:
                         text: "Brightness"
                         align: CENTER
                         text_font: nunito_16
-                        text_color: sense_text
+                        text_color: "${ui_page_text_color}"
 
               - slider:
                   id: display_brightness_slider
@@ -160,7 +163,7 @@ lvgl:
                   x: -12
                   y: 50
                   text_font: nunito_18
-                  text_color: sense_text
+                  text_color: "${ui_page_text_color}"
 
               - button:
                   id: display_idle_scroll_toggle
@@ -180,8 +183,8 @@ lvgl:
                           id(sense_display_scroll_sleep_start_ms) = 0;
                       - script.execute: display_settings_refresh_ui
                   widgets:
-                    - label: {text: "Scroll", align: LEFT_MID, x: 10, text_font: nunito_16, text_color: sense_text}
-                    - label: {id: display_idle_scroll_state, text: "OFF", align: RIGHT_MID, x: -10, text_font: nunito_16, text_color: sense_text}
+                    - label: {text: "Scroll", align: LEFT_MID, x: 10, text_font: nunito_16, text_color: "${ui_page_text_color}"}
+                    - label: {id: display_idle_scroll_state, text: "OFF", align: RIGHT_MID, x: -10, text_font: nunito_16, text_color: "${ui_page_text_color}"}
 
               - slider:
                   id: display_idle_scroll_slider
@@ -216,7 +219,7 @@ lvgl:
                   x: -12
                   y: 84
                   text_font: nunito_18
-                  text_color: sense_text
+                  text_color: "${ui_page_text_color}"
 
               - button:
                   id: display_scroll_rate_label
@@ -231,7 +234,7 @@ lvgl:
                         text: "Rate"
                         align: CENTER
                         text_font: nunito_16
-                        text_color: sense_text
+                        text_color: "${ui_page_text_color}"
 
               - slider:
                   id: display_scroll_rate_slider
@@ -266,7 +269,7 @@ lvgl:
                   x: -12
                   y: 118
                   text_font: nunito_18
-                  text_color: sense_text
+                  text_color: "${ui_page_text_color}"
 
               - button:
                   id: display_sleep_toggle
@@ -296,8 +299,8 @@ lvgl:
                             - script.execute: sense_display_apply_brightness
                       - script.execute: display_settings_refresh_ui
                   widgets:
-                    - label: {text: "Sleep", align: LEFT_MID, x: 10, text_font: nunito_16, text_color: sense_text}
-                    - label: {id: display_sleep_state, text: "ON", align: RIGHT_MID, x: -10, text_font: nunito_16, text_color: sense_text}
+                    - label: {text: "Sleep", align: LEFT_MID, x: 10, text_font: nunito_16, text_color: "${ui_page_text_color}"}
+                    - label: {id: display_sleep_state, text: "ON", align: RIGHT_MID, x: -10, text_font: nunito_16, text_color: "${ui_page_text_color}"}
 
               - slider:
                   id: display_sleep_timeout_slider
@@ -332,7 +335,7 @@ lvgl:
                   x: -12
                   y: 152
                   text_font: nunito_18
-                  text_color: sense_text
+                  text_color: "${ui_page_text_color}"
 
               - button:
                   id: display_scroll_sleep_toggle
@@ -351,8 +354,8 @@ lvgl:
                           id(sense_display_scroll_sleep_start_ms) = 0;
                       - script.execute: display_settings_refresh_ui
                   widgets:
-                    - label: {text: "Scroll Sleep", align: LEFT_MID, x: 10, text_font: nunito_16, text_color: sense_text}
-                    - label: {id: display_scroll_sleep_state, text: "OFF", align: RIGHT_MID, x: -10, text_font: nunito_16, text_color: sense_text}
+                    - label: {text: "Scroll Sleep", align: LEFT_MID, x: 10, text_font: nunito_16, text_color: "${ui_page_text_color}"}
+                    - label: {id: display_scroll_sleep_state, text: "OFF", align: RIGHT_MID, x: -10, text_font: nunito_16, text_color: "${ui_page_text_color}"}
 
               - slider:
                   id: display_scroll_sleep_slider
@@ -387,8 +390,14 @@ lvgl:
                   x: -12
                   y: 186
                   text_font: nunito_18
-                  text_color: sense_text
+                  text_color: "${ui_page_text_color}"
               # Row 6 (bottom) intentionally reserved for future controls.
+
+
+
+
+
+
 
 
 

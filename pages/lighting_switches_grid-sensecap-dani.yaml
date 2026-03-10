@@ -1,6 +1,8 @@
 substitutions:
   sense_page_lighting_switches_id: "page_lighting_switches"
-  lights_title_color: "sense_info"
+  lights_title_font: "${ui_page_title_font}"
+  lights_title_color: "${ui_page_title_color}"
+  lights_title_y: "${ui_page_title_y_offset}"
 
 lvgl:
   pages:
@@ -43,6 +45,9 @@ lvgl:
             grid_cell_column_span: 3
             grid_cell_x_align: center
             grid_cell_y_align: center
-            y: -2
-            text_font: nunito_36
+            y: ${lights_title_y}
+            text_font: ${lights_title_font}
             text_color: ${lights_title_color}
+
+
+

@@ -1,4 +1,4 @@
-obj:
+﻿obj:
   id: sense_bottom_nav
   align: BOTTOM_MID
   x: 0
@@ -6,6 +6,7 @@ obj:
   width: 100%
   height: ${sense_nav_h | default("68")}
   styles: sense_nav_bar_style
+  bg_color: sense_surface
   border_width: 0
   widgets:
     - button:
@@ -16,6 +17,7 @@ obj:
         width: 96
         height: 50
         styles: sense_nav_btn_style
+        bg_color: dani_family_indigo_bg_on
         on_press:
           - script.execute: nav_to_prev
         widgets:
@@ -33,6 +35,7 @@ obj:
         width: 108
         height: 50
         styles: sense_nav_btn_style
+        bg_color: dani_family_teal_bg_on
         on_press:
           - script.execute: nav_to_home
         widgets:
@@ -50,6 +53,7 @@ obj:
         width: 108
         height: 50
         styles: sense_nav_btn_style
+        bg_color: dani_family_blue_bg_on
         on_press:
           - script.execute: nav_to_menu
         widgets:
@@ -67,6 +71,7 @@ obj:
         width: 96
         height: 50
         styles: sense_nav_btn_style
+        bg_color: dani_family_red_bg_on
         on_press:
           - script.execute: nav_to_next
         widgets:
