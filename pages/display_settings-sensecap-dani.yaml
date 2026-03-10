@@ -1,4 +1,4 @@
-﻿# =============================================================================
+# =============================================================================
 # PAGE EDIT GUIDE (SenseCAP)
 # - Color tokens: common/color-sensecap-dani.yaml.
 # - Entity/UI defaults (text/icon/value/on-off): common/ha_entities-sensecap-dani.yaml.
@@ -116,10 +116,17 @@ script:
 lvgl:
   pages:
     - id: ${sense_page_display_settings_id}
+      skip: true
       styles: sense_page_style
       on_load:
         - script.execute: display_settings_refresh_ui
       widgets:
+        - label:
+            text: "Display Settings"
+            align: TOP_MID
+            y: ${display_title_y}
+            text_font: ${display_title_font}
+            text_color: ${display_title_color}
         - obj:
             id: display_settings_card
             align: TOP_MID
@@ -128,12 +135,6 @@ lvgl:
             height: ${sense_content_h | default("366")}
             styles: sense_card_flat_style
             widgets:
-              - label:
-                  text: "Display Settings"
-                  align: TOP_MID
-                  y: ${display_title_y}
-                  text_font: ${display_title_font}
-                  text_color: ${display_title_color}
 
               - button:
                   id: display_brightness_label
@@ -437,7 +438,7 @@ lvgl:
                   y: 216
                   width: 224
                   height: 32
-                  text_font: nunito_16
+                  text_font: montserrat_14
                   options:
                     - "Dark"
                     - "Dani"
@@ -461,6 +462,9 @@ lvgl:
                   y: 252
                   text_font: nunito_14
                   text_color: "${ui_page_text_color}"
+
+
+
 
 
 

@@ -20,6 +20,7 @@ lvgl:
       pad_all: 2
   pages:
     - id: info_screen
+      skip: true
       styles: sense_page_style
       <<: !include
         file: ../widgets/swipe_navigation.yaml

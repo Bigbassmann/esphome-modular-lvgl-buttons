@@ -1,4 +1,4 @@
-﻿# FILE EDIT GUIDE (SenseCAP)
+# FILE EDIT GUIDE (SenseCAP)
 # Role: Shared defaults/tokens/mappings/include wiring.
 # Update here for:
 # - Color tokens and family palettes (common/color-*.yaml).
@@ -56,7 +56,7 @@ lvgl:
   style_definitions:
     - id: page_style
       scrollbar_mode: "OFF"
-      bg_color: sense_surface
+      bg_color: sense_bg
       bg_opa: cover
       pad_all: 1
 
@@ -69,12 +69,12 @@ lvgl:
     # SenseCAP-inspired shell styles (additive)
     - id: sense_page_style
       scrollbar_mode: "OFF"
-      bg_color: sense_surface
+      bg_color: sense_bg
       bg_opa: cover
       pad_all: 0
 
     - id: sense_topbar_style
-      bg_color: sense_surface
+      bg_color: sense_bg
       bg_opa: cover
       border_width: 1
       border_color: sense_border
@@ -85,7 +85,7 @@ lvgl:
       pad_bottom: 4
 
     - id: sense_nav_bar_style
-      bg_color: sense_surface
+      bg_color: sense_bg
       bg_opa: cover
       border_width: 1
       border_color: sense_border
@@ -170,7 +170,7 @@ lvgl:
       pad_all: 6
 
     - id: sense_card_flat_style
-      bg_color: sense_surface
+      bg_color: sense_bg
       bg_opa: cover
       border_width: 0
       radius: 8
@@ -228,22 +228,67 @@ select:
             then:
               - lvgl.style.update:
                   id: page_style
-                  bg_color: sense_surface
+                  bg_color: sense_bg
                   text_color: white
               - lvgl.style.update:
                   id: sense_page_style
-                  bg_color: sense_surface
+                  bg_color: sense_bg
               - lvgl.style.update:
                   id: sense_topbar_style
-                  bg_color: sense_surface
+                  bg_color: sense_bg
               - lvgl.style.update:
                   id: sense_nav_bar_style
-                  bg_color: sense_surface
+                  bg_color: sense_bg
               - lvgl.style.update:
                   id: sense_card_flat_style
-                  bg_color: sense_surface
+                  bg_color: sense_bg
               - lvgl.style.update:
                   id: time_style
+                  text_color: sense_text
+              - lvgl.style.update:
+                  id: sense_nav_btn_style
+                  bg_color: sense_tile_blue
+                  text_color: sense_text
+              - lvgl.style.update:
+                  id: sense_tile_dani_style
+                  bg_color: sense_tile_red
+              - lvgl.style.update:
+                  id: sense_tile_sleepy_style
+                  bg_color: sense_tile_teal
+              - lvgl.style.update:
+                  id: sense_tile_bedtime_style
+                  bg_color: sense_tile_indigo
+              - lvgl.style.update:
+                  id: sense_tile_tstat_style
+                  bg_color: sense_tile_yellow
+              - lvgl.style.update:
+                  id: sense_tile_fans_style
+                  bg_color: sense_tile_sky
+              - lvgl.style.update:
+                  id: sense_tile_overrides_style
+                  bg_color: sense_tile_cyan
+              - lvgl.style.update:
+                  id: sense_tile_placeholder_style
+                  bg_color: sense_surface_alt
+              - lvgl.style.update:
+                  id: sense_display_row_btn_style
+                  bg_color: sense_cat_admin
+                  text_color: sense_text
+              - lvgl.style.update:
+                  id: sense_menu_cat1_style
+                  bg_color: sense_cat_admin
+                  text_color: sense_text
+              - lvgl.style.update:
+                  id: sense_menu_cat2_style
+                  bg_color: sense_cat_climate
+                  text_color: sense_text
+              - lvgl.style.update:
+                  id: sense_menu_cat3_style
+                  bg_color: sense_cat_lights
+                  text_color: sense_text
+              - lvgl.style.update:
+                  id: sense_menu_cat4_style
+                  bg_color: sense_cat_overrides
                   text_color: sense_text
         - if:
             condition:
@@ -251,45 +296,90 @@ select:
             then:
               - lvgl.style.update:
                   id: page_style
-                  bg_color: dani_family_indigo_bg_off
+                  bg_color: sense_bg
                   text_color: dani_page_text
               - lvgl.style.update:
                   id: sense_page_style
-                  bg_color: dani_family_indigo_bg_off
+                  bg_color: sense_bg
               - lvgl.style.update:
                   id: sense_topbar_style
-                  bg_color: dani_family_indigo_bg_off
+                  bg_color: sense_bg
               - lvgl.style.update:
                   id: sense_nav_bar_style
-                  bg_color: dani_family_indigo_bg_off
+                  bg_color: sense_bg
               - lvgl.style.update:
                   id: sense_card_flat_style
-                  bg_color: dani_family_indigo_bg_off
+                  bg_color: sense_bg
               - lvgl.style.update:
                   id: time_style
                   text_color: dani_page_text
+              - lvgl.style.update:
+                  id: sense_nav_btn_style
+                  bg_color: dani_family_blue_bg_on
+                  text_color: dani_family_blue_text_on
+              - lvgl.style.update:
+                  id: sense_tile_dani_style
+                  bg_color: dani_family_red_bg_on
+              - lvgl.style.update:
+                  id: sense_tile_sleepy_style
+                  bg_color: dani_family_teal_bg_on
+              - lvgl.style.update:
+                  id: sense_tile_bedtime_style
+                  bg_color: dani_family_indigo_bg_on
+              - lvgl.style.update:
+                  id: sense_tile_tstat_style
+                  bg_color: dani_family_yellow_bg_on
+              - lvgl.style.update:
+                  id: sense_tile_fans_style
+                  bg_color: dani_family_blue_bg_on
+              - lvgl.style.update:
+                  id: sense_tile_overrides_style
+                  bg_color: dani_family_teal_bg_on
+              - lvgl.style.update:
+                  id: sense_tile_placeholder_style
+                  bg_color: dani_family_blue_bg_off
+              - lvgl.style.update:
+                  id: sense_display_row_btn_style
+                  bg_color: dani_family_orange_bg_on
+                  text_color: dani_family_orange_text_on
+              - lvgl.style.update:
+                  id: sense_menu_cat1_style
+                  bg_color: dani_family_blue_bg_on
+                  text_color: dani_family_blue_text_on
+              - lvgl.style.update:
+                  id: sense_menu_cat2_style
+                  bg_color: dani_family_teal_bg_on
+                  text_color: dani_family_teal_text_on
+              - lvgl.style.update:
+                  id: sense_menu_cat3_style
+                  bg_color: dani_family_orange_bg_on
+                  text_color: dani_family_orange_text_on
+              - lvgl.style.update:
+                  id: sense_menu_cat4_style
+                  bg_color: dani_family_indigo_bg_on
+                  text_color: dani_family_indigo_text_on
         - if:
             condition:
               - lambda: 'return id(current_theme).current_option() == "Split";'
             then:
               - lvgl.style.update:
                   id: page_style
-                  bg_color: split_family_blue_bg_off
+                  bg_color: sense_bg
                   text_color: split_page_text
               - lvgl.style.update:
                   id: sense_page_style
-                  bg_color: split_family_blue_bg_off
+                  bg_color: sense_bg
               - lvgl.style.update:
                   id: sense_topbar_style
-                  bg_color: split_family_blue_bg_off
+                  bg_color: sense_bg
                   border_color: split_family_blue_bg_on
               - lvgl.style.update:
                   id: sense_nav_bar_style
-                  bg_color: split_family_blue_bg_off
+                  bg_color: sense_bg
                   border_color: split_family_blue_bg_on
               - lvgl.style.update:
                   id: sense_card_flat_style
-                  bg_color: split_family_blue_bg_off
+                  bg_color: sense_bg
               - lvgl.style.update:
                   id: time_style
                   text_color: split_page_text

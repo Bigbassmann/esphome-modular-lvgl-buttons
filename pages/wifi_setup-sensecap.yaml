@@ -19,8 +19,15 @@ substitutions:
 lvgl:
   pages:
     - id: page_wifi_setup
+      skip: true
       styles: sense_page_style
       widgets:
+        - label:
+            text: "WiFi Setup"
+            align: TOP_MID
+            y: ${wifi_title_y}
+            text_font: ${wifi_title_font}
+            text_color: ${wifi_title_color}
         - obj:
             id: wifi_setup_card
             align: TOP_MID
@@ -29,12 +36,6 @@ lvgl:
             height: ${sense_content_h | default("366")}
             styles: sense_card_style
             widgets:
-              - label:
-                  text: "WiFi Setup"
-                  align: TOP_MID
-                  y: ${wifi_title_y}
-                  text_font: ${wifi_title_font}
-                  text_color: ${wifi_title_color}
 
               - label:
                   id: wifi_setup_status

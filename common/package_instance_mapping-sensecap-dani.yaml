@@ -191,31 +191,31 @@ packages:
       slider_knob_off_color: ${ui_dimmer_entry_slider_knob_off}
 
   dimmer_btn_entry_page: !include
-    file: ../pages/light_color.yaml
+    file: ../pages/light_color-sensecap.yaml
     vars:
       light_entity: ${ent_entry_lights}
       widget_name: "dimmer_btn_entry"
 
   dimmer_btn_mbr_page: !include
-    file: ../pages/light_color.yaml
+    file: ../pages/light_color-sensecap.yaml
     vars:
       light_entity: ${ent_mbr_lights}
       widget_name: "dimmer_btn_mbr"
 
   dimmer_btn_fr_page: !include
-    file: ../pages/light_color.yaml
+    file: ../pages/light_color-sensecap.yaml
     vars:
       light_entity: ${ent_fr_lights}
       widget_name: "dimmer_btn_fr"
 
   dimmer_btn_living_page: !include
-    file: ../pages/light_color.yaml
+    file: ../pages/light_color-sensecap.yaml
     vars:
       light_entity: ${ent_living_room_lights}
       widget_name: "dimmer_btn_living"
 
   dimmer_btn_kitchen_page: !include
-    file: ../pages/light_color.yaml
+    file: ../pages/light_color-sensecap.yaml
     vars:
       light_entity: ${ent_kitchen_lights_4}
       widget_name: "dimmer_btn_kitchen"

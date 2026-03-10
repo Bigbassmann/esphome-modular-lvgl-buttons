@@ -49,13 +49,13 @@ lvgl:
             scrollable: false
             scrollbar_mode: "OFF"
             widgets:
+
               - label:
                   text: "Thermostat"
                   align: TOP_MID
                   y: ${tstat_title_y}
                   text_font: ${tstat_title_font}
                   text_color: ${tstat_title_color}
-
               - label:
                   text: "HVAC Status"
                   align: TOP_LEFT
