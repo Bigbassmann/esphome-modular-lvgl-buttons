@@ -1,0 +1,506 @@
+packages:
+  page_lighting_dimmers_sensecap: !include
+    file: ../pages/lighting_dimmers_grid_template-sensecap.yaml
+    vars:
+      dimmers_page_id: ${sense_page_lighting_dimmers_id}
+      dimmers_card_bg_id: "dimmers_page_1_card_bg"
+      dimmers_title_id: "dimmers_page_1_title"
+      dimmers_title_text: "Dimmers"
+      dimmers_left_row1_uid: ${ui_dimmers_p1_left_row1_uid}
+      dimmers_left_row1_hidden: ${ui_dimmers_p1_left_row1_hidden}
+      dimmers_left_row2_uid: ${ui_dimmers_p1_left_row2_uid}
+      dimmers_left_row2_hidden: ${ui_dimmers_p1_left_row2_hidden}
+      dimmers_left_row3_uid: ${ui_dimmers_p1_left_row3_uid}
+      dimmers_left_row3_hidden: ${ui_dimmers_p1_left_row3_hidden}
+      dimmers_left_row4_uid: ${ui_dimmers_p1_left_row4_uid}
+      dimmers_left_row4_hidden: ${ui_dimmers_p1_left_row4_hidden}
+      dimmers_left_row3_entity_id: ${ui_dimmers_left_row3_entity_id}
+      dimmers_left_row3_text: ${ui_dimmers_left_row3_text}
+      dimmers_left_row3_icon: ${ui_dimmers_left_row3_icon}
+      dimmers_left_row3_on_bg: ${ui_dimmers_left_row3_on_bg}
+      dimmers_left_row3_off_bg: ${ui_dimmers_left_row3_off_bg}
+      dimmers_left_row4_text: ${ui_dimmers_left_row4_text}
+      dimmers_left_row4_icon: ${ui_dimmers_left_row4_icon}
+      dimmers_left_row4_click_page: ${ui_dimmers_left_row4_click_page}
+  page_lighting_dimmers_2_sensecap: !include
+    file: ../pages/lighting_dimmers_grid_template-sensecap.yaml
+    vars:
+      dimmers_page_id: ${sense_page_lighting_dimmers_2_id}
+      dimmers_card_bg_id: "dimmers_page_2_card_bg"
+      dimmers_title_id: "dimmers_page_2_title"
+      dimmers_title_text: "Dimmers"
+      dimmers_left_row1_uid: ${ui_dimmers_p2_left_row1_uid}
+      dimmers_left_row1_hidden: ${ui_dimmers_p2_left_row1_hidden}
+      dimmers_left_row2_uid: ${ui_dimmers_p2_left_row2_uid}
+      dimmers_left_row2_hidden: ${ui_dimmers_p2_left_row2_hidden}
+      dimmers_left_row3_uid: ${ui_dimmers_p2_left_row3_uid}
+      dimmers_left_row3_hidden: ${ui_dimmers_p2_left_row3_hidden}
+      dimmers_left_row4_uid: ${ui_dimmers_p2_left_row4_uid}
+      dimmers_left_row4_hidden: ${ui_dimmers_p2_left_row4_hidden}
+      dimmers_left_row3_entity_id: ${ui_dimmers_left_row3_entity_id}
+      dimmers_left_row3_text: ${ui_dimmers_left_row3_text}
+      dimmers_left_row3_icon: ${ui_dimmers_left_row3_icon}
+      dimmers_left_row3_on_bg: ${ui_dimmers_left_row3_on_bg}
+      dimmers_left_row3_off_bg: ${ui_dimmers_left_row3_off_bg}
+      dimmers_left_row4_text: ${ui_dimmers_left_row4_text}
+      dimmers_left_row4_icon: ${ui_dimmers_left_row4_icon}
+      dimmers_left_row4_click_page: ${ui_dimmers_left_row4_click_page}
+  page_lighting_switches_sensecap: !include ../pages/lighting_switches_grid-sensecap-dani.yaml
+  page_sensors_sensecap: !include ../pages/sensors_grid-sensecap.yaml
+  # Use this theme for debugging
+  # theme_style: !include ../common/theme_style_debug.yaml
+  # SenseCAP-style display runtime (brightness/sleep in globals; wake on touch)
+  display_runtime: !include ../common/display_runtime-sensecap.yaml
+  # Optional legacy day/evening/night module:
+  # backlight: !include ../common/backlight_time.yaml
+
+  # Harware description file
+  hardware: !include ../hardware/seeed-studios-sensecap-indicator-d1s-001.yaml
+
+  # Basic boot screen with ESPHome logo and device diagnostic info
+  loading_screen: !include ../pages/loading_480px-sensecap.yaml
+  # info screen - WiFi login, IP address, MAC address etc
+  info_screen: !include ../pages/info-sensecap.yaml
+
+  thermostat_v2: !include ../pages/thermostat_v2_lvgl-sensecap-dani.yaml
+  # core_boot: !include ../common/core_boot-sensecap.yaml
+  core_globals: !include ../common/core_globals-sensecap.yaml
+  # legacy_globals: !include ../common/core_globals_legacy_compat-sensecap.yaml
+  ha_entities_sensecap: !include ../common/ha_entities-sensecap-dani.yaml
+  page_mapping_sensecap: !include ../common/page_mapping-sensecap.yaml
+  core_ha_common: !include ../common/core_ha_common-sensecap.yaml
+  home_temp_ha: !include ../common/home_temp_ha-sensecap.yaml
+  sensecap: !include ../common/sensecap_indicator_sensors-sensecap.yaml
+  
+
+
+
+  # This section will add buttons and page to your screen using the ESPHome package system.
+  # Each package has all the code required for the button or page (LVGL, sensors, etc)
+
+  # Add a button the controls a light in HA
+  button_2: !include
+    file: ../buttons/time_button.yaml
+    vars:
+      uid: button_2
+      row: 0
+      column: 3
+      text: 00:00
+      click_page: info_screen
+
+  # Add a button that goes to a different page
+  dimmer_btn_mbr: !include
+    file: ../buttons/dimmer_light_button-sensecap.yaml
+    vars:
+      uid: dimmer_btn_mbr
+      page_id: ${sense_page_lighting_dimmers_id}
+      row: 1
+      column: 1
+      column_span: 3
+      text: "MBR Lights"
+      icon: $mdi_lightbulb
+      entity_id: ${ent_mbr_lights}
+      on_bg_color: ${ui_dimmer_mbr_on_bg}
+      off_bg_color: ${ui_dimmer_mbr_off_bg}
+      slider_on_color: ${ui_dimmer_mbr_slider_on}
+      slider_off_color: ${ui_dimmer_mbr_slider_off}
+      slider_knob_on_color: ${ui_dimmer_mbr_slider_knob_on}
+      slider_knob_off_color: ${ui_dimmer_mbr_slider_knob_off}
+
+  dimmer_btn_fr: !include
+    file: ../buttons/dimmer_light_button-sensecap.yaml
+    vars:
+      uid: dimmer_btn_fr
+      page_id: ${sense_page_lighting_dimmers_id}
+      row: 2
+      column: 1
+      column_span: 3
+      text: "Family Lights"
+      icon: $mdi_lightbulb
+      entity_id: ${ent_fr_lights}
+      on_bg_color: ${ui_dimmer_fr_on_bg}
+      off_bg_color: ${ui_dimmer_fr_off_bg}
+      slider_on_color: ${ui_dimmer_fr_slider_on}
+      slider_off_color: ${ui_dimmer_fr_slider_off}
+      slider_knob_on_color: ${ui_dimmer_fr_slider_knob_on}
+      slider_knob_off_color: ${ui_dimmer_fr_slider_knob_off}
+
+  dimmer_btn_living: !include
+    file: ../buttons/dimmer_light_button-sensecap.yaml
+    vars:
+      uid: dimmer_btn_living
+      page_id: ${sense_page_lighting_dimmers_id}
+      row: 3
+      column: 1
+      column_span: 3
+      text: "Living Room"
+      icon: $mdi_lightbulb_group
+      entity_id: ${ent_living_room_lights}
+      secondary_entity_id: ${ent_library_lights}
+      on_bg_color: ${ui_dimmer_living_on_bg}
+      off_bg_color: ${ui_dimmer_living_off_bg}
+      slider_on_color: ${ui_dimmer_living_slider_on}
+      slider_off_color: ${ui_dimmer_living_slider_off}
+      slider_knob_on_color: ${ui_dimmer_living_slider_knob_on}
+      slider_knob_off_color: ${ui_dimmer_living_slider_knob_off}
+
+  dimmer_btn_kitchen: !include
+    file: ../buttons/dimmer_light_button-sensecap.yaml
+    vars:
+      uid: dimmer_btn_kitchen
+      page_id: ${sense_page_lighting_dimmers_id}
+      row: 4
+      column: 1
+      column_span: 3
+      text: "Kitchen"
+      icon: $mdi_ceiling_light
+      entity_id: ${ent_kitchen_lights_4}
+      secondary_entity_id: ${ent_kitchen_lights_5}
+      on_bg_color: ${ui_dimmer_kitchen_on_bg}
+      off_bg_color: ${ui_dimmer_kitchen_off_bg}
+      slider_on_color: ${ui_dimmer_kitchen_slider_on}
+      slider_off_color: ${ui_dimmer_kitchen_slider_off}
+      slider_knob_on_color: ${ui_dimmer_kitchen_slider_knob_on}
+      slider_knob_off_color: ${ui_dimmer_kitchen_slider_knob_off}
+
+  dimmer_btn_entry: !include
+    file: ../buttons/dimmer_light_button-sensecap.yaml
+    vars:
+      uid: dimmer_btn_entry
+      page_id: ${sense_page_lighting_dimmers_2_id}
+      row: 1
+      column: 1
+      column_span: 3
+      text: "Entry"
+      icon: $mdi_door
+      entity_id: ${ent_entry_lights}
+      secondary_entity_id: ${ent_hall_lights}
+      on_bg_color: ${ui_dimmer_entry_on_bg}
+      off_bg_color: ${ui_dimmer_entry_off_bg}
+      slider_on_color: ${ui_dimmer_entry_slider_on}
+      slider_off_color: ${ui_dimmer_entry_slider_off}
+      slider_knob_on_color: ${ui_dimmer_entry_slider_knob_on}
+      slider_knob_off_color: ${ui_dimmer_entry_slider_knob_off}
+
+  dimmer_btn_entry_page: !include
+    file: ../pages/light_color.yaml
+    vars:
+      light_entity: ${ent_entry_lights}
+      widget_name: "dimmer_btn_entry"
+
+  dimmer_btn_mbr_page: !include
+    file: ../pages/light_color.yaml
+    vars:
+      light_entity: ${ent_mbr_lights}
+      widget_name: "dimmer_btn_mbr"
+
+  dimmer_btn_fr_page: !include
+    file: ../pages/light_color.yaml
+    vars:
+      light_entity: ${ent_fr_lights}
+      widget_name: "dimmer_btn_fr"
+
+  dimmer_btn_living_page: !include
+    file: ../pages/light_color.yaml
+    vars:
+      light_entity: ${ent_living_room_lights}
+      widget_name: "dimmer_btn_living"
+
+  dimmer_btn_kitchen_page: !include
+    file: ../pages/light_color.yaml
+    vars:
+      light_entity: ${ent_kitchen_lights_4}
+      widget_name: "dimmer_btn_kitchen"
+
+  dimmer_btn_outdoor: !include
+    file: ../buttons/switch_button-sensecap.yaml
+    vars:
+      uid: dimmer_btn_outdoor
+      page_id: ${sense_page_lighting_dimmers_id}
+      row: 3
+      column: 0
+      text: ${ui_dimmers_left_row3_text}
+      icon: ${ui_dimmers_left_row3_icon}
+      entity_id: ${ui_dimmers_left_row3_entity_id}
+      secondary_entity_id: ${ui_dimmers_left_row3_secondary_entity_id}
+      on_bg_color: ${ui_dimmers_left_row3_on_bg}
+      off_bg_color: ${ui_dimmers_left_row3_off_bg}
+
+  homev2_nav_ov_btn: !include
+    file: ../buttons/page_button.yaml
+    vars:
+      uid: homev2_nav_ov_btn
+      page_id: ${sense_page_lighting_dimmers_id}
+      row: 4
+      column: 0
+      text: ${ui_dimmers_left_row4_text}
+      icon: ${ui_dimmers_left_row4_icon}
+      click_page: ${ui_dimmers_left_row4_click_page}
+
+  dimmer2_action_entry: !include
+    file: ../buttons/page_button.yaml
+    vars:
+      uid: dimmer2_action_entry
+      page_id: ${sense_page_lighting_dimmers_2_id}
+      row: 1
+      column: 0
+      text: "Entry"
+      icon: $mdi_door
+      click_page: ${sense_page_lighting_dimmers_2_id}
+
+  dimmer2_action_p1: !include
+    file: ../buttons/placeholder_button-sensecap.yaml
+    vars:
+      uid: dimmer2_action_p1
+      page_id: ${sense_page_lighting_dimmers_2_id}
+      row: 2
+      column: 0
+      text: "--"
+      icon: $mdi_dots_horizontal
+
+  dimmer2_action_p2: !include
+    file: ../buttons/placeholder_button-sensecap.yaml
+    vars:
+      uid: dimmer2_action_p2
+      page_id: ${sense_page_lighting_dimmers_2_id}
+      row: 3
+      column: 0
+      text: "--"
+      icon: $mdi_dots_horizontal
+
+  dimmer2_action_p3: !include
+    file: ../buttons/placeholder_button-sensecap.yaml
+    vars:
+      uid: dimmer2_action_p3
+      page_id: ${sense_page_lighting_dimmers_2_id}
+      row: 4
+      column: 0
+      text: "--"
+      icon: $mdi_dots_horizontal
+
+  dimmer2_slider_p1: !include
+    file: ../buttons/placeholder_button-sensecap.yaml
+    vars:
+      uid: dimmer2_slider_p1
+      page_id: ${sense_page_lighting_dimmers_2_id}
+      row: 2
+      column: 1
+      column_span: 3
+      text: "--"
+      icon: $mdi_dots_horizontal
+
+  dimmer2_slider_p2: !include
+    file: ../buttons/placeholder_button-sensecap.yaml
+    vars:
+      uid: dimmer2_slider_p2
+      page_id: ${sense_page_lighting_dimmers_2_id}
+      row: 3
+      column: 1
+      column_span: 3
+      text: "--"
+      icon: $mdi_dots_horizontal
+
+  dimmer2_slider_p3: !include
+    file: ../buttons/placeholder_button-sensecap.yaml
+    vars:
+      uid: dimmer2_slider_p3
+      page_id: ${sense_page_lighting_dimmers_2_id}
+      row: 4
+      column: 1
+      column_span: 3
+      text: "--"
+      icon: $mdi_dots_horizontal
+  sensor_local_temp: !include
+    file: ../buttons/sensor_button-sensecap.yaml
+    vars:
+      uid: sensor_local_temp
+      page_id: ${sense_page_sensors_id}
+      row: 0
+      column: 0
+      column_span: 1
+      text: "Local Temp"
+      icon: $mdi_home_thermometer
+      icon_color: ${ui_sensor_icon_color}
+      bg_color: ${ui_sensor_local_temp_bg}
+      sensor_id: temp_f
+
+  sensor_fr_temp: !include
+    file: ../buttons/sensor_button-sensecap.yaml
+    vars:
+      uid: sensor_fr_temp
+      page_id: ${sense_page_sensors_id}
+      row: 0
+      column: 1
+      column_span: 1
+      text: "FR Temp"
+      icon: $mdi_thermometer
+      icon_color: ${ui_sensor_icon_color}
+      bg_color: ${ui_sensor_fr_temp_bg}
+      sensor_id: ha_tstat_current_temp
+
+  sensor_osat_temp: !include
+    file: ../buttons/sensor_button-sensecap.yaml
+    vars:
+      uid: sensor_osat_temp
+      page_id: ${sense_page_sensors_id}
+      row: 0
+      column: 2
+      column_span: 1
+      text: "OSAT"
+      icon: $mdi_thermometer
+      icon_color: ${ui_sensor_icon_color}
+      bg_color: ${ui_sensor_osat_temp_bg}
+      sensor_id: ha_osat_temp
+
+  sensor_kitchen_temp: !include
+    file: ../buttons/sensor_button-sensecap.yaml
+    vars:
+      uid: sensor_kitchen_temp
+      page_id: ${sense_page_sensors_id}
+      row: 1
+      column: 0
+      column_span: 1
+      text: "Kitchen"
+      icon: $mdi_thermometer
+      icon_color: ${ui_sensor_icon_color}
+      bg_color: ${ui_sensor_kitchen_temp_bg}
+      sensor_id: ha_kitchen_temp
+
+  sensor_freezer_temp: !include
+    file: ../buttons/sensor_button-sensecap.yaml
+    vars:
+      uid: sensor_freezer_temp
+      page_id: ${sense_page_sensors_id}
+      row: 1
+      column: 1
+      column_span: 1
+      text: "Freezer"
+      icon: $mdi_snowflake
+      icon_color: ${ui_sensor_icon_color}
+      bg_color: ${ui_sensor_freezer_temp_bg}
+      sensor_id: ha_freezer_temp
+
+  sensor_fridge_temp: !include
+    file: ../buttons/sensor_button-sensecap.yaml
+    vars:
+      uid: sensor_fridge_temp
+      page_id: ${sense_page_sensors_id}
+      row: 1
+      column: 2
+      column_span: 1
+      text: "Fridge"
+      icon: $mdi_fridge
+      icon_color: ${ui_sensor_icon_color}
+      bg_color: ${ui_sensor_fridge_temp_bg}
+      sensor_id: ha_fridge_temp
+
+  sensor_voc: !include
+    file: ../buttons/sensor_button-sensecap.yaml
+    vars:
+      uid: sensor_voc
+      page_id: ${sense_page_sensors_id}
+      row: 2
+      column: 0
+      column_span: 1
+      text: "VOC"
+      icon: $mdi_weather_dust
+      icon_color: ${ui_sensor_icon_color}
+      bg_color: ${ui_sensor_voc_bg}
+      sensor_id: voc
+
+  sensor_co2: !include
+    file: ../buttons/sensor_button-sensecap.yaml
+    vars:
+      uid: sensor_co2
+      page_id: ${sense_page_sensors_id}
+      row: 2
+      column: 1
+      column_span: 1
+      text: "CO2"
+      icon: $mdi_molecule_co2
+      icon_color: ${ui_sensor_icon_color}
+      bg_color: ${ui_sensor_co2_bg}
+      sensor_id: co2
+
+  sensor_humid: !include
+    file: ../buttons/sensor_button-sensecap.yaml
+    vars:
+      uid: sensor_humid
+      page_id: ${sense_page_sensors_id}
+      row: 2
+      column: 2
+      column_span: 1
+      text: "Humid"
+      icon: $mdi_water_percent
+      icon_color: ${ui_sensor_icon_color}
+      bg_color: ${ui_sensor_humid_bg}
+      sensor_id: humid
+
+  lightsw_btn_laundry: !include
+    file: ../buttons/switch_button_3x3-sensecap-dani.yaml
+    vars:
+      uid: lightsw_btn_laundry
+      page_id: ${sense_page_lighting_switches_id}
+      row: 1
+      column: 0
+      text: "Laundry"
+      icon: $mdi_washing_machine
+      entity_id: ${ent_laundry_room_lights}
+      on_bg_color: ${ui_switch_laundry_on_bg}
+      off_bg_color: ${ui_switch_laundry_off_bg}
+
+  lightsw_btn_garage: !include
+    file: ../buttons/switch_button_3x3-sensecap-dani.yaml
+    vars:
+      uid: lightsw_btn_garage
+      page_id: ${sense_page_lighting_switches_id}
+      row: 1
+      column: 1
+      text: "Garage"
+      icon: $mdi_garage
+      entity_id: ${ent_garage_lights}
+      on_bg_color: ${ui_switch_garage_on_bg}
+      off_bg_color: ${ui_switch_garage_off_bg}
+
+  lightsw_btn_mbr_closet: !include
+    file: ../buttons/switch_button_3x3-sensecap-dani.yaml
+    vars:
+      uid: lightsw_btn_mbr_closet
+      page_id: ${sense_page_lighting_switches_id}
+      row: 2
+      column: 0
+      text: "MBR Closet"
+      icon: $mdi_wardrobe
+      entity_id: ${ent_mbr_closet_light}
+      on_bg_color: ${ui_switch_mbr_closet_on_bg}
+      off_bg_color: ${ui_switch_mbr_closet_off_bg}
+
+  lightsw_btn_fence: !include
+    file: ../buttons/switch_button_3x3-sensecap-dani.yaml
+    vars:
+      uid: lightsw_btn_fence
+      page_id: ${sense_page_lighting_switches_id}
+      row: 2
+      column: 1
+      text: "Fence"
+      icon: $mdi_string_lights
+      entity_id: ${ent_fence_lights}
+      on_bg_color: ${ui_switch_fence_on_bg}
+      off_bg_color: ${ui_switch_fence_off_bg}
+
+  lightsw_btn_outdoor: !include
+    file: ../buttons/switch_button_3x3-sensecap-dani.yaml
+    vars:
+      uid: lightsw_btn_outdoor
+      page_id: ${sense_page_lighting_switches_id}
+      row: 1
+      column: 2
+      text: "Outdoor"
+      icon: $mdi_coach_lamp
+      entity_id: ${ent_outdoor_entry_lights}
+      secondary_entity_id: ${ent_outdoor_garage_lights}
+      on_bg_color: ${ui_switch_outdoor_on_bg}
+      off_bg_color: ${ui_switch_outdoor_off_bg}
+
+
+

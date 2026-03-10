@@ -1,4 +1,4 @@
-﻿
+
 globals:
   - id: tstat_page_active
     type: bool
@@ -35,8 +35,8 @@ lvgl:
                   text: "Thermostat"
                   align: TOP_MID
                   y: 8
-                  text_font: ${tstat_title_font}
-                  text_color: ${tstat_title_color}
+                  text_font: ${ui_tstat_title_font | default("nunito_36")}
+                  text_color: ${ui_tstat_title_color}
 
               - label:
                   text: "HVAC Status"
@@ -88,7 +88,7 @@ lvgl:
                   end_angle: 45
                   arc_rounded: true
                   indicator:
-                    arc_color: ${tstat_mode_off_active_color}
+                    arc_color: ${ui_tstat_mode_off_active_color}
                     arc_width: 24
                   knob:
                     bg_color: sense_text
@@ -450,7 +450,7 @@ interval:
                   - lvgl.widget.update:
                       id: tstat2_target_arc
                       indicator:
-                        arc_color: ${tstat_mode_cool_active_color}
+                        arc_color: ${ui_tstat_mode_cool_active_color}
 
             - if:
                 condition:
@@ -459,7 +459,7 @@ interval:
                   - lvgl.widget.update:
                       id: tstat2_target_arc
                       indicator:
-                        arc_color: ${tstat_mode_heat_active_color}
+                        arc_color: ${ui_tstat_mode_heat_active_color}
 
             - if:
                 condition:
@@ -468,7 +468,7 @@ interval:
                   - lvgl.widget.update:
                       id: tstat2_target_arc
                       indicator:
-                        arc_color: ${tstat_mode_off_active_color}
+                        arc_color: ${ui_tstat_mode_off_active_color}
 
 
 
@@ -490,5 +490,6 @@ interval:
                   return 0;
 
             - lambda: 'id(tstat_runtime_syncing) = false;'
+
 
 
