@@ -71,6 +71,20 @@ substitutions:
   ui_tstat_title_color: "sense_info"
 
   ui_sensor_icon_color: "sense_text"
+  # Display settings toggle colors (token-driven)
+  ui_display_idle_scroll_on_bg: "sense_teal"
+  ui_display_idle_scroll_off_bg: "sense_surface_alt"
+  ui_display_sleep_on_bg: "sense_success"
+  ui_display_sleep_off_bg: "sense_surface_alt"
+  ui_display_scroll_sleep_on_bg: "sense_tile_indigo"
+  ui_display_scroll_sleep_off_bg: "sense_surface_alt"
+  ui_display_slider_track_bg: "sense_surface_alt"
+  ui_display_slider_knob_bg: "sense_text"
+  ui_display_brightness_indicator_bg: "sense_info"
+  ui_display_idle_scroll_indicator_bg: "sense_teal"
+  ui_display_scroll_rate_indicator_bg: "sense_primary"
+  ui_display_sleep_timeout_indicator_bg: "sense_warn"
+  ui_display_scroll_sleep_indicator_bg: "sense_cat_overrides"
   # Override rows default text/value colors (token-driven)
   ui_cleaners_text_on_color: "sense_text"
   ui_cleaners_text_off_color: "sense_text"

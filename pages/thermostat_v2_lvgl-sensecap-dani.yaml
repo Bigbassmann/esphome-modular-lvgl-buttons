@@ -1,4 +1,4 @@
-
+﻿
 globals:
   - id: tstat_page_active
     type: bool
@@ -35,8 +35,8 @@ lvgl:
                   text: "Thermostat"
                   align: TOP_MID
                   y: 8
-                  text_font: nunito_36
-                  text_color: sense_info
+                  text_font: ${tstat_title_font}
+                  text_color: ${tstat_title_color}
 
               - label:
                   text: "HVAC Status"
@@ -44,7 +44,7 @@ lvgl:
                   x: 20
                   y: 96
                   text_font: montserrat_14
-                  text_color: 0x9CA3AF
+                  text_color: sense_text_muted
 
               - label:
                   text: "Fan Status"
@@ -52,7 +52,7 @@ lvgl:
                   x: -20
                   y: 96
                   text_font: montserrat_14
-                  text_color: 0x9CA3AF
+                  text_color: sense_text_muted
 
               - label:
                   id: tstat2_hvac_action_label
@@ -61,7 +61,7 @@ lvgl:
                   x: 20
                   y: 114
                   text_font: montserrat_16
-                  text_color: 0xE5E7EB
+                  text_color: sense_text
 
               - label:
                   id: tstat2_fan_state_label
@@ -70,7 +70,7 @@ lvgl:
                   x: -20
                   y: 114
                   text_font: montserrat_16
-                  text_color: 0xE5E7EB
+                  text_color: sense_text
 
 
               - arc:
@@ -88,10 +88,10 @@ lvgl:
                   end_angle: 45
                   arc_rounded: true
                   indicator:
-                    arc_color: 0x3C428F
+                    arc_color: ${tstat_mode_off_active_color}
                     arc_width: 24
                   knob:
-                    bg_color: 0xFFFFFF
+                    bg_color: sense_text
                     pad_all: 3
                   on_value:
                     then:
@@ -125,7 +125,7 @@ lvgl:
                   x: 0
                   y: 170
                   text_font: montserrat_14
-                  text_color: 0x9CA3AF
+                  text_color: sense_text_muted
 
               - label:
                   id: tstat2_current_value
@@ -134,7 +134,7 @@ lvgl:
                   x: 0
                   y: 188
                   text_font: montserrat_20
-                  text_color: 0xE5E7EB
+                  text_color: sense_text
 
               - label:
                   text: "Target"
@@ -142,7 +142,7 @@ lvgl:
                   x: 0
                   y: 214
                   text_font: montserrat_14
-                  text_color: 0x9CA3AF
+                  text_color: sense_text_muted
 
               - label:
                   id: tstat2_target_value
@@ -151,7 +151,7 @@ lvgl:
                   x: 0
                   y: 232
                   text_font: montserrat_20
-                  text_color: 0xFFFFFF
+                  text_color: sense_text
 
               - label:
                   text: "Humidity"
@@ -159,7 +159,7 @@ lvgl:
                   x: 0
                   y: 258
                   text_font: montserrat_14
-                  text_color: 0x9CA3AF
+                  text_color: sense_text_muted
 
               - label:
                   id: tstat2_humidity_value
@@ -168,7 +168,7 @@ lvgl:
                   x: 0
                   y: 276
                   text_font: montserrat_16
-                  text_color: 0x9CA3AF
+                  text_color: sense_text_muted
 
               - label:
                   text: "HVAC Mode"
@@ -176,7 +176,7 @@ lvgl:
                   x: 24    # 28
                   y: 42
                   text_font: montserrat_14
-                  text_color: 0xFFFFFF
+                  text_color: sense_text
 
               - dropdown:
                   id: tstat2_mode_dropdown
@@ -230,7 +230,7 @@ lvgl:
                   x: -24    # -28
                   y: 42
                   text_font: montserrat_14
-                  text_color: 0xFFFFFF
+                  text_color: sense_text
 
               - dropdown:
                   id: tstat2_fan_dropdown
@@ -450,7 +450,7 @@ interval:
                   - lvgl.widget.update:
                       id: tstat2_target_arc
                       indicator:
-                        arc_color: 0x3C6B8F
+                        arc_color: ${tstat_mode_cool_active_color}
 
             - if:
                 condition:
@@ -459,7 +459,7 @@ interval:
                   - lvgl.widget.update:
                       id: tstat2_target_arc
                       indicator:
-                        arc_color: 0x8F3C42
+                        arc_color: ${tstat_mode_heat_active_color}
 
             - if:
                 condition:
@@ -468,7 +468,7 @@ interval:
                   - lvgl.widget.update:
                       id: tstat2_target_arc
                       indicator:
-                        arc_color: 0x3C428F
+                        arc_color: ${tstat_mode_off_active_color}
 
 
 

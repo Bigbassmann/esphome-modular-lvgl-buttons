@@ -46,7 +46,7 @@ script:
           action: fan.set_percentage
           data:
             entity_id: ${ent_mbr_fan}
-            percentage: "33"
+            percentage: '33'
 
   - id: mbr_fan_med
     then:
@@ -54,7 +54,7 @@ script:
           action: fan.set_percentage
           data:
             entity_id: ${ent_mbr_fan}
-            percentage: "66"
+            percentage: '66'
 
   - id: mbr_fan_high
     then:
@@ -62,7 +62,7 @@ script:
           action: fan.set_percentage
           data:
             entity_id: ${ent_mbr_fan}
-            percentage: "100"
+            percentage: '100'
 
   - id: mbr_fan_toggle_dir
     then:
@@ -120,10 +120,18 @@ interval:
             return id(ha_attic_fan2_on).state ? std::string("ON") : std::string("OFF");
 
       # FR mode buttons
-      - lvgl.widget.update: {id: fr_mode_off_btn, bg_color: gray}
-      - lvgl.widget.update: {id: fr_mode_low_btn, bg_color: gray}
-      - lvgl.widget.update: {id: fr_mode_med_btn, bg_color: gray}
-      - lvgl.widget.update: {id: fr_mode_high_btn, bg_color: gray}
+      - lvgl.widget.update:
+          id: fr_mode_off_btn
+          bg_color: ${fan_inactive_color}
+      - lvgl.widget.update:
+          id: fr_mode_low_btn
+          bg_color: ${fan_inactive_color}
+      - lvgl.widget.update:
+          id: fr_mode_med_btn
+          bg_color: ${fan_inactive_color}
+      - lvgl.widget.update:
+          id: fr_mode_high_btn
+          bg_color: ${fan_inactive_color}
       - if:
           condition:
             lambda: !lambda |-
@@ -131,28 +139,44 @@ interval:
               float p = id(ha_fr_fan_pct).state;
               return isnan(p) || p < 1.0f;
           then:
-            - lvgl.widget.update: {id: fr_mode_off_btn, bg_color: 0x3C428F}
+            - lvgl.widget.update:
+                id: fr_mode_off_btn
+                bg_color: ${fan_off_active_color}
       - if:
           condition:
             lambda: 'return id(ha_fr_fan_on).state && !isnan(id(ha_fr_fan_pct).state) && id(ha_fr_fan_pct).state > 0 && id(ha_fr_fan_pct).state <= 40;'
           then:
-            - lvgl.widget.update: {id: fr_mode_low_btn, bg_color: 0x3C8F89}
+            - lvgl.widget.update:
+                id: fr_mode_low_btn
+                bg_color: ${fan_low_active_color}
       - if:
           condition:
             lambda: 'return id(ha_fr_fan_on).state && !isnan(id(ha_fr_fan_pct).state) && id(ha_fr_fan_pct).state > 40 && id(ha_fr_fan_pct).state <= 80;'
           then:
-            - lvgl.widget.update: {id: fr_mode_med_btn, bg_color: 0x8F893C}
+            - lvgl.widget.update:
+                id: fr_mode_med_btn
+                bg_color: ${fan_med_active_color}
       - if:
           condition:
             lambda: 'return id(ha_fr_fan_on).state && !isnan(id(ha_fr_fan_pct).state) && id(ha_fr_fan_pct).state > 80;'
           then:
-            - lvgl.widget.update: {id: fr_mode_high_btn, bg_color: 0x8F3C42}
+            - lvgl.widget.update:
+                id: fr_mode_high_btn
+                bg_color: ${fan_high_active_color}
 
       # MBR mode buttons
-      - lvgl.widget.update: {id: mbr_mode_off_btn, bg_color: gray}
-      - lvgl.widget.update: {id: mbr_mode_low_btn, bg_color: gray}
-      - lvgl.widget.update: {id: mbr_mode_med_btn, bg_color: gray}
-      - lvgl.widget.update: {id: mbr_mode_high_btn, bg_color: gray}
+      - lvgl.widget.update:
+          id: mbr_mode_off_btn
+          bg_color: ${fan_inactive_color}
+      - lvgl.widget.update:
+          id: mbr_mode_low_btn
+          bg_color: ${fan_inactive_color}
+      - lvgl.widget.update:
+          id: mbr_mode_med_btn
+          bg_color: ${fan_inactive_color}
+      - lvgl.widget.update:
+          id: mbr_mode_high_btn
+          bg_color: ${fan_inactive_color}
       - if:
           condition:
             lambda: !lambda |-
@@ -160,51 +184,73 @@ interval:
               float p = id(ha_mbr_fan_pct).state;
               return isnan(p) || p < 1.0f;
           then:
-            - lvgl.widget.update: {id: mbr_mode_off_btn, bg_color: 0x3C428F}
+            - lvgl.widget.update:
+                id: mbr_mode_off_btn
+                bg_color: ${fan_off_active_color}
       - if:
           condition:
             lambda: 'return id(ha_mbr_fan_on).state && !isnan(id(ha_mbr_fan_pct).state) && id(ha_mbr_fan_pct).state > 0 && id(ha_mbr_fan_pct).state <= 40;'
           then:
-            - lvgl.widget.update: {id: mbr_mode_low_btn, bg_color: 0x3C8F89}
+            - lvgl.widget.update:
+                id: mbr_mode_low_btn
+                bg_color: ${fan_low_active_color}
       - if:
           condition:
             lambda: 'return id(ha_mbr_fan_on).state && !isnan(id(ha_mbr_fan_pct).state) && id(ha_mbr_fan_pct).state > 40 && id(ha_mbr_fan_pct).state <= 80;'
           then:
-            - lvgl.widget.update: {id: mbr_mode_med_btn, bg_color: 0x8F893C}
+            - lvgl.widget.update:
+                id: mbr_mode_med_btn
+                bg_color: ${fan_med_active_color}
       - if:
           condition:
             lambda: 'return id(ha_mbr_fan_on).state && !isnan(id(ha_mbr_fan_pct).state) && id(ha_mbr_fan_pct).state > 80;'
           then:
-            - lvgl.widget.update: {id: mbr_mode_high_btn, bg_color: 0x8F3C42}
+            - lvgl.widget.update:
+                id: mbr_mode_high_btn
+                bg_color: ${fan_high_active_color}
 
 
       # Direction button color
-      - lvgl.widget.update: {id: mbr_mode_dir_btn, bg_color: gray}
+      - lvgl.widget.update:
+          id: mbr_mode_dir_btn
+          bg_color: ${fan_inactive_color}
       - if:
           condition:
             lambda: 'std::string d = id(ha_mbr_fan_dir).state; for (auto &ch : d) ch = tolower(ch); return d == "reverse";'
           then:
-            - lvgl.widget.update: {id: mbr_mode_dir_btn, bg_color: 0x6870CC}
+            - lvgl.widget.update:
+                id: mbr_mode_dir_btn
+                bg_color: ${fan_dir_reverse_color}
       - if:
           condition:
             lambda: 'std::string d = id(ha_mbr_fan_dir).state; for (auto &ch : d) ch = tolower(ch); return d == "forward";'
           then:
-            - lvgl.widget.update: {id: mbr_mode_dir_btn, bg_color: 0x68A2CC}
+            - lvgl.widget.update:
+                id: mbr_mode_dir_btn
+                bg_color: ${fan_dir_forward_color}
       # Attic toggle buttons
       - if:
           condition:
             binary_sensor.is_on: ha_attic_fan_on
           then:
-            - lvgl.widget.update: {id: attic_low_btn, bg_color: 0x3C8F89}
+            - lvgl.widget.update:
+                id: attic_low_btn
+                bg_color: ${fan_low_active_color}
           else:
-            - lvgl.widget.update: {id: attic_low_btn, bg_color: gray}
+            - lvgl.widget.update:
+                id: attic_low_btn
+                bg_color: ${fan_inactive_color}
       - if:
           condition:
             binary_sensor.is_on: ha_attic_fan2_on
           then:
-            - lvgl.widget.update: {id: attic_high_btn, bg_color: 0x8F3C42}
+            - lvgl.widget.update:
+                id: attic_high_btn
+                bg_color: ${fan_high_active_color}
           else:
-            - lvgl.widget.update: {id: attic_high_btn, bg_color: gray}
+            - lvgl.widget.update:
+                id: attic_high_btn
+                bg_color: ${fan_inactive_color}
 
 lvgl:
   pages:
@@ -224,7 +270,7 @@ lvgl:
                   align: TOP_MID
                   y: 8
                   text_font: nunito_36
-                  text_color: sense_info
+                  text_color: ${fan_title_color | default("sense_info")}
 
               - label:
                   text: "FR Fan"
@@ -232,7 +278,7 @@ lvgl:
                   x: 12
                   y: 48
                   text_font: nunito_20
-                  text_color: sense_text
+                  text_color: ${fan_text_color | default("sense_text")}
               - label:
                   id: fans_fr_state_label
                   text: "OFF"
@@ -240,7 +286,7 @@ lvgl:
                   x: 122
                   y: 50
                   text_font: nunito_20
-                  text_color: sense_text
+                  text_color: ${fan_text_color | default("sense_text")}
 
               - button:
                   id: fr_mode_off_btn
@@ -309,7 +355,7 @@ lvgl:
                   x: 12
                   y: 136
                   text_font: nunito_20
-                  text_color: sense_text
+                  text_color: ${fan_text_color | default("sense_text")}
               - label:
                   id: fans_mbr_state_label
                   text: "OFF"
@@ -317,7 +363,7 @@ lvgl:
                   x: 122
                   y: 138
                   text_font: nunito_20
-                  text_color: sense_text
+                  text_color: ${fan_text_color | default("sense_text")}
               - label:
                   id: fans_mbr_dir_label
                   text: "Dir: --"
@@ -325,7 +371,7 @@ lvgl:
                   x: -12
                   y: 140
                   text_font: nunito_18
-                  text_color: sense_text
+                  text_color: ${fan_text_color | default("sense_text")}
 
               - button:
                   id: mbr_mode_off_btn
@@ -409,7 +455,7 @@ lvgl:
                   x: 12
                   y: 226
                   text_font: nunito_20
-                  text_color: sense_text
+                  text_color: ${fan_text_color | default("sense_text")}
 
               - button:
                   id: attic_low_btn
@@ -430,14 +476,14 @@ lvgl:
                         align: LEFT_MID
                         x: 14
                         text_font: nunito_20
-                        text_color: sense_text
+                        text_color: ${fan_text_color | default("sense_text")}
                     - label:
                         id: fans_attic_low_state
                         text: "OFF"
                         align: RIGHT_MID
                         x: -14
                         text_font: nunito_20
-                        text_color: sense_text
+                        text_color: ${fan_text_color | default("sense_text")}
 
               - button:
                   id: attic_high_btn
@@ -458,13 +504,14 @@ lvgl:
                         align: LEFT_MID
                         x: 14
                         text_font: nunito_20
-                        text_color: sense_text
+                        text_color: ${fan_text_color | default("sense_text")}
                     - label:
                         id: fans_attic_high_state
                         text: "OFF"
                         align: RIGHT_MID
                         x: -14
                         text_font: nunito_20
-                        text_color: sense_text
+                        text_color: ${fan_text_color | default("sense_text")}
+
 
 

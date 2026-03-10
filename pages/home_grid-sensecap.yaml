@@ -3,6 +3,9 @@ substitutions:
   sense_page_tstat_id: "page_thermostat_v2"
   sense_page_fans_id: "page_fans"
   sense_page_overrides_id: "page_overrides"
+  home_title_text: "Home Menu"
+  home_title_font: "nunito_20"
+  home_title_color: "sense_text"
 
 
 lvgl:
@@ -12,6 +15,7 @@ lvgl:
       layout:
         type: grid
         grid_rows:
+          - 34
           - FR(1)
           - FR(1)
           - FR(1)
@@ -26,9 +30,20 @@ lvgl:
       pad_left: 8
       pad_right: 8
       widgets:
+        - label:
+            id: home_v2_title
+            text: ${home_title_text}
+            grid_cell_row_pos: 0
+            grid_cell_column_pos: 0
+            grid_cell_column_span: 3
+            grid_cell_x_align: center
+            grid_cell_y_align: center
+            y: -2
+            text_font: ${home_title_font}
+            text_color: ${home_title_color}
         - button:
             id: home_v2_btn_dani  # Should be home_page_3x3_layout_row_0_col_0_btn, but keeping old ID for now to avoid breaking existing overrides
-            grid_cell_row_pos: 0
+            grid_cell_row_pos: 1
             grid_cell_column_pos: 0
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
@@ -65,7 +80,7 @@ lvgl:
                   hidden: false
         - button:
             id: home_v2_btn_sleepy
-            grid_cell_row_pos: 0
+            grid_cell_row_pos: 1
             grid_cell_column_pos: 1
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
@@ -102,7 +117,7 @@ lvgl:
                   hidden: true
         - button:
             id: home_v2_btn_bedtime
-            grid_cell_row_pos: 0
+            grid_cell_row_pos: 1
             grid_cell_column_pos: 2
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
@@ -139,7 +154,7 @@ lvgl:
                   hidden: true
         - button:
             id: home_v2_btn_tstat
-            grid_cell_row_pos: 1
+            grid_cell_row_pos: 2
             grid_cell_column_pos: 0
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
@@ -165,7 +180,7 @@ lvgl:
 
         - button:
             id: home_v2_btn_fans
-            grid_cell_row_pos: 1
+            grid_cell_row_pos: 2
             grid_cell_column_pos: 1
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
@@ -191,7 +206,7 @@ lvgl:
 
         - button:
             id: home_v2_btn_overrides
-            grid_cell_row_pos: 1
+            grid_cell_row_pos: 2
             grid_cell_column_pos: 2
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
@@ -217,7 +232,7 @@ lvgl:
 
         - button:
             id: home_v2_btn_placeholder_1
-            grid_cell_row_pos: 2
+            grid_cell_row_pos: 3
             grid_cell_column_pos: 0
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
@@ -236,7 +251,7 @@ lvgl:
 
         - button:
             id: home_v2_btn_placeholder_2
-            grid_cell_row_pos: 2
+            grid_cell_row_pos: 3
             grid_cell_column_pos: 1
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
@@ -255,7 +270,7 @@ lvgl:
 
         - button:
             id: home_v2_btn_placeholder_3
-            grid_cell_row_pos: 2
+            grid_cell_row_pos: 3
             grid_cell_column_pos: 2
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH

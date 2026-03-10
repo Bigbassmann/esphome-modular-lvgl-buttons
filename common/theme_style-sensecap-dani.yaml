@@ -1,4 +1,4 @@
----
+﻿---
 lvgl:
   page_wrap: true
   theme:
@@ -132,7 +132,7 @@ lvgl:
       pad_all: 8
 
     - id: sense_tile_fans_style
-      bg_color: sense_tile_sky
+      bg_color: dani_family_blue_bg_on
       bg_opa: cover
       border_width: 0
       radius: 10
@@ -220,4 +220,5 @@ select:
                   bg_color: sense_surface
                   text_color: white
               - lvgl.widget.redraw
+
 

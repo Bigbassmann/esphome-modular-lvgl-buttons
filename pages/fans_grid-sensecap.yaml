@@ -1,4 +1,4 @@
-substitutions:
+﻿substitutions:
   sense_page_fans_id: "page_fans"
   fan_inactive_color: "dani_state_inactive"
   fan_off_active_color: "dani_fan_off_active"
@@ -57,7 +57,7 @@ script:
   - id: mbr_fan_low
     then:
       - homeassistant.action:
-          action: fan.set_percentage
+          action: fan.turn_on
           data:
             entity_id: ${ent_mbr_fan}
             percentage: "33"
@@ -65,7 +65,7 @@ script:
   - id: mbr_fan_med
     then:
       - homeassistant.action:
-          action: fan.set_percentage
+          action: fan.turn_on
           data:
             entity_id: ${ent_mbr_fan}
             percentage: "66"
@@ -73,7 +73,7 @@ script:
   - id: mbr_fan_high
     then:
       - homeassistant.action:
-          action: fan.set_percentage
+          action: fan.turn_on
           data:
             entity_id: ${ent_mbr_fan}
             percentage: "100"

@@ -1,3 +1,10 @@
+substitutions:
+  menu_text_color: "sense_text"
+  menu_cat_admin_style:  sense_menu_cat1_style
+  menu_cat_climate_style: sense_menu_cat2_style
+  menu_cat_lights_style: sense_menu_cat3_style
+  menu_cat_overrides_style: sense_menu_cat4_style
+
 lvgl:
   pages:
     - id: page_menu
@@ -23,7 +30,7 @@ lvgl:
                   grid_cell_column_pos: 0
                   grid_cell_x_align: STRETCH
                   grid_cell_y_align: STRETCH
-                  styles: sense_menu_cat2_style
+                  styles: ${menu_cat_climate_style}
                   on_press:
                     - script.execute: nav_to_home
                   widgets:
@@ -31,14 +38,14 @@ lvgl:
                         text: "Home"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: sense_text
+                        text_color: ${menu_text_color}
               - button:
                   id: menu_btn_tstat
                   grid_cell_row_pos: 0
                   grid_cell_column_pos: 1
                   grid_cell_x_align: STRETCH
                   grid_cell_y_align: STRETCH
-                  styles: sense_menu_cat2_style
+                  styles: ${menu_cat_climate_style}
                   on_press:
                     - script.execute: nav_to_tstat
                   widgets:
@@ -46,14 +53,14 @@ lvgl:
                         text: "Thermostat"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: sense_text
+                        text_color: ${menu_text_color}
               - button:
                   id: menu_btn_fans
                   grid_cell_row_pos: 0
                   grid_cell_column_pos: 2
                   grid_cell_x_align: STRETCH
                   grid_cell_y_align: STRETCH
-                  styles: sense_menu_cat2_style
+                  styles: ${menu_cat_climate_style}
                   on_press:
                     - script.execute: nav_to_fans
                   widgets:
@@ -61,14 +68,14 @@ lvgl:
                         text: "Fans"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: sense_text
+                        text_color: ${menu_text_color}
               - button:
                   id: menu_btn_sensors
                   grid_cell_row_pos: 1
                   grid_cell_column_pos: 0
                   grid_cell_x_align: STRETCH
                   grid_cell_y_align: STRETCH
-                  styles: sense_menu_cat2_style
+                  styles: ${menu_cat_climate_style}
                   on_press:
                     - script.execute: nav_to_sensors
                   widgets:
@@ -76,14 +83,14 @@ lvgl:
                         text: "Sensors"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: sense_text
+                        text_color: ${menu_text_color}
               - button:
                   id: menu_btn_lights
                   grid_cell_row_pos: 1
                   grid_cell_column_pos: 1
                   grid_cell_x_align: STRETCH
                   grid_cell_y_align: STRETCH
-                  styles: sense_menu_cat3_style
+                  styles: ${menu_cat_lights_style}
                   on_press:
                     - script.execute: nav_to_lighting_switches
                   widgets:
@@ -91,14 +98,14 @@ lvgl:
                         text: "Lights"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: sense_text
+                        text_color: ${menu_text_color}
               - button:
                   id: menu_btn_dimmers
                   grid_cell_row_pos: 1
                   grid_cell_column_pos: 2
                   grid_cell_x_align: STRETCH
                   grid_cell_y_align: STRETCH
-                  styles: sense_menu_cat3_style
+                  styles: ${menu_cat_lights_style}
                   on_press:
                     - script.execute: nav_to_lighting_dimmers
                   widgets:
@@ -106,14 +113,14 @@ lvgl:
                         text: "Dimmers"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: sense_text
+                        text_color: ${menu_text_color}
               - button:
                   id: menu_btn_overrides
                   grid_cell_row_pos: 2
                   grid_cell_column_pos: 0
                   grid_cell_x_align: STRETCH
                   grid_cell_y_align: STRETCH
-                  styles: sense_menu_cat4_style
+                  styles: ${menu_cat_overrides_style}
                   on_press:
                     - script.execute: nav_to_overrides
                   widgets:
@@ -121,14 +128,14 @@ lvgl:
                         text: "Overrides"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: sense_text
+                        text_color: ${menu_text_color}
               - button:
                   id: menu_btn_display
                   grid_cell_row_pos: 2
                   grid_cell_column_pos: 1
                   grid_cell_x_align: STRETCH
                   grid_cell_y_align: STRETCH
-                  styles: sense_menu_cat1_style
+                  styles: ${menu_cat_admin_style}
                   on_press:
                     - script.execute: nav_to_display_settings
                   widgets:
@@ -136,14 +143,14 @@ lvgl:
                         text: "Display"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: sense_text
+                        text_color: ${menu_text_color}
               - button:
                   id: menu_btn_dimmers_2
                   grid_cell_row_pos: 2
                   grid_cell_column_pos: 2
                   grid_cell_x_align: STRETCH
                   grid_cell_y_align: STRETCH
-                  styles: sense_menu_cat3_style
+                  styles: ${menu_cat_lights_style}
                   on_press:
                     - script.execute: nav_to_lighting_dimmers_2
                   widgets:
@@ -151,14 +158,14 @@ lvgl:
                         text: "Dimmers 2"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: sense_text
+                        text_color: ${menu_text_color}
               - button:
                   id: menu_btn_wifi
                   grid_cell_row_pos: 3
                   grid_cell_column_pos: 0
                   grid_cell_x_align: STRETCH
                   grid_cell_y_align: STRETCH
-                  styles: sense_menu_cat1_style
+                  styles: ${menu_cat_admin_style}
                   on_press:
                     - script.execute: nav_to_wifi
                   widgets:
@@ -166,14 +173,14 @@ lvgl:
                         text: "WiFi Setup"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: sense_text
+                        text_color: ${menu_text_color}
               - button:
                   id: menu_btn_info
                   grid_cell_row_pos: 3
                   grid_cell_column_pos: 1
                   grid_cell_x_align: STRETCH
                   grid_cell_y_align: STRETCH
-                  styles: sense_menu_cat1_style
+                  styles: ${menu_cat_admin_style}
                   on_press:
                     - script.execute: nav_to_info
                   widgets:
@@ -181,4 +188,4 @@ lvgl:
                         text: "Info"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: sense_text
+                        text_color: ${menu_text_color}

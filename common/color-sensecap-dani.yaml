@@ -2,12 +2,12 @@
 color:
     # SenseCAP-inspired palette (additive, non-breaking)
     # Dani dark top-level background palette options:
-    # ACTIVE: 1B1A38 (dani dark blue)
+    # ACTIVE: 1B1A38 (dani dark blue) now Black 0D0D0D
     # ALT: 1A3738 (dani dark green)
     # ALT: 381B1A (dani dark red)
     # ALT: 37381A (dani dark yellow)
     - id: sense_bg
-      hex: '1B1A38'
+      hex: '0d0d0d'   # '1B1A38'
     - id: sense_surface
       hex: '1B1A38'
     - id: sense_surface_alt

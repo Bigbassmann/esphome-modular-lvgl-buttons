@@ -1,4 +1,4 @@
-﻿substitutions:
+substitutions:
   sense_page_lighting_switches_id: "page_lighting_switches"
   lights_title_color: "sense_info"
 
@@ -16,6 +16,7 @@ lvgl:
         grid_columns:
           - FR(1)
           - FR(1)
+          - FR(1)
         pad_row: 8
         pad_column: 8
         multiple_widgets_per_cell: true
@@ -29,7 +30,7 @@ lvgl:
             grid_cell_row_pos: 0
             grid_cell_column_pos: 0
             grid_cell_row_span: 4
-            grid_cell_column_span: 2
+            grid_cell_column_span: 3
             grid_cell_x_align: stretch
             grid_cell_y_align: stretch
             styles: sense_card_flat_style
@@ -39,10 +40,9 @@ lvgl:
             text: "Lights"
             grid_cell_row_pos: 0
             grid_cell_column_pos: 0
-            grid_cell_column_span: 2
+            grid_cell_column_span: 3
             grid_cell_x_align: center
             grid_cell_y_align: center
             y: -2
             text_font: nunito_36
             text_color: ${lights_title_color}
-

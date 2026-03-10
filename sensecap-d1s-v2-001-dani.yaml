@@ -1,4 +1,4 @@
-﻿---
+---
 # Substitution variables used through the codebase
 substitutions:
   icon_font: mdi_icons_40
@@ -86,7 +86,7 @@ packages:
   page_settings_sensecap: !include pages/settings_grid-sensecap.yaml
   page_display_settings_sensecap: !include pages/display_settings-sensecap-dani.yaml
   page_fans_sensecap: !include
-    file: pages/fans_grid-sensecap.yaml
+    file: pages/fans_grid-sensecap-dani.yaml
     vars:
       fan_inactive_color: ${ui_fan_inactive_color}
       fan_off_active_color: ${ui_fan_off_active_color}
@@ -142,7 +142,7 @@ packages:
       dimmers_left_row4_text: ${ui_dimmers_left_row4_text}
       dimmers_left_row4_icon: ${ui_dimmers_left_row4_icon}
       dimmers_left_row4_click_page: ${ui_dimmers_left_row4_click_page}
-  page_lighting_switches_sensecap: !include pages/lighting_switches_grid-sensecap.yaml
+  page_lighting_switches_sensecap: !include pages/lighting_switches_grid-sensecap-dani.yaml
   page_sensors_sensecap: !include pages/sensors_grid-sensecap.yaml
   # Use this theme for debugging
   # theme_style: !include common/theme_style_debug.yaml
@@ -160,7 +160,7 @@ packages:
   info_screen: !include pages/info-sensecap.yaml
 
   thermostat_v2: !include
-    file: pages/thermostat_v2_lvgl-sensecap.yaml
+    file: pages/thermostat_v2_lvgl-sensecap-dani.yaml
     vars:
       tstat_title_font: nunito_36
       tstat_title_color: ${ui_tstat_title_color}
@@ -542,7 +542,7 @@ packages:
       sensor_id: humid
 
   lightsw_btn_laundry: !include
-    file: buttons/switch_button-sensecap.yaml
+    file: buttons/switch_button_3x3-sensecap-dani.yaml
     vars:
       uid: lightsw_btn_laundry
       page_id: ${sense_page_lighting_switches_id}
@@ -555,7 +555,7 @@ packages:
       off_bg_color: ${ui_switch_laundry_off_bg}
 
   lightsw_btn_garage: !include
-    file: buttons/switch_button-sensecap.yaml
+    file: buttons/switch_button_3x3-sensecap-dani.yaml
     vars:
       uid: lightsw_btn_garage
       page_id: ${sense_page_lighting_switches_id}
@@ -568,7 +568,7 @@ packages:
       off_bg_color: ${ui_switch_garage_off_bg}
 
   lightsw_btn_mbr_closet: !include
-    file: buttons/switch_button-sensecap.yaml
+    file: buttons/switch_button_3x3-sensecap-dani.yaml
     vars:
       uid: lightsw_btn_mbr_closet
       page_id: ${sense_page_lighting_switches_id}
@@ -581,7 +581,7 @@ packages:
       off_bg_color: ${ui_switch_mbr_closet_off_bg}
 
   lightsw_btn_fence: !include
-    file: buttons/switch_button-sensecap.yaml
+    file: buttons/switch_button_3x3-sensecap-dani.yaml
     vars:
       uid: lightsw_btn_fence
       page_id: ${sense_page_lighting_switches_id}
@@ -594,12 +594,12 @@ packages:
       off_bg_color: ${ui_switch_fence_off_bg}
 
   lightsw_btn_outdoor: !include
-    file: buttons/switch_button-sensecap.yaml
+    file: buttons/switch_button_3x3-sensecap-dani.yaml
     vars:
       uid: lightsw_btn_outdoor
       page_id: ${sense_page_lighting_switches_id}
-      row: 3
-      column: 0
+      row: 1
+      column: 2
       text: "Outdoor"
       icon: $mdi_coach_lamp
       entity_id: ${ent_outdoor_entry_lights}
@@ -673,6 +673,7 @@ font:
       $mdi_molecule_co2,  # mdi-molecule-co2 - CO2 tile icon
       $mdi_water_percent,  # mdi-water-percent - humidity tile icon
     ]
+
 
 
 
