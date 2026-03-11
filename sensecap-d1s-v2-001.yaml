@@ -93,6 +93,7 @@ packages:
 lvgl:
   pages:
     - id: main_page
+      skip: true
       layout: 4x4
       styles: page_style
       <<: !include widgets/swipe_navigation.yaml
@@ -155,6 +156,17 @@ font:
       $mdi_weather_dust,  # mdi-weather-dust - VOC/air quality tile icon
       $mdi_molecule_co2,  # mdi-molecule-co2 - CO2 tile icon
       $mdi_water_percent,  # mdi-water-percent - humidity tile icon
+    ]
+  - file: 'https://raw.githubusercontent.com/Templarian/MaterialDesign-Webfont/master/fonts/materialdesignicons-webfont.ttf'
+    id: mdi_icons_34
+    size: 34
+    bpp: 8
+    glyphs: [
+      $mdi_wifi_strength_1,
+      $mdi_wifi_strength_2,
+      $mdi_wifi_strength_3,
+      $mdi_wifi_strength_4,
+      $mdi_wifi_strength_off,
     ]
 
 

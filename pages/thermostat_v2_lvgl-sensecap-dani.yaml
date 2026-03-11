@@ -53,7 +53,7 @@ lvgl:
               - label:
                   text: "Thermostat"
                   align: TOP_MID
-                  y: ${tstat_title_y}
+                  y: -26
                   text_font: ${tstat_title_font}
                   text_color: ${tstat_title_color}
               - label:
@@ -94,10 +94,10 @@ lvgl:
               - arc:
                   id: tstat2_target_arc
                   align: TOP_MID
-                  x: 30     # 0
+                  x: 33   # 30     # 0
                   y: 104
-                  width: 332
-                  height: 248
+                  width: 350    # 332
+                  height: 270    # 248
                   min_value: 50
                   max_value: 85
                   value: 68
@@ -108,10 +108,12 @@ lvgl:
                   indicator:
                     arc_color: ${ui_tstat_mode_off_active_color}
                     arc_width: 24
+                    pad_all: -10  # negative pad to make the arc thicker without increasing overall widget size
+                    
                   knob:
                     bg_color: ${ui_page_text_color}
                     pad_all: 3
-                  on_value:
+                  on_value:     # add mode: normal for heat and reverse for cool, with color feedback (cool=blue, heat=red, off/auto=gray)
                     then:
                       - lvgl.label.update:
                           id: tstat2_target_value
@@ -190,17 +192,17 @@ lvgl:
 
               - label:
                   text: "HVAC Mode"
-                  align: TOP_LEFT
-                  x: 24    # 28
-                  y: 42
+                  align: BOTTOM_LEFT      # TOP_LEFT
+                  x: 0    # 24    # 28
+                  y: -42   # 42
                   text_font: montserrat_14
                   text_color: ${ui_page_text_color}
 
               - dropdown:
                   id: tstat2_mode_dropdown
-                  align: TOP_LEFT
-                  x: 24    #28 
-                  y: 60
+                  align: BOTTOM_LEFT
+                  x: 0     # 24    #28 
+                  y: -30    # 60
                   width: 138
                   height: 30  # 32
                   text_font: montserrat_14
@@ -208,6 +210,7 @@ lvgl:
                     - "Off"
                     - "Heat"
                     - "Cool"
+                  #  - "Heat/Cool"   # (HA "auto" mode is a bit weird to handle with the current UI, so leaving out for now)
                   selected_index: 0
                   on_value:
                     then:
@@ -244,17 +247,18 @@ lvgl:
 
               - label:
                   text: "Fan Mode"
-                  align: TOP_RIGHT
-                  x: -24    # -28
-                  y: 42
+                  align: BOTTOM_RIGHT      # TOP_RIGHT
+                  x: 0    # -24    # -28
+                  y: -42    # 42
                   text_font: montserrat_14
                   text_color: ${ui_page_text_color}
 
               - dropdown:
                   id: tstat2_fan_dropdown
-                  align: TOP_RIGHT
-                  x: -24    # -28
-                  y: 60
+                  align: BOTTOM_RIGHT  # TOP_RIGHT
+                  dir: "TOP"  # dropdown opens upwards to avoid overlapping with other elements below
+                  x: 0     # -24    # -28
+                  y: -30     # 60
                   width: 138
                   height: 30  # 32
                   text_font: montserrat_14

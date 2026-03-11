@@ -133,7 +133,7 @@ script:
 
   - id: start_sync_animation
     then:
-      - script.execute: nav_to_home
+      # - script.execute: nav_to_home  # optionally navigate to home immediately after HA connection, or wait until after the sync animation completes
       - delay: 1s
       - lvgl.bar.update:
           id: boot_synchronization_bar
@@ -154,6 +154,8 @@ script:
             lv_obj_add_flag(id(boot_homeassistant_spiner), LV_OBJ_FLAG_HIDDEN);
             id(check_boot_status).execute();
           }
+      - delay: 5s    # wait a moment before navigating to home to let the user see the "connected" status
+      - script.execute: nav_to_home        
 
 api:
   on_client_connected:

@@ -22,7 +22,7 @@ obj:
         align: TOP_LEFT
         x: 12
         y: 8
-        text_font: nunito_18
+        text_font: nunito_20  # 18
         text_color: sense_text
         bg_color: sense_bg
         bg_opa: cover
@@ -33,7 +33,7 @@ obj:
         align: TOP_RIGHT
         x: -12
         y: 8
-        text_font: nunito_18
+        text_font: nunito_20  # 18
         text_color: sense_text
         bg_color: sense_bg
         bg_opa: cover
@@ -55,6 +55,6 @@ obj:
           - label:
               id: sense_topbar_wifi
               align: CENTER
-              text_font: mdi_icons_40
+              text_font: mdi_icons_34   # 34
               text_color: sense_info
               text: ${mdi_wifi_strength_off}
