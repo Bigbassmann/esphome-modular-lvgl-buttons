@@ -339,9 +339,7 @@ This fork uses a token-first color model so page files do not hardcode one-off h
 
 
 - 2026-03-10: Theme slots 3..9 now have distinct style mappings in theme_style-sensecap-dani.yaml; display dropdown uses ui_theme_label_0..ui_theme_label_9 and slot-based selection.
-
-
-
+- Theme runtime refresh: centralized runtime repaint remains enabled for the three home tiles (`Dani`, `Sleepy`, `Bedtime`). Fan/override runtime repaint hooks were rolled back after they pushed the ESP32 link stage over the Xtensa literal range limit; additional theme-following changes need a smaller shared-style approach instead of more per-widget runtime updates.
 
 
 

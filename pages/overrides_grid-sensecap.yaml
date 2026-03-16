@@ -1,4 +1,4 @@
-﻿# =============================================================================
+# =============================================================================
 # PAGE EDIT GUIDE (SenseCAP)
 # - Color tokens: common/color-sensecap-dani.yaml.
 # - Entity/UI defaults (text/icon/value/on-off): common/ha_entities-sensecap-dani.yaml.
@@ -1457,6 +1457,8 @@ binary_sensor:
                   - lvgl.widget.update:
                       id: value_overrides_btn_dani
                       hidden: true
+
+
 
 
 

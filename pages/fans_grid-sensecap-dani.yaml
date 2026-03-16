@@ -1,4 +1,4 @@
-﻿# =============================================================================
+# =============================================================================
 # PAGE EDIT GUIDE (SenseCAP)
 # - Color tokens: common/color-sensecap-dani.yaml.
 # - Entity/UI defaults (text/icon/value/on-off): common/ha_entities-sensecap-dani.yaml.
@@ -328,12 +328,14 @@ interval:
                 id: attic_high_btn
                 bg_color: ${ui_fan_inactive_color}
 
+
 lvgl:
   pages:
     - id: ${sense_page_fans_id}
       styles: sense_page_style
       widgets:
         - label:
+            
             text: "Fan Controls"
             align: TOP_MID
             y: 26    # 20
@@ -349,6 +351,7 @@ lvgl:
             widgets:
 
               - label:
+                  
                   text: "FR Fan"
                   align: TOP_LEFT
                   x: 12
@@ -376,6 +379,8 @@ lvgl:
                     - script.execute: fr_fan_off
                   widgets:
                     - label:
+                        
+                        
                         text: "OFF"
                         align: CENTER
                         text_font: nunito_14
@@ -392,6 +397,8 @@ lvgl:
                     - script.execute: fr_fan_low
                   widgets:
                     - label:
+                        
+                        
                         text: "LOW"
                         align: CENTER
                         text_font: nunito_14
@@ -408,6 +415,8 @@ lvgl:
                     - script.execute: fr_fan_med
                   widgets:
                     - label:
+                        
+                        
                         text: "MED"
                         align: CENTER
                         text_font: nunito_14
@@ -424,12 +433,15 @@ lvgl:
                     - script.execute: fr_fan_high
                   widgets:
                     - label:
+                        
+                        
                         text: "HIGH"
                         align: CENTER
                         text_font: nunito_14
                         text_color: ${fan_button_text_color}
 
               - label:
+                  
                   text: "MBR Fan"
                   align: TOP_LEFT
                   x: 12
@@ -465,6 +477,8 @@ lvgl:
                     - script.execute: mbr_fan_off
                   widgets:
                     - label:
+                        
+                        
                         text: "OFF"
                         align: CENTER
                         text_font: nunito_14
@@ -481,6 +495,8 @@ lvgl:
                     - script.execute: mbr_fan_low
                   widgets:
                     - label:
+                        
+                        
                         text: "LOW"
                         align: CENTER
                         text_font: nunito_14
@@ -497,6 +513,8 @@ lvgl:
                     - script.execute: mbr_fan_med
                   widgets:
                     - label:
+                        
+                        
                         text: "MED"
                         align: CENTER
                         text_font: nunito_14
@@ -513,6 +531,8 @@ lvgl:
                     - script.execute: mbr_fan_high
                   widgets:
                     - label:
+                        
+                        
                         text: "HIGH"
                         align: CENTER
                         text_font: nunito_14
@@ -529,12 +549,14 @@ lvgl:
                     - script.execute: mbr_fan_toggle_dir
                   widgets:
                     - label:
+                        
                         text: "DIR"
                         align: CENTER
                         text_font: nunito_14
                         text_color: ${fan_button_text_color}
 
               - label:
+                  
                   text: "Attic Fans"
                   align: TOP_LEFT
                   x: 12
@@ -554,6 +576,7 @@ lvgl:
                     - script.execute: attic_fan_low_toggle
                   widgets:
                     - label:
+                        
                         text: "Attic Low"
                         align: LEFT_MID
                         x: 14
@@ -579,6 +602,7 @@ lvgl:
                     - script.execute: attic_fan_high_toggle
                   widgets:
                     - label:
+                        
                         text: "Attic High"
                         align: LEFT_MID
                         x: 14
@@ -591,6 +615,11 @@ lvgl:
                         x: -14
                         text_font: nunito_20
                         text_color: ${fan_button_text_color}
+
+
+
+
+
 
 
 
