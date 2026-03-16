@@ -163,6 +163,174 @@ color:
       hex: '6C912D'
     - id: theme_slot2_lime_text
       hex: '0D0D0D'
+    - id: theme_slot3_page_text
+      hex: 'FFFFFF'
+    - id: theme_slot3_primary_bg
+      hex: '059669'
+    - id: theme_slot3_primary_bg_off
+      hex: '064E3B'
+    - id: theme_slot3_primary_text
+      hex: 'FFFFFF'
+    - id: theme_slot3_secondary_bg
+      hex: '0284C7'
+    - id: theme_slot3_secondary_text
+      hex: 'FFFFFF'
+    - id: theme_slot3_tertiary_bg
+      hex: '4F46E5'
+    - id: theme_slot3_tertiary_text
+      hex: 'FFFFFF'
+    - id: theme_slot3_climate_bg
+      hex: 'F59E0B'
+    - id: theme_slot3_climate_text
+      hex: '0D0D0D'
+    - id: theme_slot3_override_bg
+      hex: 'E11D48'
+    - id: theme_slot3_override_text
+      hex: 'FFFFFF'
+    - id: theme_slot4_page_text
+      hex: 'FFFFFF'
+    - id: theme_slot4_primary_bg
+      hex: '7C3AED'
+    - id: theme_slot4_primary_bg_off
+      hex: '4C1D95'
+    - id: theme_slot4_primary_text
+      hex: 'FFFFFF'
+    - id: theme_slot4_secondary_bg
+      hex: '0891B2'
+    - id: theme_slot4_secondary_text
+      hex: 'FFFFFF'
+    - id: theme_slot4_tertiary_bg
+      hex: '2563EB'
+    - id: theme_slot4_tertiary_text
+      hex: 'FFFFFF'
+    - id: theme_slot4_climate_bg
+      hex: 'EAB308'
+    - id: theme_slot4_climate_text
+      hex: '0D0D0D'
+    - id: theme_slot4_override_bg
+      hex: 'F97316'
+    - id: theme_slot4_override_text
+      hex: 'FFFFFF'
+    - id: theme_slot5_page_text
+      hex: 'FFFFFF'
+    - id: theme_slot5_primary_bg
+      hex: 'E11D48'
+    - id: theme_slot5_primary_bg_off
+      hex: '881337'
+    - id: theme_slot5_primary_text
+      hex: 'FFFFFF'
+    - id: theme_slot5_secondary_bg
+      hex: '0D9488'
+    - id: theme_slot5_secondary_text
+      hex: 'FFFFFF'
+    - id: theme_slot5_tertiary_bg
+      hex: '4F46E5'
+    - id: theme_slot5_tertiary_text
+      hex: 'FFFFFF'
+    - id: theme_slot5_climate_bg
+      hex: 'F59E0B'
+    - id: theme_slot5_climate_text
+      hex: '0D0D0D'
+    - id: theme_slot5_override_bg
+      hex: 'EA580C'
+    - id: theme_slot5_override_text
+      hex: 'FFFFFF'
+    - id: theme_slot6_page_text
+      hex: 'FFFFFF'
+    - id: theme_slot6_primary_bg
+      hex: 'D97706'
+    - id: theme_slot6_primary_bg_off
+      hex: '92400E'
+    - id: theme_slot6_primary_text
+      hex: 'FFFFFF'
+    - id: theme_slot6_secondary_bg
+      hex: '0D9488'
+    - id: theme_slot6_secondary_text
+      hex: 'FFFFFF'
+    - id: theme_slot6_tertiary_bg
+      hex: '0284C7'
+    - id: theme_slot6_tertiary_text
+      hex: 'FFFFFF'
+    - id: theme_slot6_climate_bg
+      hex: '65A30D'
+    - id: theme_slot6_climate_text
+      hex: 'FFFFFF'
+    - id: theme_slot6_override_bg
+      hex: 'DC2626'
+    - id: theme_slot6_override_text
+      hex: 'FFFFFF'
+    - id: theme_slot7_page_text
+      hex: 'FFFFFF'
+    - id: theme_slot7_primary_bg
+      hex: 'EA580C'
+    - id: theme_slot7_primary_bg_off
+      hex: '9A3412'
+    - id: theme_slot7_primary_text
+      hex: 'FFFFFF'
+    - id: theme_slot7_secondary_bg
+      hex: '0F766E'
+    - id: theme_slot7_secondary_text
+      hex: 'FFFFFF'
+    - id: theme_slot7_tertiary_bg
+      hex: '7C3AED'
+    - id: theme_slot7_tertiary_text
+      hex: 'FFFFFF'
+    - id: theme_slot7_climate_bg
+      hex: '84CC16'
+    - id: theme_slot7_climate_text
+      hex: '0D0D0D'
+    - id: theme_slot7_override_bg
+      hex: 'BE123C'
+    - id: theme_slot7_override_text
+      hex: 'FFFFFF'
+    - id: theme_slot8_page_text
+      hex: 'FFFFFF'
+    - id: theme_slot8_primary_bg
+      hex: '0EA5E9'
+    - id: theme_slot8_primary_bg_off
+      hex: '075985'
+    - id: theme_slot8_primary_text
+      hex: 'FFFFFF'
+    - id: theme_slot8_secondary_bg
+      hex: '2563EB'
+    - id: theme_slot8_secondary_text
+      hex: 'FFFFFF'
+    - id: theme_slot8_tertiary_bg
+      hex: '9333EA'
+    - id: theme_slot8_tertiary_text
+      hex: 'FFFFFF'
+    - id: theme_slot8_climate_bg
+      hex: '84CC16'
+    - id: theme_slot8_climate_text
+      hex: '0D0D0D'
+    - id: theme_slot8_override_bg
+      hex: 'F97316'
+    - id: theme_slot8_override_text
+      hex: '0D0D0D'
+    - id: theme_slot9_page_text
+      hex: 'FFFFFF'
+    - id: theme_slot9_primary_bg
+      hex: 'A21CAF'
+    - id: theme_slot9_primary_bg_off
+      hex: '701A75'
+    - id: theme_slot9_primary_text
+      hex: 'FFFFFF'
+    - id: theme_slot9_secondary_bg
+      hex: '2563EB'
+    - id: theme_slot9_secondary_text
+      hex: 'FFFFFF'
+    - id: theme_slot9_tertiary_bg
+      hex: '06B6D4'
+    - id: theme_slot9_tertiary_text
+      hex: '0D0D0D'
+    - id: theme_slot9_climate_bg
+      hex: 'A3E635'
+    - id: theme_slot9_climate_text
+      hex: '0D0D0D'
+    - id: theme_slot9_override_bg
+      hex: 'F97316'
+    - id: theme_slot9_override_text
+      hex: '0D0D0D'
     - id: sense_primary
       hex: '1D4ED8'   # color for primary actions, highlights, etc. A vibrant blue that stands out and draws attention.
     - id: sense_info
@@ -1022,6 +1190,7 @@ color:
 #   hex: 'FFFF00'
 # - id: yellowgreen
 #   hex: '9ACD32'
+
 
 
 
