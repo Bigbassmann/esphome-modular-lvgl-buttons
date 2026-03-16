@@ -13,7 +13,7 @@ obj:
   width: 100%
   height: ${sense_nav_h | default("68")}
   styles: sense_nav_bar_style
-  bg_color: sense_surface
+  bg_color: sense_bg    # sense_surface   # 
   border_width: 0
   widgets:
     - button:

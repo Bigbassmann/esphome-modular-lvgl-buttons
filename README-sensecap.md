@@ -225,9 +225,9 @@ The SenseCAP fork is still actively cleaning up both:
 
 This means layout/schema may continue to evolve while keeping root validation green.
 
-Current intentional theme exceptions still to clean up:
+Current intentional theme exception/status:
 
-- `pages/fans_grid-sensecap-dani.yaml` now uses the canonical fan token set without local theme-slot override blocks
+- `pages/fans_grid-sensecap-dani.yaml` now uses canonical fan tokens only
 - `pages/light_color-sensecap.yaml` is intentionally exempt for now and still contains hardcoded color literals
 
 ### Specific page layouts currently in use

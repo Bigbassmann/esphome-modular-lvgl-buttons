@@ -16,63 +16,63 @@ color:
     # ALT: 381B1A (dani dark red)
     # ALT: 37381A (dani dark yellow)
     - id: sense_bg
-      hex: '0d0d0d'   # '1B1A38'
+      hex: '0d0d0d'   # color for main background, previously '1B1A38' 
     - id: sense_surface
-      hex: '1B1A38'
+      hex: '1B1A38'     # color for main surfaces like cards, modals, etc. Consider using this for the main background if you want a more colorful look.
     - id: sense_surface_alt
-      hex: '1A2838'
+      hex: '1A2838'     # color for alternate surfaces, like secondary cards, sidebars, etc. Provides a subtle contrast to the main surface.
     - id: sense_border
-      hex: '374151'
+      hex: '374151'      # color for borders, dividers, etc. Provides separation between elements without being too harsh.
     - id: sense_text
-      hex: 'E5E7EB'
+      hex: 'E5E7EB'      # color for primary text. A light gray that stands out against the dark background without being pure white.
     - id: sense_text_muted
-      hex: '9CA3AF'
+      hex: '9CA3AF'      # color for secondary text, hints, etc. A medium gray that is still readable but less prominent than the primary text.
     - id: dani_page_title
-      hex: 'FFFFFF'
+      hex: 'FFFFFF'      # color for page titles. Using pure white for maximum contrast and emphasis.
     - id: dani_page_text
-      hex: 'FFFFFF'
+      hex: 'FFFFFF'     # color for main page text. Using pure white to ensure readability against the dark background.
     - id: dani_page_text_muted
-      hex: 'BDBDBD'
+      hex: 'BDBDBD'     # color for muted page text. A light gray that is less prominent than the main text.    
     - id: sense_primary
-      hex: '1D4ED8'
+      hex: '1D4ED8'   # color for primary actions, highlights, etc. A vibrant blue that stands out and draws attention.
     - id: sense_info
-      hex: 'FFFFFF'
+      hex: 'FFFFFF'    # color for informational messages, tooltips, etc. Using white for clarity and neutrality.
     - id: sense_success
-      hex: '166534'
+      hex: '166534'    # color for success messages, confirmations, etc. A rich green that conveys positivity and success.
     - id: sense_warn
-      hex: 'F59E0B'
+      hex: 'F59E0B'    # color for warning messages, alerts, etc. A bright orange that signals caution without being too alarming.
     - id: sense_danger
-      hex: 'EF4444'
+      hex: 'EF4444'     # color for error messages, critical alerts, etc. A bold red that conveys urgency and importance.
     - id: sense_teal
-      hex: '0F766E'
+      hex: '0F766E'     # color for secondary actions, accents, etc. A deep teal that complements the primary blue and adds variety to the palette.
     - id: sense_tile_green
-      hex: '4CAF50'
+      hex: '4CAF50'     # color for green tiles. A standard green that is easily recognizable and works well for indicating active or positive states.
     - id: sense_tile_green_off
-      hex: '2F5F39'
+      hex: '2F5F39'      # color for green tiles in the off state. A darker, desaturated version of the green to indicate inactivity while maintaining the hue.
     - id: sense_tile_orange
-      hex: '8F3C42'
+      hex: '8F3C42'       # color for orange tiles. A warm, muted orange that fits with the overall aesthetic and can be used for active states or accents.
     - id: sense_tile_orange_off
-      hex: '571924'
+      hex: '571924'       # color for orange tiles in the off state. A darker, desaturated version of the orange to indicate inactivity while maintaining the hue.
     - id: sense_tile_yellow
-      hex: '8F893C'
+      hex: '8F893C'       # color for yellow tiles. A warm, muted yellow that fits with the overall aesthetic and can be used for active states or accents.
     - id: sense_tile_yellow_off
-      hex: '574C19'
+      hex: '574C19'       # color for yellow tiles in the off state. A darker, desaturated version of the yellow to indicate inactivity while maintaining the hue.
     - id: sense_tile_blue
-      hex: '3C6B8F'
+      hex: '3C6B8F'       # color for blue tiles. A cool, muted blue that fits with the overall aesthetic and can be used for active states or accents.
     - id: sense_tile_blue_off
-      hex: '194357'
+      hex: '194357'       # color for blue tiles in the off state. A darker, desaturated version of the blue to indicate inactivity while maintaining the hue.  
     - id: sense_tile_red
-      hex: '8F3C42'
+      hex: '8F3C42'       # color for red tiles. A warm, muted red that fits with the overall aesthetic and can be used for active states or accents.
     - id: sense_tile_red_off
-      hex: '571924'
+      hex: '571924'       # color for red tiles in the off state. A darker, desaturated version of the red to indicate inactivity while maintaining the hue.
     - id: sense_tile_teal
-      hex: '3C8F89'
+      hex: '3C8F89'       # color for teal tiles. A cool, muted teal that fits with the overall aesthetic and can be used for active states or accents.
     - id: sense_tile_teal_off
-      hex: '19574C'
+      hex: '19574C'       # color for teal tiles in the off state. A darker, desaturated version of the teal to indicate inactivity while maintaining the hue.
     - id: sense_tile_indigo
-      hex: '3C428F'
+      hex: '3C428F'       # color for indigo tiles. A cool, muted indigo that fits with the overall aesthetic and can be used for active states or accents.
     - id: sense_tile_indigo_off
-      hex: '192457'
+      hex: '192457'       # color for indigo tiles in the off state. A darker, desaturated version of the indigo to indicate inactivity while maintaining the hue.
 
     # Dani 6-family button palette matrix
     # Nomenclature:
@@ -80,134 +80,130 @@ color:
     # - *_slider_on / *_slider_off: slider indicator (filled) colors
     # - *_knob_on / *_knob_off: slider knob colors
     - id: dani_family_teal_bg_on
-      hex: '3C8F89'
+      hex: '3C8F89'     # color for teal-themed button backgrounds in the active state. A cool, muted teal that fits with the overall aesthetic and provides good contrast against the text and slider elements.
     - id: dani_family_teal_bg_off
-      hex: '19574C'
+      hex: '19574C'     # color for teal-themed button backgrounds in the inactive state. A darker, desaturated version of the teal to indicate inactivity while maintaining the hue.
     - id: dani_family_teal_text_on
-      hex: 'FFFFFF'
+      hex: 'FFFFFF'     # color for teal-themed button text in the active state. A bright white that provides good contrast against the background.
     - id: dani_family_teal_text_off
-      hex: 'E0E0E0'
+      hex: 'E0E0E0'     # color for teal-themed button text in the inactive state. A light gray that provides good contrast against the background while indicating inactivity.
     - id: dani_family_teal_value_on
-      hex: 'FFFFFF'
+      hex: 'FFFFFF'     # color for teal-themed button values in the active state. A bright white that provides good contrast against the background.
     - id: dani_family_teal_value_off
-      hex: 'E0E0E0'
+      hex: 'E0E0E0'     # color for teal-themed button values in the inactive state. A light gray that provides good contrast against the background while indicating inactivity.
     - id: dani_family_teal_slider_on
-      hex: '4FA39C'
+      hex: '4FA39C'     # color for teal-themed button sliders in the active state. A slightly brighter teal that provides good contrast against the background.
     - id: dani_family_teal_slider_off
-      hex: '2A6E67'
+      hex: '2A6E67'     # color for teal-themed button sliders in the inactive state. A darker, desaturated version of the teal to indicate inactivity while maintaining the hue.
     - id: dani_family_teal_knob_on
-      hex: '68CCC4'
+      hex: '68CCC4'     # color for teal-themed button knobs in the active state. A bright teal that provides good contrast against the background.
     - id: dani_family_teal_knob_off
-      hex: '19574C'
-
+      hex: '19574C'     # color for teal-themed button knobs in the inactive state. A darker, desaturated version of the teal to indicate inactivity while maintaining the hue. 
     - id: dani_family_blue_bg_on
-      hex: '3C6B8F'
+      hex: '3C6B8F'     # color for blue-themed button backgrounds in the active state. A cool, muted blue that fits with the overall aesthetic and provides good contrast against the text and slider elements.
     - id: dani_family_blue_bg_off
-      hex: '194357'
+      hex: '194357'     # color for blue-themed button backgrounds in the inactive state. A darker, desaturated version of the blue to indicate inactivity while maintaining the hue.
     - id: dani_family_blue_text_on
-      hex: 'FFFFFF'
+      hex: 'FFFFFF'     # color for blue-themed button text in the active state. A bright white that provides good contrast against the background. 
     - id: dani_family_blue_text_off
-      hex: 'E0E0E0'
+      hex: 'E0E0E0'     # color for blue-themed button text in the inactive state. A light gray that provides good contrast against the background while indicating inactivity.
     - id: dani_family_blue_value_on
-      hex: 'FFFFFF'
+      hex: 'FFFFFF'     # color for blue-themed button values in the active state. A bright white that provides good contrast against the background.
     - id: dani_family_blue_value_off
-      hex: 'E0E0E0'
+      hex: 'E0E0E0'     # color for blue-themed button values in the inactive state. A light gray that provides good contrast against the background while indicating inactivity. 
     - id: dani_family_blue_slider_on
-      hex: '4E7FA3'
+      hex: '4E7FA3'     # color for blue-themed button sliders in the active state. A slightly brighter blue that provides good contrast against the background.
     - id: dani_family_blue_slider_off
-      hex: '2A5A6E'
+      hex: '2A5A6E'     # color for blue-themed button sliders in the inactive state. A darker, desaturated version of the blue to indicate inactivity while maintaining the hue.
     - id: dani_family_blue_knob_on
-      hex: '68A2CC'
+      hex: '68A2CC'     # color for blue-themed button knobs in the active state. A bright blue that provides good contrast against the background.
     - id: dani_family_blue_knob_off
-      hex: '194357'
-
+      hex: '194357'     # color for blue-themed button knobs in the inactive state. A darker, desaturated version of the blue to indicate inactivity while maintaining the hue. 
     - id: dani_family_indigo_bg_on
-      hex: '3C428F'
+      hex: '3C428F'     # color for indigo-themed button backgrounds in the active state. A cool, muted indigo that fits with the overall aesthetic and provides good contrast against the text and slider elements.
     - id: dani_family_indigo_bg_off
-      hex: '192457'
+      hex: '192457'     # color for indigo-themed button backgrounds in the inactive state. A darker, desaturated version of the indigo to indicate inactivity while maintaining the hue.
     - id: dani_family_indigo_text_on
-      hex: 'FFFFFF'
+      hex: 'FFFFFF'     # color for indigo-themed button text in the active state. A bright white that provides good contrast against the background.
     - id: dani_family_indigo_text_off
-      hex: 'E0E0E0'
+      hex: 'E0E0E0'     # color for indigo-themed button text in the inactive state. A light gray that provides good contrast against the background while indicating inactivity.
     - id: dani_family_indigo_value_on
-      hex: 'FFFFFF'
+      hex: 'FFFFFF'     # color for indigo-themed button values in the active state. A bright white that provides good contrast against the background.
     - id: dani_family_indigo_value_off
-      hex: 'E0E0E0'
+      hex: 'E0E0E0'     # color for indigo-themed button values in the inactive state. A light gray that provides good contrast against the background while indicating inactivity.
     - id: dani_family_indigo_slider_on
-      hex: '4F57A3'
+      hex: '4F57A3'     # color for indigo-themed button sliders in the active state. A slightly brighter indigo that provides good contrast against the background.
     - id: dani_family_indigo_slider_off
-      hex: '2A3A6E'
+      hex: '2A3A6E'     # color for indigo-themed button sliders in the inactive state. A darker, desaturated version of the indigo to indicate inactivity while maintaining the hue.
     - id: dani_family_indigo_knob_on
-      hex: '6870CC'
+      hex: '6870CC'     # color for indigo-themed button knobs in the active state. A bright indigo that provides good contrast against the background.
     - id: dani_family_indigo_knob_off
-      hex: '192457'
-
+      hex: '192457'     # color for indigo-themed button knobs in the inactive state. A darker, desaturated version of the indigo to indicate inactivity while maintaining the hue.
     - id: dani_family_red_bg_on
-      hex: '8F3C42'
+      hex: '8F3C42'     # color for red-themed button backgrounds in the active state. A muted red that provides good contrast against the text and slider elements.
     - id: dani_family_red_bg_off
-      hex: '571924'
+      hex: '571924'     # color for red-themed button backgrounds in the inactive state. A darker, desaturated version of the red to indicate inactivity while maintaining the hue.
     - id: dani_family_red_text_on
-      hex: 'FFFFFF'
+      hex: 'FFFFFF'     # color for red-themed button text in the active state. A bright white that provides good contrast against the background.
     - id: dani_family_red_text_off
-      hex: 'E0E0E0'
+      hex: 'E0E0E0'     # color for red-themed button text in the inactive state. A light gray that provides good contrast against the background while indicating inactivity.
     - id: dani_family_red_value_on
-      hex: 'FFFFFF'
+      hex: 'FFFFFF'     # color for red-themed button values in the active state. A bright white that provides good contrast against the background.
     - id: dani_family_red_value_off
-      hex: 'E0E0E0'
+      hex: 'E0E0E0'     # color for red-themed button values in the inactive state. A light gray that provides good contrast against the background while indicating inactivity.
     - id: dani_family_red_slider_on
-      hex: 'A34F57'
+      hex: 'A34F57'     # color for red-themed button sliders in the active state. A slightly brighter red that provides good contrast against the background.
     - id: dani_family_red_slider_off
-      hex: '6E2A3A'
+      hex: '6E2A3A'     # color for red-themed button sliders in the inactive state. A darker, desaturated version of the red to indicate inactivity while maintaining the hue. 
     - id: dani_family_red_knob_on
-      hex: 'CC6870'
+      hex: 'CC6870'     # color for red-themed button knobs in the active state. A bright red that provides good contrast against the background.
     - id: dani_family_red_knob_off
-      hex: '571924'
-
+      hex: '571924'     # color for red-themed button knobs in the inactive state. A darker, desaturated version of the red to indicate inactivity while maintaining the hue.
     - id: dani_family_yellow_bg_on
-      hex: '8F893C'
+      hex: '8F893C'     # color for yellow-themed button backgrounds in the active state. A muted yellow that provides good contrast against the text and slider elements.
     - id: dani_family_yellow_bg_off
-      hex: '574C19'
+      hex: '574C19'     # color for yellow-themed button backgrounds in the inactive state. A darker, desaturated version of the yellow to indicate inactivity while maintaining the hue.
     - id: dani_family_yellow_text_on
-      hex: '0D0D0D'
+      hex: '0D0D0D'     # color for yellow-themed button text in the active state. A dark color that provides good contrast against the background.
     - id: dani_family_yellow_text_off
-      hex: 'E0E0E0'
+      hex: 'E0E0E0'     # color for yellow-themed button text in the inactive state. A light gray that provides good contrast against the background while indicating inactivity.
     - id: dani_family_yellow_value_on
-      hex: '0D0D0D'
+      hex: '0D0D0D'     # color for yellow-themed button values in the active state. A dark color that provides good contrast against the background. 
     - id: dani_family_yellow_value_off
-      hex: 'E0E0E0'
+      hex: 'E0E0E0'     # color for yellow-themed button values in the inactive state. A light gray that provides good contrast against the background while indicating inactivity.
     - id: dani_family_yellow_slider_on
-      hex: 'A39D4F'
+      hex: 'A39D4F'     # color for yellow-themed button sliders in the active state. A slightly brighter yellow that provides good contrast against the background.
     - id: dani_family_yellow_slider_off
-      hex: '6E5F2A'
+      hex: '6E5F2A'     # color for yellow-themed button sliders in the inactive state. A darker, desaturated version of the yellow to indicate inactivity while maintaining the hue.
     - id: dani_family_yellow_knob_on
-      hex: 'CCC468'
+      hex: 'CCC468'     # color for yellow-themed button knobs in the active state. A bright yellow that provides good contrast against the background.
     - id: dani_family_yellow_knob_off
-      hex: '574C19'
+      hex: '574C19'     # color for yellow-themed button knobs in the inactive state. A darker, desaturated version of the yellow to indicate inactivity while maintaining the hue. 
 
     - id: dani_family_orange_bg_on
-      hex: 'A8840F'
+      hex: 'A8840F'   # color for orange-themed button backgrounds in the active state. A muted orange that provides good contrast against the text and slider elements.
     - id: dani_family_orange_bg_off
-      hex: '574C19'
+      hex: '574C19'     # color for orange-themed button backgrounds in the inactive state. A darker, desaturated version of the orange to indicate inactivity while maintaining the hue.
     - id: dani_family_orange_text_on
-      hex: '0D0D0D'
+      hex: '0D0D0D'     # color for orange-themed button text in the active state. A dark color that provides good contrast against the background.
     - id: dani_family_orange_text_off
-      hex: 'E0E0E0'
+      hex: 'E0E0E0'     # color for orange-themed button text in the inactive state. A light gray that provides good contrast against the background while indicating inactivity.
     - id: dani_family_orange_value_on
-      hex: '0D0D0D'
+      hex: '0D0D0D'     # color for orange-themed button values in the active state. A dark color that provides good contrast against the background.
     - id: dani_family_orange_value_off
-      hex: 'E0E0E0'
+      hex: 'E0E0E0'     # color for orange-themed button values in the inactive state. A light gray that provides good contrast against the background while indicating inactivity.
     - id: dani_family_orange_slider_on
-      hex: 'BC9922'
+      hex: 'BC9922'     # color for orange-themed button sliders in the active state. A slightly brighter orange that provides good contrast against the background.
     - id: dani_family_orange_slider_off
-      hex: '6E5F2A'
+      hex: '6E5F2A'     # color for orange-themed button sliders in the inactive state. A darker, desaturated version of the orange to indicate inactivity while maintaining the hue.
     - id: dani_family_orange_knob_on
-      hex: 'DED1AB'
+      hex: 'DED1AB'     # color for orange-themed button knobs in the active state. A bright orange that provides good contrast against the background.
     - id: dani_family_orange_knob_off
-      hex: '574C19'
+      hex: '574C19'     # color for orange-themed button knobs in the inactive state. A darker, desaturated version of the orange to indicate inactivity while maintaining the hue.
 
     # Split (Double Split Complementary) theme family
     - id: split_page_title
-      hex: 'FFFFFF'
+      hex: 'FFFFFF'     # color for page titles. Using pure white for maximum contrast and emphasis.  
     - id: split_page_text
       hex: 'FFFFFF'
     - id: split_page_text_muted
@@ -340,6 +336,14 @@ color:
     - id: dani_tstat_mode_heat_active
       hex: '8F3C42'
     - id: dani_tstat_mode_cool_active
+      hex: '3C6B8F'
+    - id: theme_tstat_mode_inactive
+      hex: '666666'
+    - id: theme_tstat_mode_off_active
+      hex: '3C428F'
+    - id: theme_tstat_mode_heat_active
+      hex: '8F3C42'
+    - id: theme_tstat_mode_cool_active
       hex: '3C6B8F'
 
     - id: sense_tile_sky

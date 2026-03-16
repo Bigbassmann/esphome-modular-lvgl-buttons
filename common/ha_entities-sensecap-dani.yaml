@@ -195,11 +195,11 @@ substitutions:
   ui_fan_dir_reverse_color: "dani_fan_dir_reverse"
   ui_fan_dir_forward_color: "dani_fan_dir_forward"
 
-  ui_tstat_mode_inactive_color: "dani_tstat_mode_inactive"
-  ui_tstat_mode_off_active_color: "dani_tstat_mode_off_active"
-  ui_tstat_mode_heat_active_color: "dani_tstat_mode_heat_active"
-  ui_tstat_mode_cool_active_color: "dani_tstat_mode_cool_active"
-  ui_tstat_title_color: "${ui_page_title_color}"
+  ui_tstat_mode_inactive_color: "theme_tstat_mode_inactive"
+  ui_tstat_mode_off_active_color: "theme_tstat_mode_off_active"
+  ui_tstat_mode_heat_active_color: "theme_tstat_mode_heat_active"
+  ui_tstat_mode_cool_active_color: "theme_tstat_mode_cool_active"
+  ui_tstat_title_color: "dani_page_title"
 
   # Dimmer family defaults (token-driven per entity)
   ui_dimmer_mbr_on_bg: "dani_family_teal_bg_on"

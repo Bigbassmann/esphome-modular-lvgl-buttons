@@ -1,4 +1,4 @@
-# =============================================================================
+﻿# =============================================================================
 # PAGE EDIT GUIDE (SenseCAP)
 # - Color tokens: common/color-sensecap-dani.yaml.
 # - Entity/UI defaults (text/icon/value/on-off): common/ha_entities-sensecap-dani.yaml.
@@ -14,7 +14,7 @@
 
 substitutions:
   tstat_title_font: "${ui_page_title_font}"
-  tstat_title_color: "${ui_page_title_color}"
+  tstat_title_color: "${ui_tstat_title_color}"
   tstat_title_y: "${ui_page_title_y_offset}"
 
 globals:
