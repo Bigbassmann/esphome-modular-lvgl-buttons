@@ -9,24 +9,24 @@
 # Avoid hardcoded page layout geometry in common files.
 substitutions:
   # Home page slot mapping (entity + display behavior)
-  ui_home_dani_entity_id: "${ent_dani_mode_on}"
-  ui_home_dani_text: "${ui_dani_text}"
-  ui_home_dani_icon: "${ui_dani_icon}"
-  ui_home_dani_on_bg: "${ui_dani_on_bg}"
-  ui_home_dani_off_bg: "${ui_dani_off_bg}"
-  ui_home_dani_on_icon: "${ui_dani_on_icon}"
-  ui_home_dani_off_icon: "${ui_dani_off_icon}"
-  ui_home_dani_value_on: "${ui_dani_value_on}"
-  ui_home_dani_value_off: "${ui_dani_value_off}"
-  ui_home_dani_icon_on_color: "${ui_base_icon_on_color}"
-  ui_home_dani_icon_off_color: "${ui_page_text_muted_color}"
-  ui_home_dani_text_on_color: "${ui_dani_text_on_color}"
-  ui_home_dani_text_off_color: "${ui_dani_text_off_color}"
-  ui_home_dani_value_on_color: "${ui_dani_value_on_color}"
-  ui_home_dani_value_off_color: "${ui_dani_value_off_color}"
-  ui_home_dani_show_icon: "true"
-  ui_home_dani_show_text: "true"
-  ui_home_dani_show_value: "true"
+  ui_home_dani_entity_id: "${ent_dani_mode_on}"    # Primary entity_id for the Dani Mode toggle button on the Home page
+  ui_home_dani_text: "${ui_dani_text}"             # Display text for the Dani Mode toggle button on the Home page
+  ui_home_dani_icon: "${ui_dani_icon}"             # Icon for the Dani Mode toggle button on the Home page
+  ui_home_dani_on_bg: "${ui_dani_on_bg}"           # Background color when Dani Mode is ON for the Home page toggle button
+  ui_home_dani_off_bg: "${ui_dani_off_bg}"         # Background color when Dani Mode is OFF for the Home page toggle button
+  ui_home_dani_on_icon: "${ui_dani_on_icon}"       # Icon when Dani Mode is ON for the Home page toggle button
+  ui_home_dani_off_icon: "${ui_dani_off_icon}"     # Icon when Dani Mode is OFF for the Home page toggle button
+  ui_home_dani_value_on: "${ui_dani_value_on}"     # Display value when Dani Mode is ON for the Home page toggle button
+  ui_home_dani_value_off: "${ui_dani_value_off}"   # Display value when Dani Mode is OFF for the Home page toggle button   
+  ui_home_dani_icon_on_color: "${ui_base_icon_on_color}"    # Icon color when Dani Mode is ON for the Home page toggle button
+  ui_home_dani_icon_off_color: "${ui_page_text_muted_color}"   # Icon color when Dani Mode is OFF for the Home page toggle button
+  ui_home_dani_text_on_color: "${ui_dani_text_on_color}"       # Text color when Dani Mode is ON for the Home page toggle button
+  ui_home_dani_text_off_color: "${ui_dani_text_off_color}"     # Text color when Dani Mode is OFF for the Home page toggle button
+  ui_home_dani_value_on_color: "${ui_dani_value_on_color}"     # Value color when Dani Mode is ON for the Home page toggle button
+  ui_home_dani_value_off_color: "${ui_dani_value_off_color}"   # Value color when Dani Mode is OFF for the Home page toggle button
+  ui_home_dani_show_icon: "true"                               # Whether to show the icon for the Dani Mode toggle button on the Home page
+  ui_home_dani_show_text: "true"                               # Whether to show the text for the Dani Mode toggle button on the Home page
+  ui_home_dani_show_value: "true"                              # Whether to show the value for the Dani Mode toggle button on the Home page
 
   ui_home_sleepy_entity_id: "${ent_sleepy_toggle}"
   ui_home_sleepy_text: "${ui_sleepy_text}"

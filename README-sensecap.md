@@ -227,7 +227,7 @@ This means layout/schema may continue to evolve while keeping root validation gr
 
 Current intentional theme exception/status:
 
-- Shared page/fan/sensor/per-entity defaults plus nav/template/static-style fallbacks now point at generic `theme_*` color IDs instead of `dani_*` IDs where cleaned
+- Shared page/fan/sensor/per-entity defaults plus nav/template/static-style fallbacks now point at generic `theme_*` color IDs instead of `dani_*` IDs where cleaned; runtime theme slots 0..2 now use slot-scoped `theme_slot*` IDs instead of direct `sense_*`/`dani_*`/`split_*` color refs in the theme engine
 - `pages/light_color-sensecap.yaml` is intentionally exempt for now and still contains hardcoded color literals
 
 ### Specific page layouts currently in use
@@ -337,4 +337,5 @@ This fork uses a token-first color model so page files do not hardcode one-off h
 
 
 - 2026-03-10: Theme slots 3..9 now have distinct style mappings in theme_style-sensecap-dani.yaml; display dropdown uses ui_theme_label_0..ui_theme_label_9 and slot-based selection.
+
 

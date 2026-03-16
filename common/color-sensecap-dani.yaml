@@ -95,6 +95,74 @@ color:
       hex: 'FFFFFF'
     - id: theme_placeholder_bg_default
       hex: '1A2838'
+    - id: theme_slot0_page_text
+      hex: 'FFFFFF'
+    - id: theme_slot0_nav_btn_bg
+      hex: '3C6B8F'
+    - id: theme_slot0_blue_bg
+      hex: '3C6B8F'
+    - id: theme_slot0_blue_text
+      hex: 'FFFFFF'
+    - id: theme_slot1_page_text
+      hex: 'FFFFFF'
+    - id: theme_slot1_blue_bg
+      hex: '3C6B8F'
+    - id: theme_slot1_blue_bg_off
+      hex: '194357'
+    - id: theme_slot1_blue_text
+      hex: 'FFFFFF'
+    - id: theme_slot1_teal_bg
+      hex: '3C8F89'
+    - id: theme_slot1_teal_text
+      hex: 'FFFFFF'
+    - id: theme_slot1_indigo_bg
+      hex: '3C428F'
+    - id: theme_slot1_indigo_text
+      hex: 'FFFFFF'
+    - id: theme_slot1_red_bg
+      hex: '8F3C42'
+    - id: theme_slot1_red_text
+      hex: 'FFFFFF'
+    - id: theme_slot1_yellow_bg
+      hex: '8F893C'
+    - id: theme_slot1_yellow_text
+      hex: '0D0D0D'
+    - id: theme_slot1_orange_bg
+      hex: 'A8840F'
+    - id: theme_slot1_orange_text
+      hex: '0D0D0D'
+    - id: theme_slot2_page_text
+      hex: 'FFFFFF'
+    - id: theme_slot2_blue_bg
+      hex: '1E34F7'
+    - id: theme_slot2_blue_bg_off
+      hex: '2D3B91'
+    - id: theme_slot2_blue_text
+      hex: 'FFFFFF'
+    - id: theme_slot2_cyan_bg
+      hex: '1EA0F7'
+    - id: theme_slot2_cyan_bg_off
+      hex: '2D6C91'
+    - id: theme_slot2_cyan_text
+      hex: 'FFFFFF'
+    - id: theme_slot2_violet_bg
+      hex: '751EF7'
+    - id: theme_slot2_violet_bg_off
+      hex: '522D91'
+    - id: theme_slot2_violet_text
+      hex: 'FFFFFF'
+    - id: theme_slot2_orange_bg
+      hex: 'F7751E'
+    - id: theme_slot2_orange_bg_off
+      hex: '91522D'
+    - id: theme_slot2_orange_text
+      hex: '0D0D0D'
+    - id: theme_slot2_lime_bg
+      hex: 'A0F71E'
+    - id: theme_slot2_lime_bg_off
+      hex: '6C912D'
+    - id: theme_slot2_lime_text
+      hex: '0D0D0D'
     - id: sense_primary
       hex: '1D4ED8'   # color for primary actions, highlights, etc. A vibrant blue that stands out and draws attention.
     - id: sense_info
@@ -954,6 +1022,8 @@ color:
 #   hex: 'FFFF00'
 # - id: yellowgreen
 #   hex: '9ACD32'
+
+
 
 
 

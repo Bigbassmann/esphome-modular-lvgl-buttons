@@ -240,7 +240,7 @@ select:
               - lvgl.style.update:
                   id: page_style
                   bg_color: theme_shell_bg
-                  text_color: theme_nav_btn_text_default
+                  text_color: theme_slot0_page_text
               - lvgl.style.update:
                   id: sense_page_style
                   bg_color: theme_shell_bg
@@ -255,47 +255,47 @@ select:
                   bg_color: theme_shell_bg
               - lvgl.style.update:
                   id: time_style
-                  text_color: theme_nav_btn_text_default
+                  text_color: theme_slot0_page_text
               - lvgl.style.update:
                   id: sense_nav_btn_style
-                  bg_color: theme_nav_btn_bg_default
-                  text_color: theme_nav_btn_text_default
-              - lvgl.widget.update: {id: button_ha_freezer_temp, bg_color: sense_tile_sky}
-              - lvgl.widget.update: {id: button_ha_fridge_temp, bg_color: sense_tile_sky}
-              - lvgl.label.update: {id: icon_ha_freezer_temp, text_color: sense_text}
-              - lvgl.label.update: {id: label_ha_freezer_temp, text_color: sense_text}
-              - lvgl.label.update: {id: data_ha_freezer_temp, text_color: sense_text}
-              - lvgl.label.update: {id: icon_ha_fridge_temp, text_color: sense_text}
-              - lvgl.label.update: {id: label_ha_fridge_temp, text_color: sense_text}
-              - lvgl.label.update: {id: data_ha_fridge_temp, text_color: sense_text}
-              - lvgl.widget.update: {id: button_temp_f, bg_color: sense_tile_sky}
-              - lvgl.widget.update: {id: button_ha_tstat_current_temp, bg_color: sense_tile_sky}
-              - lvgl.widget.update: {id: button_ha_osat_temp, bg_color: sense_tile_sky}
-              - lvgl.widget.update: {id: button_ha_kitchen_temp, bg_color: sense_tile_sky}
-              - lvgl.widget.update: {id: button_voc, bg_color: sense_tile_sky}
-              - lvgl.widget.update: {id: button_co2, bg_color: sense_tile_sky}
-              - lvgl.widget.update: {id: button_humid, bg_color: sense_tile_sky}
-              - lvgl.label.update: {id: icon_temp_f, text_color: sense_text}
-              - lvgl.label.update: {id: label_temp_f, text_color: sense_text}
-              - lvgl.label.update: {id: data_temp_f, text_color: sense_text}
-              - lvgl.label.update: {id: icon_ha_tstat_current_temp, text_color: sense_text}
-              - lvgl.label.update: {id: label_ha_tstat_current_temp, text_color: sense_text}
-              - lvgl.label.update: {id: data_ha_tstat_current_temp, text_color: sense_text}
-              - lvgl.label.update: {id: icon_ha_osat_temp, text_color: sense_text}
-              - lvgl.label.update: {id: label_ha_osat_temp, text_color: sense_text}
-              - lvgl.label.update: {id: data_ha_osat_temp, text_color: sense_text}
-              - lvgl.label.update: {id: icon_ha_kitchen_temp, text_color: sense_text}
-              - lvgl.label.update: {id: label_ha_kitchen_temp, text_color: sense_text}
-              - lvgl.label.update: {id: data_ha_kitchen_temp, text_color: sense_text}
-              - lvgl.label.update: {id: icon_voc, text_color: sense_text}
-              - lvgl.label.update: {id: label_voc, text_color: sense_text}
-              - lvgl.label.update: {id: data_voc, text_color: sense_text}
-              - lvgl.label.update: {id: icon_co2, text_color: sense_text}
-              - lvgl.label.update: {id: label_co2, text_color: sense_text}
-              - lvgl.label.update: {id: data_co2, text_color: sense_text}
-              - lvgl.label.update: {id: icon_humid, text_color: sense_text}
-              - lvgl.label.update: {id: label_humid, text_color: sense_text}
-              - lvgl.label.update: {id: data_humid, text_color: sense_text}
+                  bg_color: theme_slot0_nav_btn_bg
+                  text_color: theme_slot0_page_text
+              - lvgl.widget.update: {id: button_ha_freezer_temp, bg_color: theme_slot0_blue_bg}
+              - lvgl.widget.update: {id: button_ha_fridge_temp, bg_color: theme_slot0_blue_bg}
+              - lvgl.label.update: {id: icon_ha_freezer_temp, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: label_ha_freezer_temp, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: data_ha_freezer_temp, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: icon_ha_fridge_temp, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: label_ha_fridge_temp, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: data_ha_fridge_temp, text_color: theme_slot0_blue_text}
+              - lvgl.widget.update: {id: button_temp_f, bg_color: theme_slot0_blue_bg}
+              - lvgl.widget.update: {id: button_ha_tstat_current_temp, bg_color: theme_slot0_blue_bg}
+              - lvgl.widget.update: {id: button_ha_osat_temp, bg_color: theme_slot0_blue_bg}
+              - lvgl.widget.update: {id: button_ha_kitchen_temp, bg_color: theme_slot0_blue_bg}
+              - lvgl.widget.update: {id: button_voc, bg_color: theme_slot0_blue_bg}
+              - lvgl.widget.update: {id: button_co2, bg_color: theme_slot0_blue_bg}
+              - lvgl.widget.update: {id: button_humid, bg_color: theme_slot0_blue_bg}
+              - lvgl.label.update: {id: icon_temp_f, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: label_temp_f, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: data_temp_f, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: icon_ha_tstat_current_temp, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: label_ha_tstat_current_temp, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: data_ha_tstat_current_temp, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: icon_ha_osat_temp, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: label_ha_osat_temp, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: data_ha_osat_temp, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: icon_ha_kitchen_temp, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: label_ha_kitchen_temp, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: data_ha_kitchen_temp, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: icon_voc, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: label_voc, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: data_voc, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: icon_co2, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: label_co2, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: data_co2, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: icon_humid, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: label_humid, text_color: theme_slot0_blue_text}
+              - lvgl.label.update: {id: data_humid, text_color: theme_slot0_blue_text}
               - lvgl.style.update:
                   id: sense_tile_dani_style
                   bg_color: theme_tile_profile1_bg_default
@@ -310,7 +310,7 @@ select:
                   bg_color: theme_tile_climate_bg_default
               - lvgl.style.update:
                   id: sense_tile_fans_style
-                  bg_color: sense_tile_sky
+                  bg_color: theme_slot0_blue_bg
               - lvgl.style.update:
                   id: sense_tile_overrides_style
                   bg_color: theme_tile_overrides_bg_default
@@ -320,23 +320,23 @@ select:
               - lvgl.style.update:
                   id: sense_display_row_btn_style
                   bg_color: theme_display_row_btn_bg_default
-                  text_color: theme_nav_btn_text_default
+                  text_color: theme_slot0_page_text
               - lvgl.style.update:
                   id: sense_menu_cat1_style
                   bg_color: theme_display_row_btn_bg_default
-                  text_color: theme_nav_btn_text_default
+                  text_color: theme_slot0_page_text
               - lvgl.style.update:
                   id: sense_menu_cat2_style
                   bg_color: theme_menu_cat2_bg_default
-                  text_color: theme_nav_btn_text_default
+                  text_color: theme_slot0_page_text
               - lvgl.style.update:
                   id: sense_menu_cat3_style
                   bg_color: theme_menu_cat3_bg_default
-                  text_color: theme_nav_btn_text_default
+                  text_color: theme_slot0_page_text
               - lvgl.style.update:
                   id: sense_menu_cat4_style
                   bg_color: theme_menu_cat4_bg_default
-                  text_color: theme_nav_btn_text_default
+                  text_color: theme_slot0_page_text
         - if:
             condition:
               - lambda: 'return id(sense_theme_slot) == 1;'
@@ -344,7 +344,7 @@ select:
               - lvgl.style.update:
                   id: page_style
                   bg_color: theme_shell_bg
-                  text_color: dani_page_text
+                  text_color: theme_slot1_page_text
               - lvgl.style.update:
                   id: sense_page_style
                   bg_color: theme_shell_bg
@@ -359,88 +359,88 @@ select:
                   bg_color: theme_shell_bg
               - lvgl.style.update:
                   id: time_style
-                  text_color: dani_page_text
+                  text_color: theme_slot1_page_text
               - lvgl.style.update:
                   id: sense_nav_btn_style
-                  bg_color: theme_tile_fans_bg_default
-                  text_color: dani_family_blue_text_on
-              - lvgl.widget.update: {id: button_ha_freezer_temp, bg_color: dani_family_blue_bg_on}
-              - lvgl.widget.update: {id: button_ha_fridge_temp, bg_color: dani_family_blue_bg_on}
-              - lvgl.label.update: {id: icon_ha_freezer_temp, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: label_ha_freezer_temp, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: data_ha_freezer_temp, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: icon_ha_fridge_temp, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: label_ha_fridge_temp, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: data_ha_fridge_temp, text_color: dani_family_blue_text_on}
-              - lvgl.widget.update: {id: button_temp_f, bg_color: dani_family_blue_bg_on}
-              - lvgl.widget.update: {id: button_ha_tstat_current_temp, bg_color: dani_family_blue_bg_on}
-              - lvgl.widget.update: {id: button_ha_osat_temp, bg_color: dani_family_blue_bg_on}
-              - lvgl.widget.update: {id: button_ha_kitchen_temp, bg_color: dani_family_blue_bg_on}
-              - lvgl.widget.update: {id: button_voc, bg_color: dani_family_blue_bg_on}
-              - lvgl.widget.update: {id: button_co2, bg_color: dani_family_blue_bg_on}
-              - lvgl.widget.update: {id: button_humid, bg_color: dani_family_blue_bg_on}
-              - lvgl.label.update: {id: icon_temp_f, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: label_temp_f, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: data_temp_f, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: icon_ha_tstat_current_temp, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: label_ha_tstat_current_temp, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: data_ha_tstat_current_temp, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: icon_ha_osat_temp, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: label_ha_osat_temp, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: data_ha_osat_temp, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: icon_ha_kitchen_temp, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: label_ha_kitchen_temp, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: data_ha_kitchen_temp, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: icon_voc, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: label_voc, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: data_voc, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: icon_co2, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: label_co2, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: data_co2, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: icon_humid, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: label_humid, text_color: dani_family_blue_text_on}
-              - lvgl.label.update: {id: data_humid, text_color: dani_family_blue_text_on}
+                  bg_color: theme_slot1_blue_bg
+                  text_color: theme_slot1_blue_text
+              - lvgl.widget.update: {id: button_ha_freezer_temp, bg_color: theme_slot1_blue_bg}
+              - lvgl.widget.update: {id: button_ha_fridge_temp, bg_color: theme_slot1_blue_bg}
+              - lvgl.label.update: {id: icon_ha_freezer_temp, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: label_ha_freezer_temp, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: data_ha_freezer_temp, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: icon_ha_fridge_temp, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: label_ha_fridge_temp, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: data_ha_fridge_temp, text_color: theme_slot1_blue_text}
+              - lvgl.widget.update: {id: button_temp_f, bg_color: theme_slot1_blue_bg}
+              - lvgl.widget.update: {id: button_ha_tstat_current_temp, bg_color: theme_slot1_blue_bg}
+              - lvgl.widget.update: {id: button_ha_osat_temp, bg_color: theme_slot1_blue_bg}
+              - lvgl.widget.update: {id: button_ha_kitchen_temp, bg_color: theme_slot1_blue_bg}
+              - lvgl.widget.update: {id: button_voc, bg_color: theme_slot1_blue_bg}
+              - lvgl.widget.update: {id: button_co2, bg_color: theme_slot1_blue_bg}
+              - lvgl.widget.update: {id: button_humid, bg_color: theme_slot1_blue_bg}
+              - lvgl.label.update: {id: icon_temp_f, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: label_temp_f, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: data_temp_f, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: icon_ha_tstat_current_temp, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: label_ha_tstat_current_temp, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: data_ha_tstat_current_temp, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: icon_ha_osat_temp, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: label_ha_osat_temp, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: data_ha_osat_temp, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: icon_ha_kitchen_temp, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: label_ha_kitchen_temp, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: data_ha_kitchen_temp, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: icon_voc, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: label_voc, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: data_voc, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: icon_co2, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: label_co2, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: data_co2, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: icon_humid, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: label_humid, text_color: theme_slot1_blue_text}
+              - lvgl.label.update: {id: data_humid, text_color: theme_slot1_blue_text}
               - lvgl.style.update:
                   id: sense_tile_dani_style
-                  bg_color: dani_family_red_bg_on
+                  bg_color: theme_slot1_red_bg
               - lvgl.style.update:
                   id: sense_tile_sleepy_style
-                  bg_color: dani_family_teal_bg_on
+                  bg_color: theme_slot1_teal_bg
               - lvgl.style.update:
                   id: sense_tile_bedtime_style
-                  bg_color: dani_family_indigo_bg_on
+                  bg_color: theme_slot1_indigo_bg
               - lvgl.style.update:
                   id: sense_tile_tstat_style
-                  bg_color: dani_family_yellow_bg_on
+                  bg_color: theme_slot1_yellow_bg
               - lvgl.style.update:
                   id: sense_tile_fans_style
-                  bg_color: theme_tile_fans_bg_default
+                  bg_color: theme_slot1_blue_bg
               - lvgl.style.update:
                   id: sense_tile_overrides_style
-                  bg_color: dani_family_teal_bg_on
+                  bg_color: theme_slot1_teal_bg
               - lvgl.style.update:
                   id: sense_tile_placeholder_style
-                  bg_color: dani_family_blue_bg_off
+                  bg_color: theme_slot1_blue_bg_off
               - lvgl.style.update:
                   id: sense_display_row_btn_style
-                  bg_color: dani_family_orange_bg_on
-                  text_color: dani_family_orange_text_on
+                  bg_color: theme_slot1_orange_bg
+                  text_color: theme_slot1_orange_text
               - lvgl.style.update:
                   id: sense_menu_cat1_style
-                  bg_color: theme_tile_fans_bg_default
-                  text_color: dani_family_blue_text_on
+                  bg_color: theme_slot1_blue_bg
+                  text_color: theme_slot1_blue_text
               - lvgl.style.update:
                   id: sense_menu_cat2_style
-                  bg_color: dani_family_teal_bg_on
-                  text_color: dani_family_teal_text_on
+                  bg_color: theme_slot1_teal_bg
+                  text_color: theme_slot1_teal_text
               - lvgl.style.update:
                   id: sense_menu_cat3_style
-                  bg_color: dani_family_orange_bg_on
-                  text_color: dani_family_orange_text_on
+                  bg_color: theme_slot1_orange_bg
+                  text_color: theme_slot1_orange_text
               - lvgl.style.update:
                   id: sense_menu_cat4_style
-                  bg_color: dani_family_indigo_bg_on
-                  text_color: dani_family_indigo_text_on
+                  bg_color: theme_slot1_indigo_bg
+                  text_color: theme_slot1_indigo_text
         - if:
             condition:
               - lambda: 'return id(sense_theme_slot) == 2;'
@@ -448,105 +448,105 @@ select:
               - lvgl.style.update:
                   id: page_style
                   bg_color: theme_shell_bg
-                  text_color: split_page_text
+                  text_color: theme_slot2_page_text
               - lvgl.style.update:
                   id: sense_page_style
                   bg_color: theme_shell_bg
               - lvgl.style.update:
                   id: sense_topbar_style
                   bg_color: theme_shell_bg
-                  border_color: split_family_blue_bg_on
+                  border_color: theme_slot2_blue_bg
               - lvgl.style.update:
                   id: sense_nav_bar_style
                   bg_color: theme_nav_bar_bg
-                  border_color: split_family_blue_bg_on
+                  border_color: theme_slot2_blue_bg
               - lvgl.style.update:
                   id: sense_card_flat_style
                   bg_color: theme_shell_bg
               - lvgl.style.update:
                   id: time_style
-                  text_color: split_page_text
+                  text_color: theme_slot2_page_text
               - lvgl.style.update:
                   id: sense_nav_btn_style
-                  bg_color: split_family_blue_bg_on
-                  text_color: split_page_text
-              - lvgl.widget.update: {id: button_ha_freezer_temp, bg_color: split_family_blue_bg_on}
-              - lvgl.widget.update: {id: button_ha_fridge_temp, bg_color: split_family_blue_bg_on}
-              - lvgl.label.update: {id: icon_ha_freezer_temp, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: label_ha_freezer_temp, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: data_ha_freezer_temp, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: icon_ha_fridge_temp, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: label_ha_fridge_temp, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: data_ha_fridge_temp, text_color: split_family_blue_text_on}
-              - lvgl.widget.update: {id: button_temp_f, bg_color: split_family_blue_bg_on}
-              - lvgl.widget.update: {id: button_ha_tstat_current_temp, bg_color: split_family_blue_bg_on}
-              - lvgl.widget.update: {id: button_ha_osat_temp, bg_color: split_family_blue_bg_on}
-              - lvgl.widget.update: {id: button_ha_kitchen_temp, bg_color: split_family_blue_bg_on}
-              - lvgl.widget.update: {id: button_voc, bg_color: split_family_blue_bg_on}
-              - lvgl.widget.update: {id: button_co2, bg_color: split_family_blue_bg_on}
-              - lvgl.widget.update: {id: button_humid, bg_color: split_family_blue_bg_on}
-              - lvgl.label.update: {id: icon_temp_f, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: label_temp_f, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: data_temp_f, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: icon_ha_tstat_current_temp, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: label_ha_tstat_current_temp, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: data_ha_tstat_current_temp, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: icon_ha_osat_temp, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: label_ha_osat_temp, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: data_ha_osat_temp, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: icon_ha_kitchen_temp, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: label_ha_kitchen_temp, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: data_ha_kitchen_temp, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: icon_voc, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: label_voc, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: data_voc, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: icon_co2, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: label_co2, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: data_co2, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: icon_humid, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: label_humid, text_color: split_family_blue_text_on}
-              - lvgl.label.update: {id: data_humid, text_color: split_family_blue_text_on}
+                  bg_color: theme_slot2_blue_bg
+                  text_color: theme_slot2_page_text
+              - lvgl.widget.update: {id: button_ha_freezer_temp, bg_color: theme_slot2_blue_bg}
+              - lvgl.widget.update: {id: button_ha_fridge_temp, bg_color: theme_slot2_blue_bg}
+              - lvgl.label.update: {id: icon_ha_freezer_temp, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: label_ha_freezer_temp, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: data_ha_freezer_temp, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: icon_ha_fridge_temp, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: label_ha_fridge_temp, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: data_ha_fridge_temp, text_color: theme_slot2_blue_text}
+              - lvgl.widget.update: {id: button_temp_f, bg_color: theme_slot2_blue_bg}
+              - lvgl.widget.update: {id: button_ha_tstat_current_temp, bg_color: theme_slot2_blue_bg}
+              - lvgl.widget.update: {id: button_ha_osat_temp, bg_color: theme_slot2_blue_bg}
+              - lvgl.widget.update: {id: button_ha_kitchen_temp, bg_color: theme_slot2_blue_bg}
+              - lvgl.widget.update: {id: button_voc, bg_color: theme_slot2_blue_bg}
+              - lvgl.widget.update: {id: button_co2, bg_color: theme_slot2_blue_bg}
+              - lvgl.widget.update: {id: button_humid, bg_color: theme_slot2_blue_bg}
+              - lvgl.label.update: {id: icon_temp_f, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: label_temp_f, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: data_temp_f, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: icon_ha_tstat_current_temp, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: label_ha_tstat_current_temp, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: data_ha_tstat_current_temp, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: icon_ha_osat_temp, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: label_ha_osat_temp, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: data_ha_osat_temp, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: icon_ha_kitchen_temp, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: label_ha_kitchen_temp, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: data_ha_kitchen_temp, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: icon_voc, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: label_voc, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: data_voc, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: icon_co2, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: label_co2, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: data_co2, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: icon_humid, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: label_humid, text_color: theme_slot2_blue_text}
+              - lvgl.label.update: {id: data_humid, text_color: theme_slot2_blue_text}
               - lvgl.style.update:
                   id: sense_tile_dani_style
-                  bg_color: split_family_orange_bg_on
+                  bg_color: theme_slot2_orange_bg
               - lvgl.style.update:
                   id: sense_tile_sleepy_style
-                  bg_color: split_family_cyan_bg_on
+                  bg_color: theme_slot2_cyan_bg
               - lvgl.style.update:
                   id: sense_tile_bedtime_style
-                  bg_color: split_family_violet_bg_on
+                  bg_color: theme_slot2_violet_bg
               - lvgl.style.update:
                   id: sense_tile_tstat_style
-                  bg_color: split_family_lime_bg_on
+                  bg_color: theme_slot2_lime_bg
               - lvgl.style.update:
                   id: sense_tile_fans_style
-                  bg_color: split_family_blue_bg_on
+                  bg_color: theme_slot2_blue_bg
               - lvgl.style.update:
                   id: sense_tile_overrides_style
-                  bg_color: split_family_cyan_bg_on
+                  bg_color: theme_slot2_cyan_bg
               - lvgl.style.update:
                   id: sense_tile_placeholder_style
-                  bg_color: split_family_blue_bg_off
+                  bg_color: theme_slot2_blue_bg_off
               - lvgl.style.update:
                   id: sense_display_row_btn_style
-                  bg_color: split_family_blue_bg_on
-                  text_color: split_page_text
+                  bg_color: theme_slot2_blue_bg
+                  text_color: theme_slot2_page_text
               - lvgl.style.update:
                   id: sense_menu_cat1_style
-                  bg_color: split_family_orange_bg_on
-                  text_color: split_family_orange_text_on
+                  bg_color: theme_slot2_orange_bg
+                  text_color: theme_slot2_orange_text
               - lvgl.style.update:
                   id: sense_menu_cat2_style
-                  bg_color: split_family_cyan_bg_on
-                  text_color: split_page_text
+                  bg_color: theme_slot2_cyan_bg
+                  text_color: theme_slot2_page_text
               - lvgl.style.update:
                   id: sense_menu_cat3_style
-                  bg_color: split_family_blue_bg_on
-                  text_color: split_page_text
+                  bg_color: theme_slot2_blue_bg
+                  text_color: theme_slot2_page_text
               - lvgl.style.update:
                   id: sense_menu_cat4_style
-                  bg_color: split_family_violet_bg_on
-                  text_color: split_page_text
+                  bg_color: theme_slot2_violet_bg
+                  text_color: theme_slot2_page_text
         - if:
             condition:
               - lambda: 'return id(sense_theme_slot) == 3;'
@@ -967,6 +967,7 @@ select:
               - lvgl.style.update: {id: sense_menu_cat3_style, bg_color: split_family_orange_bg_on, text_color: split_family_orange_text_on}
               - lvgl.style.update: {id: sense_menu_cat4_style, bg_color: split_family_cyan_bg_on, text_color: split_family_cyan_text_on}
         - lvgl.widget.redraw
+
 
 
 
