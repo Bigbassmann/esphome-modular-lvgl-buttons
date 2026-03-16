@@ -72,7 +72,6 @@ packages:
   info_screen: !include ../pages/info-sensecap.yaml
 
   thermostat_v2: !include ../pages/thermostat_v2_lvgl-sensecap-dani.yaml
-  # core_boot: !include ../common/core_boot-sensecap.yaml
   # rp2040_last_seen_ms global is now declared in ../common/sensecap_indicator_sensors-sensecap.yaml
   ha_entities_sensecap: !include ../common/ha_entities-sensecap-dani.yaml
   page_mapping_sensecap: !include ../common/page_mapping-sensecap.yaml
@@ -527,6 +526,7 @@ packages:
       secondary_entity_id: ${ent_outdoor_garage_lights}
       on_bg_color: ${ui_switch_outdoor_on_bg}
       off_bg_color: ${ui_switch_outdoor_off_bg}
+
 
 
 
