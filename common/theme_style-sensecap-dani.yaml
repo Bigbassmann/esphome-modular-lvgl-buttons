@@ -1,4 +1,4 @@
-# FILE EDIT GUIDE (SenseCAP)
+﻿# FILE EDIT GUIDE (SenseCAP)
 # Role: Shared defaults/tokens/mappings/include wiring.
 # Update here for:
 # - Color tokens and family palettes (common/color-*.yaml).
@@ -28,7 +28,7 @@ lvgl:
       border_width: 0
       scrollable: false
       text_font: $text_font
-      text_color: $label_off_color
+      text_color: ${ui_base_label_off_color}
       # outline_width: 1
       # outline_color: red
     image:
@@ -49,7 +49,7 @@ lvgl:
       press_lock: false
       scroll_on_focus: true
       bg_opa: cover
-      bg_color: $button_off_color
+      bg_color: ${ui_base_button_off_color}
       # outline_width: 1
       # outline_color: red
 
@@ -63,7 +63,7 @@ lvgl:
     - id: time_style
       scrollbar_mode: "OFF"
       text_font: $text_font
-      text_color: $label_on_color
+      text_color: ${ui_base_label_on_color}
       align: center
 
     # SenseCAP-inspired shell styles (additive)

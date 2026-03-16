@@ -11,6 +11,7 @@ This file documents the current working pattern for this fork and the immediate 
 - Unused experimental files were moved under `archive/`
 - Instance mapping is centralized in `common/package_instance_mapping-sensecap-dani.yaml`
 - Page title/text defaults are centralized as `ui_page_*` vars and mapped to Dani family tokens
+- First cleanup pass moved reusable page/button template defaults onto canonical `ui_base_*` / `ui_sensor_*` tokens so structural defaults now resolve from one source more consistently
 
 ## Repo Rules (SenseCAP Fork)
 
@@ -223,6 +224,11 @@ The SenseCAP fork is still actively cleaning up both:
 - page-level UI consistency (tile behavior, spacing, visibility defaults, and state styling)
 
 This means layout/schema may continue to evolve while keeping root validation green.
+
+Current intentional theme exceptions still to clean up:
+
+- `pages/fans_grid-sensecap-dani.yaml` now uses the canonical fan token set without local theme-slot override blocks
+- `pages/light_color-sensecap.yaml` is intentionally exempt for now and still contains hardcoded color literals
 
 ### Specific page layouts currently in use
 

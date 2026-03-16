@@ -1,4 +1,4 @@
-# =============================================================================
+﻿# =============================================================================
 # PAGE EDIT GUIDE (SenseCAP)
 # - Color tokens: common/color-sensecap-dani.yaml.
 # - Entity/UI defaults (text/icon/value/on-off): common/ha_entities-sensecap-dani.yaml.
@@ -26,7 +26,7 @@ substitutions:
   ui_overrides_dani_off_icon: "${ui_dani_off_icon}"
   ui_overrides_dani_value_on: "${ui_dani_value_on}"
   ui_overrides_dani_value_off: "${ui_dani_value_off}"
-  ui_overrides_dani_icon_on_color: "$icon_on_color"
+  ui_overrides_dani_icon_on_color: "${ui_base_icon_on_color}"
   ui_overrides_dani_icon_off_color: "${ui_page_text_muted_color}"
   ui_overrides_dani_text_on_color: "${ui_dani_text_on_color}"
   ui_overrides_dani_text_off_color: "${ui_dani_text_off_color}"

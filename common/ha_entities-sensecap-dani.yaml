@@ -1,4 +1,4 @@
-# FILE EDIT GUIDE (SenseCAP)
+﻿# FILE EDIT GUIDE (SenseCAP)
 # Role: Shared defaults/tokens/mappings/include wiring.
 # Update here for:
 # - Color tokens and family palettes (common/color-*.yaml).
@@ -25,8 +25,8 @@ substitutions:
   ent_cleaners_toggle: "input_boolean.cleaners_toggle"
   ent_dani_mode_on: "input_boolean.dani_mode_on"
   # Base UI color defaults (token-driven)
-  ui_base_text_color: "white"
-  ui_base_bg_color: "black"
+  ui_base_text_color: "sense_text"
+  ui_base_bg_color: "sense_bg"
   ui_base_button_on_color: "ep_orange"
   ui_base_button_off_color: "very_dark_gray"
   ui_base_icon_on_color: "yellow"

@@ -1,4 +1,4 @@
-# FILE EDIT GUIDE (SenseCAP)
+﻿# FILE EDIT GUIDE (SenseCAP)
 # Role: Reusable button template (structure + behavior hooks).
 # Update here for:
 # - Size/shape defaults: width/height/radius/padding/alignment.
@@ -75,32 +75,32 @@ binary_sensor:
           then:
             - lvgl.widget.update:
                 id: button_${uid}
-                bg_color: ${on_bg_color | default("$button_on_color")}
+                bg_color: ${on_bg_color | default("${ui_base_button_on_color}")}
             - lvgl.widget.update:
                 id: icon_${uid}
-                text_color: $icon_on_color
+                text_color: ${ui_base_icon_on_color}
             - lvgl.widget.update:
                 id: label_${uid}
-                text_color: $label_on_color
+                text_color: ${ui_base_label_on_color}
             - lvgl.label.update:
                 id: value_${uid}
                 text: ${value_on_text | default("ON")}
             - lvgl.widget.update:
                 id: value_${uid}
-                text_color: $label_on_color
+                text_color: ${ui_base_label_on_color}
           else:
             - lvgl.widget.update:
                 id: button_${uid}
-                bg_color: ${off_bg_color | default("$button_off_color")}
+                bg_color: ${off_bg_color | default("${ui_base_button_off_color}")}
             - lvgl.widget.update:
                 id: icon_${uid}
-                text_color: $icon_off_color
+                text_color: ${ui_base_icon_off_color}
             - lvgl.widget.update:
                 id: label_${uid}
-                text_color: $label_off_color
+                text_color: ${ui_base_label_off_color}
             - lvgl.label.update:
                 id: value_${uid}
                 text: ${value_off_text | default("OFF")}
             - lvgl.widget.update:
                 id: value_${uid}
-                text_color: $label_off_color
+                text_color: ${ui_base_label_off_color}

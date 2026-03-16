@@ -1,4 +1,4 @@
-# FILE EDIT GUIDE (SenseCAP)
+﻿# FILE EDIT GUIDE (SenseCAP)
 # Role: Shared defaults/tokens/mappings/include wiring.
 # Update here for:
 # - Color tokens and family palettes (common/color-*.yaml).
@@ -18,8 +18,8 @@ substitutions:
   ui_home_dani_off_icon: "${ui_dani_off_icon}"
   ui_home_dani_value_on: "${ui_dani_value_on}"
   ui_home_dani_value_off: "${ui_dani_value_off}"
-  ui_home_dani_icon_on_color: "$icon_on_color"
-  ui_home_dani_icon_off_color: "sense_text_muted"
+  ui_home_dani_icon_on_color: "${ui_base_icon_on_color}"
+  ui_home_dani_icon_off_color: "${ui_page_text_muted_color}"
   ui_home_dani_text_on_color: "${ui_dani_text_on_color}"
   ui_home_dani_text_off_color: "${ui_dani_text_off_color}"
   ui_home_dani_value_on_color: "${ui_dani_value_on_color}"
@@ -37,8 +37,8 @@ substitutions:
   ui_home_sleepy_off_icon: "${ui_sleepy_off_icon}"
   ui_home_sleepy_value_on: "${ui_sleepy_value_on}"
   ui_home_sleepy_value_off: "${ui_sleepy_value_off}"
-  ui_home_sleepy_icon_on_color: "$icon_on_color"
-  ui_home_sleepy_icon_off_color: "sense_text_muted"
+  ui_home_sleepy_icon_on_color: "${ui_base_icon_on_color}"
+  ui_home_sleepy_icon_off_color: "${ui_page_text_muted_color}"
   ui_home_sleepy_text_on_color: "${ui_sleepy_text_on_color}"
   ui_home_sleepy_text_off_color: "${ui_sleepy_text_off_color}"
   ui_home_sleepy_value_on_color: "${ui_sleepy_value_on_color}"
@@ -56,8 +56,8 @@ substitutions:
   ui_home_bedtime_off_icon: "${ui_bedtime_off_icon}"
   ui_home_bedtime_value_on: "${ui_bedtime_value_on}"
   ui_home_bedtime_value_off: "${ui_bedtime_value_off}"
-  ui_home_bedtime_icon_on_color: "$icon_on_color"
-  ui_home_bedtime_icon_off_color: "sense_text_muted"
+  ui_home_bedtime_icon_on_color: "${ui_base_icon_on_color}"
+  ui_home_bedtime_icon_off_color: "${ui_page_text_muted_color}"
   ui_home_bedtime_text_on_color: "${ui_bedtime_text_on_color}"
   ui_home_bedtime_text_off_color: "${ui_bedtime_text_off_color}"
   ui_home_bedtime_value_on_color: "${ui_bedtime_value_on_color}"
@@ -69,23 +69,23 @@ substitutions:
   # Home page nav tile mapping (row 1)
   ui_home_tstat_icon: "$mdi_thermometer"
   ui_home_tstat_text: "Thermostat"
-  ui_home_tstat_icon_color: "sense_bg"
-  ui_home_tstat_text_color: "sense_bg"
+  ui_home_tstat_icon_color: "${ui_base_bg_color}"
+  ui_home_tstat_text_color: "${ui_base_bg_color}"
 
   ui_home_fans_icon: "$mdi_fan"
   ui_home_fans_text: "Fans"
-  ui_home_fans_icon_color: "sense_text"
-  ui_home_fans_text_color: "sense_text"
+  ui_home_fans_icon_color: "${ui_page_text_color}"
+  ui_home_fans_text_color: "${ui_page_text_color}"
 
   ui_home_overrides_icon: "$mdi_tune"
   ui_home_overrides_text: "Overrides"
-  ui_home_overrides_icon_color: "sense_bg"
-  ui_home_overrides_text_color: "sense_bg"
+  ui_home_overrides_icon_color: "${ui_base_bg_color}"
+  ui_home_overrides_text_color: "${ui_base_bg_color}"
 
   # Home page placeholder mapping (row 2)
   ui_home_placeholder_icon: "$mdi_dots_horizontal"
-  ui_home_placeholder_icon_color: "sense_tile_placeholder_text"
-  ui_home_placeholder_text_color: "sense_tile_placeholder_text"
+  ui_home_placeholder_icon_color: "${ui_page_text_muted_color}"
+  ui_home_placeholder_text_color: "${ui_page_text_muted_color}"
   ui_home_placeholder_1_text: "Placeholder 1"
   ui_home_placeholder_2_text: "Placeholder 2"
   ui_home_placeholder_3_text: "Placeholder 3"
