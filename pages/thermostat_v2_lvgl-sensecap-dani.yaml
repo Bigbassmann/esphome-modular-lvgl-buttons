@@ -1,4 +1,4 @@
-﻿# =============================================================================
+# =============================================================================
 # PAGE EDIT GUIDE (SenseCAP)
 # - Color tokens: common/color-sensecap-dani.yaml.
 # - Entity/UI defaults (text/icon/value/on-off): common/ha_entities-sensecap-dani.yaml.
@@ -14,7 +14,6 @@
 
 substitutions:
   tstat_title_font: "${ui_page_title_font}"
-  tstat_title_color: "${ui_tstat_title_color}"
   tstat_title_y: "${ui_page_title_y_offset}"
 
 globals:
@@ -30,7 +29,7 @@ globals:
 lvgl:
   pages:
     - id: page_thermostat_v2
-      styles: sense_page_style
+      styles: page_style
       on_load:
         - lambda: 'id(tstat_page_active) = true;'
         - component.update: ha_tstat_current_temp
@@ -55,14 +54,14 @@ lvgl:
                   align: TOP_MID
                   y: -26
                   text_font: ${tstat_title_font}
-                  text_color: ${tstat_title_color}
+                  styles: sense_text_title_style
               - label:
                   text: "HVAC Status"
                   align: TOP_LEFT
                   x: 10   # 20
                   y: 50    # 96
                   text_font: montserrat_16     # 14
-                  text_color: ${ui_page_text_muted_color}
+                  styles: sense_text_muted_style
 
               - label:
                   text: "Fan Status"
@@ -70,7 +69,7 @@ lvgl:
                   x: -10     # -20
                   y: 50      # 96
                   text_font: montserrat_16     # 14
-                  text_color: ${ui_page_text_muted_color}
+                  styles: sense_text_muted_style
 
               - label:
                   id: tstat2_hvac_action_label
@@ -79,7 +78,7 @@ lvgl:
                   x: 10   # 20
                   y: 70     # 114
                   text_font: montserrat_16
-                  text_color: ${ui_page_text_color}
+                  styles: sense_text_primary_style
 
               - label:
                   id: tstat2_fan_state_label
@@ -88,7 +87,7 @@ lvgl:
                   x: -10     # -20
                   y: 70      # 114
                   text_font: montserrat_16
-                  text_color: ${ui_page_text_color}
+                  styles: sense_text_primary_style
 
 
               - arc:
@@ -145,7 +144,7 @@ lvgl:
                   x: 0
                   y: 170
                   text_font: montserrat_16    # 14
-                  text_color: ${ui_page_text_muted_color}
+                  styles: sense_text_muted_style
 
               - label:
                   id: tstat2_current_value
@@ -154,7 +153,7 @@ lvgl:
                   x: 0
                   y: 188
                   text_font: montserrat_20
-                  text_color: ${ui_page_text_color}
+                  styles: sense_text_primary_style
 
               - label:
                   text: "Target"
@@ -162,7 +161,7 @@ lvgl:
                   x: 0
                   y: 214
                   text_font: montserrat_16     # 14
-                  text_color: ${ui_page_text_muted_color}
+                  styles: sense_text_muted_style
 
               - label:
                   id: tstat2_target_value
@@ -171,7 +170,7 @@ lvgl:
                   x: 0
                   y: 232
                   text_font: montserrat_20
-                  text_color: ${ui_page_text_color}
+                  styles: sense_text_primary_style
 
               - label:
                   text: "Humidity"
@@ -179,7 +178,7 @@ lvgl:
                   x: 0
                   y: 258
                   text_font: montserrat_16     # 14
-                  text_color: ${ui_page_text_muted_color}
+                  styles: sense_text_muted_style
 
               - label:
                   id: tstat2_humidity_value
@@ -188,7 +187,7 @@ lvgl:
                   x: 0
                   y: 276
                   text_font: montserrat_16
-                  text_color: ${ui_page_text_muted_color}
+                  styles: sense_text_muted_style
 
               - label:
                   text: "HVAC Mode"
@@ -196,7 +195,7 @@ lvgl:
                   x: 0    # 24    # 28
                   y: -42   # 42
                   text_font: montserrat_14
-                  text_color: ${ui_page_text_color}
+                  styles: sense_text_primary_style
 
               - dropdown:
                   id: tstat2_mode_dropdown
@@ -251,7 +250,7 @@ lvgl:
                   x: 0    # -24    # -28
                   y: -42    # 42
                   text_font: montserrat_14
-                  text_color: ${ui_page_text_color}
+                  styles: sense_text_primary_style
 
               - dropdown:
                   id: tstat2_fan_dropdown

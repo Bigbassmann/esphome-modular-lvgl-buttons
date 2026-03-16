@@ -39,7 +39,7 @@ substitutions:
 lvgl:
   pages:
     - id: ${sense_page_overrides_id}
-      styles: sense_page_style
+      styles: page_style
       layout:
         type: grid
         grid_rows:
@@ -79,7 +79,6 @@ lvgl:
             grid_cell_y_align: center
             y: ${overrides_title_y}
             text_font: ${overrides_title_font}
-            text_color: ${overrides_title_color}
         - container:
             id: overrides_btn_cleaners
             grid_cell_row_pos: 1
@@ -98,6 +97,7 @@ lvgl:
                   pad_right: 8
                   pad_top: 4
                   pad_bottom: 4
+                  styles: sense_menu_cat1_style
                   layout:
                     type: grid
                     grid_rows: [fr(1)]
@@ -150,6 +150,7 @@ lvgl:
                   pad_right: 8
                   pad_top: 4
                   pad_bottom: 4
+                  styles: sense_menu_cat2_style
                   layout:
                     type: grid
                     grid_rows: [fr(1)]
@@ -202,6 +203,7 @@ lvgl:
                   pad_right: 8
                   pad_top: 4
                   pad_bottom: 4
+                  styles: sense_menu_cat4_style
                   layout:
                     type: grid
                     grid_rows: [fr(1)]
@@ -254,6 +256,7 @@ lvgl:
                   pad_right: 8
                   pad_top: 4
                   pad_bottom: 4
+                  styles: sense_menu_cat1_style
                   layout:
                     type: grid
                     grid_rows: [fr(1)]
@@ -306,6 +309,7 @@ lvgl:
                   pad_right: 8
                   pad_top: 4
                   pad_bottom: 4
+                  styles: sense_menu_cat3_style
                   layout:
                     type: grid
                     grid_rows: [fr(1)]
@@ -358,6 +362,7 @@ lvgl:
                   pad_right: 8
                   pad_top: 4
                   pad_bottom: 4
+                  styles: sense_menu_cat2_style
                   layout:
                     type: grid
                     grid_rows: [fr(1)]
@@ -410,6 +415,7 @@ lvgl:
                   pad_right: 8
                   pad_top: 4
                   pad_bottom: 4
+                  styles: sense_menu_cat4_style
                   layout:
                     type: grid
                     grid_rows: [fr(1)]
@@ -462,6 +468,7 @@ lvgl:
                   pad_right: 8
                   pad_top: 4
                   pad_bottom: 4
+                  styles: sense_menu_cat1_style
                   layout:
                     type: grid
                     grid_rows: [fr(1)]
@@ -506,9 +513,6 @@ binary_sensor:
           condition:
             - binary_sensor.is_on: widget_sensor_overrides_btn_cleaners
           then:
-            - lvgl.widget.update:
-                id: button_overrides_btn_cleaners
-                bg_color: ${ui_overrides_cleaners_on_bg}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_cleaners_on_icon | default("")}").size() > 0;'
@@ -516,18 +520,9 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_overrides_btn_cleaners
                       text: ${ui_overrides_cleaners_on_icon}
-            - lvgl.widget.update:
-                id: icon_overrides_btn_cleaners
-                text_color: ${ui_overrides_cleaners_icon_on_color}
-            - lvgl.widget.update:
-                id: label_overrides_btn_cleaners
-                text_color: ${ui_overrides_cleaners_text_on_color}
             - lvgl.label.update:
                 id: value_overrides_btn_cleaners
                 text: ${ui_overrides_cleaners_value_on}
-            - lvgl.widget.update:
-                id: value_overrides_btn_cleaners
-                text_color: ${ui_overrides_cleaners_value_on_color}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_cleaners_show_icon | default("true")}") == "true";'
@@ -562,9 +557,6 @@ binary_sensor:
                       id: value_overrides_btn_cleaners
                       hidden: true
           else:
-            - lvgl.widget.update:
-                id: button_overrides_btn_cleaners
-                bg_color: ${ui_overrides_cleaners_off_bg}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_cleaners_off_icon | default("")}").size() > 0;'
@@ -572,18 +564,9 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_overrides_btn_cleaners
                       text: ${ui_overrides_cleaners_off_icon}
-            - lvgl.widget.update:
-                id: icon_overrides_btn_cleaners
-                text_color: ${ui_overrides_cleaners_icon_off_color}
-            - lvgl.widget.update:
-                id: label_overrides_btn_cleaners
-                text_color: ${ui_overrides_cleaners_text_off_color}
             - lvgl.label.update:
                 id: value_overrides_btn_cleaners
                 text: ${ui_overrides_cleaners_value_off}
-            - lvgl.widget.update:
-                id: value_overrides_btn_cleaners
-                text_color: ${ui_overrides_cleaners_value_off_color}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_cleaners_show_icon | default("true")}") == "true";'
@@ -626,9 +609,6 @@ binary_sensor:
           condition:
             - binary_sensor.is_on: widget_sensor_overrides_btn_lock
           then:
-            - lvgl.widget.update:
-                id: button_overrides_btn_lock
-                bg_color: ${ui_overrides_lock_on_bg}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_lock_on_icon | default("")}").size() > 0;'
@@ -636,18 +616,9 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_overrides_btn_lock
                       text: ${ui_overrides_lock_on_icon}
-            - lvgl.widget.update:
-                id: icon_overrides_btn_lock
-                text_color: ${ui_overrides_lock_icon_on_color}
-            - lvgl.widget.update:
-                id: label_overrides_btn_lock
-                text_color: ${ui_overrides_lock_text_on_color}
             - lvgl.label.update:
                 id: value_overrides_btn_lock
                 text: ${ui_overrides_lock_value_on}
-            - lvgl.widget.update:
-                id: value_overrides_btn_lock
-                text_color: ${ui_overrides_lock_value_on_color}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_lock_show_icon | default("true")}") == "true";'
@@ -682,9 +653,6 @@ binary_sensor:
                       id: value_overrides_btn_lock
                       hidden: true
           else:
-            - lvgl.widget.update:
-                id: button_overrides_btn_lock
-                bg_color: ${ui_overrides_lock_off_bg}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_lock_off_icon | default("")}").size() > 0;'
@@ -692,18 +660,9 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_overrides_btn_lock
                       text: ${ui_overrides_lock_off_icon}
-            - lvgl.widget.update:
-                id: icon_overrides_btn_lock
-                text_color: ${ui_overrides_lock_icon_off_color}
-            - lvgl.widget.update:
-                id: label_overrides_btn_lock
-                text_color: ${ui_overrides_lock_text_off_color}
             - lvgl.label.update:
                 id: value_overrides_btn_lock
                 text: ${ui_overrides_lock_value_off}
-            - lvgl.widget.update:
-                id: value_overrides_btn_lock
-                text_color: ${ui_overrides_lock_value_off_color}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_lock_show_icon | default("true")}") == "true";'
@@ -746,9 +705,6 @@ binary_sensor:
           condition:
             - binary_sensor.is_on: widget_sensor_overrides_btn_tod
           then:
-            - lvgl.widget.update:
-                id: button_overrides_btn_tod
-                bg_color: ${ui_overrides_tod_on_bg}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_tod_on_icon | default("")}").size() > 0;'
@@ -756,18 +712,9 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_overrides_btn_tod
                       text: ${ui_overrides_tod_on_icon}
-            - lvgl.widget.update:
-                id: icon_overrides_btn_tod
-                text_color: ${ui_overrides_tod_icon_on_color}
-            - lvgl.widget.update:
-                id: label_overrides_btn_tod
-                text_color: ${ui_overrides_tod_text_on_color}
             - lvgl.label.update:
                 id: value_overrides_btn_tod
                 text: ${ui_overrides_tod_value_on}
-            - lvgl.widget.update:
-                id: value_overrides_btn_tod
-                text_color: ${ui_overrides_tod_value_on_color}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_tod_show_icon | default("true")}") == "true";'
@@ -802,9 +749,6 @@ binary_sensor:
                       id: value_overrides_btn_tod
                       hidden: true
           else:
-            - lvgl.widget.update:
-                id: button_overrides_btn_tod
-                bg_color: ${ui_overrides_tod_off_bg}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_tod_off_icon | default("")}").size() > 0;'
@@ -812,18 +756,9 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_overrides_btn_tod
                       text: ${ui_overrides_tod_off_icon}
-            - lvgl.widget.update:
-                id: icon_overrides_btn_tod
-                text_color: ${ui_overrides_tod_icon_off_color}
-            - lvgl.widget.update:
-                id: label_overrides_btn_tod
-                text_color: ${ui_overrides_tod_text_off_color}
             - lvgl.label.update:
                 id: value_overrides_btn_tod
                 text: ${ui_overrides_tod_value_off}
-            - lvgl.widget.update:
-                id: value_overrides_btn_tod
-                text_color: ${ui_overrides_tod_value_off_color}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_tod_show_icon | default("true")}") == "true";'
@@ -866,9 +801,6 @@ binary_sensor:
           condition:
             - binary_sensor.is_on: widget_sensor_overrides_btn_motion
           then:
-            - lvgl.widget.update:
-                id: button_overrides_btn_motion
-                bg_color: ${ui_overrides_motion_on_bg}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_motion_on_icon | default("")}").size() > 0;'
@@ -876,18 +808,9 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_overrides_btn_motion
                       text: ${ui_overrides_motion_on_icon}
-            - lvgl.widget.update:
-                id: icon_overrides_btn_motion
-                text_color: ${ui_overrides_motion_icon_on_color}
-            - lvgl.widget.update:
-                id: label_overrides_btn_motion
-                text_color: ${ui_overrides_motion_text_on_color}
             - lvgl.label.update:
                 id: value_overrides_btn_motion
                 text: ${ui_overrides_motion_value_on}
-            - lvgl.widget.update:
-                id: value_overrides_btn_motion
-                text_color: ${ui_overrides_motion_value_on_color}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_motion_show_icon | default("true")}") == "true";'
@@ -922,9 +845,6 @@ binary_sensor:
                       id: value_overrides_btn_motion
                       hidden: true
           else:
-            - lvgl.widget.update:
-                id: button_overrides_btn_motion
-                bg_color: ${ui_overrides_motion_off_bg}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_motion_off_icon | default("")}").size() > 0;'
@@ -932,18 +852,9 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_overrides_btn_motion
                       text: ${ui_overrides_motion_off_icon}
-            - lvgl.widget.update:
-                id: icon_overrides_btn_motion
-                text_color: ${ui_overrides_motion_icon_off_color}
-            - lvgl.widget.update:
-                id: label_overrides_btn_motion
-                text_color: ${ui_overrides_motion_text_off_color}
             - lvgl.label.update:
                 id: value_overrides_btn_motion
                 text: ${ui_overrides_motion_value_off}
-            - lvgl.widget.update:
-                id: value_overrides_btn_motion
-                text_color: ${ui_overrides_motion_value_off_color}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_motion_show_icon | default("true")}") == "true";'
@@ -986,9 +897,6 @@ binary_sensor:
           condition:
             - binary_sensor.is_on: widget_sensor_overrides_btn_entry_motion
           then:
-            - lvgl.widget.update:
-                id: button_overrides_btn_entry_motion
-                bg_color: ${ui_overrides_entry_motion_on_bg}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_entry_motion_on_icon | default("")}").size() > 0;'
@@ -996,18 +904,9 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_overrides_btn_entry_motion
                       text: ${ui_overrides_entry_motion_on_icon}
-            - lvgl.widget.update:
-                id: icon_overrides_btn_entry_motion
-                text_color: ${ui_overrides_entry_motion_icon_on_color}
-            - lvgl.widget.update:
-                id: label_overrides_btn_entry_motion
-                text_color: ${ui_overrides_entry_motion_text_on_color}
             - lvgl.label.update:
                 id: value_overrides_btn_entry_motion
                 text: ${ui_overrides_entry_motion_value_on}
-            - lvgl.widget.update:
-                id: value_overrides_btn_entry_motion
-                text_color: ${ui_overrides_entry_motion_value_on_color}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_entry_motion_show_icon | default("true")}") == "true";'
@@ -1042,9 +941,6 @@ binary_sensor:
                       id: value_overrides_btn_entry_motion
                       hidden: true
           else:
-            - lvgl.widget.update:
-                id: button_overrides_btn_entry_motion
-                bg_color: ${ui_overrides_entry_motion_off_bg}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_entry_motion_off_icon | default("")}").size() > 0;'
@@ -1052,18 +948,9 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_overrides_btn_entry_motion
                       text: ${ui_overrides_entry_motion_off_icon}
-            - lvgl.widget.update:
-                id: icon_overrides_btn_entry_motion
-                text_color: ${ui_overrides_entry_motion_icon_off_color}
-            - lvgl.widget.update:
-                id: label_overrides_btn_entry_motion
-                text_color: ${ui_overrides_entry_motion_text_off_color}
             - lvgl.label.update:
                 id: value_overrides_btn_entry_motion
                 text: ${ui_overrides_entry_motion_value_off}
-            - lvgl.widget.update:
-                id: value_overrides_btn_entry_motion
-                text_color: ${ui_overrides_entry_motion_value_off_color}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_entry_motion_show_icon | default("true")}") == "true";'
@@ -1106,9 +993,6 @@ binary_sensor:
           condition:
             - binary_sensor.is_on: widget_sensor_overrides_btn_garage
           then:
-            - lvgl.widget.update:
-                id: button_overrides_btn_garage
-                bg_color: ${ui_overrides_garage_on_bg}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_garage_on_icon | default("")}").size() > 0;'
@@ -1116,18 +1000,9 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_overrides_btn_garage
                       text: ${ui_overrides_garage_on_icon}
-            - lvgl.widget.update:
-                id: icon_overrides_btn_garage
-                text_color: ${ui_overrides_garage_icon_on_color}
-            - lvgl.widget.update:
-                id: label_overrides_btn_garage
-                text_color: ${ui_overrides_garage_text_on_color}
             - lvgl.label.update:
                 id: value_overrides_btn_garage
                 text: ${ui_overrides_garage_value_on}
-            - lvgl.widget.update:
-                id: value_overrides_btn_garage
-                text_color: ${ui_overrides_garage_value_on_color}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_garage_show_icon | default("true")}") == "true";'
@@ -1162,9 +1037,6 @@ binary_sensor:
                       id: value_overrides_btn_garage
                       hidden: true
           else:
-            - lvgl.widget.update:
-                id: button_overrides_btn_garage
-                bg_color: ${ui_overrides_garage_off_bg}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_garage_off_icon | default("")}").size() > 0;'
@@ -1172,18 +1044,9 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_overrides_btn_garage
                       text: ${ui_overrides_garage_off_icon}
-            - lvgl.widget.update:
-                id: icon_overrides_btn_garage
-                text_color: ${ui_overrides_garage_icon_off_color}
-            - lvgl.widget.update:
-                id: label_overrides_btn_garage
-                text_color: ${ui_overrides_garage_text_off_color}
             - lvgl.label.update:
                 id: value_overrides_btn_garage
                 text: ${ui_overrides_garage_value_off}
-            - lvgl.widget.update:
-                id: value_overrides_btn_garage
-                text_color: ${ui_overrides_garage_value_off_color}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_garage_show_icon | default("true")}") == "true";'
@@ -1226,9 +1089,6 @@ binary_sensor:
           condition:
             - binary_sensor.is_on: widget_sensor_overrides_btn_mbr
           then:
-            - lvgl.widget.update:
-                id: button_overrides_btn_mbr
-                bg_color: ${ui_overrides_mbr_on_bg}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_mbr_on_icon | default("")}").size() > 0;'
@@ -1236,18 +1096,9 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_overrides_btn_mbr
                       text: ${ui_overrides_mbr_on_icon}
-            - lvgl.widget.update:
-                id: icon_overrides_btn_mbr
-                text_color: ${ui_overrides_mbr_icon_on_color}
-            - lvgl.widget.update:
-                id: label_overrides_btn_mbr
-                text_color: ${ui_overrides_mbr_text_on_color}
             - lvgl.label.update:
                 id: value_overrides_btn_mbr
                 text: ${ui_overrides_mbr_value_on}
-            - lvgl.widget.update:
-                id: value_overrides_btn_mbr
-                text_color: ${ui_overrides_mbr_value_on_color}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_mbr_show_icon | default("true")}") == "true";'
@@ -1282,9 +1133,6 @@ binary_sensor:
                       id: value_overrides_btn_mbr
                       hidden: true
           else:
-            - lvgl.widget.update:
-                id: button_overrides_btn_mbr
-                bg_color: ${ui_overrides_mbr_off_bg}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_mbr_off_icon | default("")}").size() > 0;'
@@ -1292,18 +1140,9 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_overrides_btn_mbr
                       text: ${ui_overrides_mbr_off_icon}
-            - lvgl.widget.update:
-                id: icon_overrides_btn_mbr
-                text_color: ${ui_overrides_mbr_icon_off_color}
-            - lvgl.widget.update:
-                id: label_overrides_btn_mbr
-                text_color: ${ui_overrides_mbr_text_off_color}
             - lvgl.label.update:
                 id: value_overrides_btn_mbr
                 text: ${ui_overrides_mbr_value_off}
-            - lvgl.widget.update:
-                id: value_overrides_btn_mbr
-                text_color: ${ui_overrides_mbr_value_off_color}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_mbr_show_icon | default("true")}") == "true";'
@@ -1346,9 +1185,6 @@ binary_sensor:
           condition:
             - binary_sensor.is_on: widget_sensor_overrides_btn_dani
           then:
-            - lvgl.widget.update:
-                id: button_overrides_btn_dani
-                bg_color: ${ui_overrides_dani_on_bg}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_dani_on_icon | default("")}").size() > 0;'
@@ -1356,18 +1192,9 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_overrides_btn_dani
                       text: ${ui_overrides_dani_on_icon}
-            - lvgl.widget.update:
-                id: icon_overrides_btn_dani
-                text_color: ${ui_overrides_dani_icon_on_color}
-            - lvgl.widget.update:
-                id: label_overrides_btn_dani
-                text_color: ${ui_overrides_dani_text_on_color}
             - lvgl.label.update:
                 id: value_overrides_btn_dani
                 text: ${ui_overrides_dani_value_on}
-            - lvgl.widget.update:
-                id: value_overrides_btn_dani
-                text_color: ${ui_overrides_dani_value_on_color}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_dani_show_icon | default("true")}") == "true";'
@@ -1402,9 +1229,6 @@ binary_sensor:
                       id: value_overrides_btn_dani
                       hidden: true
           else:
-            - lvgl.widget.update:
-                id: button_overrides_btn_dani
-                bg_color: ${ui_overrides_dani_off_bg}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_dani_off_icon | default("")}").size() > 0;'
@@ -1412,18 +1236,9 @@ binary_sensor:
                   - lvgl.label.update:
                       id: icon_overrides_btn_dani
                       text: ${ui_overrides_dani_off_icon}
-            - lvgl.widget.update:
-                id: icon_overrides_btn_dani
-                text_color: ${ui_overrides_dani_icon_off_color}
-            - lvgl.widget.update:
-                id: label_overrides_btn_dani
-                text_color: ${ui_overrides_dani_text_off_color}
             - lvgl.label.update:
                 id: value_overrides_btn_dani
                 text: ${ui_overrides_dani_value_off}
-            - lvgl.widget.update:
-                id: value_overrides_btn_dani
-                text_color: ${ui_overrides_dani_value_off_color}
             - if:
                 condition:
                   lambda: 'return std::string("${ui_overrides_dani_show_icon | default("true")}") == "true";'
@@ -1457,12 +1272,4 @@ binary_sensor:
                   - lvgl.widget.update:
                       id: value_overrides_btn_dani
                       hidden: true
-
-
-
-
-
-
-
-
 

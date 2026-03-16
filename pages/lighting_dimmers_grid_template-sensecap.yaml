@@ -1,4 +1,4 @@
-﻿# =============================================================================
+# =============================================================================
 # PAGE EDIT GUIDE (SenseCAP)
 # - Color tokens: common/color-sensecap-dani.yaml.
 # - Entity/UI defaults (text/icon/value/on-off): common/ha_entities-sensecap-dani.yaml.
@@ -57,7 +57,7 @@ substitutions:
 lvgl:
   pages:
     - id: ${dimmers_page_id}
-      styles: sense_page_style
+      styles: page_style
       layout:
         type: grid
         grid_rows:
@@ -99,7 +99,6 @@ lvgl:
             grid_cell_y_align: center
             y: ${dimmers_title_y}
             text_font: ${dimmers_title_font}
-            text_color: ${dimmers_title_color}
         - container:
             id: ${dimmers_left_row1_uid}
             hidden: ${dimmers_left_row1_hidden}
@@ -112,6 +111,7 @@ lvgl:
             widgets:
               - button:
                   id: button_${dimmers_left_row1_uid}
+                  styles: sense_menu_cat2_style
                   widgets:
                     - label:
                         text_font: $icon_font
@@ -144,6 +144,7 @@ lvgl:
             widgets:
               - button:
                   id: button_${dimmers_left_row2_uid}
+                  styles: sense_menu_cat4_style
                   widgets:
                     - label:
                         text_font: $icon_font
@@ -176,6 +177,7 @@ lvgl:
             widgets:
               - button:
                   id: button_${dimmers_left_row3_uid}
+                  styles: sense_menu_cat1_style
                   widgets:
                     - label:
                         text_font: $icon_font
@@ -208,6 +210,7 @@ lvgl:
             widgets:
               - button:
                   id: button_${dimmers_left_row4_uid}
+                  styles: sense_menu_cat3_style
                   widgets:
                     - label:
                         text_font: $icon_font
@@ -225,95 +228,4 @@ lvgl:
                         text: ${dimmers_left_row4_text}
                   on_short_click:
                     - lvgl.page.show: ${dimmers_left_row4_click_page}
-
-binary_sensor:
-  - id: widget_sensor_${dimmers_left_row1_uid}
-    platform: homeassistant
-    entity_id: ${dimmers_left_row1_entity_id}
-    trigger_on_initial_state: true
-    on_state:
-      - if:
-          condition:
-            - binary_sensor.is_on: widget_sensor_${dimmers_left_row1_uid}
-          then:
-            - lvgl.widget.update:
-                id: button_${dimmers_left_row1_uid}
-                bg_color: ${dimmers_left_row1_on_bg}
-            - lvgl.widget.update:
-                id: icon_${dimmers_left_row1_uid}
-                text_color: ${ui_base_icon_on_color}
-            - lvgl.widget.update:
-                id: label_${dimmers_left_row1_uid}
-                text_color: ${ui_base_label_on_color}
-          else:
-            - lvgl.widget.update:
-                id: button_${dimmers_left_row1_uid}
-                bg_color: ${dimmers_left_row1_off_bg}
-            - lvgl.widget.update:
-                id: icon_${dimmers_left_row1_uid}
-                text_color: ${ui_base_icon_off_color}
-            - lvgl.widget.update:
-                id: label_${dimmers_left_row1_uid}
-                text_color: ${ui_base_label_off_color}
-
-  - id: widget_sensor_${dimmers_left_row2_uid}
-    platform: homeassistant
-    entity_id: ${dimmers_left_row2_entity_id}
-    trigger_on_initial_state: true
-    on_state:
-      - if:
-          condition:
-            - binary_sensor.is_on: widget_sensor_${dimmers_left_row2_uid}
-          then:
-            - lvgl.widget.update:
-                id: button_${dimmers_left_row2_uid}
-                bg_color: ${dimmers_left_row2_on_bg}
-            - lvgl.widget.update:
-                id: icon_${dimmers_left_row2_uid}
-                text_color: ${ui_base_icon_on_color}
-            - lvgl.widget.update:
-                id: label_${dimmers_left_row2_uid}
-                text_color: ${ui_base_label_on_color}
-          else:
-            - lvgl.widget.update:
-                id: button_${dimmers_left_row2_uid}
-                bg_color: ${dimmers_left_row2_off_bg}
-            - lvgl.widget.update:
-                id: icon_${dimmers_left_row2_uid}
-                text_color: ${ui_base_icon_off_color}
-            - lvgl.widget.update:
-                id: label_${dimmers_left_row2_uid}
-                text_color: ${ui_base_label_off_color}
-
-  - id: widget_sensor_${dimmers_left_row3_uid}
-    platform: homeassistant
-    entity_id: ${dimmers_left_row3_entity_id}
-    trigger_on_initial_state: true
-    on_state:
-      - if:
-          condition:
-            - binary_sensor.is_on: widget_sensor_${dimmers_left_row3_uid}
-          then:
-            - lvgl.widget.update:
-                id: button_${dimmers_left_row3_uid}
-                bg_color: ${dimmers_left_row3_on_bg}
-            - lvgl.widget.update:
-                id: icon_${dimmers_left_row3_uid}
-                text_color: ${ui_base_icon_on_color}
-            - lvgl.widget.update:
-                id: label_${dimmers_left_row3_uid}
-                text_color: ${ui_base_label_on_color}
-          else:
-            - lvgl.widget.update:
-                id: button_${dimmers_left_row3_uid}
-                bg_color: ${dimmers_left_row3_off_bg}
-            - lvgl.widget.update:
-                id: icon_${dimmers_left_row3_uid}
-                text_color: ${ui_base_icon_off_color}
-            - lvgl.widget.update:
-                id: label_${dimmers_left_row3_uid}
-                text_color: ${ui_base_label_off_color}
-
-
-
 

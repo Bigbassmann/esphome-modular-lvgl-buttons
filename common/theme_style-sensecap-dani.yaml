@@ -66,6 +66,15 @@ lvgl:
       text_color: theme_page_text
       align: center
 
+    - id: sense_text_title_style
+      text_color: theme_page_title
+
+    - id: sense_text_primary_style
+      text_color: theme_page_text
+
+    - id: sense_text_muted_style
+      text_color: theme_page_text_muted
+
     # SenseCAP-inspired shell styles (additive)
     - id: sense_page_style
       scrollbar_mode: "OFF"
@@ -689,6 +698,9 @@ select:
               - lvgl.style.update:
                   id: time_style
                   text_color: theme_slot0_page_text
+              - lvgl.style.update: {id: sense_text_title_style, text_color: theme_slot0_page_text}
+              - lvgl.style.update: {id: sense_text_primary_style, text_color: theme_slot0_page_text}
+              - lvgl.style.update: {id: sense_text_muted_style, text_color: theme_slot0_page_text}
               - lvgl.style.update:
                   id: sense_nav_btn_style
                   bg_color: theme_slot0_nav_btn_bg
@@ -793,6 +805,9 @@ select:
               - lvgl.style.update:
                   id: time_style
                   text_color: theme_slot1_page_text
+              - lvgl.style.update: {id: sense_text_title_style, text_color: theme_slot1_page_text}
+              - lvgl.style.update: {id: sense_text_primary_style, text_color: theme_slot1_page_text}
+              - lvgl.style.update: {id: sense_text_muted_style, text_color: theme_slot1_page_text}
               - lvgl.style.update:
                   id: sense_nav_btn_style
                   bg_color: theme_slot1_blue_bg
@@ -899,6 +914,9 @@ select:
               - lvgl.style.update:
                   id: time_style
                   text_color: theme_slot2_page_text
+              - lvgl.style.update: {id: sense_text_title_style, text_color: theme_slot2_page_text}
+              - lvgl.style.update: {id: sense_text_primary_style, text_color: theme_slot2_page_text}
+              - lvgl.style.update: {id: sense_text_muted_style, text_color: theme_slot2_page_text}
               - lvgl.style.update:
                   id: sense_nav_btn_style
                   bg_color: theme_slot2_blue_bg
@@ -990,6 +1008,9 @@ select:
               - lvgl.style.update: {id: sense_nav_bar_style, bg_color: theme_nav_bar_bg, border_color: theme_shell_border}
               - lvgl.style.update: {id: sense_card_flat_style, bg_color: theme_shell_bg}
               - lvgl.style.update: {id: time_style, text_color: theme_slot3_page_text}
+              - lvgl.style.update: {id: sense_text_title_style, text_color: theme_slot3_page_text}
+              - lvgl.style.update: {id: sense_text_primary_style, text_color: theme_slot3_page_text}
+              - lvgl.style.update: {id: sense_text_muted_style, text_color: theme_slot3_page_text}
               - lvgl.style.update: {id: sense_nav_btn_style, bg_color: theme_slot3_primary_bg, text_color: theme_slot3_primary_text}
               - lvgl.widget.update: {id: button_ha_freezer_temp, bg_color: theme_slot3_primary_bg}
               - lvgl.widget.update: {id: button_ha_fridge_temp, bg_color: theme_slot3_primary_bg}
@@ -1050,6 +1071,9 @@ select:
               - lvgl.style.update: {id: sense_nav_bar_style, bg_color: theme_nav_bar_bg, border_color: theme_shell_border}
               - lvgl.style.update: {id: sense_card_flat_style, bg_color: theme_shell_bg}
               - lvgl.style.update: {id: time_style, text_color: theme_slot4_page_text}
+              - lvgl.style.update: {id: sense_text_title_style, text_color: theme_slot4_page_text}
+              - lvgl.style.update: {id: sense_text_primary_style, text_color: theme_slot4_page_text}
+              - lvgl.style.update: {id: sense_text_muted_style, text_color: theme_slot4_page_text}
               - lvgl.style.update: {id: sense_nav_btn_style, bg_color: theme_slot4_primary_bg, text_color: theme_slot4_primary_text}
               - lvgl.widget.update: {id: button_ha_freezer_temp, bg_color: theme_slot4_primary_bg}
               - lvgl.widget.update: {id: button_ha_fridge_temp, bg_color: theme_slot4_primary_bg}
@@ -1110,6 +1134,9 @@ select:
               - lvgl.style.update: {id: sense_nav_bar_style, bg_color: theme_nav_bar_bg, border_color: theme_shell_border}
               - lvgl.style.update: {id: sense_card_flat_style, bg_color: theme_shell_bg}
               - lvgl.style.update: {id: time_style, text_color: theme_slot5_page_text}
+              - lvgl.style.update: {id: sense_text_title_style, text_color: theme_slot5_page_text}
+              - lvgl.style.update: {id: sense_text_primary_style, text_color: theme_slot5_page_text}
+              - lvgl.style.update: {id: sense_text_muted_style, text_color: theme_slot5_page_text}
               - lvgl.style.update: {id: sense_nav_btn_style, bg_color: theme_slot5_primary_bg, text_color: theme_slot5_primary_text}
               - lvgl.widget.update: {id: button_ha_freezer_temp, bg_color: theme_slot5_primary_bg}
               - lvgl.widget.update: {id: button_ha_fridge_temp, bg_color: theme_slot5_primary_bg}
@@ -1170,6 +1197,9 @@ select:
               - lvgl.style.update: {id: sense_nav_bar_style, bg_color: theme_nav_bar_bg, border_color: theme_shell_border}
               - lvgl.style.update: {id: sense_card_flat_style, bg_color: theme_shell_bg}
               - lvgl.style.update: {id: time_style, text_color: theme_slot6_page_text}
+              - lvgl.style.update: {id: sense_text_title_style, text_color: theme_slot6_page_text}
+              - lvgl.style.update: {id: sense_text_primary_style, text_color: theme_slot6_page_text}
+              - lvgl.style.update: {id: sense_text_muted_style, text_color: theme_slot6_page_text}
               - lvgl.style.update: {id: sense_nav_btn_style, bg_color: theme_slot6_primary_bg, text_color: theme_slot6_primary_text}
               - lvgl.widget.update: {id: button_ha_freezer_temp, bg_color: theme_slot6_primary_bg}
               - lvgl.widget.update: {id: button_ha_fridge_temp, bg_color: theme_slot6_primary_bg}
@@ -1230,6 +1260,9 @@ select:
               - lvgl.style.update: {id: sense_nav_bar_style, bg_color: theme_nav_bar_bg, border_color: theme_shell_border}
               - lvgl.style.update: {id: sense_card_flat_style, bg_color: theme_shell_bg}
               - lvgl.style.update: {id: time_style, text_color: theme_slot7_page_text}
+              - lvgl.style.update: {id: sense_text_title_style, text_color: theme_slot7_page_text}
+              - lvgl.style.update: {id: sense_text_primary_style, text_color: theme_slot7_page_text}
+              - lvgl.style.update: {id: sense_text_muted_style, text_color: theme_slot7_page_text}
               - lvgl.style.update: {id: sense_nav_btn_style, bg_color: theme_slot7_primary_bg, text_color: theme_slot7_primary_text}
               - lvgl.widget.update: {id: button_ha_freezer_temp, bg_color: theme_slot7_primary_bg}
               - lvgl.widget.update: {id: button_ha_fridge_temp, bg_color: theme_slot7_primary_bg}
@@ -1290,6 +1323,9 @@ select:
               - lvgl.style.update: {id: sense_nav_bar_style, bg_color: theme_nav_bar_bg, border_color: theme_slot8_primary_bg}
               - lvgl.style.update: {id: sense_card_flat_style, bg_color: theme_shell_bg}
               - lvgl.style.update: {id: time_style, text_color: theme_slot8_page_text}
+              - lvgl.style.update: {id: sense_text_title_style, text_color: theme_slot8_page_text}
+              - lvgl.style.update: {id: sense_text_primary_style, text_color: theme_slot8_page_text}
+              - lvgl.style.update: {id: sense_text_muted_style, text_color: theme_slot8_page_text}
               - lvgl.style.update: {id: sense_nav_btn_style, bg_color: theme_slot8_primary_bg, text_color: theme_slot8_primary_text}
               - lvgl.widget.update: {id: button_ha_freezer_temp, bg_color: theme_slot8_primary_bg}
               - lvgl.widget.update: {id: button_ha_fridge_temp, bg_color: theme_slot8_primary_bg}
@@ -1350,6 +1386,9 @@ select:
               - lvgl.style.update: {id: sense_nav_bar_style, bg_color: theme_nav_bar_bg, border_color: theme_slot9_primary_bg}
               - lvgl.style.update: {id: sense_card_flat_style, bg_color: theme_shell_bg}
               - lvgl.style.update: {id: time_style, text_color: theme_slot9_page_text}
+              - lvgl.style.update: {id: sense_text_title_style, text_color: theme_slot9_page_text}
+              - lvgl.style.update: {id: sense_text_primary_style, text_color: theme_slot9_page_text}
+              - lvgl.style.update: {id: sense_text_muted_style, text_color: theme_slot9_page_text}
               - lvgl.style.update: {id: sense_nav_btn_style, bg_color: theme_slot9_primary_bg, text_color: theme_slot9_primary_text}
               - lvgl.widget.update: {id: button_ha_freezer_temp, bg_color: theme_slot9_primary_bg}
               - lvgl.widget.update: {id: button_ha_fridge_temp, bg_color: theme_slot9_primary_bg}

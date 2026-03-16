@@ -42,6 +42,7 @@ lvgl:
             widgets:
               - button:
                   id: button_${uid}
+                  styles: sense_display_row_btn_style
                   widgets:
                     - label:
                         id: icon_${uid}
@@ -122,36 +123,12 @@ binary_sensor:
             binary_sensor.is_on: widget_sensor_${uid}
           then:
             - lvgl.widget.update:
-                id: button_${uid}
-                bg_color: ${on_bg_color | default("${ui_base_button_on_color}")}
-            - lvgl.widget.update:
-                id: icon_${uid}
-                text_color: ${ui_base_icon_on_color}
-            - lvgl.widget.update:
-                id: label_${uid}
-                text_color: theme_page_text
-            - lvgl.widget.update:
-                id: value_${uid}
-                text_color: theme_page_text
-            - lvgl.widget.update:
                 id: slider_${uid}
                 knob:
                   bg_color: ${slider_knob_on_color | default("${ui_base_label_on_color}")}
                 indicator:
                   bg_color: ${slider_on_color | default("theme_dimmer_slider_on_default")}
           else:
-            - lvgl.widget.update:
-                id: button_${uid}
-                bg_color: ${off_bg_color | default("${ui_base_button_off_color}")}
-            - lvgl.widget.update:
-                id: icon_${uid}
-                text_color: ${ui_base_icon_off_color}
-            - lvgl.widget.update:
-                id: label_${uid}
-                text_color: theme_page_text
-            - lvgl.widget.update:
-                id: value_${uid}
-                text_color: theme_page_text
             - lvgl.label.update:
                 id: value_${uid}
                 text: "0%"
@@ -164,8 +141,6 @@ binary_sensor:
                   bg_color: ${slider_knob_off_color | default("${ui_base_label_off_color}")}
                 indicator:
                   bg_color: ${slider_off_color | default("theme_dimmer_slider_off_default")}
-
-
 text_sensor:
   - id: brightness_${uid}_txt
     platform: homeassistant
@@ -201,5 +176,6 @@ sensor:
             char buf[8];
             snprintf(buf, sizeof(buf), "%d%%", pct);
             return std::string(buf);
+
 
 
