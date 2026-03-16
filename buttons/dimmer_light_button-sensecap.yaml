@@ -111,10 +111,6 @@ lvgl:
                                 action: homeassistant.toggle
                                 data:
                                   entity_id: ${secondary_entity_id | default("")}
-                  on_long_press:
-                    then:
-                      - lvgl.page.show: ${uid}_light_page
-
 binary_sensor:
   - id: widget_sensor_${uid}
     platform: homeassistant
