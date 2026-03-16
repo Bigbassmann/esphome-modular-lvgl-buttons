@@ -1,4 +1,4 @@
-﻿# FILE EDIT GUIDE (SenseCAP)
+# FILE EDIT GUIDE (SenseCAP)
 # Role: Shared defaults/tokens/mappings/include wiring.
 # Update here for:
 # - Color tokens and family palettes (common/color-*.yaml).
@@ -20,7 +20,7 @@ lvgl:
       radius: 0
       scrollable: false
       bg_opa: TRANSP
-      bg_color: sense_surface
+      bg_color: theme_shell_surface
       # outline_width: 1
       # outline_color: red
     label:
@@ -28,7 +28,7 @@ lvgl:
       border_width: 0
       scrollable: false
       text_font: $text_font
-      text_color: ${ui_base_label_off_color}
+      text_color: theme_page_text_muted
       # outline_width: 1
       # outline_color: red
     image:
@@ -56,28 +56,28 @@ lvgl:
   style_definitions:
     - id: page_style
       scrollbar_mode: "OFF"
-      bg_color: sense_bg
+      bg_color: theme_shell_bg
       bg_opa: cover
       pad_all: 1
 
     - id: time_style
       scrollbar_mode: "OFF"
       text_font: $text_font
-      text_color: ${ui_base_label_on_color}
+      text_color: theme_page_text
       align: center
 
     # SenseCAP-inspired shell styles (additive)
     - id: sense_page_style
       scrollbar_mode: "OFF"
-      bg_color: sense_bg
+      bg_color: theme_shell_bg
       bg_opa: cover
       pad_all: 0
 
     - id: sense_topbar_style
-      bg_color: sense_bg
+      bg_color: theme_shell_bg
       bg_opa: cover
       border_width: 1
-      border_color: sense_border
+      border_color: theme_shell_border
       radius: 0
       pad_left: 10
       pad_right: 10
@@ -85,10 +85,10 @@ lvgl:
       pad_bottom: 4
 
     - id: sense_nav_bar_style
-      bg_color: black
+      bg_color: theme_nav_bar_bg
       bg_opa: cover
       border_width: 1
-      border_color: sense_border
+      border_color: theme_shell_border
       radius: 0
       pad_left: 8
       pad_right: 8
@@ -96,114 +96,114 @@ lvgl:
       pad_bottom: 8
 
     - id: sense_card_style
-      bg_color: sense_surface
+      bg_color: theme_shell_surface
       bg_opa: cover
       border_width: 1
-      border_color: sense_border
+      border_color: theme_shell_border
       radius: 8
       pad_all: 8
 
     - id: sense_nav_btn_style
-      bg_color: sense_tile_blue
+      bg_color: theme_nav_btn_bg_default
       bg_opa: cover
-      text_color: sense_text
+      text_color: theme_nav_btn_text_default
       border_width: 0
-      border_color: sense_info
+      border_color: theme_nav_btn_text_default
       radius: 8
       pad_all: 6
 
     - id: sense_tile_dani_style
-      bg_color: sense_tile_red
+      bg_color: theme_tile_profile1_bg_default
       bg_opa: cover
       border_width: 0
       radius: 10
       pad_all: 8
 
     - id: sense_tile_sleepy_style
-      bg_color: sense_tile_teal
+      bg_color: theme_tile_profile2_bg_default
       bg_opa: cover
       border_width: 0
       radius: 10
       pad_all: 8
 
     - id: sense_tile_bedtime_style
-      bg_color: sense_tile_indigo
+      bg_color: theme_tile_profile3_bg_default
       bg_opa: cover
       border_width: 0
       radius: 10
       pad_all: 8
 
     - id: sense_tile_tstat_style
-      bg_color: sense_tile_yellow
+      bg_color: theme_tile_climate_bg_default
       bg_opa: cover
       border_width: 0
       radius: 10
       pad_all: 8
 
     - id: sense_tile_fans_style
-      bg_color: dani_family_blue_bg_on
+      bg_color: theme_tile_fans_bg_default
       bg_opa: cover
       border_width: 0
       radius: 10
       pad_all: 8
 
     - id: sense_tile_overrides_style
-      bg_color: sense_tile_cyan
+      bg_color: theme_tile_overrides_bg_default
       bg_opa: cover
       border_width: 0
       radius: 10
       pad_all: 8
 
     - id: sense_tile_placeholder_style
-      bg_color: sense_surface_alt
+      bg_color: theme_shell_alt
       bg_opa: cover
       border_width: 0
       radius: 10
       pad_all: 8
 
     - id: sense_display_row_btn_style
-      bg_color: sense_cat_admin
+      bg_color: theme_display_row_btn_bg_default
       bg_opa: cover
-      text_color: sense_text
+      text_color: theme_display_row_btn_text_default
       border_width: 0
       radius: 8
       pad_all: 6
 
     - id: sense_card_flat_style
-      bg_color: sense_bg
+      bg_color: theme_shell_bg
       bg_opa: cover
       border_width: 0
       radius: 8
       pad_all: 8
 
     - id: sense_menu_cat1_style
-      bg_color: sense_cat_admin
+      bg_color: theme_menu_cat1_bg_default
       bg_opa: cover
-      text_color: sense_text
+      text_color: theme_menu_cat1_text_default
       border_width: 0
       radius: 8
       pad_all: 6
 
     - id: sense_menu_cat2_style
-      bg_color: sense_cat_climate
+      bg_color: theme_menu_cat2_bg_default
       bg_opa: cover
-      text_color: sense_text
+      text_color: theme_menu_cat2_text_default
       border_width: 0
       radius: 8
       pad_all: 6
 
     - id: sense_menu_cat3_style
-      bg_color: sense_cat_lights
+      bg_color: theme_menu_cat3_bg_default
       bg_opa: cover
-      text_color: sense_text
+      text_color: theme_menu_cat3_text_default
       border_width: 0
       radius: 8
       pad_all: 6
 
     - id: sense_menu_cat4_style
-      bg_color: sense_cat_overrides
+      bg_color: theme_menu_cat4_bg_default
       bg_opa: cover
-      text_color: sense_text
+      text_color: theme_menu_cat4_text_default
       border_width: 0
       radius: 8
       pad_all: 6
@@ -239,27 +239,27 @@ select:
             then:
               - lvgl.style.update:
                   id: page_style
-                  bg_color: sense_bg
-                  text_color: sense_text
+                  bg_color: theme_shell_bg
+                  text_color: theme_nav_btn_text_default
               - lvgl.style.update:
                   id: sense_page_style
-                  bg_color: sense_bg
+                  bg_color: theme_shell_bg
               - lvgl.style.update:
                   id: sense_topbar_style
-                  bg_color: sense_bg
+                  bg_color: theme_shell_bg
               - lvgl.style.update:
                   id: sense_nav_bar_style
-                  bg_color: black
+                  bg_color: theme_nav_bar_bg
               - lvgl.style.update:
                   id: sense_card_flat_style
-                  bg_color: sense_bg
+                  bg_color: theme_shell_bg
               - lvgl.style.update:
                   id: time_style
-                  text_color: sense_text
+                  text_color: theme_nav_btn_text_default
               - lvgl.style.update:
                   id: sense_nav_btn_style
-                  bg_color: sense_tile_blue
-                  text_color: sense_text
+                  bg_color: theme_nav_btn_bg_default
+                  text_color: theme_nav_btn_text_default
               - lvgl.widget.update: {id: button_ha_freezer_temp, bg_color: sense_tile_sky}
               - lvgl.widget.update: {id: button_ha_fridge_temp, bg_color: sense_tile_sky}
               - lvgl.label.update: {id: icon_ha_freezer_temp, text_color: sense_text}
@@ -298,71 +298,71 @@ select:
               - lvgl.label.update: {id: data_humid, text_color: sense_text}
               - lvgl.style.update:
                   id: sense_tile_dani_style
-                  bg_color: sense_tile_red
+                  bg_color: theme_tile_profile1_bg_default
               - lvgl.style.update:
                   id: sense_tile_sleepy_style
-                  bg_color: sense_tile_teal
+                  bg_color: theme_tile_profile2_bg_default
               - lvgl.style.update:
                   id: sense_tile_bedtime_style
-                  bg_color: sense_tile_indigo
+                  bg_color: theme_tile_profile3_bg_default
               - lvgl.style.update:
                   id: sense_tile_tstat_style
-                  bg_color: sense_tile_yellow
+                  bg_color: theme_tile_climate_bg_default
               - lvgl.style.update:
                   id: sense_tile_fans_style
                   bg_color: sense_tile_sky
               - lvgl.style.update:
                   id: sense_tile_overrides_style
-                  bg_color: sense_tile_cyan
+                  bg_color: theme_tile_overrides_bg_default
               - lvgl.style.update:
                   id: sense_tile_placeholder_style
-                  bg_color: sense_surface_alt
+                  bg_color: theme_shell_alt
               - lvgl.style.update:
                   id: sense_display_row_btn_style
-                  bg_color: sense_cat_admin
-                  text_color: sense_text
+                  bg_color: theme_display_row_btn_bg_default
+                  text_color: theme_nav_btn_text_default
               - lvgl.style.update:
                   id: sense_menu_cat1_style
-                  bg_color: sense_cat_admin
-                  text_color: sense_text
+                  bg_color: theme_display_row_btn_bg_default
+                  text_color: theme_nav_btn_text_default
               - lvgl.style.update:
                   id: sense_menu_cat2_style
-                  bg_color: sense_cat_climate
-                  text_color: sense_text
+                  bg_color: theme_menu_cat2_bg_default
+                  text_color: theme_nav_btn_text_default
               - lvgl.style.update:
                   id: sense_menu_cat3_style
-                  bg_color: sense_cat_lights
-                  text_color: sense_text
+                  bg_color: theme_menu_cat3_bg_default
+                  text_color: theme_nav_btn_text_default
               - lvgl.style.update:
                   id: sense_menu_cat4_style
-                  bg_color: sense_cat_overrides
-                  text_color: sense_text
+                  bg_color: theme_menu_cat4_bg_default
+                  text_color: theme_nav_btn_text_default
         - if:
             condition:
               - lambda: 'return id(sense_theme_slot) == 1;'
             then:
               - lvgl.style.update:
                   id: page_style
-                  bg_color: sense_bg
+                  bg_color: theme_shell_bg
                   text_color: dani_page_text
               - lvgl.style.update:
                   id: sense_page_style
-                  bg_color: sense_bg
+                  bg_color: theme_shell_bg
               - lvgl.style.update:
                   id: sense_topbar_style
-                  bg_color: sense_bg
+                  bg_color: theme_shell_bg
               - lvgl.style.update:
                   id: sense_nav_bar_style
-                  bg_color: black
+                  bg_color: theme_nav_bar_bg
               - lvgl.style.update:
                   id: sense_card_flat_style
-                  bg_color: sense_bg
+                  bg_color: theme_shell_bg
               - lvgl.style.update:
                   id: time_style
                   text_color: dani_page_text
               - lvgl.style.update:
                   id: sense_nav_btn_style
-                  bg_color: dani_family_blue_bg_on
+                  bg_color: theme_tile_fans_bg_default
                   text_color: dani_family_blue_text_on
               - lvgl.widget.update: {id: button_ha_freezer_temp, bg_color: dani_family_blue_bg_on}
               - lvgl.widget.update: {id: button_ha_fridge_temp, bg_color: dani_family_blue_bg_on}
@@ -414,7 +414,7 @@ select:
                   bg_color: dani_family_yellow_bg_on
               - lvgl.style.update:
                   id: sense_tile_fans_style
-                  bg_color: dani_family_blue_bg_on
+                  bg_color: theme_tile_fans_bg_default
               - lvgl.style.update:
                   id: sense_tile_overrides_style
                   bg_color: dani_family_teal_bg_on
@@ -427,7 +427,7 @@ select:
                   text_color: dani_family_orange_text_on
               - lvgl.style.update:
                   id: sense_menu_cat1_style
-                  bg_color: dani_family_blue_bg_on
+                  bg_color: theme_tile_fans_bg_default
                   text_color: dani_family_blue_text_on
               - lvgl.style.update:
                   id: sense_menu_cat2_style
@@ -447,22 +447,22 @@ select:
             then:
               - lvgl.style.update:
                   id: page_style
-                  bg_color: sense_bg
+                  bg_color: theme_shell_bg
                   text_color: split_page_text
               - lvgl.style.update:
                   id: sense_page_style
-                  bg_color: sense_bg
+                  bg_color: theme_shell_bg
               - lvgl.style.update:
                   id: sense_topbar_style
-                  bg_color: sense_bg
+                  bg_color: theme_shell_bg
                   border_color: split_family_blue_bg_on
               - lvgl.style.update:
                   id: sense_nav_bar_style
-                  bg_color: black
+                  bg_color: theme_nav_bar_bg
                   border_color: split_family_blue_bg_on
               - lvgl.style.update:
                   id: sense_card_flat_style
-                  bg_color: sense_bg
+                  bg_color: theme_shell_bg
               - lvgl.style.update:
                   id: time_style
                   text_color: split_page_text

@@ -39,6 +39,62 @@ color:
       hex: 'FFFFFF'
     - id: theme_page_text_muted
       hex: 'BDBDBD'
+    - id: theme_dimmer_slider_on_default
+      hex: 'FFFFFF'
+    - id: theme_dimmer_slider_off_default
+      hex: '374151'
+    - id: theme_dimmer_slider_bg_default
+      hex: '1A2838'
+    - id: theme_shell_bg
+      hex: '0D0D0D'
+    - id: theme_shell_surface
+      hex: '1B1A38'
+    - id: theme_shell_alt
+      hex: '1A2838'
+    - id: theme_shell_border
+      hex: '374151'
+    - id: theme_nav_bar_bg
+      hex: '000000'
+    - id: theme_nav_btn_bg_default
+      hex: '3C6B8F'
+    - id: theme_nav_btn_text_default
+      hex: 'FFFFFF'
+    - id: theme_tile_profile1_bg_default
+      hex: '8F3C42'
+    - id: theme_tile_profile2_bg_default
+      hex: '3C8F89'
+    - id: theme_tile_profile3_bg_default
+      hex: '3C428F'
+    - id: theme_tile_climate_bg_default
+      hex: '8F893C'
+    - id: theme_tile_fans_bg_default
+      hex: '3C6B8F'
+    - id: theme_tile_overrides_bg_default
+      hex: '3C8F89'
+    - id: theme_tile_placeholder_bg_default
+      hex: '194357'
+    - id: theme_display_row_btn_bg_default
+      hex: 'A8840F'
+    - id: theme_display_row_btn_text_default
+      hex: '0D0D0D'
+    - id: theme_menu_cat1_bg_default
+      hex: '3C6B8F'
+    - id: theme_menu_cat1_text_default
+      hex: 'FFFFFF'
+    - id: theme_menu_cat2_bg_default
+      hex: '3C8F89'
+    - id: theme_menu_cat2_text_default
+      hex: 'FFFFFF'
+    - id: theme_menu_cat3_bg_default
+      hex: 'A8840F'
+    - id: theme_menu_cat3_text_default
+      hex: '0D0D0D'
+    - id: theme_menu_cat4_bg_default
+      hex: '3C428F'
+    - id: theme_menu_cat4_text_default
+      hex: 'FFFFFF'
+    - id: theme_placeholder_bg_default
+      hex: '1A2838'
     - id: sense_primary
       hex: '1D4ED8'   # color for primary actions, highlights, etc. A vibrant blue that stands out and draws attention.
     - id: sense_info

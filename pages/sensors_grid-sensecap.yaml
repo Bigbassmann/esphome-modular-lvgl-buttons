@@ -14,7 +14,7 @@
 substitutions:
   sense_page_sensors_id: "page_sensors"
   sensors_title_font: "${ui_page_title_font | default(\"nunito_36\")}"
-  sensors_title_color: "${ui_page_title_color | default(\"sense_info\")}"
+  sensors_title_color: "${ui_page_title_color | default(\"theme_page_title\")}"
   sensors_title_y: "${ui_page_title_y_offset | default(\"-2\")}"
 
 lvgl:

@@ -1,4 +1,4 @@
-﻿# FILE EDIT GUIDE (SenseCAP)
+# FILE EDIT GUIDE (SenseCAP)
 # Role: Reusable button template (structure + behavior hooks).
 # Update here for:
 # - Size/shape defaults: width/height/radius/padding/alignment.
@@ -23,9 +23,9 @@
 #    secondary_entity_id: (optional)
 #    on_bg_color: (optional)
 #    off_bg_color: (optional)
-#    slider_on_color: (optional, default sense_info)
-#    slider_off_color: (optional, default sense_border)
-#    slider_bg_color: (optional, default sense_surface_alt)
+#    slider_on_color: (optional, default theme_dimmer_slider_on_default)
+#    slider_off_color: (optional, default theme_dimmer_slider_off_default)
+#    slider_bg_color: (optional, default theme_dimmer_slider_bg_default)
 
 lvgl:
   pages:
@@ -74,14 +74,14 @@ lvgl:
                         min_value: 0
                         max_value: 255
                         radius: 10
-                        bg_color: ${slider_bg_color | default("sense_surface_alt")}
+                        bg_color: ${slider_bg_color | default("theme_dimmer_slider_bg_default")}
                         knob:
                           pad_top: -5
                           pad_bottom: -5
                           bg_color: ${slider_knob_on_color | default("${ui_base_label_on_color}")}
                         indicator:
                           radius: 0
-                          bg_color: ${slider_off_color | default("sense_border")}
+                          bg_color: ${slider_off_color | default("theme_dimmer_slider_off_default")}
                         on_release:
                           - homeassistant.action:
                               action: light.turn_on
@@ -133,16 +133,16 @@ binary_sensor:
                 text_color: ${ui_base_icon_on_color}
             - lvgl.widget.update:
                 id: label_${uid}
-                text_color: sense_text
+                text_color: theme_page_text
             - lvgl.widget.update:
                 id: value_${uid}
-                text_color: sense_text
+                text_color: theme_page_text
             - lvgl.widget.update:
                 id: slider_${uid}
                 knob:
                   bg_color: ${slider_knob_on_color | default("${ui_base_label_on_color}")}
                 indicator:
-                  bg_color: ${slider_on_color | default("sense_info")}
+                  bg_color: ${slider_on_color | default("theme_dimmer_slider_on_default")}
           else:
             - lvgl.widget.update:
                 id: button_${uid}
@@ -152,10 +152,10 @@ binary_sensor:
                 text_color: ${ui_base_icon_off_color}
             - lvgl.widget.update:
                 id: label_${uid}
-                text_color: sense_text
+                text_color: theme_page_text
             - lvgl.widget.update:
                 id: value_${uid}
-                text_color: sense_text
+                text_color: theme_page_text
             - lvgl.label.update:
                 id: value_${uid}
                 text: "0%"
@@ -167,7 +167,7 @@ binary_sensor:
                 knob:
                   bg_color: ${slider_knob_off_color | default("${ui_base_label_off_color}")}
                 indicator:
-                  bg_color: ${slider_off_color | default("sense_border")}
+                  bg_color: ${slider_off_color | default("theme_dimmer_slider_off_default")}
 
 
 text_sensor:

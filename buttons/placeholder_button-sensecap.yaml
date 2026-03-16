@@ -39,7 +39,7 @@ lvgl:
               - button:
                   id: button_${uid}
                   clickable: false
-                  bg_color: ${bg_color | default("sense_surface_alt")}
+                  bg_color: ${bg_color | default("theme_placeholder_bg_default")}
                   widgets:
                     - label:
                         id: icon_${uid}
@@ -48,13 +48,13 @@ lvgl:
                         x: 10
                         y: 8
                         text: ${icon}
-                        text_color: ${icon_color | default("sense_tile_placeholder_text")}
+                        text_color: ${icon_color | default("theme_page_text_muted")}
                     - label:
                         id: label_${uid}
                         align: left_mid
                         x: 42
                         text_font: nunito_16
                         text: ${text}
-                        text_color: ${text_color | default("sense_tile_placeholder_text")}
+                        text_color: ${text_color | default("theme_page_text_muted")}
 
 

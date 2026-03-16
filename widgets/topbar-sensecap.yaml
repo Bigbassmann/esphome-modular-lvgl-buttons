@@ -23,7 +23,7 @@ obj:
         x: 12
         y: 8
         text_font: nunito_20  # 18
-        text_color: sense_text
+        text_color: theme_page_text
         bg_color: sense_bg
         bg_opa: cover
 
@@ -34,7 +34,7 @@ obj:
         x: -12
         y: 8
         text_font: nunito_20  # 18
-        text_color: sense_text
+        text_color: theme_page_text
         bg_color: sense_bg
         bg_opa: cover
 
@@ -56,5 +56,5 @@ obj:
               id: sense_topbar_wifi
               align: CENTER
               text_font: mdi_icons_34   # 34
-              text_color: sense_info
+              text_color: theme_page_text
               text: ${mdi_wifi_strength_off}

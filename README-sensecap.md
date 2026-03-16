@@ -227,7 +227,7 @@ This means layout/schema may continue to evolve while keeping root validation gr
 
 Current intentional theme exception/status:
 
-- Shared page/fan/sensor/per-entity defaults now point at generic `theme_*` color IDs instead of `dani_*` IDs where cleaned
+- Shared page/fan/sensor/per-entity defaults plus nav/template/static-style fallbacks now point at generic `theme_*` color IDs instead of `dani_*` IDs where cleaned
 - `pages/light_color-sensecap.yaml` is intentionally exempt for now and still contains hardcoded color literals
 
 ### Specific page layouts currently in use
