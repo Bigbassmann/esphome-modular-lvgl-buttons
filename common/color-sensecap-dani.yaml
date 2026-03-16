@@ -1,4 +1,4 @@
-﻿# FILE EDIT GUIDE (SenseCAP)
+# FILE EDIT GUIDE (SenseCAP)
 # Role: Shared defaults/tokens/mappings/include wiring.
 # Update here for:
 # - Color tokens and family palettes (common/color-*.yaml).
@@ -32,7 +32,13 @@ color:
     - id: dani_page_text
       hex: 'FFFFFF'     # color for main page text. Using pure white to ensure readability against the dark background.
     - id: dani_page_text_muted
-      hex: 'BDBDBD'     # color for muted page text. A light gray that is less prominent than the main text.    
+      hex: 'BDBDBD'     # color for muted page text. A light gray that is less prominent than the main text.
+    - id: theme_page_title
+      hex: 'FFFFFF'
+    - id: theme_page_text
+      hex: 'FFFFFF'
+    - id: theme_page_text_muted
+      hex: 'BDBDBD'
     - id: sense_primary
       hex: '1D4ED8'   # color for primary actions, highlights, etc. A vibrant blue that stands out and draws attention.
     - id: sense_info
@@ -201,6 +207,128 @@ color:
     - id: dani_family_orange_knob_off
       hex: '574C19'     # color for orange-themed button knobs in the inactive state. A darker, desaturated version of the orange to indicate inactivity while maintaining the hue.
 
+    # Generic theme family matrix aliases for shared UI mappings
+    - id: theme_family_teal_bg_on
+      hex: '3C8F89'
+    - id: theme_family_teal_bg_off
+      hex: '19574C'
+    - id: theme_family_teal_text_on
+      hex: 'FFFFFF'
+    - id: theme_family_teal_text_off
+      hex: 'E0E0E0'
+    - id: theme_family_teal_value_on
+      hex: 'FFFFFF'
+    - id: theme_family_teal_value_off
+      hex: 'E0E0E0'
+    - id: theme_family_teal_slider_on
+      hex: '4FA39C'
+    - id: theme_family_teal_slider_off
+      hex: '2A6E67'
+    - id: theme_family_teal_knob_on
+      hex: '68CCC4'
+    - id: theme_family_teal_knob_off
+      hex: '19574C'
+    - id: theme_family_blue_bg_on
+      hex: '3C6B8F'
+    - id: theme_family_blue_bg_off
+      hex: '194357'
+    - id: theme_family_blue_text_on
+      hex: 'FFFFFF'
+    - id: theme_family_blue_text_off
+      hex: 'E0E0E0'
+    - id: theme_family_blue_value_on
+      hex: 'FFFFFF'
+    - id: theme_family_blue_value_off
+      hex: 'E0E0E0'
+    - id: theme_family_blue_slider_on
+      hex: '4E7FA3'
+    - id: theme_family_blue_slider_off
+      hex: '2A5A6E'
+    - id: theme_family_blue_knob_on
+      hex: '68A2CC'
+    - id: theme_family_blue_knob_off
+      hex: '194357'
+    - id: theme_family_indigo_bg_on
+      hex: '3C428F'
+    - id: theme_family_indigo_bg_off
+      hex: '192457'
+    - id: theme_family_indigo_text_on
+      hex: 'FFFFFF'
+    - id: theme_family_indigo_text_off
+      hex: 'E0E0E0'
+    - id: theme_family_indigo_value_on
+      hex: 'FFFFFF'
+    - id: theme_family_indigo_value_off
+      hex: 'E0E0E0'
+    - id: theme_family_indigo_slider_on
+      hex: '4F57A3'
+    - id: theme_family_indigo_slider_off
+      hex: '2A3A6E'
+    - id: theme_family_indigo_knob_on
+      hex: '6870CC'
+    - id: theme_family_indigo_knob_off
+      hex: '192457'
+    - id: theme_family_red_bg_on
+      hex: '8F3C42'
+    - id: theme_family_red_bg_off
+      hex: '571924'
+    - id: theme_family_red_text_on
+      hex: 'FFFFFF'
+    - id: theme_family_red_text_off
+      hex: 'E0E0E0'
+    - id: theme_family_red_value_on
+      hex: 'FFFFFF'
+    - id: theme_family_red_value_off
+      hex: 'E0E0E0'
+    - id: theme_family_red_slider_on
+      hex: 'A34F57'
+    - id: theme_family_red_slider_off
+      hex: '6E2A3A'
+    - id: theme_family_red_knob_on
+      hex: 'CC6870'
+    - id: theme_family_red_knob_off
+      hex: '571924'
+    - id: theme_family_yellow_bg_on
+      hex: '8F893C'
+    - id: theme_family_yellow_bg_off
+      hex: '574C19'
+    - id: theme_family_yellow_text_on
+      hex: '0D0D0D'
+    - id: theme_family_yellow_text_off
+      hex: 'E0E0E0'
+    - id: theme_family_yellow_value_on
+      hex: '0D0D0D'
+    - id: theme_family_yellow_value_off
+      hex: 'E0E0E0'
+    - id: theme_family_yellow_slider_on
+      hex: 'A39D4F'
+    - id: theme_family_yellow_slider_off
+      hex: '6E5F2A'
+    - id: theme_family_yellow_knob_on
+      hex: 'CCC468'
+    - id: theme_family_yellow_knob_off
+      hex: '574C19'
+    - id: theme_family_orange_bg_on
+      hex: 'A8840F'
+    - id: theme_family_orange_bg_off
+      hex: '574C19'
+    - id: theme_family_orange_text_on
+      hex: '0D0D0D'
+    - id: theme_family_orange_text_off
+      hex: 'E0E0E0'
+    - id: theme_family_orange_value_on
+      hex: '0D0D0D'
+    - id: theme_family_orange_value_off
+      hex: 'E0E0E0'
+    - id: theme_family_orange_slider_on
+      hex: 'BC9922'
+    - id: theme_family_orange_slider_off
+      hex: '6E5F2A'
+    - id: theme_family_orange_knob_on
+      hex: 'DED1AB'
+    - id: theme_family_orange_knob_off
+      hex: '574C19'
+
     # Split (Double Split Complementary) theme family
     - id: split_page_title
       hex: 'FFFFFF'     # color for page titles. Using pure white for maximum contrast and emphasis.  
@@ -329,6 +457,24 @@ color:
       hex: '6870CC'
     - id: dani_fan_dir_forward
       hex: '68A2CC'
+    - id: theme_fan_inactive
+      hex: '666666'
+    - id: theme_fan_off_active
+      hex: '3C428F'
+    - id: theme_fan_low_active
+      hex: '3C8F89'
+    - id: theme_fan_med_active
+      hex: '8F893C'
+    - id: theme_fan_high_active
+      hex: '8F3C42'
+    - id: theme_fan_dir_reverse
+      hex: '6870CC'
+    - id: theme_fan_dir_forward
+      hex: '68A2CC'
+    - id: theme_sensor_tile_bg_default
+      hex: '3C6B8F'
+    - id: theme_sensor_tile_text_default
+      hex: 'FFFFFF'
     - id: dani_tstat_mode_inactive
       hex: '666666'
     - id: dani_tstat_mode_off_active

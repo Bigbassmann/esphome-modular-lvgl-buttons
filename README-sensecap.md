@@ -1,4 +1,4 @@
-﻿# SenseCAP D1S Fork README
+# SenseCAP D1S Fork README
 
 This file documents the current working pattern for this fork and the immediate cleanup/refactor plan.
 
@@ -227,7 +227,7 @@ This means layout/schema may continue to evolve while keeping root validation gr
 
 Current intentional theme exception/status:
 
-- `pages/fans_grid-sensecap-dani.yaml` now uses canonical fan tokens only
+- Shared page/fan/sensor/per-entity defaults now point at generic `theme_*` color IDs instead of `dani_*` IDs where cleaned
 - `pages/light_color-sensecap.yaml` is intentionally exempt for now and still contains hardcoded color literals
 
 ### Specific page layouts currently in use
