@@ -39,11 +39,13 @@ lvgl:
               - button:
                   id: button_${uid}
                   clickable: false
+                  styles: sense_tile_placeholder_style
                   bg_color: ${bg_color | default("theme_placeholder_bg_default")}
                   widgets:
                     - label:
                         id: icon_${uid}
                         text_font: $icon_font
+                        styles: sense_text_muted_style
                         align: top_left
                         x: 10
                         y: 8
@@ -54,8 +56,11 @@ lvgl:
                         align: left_mid
                         x: 42
                         text_font: nunito_16
+                        styles: sense_text_muted_style
                         text: ${text}
                         text_color: ${text_color | default("theme_page_text_muted")}
+
+
 
 
 

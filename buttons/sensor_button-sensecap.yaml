@@ -56,6 +56,7 @@ lvgl:
                     - label:
                         id: icon_${sensor_id}
                         text_font: $icon_font
+                        styles: sense_text_muted_style
                         text_color: ${icon_color | default("theme_page_text_muted")}
                         grid_cell_row_pos: 0
                         grid_cell_column_pos: 0
@@ -66,6 +67,7 @@ lvgl:
                     - label:
                         id: label_${sensor_id}
                         text_font: nunito_22
+                        styles: sense_text_primary_style
                         text_color: ${label_color | default("theme_page_text")}
                         width: 100%
                         long_mode: wrap
@@ -78,6 +80,7 @@ lvgl:
                     - label:
                         id: data_${sensor_id}
                         text_font: ${sensor_font | default("nunito_22")}
+                        styles: sense_text_primary_style
                         text_color: ${value_color | default("theme_page_text")}
                         grid_cell_row_pos: 1
                         grid_cell_column_pos: 1
@@ -101,4 +104,6 @@ sensor:
                 return str_sprintf("%.1f", x);
               }
               return str_sprintf("%.1f %s", x, unit.c_str());
+
+
 

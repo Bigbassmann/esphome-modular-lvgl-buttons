@@ -39,6 +39,7 @@ lvgl:
             widgets:
               - button:
                   id: button_${uid}
+                  styles: sense_nav_btn_style
                   widgets:
                     - label:
                         text_font: $icon_font
@@ -46,6 +47,7 @@ lvgl:
                         x: 8
                         y: 8
                         id: icon_${uid}
+                        styles: sense_text_primary_style
                         text: ${icon}
                     - label:
                         align: bottom_left
@@ -53,6 +55,7 @@ lvgl:
                         y: -6
                         text_font: nunito_16
                         id: label_${uid}
+                        styles: sense_text_primary_style
                         text: ${text}
                   on_short_click:
                     - homeassistant.action:
@@ -97,6 +100,8 @@ binary_sensor:
             - lvgl.widget.update:
                 id: label_${uid}
                 text_color: theme_page_text_muted
+
+
 
 
 

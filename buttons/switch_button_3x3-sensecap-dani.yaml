@@ -30,6 +30,7 @@ lvgl:
             widgets:
               - button:
                   id: button_${uid}
+                  styles: sense_nav_btn_style
                   widgets:
                     - label:
                         id: icon_${uid}
@@ -107,4 +108,6 @@ binary_sensor:
             - lvgl.widget.update:
                 id: value_${uid}
                 text_color: theme_page_text_muted
+
+
 
