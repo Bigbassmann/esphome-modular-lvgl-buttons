@@ -1,4 +1,4 @@
-﻿# =============================================================================
+# =============================================================================
 # PAGE EDIT GUIDE (SenseCAP)
 # - Color tokens: common/color-sensecap-dani.yaml.
 # - Entity/UI defaults (text/icon/value/on-off): common/ha_entities-sensecap-dani.yaml.
@@ -14,14 +14,13 @@
 substitutions:
   sense_page_lighting_switches_id: "page_lighting_switches"
   lights_title_font: "${ui_page_title_font}"
-  lights_title_color: "${ui_page_title_color}"
   lights_title_y: "${ui_page_title_y_offset}"
 
 lvgl:
   pages:
     - id: ${sense_page_lighting_switches_id}
       skip: true
-      styles: sense_page_style
+      styles: page_style
       layout:
         type: grid
         grid_rows:
@@ -61,7 +60,8 @@ lvgl:
             grid_cell_y_align: center
             y: ${lights_title_y}
             text_font: ${lights_title_font}
-            text_color: ${lights_title_color}
+            styles: sense_text_title_style
+
 
 
 

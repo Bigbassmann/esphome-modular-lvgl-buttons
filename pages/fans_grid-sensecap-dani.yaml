@@ -14,7 +14,6 @@
 substitutions:
   sense_page_fans_id: "page_fans"
   fan_title_font: "${ui_page_title_font}"
-  fan_title_color: "${ui_page_title_color}"
   fan_title_y: "${ui_page_title_y_offset}"
 
 script:
@@ -204,6 +203,7 @@ lvgl:
             align: TOP_MID
             y: 26    # 20
             text_font: ${fan_title_font}
+            styles: sense_text_title_style
         - obj:
             id: fans_controls_card
             align: TOP_MID
@@ -459,6 +459,11 @@ lvgl:
                         align: RIGHT_MID
                         x: -14
                         text_font: nunito_20
+
+
+
+
+
 
 
 

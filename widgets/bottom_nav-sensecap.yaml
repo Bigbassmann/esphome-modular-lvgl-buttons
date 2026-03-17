@@ -13,7 +13,7 @@ obj:
   width: 100%
   height: ${sense_nav_h | default("68")}
   styles: sense_nav_bar_style
-  bg_color: sense_bg    # sense_surface   # 
+  bg_color: theme_nav_bar_bg
   border_width: 0
   widgets:
     - button:
@@ -24,7 +24,6 @@ obj:
         width: 96
         height: 50
         styles: sense_nav_btn_style
-        bg_color: theme_family_indigo_bg_on
         on_press:
           - script.execute: nav_to_prev
         widgets:
@@ -32,7 +31,7 @@ obj:
               text: "Prev"
               align: CENTER
               text_font: nunito_14
-              text_color: theme_page_text
+              styles: sense_text_primary_style
 
     - button:
         id: home_button
@@ -42,7 +41,6 @@ obj:
         width: 108
         height: 50
         styles: sense_nav_btn_style
-        bg_color: theme_family_teal_bg_on
         on_press:
           - script.execute: nav_to_home
         widgets:
@@ -50,7 +48,7 @@ obj:
               text: "Home"
               align: CENTER
               text_font: nunito_14
-              text_color: theme_page_text
+              styles: sense_text_primary_style
 
     - button:
         id: menu_button
@@ -60,7 +58,6 @@ obj:
         width: 108
         height: 50
         styles: sense_nav_btn_style
-        bg_color: theme_family_blue_bg_on
         on_press:
           - script.execute: nav_to_menu
         widgets:
@@ -68,7 +65,7 @@ obj:
               text: "Menu"
               align: CENTER
               text_font: nunito_14
-              text_color: theme_page_text
+              styles: sense_text_primary_style
 
     - button:
         id: next_button
@@ -78,7 +75,6 @@ obj:
         width: 96
         height: 50
         styles: sense_nav_btn_style
-        bg_color: theme_family_red_bg_on
         on_press:
           - script.execute: nav_to_next
         widgets:
@@ -86,4 +82,5 @@ obj:
               text: "Next"
               align: CENTER
               text_font: nunito_14
-              text_color: theme_page_text
+              styles: sense_text_primary_style
+

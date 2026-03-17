@@ -25,7 +25,7 @@ substitutions:
 lvgl:
   pages:
     - id: ${sense_page_settings_id}
-      styles: sense_page_style
+      styles: page_style
       widgets:
         - obj:
             id: settings_grid_card
@@ -55,7 +55,7 @@ lvgl:
                         text: "WiFi Setup"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: ${ui_page_text_color}
+                        styles: sense_text_primary_style
               - button:
                   id: settings_btn_tstat
                   grid_cell_row_pos: 0
@@ -70,7 +70,7 @@ lvgl:
                         text: "Thermostat"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: ${ui_page_text_color}
+                        styles: sense_text_primary_style
               - button:
                   id: settings_btn_fans
                   grid_cell_row_pos: 1
@@ -85,7 +85,7 @@ lvgl:
                         text: "Fan Controls"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: ${ui_page_text_color}
+                        styles: sense_text_primary_style
               - button:
                   id: settings_btn_overrides
                   grid_cell_row_pos: 1
@@ -100,7 +100,7 @@ lvgl:
                         text: "Overrides"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: ${ui_page_text_color}
+                        styles: sense_text_primary_style
               - button:
                   id: settings_btn_dimmers
                   grid_cell_row_pos: 2
@@ -115,7 +115,7 @@ lvgl:
                         text: "Dimmers"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: ${ui_page_text_color}
+                        styles: sense_text_primary_style
               - button:
                   id: settings_btn_switches
                   grid_cell_row_pos: 2
@@ -130,7 +130,7 @@ lvgl:
                         text: "On/Off Lights"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: ${ui_page_text_color}
+                        styles: sense_text_primary_style
               - button:
                   id: settings_btn_sensors
                   grid_cell_row_pos: 3
@@ -145,7 +145,7 @@ lvgl:
                         text: "Sensors"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: ${ui_page_text_color}
+                        styles: sense_text_primary_style
               - button:
                   id: settings_btn_display
                   grid_cell_row_pos: 3
@@ -160,6 +160,7 @@ lvgl:
                         text: "Display"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: ${ui_page_text_color}
+                        styles: sense_text_primary_style
+
 
 

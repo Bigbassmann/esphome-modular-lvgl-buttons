@@ -14,13 +14,12 @@
 substitutions:
   sense_page_sensors_id: "page_sensors"
   sensors_title_font: "${ui_page_title_font | default(\"nunito_36\")}"
-  sensors_title_color: "${ui_page_title_color | default(\"theme_page_title\")}"
   sensors_title_y: "${ui_page_title_y_offset | default(\"-2\")}"
 
 lvgl:
   pages:
     - id: ${sense_page_sensors_id}
-      styles: sense_page_style
+      styles: page_style
       on_load:
         - component.update: temp_f
         - component.update: ha_tstat_current_temp
@@ -83,5 +82,6 @@ lvgl:
             grid_cell_y_align: center
             y: ${sensors_title_y}
             text_font: ${sensors_title_font}
-            text_color: ${sensors_title_color}
+            styles: sense_text_title_style
+
 

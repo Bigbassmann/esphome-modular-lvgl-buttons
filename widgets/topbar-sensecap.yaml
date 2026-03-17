@@ -13,7 +13,7 @@ obj:
   width: 100%
   height: ${sense_topbar_h | default("46")}
   styles: sense_topbar_style
-  bg_color: sense_bg
+  bg_color: theme_shell_bg
   border_width: 0
   widgets:
     - label:
@@ -23,8 +23,8 @@ obj:
         x: 12
         y: 8
         text_font: nunito_20  # 18
-        text_color: theme_page_text
-        bg_color: sense_bg
+        styles: sense_text_primary_style
+        bg_color: theme_shell_bg
         bg_opa: cover
 
     - label:
@@ -34,8 +34,8 @@ obj:
         x: -12
         y: 8
         text_font: nunito_20  # 18
-        text_color: theme_page_text
-        bg_color: sense_bg
+        styles: sense_text_primary_style
+        bg_color: theme_shell_bg
         bg_opa: cover
 
     - button:
@@ -44,7 +44,7 @@ obj:
         y: 2
         width: 56
         height: 36
-        bg_color: sense_bg
+        bg_color: theme_shell_bg
         border_width: 0
         radius: 0
         pad_all: 0
@@ -56,5 +56,6 @@ obj:
               id: sense_topbar_wifi
               align: CENTER
               text_font: mdi_icons_34   # 34
-              text_color: theme_page_text
+              styles: sense_text_primary_style
               text: ${mdi_wifi_strength_off}
+

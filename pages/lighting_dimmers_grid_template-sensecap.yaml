@@ -18,7 +18,6 @@ substitutions:
   dimmers_title_text: "Dimmers & Overrides"
   dimmers_title_font: "${ui_page_title_font}"
   dimmers_title_y: "${ui_page_title_y_offset}"
-  dimmers_title_color: "${ui_page_title_color}"
 
   # Optional left-column slot 1 (row 1)
   dimmers_left_row1_uid: "dimmers_left_row1"
@@ -26,8 +25,8 @@ substitutions:
   dimmers_left_row1_entity_id: "${ent_sleepy_toggle}"
   dimmers_left_row1_text: "${ui_sleepy_text}"
   dimmers_left_row1_icon: "${ui_sleepy_icon}"
-  dimmers_left_row1_on_bg: "${ui_sleepy_on_bg}"
-  dimmers_left_row1_off_bg: "${ui_sleepy_off_bg}"
+  dimmers_left_row1_on_bg: "${ui_role_profile_teal_on_bg}"
+  dimmers_left_row1_off_bg: "${ui_role_profile_teal_off_bg}"
 
   # Optional left-column slot 2 (row 2)
   dimmers_left_row2_uid: "dimmers_left_row2"
@@ -35,8 +34,8 @@ substitutions:
   dimmers_left_row2_entity_id: "${ent_bedtime_toggle}"
   dimmers_left_row2_text: "${ui_bedtime_text}"
   dimmers_left_row2_icon: "${ui_bedtime_icon}"
-  dimmers_left_row2_on_bg: "${ui_bedtime_on_bg}"
-  dimmers_left_row2_off_bg: "${ui_bedtime_off_bg}"
+  dimmers_left_row2_on_bg: "${ui_role_profile_indigo_on_bg}"
+  dimmers_left_row2_off_bg: "${ui_role_profile_indigo_off_bg}"
 
   # Optional left-column slot 3 (row 3)
   dimmers_left_row3_uid: "dimmers_left_row3"
@@ -44,8 +43,8 @@ substitutions:
   dimmers_left_row3_entity_id: "${ent_outdoor_lights_toggle}"
   dimmers_left_row3_text: "Outdoor"
   dimmers_left_row3_icon: "$mdi_string_lights"
-  dimmers_left_row3_on_bg: "${ui_dimmers_left_row3_on_bg}"
-  dimmers_left_row3_off_bg: "${ui_dimmers_left_row3_off_bg}"
+  dimmers_left_row3_on_bg: "${ui_role_profile_blue_on_bg}"
+  dimmers_left_row3_off_bg: "${ui_role_profile_blue_off_bg}"
 
   # Optional left-column slot 4 (row 4)
   dimmers_left_row4_uid: "dimmers_left_row4"
@@ -99,6 +98,7 @@ lvgl:
             grid_cell_y_align: center
             y: ${dimmers_title_y}
             text_font: ${dimmers_title_font}
+            styles: sense_text_title_style
         - container:
             id: ${dimmers_left_row1_uid}
             hidden: ${dimmers_left_row1_hidden}
@@ -228,4 +228,5 @@ lvgl:
                         text: ${dimmers_left_row4_text}
                   on_short_click:
                     - lvgl.page.show: ${dimmers_left_row4_click_page}
+
 

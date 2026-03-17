@@ -14,24 +14,23 @@
 substitutions:
   sense_page_overrides_id: "page_overrides"
   overrides_title_font: "${ui_page_title_font}"
-  overrides_title_color: "${ui_page_title_color}"
   overrides_title_y: "${ui_page_title_y_offset}"
 
   ui_overrides_dani_entity_id: "${ent_dani_mode_on}"
   ui_overrides_dani_text: "${ui_dani_text}"
   ui_overrides_dani_icon: "${ui_dani_icon}"
-  ui_overrides_dani_on_bg: "${ui_dani_on_bg}"
-  ui_overrides_dani_off_bg: "${ui_dani_off_bg}"
+  ui_overrides_dani_on_bg: "${ui_role_profile_red_on_bg}"
+  ui_overrides_dani_off_bg: "${ui_role_profile_red_off_bg}"
   ui_overrides_dani_on_icon: "${ui_dani_on_icon}"
   ui_overrides_dani_off_icon: "${ui_dani_off_icon}"
   ui_overrides_dani_value_on: "${ui_dani_value_on}"
   ui_overrides_dani_value_off: "${ui_dani_value_off}"
-  ui_overrides_dani_icon_on_color: "${ui_base_icon_on_color}"
-  ui_overrides_dani_icon_off_color: "${ui_page_text_muted_color}"
-  ui_overrides_dani_text_on_color: "${ui_dani_text_on_color}"
-  ui_overrides_dani_text_off_color: "${ui_dani_text_off_color}"
-  ui_overrides_dani_value_on_color: "${ui_dani_value_on_color}"
-  ui_overrides_dani_value_off_color: "${ui_dani_value_off_color}"
+  ui_overrides_dani_icon_on_color: "${ui_role_profile_red_icon_on_color}"
+  ui_overrides_dani_icon_off_color: "${ui_role_profile_red_icon_off_color}"
+  ui_overrides_dani_text_on_color: "${ui_role_profile_red_text_on_color}"
+  ui_overrides_dani_text_off_color: "${ui_role_profile_red_text_off_color}"
+  ui_overrides_dani_value_on_color: "${ui_role_profile_red_value_on_color}"
+  ui_overrides_dani_value_off_color: "${ui_role_profile_red_value_off_color}"
   ui_overrides_dani_show_icon: "true"
   ui_overrides_dani_show_text: "true"
   ui_overrides_dani_show_value: "true"
@@ -79,6 +78,7 @@ lvgl:
             grid_cell_y_align: center
             y: ${overrides_title_y}
             text_font: ${overrides_title_font}
+            styles: sense_text_title_style
         - container:
             id: overrides_btn_cleaners
             grid_cell_row_pos: 1
@@ -1272,4 +1272,5 @@ binary_sensor:
                   - lvgl.widget.update:
                       id: value_overrides_btn_dani
                       hidden: true
+
 
