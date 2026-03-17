@@ -110,7 +110,7 @@ lvgl:
                     pad_all: -10  # negative pad to make the arc thicker without increasing overall widget size
                     
                   knob:
-                    bg_color: ${ui_page_text_color}
+                    bg_color: ${ui_tstat_mode_off_active_color}
                     pad_all: 3
                   on_value:     # add mode: normal for heat and reverse for cool, with color feedback (cool=blue, heat=red, off/auto=gray)
                     then:
@@ -205,6 +205,7 @@ lvgl:
                   width: 138
                   height: 30  # 32
                   text_font: montserrat_14
+                  styles: sense_display_row_btn_style
                   options:
                     - "Off"
                     - "Heat"
@@ -261,6 +262,7 @@ lvgl:
                   width: 138
                   height: 30  # 32
                   text_font: montserrat_14
+                  styles: sense_display_row_btn_style
                   options:
                     - "Auto low"
                     - "Low"
@@ -472,6 +474,8 @@ interval:
                       id: tstat2_target_arc
                       indicator:
                         arc_color: ${ui_tstat_mode_cool_active_color}
+                      knob:
+                        bg_color: ${ui_tstat_mode_cool_active_color}
 
             - if:
                 condition:
@@ -481,6 +485,8 @@ interval:
                       id: tstat2_target_arc
                       indicator:
                         arc_color: ${ui_tstat_mode_heat_active_color}
+                      knob:
+                        bg_color: ${ui_tstat_mode_heat_active_color}
 
             - if:
                 condition:
@@ -490,6 +496,8 @@ interval:
                       id: tstat2_target_arc
                       indicator:
                         arc_color: ${ui_tstat_mode_off_active_color}
+                      knob:
+                        bg_color: ${ui_tstat_mode_off_active_color}
 
 
 

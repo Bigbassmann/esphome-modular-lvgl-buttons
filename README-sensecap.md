@@ -12,7 +12,8 @@ This file documents the current working pattern for this fork and the immediate 
 - Instance mapping is centralized in `common/package_instance_mapping-sensecap-dani.yaml`
 - Page title/text defaults are centralized as `ui_page_*` vars and mapped to Dani family tokens
 - First cleanup pass moved reusable page/button template defaults onto canonical `ui_base_*` / `ui_sensor_*` tokens so structural defaults now resolve from one source more consistently
-- Thermostat internals now follow shared theme text styles for title/labels/values; thermostat arc state colors remain local and state-driven
+- Thermostat internals now follow shared theme text styles for title/labels/values; thermostat mode dropdowns use shared themed control styling, and the arc knob follows the same local mode accent as the indicator.
+- Home page wiring is now normalized through generic `page0_slot*` aliases in `common/page_mapping-sensecap.yaml`; the page keeps existing behavior but no longer uses entity-named tile IDs in the active page/theme-refresh path.
 
 ## Repo Rules (SenseCAP Fork)
 
@@ -341,6 +342,7 @@ This fork uses a token-first color model so page files do not hardcode one-off h
 
 - 2026-03-10: Theme slots 3..9 now have distinct style mappings in theme_style-sensecap-dani.yaml; display dropdown uses ui_theme_label_0..ui_theme_label_9 and slot-based selection.
 - Theme runtime refresh: centralized runtime repaint remains enabled for the three home tiles (`Dani`, `Sleepy`, `Bedtime`). Fans, Overrides, and Dimmers now follow theme changes through shared LVGL style bindings (`page_style`, `sense_display_row_btn_style`, `sense_nav_btn_style`, `sense_menu_cat*`) instead of page-level repaint scripts; local page/button logic updates only state text, icon/value content, and slider state where needed.
+
 
 
 

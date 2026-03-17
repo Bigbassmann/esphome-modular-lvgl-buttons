@@ -21,7 +21,7 @@ lvgl:
   pages:
     - id: info_screen
       skip: true
-      styles: sense_page_style
+      styles: page_style
       <<: !include
         file: ../widgets/swipe_navigation.yaml
       widgets:
@@ -171,4 +171,5 @@ lvgl:
                   text: "Exit"
             on_press:
               - script.execute: nav_to_home
+
 

@@ -13,21 +13,20 @@
 # =============================================================================
 substitutions:
   wifi_title_font: "${ui_page_title_font}"
-  wifi_title_color: "${ui_page_title_color}"
   wifi_title_y: "${ui_page_title_y_offset}"
 
 lvgl:
   pages:
     - id: page_wifi_setup
       skip: true
-      styles: sense_page_style
+      styles: page_style
       widgets:
         - label:
             text: "WiFi Setup"
             align: TOP_MID
             y: ${wifi_title_y}
             text_font: ${wifi_title_font}
-            text_color: ${wifi_title_color}
+            styles: sense_text_title_style
         - obj:
             id: wifi_setup_card
             align: TOP_MID
@@ -43,7 +42,7 @@ lvgl:
                   align: TOP_MID
                   y: 56
                   text_font: nunito_18
-                  text_color: ${wifi_title_color}
+                  styles: sense_text_title_style
 
               - label:
                   text: "1. Connect to device AP"
@@ -51,21 +50,21 @@ lvgl:
                   x: 14
                   y: 104
                   text_font: nunito_18
-                  text_color: ${wifi_title_color}
+                  styles: sense_text_title_style
               - label:
                   text: "2. Open http://192.168.4.1"
                   align: TOP_LEFT
                   x: 14
                   y: 136
                   text_font: nunito_18
-                  text_color: ${wifi_title_color}
+                  styles: sense_text_title_style
               - label:
                   text: "3. Save your WiFi credentials"
                   align: TOP_LEFT
                   x: 14
                   y: 168
                   text_font: nunito_18
-                  text_color: ${wifi_title_color}
+                  styles: sense_text_title_style
 
               - button:
                   id: wifi_setup_back_btn
@@ -81,7 +80,8 @@ lvgl:
                         text: "Back to Menu"
                         align: CENTER
                         text_font: nunito_18
-                        text_color: ${wifi_title_color}
+                        styles: sense_text_title_style
+
 
 
 

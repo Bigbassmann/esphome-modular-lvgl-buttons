@@ -225,7 +225,7 @@ globals:
     restore_value: no
     initial_value: '1'
 script:
-  - id: sense_theme_refresh_home_tiles
+  - id: sense_theme_refresh_page0_toggle_slots
     then:
       - if:
           condition:
@@ -233,430 +233,430 @@ script:
           then:
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_dani
+                  binary_sensor.is_on: widget_sensor_page0_slot0_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot0_blue_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot0_blue_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot0_blue_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot0_blue_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot0_blue_bg}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot0_blue_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot0_blue_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot0_blue_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot0_nav_btn_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot0_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot0_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot0_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot0_nav_btn_bg}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot0_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot0_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot0_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_sleepy
+                  binary_sensor.is_on: widget_sensor_page0_slot1_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot0_blue_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot0_blue_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot0_blue_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot0_blue_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot0_blue_bg}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot0_blue_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot0_blue_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot0_blue_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot0_nav_btn_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot0_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot0_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot0_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot0_nav_btn_bg}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot0_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot0_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot0_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_bedtime
+                  binary_sensor.is_on: widget_sensor_page0_slot2_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot0_blue_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot0_blue_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot0_blue_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot0_blue_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot0_blue_bg}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot0_blue_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot0_blue_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot0_blue_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot0_nav_btn_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot0_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot0_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot0_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot0_nav_btn_bg}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot0_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot0_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot0_page_text}
       - if:
           condition:
             lambda: 'return id(sense_theme_slot) == 1;'
           then:
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_dani
+                  binary_sensor.is_on: widget_sensor_page0_slot0_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot1_blue_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot1_blue_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot1_blue_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot1_blue_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot1_blue_bg}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot1_blue_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot1_blue_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot1_blue_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot1_blue_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot1_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot1_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot1_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot1_blue_bg_off}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot1_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot1_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot1_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_sleepy
+                  binary_sensor.is_on: widget_sensor_page0_slot1_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot1_teal_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot1_teal_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot1_teal_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot1_teal_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot1_teal_bg}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot1_teal_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot1_teal_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot1_teal_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot1_blue_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot1_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot1_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot1_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot1_blue_bg_off}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot1_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot1_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot1_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_bedtime
+                  binary_sensor.is_on: widget_sensor_page0_slot2_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot1_indigo_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot1_indigo_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot1_indigo_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot1_indigo_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot1_indigo_bg}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot1_indigo_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot1_indigo_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot1_indigo_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot1_blue_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot1_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot1_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot1_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot1_blue_bg_off}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot1_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot1_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot1_page_text}
       - if:
           condition:
             lambda: 'return id(sense_theme_slot) == 2;'
           then:
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_dani
+                  binary_sensor.is_on: widget_sensor_page0_slot0_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot2_cyan_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot2_cyan_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot2_cyan_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot2_cyan_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot2_cyan_bg}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot2_cyan_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot2_cyan_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot2_cyan_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot2_cyan_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot2_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot2_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot2_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot2_cyan_bg_off}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot2_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot2_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot2_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_sleepy
+                  binary_sensor.is_on: widget_sensor_page0_slot1_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot2_blue_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot2_blue_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot2_blue_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot2_blue_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot2_blue_bg}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot2_blue_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot2_blue_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot2_blue_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot2_blue_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot2_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot2_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot2_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot2_blue_bg_off}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot2_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot2_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot2_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_bedtime
+                  binary_sensor.is_on: widget_sensor_page0_slot2_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot2_violet_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot2_violet_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot2_violet_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot2_violet_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot2_violet_bg}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot2_violet_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot2_violet_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot2_violet_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot2_violet_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot2_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot2_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot2_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot2_violet_bg_off}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot2_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot2_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot2_page_text}
       - if:
           condition:
             lambda: 'return id(sense_theme_slot) == 3;'
           then:
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_dani
+                  binary_sensor.is_on: widget_sensor_page0_slot0_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot3_primary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot3_primary_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot3_primary_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot3_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot3_primary_bg}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot3_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot3_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot3_primary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot3_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot3_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot3_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot3_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot3_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot3_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot3_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot3_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_sleepy
+                  binary_sensor.is_on: widget_sensor_page0_slot1_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot3_secondary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot3_secondary_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot3_secondary_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot3_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot3_secondary_bg}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot3_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot3_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot3_secondary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot3_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot3_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot3_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot3_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot3_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot3_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot3_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot3_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_bedtime
+                  binary_sensor.is_on: widget_sensor_page0_slot2_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot3_tertiary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot3_tertiary_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot3_tertiary_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot3_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot3_tertiary_bg}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot3_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot3_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot3_tertiary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot3_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot3_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot3_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot3_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot3_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot3_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot3_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot3_page_text}
       - if:
           condition:
             lambda: 'return id(sense_theme_slot) == 4;'
           then:
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_dani
+                  binary_sensor.is_on: widget_sensor_page0_slot0_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot4_primary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot4_primary_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot4_primary_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot4_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot4_primary_bg}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot4_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot4_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot4_primary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot4_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot4_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot4_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot4_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot4_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot4_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot4_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot4_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_sleepy
+                  binary_sensor.is_on: widget_sensor_page0_slot1_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot4_secondary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot4_secondary_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot4_secondary_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot4_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot4_secondary_bg}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot4_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot4_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot4_secondary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot4_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot4_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot4_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot4_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot4_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot4_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot4_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot4_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_bedtime
+                  binary_sensor.is_on: widget_sensor_page0_slot2_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot4_tertiary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot4_tertiary_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot4_tertiary_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot4_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot4_tertiary_bg}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot4_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot4_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot4_tertiary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot4_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot4_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot4_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot4_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot4_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot4_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot4_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot4_page_text}
       - if:
           condition:
             lambda: 'return id(sense_theme_slot) == 5;'
           then:
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_dani
+                  binary_sensor.is_on: widget_sensor_page0_slot0_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot5_primary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot5_primary_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot5_primary_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot5_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot5_primary_bg}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot5_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot5_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot5_primary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot5_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot5_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot5_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot5_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot5_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot5_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot5_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot5_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_sleepy
+                  binary_sensor.is_on: widget_sensor_page0_slot1_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot5_secondary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot5_secondary_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot5_secondary_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot5_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot5_secondary_bg}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot5_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot5_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot5_secondary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot5_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot5_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot5_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot5_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot5_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot5_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot5_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot5_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_bedtime
+                  binary_sensor.is_on: widget_sensor_page0_slot2_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot5_tertiary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot5_tertiary_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot5_tertiary_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot5_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot5_tertiary_bg}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot5_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot5_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot5_tertiary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot5_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot5_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot5_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot5_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot5_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot5_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot5_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot5_page_text}
       - if:
           condition:
             lambda: 'return id(sense_theme_slot) == 6;'
           then:
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_dani
+                  binary_sensor.is_on: widget_sensor_page0_slot0_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot6_primary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot6_primary_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot6_primary_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot6_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot6_primary_bg}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot6_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot6_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot6_primary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot6_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot6_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot6_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot6_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot6_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot6_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot6_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot6_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_sleepy
+                  binary_sensor.is_on: widget_sensor_page0_slot1_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot6_secondary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot6_secondary_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot6_secondary_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot6_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot6_secondary_bg}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot6_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot6_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot6_secondary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot6_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot6_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot6_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot6_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot6_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot6_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot6_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot6_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_bedtime
+                  binary_sensor.is_on: widget_sensor_page0_slot2_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot6_tertiary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot6_tertiary_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot6_tertiary_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot6_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot6_tertiary_bg}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot6_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot6_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot6_tertiary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot6_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot6_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot6_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot6_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot6_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot6_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot6_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot6_page_text}
       - if:
           condition:
             lambda: 'return id(sense_theme_slot) == 7;'
           then:
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_dani
+                  binary_sensor.is_on: widget_sensor_page0_slot0_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot7_primary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot7_primary_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot7_primary_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot7_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot7_primary_bg}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot7_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot7_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot7_primary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot7_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot7_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot7_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot7_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot7_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot7_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot7_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot7_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_sleepy
+                  binary_sensor.is_on: widget_sensor_page0_slot1_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot7_secondary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot7_secondary_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot7_secondary_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot7_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot7_secondary_bg}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot7_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot7_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot7_secondary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot7_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot7_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot7_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot7_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot7_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot7_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot7_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot7_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_bedtime
+                  binary_sensor.is_on: widget_sensor_page0_slot2_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot7_tertiary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot7_tertiary_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot7_tertiary_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot7_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot7_tertiary_bg}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot7_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot7_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot7_tertiary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot7_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot7_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot7_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot7_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot7_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot7_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot7_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot7_page_text}
       - if:
           condition:
             lambda: 'return id(sense_theme_slot) == 8;'
           then:
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_dani
+                  binary_sensor.is_on: widget_sensor_page0_slot0_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot8_primary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot8_primary_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot8_primary_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot8_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot8_primary_bg}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot8_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot8_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot8_primary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot8_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot8_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot8_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot8_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot8_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot8_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot8_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot8_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_sleepy
+                  binary_sensor.is_on: widget_sensor_page0_slot1_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot8_secondary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot8_secondary_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot8_secondary_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot8_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot8_secondary_bg}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot8_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot8_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot8_secondary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot8_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot8_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot8_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot8_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot8_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot8_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot8_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot8_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_bedtime
+                  binary_sensor.is_on: widget_sensor_page0_slot2_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot8_tertiary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot8_tertiary_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot8_tertiary_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot8_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot8_tertiary_bg}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot8_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot8_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot8_tertiary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot8_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot8_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot8_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot8_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot8_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot8_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot8_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot8_page_text}
       - if:
           condition:
             lambda: 'return id(sense_theme_slot) == 9;'
           then:
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_dani
+                  binary_sensor.is_on: widget_sensor_page0_slot0_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot9_primary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot9_primary_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot9_primary_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot9_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot9_primary_bg}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot9_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot9_primary_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot9_primary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_dani, bg_color: theme_slot9_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_dani, text_color: theme_slot9_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_dani, text_color: theme_slot9_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_dani, text_color: theme_slot9_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_tile, bg_color: theme_slot9_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot0_icon, text_color: theme_slot9_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_label, text_color: theme_slot9_page_text}
+                  - lvgl.widget.update: {id: page0_slot0_value, text_color: theme_slot9_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_sleepy
+                  binary_sensor.is_on: widget_sensor_page0_slot1_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot9_secondary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot9_secondary_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot9_secondary_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot9_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot9_secondary_bg}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot9_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot9_secondary_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot9_secondary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_sleepy, bg_color: theme_slot9_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_sleepy, text_color: theme_slot9_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_sleepy, text_color: theme_slot9_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_sleepy, text_color: theme_slot9_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_tile, bg_color: theme_slot9_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot1_icon, text_color: theme_slot9_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_label, text_color: theme_slot9_page_text}
+                  - lvgl.widget.update: {id: page0_slot1_value, text_color: theme_slot9_page_text}
             - if:
                 condition:
-                  binary_sensor.is_on: widget_sensor_home_v2_btn_bedtime
+                  binary_sensor.is_on: widget_sensor_page0_slot2_state
                 then:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot9_tertiary_bg}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot9_tertiary_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot9_tertiary_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot9_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot9_tertiary_bg}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot9_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot9_tertiary_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot9_tertiary_text}
                 else:
-                  - lvgl.widget.update: {id: home_v2_btn_bedtime, bg_color: theme_slot9_primary_bg_off}
-                  - lvgl.widget.update: {id: home_v2_icon_bedtime, text_color: theme_slot9_page_text}
-                  - lvgl.widget.update: {id: home_v2_label_bedtime, text_color: theme_slot9_page_text}
-                  - lvgl.widget.update: {id: home_v2_value_bedtime, text_color: theme_slot9_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_tile, bg_color: theme_slot9_primary_bg_off}
+                  - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot9_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot9_page_text}
+                  - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot9_page_text}
 select:
   - platform: template
     name: "Current Theme"
@@ -1439,6 +1439,7 @@ select:
               - lvgl.style.update: {id: sense_menu_cat3_style, bg_color: theme_slot9_override_bg, text_color: theme_slot9_override_text}
               - lvgl.style.update: {id: sense_menu_cat4_style, bg_color: theme_slot9_tertiary_bg, text_color: theme_slot9_tertiary_text}
         - lvgl.widget.redraw
+
 
 
 

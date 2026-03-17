@@ -14,7 +14,6 @@
 substitutions:
   sense_page_display_settings_id: "page_display_settings"
   display_title_font: "${ui_page_title_font}"
-  display_title_color: "${ui_page_title_color}"
   display_title_y: "${ui_page_title_y_offset}"
 
 script:
@@ -62,6 +61,7 @@ script:
             return std::string(buf);
       - lvgl.dropdown.update:
           id: display_theme_dropdown
+          styles: sense_display_row_btn_style
           selected_index: !lambda |-
             auto idx = id(current_theme).active_index();
             return idx.has_value() ? (int) idx.value() : 0;
@@ -116,7 +116,7 @@ lvgl:
   pages:
     - id: ${sense_page_display_settings_id}
       skip: true
-      styles: sense_page_style
+      styles: page_style
       on_load:
         - script.execute: display_settings_refresh_ui
       widgets:
@@ -125,7 +125,7 @@ lvgl:
             align: TOP_MID
             y: ${display_title_y}
             text_font: ${display_title_font}
-            text_color: ${display_title_color}
+            styles: sense_text_title_style
         - obj:
             id: display_settings_card
             align: TOP_MID
@@ -148,7 +148,7 @@ lvgl:
                         text: "Brightness"
                         align: CENTER
                         text_font: nunito_16
-                        text_color: "${ui_page_text_color}"
+                        styles: sense_text_primary_style
 
               - slider:
                   id: display_brightness_slider
@@ -186,7 +186,7 @@ lvgl:
                   x: -12
                   y: 50
                   text_font: nunito_18
-                  text_color: "${ui_page_text_color}"
+                  styles: sense_text_primary_style
 
               - button:
                   id: display_idle_scroll_toggle
@@ -206,8 +206,8 @@ lvgl:
                           id(sense_display_scroll_sleep_start_ms) = 0;
                       - script.execute: display_settings_refresh_ui
                   widgets:
-                    - label: {text: "Scroll", align: LEFT_MID, x: 10, text_font: nunito_16, text_color: "${ui_page_text_color}"}
-                    - label: {id: display_idle_scroll_state, text: "OFF", align: RIGHT_MID, x: -10, text_font: nunito_16, text_color: "${ui_page_text_color}"}
+                    - label: {text: "Scroll", align: LEFT_MID, x: 10, text_font: nunito_16, styles: sense_text_primary_style}
+                    - label: {id: display_idle_scroll_state, text: "OFF", align: RIGHT_MID, x: -10, text_font: nunito_16, styles: sense_text_primary_style}
 
               - slider:
                   id: display_idle_scroll_slider
@@ -242,7 +242,7 @@ lvgl:
                   x: -12
                   y: 84
                   text_font: nunito_18
-                  text_color: "${ui_page_text_color}"
+                  styles: sense_text_primary_style
 
               - button:
                   id: display_scroll_rate_label
@@ -257,7 +257,7 @@ lvgl:
                         text: "Rate"
                         align: CENTER
                         text_font: nunito_16
-                        text_color: "${ui_page_text_color}"
+                        styles: sense_text_primary_style
 
               - slider:
                   id: display_scroll_rate_slider
@@ -292,7 +292,7 @@ lvgl:
                   x: -12
                   y: 118
                   text_font: nunito_18
-                  text_color: "${ui_page_text_color}"
+                  styles: sense_text_primary_style
 
               - button:
                   id: display_sleep_toggle
@@ -322,8 +322,8 @@ lvgl:
                             - script.execute: sense_display_apply_brightness
                       - script.execute: display_settings_refresh_ui
                   widgets:
-                    - label: {text: "Sleep", align: LEFT_MID, x: 10, text_font: nunito_16, text_color: "${ui_page_text_color}"}
-                    - label: {id: display_sleep_state, text: "ON", align: RIGHT_MID, x: -10, text_font: nunito_16, text_color: "${ui_page_text_color}"}
+                    - label: {text: "Sleep", align: LEFT_MID, x: 10, text_font: nunito_16, styles: sense_text_primary_style}
+                    - label: {id: display_sleep_state, text: "ON", align: RIGHT_MID, x: -10, text_font: nunito_16, styles: sense_text_primary_style}
 
               - slider:
                   id: display_sleep_timeout_slider
@@ -358,7 +358,7 @@ lvgl:
                   x: -12
                   y: 152
                   text_font: nunito_18
-                  text_color: "${ui_page_text_color}"
+                  styles: sense_text_primary_style
 
               - button:
                   id: display_scroll_sleep_toggle
@@ -377,8 +377,8 @@ lvgl:
                           id(sense_display_scroll_sleep_start_ms) = 0;
                       - script.execute: display_settings_refresh_ui
                   widgets:
-                    - label: {text: "Scroll Sleep", align: LEFT_MID, x: 10, text_font: nunito_16, text_color: "${ui_page_text_color}"}
-                    - label: {id: display_scroll_sleep_state, text: "OFF", align: RIGHT_MID, x: -10, text_font: nunito_16, text_color: "${ui_page_text_color}"}
+                    - label: {text: "Scroll Sleep", align: LEFT_MID, x: 10, text_font: nunito_16, styles: sense_text_primary_style}
+                    - label: {id: display_scroll_sleep_state, text: "OFF", align: RIGHT_MID, x: -10, text_font: nunito_16, styles: sense_text_primary_style}
 
               - slider:
                   id: display_scroll_sleep_slider
@@ -413,7 +413,7 @@ lvgl:
                   x: -12
                   y: 186
                   text_font: nunito_18
-                  text_color: "${ui_page_text_color}"
+                  styles: sense_text_primary_style
 
               - button:
                   id: display_theme_label
@@ -428,10 +428,11 @@ lvgl:
                         text: "Theme"
                         align: CENTER
                         text_font: nunito_16
-                        text_color: "${ui_page_text_color}"
+                        styles: sense_text_primary_style
 
               - dropdown:
                   id: display_theme_dropdown
+                  styles: sense_display_row_btn_style
                   align: TOP_LEFT
                   x: 126
                   y: 216
@@ -460,7 +461,8 @@ lvgl:
                   x: 126
                   y: 252
                   text_font: nunito_14
-                  text_color: "${ui_page_text_color}"
+                  styles: sense_text_primary_style
+
 
 
 

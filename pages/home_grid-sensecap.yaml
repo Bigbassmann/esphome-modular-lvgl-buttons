@@ -12,20 +12,19 @@
 # - Keep page files focused on ui_* + layout; use per-page overrides only when needed.
 # =============================================================================
 substitutions:
-  sense_page_home_id: "page_home_v2"
+  page0_id: "page_home_v2"
   sense_page_tstat_id: "page_thermostat_v2"
   sense_page_fans_id: "page_fans"
   sense_page_overrides_id: "page_overrides"
-  home_title_text: "Home Menu"
-  home_title_font: "${ui_page_title_font}"
-  home_title_color: "${ui_page_title_color}"
-  home_title_y: "${ui_page_title_y_offset}"
+  page0_title_text: "Home Menu"
+  page0_title_font: "${ui_page_title_font}"
+  page0_title_y: "${ui_page_title_y_offset}"
 
 
 lvgl:
   pages:
-    - id: ${sense_page_home_id}
-      styles: sense_page_style
+    - id: ${page0_id}
+      styles: page_style
       layout:
         type: grid
         grid_rows:
@@ -45,23 +44,23 @@ lvgl:
       pad_right: 8
       widgets:
         - label:
-            id: home_v2_title
-            text: ${home_title_text}
+            id: page0_title
+            text: ${page0_title_text}
             grid_cell_row_pos: 0
             grid_cell_column_pos: 0
             grid_cell_column_span: 3
             grid_cell_x_align: center
             grid_cell_y_align: center
-            y: ${home_title_y}
-            text_font: ${home_title_font}
-            text_color: ${home_title_color}
+            y: ${page0_title_y}
+            text_font: ${page0_title_font}
+            styles: sense_text_title_style
         - button:
-            id: home_v2_btn_dani  # Should be home_page_3x3_layout_row_0_col_0_btn, but keeping old ID for now to avoid breaking existing overrides
+            id: page0_slot0_tile  # Should be home_page_3x3_layout_row_0_col_0_btn, but keeping old ID for now to avoid breaking existing overrides
             grid_cell_row_pos: 1
             grid_cell_column_pos: 0
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
-            bg_color: ${ui_home_dani_off_bg}
+            bg_color: ${ui_page0_slot0_off_bg}
             radius: 8
             pad_left: 8
             pad_right: 8
@@ -71,34 +70,34 @@ lvgl:
               - homeassistant.action:
                   action: homeassistant.toggle
                   data:
-                    entity_id: ${ui_home_dani_entity_id}
+                    entity_id: ${ui_page0_slot0_entity_id}
             widgets:
               - label:
-                  id: home_v2_icon_dani
-                  text: ${ui_home_dani_icon}
+                  id: page0_slot0_icon
+                  text: ${ui_page0_slot0_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  text_color: ${ui_home_dani_icon_off_color}
+                  text_color: ${ui_page0_slot0_icon_off_color}
               - label:
-                  id: home_v2_label_dani
-                  text: ${ui_home_dani_text}
+                  id: page0_slot0_label
+                  text: ${ui_page0_slot0_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_20
-                  text_color: ${ui_home_dani_text_off_color}
+                  text_color: ${ui_page0_slot0_text_off_color}
               - label:
-                  id: home_v2_value_dani
-                  text: ${ui_home_dani_value_off}
+                  id: page0_slot0_value
+                  text: ${ui_page0_slot0_value_off}
                   align: BOTTOM_RIGHT
                   text_font: nunito_18
-                  text_color: ${ui_home_dani_value_off_color}
+                  text_color: ${ui_page0_slot0_value_off_color}
                   hidden: false
         - button:
-            id: home_v2_btn_sleepy
+            id: page0_slot1_tile
             grid_cell_row_pos: 1
             grid_cell_column_pos: 1
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
-            bg_color: ${ui_home_sleepy_off_bg}
+            bg_color: ${ui_page0_slot1_off_bg}
             radius: 8
             pad_left: 8
             pad_right: 8
@@ -108,34 +107,34 @@ lvgl:
               - homeassistant.action:
                   action: homeassistant.toggle
                   data:
-                    entity_id: ${ui_home_sleepy_entity_id}
+                    entity_id: ${ui_page0_slot1_entity_id}
             widgets:
               - label:
-                  id: home_v2_icon_sleepy
-                  text: ${ui_home_sleepy_icon}
+                  id: page0_slot1_icon
+                  text: ${ui_page0_slot1_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  text_color: ${ui_home_sleepy_icon_off_color}
+                  text_color: ${ui_page0_slot1_icon_off_color}
               - label:
-                  id: home_v2_label_sleepy
-                  text: ${ui_home_sleepy_text}
+                  id: page0_slot1_label
+                  text: ${ui_page0_slot1_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_20
-                  text_color: ${ui_home_sleepy_text_off_color}
+                  text_color: ${ui_page0_slot1_text_off_color}
               - label:
-                  id: home_v2_value_sleepy
-                  text: ${ui_home_sleepy_value_off}
+                  id: page0_slot1_value
+                  text: ${ui_page0_slot1_value_off}
                   align: BOTTOM_RIGHT
                   text_font: nunito_18
-                  text_color: ${ui_home_sleepy_value_off_color}
+                  text_color: ${ui_page0_slot1_value_off_color}
                   hidden: true
         - button:
-            id: home_v2_btn_bedtime
+            id: page0_slot2_tile
             grid_cell_row_pos: 1
             grid_cell_column_pos: 2
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
-            bg_color: ${ui_home_bedtime_off_bg}
+            bg_color: ${ui_page0_slot2_off_bg}
             radius: 8
             pad_left: 8
             pad_right: 8
@@ -145,107 +144,107 @@ lvgl:
               - homeassistant.action:
                   action: homeassistant.toggle
                   data:
-                    entity_id: ${ui_home_bedtime_entity_id}
+                    entity_id: ${ui_page0_slot2_entity_id}
             widgets:
               - label:
-                  id: home_v2_icon_bedtime
-                  text: ${ui_home_bedtime_icon}
+                  id: page0_slot2_icon
+                  text: ${ui_page0_slot2_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  text_color: ${ui_home_bedtime_icon_off_color}
+                  text_color: ${ui_page0_slot2_icon_off_color}
               - label:
-                  id: home_v2_label_bedtime
-                  text: ${ui_home_bedtime_text}
+                  id: page0_slot2_label
+                  text: ${ui_page0_slot2_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_20
-                  text_color: ${ui_home_bedtime_text_off_color}
+                  text_color: ${ui_page0_slot2_text_off_color}
               - label:
-                  id: home_v2_value_bedtime
-                  text: ${ui_home_bedtime_value_off}
+                  id: page0_slot2_value
+                  text: ${ui_page0_slot2_value_off}
                   align: BOTTOM_RIGHT
                   text_font: nunito_18
-                  text_color: ${ui_home_bedtime_value_off_color}
+                  text_color: ${ui_page0_slot2_value_off_color}
                   hidden: true
         - button:
-            id: home_v2_btn_tstat
+            id: page0_slot3_tile
             grid_cell_row_pos: 2
             grid_cell_column_pos: 0
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
             styles: sense_tile_tstat_style
-            hidden: ${ui_home_tstat_hidden}
+            hidden: ${ui_page0_slot3_hidden}
             on_press:
               - if:
                   condition:
-                    lambda: 'return std::string("${ui_home_tstat_show | default("true")}") == "true";'
+                    lambda: 'return std::string("${ui_page0_slot3_show | default("true")}") == "true";'
                   then:
-                    - script.execute: ${ui_home_tstat_nav_script}
+                    - script.execute: ${ui_page0_slot3_nav_script}
             widgets:
               - label:
-                  text: ${ui_home_tstat_icon}
+                  text: ${ui_page0_slot3_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  text_color: ${ui_home_tstat_icon_color}
+                  text_color: ${ui_page0_slot3_icon_color}
               - label:
-                  text: ${ui_home_tstat_text}
+                  text: ${ui_page0_slot3_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_20
-                  text_color: ${ui_home_tstat_text_color}
+                  text_color: ${ui_page0_slot3_text_color}
 
         - button:
-            id: home_v2_btn_fans
+            id: page0_slot4_tile
             grid_cell_row_pos: 2
             grid_cell_column_pos: 1
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
             styles: sense_tile_fans_style
-            hidden: ${ui_home_fans_hidden}
+            hidden: ${ui_page0_slot4_hidden}
             on_press:
               - if:
                   condition:
-                    lambda: 'return std::string("${ui_home_fans_show | default("true")}") == "true";'
+                    lambda: 'return std::string("${ui_page0_slot4_show | default("true")}") == "true";'
                   then:
-                    - script.execute: ${ui_home_fans_nav_script}
+                    - script.execute: ${ui_page0_slot4_nav_script}
             widgets:
               - label:
-                  text: ${ui_home_fans_icon}
+                  text: ${ui_page0_slot4_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  text_color: ${ui_home_fans_icon_color}
+                  text_color: ${ui_page0_slot4_icon_color}
               - label:
-                  text: ${ui_home_fans_text}
+                  text: ${ui_page0_slot4_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_20
-                  text_color: ${ui_home_fans_text_color}
+                  text_color: ${ui_page0_slot4_text_color}
 
         - button:
-            id: home_v2_btn_overrides
+            id: page0_slot5_tile
             grid_cell_row_pos: 2
             grid_cell_column_pos: 2
             grid_cell_x_align: STRETCH
             grid_cell_y_align: STRETCH
             styles: sense_tile_overrides_style
-            hidden: ${ui_home_overrides_hidden}
+            hidden: ${ui_page0_slot5_hidden}
             on_press:
               - if:
                   condition:
-                    lambda: 'return std::string("${ui_home_overrides_show | default("true")}") == "true";'
+                    lambda: 'return std::string("${ui_page0_slot5_show | default("true")}") == "true";'
                   then:
-                    - script.execute: ${ui_home_overrides_nav_script}
+                    - script.execute: ${ui_page0_slot5_nav_script}
             widgets:
               - label:
-                  text: ${ui_home_overrides_icon}
+                  text: ${ui_page0_slot5_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  text_color: ${ui_home_overrides_icon_color}
+                  text_color: ${ui_page0_slot5_icon_color}
               - label:
-                  text: ${ui_home_overrides_text}
+                  text: ${ui_page0_slot5_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_20
-                  text_color: ${ui_home_overrides_text_color}
+                  text_color: ${ui_page0_slot5_text_color}
 
         - button:
-            id: home_v2_btn_placeholder_1
+            id: page0_slot6_tile
             grid_cell_row_pos: 3
             grid_cell_column_pos: 0
             grid_cell_x_align: STRETCH
@@ -253,18 +252,18 @@ lvgl:
             styles: sense_tile_placeholder_style
             widgets:
               - label:
-                  text: ${ui_home_placeholder_icon}
+                  text: ${ui_page0_slot6_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  text_color: ${ui_home_placeholder_icon_color}
+                  text_color: ${ui_page0_slot6_icon_color}
               - label:
-                  text: ${ui_home_placeholder_1_text}
+                  text: ${ui_page0_slot6_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_18
-                  text_color: ${ui_home_placeholder_text_color}
+                  text_color: ${ui_page0_slot6_text_color}
 
         - button:
-            id: home_v2_btn_placeholder_2
+            id: page0_slot7_tile
             grid_cell_row_pos: 3
             grid_cell_column_pos: 1
             grid_cell_x_align: STRETCH
@@ -272,18 +271,18 @@ lvgl:
             styles: sense_tile_placeholder_style
             widgets:
               - label:
-                  text: ${ui_home_placeholder_icon}
+                  text: ${ui_page0_slot6_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  text_color: ${ui_home_placeholder_icon_color}
+                  text_color: ${ui_page0_slot6_icon_color}
               - label:
-                  text: ${ui_home_placeholder_2_text}
+                  text: ${ui_page0_slot7_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_18
-                  text_color: ${ui_home_placeholder_text_color}
+                  text_color: ${ui_page0_slot6_text_color}
 
         - button:
-            id: home_v2_btn_placeholder_3
+            id: page0_slot8_tile
             grid_cell_row_pos: 3
             grid_cell_column_pos: 2
             grid_cell_x_align: STRETCH
@@ -291,378 +290,381 @@ lvgl:
             styles: sense_tile_placeholder_style
             widgets:
               - label:
-                  text: ${ui_home_placeholder_icon}
+                  text: ${ui_page0_slot6_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  text_color: ${ui_home_placeholder_icon_color}
+                  text_color: ${ui_page0_slot6_icon_color}
               - label:
-                  text: ${ui_home_placeholder_3_text}
+                  text: ${ui_page0_slot8_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_18
-                  text_color: ${ui_home_placeholder_text_color}
+                  text_color: ${ui_page0_slot6_text_color}
 
 
 binary_sensor:
-  - id: widget_sensor_home_v2_btn_dani
+  - id: widget_sensor_page0_slot0_state
     platform: homeassistant
-    entity_id: ${ui_home_dani_entity_id}
+    entity_id: ${ui_page0_slot0_entity_id}
     trigger_on_initial_state: true
     on_state:
       - if:
           condition:
-            - binary_sensor.is_on: widget_sensor_home_v2_btn_dani
+            - binary_sensor.is_on: widget_sensor_page0_slot0_state
           then:
             - lvgl.widget.update:
-                id: home_v2_btn_dani
-                bg_color: ${ui_home_dani_on_bg}
+                id: page0_slot0_tile
+                bg_color: ${ui_page0_slot0_on_bg}
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_dani_on_icon | default("")}").size() > 0;'
+                  lambda: 'return std::string("${ui_page0_slot0_on_icon | default("")}").size() > 0;'
                 then:
                   - lvgl.label.update:
-                      id: home_v2_icon_dani
-                      text: ${ui_home_dani_on_icon}
+                      id: page0_slot0_icon
+                      text: ${ui_page0_slot0_on_icon}
             - lvgl.widget.update:
-                id: home_v2_icon_dani
-                text_color: ${ui_home_dani_icon_on_color}
+                id: page0_slot0_icon
+                text_color: ${ui_page0_slot0_icon_on_color}
             - lvgl.widget.update:
-                id: home_v2_label_dani
-                text_color: ${ui_home_dani_text_on_color}
+                id: page0_slot0_label
+                text_color: ${ui_page0_slot0_text_on_color}
             - lvgl.label.update:
-                id: home_v2_value_dani
-                text: ${ui_home_dani_value_on}
+                id: page0_slot0_value
+                text: ${ui_page0_slot0_value_on}
             - lvgl.widget.update:
-                id: home_v2_value_dani
-                text_color: ${ui_home_dani_value_on_color}
+                id: page0_slot0_value
+                text_color: ${ui_page0_slot0_value_on_color}
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_dani_show_icon | default("true")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot0_show_icon | default("true")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_icon_dani
+                      id: page0_slot0_icon
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_icon_dani
+                      id: page0_slot0_icon
                       hidden: true
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_dani_show_text | default("true")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot0_show_text | default("true")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_label_dani
+                      id: page0_slot0_label
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_label_dani
+                      id: page0_slot0_label
                       hidden: true
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_dani_show_value | default("true")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot0_show_value | default("true")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_value_dani
+                      id: page0_slot0_value
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_value_dani
+                      id: page0_slot0_value
                       hidden: true
           else:
             - lvgl.widget.update:
-                id: home_v2_btn_dani
-                bg_color: ${ui_home_dani_off_bg}
+                id: page0_slot0_tile
+                bg_color: ${ui_page0_slot0_off_bg}
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_dani_off_icon | default("")}").size() > 0;'
+                  lambda: 'return std::string("${ui_page0_slot0_off_icon | default("")}").size() > 0;'
                 then:
                   - lvgl.label.update:
-                      id: home_v2_icon_dani
-                      text: ${ui_home_dani_off_icon}
+                      id: page0_slot0_icon
+                      text: ${ui_page0_slot0_off_icon}
             - lvgl.widget.update:
-                id: home_v2_icon_dani
-                text_color: ${ui_home_dani_icon_off_color}
+                id: page0_slot0_icon
+                text_color: ${ui_page0_slot0_icon_off_color}
             - lvgl.widget.update:
-                id: home_v2_label_dani
-                text_color: ${ui_home_dani_text_off_color}
+                id: page0_slot0_label
+                text_color: ${ui_page0_slot0_text_off_color}
             - lvgl.label.update:
-                id: home_v2_value_dani
-                text: ${ui_home_dani_value_off}
+                id: page0_slot0_value
+                text: ${ui_page0_slot0_value_off}
             - lvgl.widget.update:
-                id: home_v2_value_dani
-                text_color: ${ui_home_dani_value_off_color}
+                id: page0_slot0_value
+                text_color: ${ui_page0_slot0_value_off_color}
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_dani_show_icon | default("true")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot0_show_icon | default("true")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_icon_dani
+                      id: page0_slot0_icon
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_icon_dani
+                      id: page0_slot0_icon
                       hidden: true
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_dani_show_text | default("true")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot0_show_text | default("true")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_label_dani
+                      id: page0_slot0_label
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_label_dani
+                      id: page0_slot0_label
                       hidden: true
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_dani_show_value | default("true")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot0_show_value | default("true")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_value_dani
+                      id: page0_slot0_value
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_value_dani
+                      id: page0_slot0_value
                       hidden: true
-  - id: widget_sensor_home_v2_btn_sleepy
+  - id: widget_sensor_page0_slot1_state
     platform: homeassistant
-    entity_id: ${ui_home_sleepy_entity_id}
+    entity_id: ${ui_page0_slot1_entity_id}
     trigger_on_initial_state: true
     on_state:
       - if:
           condition:
-            - binary_sensor.is_on: widget_sensor_home_v2_btn_sleepy
+            - binary_sensor.is_on: widget_sensor_page0_slot1_state
           then:
             - lvgl.widget.update:
-                id: home_v2_btn_sleepy
-                bg_color: ${ui_home_sleepy_on_bg}
+                id: page0_slot1_tile
+                bg_color: ${ui_page0_slot1_on_bg}
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_sleepy_on_icon | default("")}").size() > 0;'
+                  lambda: 'return std::string("${ui_page0_slot1_on_icon | default("")}").size() > 0;'
                 then:
                   - lvgl.label.update:
-                      id: home_v2_icon_sleepy
-                      text: ${ui_home_sleepy_on_icon}
+                      id: page0_slot1_icon
+                      text: ${ui_page0_slot1_on_icon}
             - lvgl.widget.update:
-                id: home_v2_icon_sleepy
-                text_color: ${ui_home_sleepy_icon_on_color}
+                id: page0_slot1_icon
+                text_color: ${ui_page0_slot1_icon_on_color}
             - lvgl.widget.update:
-                id: home_v2_label_sleepy
-                text_color: ${ui_home_sleepy_text_on_color}
+                id: page0_slot1_label
+                text_color: ${ui_page0_slot1_text_on_color}
             - lvgl.label.update:
-                id: home_v2_value_sleepy
-                text: ${ui_home_sleepy_value_on}
+                id: page0_slot1_value
+                text: ${ui_page0_slot1_value_on}
             - lvgl.widget.update:
-                id: home_v2_value_sleepy
-                text_color: ${ui_home_sleepy_value_on_color}
+                id: page0_slot1_value
+                text_color: ${ui_page0_slot1_value_on_color}
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_sleepy_show_icon | default("true")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot1_show_icon | default("true")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_icon_sleepy
+                      id: page0_slot1_icon
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_icon_sleepy
+                      id: page0_slot1_icon
                       hidden: true
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_sleepy_show_text | default("true")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot1_show_text | default("true")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_label_sleepy
+                      id: page0_slot1_label
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_label_sleepy
+                      id: page0_slot1_label
                       hidden: true
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_sleepy_show_value | default("false")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot1_show_value | default("false")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_value_sleepy
+                      id: page0_slot1_value
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_value_sleepy
+                      id: page0_slot1_value
                       hidden: true
           else:
             - lvgl.widget.update:
-                id: home_v2_btn_sleepy
-                bg_color: ${ui_home_sleepy_off_bg}
+                id: page0_slot1_tile
+                bg_color: ${ui_page0_slot1_off_bg}
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_sleepy_off_icon | default("")}").size() > 0;'
+                  lambda: 'return std::string("${ui_page0_slot1_off_icon | default("")}").size() > 0;'
                 then:
                   - lvgl.label.update:
-                      id: home_v2_icon_sleepy
-                      text: ${ui_home_sleepy_off_icon}
+                      id: page0_slot1_icon
+                      text: ${ui_page0_slot1_off_icon}
             - lvgl.widget.update:
-                id: home_v2_icon_sleepy
-                text_color: ${ui_home_sleepy_icon_off_color}
+                id: page0_slot1_icon
+                text_color: ${ui_page0_slot1_icon_off_color}
             - lvgl.widget.update:
-                id: home_v2_label_sleepy
-                text_color: ${ui_home_sleepy_text_off_color}
+                id: page0_slot1_label
+                text_color: ${ui_page0_slot1_text_off_color}
             - lvgl.label.update:
-                id: home_v2_value_sleepy
-                text: ${ui_home_sleepy_value_off}
+                id: page0_slot1_value
+                text: ${ui_page0_slot1_value_off}
             - lvgl.widget.update:
-                id: home_v2_value_sleepy
-                text_color: ${ui_home_sleepy_value_off_color}
+                id: page0_slot1_value
+                text_color: ${ui_page0_slot1_value_off_color}
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_sleepy_show_icon | default("true")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot1_show_icon | default("true")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_icon_sleepy
+                      id: page0_slot1_icon
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_icon_sleepy
+                      id: page0_slot1_icon
                       hidden: true
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_sleepy_show_text | default("true")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot1_show_text | default("true")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_label_sleepy
+                      id: page0_slot1_label
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_label_sleepy
+                      id: page0_slot1_label
                       hidden: true
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_sleepy_show_value | default("false")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot1_show_value | default("false")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_value_sleepy
+                      id: page0_slot1_value
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_value_sleepy
+                      id: page0_slot1_value
                       hidden: true
-  - id: widget_sensor_home_v2_btn_bedtime
+  - id: widget_sensor_page0_slot2_state
     platform: homeassistant
-    entity_id: ${ui_home_bedtime_entity_id}
+    entity_id: ${ui_page0_slot2_entity_id}
     trigger_on_initial_state: true
     on_state:
       - if:
           condition:
-            - binary_sensor.is_on: widget_sensor_home_v2_btn_bedtime
+            - binary_sensor.is_on: widget_sensor_page0_slot2_state
           then:
             - lvgl.widget.update:
-                id: home_v2_btn_bedtime
-                bg_color: ${ui_home_bedtime_on_bg}
+                id: page0_slot2_tile
+                bg_color: ${ui_page0_slot2_on_bg}
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_bedtime_on_icon | default("")}").size() > 0;'
+                  lambda: 'return std::string("${ui_page0_slot2_on_icon | default("")}").size() > 0;'
                 then:
                   - lvgl.label.update:
-                      id: home_v2_icon_bedtime
-                      text: ${ui_home_bedtime_on_icon}
+                      id: page0_slot2_icon
+                      text: ${ui_page0_slot2_on_icon}
             - lvgl.widget.update:
-                id: home_v2_icon_bedtime
-                text_color: ${ui_home_bedtime_icon_on_color}
+                id: page0_slot2_icon
+                text_color: ${ui_page0_slot2_icon_on_color}
             - lvgl.widget.update:
-                id: home_v2_label_bedtime
-                text_color: ${ui_home_bedtime_text_on_color}
+                id: page0_slot2_label
+                text_color: ${ui_page0_slot2_text_on_color}
             - lvgl.label.update:
-                id: home_v2_value_bedtime
-                text: ${ui_home_bedtime_value_on}
+                id: page0_slot2_value
+                text: ${ui_page0_slot2_value_on}
             - lvgl.widget.update:
-                id: home_v2_value_bedtime
-                text_color: ${ui_home_bedtime_value_on_color}
+                id: page0_slot2_value
+                text_color: ${ui_page0_slot2_value_on_color}
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_bedtime_show_icon | default("true")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot2_show_icon | default("true")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_icon_bedtime
+                      id: page0_slot2_icon
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_icon_bedtime
+                      id: page0_slot2_icon
                       hidden: true
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_bedtime_show_text | default("true")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot2_show_text | default("true")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_label_bedtime
+                      id: page0_slot2_label
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_label_bedtime
+                      id: page0_slot2_label
                       hidden: true
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_bedtime_show_value | default("false")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot2_show_value | default("false")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_value_bedtime
+                      id: page0_slot2_value
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_value_bedtime
+                      id: page0_slot2_value
                       hidden: true
           else:
             - lvgl.widget.update:
-                id: home_v2_btn_bedtime
-                bg_color: ${ui_home_bedtime_off_bg}
+                id: page0_slot2_tile
+                bg_color: ${ui_page0_slot2_off_bg}
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_bedtime_off_icon | default("")}").size() > 0;'
+                  lambda: 'return std::string("${ui_page0_slot2_off_icon | default("")}").size() > 0;'
                 then:
                   - lvgl.label.update:
-                      id: home_v2_icon_bedtime
-                      text: ${ui_home_bedtime_off_icon}
+                      id: page0_slot2_icon
+                      text: ${ui_page0_slot2_off_icon}
             - lvgl.widget.update:
-                id: home_v2_icon_bedtime
-                text_color: ${ui_home_bedtime_icon_off_color}
+                id: page0_slot2_icon
+                text_color: ${ui_page0_slot2_icon_off_color}
             - lvgl.widget.update:
-                id: home_v2_label_bedtime
-                text_color: ${ui_home_bedtime_text_off_color}
+                id: page0_slot2_label
+                text_color: ${ui_page0_slot2_text_off_color}
             - lvgl.label.update:
-                id: home_v2_value_bedtime
-                text: ${ui_home_bedtime_value_off}
+                id: page0_slot2_value
+                text: ${ui_page0_slot2_value_off}
             - lvgl.widget.update:
-                id: home_v2_value_bedtime
-                text_color: ${ui_home_bedtime_value_off_color}
+                id: page0_slot2_value
+                text_color: ${ui_page0_slot2_value_off_color}
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_bedtime_show_icon | default("true")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot2_show_icon | default("true")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_icon_bedtime
+                      id: page0_slot2_icon
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_icon_bedtime
+                      id: page0_slot2_icon
                       hidden: true
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_bedtime_show_text | default("true")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot2_show_text | default("true")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_label_bedtime
+                      id: page0_slot2_label
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_label_bedtime
+                      id: page0_slot2_label
                       hidden: true
             - if:
                 condition:
-                  lambda: 'return std::string("${ui_home_bedtime_show_value | default("false")}") == "true";'
+                  lambda: 'return std::string("${ui_page0_slot2_show_value | default("false")}") == "true";'
                 then:
                   - lvgl.widget.update:
-                      id: home_v2_value_bedtime
+                      id: page0_slot2_value
                       hidden: false
                 else:
                   - lvgl.widget.update:
-                      id: home_v2_value_bedtime
+                      id: page0_slot2_value
                       hidden: true
+
+
+
 
 
 
