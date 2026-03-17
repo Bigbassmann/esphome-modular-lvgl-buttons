@@ -111,7 +111,7 @@ script:
           condition:
             lambda: 'return id(sense_nav_index) == 0;'
           then:
-            - script.execute: nav_to_home
+            - lvgl.page.show: ${sense_page_menu_id}
       - if:
           condition:
             lambda: 'return id(sense_nav_index) == 1;'
@@ -156,7 +156,7 @@ script:
           condition:
             lambda: 'return id(sense_nav_index) == 0;'
           then:
-            - script.execute: nav_to_home
+            - lvgl.page.show: ${sense_page_menu_id}
       - if:
           condition:
             lambda: 'return id(sense_nav_index) == 1;'

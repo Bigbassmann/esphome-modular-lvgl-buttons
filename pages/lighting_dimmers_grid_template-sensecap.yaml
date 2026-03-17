@@ -115,6 +115,7 @@ lvgl:
                   widgets:
                     - label:
                         text_font: $icon_font
+                        styles: sense_text_primary_style
                         align: LEFT_MID   # top_left
                         x: 2  # 8
                         y: 0  # 8
@@ -125,6 +126,7 @@ lvgl:
                         x: 8
                         y: 0    # -6
                         text_font: nunito_16
+                        styles: sense_text_primary_style
                         id: label_${dimmers_left_row1_uid}
                         text: ${dimmers_left_row1_text}
                   on_short_click:
@@ -148,6 +150,7 @@ lvgl:
                   widgets:
                     - label:
                         text_font: $icon_font
+                        styles: sense_text_primary_style
                         align: LEFT_MID   # top_left
                         x: 2  # 8
                         y: 0  # 8
@@ -158,6 +161,7 @@ lvgl:
                         x: 6   # 8
                         y: 0    # -6
                         text_font: nunito_16
+                        styles: sense_text_primary_style
                         id: label_${dimmers_left_row2_uid}
                         text: ${dimmers_left_row2_text}
                   on_short_click:
@@ -181,6 +185,7 @@ lvgl:
                   widgets:
                     - label:
                         text_font: $icon_font
+                        styles: sense_text_primary_style
                         align: LEFT_MID          # top_left
                         x: 4  # 8
                         y: 0  # 8
@@ -191,6 +196,7 @@ lvgl:
                         x: 6   # 8
                         y: 0    # -6
                         text_font: nunito_16
+                        styles: sense_text_primary_style
                         id: label_${dimmers_left_row3_uid}
                         text: ${dimmers_left_row3_text}
                   on_short_click:
@@ -214,6 +220,7 @@ lvgl:
                   widgets:
                     - label:
                         text_font: $icon_font
+                        styles: sense_text_primary_style
                         align: LEFT_MID   # top_left
                         x: 4  # 8
                         y: 0  # 8
@@ -224,6 +231,7 @@ lvgl:
                         x: 6   # 8
                         y: 0    # -6
                         text_font: nunito_16
+                        styles: sense_text_primary_style
                         id: label_${dimmers_left_row4_uid}
                         text: ${dimmers_left_row4_text}
                   on_short_click:

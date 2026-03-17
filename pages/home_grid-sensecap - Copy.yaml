@@ -184,12 +184,12 @@ lvgl:
                   text: ${ui_page0_slot3_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  styles: sense_text_primary_style
+                  text_color: ${ui_page0_slot3_icon_color}
               - label:
                   text: ${ui_page0_slot3_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_20
-                  styles: sense_text_primary_style
+                  text_color: ${ui_page0_slot3_text_color}
 
         - button:
             id: page0_slot4_tile
@@ -210,12 +210,12 @@ lvgl:
                   text: ${ui_page0_slot4_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  styles: sense_text_primary_style
+                  text_color: ${ui_page0_slot4_icon_color}
               - label:
                   text: ${ui_page0_slot4_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_20
-                  styles: sense_text_primary_style
+                  text_color: ${ui_page0_slot4_text_color}
 
         - button:
             id: page0_slot5_tile
@@ -236,12 +236,12 @@ lvgl:
                   text: ${ui_page0_slot5_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  styles: sense_text_primary_style
+                  text_color: ${ui_page0_slot5_icon_color}
               - label:
                   text: ${ui_page0_slot5_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_20
-                  styles: sense_text_primary_style
+                  text_color: ${ui_page0_slot5_text_color}
 
         - button:
             id: page0_slot6_tile
@@ -255,12 +255,12 @@ lvgl:
                   text: ${ui_page0_slot6_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  styles: sense_text_muted_style
+                  text_color: ${ui_page0_slot6_icon_color}
               - label:
                   text: ${ui_page0_slot6_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_18
-                  styles: sense_text_muted_style
+                  text_color: ${ui_page0_slot6_text_color}
 
         - button:
             id: page0_slot7_tile
@@ -274,12 +274,12 @@ lvgl:
                   text: ${ui_page0_slot6_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  styles: sense_text_muted_style
+                  text_color: ${ui_page0_slot6_icon_color}
               - label:
                   text: ${ui_page0_slot7_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_18
-                  styles: sense_text_muted_style
+                  text_color: ${ui_page0_slot6_text_color}
 
         - button:
             id: page0_slot8_tile
@@ -293,12 +293,12 @@ lvgl:
                   text: ${ui_page0_slot6_icon}
                   align: TOP_LEFT
                   text_font: mdi_icons_40
-                  styles: sense_text_muted_style
+                  text_color: ${ui_page0_slot6_icon_color}
               - label:
                   text: ${ui_page0_slot8_text}
                   align: BOTTOM_LEFT
                   text_font: nunito_18
-                  styles: sense_text_muted_style
+                  text_color: ${ui_page0_slot6_text_color}
 
 
 binary_sensor:

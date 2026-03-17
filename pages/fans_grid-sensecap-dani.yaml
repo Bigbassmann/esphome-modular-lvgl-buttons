@@ -220,6 +220,7 @@ lvgl:
                   x: 12
                   y: 48
                   text_font: nunito_20
+                  styles: sense_text_primary_style
               - label:
                   id: fans_fr_state_label
                   text: "OFF"
@@ -227,6 +228,7 @@ lvgl:
                   x: 122
                   y: 50
                   text_font: nunito_20
+                  styles: sense_text_primary_style
 
               - button:
                   id: fr_mode_off_btn
@@ -245,6 +247,7 @@ lvgl:
                         text: "OFF"
                         align: CENTER
                         text_font: nunito_14
+                        styles: sense_text_primary_style
               - button:
                   id: fr_mode_low_btn
                   align: TOP_LEFT
@@ -262,6 +265,7 @@ lvgl:
                         text: "LOW"
                         align: CENTER
                         text_font: nunito_14
+                        styles: sense_text_primary_style
               - button:
                   id: fr_mode_med_btn
                   align: TOP_LEFT
@@ -279,6 +283,7 @@ lvgl:
                         text: "MED"
                         align: CENTER
                         text_font: nunito_14
+                        styles: sense_text_primary_style
               - button:
                   id: fr_mode_high_btn
                   align: TOP_LEFT
@@ -296,6 +301,7 @@ lvgl:
                         text: "HIGH"
                         align: CENTER
                         text_font: nunito_14
+                        styles: sense_text_primary_style
 
               - label:
                   
@@ -304,6 +310,7 @@ lvgl:
                   x: 12
                   y: 136
                   text_font: nunito_20
+                  styles: sense_text_primary_style
               - label:
                   id: fans_mbr_state_label
                   text: "OFF"
@@ -311,6 +318,7 @@ lvgl:
                   x: 122
                   y: 138
                   text_font: nunito_20
+                  styles: sense_text_primary_style
               - label:
                   id: fans_mbr_dir_label
                   text: "Dir: --"
@@ -318,6 +326,7 @@ lvgl:
                   x: -12
                   y: 140
                   text_font: nunito_18
+                  styles: sense_text_primary_style
 
               - button:
                   id: mbr_mode_off_btn
@@ -336,6 +345,7 @@ lvgl:
                         text: "OFF"
                         align: CENTER
                         text_font: nunito_14
+                        styles: sense_text_primary_style
               - button:
                   id: mbr_mode_low_btn
                   align: TOP_LEFT
@@ -353,6 +363,7 @@ lvgl:
                         text: "LOW"
                         align: CENTER
                         text_font: nunito_14
+                        styles: sense_text_primary_style
               - button:
                   id: mbr_mode_med_btn
                   align: TOP_LEFT
@@ -370,6 +381,7 @@ lvgl:
                         text: "MED"
                         align: CENTER
                         text_font: nunito_14
+                        styles: sense_text_primary_style
               - button:
                   id: mbr_mode_high_btn
                   align: TOP_LEFT
@@ -387,6 +399,7 @@ lvgl:
                         text: "HIGH"
                         align: CENTER
                         text_font: nunito_14
+                        styles: sense_text_primary_style
               - button:
                   id: mbr_mode_dir_btn
                   align: TOP_LEFT
@@ -403,6 +416,7 @@ lvgl:
                         text: "DIR"
                         align: CENTER
                         text_font: nunito_14
+                        styles: sense_text_primary_style
 
               - label:
                   
@@ -411,6 +425,7 @@ lvgl:
                   x: 12
                   y: 226
                   text_font: nunito_20
+                  styles: sense_text_primary_style
 
               - button:
                   id: attic_low_btn
@@ -429,12 +444,14 @@ lvgl:
                         align: LEFT_MID
                         x: 14
                         text_font: nunito_20
+                        styles: sense_text_primary_style
                     - label:
                         id: fans_attic_low_state
                         text: "OFF"
                         align: RIGHT_MID
                         x: -14
                         text_font: nunito_20
+                        styles: sense_text_primary_style
 
               - button:
                   id: attic_high_btn
@@ -453,6 +470,7 @@ lvgl:
                         align: LEFT_MID
                         x: 14
                         text_font: nunito_20
+                        styles: sense_text_primary_style
                     - label:
                         id: fans_attic_high_state
                         text: "OFF"

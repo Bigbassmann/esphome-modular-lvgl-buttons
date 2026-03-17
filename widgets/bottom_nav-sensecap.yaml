@@ -42,10 +42,10 @@ obj:
         height: 50
         styles: sense_nav_btn_style
         on_press:
-          - script.execute: nav_to_home
+          - script.execute: nav_to_menu
         widgets:
           - label:
-              text: "Home"
+              text: "Menu"
               align: CENTER
               text_font: nunito_14
               styles: sense_text_primary_style

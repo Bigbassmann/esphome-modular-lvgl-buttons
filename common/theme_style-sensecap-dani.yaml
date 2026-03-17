@@ -657,6 +657,123 @@ script:
                   - lvgl.widget.update: {id: page0_slot2_icon, text_color: theme_slot9_page_text}
                   - lvgl.widget.update: {id: page0_slot2_label, text_color: theme_slot9_page_text}
                   - lvgl.widget.update: {id: page0_slot2_value, text_color: theme_slot9_page_text}
+  - id: sense_theme_refresh_feedback_widgets
+    then:
+      - if:
+          condition:
+            binary_sensor.is_on: widget_sensor_dimmer_btn_mbr
+          then:
+            - lvgl.widget.update:
+                id: slider_dimmer_btn_mbr
+                knob:
+                  bg_color: ${ui_dimmer_mbr_slider_knob_on}
+                indicator:
+                  bg_color: ${ui_dimmer_mbr_slider_on}
+          else:
+            - lvgl.widget.update:
+                id: slider_dimmer_btn_mbr
+                knob:
+                  bg_color: ${ui_dimmer_mbr_slider_knob_off}
+                indicator:
+                  bg_color: ${ui_dimmer_mbr_slider_off}
+      - if:
+          condition:
+            binary_sensor.is_on: widget_sensor_dimmer_btn_fr
+          then:
+            - lvgl.widget.update:
+                id: slider_dimmer_btn_fr
+                knob:
+                  bg_color: ${ui_dimmer_fr_slider_knob_on}
+                indicator:
+                  bg_color: ${ui_dimmer_fr_slider_on}
+          else:
+            - lvgl.widget.update:
+                id: slider_dimmer_btn_fr
+                knob:
+                  bg_color: ${ui_dimmer_fr_slider_knob_off}
+                indicator:
+                  bg_color: ${ui_dimmer_fr_slider_off}
+      - if:
+          condition:
+            binary_sensor.is_on: widget_sensor_dimmer_btn_living
+          then:
+            - lvgl.widget.update:
+                id: slider_dimmer_btn_living
+                knob:
+                  bg_color: ${ui_dimmer_living_slider_knob_on}
+                indicator:
+                  bg_color: ${ui_dimmer_living_slider_on}
+          else:
+            - lvgl.widget.update:
+                id: slider_dimmer_btn_living
+                knob:
+                  bg_color: ${ui_dimmer_living_slider_knob_off}
+                indicator:
+                  bg_color: ${ui_dimmer_living_slider_off}
+      - if:
+          condition:
+            binary_sensor.is_on: widget_sensor_dimmer_btn_kitchen
+          then:
+            - lvgl.widget.update:
+                id: slider_dimmer_btn_kitchen
+                knob:
+                  bg_color: ${ui_dimmer_kitchen_slider_knob_on}
+                indicator:
+                  bg_color: ${ui_dimmer_kitchen_slider_on}
+          else:
+            - lvgl.widget.update:
+                id: slider_dimmer_btn_kitchen
+                knob:
+                  bg_color: ${ui_dimmer_kitchen_slider_knob_off}
+                indicator:
+                  bg_color: ${ui_dimmer_kitchen_slider_off}
+      - if:
+          condition:
+            binary_sensor.is_on: widget_sensor_dimmer_btn_entry
+          then:
+            - lvgl.widget.update:
+                id: slider_dimmer_btn_entry
+                knob:
+                  bg_color: ${ui_dimmer_entry_slider_knob_on}
+                indicator:
+                  bg_color: ${ui_dimmer_entry_slider_on}
+          else:
+            - lvgl.widget.update:
+                id: slider_dimmer_btn_entry
+                knob:
+                  bg_color: ${ui_dimmer_entry_slider_knob_off}
+                indicator:
+                  bg_color: ${ui_dimmer_entry_slider_off}
+      - if:
+          condition:
+            lambda: 'return id(ha_tstat_hvac_action).state == "cooling" || id(ha_tstat_mode).state == "cool";'
+          then:
+            - lvgl.widget.update:
+                id: tstat2_target_arc
+                indicator:
+                  arc_color: ${ui_tstat_mode_cool_active_color}
+                knob:
+                  bg_color: ${ui_tstat_mode_cool_active_color}
+      - if:
+          condition:
+            lambda: 'return id(ha_tstat_hvac_action).state == "heating" || id(ha_tstat_mode).state == "heat";'
+          then:
+            - lvgl.widget.update:
+                id: tstat2_target_arc
+                indicator:
+                  arc_color: ${ui_tstat_mode_heat_active_color}
+                knob:
+                  bg_color: ${ui_tstat_mode_heat_active_color}
+      - if:
+          condition:
+            lambda: 'return id(ha_tstat_mode).state == "off" || id(ha_tstat_hvac_action).state == "off" || id(ha_tstat_hvac_action).state.empty();'
+          then:
+            - lvgl.widget.update:
+                id: tstat2_target_arc
+                indicator:
+                  arc_color: ${ui_tstat_mode_off_active_color}
+                knob:
+                  bg_color: ${ui_tstat_mode_off_active_color}
 select:
   - platform: template
     name: "Current Theme"
@@ -682,6 +799,9 @@ select:
             auto idx = id(current_theme).active_index();
             int raw = idx.has_value() ? (int) idx.value() : 0;
             id(sense_theme_slot) = (raw >= 0 && raw <= 9) ? raw : 0;
+        - script.execute: sense_theme_refresh_page0_toggle_slots
+        - script.execute: sense_theme_refresh_feedback_widgets
+        - script.execute: sense_theme_refresh_page0_toggle_slots
         - if:
             condition:
               - lambda: 'return id(sense_theme_slot) == 0;'

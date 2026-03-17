@@ -362,3 +362,15 @@ This fork uses a token-first color model so page files do not hardcode one-off h
 - Restored `theme_style-sensecap-dani.yaml` from the provided copy and expanded the backing `current_theme` selector to `ui_theme_label_0..9` so the Display dropdown and selector stay aligned.
 
 - Fixed the active `display_theme_dropdown` page widget on the network-share repo so it now exposes `ui_theme_label_0..9` and maps indices `0..9` back to `current_theme` consistently.
+
+- Removed the legacy menu page from active navigation: `nav_to_menu` now routes to home, WiFi/back/menu labels were updated, and the active package file no longer includes `pages/menu_grid-sensecap.yaml`.
+
+- Tightened theme-following on active pages/templates without reintroducing the old linker-heavy repaint blocks: home slot 3..8 labels now use shared styles, fan and dimmer-column labels inherit shared styles, switch tiles no longer own runtime bg/text colors, dimmer knob-off family tokens were corrected, and the page0 theme refresh hook was restored after theme changes.
+
+- Lights 3x3 switch tiles now inherit shared themed styles for background/text instead of owning runtime color updates; state still changes the ON/OFF value text.
+
+- Home page slot 3..8 labels now inherit shared text styles, and theme changes again trigger the lightweight `sense_theme_refresh_page0_toggle_slots` repaint so page0 follows the active theme at runtime.
+
+- Restored the active menu page path after incorrectly removing it: `menu_grid-sensecap.yaml` is back in the build, `nav_to_menu` again shows `page_menu`, and the topbar/bottom-nav/WiFi back actions point to the menu page again.
+
+- Added a small targeted runtime theme-refresh script for the remaining feedback widgets: the active dimmer slider indicators/knobs and the thermostat arc indicator/knob now repaint immediately when the theme changes, without restoring the old linker-heavy per-page refresh blocks.
