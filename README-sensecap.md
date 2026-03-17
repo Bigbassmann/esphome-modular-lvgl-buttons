@@ -357,3 +357,6 @@ This fork uses a token-first color model so page files do not hardcode one-off h
 
 
 
+- Fixed the backing `current_theme` selector in `theme_style-sensecap-dani.yaml` so it now exposes `ui_theme_label_0..9`; the Display dropdown and the actual theme selector now advertise the same 10 themes.
+
+- Restored `theme_style-sensecap-dani.yaml` from the provided copy and expanded the backing `current_theme` selector to `ui_theme_label_0..9` so the Display dropdown and selector stay aligned.

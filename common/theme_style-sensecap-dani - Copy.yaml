@@ -665,16 +665,9 @@ select:
     icon: mdi:theme-light-dark
     optimistic: true
     options:
-      - ${ui_theme_label_0}
-      - ${ui_theme_label_1}
-      - ${ui_theme_label_2}
-      - ${ui_theme_label_3}
-      - ${ui_theme_label_4}
-      - ${ui_theme_label_5}
-      - ${ui_theme_label_6}
-      - ${ui_theme_label_7}
-      - ${ui_theme_label_8}
-      - ${ui_theme_label_9}
+      - Dark
+      - Dani
+      - Split
     initial_option: Dani
     on_value:
       then:
