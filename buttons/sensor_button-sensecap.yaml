@@ -1,4 +1,4 @@
-﻿# FILE EDIT GUIDE (SenseCAP)
+# FILE EDIT GUIDE (SenseCAP)
 # Role: Reusable button template (structure + behavior hooks).
 # Update here for:
 # - Size/shape defaults: width/height/radius/padding/alignment.
@@ -7,7 +7,7 @@
 # Keep entity wiring out of this file:
 # - Entity/attribute mapping belongs in common/ha_entities-*.yaml.
 # - Page placement/layout belongs in pages/*-sensecap*.yaml.
-# - Color defaults should resolve via ui_* vars and family color tokens.
+# - Color defaults should resolve via shared theme styles/tokens first, with per-page overrides only when needed.
 ---
 # Sensor button
 #    uid:
@@ -43,7 +43,7 @@ lvgl:
             widgets:
               - button:
                   id: button_${sensor_id}
-                  bg_color: ${bg_color | default("${ui_sensor_tile_bg_default}")}
+                  bg_color: ${bg_color | default("theme_sensor_tile_bg_default")}
                   width: ${btn_width | default("100%")}
                   height: ${btn_height | default("100%")}
                   align: CENTER
@@ -56,7 +56,7 @@ lvgl:
                     - label:
                         id: icon_${sensor_id}
                         text_font: $icon_font
-                        text_color: ${icon_color | default("${ui_sensor_icon_color}")}
+                        text_color: ${icon_color | default("theme_page_text_muted")}
                         grid_cell_row_pos: 0
                         grid_cell_column_pos: 0
                         grid_cell_row_span: 2
@@ -66,7 +66,7 @@ lvgl:
                     - label:
                         id: label_${sensor_id}
                         text_font: nunito_22
-                        text_color: ${label_color | default("${ui_sensor_label_color}")}
+                        text_color: ${label_color | default("theme_page_text")}
                         width: 100%
                         long_mode: wrap
                         grid_cell_row_pos: 0
@@ -78,7 +78,7 @@ lvgl:
                     - label:
                         id: data_${sensor_id}
                         text_font: ${sensor_font | default("nunito_22")}
-                        text_color: ${value_color | default("${ui_sensor_value_color}")}
+                        text_color: ${value_color | default("theme_page_text")}
                         grid_cell_row_pos: 1
                         grid_cell_column_pos: 1
                         grid_cell_x_align: start
@@ -101,3 +101,4 @@ sensor:
                 return str_sprintf("%.1f", x);
               }
               return str_sprintf("%.1f %s", x, unit.c_str());
+
