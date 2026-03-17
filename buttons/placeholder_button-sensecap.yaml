@@ -50,7 +50,7 @@ lvgl:
                         x: 10
                         y: 8
                         text: ${icon}
-                        text_color: ${icon_color | default("theme_page_text_muted")}
+                        text_color: ${icon_color | default("${ui_state_text_inactive_color}")}
                     - label:
                         id: label_${uid}
                         align: left_mid
@@ -58,7 +58,7 @@ lvgl:
                         text_font: nunito_16
                         styles: sense_text_muted_style
                         text: ${text}
-                        text_color: ${text_color | default("theme_page_text_muted")}
+                        text_color: ${text_color | default("${ui_state_text_inactive_color}")}
 
 
 

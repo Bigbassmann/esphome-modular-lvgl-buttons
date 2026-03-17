@@ -55,7 +55,7 @@ lvgl:
             text_font: ${page0_title_font}
             styles: sense_text_title_style
         - button:
-            id: page0_slot0_tile  # Should be home_page_3x3_layout_row_0_col_0_btn, but keeping old ID for now to avoid breaking existing overrides
+            id: page0_slot0_tile
             grid_cell_row_pos: 1
             grid_cell_column_pos: 0
             grid_cell_x_align: STRETCH
@@ -662,6 +662,7 @@ binary_sensor:
                   - lvgl.widget.update:
                       id: page0_slot2_value
                       hidden: true
+
 
 
 

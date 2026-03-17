@@ -82,32 +82,32 @@ binary_sensor:
                 bg_color: ${on_bg_color | default("theme_display_row_btn_bg_default")}
             - lvgl.widget.update:
                 id: icon_${uid}
-                text_color: theme_page_text
+                text_color: ${ui_state_text_active_color}
             - lvgl.widget.update:
                 id: label_${uid}
-                text_color: theme_page_text
+                text_color: ${ui_state_text_active_color}
             - lvgl.label.update:
                 id: value_${uid}
                 text: ${value_on_text | default("ON")}
             - lvgl.widget.update:
                 id: value_${uid}
-                text_color: theme_page_text
+                text_color: ${ui_state_text_active_color}
           else:
             - lvgl.widget.update:
                 id: button_${uid}
                 bg_color: ${off_bg_color | default("theme_nav_btn_bg_default")}
             - lvgl.widget.update:
                 id: icon_${uid}
-                text_color: theme_page_text_muted
+                text_color: ${ui_state_text_inactive_color}
             - lvgl.widget.update:
                 id: label_${uid}
-                text_color: theme_page_text_muted
+                text_color: ${ui_state_text_inactive_color}
             - lvgl.label.update:
                 id: value_${uid}
                 text: ${value_off_text | default("OFF")}
             - lvgl.widget.update:
                 id: value_${uid}
-                text_color: theme_page_text_muted
+                text_color: ${ui_state_text_inactive_color}
 
 
 

@@ -9,99 +9,18 @@
 # Avoid hardcoded page layout geometry in common files.
 substitutions:
   # Home page slot mapping (entity + display behavior)
-  ui_home_dani_entity_id: "${ent_dani_mode_on}"    # Primary entity_id for the Dani Mode toggle button on the Home page
-  ui_home_dani_text: "${ui_dani_text}"             # Display text for the Dani Mode toggle button on the Home page
-  ui_home_dani_icon: "${ui_dani_icon}"             # Icon for the Dani Mode toggle button on the Home page
-  ui_home_dani_on_bg: "${ui_dani_on_bg}"           # Background color when Dani Mode is ON for the Home page toggle button
-  ui_home_dani_off_bg: "${ui_dani_off_bg}"         # Background color when Dani Mode is OFF for the Home page toggle button
-  ui_home_dani_on_icon: "${ui_dani_on_icon}"       # Icon when Dani Mode is ON for the Home page toggle button
-  ui_home_dani_off_icon: "${ui_dani_off_icon}"     # Icon when Dani Mode is OFF for the Home page toggle button
-  ui_home_dani_value_on: "${ui_dani_value_on}"     # Display value when Dani Mode is ON for the Home page toggle button
-  ui_home_dani_value_off: "${ui_dani_value_off}"   # Display value when Dani Mode is OFF for the Home page toggle button   
-  ui_home_dani_icon_on_color: "${ui_base_icon_on_color}"    # Icon color when Dani Mode is ON for the Home page toggle button
-  ui_home_dani_icon_off_color: "${ui_page_text_muted_color}"   # Icon color when Dani Mode is OFF for the Home page toggle button
-  ui_home_dani_text_on_color: "${ui_dani_text_on_color}"       # Text color when Dani Mode is ON for the Home page toggle button
-  ui_home_dani_text_off_color: "${ui_dani_text_off_color}"     # Text color when Dani Mode is OFF for the Home page toggle button
-  ui_home_dani_value_on_color: "${ui_dani_value_on_color}"     # Value color when Dani Mode is ON for the Home page toggle button
-  ui_home_dani_value_off_color: "${ui_dani_value_off_color}"   # Value color when Dani Mode is OFF for the Home page toggle button
-  ui_home_dani_show_icon: "true"                               # Whether to show the icon for the Dani Mode toggle button on the Home page
-  ui_home_dani_show_text: "true"                               # Whether to show the text for the Dani Mode toggle button on the Home page
-  ui_home_dani_show_value: "true"                              # Whether to show the value for the Dani Mode toggle button on the Home page
 
-  ui_home_sleepy_entity_id: "${ent_sleepy_toggle}"
-  ui_home_sleepy_text: "${ui_sleepy_text}"
-  ui_home_sleepy_icon: "${ui_sleepy_icon}"
-  ui_home_sleepy_on_bg: "${ui_sleepy_on_bg}"
-  ui_home_sleepy_off_bg: "${ui_sleepy_off_bg}"
-  ui_home_sleepy_on_icon: "${ui_sleepy_on_icon}"
-  ui_home_sleepy_off_icon: "${ui_sleepy_off_icon}"
-  ui_home_sleepy_value_on: "${ui_sleepy_value_on}"
-  ui_home_sleepy_value_off: "${ui_sleepy_value_off}"
-  ui_home_sleepy_icon_on_color: "${ui_base_icon_on_color}"
-  ui_home_sleepy_icon_off_color: "${ui_page_text_muted_color}"
-  ui_home_sleepy_text_on_color: "${ui_sleepy_text_on_color}"
-  ui_home_sleepy_text_off_color: "${ui_sleepy_text_off_color}"
-  ui_home_sleepy_value_on_color: "${ui_sleepy_value_on_color}"
-  ui_home_sleepy_value_off_color: "${ui_sleepy_value_off_color}"
-  ui_home_sleepy_show_icon: "true"
-  ui_home_sleepy_show_text: "true"
-  ui_home_sleepy_show_value: "false"
 
-  ui_home_bedtime_entity_id: "${ent_bedtime_toggle}"
-  ui_home_bedtime_text: "${ui_bedtime_text}"
-  ui_home_bedtime_icon: "${ui_bedtime_icon}"
-  ui_home_bedtime_on_bg: "${ui_bedtime_on_bg}"
-  ui_home_bedtime_off_bg: "${ui_bedtime_off_bg}"
-  ui_home_bedtime_on_icon: "${ui_bedtime_on_icon}"
-  ui_home_bedtime_off_icon: "${ui_bedtime_off_icon}"
-  ui_home_bedtime_value_on: "${ui_bedtime_value_on}"
-  ui_home_bedtime_value_off: "${ui_bedtime_value_off}"
-  ui_home_bedtime_icon_on_color: "${ui_base_icon_on_color}"
-  ui_home_bedtime_icon_off_color: "${ui_page_text_muted_color}"
-  ui_home_bedtime_text_on_color: "${ui_bedtime_text_on_color}"
-  ui_home_bedtime_text_off_color: "${ui_bedtime_text_off_color}"
-  ui_home_bedtime_value_on_color: "${ui_bedtime_value_on_color}"
-  ui_home_bedtime_value_off_color: "${ui_bedtime_value_off_color}"
-  ui_home_bedtime_show_icon: "true"
-  ui_home_bedtime_show_text: "true"
-  ui_home_bedtime_show_value: "false"
 
   # Home page nav tile mapping (row 1)
-  ui_home_tstat_icon: "$mdi_thermometer"
-  ui_home_tstat_text: "Thermostat"
-  ui_home_tstat_icon_color: "${ui_base_bg_color}"
-  ui_home_tstat_text_color: "${ui_base_bg_color}"
 
-  ui_home_fans_icon: "$mdi_fan"
-  ui_home_fans_text: "Fans"
-  ui_home_fans_icon_color: "${ui_page_text_color}"
-  ui_home_fans_text_color: "${ui_page_text_color}"
 
-  ui_home_overrides_icon: "$mdi_tune"
-  ui_home_overrides_text: "Overrides"
-  ui_home_overrides_icon_color: "${ui_base_bg_color}"
-  ui_home_overrides_text_color: "${ui_base_bg_color}"
 
   # Home page placeholder mapping (row 2)
-  ui_home_placeholder_icon: "$mdi_dots_horizontal"
-  ui_home_placeholder_icon_color: "${ui_page_text_muted_color}"
-  ui_home_placeholder_text_color: "${ui_page_text_muted_color}"
-  ui_home_placeholder_1_text: "Placeholder 1"
-  ui_home_placeholder_2_text: "Placeholder 2"
-  ui_home_placeholder_3_text: "Placeholder 3"
 
   # Home page nav behavior mapping (row 1)
-  ui_home_tstat_nav_script: "nav_to_tstat"
-  ui_home_tstat_show: "true"
-  ui_home_tstat_hidden: "false"
 
-  ui_home_fans_nav_script: "nav_to_fans"
-  ui_home_fans_show: "true"
-  ui_home_fans_hidden: "false"
 
-  ui_home_overrides_nav_script: "nav_to_overrides"
-  ui_home_overrides_show: "true"
-  ui_home_overrides_hidden: "false"
 
   # generic role/profile tokens (theme-owned visual layer)
   ui_role_profile_red_on_bg: "theme_family_red_bg_on"
@@ -149,6 +68,15 @@ substitutions:
   ui_role_profile_blue_value_on_color: "theme_family_blue_value_on"
   ui_role_profile_blue_value_off_color: "theme_family_blue_value_off"
 
+  ui_grid3x3_climate_icon_color: "theme_shell_bg"
+  ui_grid3x3_climate_text_color: "theme_shell_bg"
+  ui_grid3x3_nav_icon_color: "theme_page_text"
+  ui_grid3x3_nav_text_color: "theme_page_text"
+  ui_grid3x3_override_icon_color: "theme_shell_bg"
+  ui_grid3x3_override_text_color: "theme_shell_bg"
+  ui_grid3x3_placeholder_icon_color: "theme_page_text_muted"
+  ui_grid3x3_placeholder_text_color: "theme_page_text_muted"
+
   # grid_3x3 role tokens (theme-owned visual layer)
   ui_grid3x3_profile1_on_bg: "${ui_role_profile_red_on_bg}"
   ui_grid3x3_profile1_off_bg: "${ui_role_profile_red_off_bg}"
@@ -178,101 +106,14 @@ substitutions:
   ui_grid3x3_profile3_value_off_color: "${ui_role_profile_indigo_value_off_color}"
 
   # Page 0 / grid_3x3 slot aliases (compatibility layer)
-  ui_page0_slot0_entity_id: "${ui_home_dani_entity_id}"
-  ui_page0_slot0_text: "${ui_home_dani_text}"
-  ui_page0_slot0_icon: "${ui_home_dani_icon}"
-  ui_page0_slot0_on_bg: "${ui_grid3x3_profile1_on_bg}"
-  ui_page0_slot0_off_bg: "${ui_grid3x3_profile1_off_bg}"
-  ui_page0_slot0_on_icon: "${ui_home_dani_on_icon}"
-  ui_page0_slot0_off_icon: "${ui_home_dani_off_icon}"
-  ui_page0_slot0_value_on: "${ui_home_dani_value_on}"
-  ui_page0_slot0_value_off: "${ui_home_dani_value_off}"
-  ui_page0_slot0_icon_on_color: "${ui_grid3x3_profile1_icon_on_color}"
-  ui_page0_slot0_icon_off_color: "${ui_grid3x3_profile1_icon_off_color}"
-  ui_page0_slot0_text_on_color: "${ui_grid3x3_profile1_text_on_color}"
-  ui_page0_slot0_text_off_color: "${ui_grid3x3_profile1_text_off_color}"
-  ui_page0_slot0_value_on_color: "${ui_grid3x3_profile1_value_on_color}"
-  ui_page0_slot0_value_off_color: "${ui_grid3x3_profile1_value_off_color}"
-  ui_page0_slot0_show_icon: "${ui_home_dani_show_icon}"
-  ui_page0_slot0_show_text: "${ui_home_dani_show_text}"
-  ui_page0_slot0_show_value: "${ui_home_dani_show_value}"
 
-  ui_page0_slot1_entity_id: "${ui_home_sleepy_entity_id}"
-  ui_page0_slot1_text: "${ui_home_sleepy_text}"
-  ui_page0_slot1_icon: "${ui_home_sleepy_icon}"
-  ui_page0_slot1_on_bg: "${ui_grid3x3_profile2_on_bg}"
-  ui_page0_slot1_off_bg: "${ui_grid3x3_profile2_off_bg}"
-  ui_page0_slot1_on_icon: "${ui_home_sleepy_on_icon}"
-  ui_page0_slot1_off_icon: "${ui_home_sleepy_off_icon}"
-  ui_page0_slot1_value_on: "${ui_home_sleepy_value_on}"
-  ui_page0_slot1_value_off: "${ui_home_sleepy_value_off}"
-  ui_page0_slot1_icon_on_color: "${ui_grid3x3_profile2_icon_on_color}"
-  ui_page0_slot1_icon_off_color: "${ui_grid3x3_profile2_icon_off_color}"
-  ui_page0_slot1_text_on_color: "${ui_grid3x3_profile2_text_on_color}"
-  ui_page0_slot1_text_off_color: "${ui_grid3x3_profile2_text_off_color}"
-  ui_page0_slot1_value_on_color: "${ui_grid3x3_profile2_value_on_color}"
-  ui_page0_slot1_value_off_color: "${ui_grid3x3_profile2_value_off_color}"
-  ui_page0_slot1_show_icon: "${ui_home_sleepy_show_icon}"
-  ui_page0_slot1_show_text: "${ui_home_sleepy_show_text}"
-  ui_page0_slot1_show_value: "${ui_home_sleepy_show_value}"
 
-  ui_page0_slot2_entity_id: "${ui_home_bedtime_entity_id}"
-  ui_page0_slot2_text: "${ui_home_bedtime_text}"
-  ui_page0_slot2_icon: "${ui_home_bedtime_icon}"
-  ui_page0_slot2_on_bg: "${ui_grid3x3_profile3_on_bg}"
-  ui_page0_slot2_off_bg: "${ui_grid3x3_profile3_off_bg}"
-  ui_page0_slot2_on_icon: "${ui_home_bedtime_on_icon}"
-  ui_page0_slot2_off_icon: "${ui_home_bedtime_off_icon}"
-  ui_page0_slot2_value_on: "${ui_home_bedtime_value_on}"
-  ui_page0_slot2_value_off: "${ui_home_bedtime_value_off}"
-  ui_page0_slot2_icon_on_color: "${ui_grid3x3_profile3_icon_on_color}"
-  ui_page0_slot2_icon_off_color: "${ui_grid3x3_profile3_icon_off_color}"
-  ui_page0_slot2_text_on_color: "${ui_grid3x3_profile3_text_on_color}"
-  ui_page0_slot2_text_off_color: "${ui_grid3x3_profile3_text_off_color}"
-  ui_page0_slot2_value_on_color: "${ui_grid3x3_profile3_value_on_color}"
-  ui_page0_slot2_value_off_color: "${ui_grid3x3_profile3_value_off_color}"
-  ui_page0_slot2_show_icon: "${ui_home_bedtime_show_icon}"
-  ui_page0_slot2_show_text: "${ui_home_bedtime_show_text}"
-  ui_page0_slot2_show_value: "${ui_home_bedtime_show_value}"
 
-  ui_page0_slot3_icon: "${ui_home_tstat_icon}"
-  ui_page0_slot3_text: "${ui_home_tstat_text}"
-  ui_page0_slot3_icon_color: "${ui_home_tstat_icon_color}"
-  ui_page0_slot3_text_color: "${ui_home_tstat_text_color}"
-  ui_page0_slot3_nav_script: "${ui_home_tstat_nav_script}"
-  ui_page0_slot3_show: "${ui_home_tstat_show}"
-  ui_page0_slot3_hidden: "${ui_home_tstat_hidden}"
 
-  ui_page0_slot4_icon: "${ui_home_fans_icon}"
-  ui_page0_slot4_text: "${ui_home_fans_text}"
-  ui_page0_slot4_icon_color: "${ui_home_fans_icon_color}"
-  ui_page0_slot4_text_color: "${ui_home_fans_text_color}"
-  ui_page0_slot4_nav_script: "${ui_home_fans_nav_script}"
-  ui_page0_slot4_show: "${ui_home_fans_show}"
-  ui_page0_slot4_hidden: "${ui_home_fans_hidden}"
 
-  ui_page0_slot5_icon: "${ui_home_overrides_icon}"
-  ui_page0_slot5_text: "${ui_home_overrides_text}"
-  ui_page0_slot5_icon_color: "${ui_home_overrides_icon_color}"
-  ui_page0_slot5_text_color: "${ui_home_overrides_text_color}"
-  ui_page0_slot5_nav_script: "${ui_home_overrides_nav_script}"
-  ui_page0_slot5_show: "${ui_home_overrides_show}"
-  ui_page0_slot5_hidden: "${ui_home_overrides_hidden}"
 
-  ui_page0_slot6_icon: "${ui_home_placeholder_icon}"
-  ui_page0_slot6_icon_color: "${ui_home_placeholder_icon_color}"
-  ui_page0_slot6_text_color: "${ui_home_placeholder_text_color}"
-  ui_page0_slot6_text: "${ui_home_placeholder_1_text}"
 
-  ui_page0_slot7_icon: "${ui_home_placeholder_icon}"
-  ui_page0_slot7_icon_color: "${ui_home_placeholder_icon_color}"
-  ui_page0_slot7_text_color: "${ui_home_placeholder_text_color}"
-  ui_page0_slot7_text: "${ui_home_placeholder_2_text}"
 
-  ui_page0_slot8_icon: "${ui_home_placeholder_icon}"
-  ui_page0_slot8_icon_color: "${ui_home_placeholder_icon_color}"
-  ui_page0_slot8_text_color: "${ui_home_placeholder_text_color}"
-  ui_page0_slot8_text: "${ui_home_placeholder_3_text}"
 
   # Overrides page row 1 mapping
   ui_overrides_cleaners_entity_id: "${ent_cleaners_toggle}"
@@ -443,3 +284,100 @@ substitutions:
 
 
 
+
+  # page0 grid_3x3 canonical slot aliases
+  ui_page0_slot0_entity_id: "${ent_dani_mode_on}"
+  ui_page0_slot0_text: "${ui_dani_text}"
+  ui_page0_slot0_icon: "${ui_dani_icon}"
+  ui_page0_slot0_on_bg: "${ui_grid3x3_profile1_on_bg}"
+  ui_page0_slot0_off_bg: "${ui_grid3x3_profile1_off_bg}"
+  ui_page0_slot0_on_icon: "${ui_dani_on_icon}"
+  ui_page0_slot0_off_icon: "${ui_dani_off_icon}"
+  ui_page0_slot0_value_on: "${ui_dani_value_on}"
+  ui_page0_slot0_value_off: "${ui_dani_value_off}"
+  ui_page0_slot0_icon_on_color: "${ui_grid3x3_profile1_icon_on_color}"
+  ui_page0_slot0_icon_off_color: "${ui_grid3x3_profile1_icon_off_color}"
+  ui_page0_slot0_text_on_color: "${ui_grid3x3_profile1_text_on_color}"
+  ui_page0_slot0_text_off_color: "${ui_grid3x3_profile1_text_off_color}"
+  ui_page0_slot0_value_on_color: "${ui_grid3x3_profile1_value_on_color}"
+  ui_page0_slot0_value_off_color: "${ui_grid3x3_profile1_value_off_color}"
+  ui_page0_slot0_show_icon: "true"
+  ui_page0_slot0_show_text: "true"
+  ui_page0_slot0_show_value: "true"
+
+  ui_page0_slot1_entity_id: "${ent_sleepy_toggle}"
+  ui_page0_slot1_text: "${ui_sleepy_text}"
+  ui_page0_slot1_icon: "${ui_sleepy_icon}"
+  ui_page0_slot1_on_bg: "${ui_grid3x3_profile2_on_bg}"
+  ui_page0_slot1_off_bg: "${ui_grid3x3_profile2_off_bg}"
+  ui_page0_slot1_on_icon: "${ui_sleepy_on_icon}"
+  ui_page0_slot1_off_icon: "${ui_sleepy_off_icon}"
+  ui_page0_slot1_value_on: "${ui_sleepy_value_on}"
+  ui_page0_slot1_value_off: "${ui_sleepy_value_off}"
+  ui_page0_slot1_icon_on_color: "${ui_grid3x3_profile2_icon_on_color}"
+  ui_page0_slot1_icon_off_color: "${ui_grid3x3_profile2_icon_off_color}"
+  ui_page0_slot1_text_on_color: "${ui_grid3x3_profile2_text_on_color}"
+  ui_page0_slot1_text_off_color: "${ui_grid3x3_profile2_text_off_color}"
+  ui_page0_slot1_value_on_color: "${ui_grid3x3_profile2_value_on_color}"
+  ui_page0_slot1_value_off_color: "${ui_grid3x3_profile2_value_off_color}"
+  ui_page0_slot1_show_icon: "true"
+  ui_page0_slot1_show_text: "true"
+  ui_page0_slot1_show_value: "false"
+
+  ui_page0_slot2_entity_id: "${ent_bedtime_toggle}"
+  ui_page0_slot2_text: "${ui_bedtime_text}"
+  ui_page0_slot2_icon: "${ui_bedtime_icon}"
+  ui_page0_slot2_on_bg: "${ui_grid3x3_profile3_on_bg}"
+  ui_page0_slot2_off_bg: "${ui_grid3x3_profile3_off_bg}"
+  ui_page0_slot2_on_icon: "${ui_bedtime_on_icon}"
+  ui_page0_slot2_off_icon: "${ui_bedtime_off_icon}"
+  ui_page0_slot2_value_on: "${ui_bedtime_value_on}"
+  ui_page0_slot2_value_off: "${ui_bedtime_value_off}"
+  ui_page0_slot2_icon_on_color: "${ui_grid3x3_profile3_icon_on_color}"
+  ui_page0_slot2_icon_off_color: "${ui_grid3x3_profile3_icon_off_color}"
+  ui_page0_slot2_text_on_color: "${ui_grid3x3_profile3_text_on_color}"
+  ui_page0_slot2_text_off_color: "${ui_grid3x3_profile3_text_off_color}"
+  ui_page0_slot2_value_on_color: "${ui_grid3x3_profile3_value_on_color}"
+  ui_page0_slot2_value_off_color: "${ui_grid3x3_profile3_value_off_color}"
+  ui_page0_slot2_show_icon: "true"
+  ui_page0_slot2_show_text: "true"
+  ui_page0_slot2_show_value: "false"
+
+  ui_page0_slot3_icon: "$mdi_thermometer"
+  ui_page0_slot3_text: "Thermostat"
+  ui_page0_slot3_icon_color: "${ui_grid3x3_climate_icon_color}"
+  ui_page0_slot3_text_color: "${ui_grid3x3_climate_text_color}"
+  ui_page0_slot3_nav_script: "nav_to_tstat"
+  ui_page0_slot3_show: "true"
+  ui_page0_slot3_hidden: "false"
+
+  ui_page0_slot4_icon: "$mdi_fan"
+  ui_page0_slot4_text: "Fans"
+  ui_page0_slot4_icon_color: "${ui_grid3x3_nav_icon_color}"
+  ui_page0_slot4_text_color: "${ui_grid3x3_nav_text_color}"
+  ui_page0_slot4_nav_script: "nav_to_fans"
+  ui_page0_slot4_show: "true"
+  ui_page0_slot4_hidden: "false"
+
+  ui_page0_slot5_icon: "$mdi_tune"
+  ui_page0_slot5_text: "Overrides"
+  ui_page0_slot5_icon_color: "${ui_grid3x3_override_icon_color}"
+  ui_page0_slot5_text_color: "${ui_grid3x3_override_text_color}"
+  ui_page0_slot5_nav_script: "nav_to_overrides"
+  ui_page0_slot5_show: "true"
+  ui_page0_slot5_hidden: "false"
+
+  ui_page0_slot6_icon: "$mdi_dots_horizontal"
+  ui_page0_slot6_icon_color: "${ui_grid3x3_placeholder_icon_color}"
+  ui_page0_slot6_text_color: "${ui_grid3x3_placeholder_text_color}"
+  ui_page0_slot6_text: "Placeholder 1"
+
+  ui_page0_slot7_icon: "$mdi_dots_horizontal"
+  ui_page0_slot7_icon_color: "${ui_grid3x3_placeholder_icon_color}"
+  ui_page0_slot7_text_color: "${ui_grid3x3_placeholder_text_color}"
+  ui_page0_slot7_text: "Placeholder 2"
+
+  ui_page0_slot8_icon: "$mdi_dots_horizontal"
+  ui_page0_slot8_icon_color: "${ui_grid3x3_placeholder_icon_color}"
+  ui_page0_slot8_text_color: "${ui_grid3x3_placeholder_text_color}"
+  ui_page0_slot8_text: "Placeholder 3"

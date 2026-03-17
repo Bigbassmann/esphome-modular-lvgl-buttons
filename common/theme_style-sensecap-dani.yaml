@@ -121,21 +121,21 @@ lvgl:
       radius: 8
       pad_all: 6
 
-    - id: sense_tile_dani_style
+    - id: sense_tile_profile1_style
       bg_color: theme_tile_profile1_bg_default
       bg_opa: cover
       border_width: 0
       radius: 10
       pad_all: 8
 
-    - id: sense_tile_sleepy_style
+    - id: sense_tile_profile2_style
       bg_color: theme_tile_profile2_bg_default
       bg_opa: cover
       border_width: 0
       radius: 10
       pad_all: 8
 
-    - id: sense_tile_bedtime_style
+    - id: sense_tile_profile3_style
       bg_color: theme_tile_profile3_bg_default
       bg_opa: cover
       border_width: 0
@@ -742,13 +742,13 @@ select:
               - lvgl.label.update: {id: label_humid, text_color: theme_slot0_blue_text}
               - lvgl.label.update: {id: data_humid, text_color: theme_slot0_blue_text}
               - lvgl.style.update:
-                  id: sense_tile_dani_style
+                  id: sense_tile_profile1_style
                   bg_color: theme_tile_profile1_bg_default
               - lvgl.style.update:
-                  id: sense_tile_sleepy_style
+                  id: sense_tile_profile2_style
                   bg_color: theme_tile_profile2_bg_default
               - lvgl.style.update:
-                  id: sense_tile_bedtime_style
+                  id: sense_tile_profile3_style
                   bg_color: theme_tile_profile3_bg_default
               - lvgl.style.update:
                   id: sense_tile_tstat_style
@@ -849,13 +849,13 @@ select:
               - lvgl.label.update: {id: label_humid, text_color: theme_slot1_blue_text}
               - lvgl.label.update: {id: data_humid, text_color: theme_slot1_blue_text}
               - lvgl.style.update:
-                  id: sense_tile_dani_style
+                  id: sense_tile_profile1_style
                   bg_color: theme_slot1_red_bg
               - lvgl.style.update:
-                  id: sense_tile_sleepy_style
+                  id: sense_tile_profile2_style
                   bg_color: theme_slot1_teal_bg
               - lvgl.style.update:
-                  id: sense_tile_bedtime_style
+                  id: sense_tile_profile3_style
                   bg_color: theme_slot1_indigo_bg
               - lvgl.style.update:
                   id: sense_tile_tstat_style
@@ -958,13 +958,13 @@ select:
               - lvgl.label.update: {id: label_humid, text_color: theme_slot2_blue_text}
               - lvgl.label.update: {id: data_humid, text_color: theme_slot2_blue_text}
               - lvgl.style.update:
-                  id: sense_tile_dani_style
+                  id: sense_tile_profile1_style
                   bg_color: theme_slot2_orange_bg
               - lvgl.style.update:
-                  id: sense_tile_sleepy_style
+                  id: sense_tile_profile2_style
                   bg_color: theme_slot2_cyan_bg
               - lvgl.style.update:
-                  id: sense_tile_bedtime_style
+                  id: sense_tile_profile3_style
                   bg_color: theme_slot2_violet_bg
               - lvgl.style.update:
                   id: sense_tile_tstat_style
@@ -1048,9 +1048,9 @@ select:
               - lvgl.label.update: {id: icon_humid, text_color: theme_slot3_primary_text}
               - lvgl.label.update: {id: label_humid, text_color: theme_slot3_primary_text}
               - lvgl.label.update: {id: data_humid, text_color: theme_slot3_primary_text}
-              - lvgl.style.update: {id: sense_tile_dani_style, bg_color: theme_slot3_primary_bg}
-              - lvgl.style.update: {id: sense_tile_sleepy_style, bg_color: theme_slot3_secondary_bg}
-              - lvgl.style.update: {id: sense_tile_bedtime_style, bg_color: theme_slot3_tertiary_bg}
+              - lvgl.style.update: {id: sense_tile_profile1_style, bg_color: theme_slot3_primary_bg}
+              - lvgl.style.update: {id: sense_tile_profile2_style, bg_color: theme_slot3_secondary_bg}
+              - lvgl.style.update: {id: sense_tile_profile3_style, bg_color: theme_slot3_tertiary_bg}
               - lvgl.style.update: {id: sense_tile_tstat_style, bg_color: theme_slot3_climate_bg}
               - lvgl.style.update: {id: sense_tile_fans_style, bg_color: theme_slot3_primary_bg}
               - lvgl.style.update: {id: sense_tile_overrides_style, bg_color: theme_slot3_override_bg}
@@ -1111,9 +1111,9 @@ select:
               - lvgl.label.update: {id: icon_humid, text_color: theme_slot4_primary_text}
               - lvgl.label.update: {id: label_humid, text_color: theme_slot4_primary_text}
               - lvgl.label.update: {id: data_humid, text_color: theme_slot4_primary_text}
-              - lvgl.style.update: {id: sense_tile_dani_style, bg_color: theme_slot4_primary_bg}
-              - lvgl.style.update: {id: sense_tile_sleepy_style, bg_color: theme_slot4_secondary_bg}
-              - lvgl.style.update: {id: sense_tile_bedtime_style, bg_color: theme_slot4_tertiary_bg}
+              - lvgl.style.update: {id: sense_tile_profile1_style, bg_color: theme_slot4_primary_bg}
+              - lvgl.style.update: {id: sense_tile_profile2_style, bg_color: theme_slot4_secondary_bg}
+              - lvgl.style.update: {id: sense_tile_profile3_style, bg_color: theme_slot4_tertiary_bg}
               - lvgl.style.update: {id: sense_tile_tstat_style, bg_color: theme_slot4_climate_bg}
               - lvgl.style.update: {id: sense_tile_fans_style, bg_color: theme_slot4_primary_bg}
               - lvgl.style.update: {id: sense_tile_overrides_style, bg_color: theme_slot4_override_bg}
@@ -1174,9 +1174,9 @@ select:
               - lvgl.label.update: {id: icon_humid, text_color: theme_slot5_primary_text}
               - lvgl.label.update: {id: label_humid, text_color: theme_slot5_primary_text}
               - lvgl.label.update: {id: data_humid, text_color: theme_slot5_primary_text}
-              - lvgl.style.update: {id: sense_tile_dani_style, bg_color: theme_slot5_primary_bg}
-              - lvgl.style.update: {id: sense_tile_sleepy_style, bg_color: theme_slot5_secondary_bg}
-              - lvgl.style.update: {id: sense_tile_bedtime_style, bg_color: theme_slot5_tertiary_bg}
+              - lvgl.style.update: {id: sense_tile_profile1_style, bg_color: theme_slot5_primary_bg}
+              - lvgl.style.update: {id: sense_tile_profile2_style, bg_color: theme_slot5_secondary_bg}
+              - lvgl.style.update: {id: sense_tile_profile3_style, bg_color: theme_slot5_tertiary_bg}
               - lvgl.style.update: {id: sense_tile_tstat_style, bg_color: theme_slot5_climate_bg}
               - lvgl.style.update: {id: sense_tile_fans_style, bg_color: theme_slot5_primary_bg}
               - lvgl.style.update: {id: sense_tile_overrides_style, bg_color: theme_slot5_override_bg}
@@ -1237,9 +1237,9 @@ select:
               - lvgl.label.update: {id: icon_humid, text_color: theme_slot6_primary_text}
               - lvgl.label.update: {id: label_humid, text_color: theme_slot6_primary_text}
               - lvgl.label.update: {id: data_humid, text_color: theme_slot6_primary_text}
-              - lvgl.style.update: {id: sense_tile_dani_style, bg_color: theme_slot6_primary_bg}
-              - lvgl.style.update: {id: sense_tile_sleepy_style, bg_color: theme_slot6_secondary_bg}
-              - lvgl.style.update: {id: sense_tile_bedtime_style, bg_color: theme_slot6_tertiary_bg}
+              - lvgl.style.update: {id: sense_tile_profile1_style, bg_color: theme_slot6_primary_bg}
+              - lvgl.style.update: {id: sense_tile_profile2_style, bg_color: theme_slot6_secondary_bg}
+              - lvgl.style.update: {id: sense_tile_profile3_style, bg_color: theme_slot6_tertiary_bg}
               - lvgl.style.update: {id: sense_tile_tstat_style, bg_color: theme_slot6_climate_bg}
               - lvgl.style.update: {id: sense_tile_fans_style, bg_color: theme_slot6_primary_bg}
               - lvgl.style.update: {id: sense_tile_overrides_style, bg_color: theme_slot6_climate_bg}
@@ -1300,9 +1300,9 @@ select:
               - lvgl.label.update: {id: icon_humid, text_color: theme_slot7_primary_text}
               - lvgl.label.update: {id: label_humid, text_color: theme_slot7_primary_text}
               - lvgl.label.update: {id: data_humid, text_color: theme_slot7_primary_text}
-              - lvgl.style.update: {id: sense_tile_dani_style, bg_color: theme_slot7_primary_bg}
-              - lvgl.style.update: {id: sense_tile_sleepy_style, bg_color: theme_slot7_secondary_bg}
-              - lvgl.style.update: {id: sense_tile_bedtime_style, bg_color: theme_slot7_tertiary_bg}
+              - lvgl.style.update: {id: sense_tile_profile1_style, bg_color: theme_slot7_primary_bg}
+              - lvgl.style.update: {id: sense_tile_profile2_style, bg_color: theme_slot7_secondary_bg}
+              - lvgl.style.update: {id: sense_tile_profile3_style, bg_color: theme_slot7_tertiary_bg}
               - lvgl.style.update: {id: sense_tile_tstat_style, bg_color: theme_slot7_climate_bg}
               - lvgl.style.update: {id: sense_tile_fans_style, bg_color: theme_slot7_primary_bg}
               - lvgl.style.update: {id: sense_tile_overrides_style, bg_color: theme_slot7_override_bg}
@@ -1363,9 +1363,9 @@ select:
               - lvgl.label.update: {id: icon_humid, text_color: theme_slot8_primary_text}
               - lvgl.label.update: {id: label_humid, text_color: theme_slot8_primary_text}
               - lvgl.label.update: {id: data_humid, text_color: theme_slot8_primary_text}
-              - lvgl.style.update: {id: sense_tile_dani_style, bg_color: theme_slot8_primary_bg}
-              - lvgl.style.update: {id: sense_tile_sleepy_style, bg_color: theme_slot8_secondary_bg}
-              - lvgl.style.update: {id: sense_tile_bedtime_style, bg_color: theme_slot8_tertiary_bg}
+              - lvgl.style.update: {id: sense_tile_profile1_style, bg_color: theme_slot8_primary_bg}
+              - lvgl.style.update: {id: sense_tile_profile2_style, bg_color: theme_slot8_secondary_bg}
+              - lvgl.style.update: {id: sense_tile_profile3_style, bg_color: theme_slot8_tertiary_bg}
               - lvgl.style.update: {id: sense_tile_tstat_style, bg_color: theme_slot8_climate_bg}
               - lvgl.style.update: {id: sense_tile_fans_style, bg_color: theme_slot8_primary_bg}
               - lvgl.style.update: {id: sense_tile_overrides_style, bg_color: theme_slot8_override_bg}
@@ -1426,9 +1426,9 @@ select:
               - lvgl.label.update: {id: icon_humid, text_color: theme_slot9_primary_text}
               - lvgl.label.update: {id: label_humid, text_color: theme_slot9_primary_text}
               - lvgl.label.update: {id: data_humid, text_color: theme_slot9_primary_text}
-              - lvgl.style.update: {id: sense_tile_dani_style, bg_color: theme_slot9_primary_bg}
-              - lvgl.style.update: {id: sense_tile_sleepy_style, bg_color: theme_slot9_secondary_bg}
-              - lvgl.style.update: {id: sense_tile_bedtime_style, bg_color: theme_slot9_tertiary_bg}
+              - lvgl.style.update: {id: sense_tile_profile1_style, bg_color: theme_slot9_primary_bg}
+              - lvgl.style.update: {id: sense_tile_profile2_style, bg_color: theme_slot9_secondary_bg}
+              - lvgl.style.update: {id: sense_tile_profile3_style, bg_color: theme_slot9_tertiary_bg}
               - lvgl.style.update: {id: sense_tile_tstat_style, bg_color: theme_slot9_climate_bg}
               - lvgl.style.update: {id: sense_tile_fans_style, bg_color: theme_slot9_primary_bg}
               - lvgl.style.update: {id: sense_tile_overrides_style, bg_color: theme_slot9_override_bg}
@@ -1439,6 +1439,7 @@ select:
               - lvgl.style.update: {id: sense_menu_cat3_style, bg_color: theme_slot9_override_bg, text_color: theme_slot9_override_text}
               - lvgl.style.update: {id: sense_menu_cat4_style, bg_color: theme_slot9_tertiary_bg, text_color: theme_slot9_tertiary_text}
         - lvgl.widget.redraw
+
 
 
 

@@ -57,7 +57,7 @@ lvgl:
                         id: icon_${sensor_id}
                         text_font: $icon_font
                         styles: sense_text_muted_style
-                        text_color: ${icon_color | default("theme_page_text_muted")}
+                        text_color: ${icon_color | default("${ui_state_text_inactive_color}")}
                         grid_cell_row_pos: 0
                         grid_cell_column_pos: 0
                         grid_cell_row_span: 2
@@ -68,7 +68,7 @@ lvgl:
                         id: label_${sensor_id}
                         text_font: nunito_22
                         styles: sense_text_primary_style
-                        text_color: ${label_color | default("theme_page_text")}
+                        text_color: ${label_color | default("${ui_state_text_active_color}")}
                         width: 100%
                         long_mode: wrap
                         grid_cell_row_pos: 0
@@ -81,7 +81,7 @@ lvgl:
                         id: data_${sensor_id}
                         text_font: ${sensor_font | default("nunito_22")}
                         styles: sense_text_primary_style
-                        text_color: ${value_color | default("theme_page_text")}
+                        text_color: ${value_color | default("${ui_state_text_active_color}")}
                         grid_cell_row_pos: 1
                         grid_cell_column_pos: 1
                         grid_cell_x_align: start
