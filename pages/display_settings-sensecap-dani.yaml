@@ -422,18 +422,32 @@ lvgl:
                   height: 32
                   text_font: montserrat_14
                   options:
-                    - "Dark"
-                    - "Dani"
-                    - "Split"
+                    - ${ui_theme_label_0}
+                    - ${ui_theme_label_1}
+                    - ${ui_theme_label_2}
+                    - ${ui_theme_label_3}
+                    - ${ui_theme_label_4}
+                    - ${ui_theme_label_5}
+                    - ${ui_theme_label_6}
+                    - ${ui_theme_label_7}
+                    - ${ui_theme_label_8}
+                    - ${ui_theme_label_9}
                   selected_index: 1
                   on_value:
                     then:
                       - select.set:
                           id: current_theme
                           option: !lambda |-
-                            if (x == 1) return std::string("Dani");
-                            if (x == 2) return std::string("Split");
-                            return std::string("Dark");
+                            if (x == 1) return std::string("${ui_theme_label_1}");
+                            if (x == 2) return std::string("${ui_theme_label_2}");
+                            if (x == 3) return std::string("${ui_theme_label_3}");
+                            if (x == 4) return std::string("${ui_theme_label_4}");
+                            if (x == 5) return std::string("${ui_theme_label_5}");
+                            if (x == 6) return std::string("${ui_theme_label_6}");
+                            if (x == 7) return std::string("${ui_theme_label_7}");
+                            if (x == 8) return std::string("${ui_theme_label_8}");
+                            if (x == 9) return std::string("${ui_theme_label_9}");
+                            return std::string("${ui_theme_label_0}");
                       - script.execute: display_settings_refresh_ui
 
               - label:
