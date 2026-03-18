@@ -57,6 +57,8 @@ lvgl:
   pages:
     - id: ${dimmers_page_id}
       styles: page_style
+      on_load:
+        - script.execute: sense_theme_refresh_feedback_widgets
       layout:
         type: grid
         grid_rows:
