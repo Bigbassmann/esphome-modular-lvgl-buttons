@@ -8,22 +8,8 @@
 # Page files should consume these defaults via ui_* vars and page-level overrides.
 # Avoid hardcoded page layout geometry in common files.
 substitutions:
-  # Home page slot mapping (entity + display behavior)
-
-
-
-  # Home page nav tile mapping (row 1)
-
-
-
-  # Home page placeholder mapping (row 2)
-
-  # Home page nav behavior mapping (row 1)
-
-
-
   # generic role/profile tokens (theme-owned visual layer)
-  ui_role_profile_red_on_bg: "theme_family_red_bg_on"
+  ui_role_profile_red_on_bg: "theme_family_red_bg_on"            # 
   ui_role_profile_red_off_bg: "theme_family_red_bg_off"
   ui_role_profile_red_icon_on_color: "theme_page_text"
   ui_role_profile_red_icon_off_color: "theme_page_text_muted"

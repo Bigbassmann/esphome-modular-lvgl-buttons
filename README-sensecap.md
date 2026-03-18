@@ -374,3 +374,6 @@ This fork uses a token-first color model so page files do not hardcode one-off h
 - Restored the active menu page path after incorrectly removing it: `menu_grid-sensecap.yaml` is back in the build, `nav_to_menu` again shows `page_menu`, and the topbar/bottom-nav/WiFi back actions point to the menu page again.
 
 - Added a small targeted runtime theme-refresh script for the remaining feedback widgets: the active dimmer slider indicators/knobs and the thermostat arc indicator/knob now repaint immediately when the theme changes, without restoring the old linker-heavy per-page refresh blocks.
+- 2026-03-17: Swipe navigation now follows the same scripted sense_nav_index rotation as the bottom/top button navigation (
+av_to_prev / 
+av_to_next) instead of LVGL raw page order. settings_grid-sensecap.yaml is now skip: true, so the direct menu page and the swipe rotation no longer diverge.

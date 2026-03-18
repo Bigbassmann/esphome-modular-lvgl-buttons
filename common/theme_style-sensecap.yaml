@@ -801,7 +801,6 @@ select:
             id(sense_theme_slot) = (raw >= 0 && raw <= 9) ? raw : 0;
         - script.execute: sense_theme_refresh_page0_toggle_slots
         - script.execute: sense_theme_refresh_feedback_widgets
-        - script.execute: sense_theme_refresh_page0_toggle_slots
         - if:
             condition:
               - lambda: 'return id(sense_theme_slot) == 0;'

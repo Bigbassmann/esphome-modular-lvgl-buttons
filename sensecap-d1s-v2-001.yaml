@@ -62,33 +62,26 @@ script:
           text: !lambda 'return id(system_time).now().strftime("%l:%M %P");'
 
 packages:
-  # secrets: !include secrets.yaml
-  # Generic configuration for ESP32 screens
-  # SDL has no Wi-Fi
-  wifi: !include common/wifi-sensecap.yaml
-  # Enable OTA updates with a status screen
-  ota_screen: !include common/ota-sensecap.yaml
-  # All the colors
-  colors: !include common/color-sensecap-dani.yaml
-  # Some nice basic fonts
-  fonts: !include common/fonts-sensecap.yaml
-  # 1000s of glyphs
-  glyphs: !include common/mdi_glyph_substitutions.yaml
-  # Some basic sensors
-  sensors: !include sensors/sensors_base.yaml
+  wifi: !include common/wifi-sensecap.yaml  # Basic Wi-Fi setup with captive portal fallback
+  ota_screen: !include common/ota-sensecap.yaml   # OTA update screen with progress bar
+#  loading_screen: !include common/loading_screen.yaml  # Loading screen with spinner animation
+  colors: !include common/color-sensecap.yaml     # SenseCAP-specific color palette
+  fonts: !include common/fonts-sensecap.yaml           # Nunito for labels, Material Design Icons for icons, and a custom font for the time display on the home page.
+  glyphs: !include common/mdi_glyph_substitutions.yaml # Substitution variables for commonly used Material Design Icons glyphs. This allows us to refer to icons by descriptive names (e.g. $mdi_bed) rather than raw unicode code points in the main codebase, improving readability and maintainability.
+  sensors: !include sensors/sensors_base.yaml          # Base sensor definitions for SenseCAP D1S (e.g. Wi-Fi signal strength, uptime, etc.)
   # Styles + Themes
-  theme_style: !include common/theme_style-sensecap-dani.yaml
-  top_level_lvgl_defaults_dani: !include common/top_level_lvgl_defualts-001-dani.yaml
+  theme_style: !include common/theme_style-sensecap.yaml
+  top_level_lvgl_defaults_dani: !include common/top_level_lvgl_defualts-sensecap.yaml
   ui_tokens_sensecap: !include common/ui_tokens-sensecap.yaml
   page_shell_sensecap: !include pages/page_shell_480-sensecap.yaml
   page_home_sensecap: !include pages/home_grid-sensecap.yaml
   page_menu_sensecap: !include pages/menu_grid-sensecap.yaml
   page_wifi_setup_sensecap: !include pages/wifi_setup-sensecap.yaml
   page_settings_sensecap: !include pages/settings_grid-sensecap.yaml
-  page_display_settings_sensecap: !include pages/display_settings-sensecap-dani.yaml
-  page_fans_sensecap: !include pages/fans_grid-sensecap-dani.yaml
+  page_display_settings_sensecap: !include pages/display_settings-sensecap.yaml
+  page_fans_sensecap: !include pages/fans_grid-sensecap.yaml
   page_overrides_sensecap: !include pages/overrides_grid-sensecap.yaml
-  sensecap_instance_mapping: !include common/package_instance_mapping-sensecap-dani.yaml
+  sensecap_instance_mapping: !include common/package_instance_mapping-sensecap.yaml
 # This is the main LVGL section. We start with a simple 4x4 grid.
 lvgl:
   pages:

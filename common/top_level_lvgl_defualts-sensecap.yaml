@@ -23,7 +23,7 @@ substitutions:
   lvgl_text_value_default: "white"
 
   # Global surface/background defaults
-  lvgl_surface_page_default: "sense_surface"
+  lvgl_surface_page_default: "sense_surface"   # 
   lvgl_surface_card_default: "sense_surface"
   lvgl_surface_alt_default: "sense_surface_alt"
   lvgl_border_default: "sense_border"

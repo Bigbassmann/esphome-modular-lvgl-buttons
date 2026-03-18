@@ -32,6 +32,7 @@ lvgl:
       styles: page_style
       on_load:
         - lambda: 'id(tstat_page_active) = true;'
+        - script.execute: sense_theme_refresh_feedback_widgets
         - component.update: ha_tstat_current_temp
         - component.update: ha_tstat_target_temp
       on_unload:

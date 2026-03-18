@@ -25,6 +25,7 @@ substitutions:
 lvgl:
   pages:
     - id: ${sense_page_settings_id}
+      skip: true
       styles: page_style
       widgets:
         - obj:
